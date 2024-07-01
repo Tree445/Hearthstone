@@ -238,7 +238,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change Character</a>"
 			dat += "</td>"
 
-	
+
 			dat += "<td style='width:33%;text-align:center'>"
 			if(SStriumphs.triumph_buys_enabled)
 				dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=triumph_buy_menu'>Triumph Buy</a>"
@@ -650,7 +650,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<a href ='?_src_=prefs;preference=keybinds;task=keybindings_set'>\[Reset to default\]</a>"
 			dat += "</body>"
 
-		
+
 	if(!IsGuestKey(user.key))
 		dat += "<a href='?_src_=prefs;preference=save'>Save</a><br>"
 		dat += "<a href='?_src_=prefs;preference=load'>Undo</a><br>"
@@ -676,7 +676,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	dat += "</table>"
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 
-	
+
 	if(user.client.is_new_player())
 		dat = list("<center>REGISTER!</center>")
 
@@ -1270,7 +1270,7 @@ Slots: [job.spawn_positions]</span>
 
 	else if(href_list["preference"] == "triumphs")
 		user.show_triumphs_list()
-	
+
 	else if(href_list["preference"] == "drifters")
 		switch(href_list["task"])
 			if("show_drifter_queue")
@@ -1705,6 +1705,7 @@ Slots: [job.spawn_positions]</span>
 						ResetJobs()
 						to_chat(user, "<font color='red'>Classes reset.</font>")
 						random_character(gender)
+						genderize_customizer_entries()
 				if("domhand")
 					if(domhand == 1)
 						domhand = 2
