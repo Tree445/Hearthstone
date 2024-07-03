@@ -131,11 +131,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 		return TRUE
 	if(SSticker.manualmodes)
 		forcedmodes |= SSticker.manualmodes
-	var/list/major_modes = list(1, 2, 3)
-	var/list/minor_modes = list(1,2,3)
-	if(prob(25))
-		minor_modes += 4 //maniac
-	var/majorpicked = pick(major_modes)
+
 	if(forcedmodes.len)
 		message_admins("Manual gamemodes selected.")
 		for(var/G in forcedmodes)
