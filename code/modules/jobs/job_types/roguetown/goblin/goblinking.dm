@@ -1,24 +1,25 @@
 
 /datum/job/roguetown/goblinking
-	title = "Goblin King"
+	title = "Tribal King"
+	f_title = "Goblin Queen"
 	flag = GOBLINKING
 	department_flag = GOBLIN
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
-	allowed_sexes = list(MALE)
-	allowed_races = list()
-	allowed_patrons = list(/datum/patron/inhumen/graggar)
-	tutorial = "Goblin King is a fatty lazy pig who wishes to do nothing but eat apple pies and fart while sitting on his stone throne."
+	total_positions = 1
+	spawn_positions = 1
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = RACES_ALL_KINDS
+	allowed_patrons = ALL_DIVINE_PATRONS
+	tutorial = "Goblin King or Queen is a fatty lazy pig who wishes to do nothing but eat apple pies and fart while sitting on his stone throne."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/goblinking
 	display_order = JDO_GOBLINKING
-	min_pq = 2
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/goblinking/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.verbs |= /mob/living/carbon/human/proc/goblinannouncement
+	//H.verbs |= /mob/living/carbon/human/proc/goblinannouncement
 	//H.verbs |= /mob/living/carbon/human/proc/goblinopenslot
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	belt = /obj/item/storage/belt/rogue/leather/rope
@@ -35,6 +36,7 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -2)
 
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/goblinannouncement()
     set name = "Announcement"
     set category = "Goblin King"
@@ -52,6 +54,20 @@
             to_chat(H, message)
             playsound(H.loc, 'sound/misc/dun.ogg', 50, TRUE)
 
+=======
+
+//mob/living/carbon/human/proc/goblinannouncement()
+	//set name = "Announcement"
+	//set category = "Goblin King"
+	//if(stat)
+		//return
+	//var/inputty = input("Make an announcement", "ROGUETOWN") as text|null
+	//if(inputty)
+		//if(!istype(get_area(src), /area/rogue/indoors/shelter/mountains/decap))
+			//to_chat(src, span_warning("I need to do this from the Goblin Kingdom."))
+			//return FALSE
+		//priority_announce("[inputty]", title = "The Goblin King Squeals", sound = 'sound/misc/dun.ogg')
+>>>>>>> upstream/main
 /*
 /mob/living/carbon/human/proc/goblinopenslot()
 	set name = "Open Slot"

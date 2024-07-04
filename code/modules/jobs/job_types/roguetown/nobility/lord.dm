@@ -10,8 +10,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	total_positions = 0
 	spawn_positions = 1
 	selection_color = JCOLOR_NOBLE
-	allowed_races = RACES_TOLERATED_UP
-	allowed_sexes = list(MALE)
+	allowed_races = RACES_SHUNNED_UP
+	allowed_sexes = list(MALE, FEMALE)
 
 	spells = list(
 		/obj/effect/proc_holder/spell/self/grant_title,
@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	display_order = JDO_LORD
 	tutorial = "Elevated upon your throne through a web of intrigue and political upheaval, you are the absolute authority of these lands and at the center of every plot within it. Every man, woman and child is envious of your position and would replace you in less than a heartbeat: Show them the error in their ways."
 	whitelist_req = FALSE
-	min_pq = 10
+	min_pq = 0
 	max_pq = null
 	give_bank_account = 1000
 	required = TRUE

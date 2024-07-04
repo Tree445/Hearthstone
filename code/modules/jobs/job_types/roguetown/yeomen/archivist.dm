@@ -7,8 +7,13 @@
 	total_positions = 1
 	spawn_positions = 1
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch)
+<<<<<<< HEAD
 	allowed_races = RACES_TOLERATED_UP
 	allowed_ages = ALL_AGES_LIST
+=======
+	allowed_races = RACES_ALL_KINDS
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+>>>>>>> upstream/main
 
 	outfit = /datum/outfit/job/roguetown/archivist
 	display_order = JDO_ARCHIVIST

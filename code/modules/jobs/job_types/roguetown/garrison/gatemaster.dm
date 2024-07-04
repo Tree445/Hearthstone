@@ -6,14 +6,14 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_DIVINE_PATRONS
 	tutorial = "Tales speak of the Gatemaster's legendary ability to stand still at a gate and ask people questions."
 	display_order = JDO_GATEMASTER
 
 	outfit = /datum/outfit/job/roguetown/gatemaster
 	give_bank_account = 3
-	min_pq = 4
+	min_pq = 0
 	max_pq = null
 	
 	cmode_music = 'sound/music/combat_guard2.ogg'
