@@ -5047,9 +5047,6 @@
 "fZJ" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
-"fZO" = (
-/turf/open/lava/acid,
-/area/rogue/under/town/sewer)
 "gas" = (
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
@@ -17036,12 +17033,6 @@
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
-"vRn" = (
-/obj/structure/bars{
-	alpha = 150
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/under/town/sewer)
 "vRu" = (
 /turf/closed/mineral/rogue,
 /area/rogue/under/cave)
@@ -185016,10 +185007,10 @@ vRu
 vRu
 vRu
 vRu
-sYw
-sYw
-sYw
-sYw
+vRu
+vRu
+vRu
+vRu
 vRu
 rSC
 rSC
@@ -185418,11 +185409,11 @@ vRu
 vRu
 vRu
 vRu
-sYw
-vRn
-vRn
-sYw
-sYw
+vRu
+vRu
+vRu
+vRu
+vRu
 rSC
 rSC
 rSC
@@ -185820,11 +185811,11 @@ vRu
 vRu
 vRu
 vRu
-sYw
-fZO
-fZO
-fZO
-sYw
+vRu
+vRu
+vRu
+vRu
+vRu
 rSC
 rSC
 rSC
@@ -186222,11 +186213,11 @@ vRu
 vRu
 vRu
 vRu
-sYw
-fZO
-fZO
-fZO
-sYw
+vRu
+vRu
+vRu
+vRu
+vRu
 rSC
 rSC
 rSC
@@ -186624,11 +186615,11 @@ vRu
 vRu
 vRu
 vRu
-sYw
-fZO
-fZO
-fZO
-sYw
+vRu
+vRu
+vRu
+vRu
+vRu
 rSC
 rSC
 rSC
@@ -187026,11 +187017,11 @@ vRu
 vRu
 vRu
 vRu
-sYw
-fZO
-fZO
-fZO
-sYw
+vRu
+vRu
+vRu
+vRu
+vRu
 rSC
 rSC
 rSC
@@ -187428,11 +187419,11 @@ vRu
 vRu
 vRu
 vRu
-sYw
-fZO
-fZO
-fZO
-sYw
+vRu
+vRu
+vRu
+vRu
+vRu
 rSC
 rSC
 rSC
@@ -187830,11 +187821,11 @@ vRu
 vRu
 vRu
 vRu
-sYw
-vRn
-vRn
-sYw
-sYw
+vRu
+vRu
+vRu
+vRu
+vRu
 rSC
 rSC
 rSC
@@ -188232,10 +188223,10 @@ vRu
 vRu
 vRu
 vRu
-sYw
-sYw
-sYw
-sYw
+vRu
+vRu
+vRu
+vRu
 vRu
 rSC
 rSC
