@@ -918,11 +918,8 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "aRA" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf{
-	del_on_deaggro = 0;
-	name = "Aruzhan"
-	},
-/turf/open/floor/rogue/blocks,
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "aRU" = (
 /obj/structure/table/wood{
@@ -5280,6 +5277,12 @@
 /obj/item/reagent_containers/glass/cup/steel,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
+"gpW" = (
+/obj/structure/lever{
+	redstone_id = "thronegrille"
+	},
+/turf/open/floor/rogue/carpet/lord/left,
+/area/rogue/indoors/town/manor)
 "gqc" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble,
@@ -9768,9 +9771,8 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "mkk" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf{
-	del_on_deaggro = 0;
-	name = "Beatrix"
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
@@ -9893,10 +9895,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "msE" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/wolf{
-	del_on_deaggro = 0;
-	name = "Rowena"
-	},
+/obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "mtF" = (
@@ -14682,6 +14681,12 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"sPY" = (
+/obj/structure/floordoor{
+	redstone_id = "thronegrille"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/manor)
 "sPZ" = (
 /obj/item/paper/confession,
 /obj/item/paper/confession,
@@ -186182,9 +186187,9 @@ pUz
 iTw
 egU
 jvC
-iTw
-cBf
 aRA
+cBf
+cBf
 iTw
 iTw
 ida
@@ -186986,7 +186991,7 @@ sKU
 iTw
 nZt
 txa
-iTw
+mkk
 iTw
 cBf
 iTw
@@ -187794,7 +187799,7 @@ iTw
 cBf
 iTw
 iTw
-msE
+iTw
 ida
 iTw
 iTw
@@ -188192,8 +188197,8 @@ aEN
 iTw
 tjU
 txa
+msE
 iTw
-mkk
 cBf
 iTw
 iTw
@@ -188594,7 +188599,7 @@ nda
 iTw
 mMO
 txa
-iTw
+msE
 iTw
 iTw
 iTw
@@ -288691,7 +288696,7 @@ hcW
 hcW
 ltM
 sHm
-ohU
+gpW
 ohU
 qsZ
 ohU
@@ -289096,7 +289101,7 @@ sHm
 kQW
 wxB
 eTM
-wxB
+sPY
 sqd
 miX
 wxB
