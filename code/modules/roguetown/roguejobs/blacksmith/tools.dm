@@ -45,8 +45,9 @@
 				to_chat(user, span_warning("You fumble your way into slightly repairing [attacked_item]."))
 			else	
 				user.visible_message(span_info("[user] repairs [attacked_item]!"))
-				if(attacked_item.obj_broken = TRUE)
+				if(attacked_item.obj_broken == TRUE)
 					attacked_item.obj_broken = FALSE
+					attacked_item.cut_overlays()
 			blacksmith_mind.adjust_experience(attacked_item.anvilrepair, exp_gained/2) //We gain as much exp as we fix divided by 2
 			return
 		else
