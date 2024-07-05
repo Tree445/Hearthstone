@@ -4829,6 +4829,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/shelter/mountains)
+"fJD" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/town/basement)
 "fJM" = (
 /obj/machinery/light/rogue/torchholder/c,
 /turf/open/transparent/openspace,
@@ -5277,12 +5281,6 @@
 /obj/item/reagent_containers/glass/cup/steel,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
-"gpW" = (
-/obj/structure/lever{
-	redstone_id = "thronegrille"
-	},
-/turf/open/floor/rogue/carpet/lord/left,
-/area/rogue/indoors/town/manor)
 "gqc" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble,
@@ -7519,6 +7517,12 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/carpet/lord/right,
+/area/rogue/indoors/town/manor)
+"jdJ" = (
+/obj/structure/floordoor{
+	redstone_id = "thronegrille"
+	},
+/turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
 "jdK" = (
 /obj/structure/stairs{
@@ -10403,6 +10407,12 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"ngX" = (
+/obj/structure/lever{
+	redstone_id = "thronegrille"
+	},
+/turf/open/floor/rogue/carpet/lord/left,
+/area/rogue/indoors/town/manor)
 "nhC" = (
 /turf/open/floor/rogue/tile{
 	icon_state = "glyph5"
@@ -14681,12 +14691,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
-"sPY" = (
-/obj/structure/floordoor{
-	redstone_id = "thronegrille"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/indoors/town/manor)
 "sPZ" = (
 /obj/item/paper/confession,
 /obj/item/paper/confession,
@@ -184983,7 +184987,7 @@ vRu
 txa
 iTw
 txa
-iTw
+fJD
 cBf
 iTw
 iTw
@@ -288696,7 +288700,7 @@ hcW
 hcW
 ltM
 sHm
-gpW
+ngX
 ohU
 qsZ
 ohU
@@ -289101,7 +289105,7 @@ sHm
 kQW
 wxB
 eTM
-sPY
+jdJ
 sqd
 miX
 wxB
