@@ -1444,11 +1444,7 @@
 /obj/structure/floordoor/gatehatch/inner{
 	redstone_id = "gatelava"
 	},
-/obj/structure/kybraxor{
-	pixel_x = -32;
-	pixel_y = -32
-	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "bzD" = (
 /turf/open/floor/rogue/tile/masonic{
@@ -3382,10 +3378,10 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
 "dYd" = (
-/obj/structure/floordoor{
-	redstone_id = "thronegrille"
+/obj/structure/floordoor/gatehatch/outer{
+	redstone_id = "gatelava"
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "dYj" = (
 /obj/structure/chair/bench{
@@ -4284,12 +4280,6 @@
 /obj/item/rope/chain,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
-"eZm" = (
-/obj/structure/lever{
-	redstone_id = "thronegrille"
-	},
-/turf/open/floor/rogue/carpet/lord/left,
-/area/rogue/indoors/town/manor)
 "eZy" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/huntingknife/idagger/steel,
@@ -8971,7 +8961,7 @@
 /obj/structure/floordoor/gatehatch/outer{
 	redstone_id = "gatelava"
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "lfz" = (
 /obj/structure/fluff/railing/border{
@@ -16827,7 +16817,7 @@
 /obj/structure/floordoor/gatehatch/inner{
 	redstone_id = "gatelava"
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "vBH" = (
 /obj/item/reagent_containers/food/snacks/crow{
@@ -288710,7 +288700,7 @@ hcW
 hcW
 ltM
 sHm
-eZm
+ohU
 ohU
 qsZ
 ohU
@@ -289115,7 +289105,7 @@ sHm
 kQW
 wxB
 eTM
-dYd
+wxB
 sqd
 miX
 wxB
@@ -289549,8 +289539,8 @@ wbg
 wbg
 xXq
 leV
-vAF
-leV
+byB
+dYd
 xXq
 czO
 czO
