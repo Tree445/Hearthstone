@@ -99,6 +99,7 @@
 			H.change_stat("strength", 2) 
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 3)
+			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 /*
 			if("ROLL THE DICE!")
 				if(prob(49)) // Warrior
