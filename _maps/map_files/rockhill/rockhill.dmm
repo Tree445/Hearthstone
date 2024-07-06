@@ -1582,10 +1582,6 @@
 /obj/effect/decal/cleanable/ash/large,
 /turf/closed/mineral/rogue,
 /area/rogue/under/town/sewer)
-"bKi" = (
-/obj/effect/landmark/map_load_mark/sewers_topleft,
-/turf/closed/wall/mineral/rogue/stonebrick,
-/area/rogue/under/town/sewer)
 "bKp" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -175571,7 +175567,7 @@ lrs
 lrs
 lrs
 lrs
-bKi
+rRb
 oQo
 rtV
 rtV
