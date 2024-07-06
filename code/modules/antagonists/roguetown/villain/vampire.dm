@@ -161,7 +161,7 @@
 			if(disguised)
 				to_chat(H, span_warning("My disguise fails!"))
 				H.vampire_undisguise(src)
-		vitae -= 1
+		vitae -= 0.25
 
 /mob/living/carbon/human/proc/disguise_button()
 	set name = "Disguise"
