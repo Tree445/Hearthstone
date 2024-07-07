@@ -1,17 +1,16 @@
 /datum/job/roguetown/goblinguard
-	title = "Goblin Guard"
+	title = "Tribal Guard"
 	flag = GOBLINGUARD
 	department_flag = GOBLIN
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
-	allowed_sexes = list(MALE)
-	allowed_races = list()
-	allowed_patrons = list(/datum/patron/inhumen/graggar)
-	tutorial = "Goblin Guards rensposible for their kingdom and his majesty King."
+	total_positions = 5
+	spawn_positions = 5
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = RACES_ALL_KINDS
+	tutorial = "Tribal Guards rensposible for their kingdom and his majesty King protection."
 	display_order = JDO_GOBLINGUARD
 	outfit = /datum/outfit/job/roguetown/goblinguard
-	min_pq = 1
+	min_pq = 0
 	max_pq = null
 
 /datum/outfit/job/roguetown/goblinguard/pre_equip(mob/living/carbon/human/H)

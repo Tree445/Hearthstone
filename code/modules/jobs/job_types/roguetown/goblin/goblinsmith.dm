@@ -1,14 +1,13 @@
 /datum/job/roguetown/goblinsmith
-	title = "Goblin Smith"
+	title = "Tribal Smith"
 	flag = GOBLINSMITH
 	department_flag = GOBLIN
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
-	allowed_sexes = list(MALE)
-	allowed_races = list()
-	allowed_patrons = list(/datum/patron/inhumen/graggar)
-	tutorial = "Goblin rensposible for fresh iron and steel"
+	total_positions = 3
+	spawn_positions = 3
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = RACES_ALL_KINDS
+	tutorial = "Tribal Smith rensposible for fresh iron and steel"
 	display_order = JDO_GOBLINSMITH
 	outfit = /datum/outfit/job/roguetown/goblinsmith
 	min_pq = 0
