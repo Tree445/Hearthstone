@@ -6156,6 +6156,7 @@
 "hme" = (
 /obj/item/roguecoin/silver/pile,
 /obj/item/reagent_containers/powder/ozium,
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/bath)
 "hmk" = (
@@ -6172,10 +6173,6 @@
 	dir = 4
 	},
 /area/rogue/indoors)
-"hmK" = (
-/obj/structure/roguemachine/drugmachine,
-/turf/closed/wall/mineral/rogue/stonebrick,
-/area/rogue/indoors/town/shop)
 "hmY" = (
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/dirt/road,
@@ -7733,9 +7730,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "jlf" = (
-/obj/structure/rack/rogue/shelf,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/structure/rack/rogue/shelf/big,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
 "jlM" = (
@@ -11551,14 +11548,9 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/goblinfort)
 "oqV" = (
-/obj/structure/mineral_door/wood{
-	icon_state = "wcv";
-	locked = 1;
-	lockid = "manor";
-	name = "Storageroom"
-	},
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town/manor)
+/obj/structure/roguemachine/drugmachine,
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/indoors/town/bath)
 "orS" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
@@ -11731,7 +11723,8 @@
 /area/rogue/indoors/town/manor)
 "oAG" = (
 /obj/structure/mineral_door/wood/deadbolt{
-	dir = 4
+	dir = 4;
+	name = "Guest Room"
 	},
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor)
@@ -13390,10 +13383,9 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "qJD" = (
-/obj/structure/mineral_door/wood/donjon{
-	dir = 4;
+/obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nightmaiden"
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/bath)
@@ -14852,7 +14844,7 @@
 	icon_state = "wcv";
 	locked = 1;
 	lockid = "manor";
-	name = "Service Halls"
+	name = "Baths"
 	},
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
@@ -17526,6 +17518,7 @@
 /area/rogue/under/town/basement)
 "wbt" = (
 /obj/item/reagent_containers/glass/cup/golden,
+/obj/item/reagent_containers/powder,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/bath)
 "wbG" = (
@@ -18226,6 +18219,8 @@
 /area/rogue/outdoors/town)
 "wZt" = (
 /obj/item/roguecoin/gold/pile,
+/obj/item/reagent_containers/powder/moondust,
+/obj/item/reagent_containers/powder/moondust,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/bath)
 "wZJ" = (
@@ -283477,7 +283472,7 @@ mMC
 hjD
 hjD
 lTE
-fsU
+oqV
 oXU
 oXU
 oXU
@@ -291147,8 +291142,8 @@ bQf
 hUt
 hUt
 jjc
-hmK
-wVI
+toW
+rJC
 wbg
 wbg
 kDH
@@ -291550,7 +291545,7 @@ hUt
 hUt
 hUt
 toW
-rJC
+wVI
 wbg
 wbg
 kDH
@@ -498110,7 +498105,7 @@ naI
 naI
 wtF
 naI
-oqV
+lae
 naI
 naI
 tWQ
