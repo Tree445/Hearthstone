@@ -46,7 +46,7 @@
 		H.change_stat("intelligence", -1)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
 		if(H.dna?.species)
 			if(iself(H) || ishalfelf(H))
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
