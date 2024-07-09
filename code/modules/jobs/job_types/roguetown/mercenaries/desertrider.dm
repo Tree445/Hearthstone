@@ -9,8 +9,8 @@
 	display_order = JDO_DESERT_RIDER
 	selection_color = JCOLOR_MERCENARY
 	faction = "Station"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 3
+	spawn_positions = 3
 	give_bank_account = 3
 	min_pq = 0 //good fragger role
 	max_pq = null
