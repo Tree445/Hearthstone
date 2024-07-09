@@ -152,6 +152,9 @@
 /datum/sex_controller/proc/ejaculate()
 	log_combat(user, user, "Ejaculated")
 	user.visible_message(span_love("[user] makes a mess!"))
+	//small heal burst, this should not happen often due the delay on how often one can cum.
+	user.adjustBruteLoss(-10)
+	user.adjustFireLoss(-5)
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
