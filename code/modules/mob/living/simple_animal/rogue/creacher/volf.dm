@@ -148,5 +148,5 @@
 	if(. && isliving(target))
 		var/mob/living/L = target
 		if(L.reagents)
-			L.reagents.add_reagent(/datum/reagent/toxin/venom, 1)
-			L.reagents.add_reagent(/datum/reagent/toxin/itching_powder, 4)
+			L.reagents.add_reagent(/datum/reagent/toxin/venom, 2)
+			L.reagents.add_reagent(/datum/reagent/toxin/itching_powder, 6)
