@@ -302,7 +302,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/goblin/npc/sea = 20)
 	converted_type = /area/rogue/outdoors/caves
 
-/area/rogue/under/cavewet/bogcaves
+/area/rogue/under/cavewet/bogcaves/chapel
 	first_time_text = "FLOODED CHAPEL"
 	spookysounds = SPOOKY_MYSTICAL
 	spookynight = SPOOKY_MYSTICAL
