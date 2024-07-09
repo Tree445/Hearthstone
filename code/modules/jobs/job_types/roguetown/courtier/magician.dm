@@ -24,9 +24,6 @@
 
 	allow_custom_genitals = TRUE
 
-/datum/outfit/job/roguetown/magician
-	allowed_patrons = list(/datum/patron/divine/noc)
-
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/clothing/neck/roguetown/talkstone
