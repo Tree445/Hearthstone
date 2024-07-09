@@ -31,6 +31,6 @@
 			adjust_hydration(-(0.025))
 			if(m_intent == MOVE_INTENT_RUN)
 				adjust_nutrition(-(0.05))
-				adjust_hydration(-(0.05)
+				adjust_hydration(-(0.05))
 		if(m_intent == MOVE_INTENT_RUN) //sprint fatigue add
 			rogfat_add(2)
