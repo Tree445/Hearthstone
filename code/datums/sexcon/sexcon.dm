@@ -206,19 +206,6 @@
 
 /datum/sex_controller/proc/adjust_arousal(amount)
 	set_arousal(arousal + amount)
-	//go go gadget sex healing
-	if(user.buckled?.sleepy)
-		to_chat(user, span_notice("1"))
-		if(user.bruteloss > 0)
-			to_chat(user, span_notice("2"))
-			user.adjustBruteLoss(-0.1)
-		if(user.fireloss > 0)
-			user.adjustFireLoss(-0.1)
-		if(user.oxyloss > 0)
-			user.adjustOxyLoss(-0.1)
-	else
-		to_chat(user, span_notice("3"))
-
 
 /datum/sex_controller/proc/perform_deepthroat_oxyloss(mob/living/carbon/human/action_target, oxyloss_amt)
 	var/oxyloss_multiplier = 0
@@ -248,6 +235,11 @@
 		arousal_amt = 0
 		pain_amt = 0
 
+	//go go gadget sex healing.. magic?
+	if(user.buckled?.sleepy)
+		//very small healing, should heal 1 points brute every 4 times it trigger, 1 fire every 10 times.
+		user.adjustBruteLoss(-0.25)
+		user.adjustFireLoss(-0.1)
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
