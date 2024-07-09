@@ -236,7 +236,6 @@
 		pain_amt = 0
 
 	adjust_arousal(arousal_amt)
-	
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	try_do_pain_effect(pain_amt, giving)
