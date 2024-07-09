@@ -236,10 +236,17 @@
 		pain_amt = 0
 
 	adjust_arousal(arousal_amt)
-
+	
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	try_do_pain_effect(pain_amt, giving)
+	//go go gadget sex healing
+	if(user.bruteloss > 0)
+		user.adjustBruteLoss(-0.1)
+	if(user.fireloss > 0)
+		user.adjustFireLoss(-0.1)
+	if(user.oxyloss > 0)
+		user.adjustOxyLoss(-0.1)
 
 /datum/sex_controller/proc/damage_from_pain(pain_amt)
 	if(pain_amt < PAIN_MINIMUM_FOR_DAMAGE)
