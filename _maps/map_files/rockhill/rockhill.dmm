@@ -823,6 +823,10 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"aJB" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/water/swamp,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "aKd" = (
 /obj/structure/winch{
 	dir = 4;
@@ -2171,6 +2175,7 @@
 "cxb" = (
 /obj/structure/fluff/statue/secret{
 	color = "#646464";
+	layer = 3;
 	pixel_y = 17
 	},
 /turf/open/floor/rogue/cobble/mossy,
@@ -3118,6 +3123,10 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"dvl" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "dvm" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -4590,10 +4599,6 @@
 	},
 /area/rogue/outdoors/beach)
 "fgy" = (
-/obj/structure/mineral_door/wood/donjon{
-	dir = 8;
-	locked = 1
-	},
 /obj/structure/spacevine,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves/chapel)
@@ -6292,6 +6297,10 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
+"hlX" = (
+/obj/structure/spacevine,
+/turf/open/floor/rogue/church,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "hme" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -7178,6 +7187,10 @@
 /obj/item/reagent_containers/powder/flour/salt,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
+"iqK" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "iqY" = (
 /obj/structure/closet/crate/chest{
 	locked = 1;
@@ -7615,6 +7628,10 @@
 "iSb" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves)
+"iSf" = (
+/obj/structure/glowshroom,
+/turf/open/water/swamp/deep,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "iTv" = (
 /obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/cobble/mossy,
@@ -9275,6 +9292,12 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
+"lfv" = (
+/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/under/cavewet/bogcaves/chapel)
 "lfz" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -13891,6 +13914,7 @@
 "rfO" = (
 /obj/structure/fluff/statue/secret{
 	color = "#646464";
+	layer = 3;
 	pixel_y = 17
 	},
 /turf/open/floor/rogue/church,
@@ -14993,6 +15017,10 @@
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
+"sCg" = (
+/obj/item/natural/rock,
+/turf/open/water/swamp,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "sFe" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/huntingknife/idagger/steel,
@@ -16739,6 +16767,12 @@
 "uJF" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/town)
+"uKh" = (
+/obj/structure/spacevine{
+	opacity = 1
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "uKB" = (
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church)
@@ -17518,6 +17552,10 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
+"vGX" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/water/swamp/deep,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "vHd" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/cup/wooden,
@@ -57566,7 +57604,7 @@ gqV
 ibT
 ibT
 jUy
-ukU
+lfv
 gTv
 ukU
 whb
@@ -59174,10 +59212,10 @@ svV
 qvc
 qvc
 ubZ
-eoA
+iSf
 eoA
 ubZ
-ubZ
+tEZ
 ubZ
 gTv
 whb
@@ -59574,11 +59612,11 @@ ybe
 ibT
 svV
 tuL
+iSf
 eoA
 eoA
 eoA
-eoA
-ubZ
+tEZ
 ubZ
 ubZ
 gTv
@@ -59970,7 +60008,7 @@ whb
 whb
 whb
 whb
-whb
+fyc
 dYk
 ybe
 ibT
@@ -59980,7 +60018,7 @@ eoA
 eoA
 ubZ
 eoA
-eoA
+ipQ
 eoA
 eoA
 ubZ
@@ -60372,14 +60410,14 @@ whb
 whb
 whb
 whb
-whb
+fyc
 dYk
 ibT
 ibT
 bhm
 gTv
 ubZ
-cUc
+eoA
 eoA
 eoA
 gTv
@@ -60774,7 +60812,7 @@ whb
 whb
 whb
 whb
-whb
+fyc
 whb
 whb
 whb
@@ -60784,7 +60822,7 @@ ubZ
 eoA
 eoA
 ubZ
-duu
+iqK
 duu
 ubZ
 ubZ
@@ -61176,11 +61214,11 @@ whb
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
+fyc
+fyc
+fyc
+fyc
+fyc
 gTv
 tZS
 eoA
@@ -61992,7 +62030,7 @@ eoA
 eoA
 eoA
 eoA
-ipQ
+eoA
 ubZ
 ubZ
 gTv
@@ -62392,13 +62430,13 @@ nik
 duu
 ubZ
 eoA
-ubZ
+tZS
 qvc
 ubZ
 duu
+tEZ
 ubZ
-ubZ
-ubZ
+sCg
 vCg
 duu
 duu
@@ -62411,7 +62449,7 @@ duu
 duu
 duu
 duu
-duu
+dvl
 duu
 duu
 duu
@@ -62798,14 +62836,14 @@ ubZ
 qvc
 duu
 ubZ
-ubZ
-ubZ
+aJB
+tEZ
 ubZ
 cgP
 wIL
 duu
 duu
-duu
+dvl
 duu
 duu
 duu
@@ -62815,7 +62853,7 @@ duu
 duu
 duu
 duu
-duu
+dvl
 duu
 duu
 duu
@@ -63199,7 +63237,7 @@ eoA
 gTv
 qvc
 duu
-ubZ
+tEZ
 vCg
 vCg
 vCg
@@ -64808,7 +64846,7 @@ whb
 whb
 whb
 duu
-whb
+fyc
 whb
 whb
 whb
@@ -65203,14 +65241,14 @@ ubZ
 ubZ
 ubZ
 ubZ
-ubZ
+tEZ
 eoA
 eoA
 whb
 whb
 whb
 whb
-whb
+fyc
 whb
 whb
 whb
@@ -65603,16 +65641,16 @@ hGf
 gTv
 eoA
 eoA
+iSf
 eoA
 eoA
 eoA
-eoA
 whb
 whb
 whb
 whb
-whb
-whb
+fyc
+fyc
 whb
 whb
 whb
@@ -66003,11 +66041,11 @@ whb
 whb
 whb
 eoA
+iSf
 eoA
 eoA
 eoA
-eoA
-eoA
+iSf
 whR
 whb
 whb
@@ -66803,11 +66841,11 @@ whb
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
+fyc
+fyc
+fyc
+fyc
+fyc
 whb
 wPe
 wPe
@@ -67205,11 +67243,11 @@ whb
 whb
 whb
 whb
+fyc
 whb
-fyc
-fyc
-fyc
-uXZ
+whb
+whb
+gTv
 otZ
 wPe
 wPe
@@ -67607,8 +67645,8 @@ whb
 whb
 whb
 whb
-whb
 fyc
+whb
 otZ
 otZ
 otZ
@@ -68009,10 +68047,10 @@ whb
 whb
 whb
 whb
-whb
 fyc
-uXZ
-uXZ
+whb
+gTv
+gTv
 gTv
 otZ
 whb
@@ -68411,14 +68449,14 @@ whb
 whb
 whb
 whb
+fyc
 whb
 whb
 whb
-fyc
-fyc
-fyc
-fyc
-fyc
+whb
+whb
+whb
+whb
 fyc
 whb
 whb
@@ -68813,15 +68851,15 @@ whb
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
 whb
 whb
 whb
@@ -154440,7 +154478,7 @@ jdw
 ubA
 ubA
 ubA
-rfB
+uxZ
 rfB
 rfB
 ubA
@@ -164944,14 +164982,14 @@ whb
 hkt
 qsv
 skn
-skn
+uKh
 gdF
 gdF
 gdF
 gTv
-skn
+uKh
 gdF
-gdF
+mKd
 nbx
 iSb
 iSb
@@ -165350,8 +165388,8 @@ gdF
 pFS
 skn
 gdF
-gdF
-skn
+mKd
+uKh
 skn
 gdF
 vCg
@@ -166155,7 +166193,7 @@ uLS
 gdF
 skn
 skn
-skn
+uKh
 eoA
 eoA
 vCg
@@ -166553,8 +166591,8 @@ whb
 whb
 vCg
 gdF
-gdF
-skn
+hlX
+fgy
 eoA
 cUc
 eoA
@@ -166957,8 +166995,8 @@ vCg
 vCg
 ylQ
 eoA
-eoA
-eoA
+igS
+igS
 eoA
 eoA
 gTv
@@ -167356,12 +167394,12 @@ whb
 whb
 whb
 vCg
-eoA
+igS
 gdF
-eoA
+igS
 igS
 eoA
-eoA
+igS
 eoA
 vCg
 vCg
@@ -167759,7 +167797,7 @@ whb
 whb
 uTH
 ubZ
-ubZ
+dVN
 gdF
 eoA
 eoA
@@ -168160,10 +168198,10 @@ gTv
 vCg
 vCg
 uTH
-ubZ
+tZS
 mKd
 eoA
-eoA
+vGX
 dVN
 ubZ
 vCg
@@ -168964,7 +169002,7 @@ wnd
 duu
 duu
 vCg
-eoA
+cUc
 eoA
 lTj
 dTM
@@ -169370,7 +169408,7 @@ vCg
 vCg
 vCg
 jXR
-dTM
+gTv
 gTv
 vCg
 whb
