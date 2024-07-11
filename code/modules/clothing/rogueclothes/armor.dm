@@ -371,14 +371,6 @@
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 1
 
-/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/dropped(mob/living/carbon/human/user)
-	..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		var/list/things = STR.contents()
-		for(var/obj/item/I in things)
-			STR.remove_from_storage(I, get_turf(src))
-
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
 	name = "silk jacket"
 	desc = "A soft and comfortable jacket."

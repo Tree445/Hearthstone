@@ -21,6 +21,7 @@
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
 	var/last_pain = 0
+	var/ejacmessaged = 0
 
 /datum/sex_controller/New(mob/living/carbon/human/owner)
 	user = owner
@@ -142,9 +143,13 @@
 	after_ejaculation()
 
 /datum/sex_controller/proc/cum_into(oral = FALSE)
-	log_combat(user, target, "Came inside the target")
+	log_combat(user, target, "Came inside [target]")
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
+		if(ejacmessaged != 1)
+			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
+			ejacmessaged = 1
+		target.adjust_nutrition(50)
 	else
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
@@ -153,8 +158,8 @@
 	log_combat(user, user, "Ejaculated")
 	user.visible_message(span_love("[user] makes a mess!"))
 	//small heal burst, this should not happen often due the delay on how often one can cum.
-	user.adjustBruteLoss(-10)
-	user.adjustFireLoss(-5)
+	//user.adjustBruteLoss(-10)
+	//user.adjustFireLoss(-5)
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
@@ -162,6 +167,11 @@
 /datum/sex_controller/proc/after_ejaculation()
 	set_arousal(55)
 	set_spent(MAX_SPENT)
+	//give some nutrition
+	if(ejacmessaged != 1)
+		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
+		ejacmessaged = 1
+	user.adjust_nutrition(25)
 	user.emote("sexmoanhvy", forced = TRUE)
 	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
 	last_ejaculation_time = world.time
@@ -238,11 +248,19 @@
 		arousal_amt = 0
 		pain_amt = 0
 
+	//disabled as people keep BITCHING about it.
 	//go go gadget sex healing.. magic?
-	if(user.buckled?.sleepy)
+	//if(user.buckled?.sleepy)
 		//very small healing, should heal 1 points brute every 4 times it trigger, 1 fire every 10 times.
-		user.adjustBruteLoss(-0.25)
-		user.adjustFireLoss(-0.1)
+		//user.adjustBruteLoss(-0.25)
+		//user.adjustFireLoss(-0.1)
+
+	//grant devotion through sex because who needs praying.
+	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
+	//if(user.patron)
+	//	if(!user.mind.get_skill_level(/datum/skill/magic/holy))
+	//		if(user.devotion?.devotion < user.devotion?.max_devotion)
+	//			user.devotion?.update_devotion(rand(1,2))
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)

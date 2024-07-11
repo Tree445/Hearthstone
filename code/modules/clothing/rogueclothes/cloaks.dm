@@ -549,13 +549,6 @@
 		STR.max_w_class = WEIGHT_CLASS_BULKY
 		STR.max_items = 1
 
-/obj/item/clothing/cloak/lordcloak/dropped(mob/living/carbon/human/user)
-	..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		var/list/things = STR.contents()
-		for(var/obj/item/I in things)
-			STR.remove_from_storage(I, get_turf(src))
 
 /obj/item/clothing/cloak/apron
 	name = "apron"
@@ -651,16 +644,6 @@
 		STR.max_combined_w_class = 3
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 1
-
-/obj/item/clothing/cloak/raincloak/dropped(mob/living/carbon/human/user)
-	..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		var/list/things = STR.contents()
-		for(var/obj/item/I in things)
-			STR.remove_from_storage(I, get_turf(src))
-
-
 
 /obj/item/clothing/cloak/raincloak/red
 	color = CLOTHING_RED

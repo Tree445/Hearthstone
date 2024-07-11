@@ -71,6 +71,21 @@
 
 	. = ..()
 
+/obj/item/rogueweapon/hammer/stone
+	name = "stone hammer"
+	icon_state = "stonehammer"
+	force = 16
+	var/remaininguses = 30
+	smeltresult = null
+
+/obj/item/rogueweapon/hammer/stone/attack_obj(obj/attacked_object, mob/living/user)
+	. = ..()
+	remaininguses -= 1
+	if(remaininguses <= 0)
+		visible_message(span_alert("[src] shatters into pieces!"))
+		playsound(src, destroy_sound, 100, TRUE)
+		qdel(src)
+
 /obj/item/rogueweapon/hammer/claw
 	icon_state = "clawh"
 
@@ -213,3 +228,21 @@
 "eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/tongs/stone
+	name = "stone tongs"
+	icon_state = "stonetongs"
+	force = 5
+	var/remaininguses = 30
+	smeltresult = null
+
+/obj/item/rogueweapon/tongs/stone/fire_act(added, maxstacks)
+	. = ..()
+	remaininguses -= 1
+	if(remaininguses <= 0)
+		visible_message(span_alert("[src] falls apart!"))
+		if(hingot)
+			hingot.forceMove(get_turf(src))
+			hingot = null
+			playsound(src, destroy_sound, 100, TRUE)
+			qdel(src)
