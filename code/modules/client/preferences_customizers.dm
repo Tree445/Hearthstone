@@ -46,7 +46,6 @@
 	var/list/customizers = pref_species.customizers
 	if(!customizers)
 		return
-	dat += "Some options, such as genitalia, may be altered due to role at round start. Your preferences can be obtained in-game through procedures such as surgery."
 	dat += "<table width='100%'>"
 	dat += "<td valign='top' width='33%'>"
 	var/iterated_customizers = 0
@@ -150,6 +149,9 @@
 		if("toggle_missing")
 			if(customizer.allows_disabling)
 				entry.disabled = !entry.disabled
+			if(ishuman(user)) // Vrell - idk why this is needed here but it fixes shit.
+				var/mob/living/carbon/human/humanized = user
+				humanized.update_body_parts(TRUE)
 		if("change_choice")
 			var/list/choice_list = list()
 			for(var/choice_type in customizer.customizer_choices)
