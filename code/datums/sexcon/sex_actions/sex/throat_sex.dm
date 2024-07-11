@@ -32,12 +32,15 @@
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
-		user.visible_message(span_love("[target] cums into [target]'s throat!"))
+		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into()
 		user.virginity = FALSE
 
-	user.sexcon.perform_sex_action(target, 0, 7, FALSE)
-	user.sexcon.perform_deepthroat_oxyloss(target, 2.6)
+	if(user.sexcon.considered_limp())
+		user.sexcon.perform_sex_action(target, 0, 2, FALSE)
+	else
+		user.sexcon.perform_sex_action(target, 0, 7, FALSE)
+		user.sexcon.perform_deepthroat_oxyloss(target, 2.6)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/throat_sex/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
