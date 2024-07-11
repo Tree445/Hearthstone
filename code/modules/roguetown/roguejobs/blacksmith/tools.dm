@@ -236,6 +236,16 @@
 	var/remaininguses = 30
 	smeltresult = null
 
+/obj/item/rogueweapon/tongs/stone/update_icon()
+	. = ..()
+	if(!hingot)
+		icon_state = "stonetongs"
+	else
+		if(hott)
+			icon_state = "stonetongsi1"
+		else
+			icon_state = "stonetongsi0"
+
 /obj/item/rogueweapon/tongs/stone/fire_act(added, maxstacks)
 	. = ..()
 	remaininguses -= 1
