@@ -175,7 +175,6 @@
 	after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()
-	set_spent(MAX_SPENT)
 	//give some nutrition
 	if(ejacmessaged != 1)
 		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
