@@ -38,14 +38,13 @@
 	heldz_items = 3
 	sewrepair = TRUE
 
-//no more dropping shit inside, deleted other instances at other places but kept this incase.
-///obj/item/storage/belt/rogue/leather/dropped(mob/living/carbon/human/user)
-//	..()
-//	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-//	if(STR)
-//		var/list/things = STR.contents()
-//		for(var/obj/item/I in things)
-//			STR.remove_from_storage(I, get_turf(src))
+/obj/item/storage/belt/rogue/leather/dropped(mob/living/carbon/human/user)
+	..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		var/list/things = STR.contents()
+		for(var/obj/item/I in things)
+			STR.remove_from_storage(I, get_turf(src))
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"

@@ -117,3 +117,11 @@
 		CP.rmb_show(user)
 		return TRUE
 	..()
+
+/obj/item/clothing/cloak/cape/crusader/dropped(mob/living/carbon/human/user)
+	..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		var/list/things = STR.contents()
+		for(var/obj/item/I in things)
+			STR.remove_from_storage(I, get_turf(src))

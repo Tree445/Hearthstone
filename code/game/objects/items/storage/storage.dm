@@ -31,6 +31,8 @@
 
 /obj/item/storage/doStrip(mob/who)
 	if(HAS_TRAIT(src, TRAIT_NODROP) && rummage_if_nodrop)
+		var/datum/component/storage/CP = GetComponent(/datum/component/storage)
+		CP.do_quick_empty()
 		return TRUE
 	return ..()
 
