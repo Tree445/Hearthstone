@@ -2175,6 +2175,10 @@
 	},
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/manor)
+"ctA" = (
+/obj/item/needle/thorn,
+/turf/open/floor/rogue/churchrough,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "ctS" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/woodstaff,
@@ -7665,6 +7669,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"iLW" = (
+/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "iMf" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/old,
@@ -10898,6 +10906,12 @@
 /obj/item/rogueweapon/mace/wsword,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/town)
+"mWr" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
+	},
+/turf/open/floor/rogue/blocks/newstone/alt,
+/area/rogue/under/cavewet/bogcaves/sunkencity)
 "mWx" = (
 /obj/structure/roguemachine/scomm/r,
 /turf/open/floor/rogue/tile{
@@ -12476,6 +12490,10 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
+"oUY" = (
+/obj/item/natural/cloth,
+/turf/open/floor/rogue/churchrough,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "oVs" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 8
@@ -13807,7 +13825,7 @@
 	dir = 5;
 	icon_state = "largetable"
 	},
-/obj/item/reagent_containers/glass/cup/steel,
+/obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
 "qBu" = (
@@ -14274,6 +14292,12 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
+"rjv" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 8
+	},
+/turf/open/floor/rogue/cobble/mossy,
+/area/rogue/under/cavewet/bogcaves/sunkencity)
 "rjZ" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/blocks,
@@ -16523,6 +16547,9 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
 	},
+/obj/item/storage/belt/rogue/pouch/coins/poor,
+/obj/item/storage/belt/rogue/pouch/coins/poor,
+/obj/item/storage/belt/rogue/pouch/coins/rich,
 /turf/open/floor/rogue/blocks/newstone,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
 "tZv" = (
@@ -17111,6 +17138,10 @@
 "uJF" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/town)
+"uKv" = (
+/obj/item/needle/thorn,
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/under/cavewet/bogcaves/chapel)
 "uKB" = (
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church)
@@ -17266,7 +17297,7 @@
 	dir = 9;
 	icon_state = "largetable"
 	},
-/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
 "uRp" = (
@@ -17663,6 +17694,7 @@
 	dir = 6;
 	icon_state = "largetable"
 	},
+/obj/item/storage/belt/rogue/pouch/coins/rich,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
 "vqB" = (
@@ -56809,7 +56841,7 @@ whb
 whb
 whb
 bhm
-dlJ
+ibT
 ibT
 dYk
 dYk
@@ -57211,8 +57243,8 @@ whb
 whb
 whb
 dlJ
-dlJ
 ibT
+rjv
 ibT
 ibT
 uoS
@@ -58016,7 +58048,7 @@ cUc
 yaj
 yaj
 sid
-yaj
+mWr
 yaj
 yaj
 yaj
@@ -59641,10 +59673,10 @@ gGV
 svV
 qvc
 qvc
-lFV
+ctA
 jXK
-lFV
-lFV
+oUY
+oUY
 lFV
 ubZ
 gTv
@@ -60046,7 +60078,7 @@ skn
 skn
 skn
 lFV
-duu
+uKv
 duu
 ubZ
 gTv
@@ -60447,9 +60479,9 @@ gTv
 skn
 skn
 skn
+ctA
 lFV
-lFV
-duu
+iLW
 eoA
 ubZ
 whb
@@ -166218,7 +166250,7 @@ whb
 vCg
 rdq
 gdF
-pFS
+gdF
 skn
 gTv
 skn
