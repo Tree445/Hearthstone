@@ -11503,7 +11503,7 @@
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/manor)
 "oqv" = (
-/obj/item/reagent_containers/glass/pot,
+/obj/item/reagent_containers/glass/pot/stone,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/tavern)
 "oqO" = (
@@ -13704,7 +13704,7 @@
 /area/rogue/indoors/town/shop)
 "rmA" = (
 /obj/machinery/light/rogue/hearth,
-/obj/item/reagent_containers/glass/pot,
+/obj/item/reagent_containers/glass/pot/stone,
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/manor)
 "rmD" = (
@@ -14475,7 +14475,7 @@
 /area/rogue/outdoors/rtfield)
 "snI" = (
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/item/reagent_containers/glass/pot,
+/obj/item/reagent_containers/glass/pot/stone,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "snN" = (
