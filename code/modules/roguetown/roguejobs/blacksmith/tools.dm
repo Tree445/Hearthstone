@@ -75,8 +75,16 @@
 	name = "stone hammer"
 	icon_state = "stonehammer"
 	force = 16
+	var/remaininguses = 30
 	smeltresult = null
-	max_integrity = 15
+
+/obj/item/rogueweapon/hammer/stone/attack_obj(obj/attacked_object, mob/living/user)
+	. = ..()
+	remaininguses -= 1
+	if(remaininguses <= 0)
+		visible_message(span_alert("[src] shatters into pieces!"))
+		playsound(src, destroy_sound, 100, TRUE)
+		qdel(src)
 
 /obj/item/rogueweapon/hammer/claw
 	icon_state = "clawh"
@@ -225,8 +233,8 @@
 	name = "stone tongs"
 	icon_state = "stonetongs"
 	force = 5
+	var/remaininguses = 30
 	smeltresult = null
-	max_integrity = 15
 
 /obj/item/rogueweapon/tongs/stone/update_icon()
 	. = ..()
@@ -237,3 +245,14 @@
 			icon_state = "stonetongsi1"
 		else
 			icon_state = "stonetongsi0"
+
+/obj/item/rogueweapon/tongs/stone/fire_act(added, maxstacks)
+	. = ..()
+	remaininguses -= 1
+	if(remaininguses <= 0)
+		visible_message(span_alert("[src] falls apart!"))
+		if(hingot)
+			hingot.forceMove(get_turf(src))
+			hingot = null
+			playsound(src, destroy_sound, 100, TRUE)
+			qdel(src)
