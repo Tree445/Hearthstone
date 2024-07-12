@@ -194,12 +194,12 @@
 		if(!user.mob_timers["cumtri"])
 			user.mob_timers["cumtri"] = world.time
 			user.adjust_triumphs(1)
-			to_chat(user, span_love("Our loving is a true TRIUMPH!"))
+			to_chat(target, span_love("This felt TRIUMPHantly good!!!"))
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
 		if(!target.mob_timers["cumtri"])
 			target.mob_timers["cumtri"] = world.time
 			target.adjust_triumphs(1)
-			to_chat(target, span_love("Our loving is a true TRIUMPH!"))
+			to_chat(target, span_love("This felt TRIUMPHantly good!!!"))
 
 /datum/sex_controller/proc/just_ejaculated()
 	return (last_ejaculation_time + 2 SECONDS >= world.time)
@@ -251,6 +251,11 @@
 	action_target.adjustOxyLoss(oxyloss_amt)
 
 /datum/sex_controller/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, pain_amt, giving)
+	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+		arousal_amt *=2
+		if(rand(5)) //5 percent chance each action to emit the message so they know who the fuckin' with.
+			var/lovermessage = pick("This feels so good!","I am in heaven!","This is too good to be possible!","By the ten!","I can't stop, too good!")
+			to_chat(action_target, span_love(lovermessage))
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
@@ -275,8 +280,6 @@
 	//	if(!user.mind.get_skill_level(/datum/skill/magic/holy))
 	//		if(user.devotion?.devotion < user.devotion?.max_devotion)
 	//			user.devotion?.update_devotion(rand(1,2))
-	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
-		arousal_amt *= 2
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
