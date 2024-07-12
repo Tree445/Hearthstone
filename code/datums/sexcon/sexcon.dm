@@ -170,6 +170,8 @@
 	//small heal burst, this should not happen often due the delay on how often one can cum.
 	//user.adjustBruteLoss(-10)
 	//user.adjustFireLoss(-5)
+	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		user.sate_addiction()
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
