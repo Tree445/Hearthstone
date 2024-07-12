@@ -8,6 +8,8 @@
 	traits_applied = list(TRAIT_NUDIST)
 	category_tags = list(CTAG_PILGRIM)
 
+/datum/outfit/job/roguetown/adventurer/nudist
+	allowed_patrons = list(/datum/patron/divine/dendor)
 
 /datum/outfit/job/roguetown/adventurer/nudist/pre_equip(mob/living/carbon/human/H)
 	..()
