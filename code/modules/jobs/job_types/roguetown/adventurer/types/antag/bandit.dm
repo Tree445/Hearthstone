@@ -11,6 +11,9 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/bandit
 	category_tags = list(CTAG_ANTAG, CTAG_BANDIT)
 
+/datum/outfit/job/roguetown/adventurer/bandit
+	allowed_patrons = list(/datum/patron/inhumen/matthios)
+
 /datum/outfit/job/roguetown/adventurer/bandit/pre_equip(mob/living/carbon/human/H)
 	..()
 
