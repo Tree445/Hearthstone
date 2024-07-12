@@ -2,9 +2,11 @@
 	name = "Amazon"
 	tutorial = "Amazons are warrior-women from the mysterious isle of Issa."
 	allowed_sexes = list(FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_TOLERATED_UP
 	outfit = /datum/outfit/job/roguetown/adventurer/amazon
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	pickprob = 13
+	maximum_possible_slots = 2
 	category_tags = list(CTAG_ADVENTURER)
 
 	traits_applied = list(TRAIT_CRITICAL_RESISTANCE, TRAIT_NOPAINSTUN, TRAIT_STEELHEARTED)
@@ -29,7 +31,11 @@
 	beltl = /obj/item/rogueweapon/huntingknife
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	backl = /obj/item/storage/backpack/rogue/satchel
-	if(prob(100))
+	if(prob(23))
+		armor = /obj/item/clothing/suit/roguetown/armor/leather
+	if(prob(23))
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
+	if(prob(50))
 		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))

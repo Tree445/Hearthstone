@@ -860,14 +860,6 @@
 	reset_offsets("wall_press")
 	update_wallpress_slowdown()
 
-
-/mob/living/proc/update_pixelshift(turf/T, atom/newloc, direct)
-	if(!pixelshifted)
-		reset_offsets("pixel_shift")
-		return FALSE
-	pixelshifted = FALSE
-	reset_offsets("pixel_shift")
-
 /mob/living/Move(atom/newloc, direct, glide_size_override)
 
 	var/old_direction = dir
@@ -875,9 +867,6 @@
 
 	if(wallpressed)
 		update_wallpress(T, newloc, direct)
-
-	if(pixelshifted)
-		update_pixelshift(T, newloc, direct)
 
 	if(lying)
 		if(direct & EAST)
@@ -1993,4 +1982,3 @@
 	reset_perspective()
 	update_cone_show()
 //	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)
-

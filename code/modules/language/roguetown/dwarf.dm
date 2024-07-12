@@ -9,7 +9,7 @@
 	space_chance = 73
 	default_priority = 90
 	spans = list(SPAN_DWARF)
-	icon_state = "asse"
+	icon_state = "ass"
 	syllables = list(
 "AA",
 "AL",

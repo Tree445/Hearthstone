@@ -574,6 +574,13 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"slop_menustyle3.css" = 'html/browser/slop_menustyle3.css'
 	)
 
+/datum/asset/simple/blackedstone_drifter_queue_menu_slop_layout
+	verify = FALSE
+	assets = list(
+		"slop_menustyle4.css" = 'html/browser/slop_menustyle4.css',
+		//"slop_scriptstyle4.js" = 'html/browser/slop_scriptstyle4.js'
+	)
+
 /datum/asset/simple/roguefonts
 	verify = TRUE
 	assets = list(
@@ -590,8 +597,7 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"hell.ttf" = 'interface/fonts/languages/hell.ttf',
 		"orc.ttf" = 'interface/fonts/languages/orc.ttf',
 		"sand.ttf" = 'interface/fonts/languages/sand.ttf',
-		"undead.ttf" = 'interface/fonts/languages/undead.ttf',
-		"draconic.ttf" = 'interface/fonts/languages/draconic.ttf'
+		"undead.ttf" = 'interface/fonts/languages/undead.ttf'
 	)
 
 /datum/asset/spritesheet/goonchat

@@ -23,3 +23,4 @@
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 4)
 	H.change_stat("constitution", 1)
+	H.change_stat("intelligence", -3)
