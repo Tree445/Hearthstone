@@ -1731,8 +1731,7 @@
 /area/rogue/indoors/town/dwarfin)
 "aSl" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "nightman";
-	locked = 1
+	lockid = "tavern"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
@@ -1749,8 +1748,7 @@
 /area/rogue/outdoors/town)
 "aTy" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "nightman";
-	locked = 1
+	lockid = "tavern"
 	},
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
@@ -5032,7 +5030,8 @@
 /area/rogue/indoors/town/dwarfin)
 "eLr" = (
 /obj/structure/chair/wood/rogue{
-	dir = 1
+	dir = 1;
+	icon_state = "chair2"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -5602,7 +5601,8 @@
 /area/rogue/indoors/town/garrison)
 "fwE" = (
 /obj/structure/chair/wood/rogue{
-	dir = 4
+	dir = 4;
+	icon_state = "chair2"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
@@ -8588,11 +8588,8 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "jbj" = (
-/obj/structure/roguemachine/atm{
-	pixel_x = 32;
-	pixel_y = 0
-	},
-/turf/open/floor/rogue/blocks/stonered,
+/obj/structure/fluff/walldeco/stone,
+/turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/bath)
 "jbv" = (
 /obj/structure/table/wood{
@@ -10674,6 +10671,10 @@
 /obj/structure/roguewindow/openclose,
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors)
+"lKO" = (
+/obj/structure/fluff/statue/secret/why,
+/turf/open/floor/rogue/blocks/stonered,
+/area/rogue/under/cavewet/bogcaves/sunkencity)
 "lLa" = (
 /turf/open/floor/rogue/rooftop{
 	dir = 8
@@ -14985,6 +14986,7 @@
 "rnN" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
+	icon_state = "woodrailing";
 	pixel_y = -1
 	},
 /obj/structure/fluff/railing/wood,
@@ -15163,12 +15165,6 @@
 "ryI" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors)
-"ryX" = (
-/obj/structure/roguemachine/atm,
-/turf/open/floor/rogue/tile{
-	icon_state = "greenstone"
-	},
-/area/rogue/indoors/town/bath)
 "rAz" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
@@ -17524,7 +17520,8 @@
 /area/rogue/outdoors/bog)
 "uwC" = (
 /obj/structure/chair/wood/rogue{
-	dir = 4
+	dir = 4;
+	icon_state = "chair2"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -67020,7 +67017,7 @@ bpD
 bpD
 bpD
 abe
-abo
+lKO
 abo
 abo
 abo
@@ -284415,7 +284412,7 @@ nHZ
 hjD
 hjD
 mMC
-jbj
+mMC
 mMC
 mMC
 mMC
@@ -285615,8 +285612,8 @@ wbg
 vNh
 bQw
 sTl
-vNh
-ryX
+jbj
+lte
 lte
 lte
 lte
