@@ -8588,8 +8588,11 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "jbj" = (
-/obj/structure/fluff/walldeco/stone,
-/turf/closed/wall/mineral/rogue/craftstone,
+/obj/structure/roguemachine/atm{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "jbv" = (
 /obj/structure/table/wood{
@@ -15160,6 +15163,12 @@
 "ryI" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors)
+"ryX" = (
+/obj/structure/roguemachine/atm,
+/turf/open/floor/rogue/tile{
+	icon_state = "greenstone"
+	},
+/area/rogue/indoors/town/bath)
 "rAz" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
@@ -284406,7 +284415,7 @@ nHZ
 hjD
 hjD
 mMC
-mMC
+jbj
 mMC
 mMC
 mMC
@@ -285606,8 +285615,8 @@ wbg
 vNh
 bQw
 sTl
-jbj
-lte
+vNh
+ryX
 lte
 lte
 lte
