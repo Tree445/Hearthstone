@@ -275,6 +275,8 @@
 	//	if(!user.mind.get_skill_level(/datum/skill/magic/holy))
 	//		if(user.devotion?.devotion < user.devotion?.max_devotion)
 	//			user.devotion?.update_devotion(rand(1,2))
+	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+		arousal_amt *= 2
 	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
