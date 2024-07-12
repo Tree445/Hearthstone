@@ -4,7 +4,7 @@
 	flag = NIGHTMASTER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 1 
+	total_positions = 1
 	spawn_positions = 1 // Disabled until he gets his own place on the map
 
 	allowed_sexes = list(MALE, FEMALE)
@@ -20,7 +20,6 @@
 	give_bank_account = TRUE
 	min_pq = -10
 	max_pq = null
-	allow_custom_genitals = TRUE
 
 /datum/outfit/job/roguetown/nightman/pre_equip(mob/living/carbon/human/H)
 	..()
