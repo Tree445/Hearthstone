@@ -17,6 +17,7 @@
 	desc = "A rickety wooden device."
 	icon = 'modular_hearthstone/icons/roguetown/misc/64x64.dmi'
 	icon_state = "what"
+	layer = 3
 
 /obj/structure/fluff/statue/what/examine(mob/user)
 	. = ..()
@@ -30,6 +31,7 @@
 	desc = ""
 	icon = 'modular_hearthstone/icons/roguetown/misc/64x64.dmi'
 	icon_state = "why" //literal codersprite. todo: this is bad
+	layer = 3
 
 /obj/structure/fluff/statue/why/examine(mob/user)
 	. = ..()
