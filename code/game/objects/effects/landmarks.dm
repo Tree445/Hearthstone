@@ -87,7 +87,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/adventurerlate
 	name = "Adventurerlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Skeleton", "Drifter", "Pilgrim", "Adventurer")
+	jobspawn_override = list("Skeleton", "Pilgrim", "Adventurer", "Migrant")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/bogguardlate
@@ -102,7 +102,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Beggar")
 	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/orphanlate
+/obj/effect/landmark/start/vagabondlate
 	name = "Vagabondlate"
 	icon_state = "arrow"
 	jobspawn_override = list("Vagabond")
@@ -143,7 +143,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/barkeep
-	name = "Barkeep"
+	name = "Innkeep"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/cook
@@ -320,7 +320,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prince
-	name = "Prince"
+	name = "Scion"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prisonerr
@@ -360,7 +360,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/barkeeper
-	name = "Barkeeper"
+	name = "Innkeeper"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/adventurer
@@ -385,7 +385,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Churchling"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/orphan
+/obj/effect/landmark/start/vagabond
 	name = "Vagabond"
 	icon_state = "arrow"
 
@@ -414,7 +414,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/goblinlate
 	name = "Goblinlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Goblin Cook", "Goblin Guard", "Goblin King", "Goblin Smith")
+	jobspawn_override = list("Tribal Cook", "Tribal Guard", "Tribal King", "Tribal Smith")
 	delete_after_roundstart = FALSE
 
 // START LANDMARKS FOLLOW. Don't change the names unless

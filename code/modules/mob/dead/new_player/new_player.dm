@@ -184,6 +184,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		if(!SSticker?.IsRoundInProgress())
 			to_chat(usr, span_boldwarning("The game is starting. You cannot join yet."))
 			return
+		
+		if(client && client.prefs.is_active_migrant())
+			to_chat(usr, span_boldwarning("You are in the migrant queue."))
+			return
 
 		if(href_list["late_join"] == "override")
 			LateChoices()
@@ -249,6 +253,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 			if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
 				to_chat(usr, span_warning("Server is full."))
 				return
+
+		if(client && client.prefs.is_active_migrant())
+			to_chat(usr, span_boldwarning("You are in the migrant queue."))
+			return
 
 		AttemptLateSpawn(href_list["SelectedJob"])
 		return
@@ -474,10 +482,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
 
-	// Jus remove them from drifter queue if they were in it.
-	// This shit shouldn't be firing before the round starts anyways sooo this is one of the only ways in
-	SSrole_class_handler.cleanup_drifter_queue(client)
-
 	testing("basedtest 1")
 
 	SSjob.AssignRole(src, rank, 1)
@@ -586,7 +590,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	omegalist += list(GLOB.yeoman_positions)
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.mercenary_positions)
-	omegalist += list(GLOB.youngfolk_positions)
+	omegalist += list(GLOB.apprentices_positions)
 	omegalist += list(GLOB.goblin_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
@@ -629,12 +633,12 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 					cat_name = "Yeomen"
 				if (PEASANTS)
 					cat_name = "Peasants"
-				if (YOUNGFOLK)
-					cat_name = "Sidefolk"
+				if (APPRENTICES)
+					cat_name = "Apprentices"
 				if (MERCENARIES)
 					cat_name = "Mercenaries"
 				if (GOBLIN)
-					cat_name = "Goblins"
+					cat_name = "Tribe"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"
@@ -755,9 +759,9 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	src << browse(null, "window=preferences") //closes job selection
 	src << browse(null, "window=mob_occupation")
 	src << browse(null, "window=latechoices") //closes late job selection
+	src << browse(null, "window=migration") // Closes migrant menu
 
 	SStriumphs.remove_triumph_buy_menu(client)
-	SSrole_class_handler.cleanup_drifter_queue(client)
 
 	winshow(src, "preferencess_window", FALSE)
 	src << browse(null, "window=preferences_browser")

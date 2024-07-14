@@ -13,14 +13,15 @@
 	var/force = SEX_FORCE_MID
 	/// Our arousal
 	var/arousal = 0
-	/// Our spent gauge
-	var/spent = 0
+	/// Our charge gauge
+	var/charge = SEX_MAX_CHARGE
 	/// Whether we want to screw until finished, or non stop
 	var/do_until_finished = TRUE
 	var/last_arousal_increase_time = 0
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
 	var/last_pain = 0
+	var/ejacmessaged = 0
 
 /datum/sex_controller/New(mob/living/carbon/human/owner)
 	user = owner
@@ -29,6 +30,11 @@
 	user = null
 	target = null
 	. = ..()
+
+/datum/sex_controller/proc/is_spent()
+	if(charge < CHARGE_FOR_CLIMAX)
+		return TRUE
+	return FALSE
 
 /datum/sex_controller/proc/finished_check()
 	if(!do_until_finished)
@@ -76,6 +82,9 @@
 		return
 	var/pq_warning = pick(list("If I continue down this road, my soul will be burdened.", "I feel a terrible omen watching me...", "The forces of dark feel heavy on my soul."))
 	to_chat(user, span_userdanger(pq_warning))
+	var/alert = alert(user, "Do I really want to do this?", "Violate", "Yes", "No")
+	if(alert != "Yes")
+		return
 	user.visible_message(span_boldwarning("[user] begins to violate [victim]!"))
 	if(!do_after(user, 5 SECONDS, target = victim))
 		return
@@ -142,59 +151,79 @@
 	after_ejaculation()
 
 /datum/sex_controller/proc/cum_into(oral = FALSE)
-	log_combat(user, target, "Came inside the target")
+	log_combat(user, target, "Came inside [target]")
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
+		if(ejacmessaged != 1)
+			target.visible_message(span_info("With every load I swallow, with Eora's blessing I feel more satiated so I may go longer."))
+			ejacmessaged = 1
+		target.adjust_nutrition(50)
 	else
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	after_ejaculation()
+	if(!oral)
+		after_intimate_climax()
 
 /datum/sex_controller/proc/ejaculate()
 	log_combat(user, user, "Ejaculated")
 	user.visible_message(span_love("[user] makes a mess!"))
+	//small heal burst, this should not happen often due the delay on how often one can cum.
+	//user.adjustBruteLoss(-10)
+	//user.adjustFireLoss(-5)
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()
-	set_arousal(55)
-	set_spent(MAX_SPENT)
+	//give some nutrition
+	if(ejacmessaged != 1)
+		user.visible_message(span_info("With every ejaculation I feel Eora's blessing satiate me so I may go longer."))
+		ejacmessaged = 1
+	user.adjust_nutrition(25)
+	set_arousal(40)
+	adjust_charge(-CHARGE_FOR_CLIMAX)
+	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		user.sate_addiction()
 	user.emote("sexmoanhvy", forced = TRUE)
 	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
 	last_ejaculation_time = world.time
 	SSticker.cums++
 
 /datum/sex_controller/proc/after_intimate_climax()
+	if(user == target)
+		return
 	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
 		if(!user.mob_timers["cumtri"])
 			user.mob_timers["cumtri"] = world.time
 			user.adjust_triumphs(1)
-			to_chat(user, span_love("Our loving is a true TRIUMPH!"))
+			to_chat(target, span_love("This felt TRIUMPHantly good!!!"))
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
 		if(!target.mob_timers["cumtri"])
 			target.mob_timers["cumtri"] = world.time
 			target.adjust_triumphs(1)
-			to_chat(target, span_love("Our loving is a true TRIUMPH!"))
+			to_chat(target, span_love("This felt TRIUMPHantly good!!!"))
 
 /datum/sex_controller/proc/just_ejaculated()
-	return (last_ejaculation_time == world.time)
+	return (last_ejaculation_time + 2 SECONDS >= world.time)
 
-/datum/sex_controller/proc/set_spent(amount)
-	spent = clamp(amount, 0, MAX_SPENT)
-
-/datum/sex_controller/proc/adjust_spent(amount)
-	set_spent(spent + amount)
-
-/datum/sex_controller/proc/handle_spent(dt)
-	if(spent <= 0)
-		return
-	if(arousal > 60)
-		to_chat(user, span_warning("I'm too spent!"))
-		adjust_arousal(-20)
-	adjust_spent(-dt * SPENT_REDUCTION_RATE)
-	if(spent <= 0)
+/datum/sex_controller/proc/set_charge(amount)
+	var/empty = (charge < CHARGE_FOR_CLIMAX)
+	charge = clamp(amount, 0, SEX_MAX_CHARGE)
+	var/after_empty = (charge < CHARGE_FOR_CLIMAX)
+	if(empty && !after_empty)
 		to_chat(user, span_notice("I feel like I'm not so spent anymore"))
-	else
+	if(!empty && after_empty)
+		to_chat(user, span_notice("I'm spent!"))
+
+/datum/sex_controller/proc/adjust_charge(amount)
+	set_charge(charge + amount)
+
+/datum/sex_controller/proc/handle_charge(dt)
+	adjust_charge(dt * CHARGE_RECHARGE_RATE)
+	if(is_spent())
+		if(arousal > 60)
+			to_chat(user, span_warning("I'm too spent!"))
+			adjust_arousal(-20)
 		adjust_arousal(-dt * SPENT_AROUSAL_RATE)
 
 /datum/sex_controller/proc/set_arousal(amount)
@@ -224,6 +253,11 @@
 	action_target.adjustOxyLoss(oxyloss_amt)
 
 /datum/sex_controller/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, pain_amt, giving)
+	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+		arousal_amt *=2
+		if(rand(10) == 1) //1 in 10th percent chance each action to emit the message so they know who the fuckin' with.
+			var/lovermessage = pick("This feels so good!","I am in heaven!","This is too good to be possible!","By the ten!","I can't stop, too good!")
+			to_chat(action_target, span_love(lovermessage))
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
@@ -235,8 +269,20 @@
 		arousal_amt = 0
 		pain_amt = 0
 
-	adjust_arousal(arousal_amt)
+	//disabled as people keep BITCHING about it.
+	//go go gadget sex healing.. magic?
+	//if(user.buckled?.sleepy)
+		//very small healing, should heal 1 points brute every 4 times it trigger, 1 fire every 10 times.
+		//user.adjustBruteLoss(-0.25)
+		//user.adjustFireLoss(-0.1)
 
+	//grant devotion through sex because who needs praying.
+	//not sure if it works right but i dont need to test cuz its asked to be commented out anyway, ffs.
+	//if(user.patron)
+	//	if(!user.mind.get_skill_level(/datum/skill/magic/holy))
+	//		if(user.devotion?.devotion < user.devotion?.max_devotion)
+	//			user.devotion?.update_devotion(rand(1,2))
+	adjust_arousal(arousal_amt)
 	damage_from_pain(pain_amt)
 	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
 	try_do_pain_effect(pain_amt, giving)
@@ -321,7 +367,7 @@
 /datum/sex_controller/proc/check_active_ejaculation()
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return FALSE
-	if(spent > 0)
+	if(is_spent())
 		return FALSE
 	if(!can_ejaculate())
 		return FALSE
@@ -337,7 +383,7 @@
 /datum/sex_controller/proc/handle_passive_ejaculation()
 	if(arousal < PASSIVE_EJAC_THRESHOLD)
 		return
-	if(spent > 0)
+	if(is_spent())
 		return
 	if(!can_ejaculate())
 		return FALSE
@@ -348,9 +394,14 @@
 		return FALSE
 	return TRUE
 
+/datum/sex_controller/proc/considered_limp()
+	if(arousal >= AROUSAL_HARD_ON_THRESHOLD)
+		return FALSE
+	return TRUE
+
 /datum/sex_controller/proc/process_sexcon(dt)
 	handle_arousal_unhorny(dt)
-	handle_spent(dt)
+	handle_charge(dt)
 	handle_passive_ejaculation()
 
 /datum/sex_controller/proc/handle_arousal_unhorny(dt)
@@ -548,24 +599,24 @@
 	switch(passed_force)
 		if(SEX_FORCE_LOW)
 			if(giving)
-				return 1.0
+				return 0.8
 			else
-				return 1.0
+				return 0.8
 		if(SEX_FORCE_MID)
 			if(giving)
-				return 1.5
+				return 1.2
 			else
-				return 1.5
+				return 1.2
 		if(SEX_FORCE_HIGH)
+			if(giving)
+				return 1.6
+			else
+				return 1.2
+		if(SEX_FORCE_EXTREME)
 			if(giving)
 				return 2.0
 			else
-				return 1.5
-		if(SEX_FORCE_EXTREME)
-			if(giving)
-				return 2.5
-			else
-				return 1.0
+				return 0.8
 
 /datum/sex_controller/proc/get_force_pain_multiplier(passed_force)
 	switch(passed_force)
@@ -625,10 +676,10 @@
 /datum/sex_controller/proc/spanify_force(string)
 	switch(force)
 		if(SEX_FORCE_LOW)
-			return "<span class='love_low'>[string]</font>"
+			return "<span class='love_low'>[string]</span>"
 		if(SEX_FORCE_MID)
-			return "<span class='love_mid'>[string]</font>"
+			return "<span class='love_mid'>[string]</span>"
 		if(SEX_FORCE_HIGH)
-			return "<span class='love_high'>[string]</font>"
+			return "<span class='love_high'>[string]</span>"
 		if(SEX_FORCE_EXTREME)
-			return "<span class='love_extreme'>[string]</font>"
+			return "<span class='love_extreme'>[string]</span>"

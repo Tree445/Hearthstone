@@ -23,7 +23,7 @@
 	return TRUE
 
 /datum/sex_action/throat_sex/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] slides his cock into [target]'s throat!"))
+	user.visible_message(span_warning("[user] slides their cock into [target]'s throat!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
 /datum/sex_action/throat_sex/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -32,16 +32,19 @@
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
-		user.visible_message(span_love("[target] cums into [target]'s throat!"))
+		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into()
 		user.virginity = FALSE
 
-	user.sexcon.perform_sex_action(target, 0, 7, FALSE)
-	user.sexcon.perform_deepthroat_oxyloss(target, 2.6)
+	if(user.sexcon.considered_limp())
+		user.sexcon.perform_sex_action(target, 0, 2, FALSE)
+	else
+		user.sexcon.perform_sex_action(target, 0, 7, FALSE)
+		user.sexcon.perform_deepthroat_oxyloss(target, 2.6)
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/throat_sex/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] pulls his cock out of [target]'s throat."))
+	user.visible_message(span_warning("[user] pulls their cock out of [target]'s throat."))
 
 /datum/sex_action/throat_sex/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.finished_check())
