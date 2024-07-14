@@ -61,8 +61,6 @@
 	cost = 300
 	contains = list(/obj/item/clothing/ring/active/nomag)
 
-
-
 /datum/supply_pack/rogue/luxury/listenst
 	name = "Emerald Choker"
 	cost = 250
@@ -72,3 +70,5 @@
 	name = "Riddle of Steel"
 	cost = 400
 	contains = list(/obj/item/riddleofsteel)
+
+// Scrying orb removed. 14/07/2024.
