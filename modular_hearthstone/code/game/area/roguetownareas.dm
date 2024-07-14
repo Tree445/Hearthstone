@@ -14,3 +14,11 @@
 	droning_sound_dusk = null
 	droning_sound_night = null
 
+/area/rogue/under/cavewet/bogcaves/sunkencity/psydon
+	first_time_text = "CRADLE OF LIFE"
+	spookysounds = null
+	spookynight = null
+	droning_sound = 'sound/music/area/psydondeath.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+

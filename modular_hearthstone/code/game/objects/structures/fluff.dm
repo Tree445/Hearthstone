@@ -30,7 +30,7 @@
 	name = "...?"
 	desc = ""
 	icon = 'modular_hearthstone/icons/roguetown/misc/64x64.dmi'
-	icon_state = "why" //literal codersprite. todo: this is bad
+	icon_state = "why"
 	layer = 3
 
 /obj/structure/fluff/statue/why/examine(mob/user)
@@ -59,7 +59,8 @@
 	name = "BIRTH-GIVER"
 	desc = ""
 	icon = 'modular_hearthstone/icons/roguetown/misc/64x64.dmi'
-	icon_state = "answer"
+	icon_state = "answer" //TODO: THIS IS A REALLY BAD SPRITE
+	color = "#545454"
 	layer = 3
 
 /obj/structure/fluff/statue/answer/examine(mob/user)
