@@ -9139,10 +9139,6 @@
 	},
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town)
-"jsT" = (
-/obj/structure/bars/cemetery,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/rtfield)
 "jtp" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -9458,6 +9454,10 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/church/chapel)
+"jQy" = (
+/obj/structure/bars/cemetery,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/rtfield)
 "jRk" = (
 /obj/structure/bars/pipe{
 	dir = 8;
@@ -15948,7 +15948,7 @@
 /obj/structure/stairs/stone{
 	dir = 4
 	},
-/turf/open/transparent/openspace,
+/turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/indoors/town/church/chapel)
 "rOX" = (
 /obj/structure/closet/crate/chest,
@@ -264154,7 +264154,7 @@ uaL
 fxx
 uaL
 uaL
-jsT
+jQy
 vIa
 vIa
 vIa
@@ -264556,7 +264556,7 @@ uaL
 fxx
 uaL
 uaL
-jsT
+jQy
 vIa
 vIa
 vIa
@@ -264958,7 +264958,7 @@ vFU
 fxx
 uaL
 uaL
-jsT
+jQy
 vIa
 vIa
 vIa
@@ -265360,7 +265360,7 @@ fxx
 fxx
 fxx
 fxx
-jsT
+jQy
 vIa
 vIa
 vIa
@@ -265762,7 +265762,7 @@ uaL
 uaL
 uaL
 uaL
-jsT
+jQy
 vIa
 vIa
 vIa
@@ -266164,7 +266164,7 @@ uaL
 uaL
 uaL
 uaL
-jsT
+jQy
 vIa
 vIa
 vIa
