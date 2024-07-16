@@ -41,6 +41,8 @@
 		backr = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, rand(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, rand(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, rand(1,2), TRUE)
