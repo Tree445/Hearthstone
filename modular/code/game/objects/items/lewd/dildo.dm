@@ -14,7 +14,6 @@
 	var/dildo_type = "human"
 	var/dildo_size = "small"
 	var/pleasure = 4
-	var/pain_amt = 0
 	var/can_custom = TRUE
 	var/dildo_material
 
