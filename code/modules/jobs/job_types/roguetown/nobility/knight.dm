@@ -47,7 +47,7 @@
 	cloak = /obj/item/clothing/cloak/tabard/knight/guard
 	neck = /obj/item/clothing/neck/roguetown/bervor
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/full
+	armor = /obj/item/clothing/suit/roguetown/armor/brigandine
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	beltr = /obj/item/rogueweapon/sword/long
 	beltl = /obj/item/keyring/guardcastle
