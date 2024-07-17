@@ -4,7 +4,7 @@
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 2
-	spawn_positions = 2
+	spawn_positions = 2 
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
@@ -47,7 +47,7 @@
 	cloak = /obj/item/clothing/cloak/tabard/knight/guard
 	neck = /obj/item/clothing/neck/roguetown/gorget // Lowered from bervor to gorget. Why would you give a bervor round start, that's insane.
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // No longer starts in full plate
+	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates // No longer starts in full plate
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor //removed Round-start Bastard sword (Just why)
 	beltl = /obj/item/keyring/guardcastle
 	belt = /obj/item/storage/belt/rogue/leather/hand
