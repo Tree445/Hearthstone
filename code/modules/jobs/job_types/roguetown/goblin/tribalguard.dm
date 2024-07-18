@@ -17,6 +17,7 @@
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/storage/backpack/rogue/satchel

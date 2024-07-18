@@ -22,6 +22,7 @@
 	//H.verbs |= /mob/living/carbon/human/proc/goblinannouncement
 	//H.verbs |= /mob/living/carbon/human/proc/goblinopenslot
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
