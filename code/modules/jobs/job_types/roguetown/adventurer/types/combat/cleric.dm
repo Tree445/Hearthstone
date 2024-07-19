@@ -129,7 +129,7 @@
 	backr = /obj/item/rogueweapon/shield/wood
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife)
 	if(classchoice == "Nature Cleric")
-		beltr = /obj/item/rogueweapon/sword/iron
+		beltr = /obj/item/rogueweapon/sword
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		armor = /obj/item/clothing/suit/roguetown/armor/leather
 		pants = /obj/item/clothing/under/roguetown/trou
