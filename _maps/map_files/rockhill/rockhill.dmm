@@ -12087,7 +12087,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "mXg" = (
-/obj/structure/pillory/double,
+/obj/structure/pillory/tribal/double,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/tribalfort)
 "mXn" = (
@@ -13370,6 +13370,10 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
+"oze" = (
+/obj/item/roguekey/tribal,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/tribalfort)
 "ozm" = (
 /obj/item/reagent_containers/powder/flour/salt,
 /turf/open/floor/rogue/naturalstone,
@@ -284900,7 +284904,7 @@ kXN
 nuE
 lPu
 mXg
-lPu
+oze
 kXN
 fPm
 wjG
@@ -285302,7 +285306,7 @@ kXN
 nuE
 kXN
 lPu
-lPu
+oze
 kXN
 fPm
 pAa
@@ -285704,7 +285708,7 @@ lPu
 nuE
 kXN
 mXg
-lPu
+oze
 kXN
 fPm
 pAa
