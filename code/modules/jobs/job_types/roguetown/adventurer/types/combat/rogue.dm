@@ -36,7 +36,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	if(prob(30))
 		gloves = /obj/item/clothing/gloves/roguetown/fingerless

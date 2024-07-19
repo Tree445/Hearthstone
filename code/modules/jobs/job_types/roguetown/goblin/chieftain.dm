@@ -52,9 +52,6 @@ mob/living/carbon/human/proc/tribalannouncement()
 		return
 	var/inputty = input("Make an announcement", "ROGUETOWN") as text|null
 	if(inputty)
-		if(!istype(get_area(src), /area/rogue/indoors/shelter/mountains/decap))
-			to_chat(src, span_warning("I need to do this from the tribe."))
-			return FALSE
 		priority_announce("[inputty]", title = "The Tribal King Squeals", sound = 'sound/misc/dun.ogg')
 
 /mob/living/carbon/human/proc/tribalopenslot()
@@ -67,9 +64,6 @@ mob/living/carbon/human/proc/tribalannouncement()
 	var/datum/job/smithjob = SSjob.GetJob("Tribal Smith")
 	var/list/souloptions = list("Tribal Cook", "Tribal Guard", "Tribal Smith")
 	var/pickedsoul = input("Which worker shall join tribe?", "Available workers") as null|anything in souloptions
-	if(!istype(get_area(src), /area/rogue/indoors/shelter/mountains/decap))
-		to_chat(src, span_warning("I need to do this from the tribe."))
-		return FALSE
 	if(!pickedsoul)
 		return
 	switch(pickedsoul)
