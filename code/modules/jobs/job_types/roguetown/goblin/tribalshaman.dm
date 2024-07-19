@@ -9,6 +9,7 @@
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "A tribal druidic shaman that works with shaman magic to heal the wounded and bring the dead back. They also take care of the farming on the side."
 	display_order = JDO_TRIBALSHAMAN
+	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal)
 	outfit = /datum/outfit/job/roguetown/tribalshaman
 	min_pq = 0
 	max_pq = null
@@ -55,3 +56,11 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal/shaman)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive/shaman)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+
+/obj/effect/proc_holder/spell/self/convertrole/tribal
+	name = "Recruit Tribemember"
+	new_role = "Tribal Villager"
+	recruitment_faction = "Tribals"
+	recruitment_message = "Serve the tribe, %RECRUIT!"
+	accept_message = "FOR THE TRIBE!"
+	refuse_message = "I refuse."
