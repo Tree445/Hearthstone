@@ -65,7 +65,8 @@ mob/living/carbon/human/proc/tribalannouncement()
 	var/datum/job/cookjob = SSjob.GetJob("Tribal Cook")
 	var/datum/job/guardjob = SSjob.GetJob("Tribal Guard")
 	var/datum/job/smithjob = SSjob.GetJob("Tribal Smith")
-	var/list/souloptions = list("Tribal Cook", "Tribal Guard", "Tribal Smith")
+	var/datum/job/shamanjob = SSjob.GetJob("Tribal Shaman")
+	var/list/souloptions = list("Tribal Cook", "Tribal Guard", "Tribal Smith", "Tribal Shaman")
 	var/pickedsoul = input("Which worker shall join tribe?", "Available workers") as null|anything in souloptions
 	if(!istype(get_area(src), /area/rogue/outdoors/tribalfort))
 		to_chat(src, span_warning("I need to do this from the tribe."))
@@ -82,6 +83,9 @@ mob/living/carbon/human/proc/tribalannouncement()
 		if("Tribal Smith")
 			smithjob.total_positions += 1
 			priority_announce("Tribal Smith shall join our tribe", title = "The Tribe Accept New Kin", sound = 'sound/misc/dun.ogg')
+		if("Tribal Shaman")
+			shamanjob.total_positions += 1
+			priority_announce("Tribal Shaman shall join our tribe", title = "The Tribe Accept New Kin", sound = 'sound/misc/dun.ogg')
 
 
 
