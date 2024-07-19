@@ -18,6 +18,12 @@
 	jobtype = /datum/job/roguetown/tribalshaman
 	allowed_patrons = list(/datum/patron/divine/dendor)
 
+/obj/effect/proc_holder/spell/invoked/heal/shaman
+	name = "Mend Wounds"
+
+/obj/effect/proc_holder/spell/invoked/revive/shaman
+	name = "Restore Life"
+
 /datum/outfit/job/roguetown/tribalshaman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	belt = /obj/item/storage/belt/rogue/leather/rope
@@ -46,12 +52,6 @@
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells_priest(H)
-	H.mind.AddSpell(/obj/effect/proc_holder/spell/invoked/heal/shaman)
-	H.mind.AddSpell(/obj/effect/proc_holder/spell/invoked/revive/shaman)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal/shaman)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive/shaman)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
-
-/obj/effect/proc_holder/spell/invoked/heal/shaman
-	name = "Mend Wounds"
-
-/obj/effect/proc_holder/spell/invoked/revive/shaman
-	name = "Restore Life"
