@@ -3,8 +3,8 @@
 	flag = TRIBALSHAMAN
 	department_flag = TRIBAL
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "A tribal druidic shaman that works with shaman magic to heal the wounded and bring the dead back. They also take care of the farming on the side."
@@ -45,7 +45,13 @@
 
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	H.mind.AddSpell(/obj/effect/proc_holder/spell/invoked/lesser_heal)
-	H.mind.AddSpell(/obj/effect/proc_holder/spell/invoked/revive)
-	C.grant_spells(H)
+	C.grant_spells_priest(H)
+	H.mind.AddSpell(/obj/effect/proc_holder/spell/invoked/heal/shaman)
+	H.mind.AddSpell(/obj/effect/proc_holder/spell/invoked/revive/shaman)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+
+/obj/effect/proc_holder/spell/invoked/heal/shaman
+	name = "Mend Wounds"
+
+/obj/effect/proc_holder/spell/invoked/revive/shaman
+	name = "Restore Life"
