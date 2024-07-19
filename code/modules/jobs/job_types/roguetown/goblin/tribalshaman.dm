@@ -1,29 +1,29 @@
-/datum/job/roguetown/goblinshaman
+/datum/job/roguetown/tribalshaman
 	title = "Tribal Shaman"
-	flag = GOBLINSHAMAN
-	department_flag = GOBLIN
+	flag = TRIBALSHAMAN
+	department_flag = TRIBAL
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "A tribal druidic shaman that works with shaman magic to heal the wounded and bring the dead back. They also take care of the farming on the side."
-	display_order = JDO_GOBLINSHAMAN
-	outfit = /datum/outfit/job/roguetown/goblinshaman
+	display_order = JDO_TRIBALSHAMAN
+	outfit = /datum/outfit/job/roguetown/tribalshaman
 	min_pq = 0
 	max_pq = null
 
-/datum/outfit/job/roguetown/goblinshaman
+/datum/outfit/job/roguetown/tribalshaman
 	name = "Tribal Shaman"
-	jobtype = /datum/job/roguetown/goblinshaman
+	jobtype = /datum/job/roguetown/tribalshaman
 	allowed_patrons = list(/datum/patron/divine/dendor)
 
-/datum/outfit/job/roguetown/goblinshaman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/tribalshaman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/satchel
-	face = /obj/item/clothing/mask/rogue/facemask
+	beltr = /obj/item/clothing/mask/rogue/facemask
 	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	r_hand = /obj/item/rogueweapon/woodstaff
