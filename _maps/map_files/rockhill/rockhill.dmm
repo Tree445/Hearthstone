@@ -8237,6 +8237,10 @@
 /obj/effect/decal/cobbleedge{
 	dir = 1
 	},
+/obj/effect/decal/cobbleedge{
+	dir = 1
+	},
+/obj/effect/decal/cobbleedge,
 /turf/open/floor/plating/ashplanet/rocky,
 /area/rogue/outdoors/beach)
 "iov" = (
@@ -15129,9 +15133,13 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "qLl" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1
+	},
 /obj/structure/stairs{
 	dir = 8
 	},
+/obj/effect/decal/cobbleedge,
 /turf/open/floor/plating/ashplanet/rocky,
 /area/rogue/outdoors/beach)
 "qLr" = (
@@ -20751,6 +20759,16 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"xtq" = (
+/obj/structure/stairs{
+	dir = 8
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 1
+	},
+/obj/effect/decal/cobbleedge,
+/turf/open/floor/plating/ashplanet/rocky,
+/area/rogue/outdoors/beach)
 "xuh" = (
 /obj/structure/bars/pipe{
 	dir = 1
@@ -20802,6 +20820,12 @@
 /obj/structure/chair/wood/rogue/fancy,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
+"xvy" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/town)
 "xvK" = (
 /obj/item/rogueweapon/hammer/claw,
 /turf/open/floor/rogue/metal/barograte,
@@ -204555,8 +204579,8 @@ rRb
 lrs
 lrs
 lrs
-lrs
-lrs
+dLD
+dLD
 lrs
 lrs
 lrs
@@ -205359,7 +205383,7 @@ rRb
 vRu
 qvA
 wXz
-qLl
+xtq
 qLl
 rWJ
 qvA
@@ -309032,7 +309056,7 @@ fxx
 uaL
 wVI
 wVI
-wVI
+xvy
 xAt
 xAt
 xAt
