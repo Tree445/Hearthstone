@@ -184,7 +184,7 @@
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/plateskirt
-	name = "Plated Chausses (+1 Steel)"
+	name = "Plated Skirt (+1 Steel)"
 	req_bar = /obj/item/ingot/steel 
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/under/roguetown/platelegs/skirt

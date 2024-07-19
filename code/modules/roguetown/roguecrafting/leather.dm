@@ -117,7 +117,7 @@
 	sellprice = 26
 
 /datum/crafting_recipe/roguetown/leather/hidebikini
-	name = "hide armor"
+	name = "hide bikini armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 	reqs = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)
