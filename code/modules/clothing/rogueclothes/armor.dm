@@ -69,15 +69,15 @@
 	smeltresult = /obj/item/ingot/steel
 	do_sound = TRUE
 	armor_class = ARMOR_CLASS_MEDIUM
+	max_integrity = 300
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	name = "chainmail bikini"
-	desc = "Best not get your nipple caught between the rings."
+	desc = "Not very comfortable against the skin"
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
 	allowed_race = CLOTHED_RACES_TYPES
-	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
