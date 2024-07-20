@@ -72,4 +72,4 @@
 				beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
 				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 				beltl = /obj/item/quiver/Pbolts
-				backpack_contents = list(/obj/item/bomb, /obj/item/rogueweapon/huntingknife/idagger/steel)
+				backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
