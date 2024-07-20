@@ -27,6 +27,8 @@
 
 /datum/outfit/job/roguetown/tribalshaman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
+	H.verbs |= /mob/living/carbon/human/proc/tribalannouncement
+	H.verbs |= /mob/living/carbon/human/proc/tribalopenslot
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/satchel

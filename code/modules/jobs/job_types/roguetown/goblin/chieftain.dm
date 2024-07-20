@@ -45,9 +45,9 @@
 		H.change_stat("speed", -2)
 
 
-mob/living/carbon/human/proc/tribalannouncement()
+/mob/living/carbon/human/proc/tribalannouncement()
 	set name = "Announcement"
-	set category = "Tribal King"
+	set category = "Tribe"
 	if(stat)
 		return
 	var/inputty = input("Make an announcement", "ROGUETOWN") as text|null
@@ -56,7 +56,7 @@ mob/living/carbon/human/proc/tribalannouncement()
 
 /mob/living/carbon/human/proc/tribalopenslot()
 	set name = "Open Slot"
-	set category = "Tribal King"
+	set category = "Tribe"
 	if(stat)
 		return
 	var/datum/job/cookjob = SSjob.GetJob("Tribal Cook")
