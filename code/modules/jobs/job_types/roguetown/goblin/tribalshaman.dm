@@ -52,9 +52,10 @@
 
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	C.grant_spells_priest(H)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/cure_rot)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/heal/shaman)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive/shaman)
+	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 
 /obj/effect/proc_holder/spell/self/convertrole/tribal
