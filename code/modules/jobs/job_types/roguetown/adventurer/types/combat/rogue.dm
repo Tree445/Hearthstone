@@ -53,8 +53,8 @@
 	H.change_stat("perception", 2)
 	H.change_stat("speed", pick(3,4))
 	H.change_stat("intelligence", 2)
-	// Contributor after choices
-	if(!check_contributor(H.ckey))
+	// Contributor after choices, if not contributor defaults to el rogue.
+	if(check_contributor(H.ckey))
 		H.adjust_blindness(-3)
 		H.visible_message(span_info("I contributed into this world, I have been around..."))
 		var/classes = list("Rogue","Assassin",)
