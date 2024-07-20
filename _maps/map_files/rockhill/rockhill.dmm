@@ -6020,9 +6020,11 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
 "fJR" = (
-/obj/structure/stairs,
-/turf/closed/mineral/random/rogue,
-/area/rogue/under/cavewet/bogcaves)
+/obj/structure/lever{
+	redstone_id = "gobmines"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "fKe" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/closed/mineral/rogue,
@@ -16988,6 +16990,10 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"sPP" = (
+/obj/structure/stairs,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet/bogcaves)
 "sPZ" = (
 /obj/item/paper/confession,
 /obj/item/paper/confession,
@@ -21652,6 +21658,12 @@
 	icon_state = "glyph4"
 	},
 /area/rogue/indoors/town/vault)
+"yeS" = (
+/obj/structure/bars/passage{
+	redstone_id = "gobmines"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "yfk" = (
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
@@ -181313,10 +181325,10 @@ whb
 dVO
 dVO
 dVO
-dVO
-fJR
+sPP
 eiV
 cpi
+dVO
 dVO
 dVO
 dVO
@@ -283424,8 +283436,8 @@ jOI
 sue
 sue
 sue
-ncl
-hHF
+sue
+fJR
 wjG
 rnh
 ncl
@@ -283824,9 +283836,9 @@ fPm
 fPm
 kXN
 sue
-sue
 jCh
-mOd
+ots
+yeS
 hHF
 hHF
 hHF
