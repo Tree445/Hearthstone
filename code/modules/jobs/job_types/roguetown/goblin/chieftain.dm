@@ -17,6 +17,7 @@
 	display_order = JDO_CHIEFTAIN
 	min_pq = 0
 	max_pq = null
+	cmode_music = 'sound/music/combat_gronn.ogg'
 
 /datum/outfit/job/roguetown/chieftain/pre_equip(mob/living/carbon/human/H)
 	..()

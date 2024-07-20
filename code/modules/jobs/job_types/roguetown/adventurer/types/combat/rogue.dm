@@ -8,6 +8,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/rogue
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_ADVENTURER)
+	cmode_music = 'sound/music/combat_rogue.ogg'
 
 /datum/outfit/job/roguetown/adventurer/rogue
 	allowed_patrons = list(/datum/patron/divine/xylix, /datum/patron/inhumen/matthios)
@@ -67,7 +68,6 @@
 				H.visible_message(span_info("I honed my skills as a rogue through the years, and was skilled enough to become an assassin. Now it depends to me how I use my abilities."))
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 				beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
 				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
