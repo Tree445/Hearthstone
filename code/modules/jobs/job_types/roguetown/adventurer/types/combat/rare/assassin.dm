@@ -1,4 +1,4 @@
-//basically same as rogue but some assassin gear and better knifu skill
+//unused
 
 /datum/advclass/assassin
 	name = "Assassin"
@@ -25,7 +25,6 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(5,6), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(0,1), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)

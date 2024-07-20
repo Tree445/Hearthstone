@@ -53,3 +53,23 @@
 	H.change_stat("perception", 2)
 	H.change_stat("speed", pick(3,4))
 	H.change_stat("intelligence", 2)
+	// Contributor after choices
+	if(check_contributor(H.ckey))
+		H.adjust_blindness(-3)
+		H.span_info("I contributed into this world, I have been around...")
+		var/classes = list("Rogue","Assassin",)
+		var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+		switch(classchoice)
+			if("Rogue")
+				H.set_blindness(0)
+			if("Assassin")
+				H.set_blindness(0)
+				H.span_info("I honed my skills as a rogue through the years, and was skilled enough to become an assassin. Now it depends to me how I use my abilities.")
+				H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+				beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
+				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+				beltl = /obj/item/quiver/Pbolts
+				backpack_contents = list(/obj/item/bomb)
