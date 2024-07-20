@@ -7500,6 +7500,7 @@
 /obj/structure/fluff/railing/wood{
 	dir = 4
 	},
+/obj/structure/fermenting_barrel/beer,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/tribalfort)
 "hpF" = (
@@ -9104,10 +9105,8 @@
 	},
 /area/rogue/indoors/town/church)
 "jiS" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
-	},
-/turf/open/floor/rogue/dirt/road,
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "jiT" = (
 /obj/structure/fluff/railing/border{
@@ -11265,6 +11264,18 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
+"lRY" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7;
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/tribalfort)
 "lSE" = (
 /obj/structure/closet/crate/roguecloset/inn/south{
 	pixel_y = 8
@@ -11406,10 +11417,11 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/tavern)
 "mdw" = (
-/obj/item/roguebin/water/gross,
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 32
-	},
+/obj/item/ingot/iron,
+/obj/item/ingot/iron,
+/obj/item/ingot/iron,
+/obj/item/ingot/iron,
+/obj/item/ingot/iron,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "mdz" = (
@@ -12373,6 +12385,12 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/church/chapel)
+"npY" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/tribalfort)
 "nqh" = (
 /obj/structure/bed/rogue,
 /turf/open/floor/carpet/purple,
@@ -12949,6 +12967,13 @@
 	dir = 8
 	},
 /area/rogue/outdoors/town)
+"nYR" = (
+/obj/item/roguebin/water/gross,
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 32
+	},
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/indoors)
 "nZm" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -13453,9 +13478,9 @@
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/outdoors/town)
 "oAz" = (
-/obj/structure/fermenting_barrel/beer,
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/tribalfort)
+/obj/structure/long_sleep,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors)
 "oAC" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -16421,10 +16446,11 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "shd" = (
-/obj/structure/bed/rogue/inn/hay,
-/obj/effect/landmark/start/goblinguard,
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/tribalfort)
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "shu" = (
 /obj/structure/chair/wood,
 /turf/open/floor/rogue/wood,
@@ -19091,9 +19117,8 @@
 /obj/structure/fluff/railing/fence{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/tribalfort)
+/turf/closed/wall/mineral/rogue/wood,
+/area/rogue/indoors)
 "vhR" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
@@ -20142,14 +20167,12 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "wzL" = (
-/obj/effect/landmark/start/goblinsmith,
-/obj/item/ingot/iron,
-/obj/item/ingot/iron,
-/obj/item/ingot/iron,
-/obj/item/ingot/iron,
-/obj/item/ingot/iron,
-/turf/open/floor/rogue/blocks,
-/area/rogue/indoors)
+/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/tribalfort)
 "wAm" = (
 /turf/closed/wall/mineral/rogue/decostone/long,
 /area/rogue/indoors/town/church)
@@ -277384,10 +277407,10 @@ elm
 elm
 elm
 elm
-elm
-elm
 vhg
-lPu
+vhg
+vhg
+wzL
 kXN
 kXN
 kXN
@@ -277786,10 +277809,10 @@ kXN
 kXN
 kXN
 kXN
-kXN
-kXN
-lXJ
-hJJ
+wjG
+wjG
+wjG
+sqm
 kXN
 kXN
 kXN
@@ -278189,7 +278212,7 @@ pAa
 pAa
 pAa
 wjG
-pAa
+oAz
 wjG
 sqm
 kXN
@@ -278584,7 +278607,7 @@ fPm
 fPm
 fPm
 fPm
-hHF
+pAa
 hHF
 ncl
 sSC
@@ -278986,7 +279009,7 @@ fPm
 fPm
 fPm
 fPm
-hHF
+emp
 hHF
 hHF
 hHF
@@ -279388,7 +279411,7 @@ fPm
 fPm
 fPm
 fPm
-hHF
+pAa
 hHF
 hHF
 hHF
@@ -279791,8 +279814,8 @@ fPm
 wXD
 kXN
 wjG
-pAa
 wjG
+shd
 hHF
 hHF
 hHF
@@ -280186,15 +280209,15 @@ fPm
 fPm
 fPm
 fPm
-fPm
-fPm
-kXN
-kXN
-kXN
-sxp
+wjG
 pAa
+pAa
+wjG
+pAa
+pAa
+wjG
 wbo
-jiS
+hHF
 hHF
 wAr
 mOd
@@ -280587,13 +280610,13 @@ fPm
 kXN
 kXN
 kXN
-kXN
-wjG
-wjG
-wjG
-wjG
-wjG
-wjG
+sue
+sue
+nYR
+xWN
+cBC
+bvs
+aqc
 wjG
 sgV
 hHF
@@ -280990,13 +281013,13 @@ kXN
 kXN
 sue
 sue
-wjG
+jQc
 mdw
-xWN
-cBC
-aqc
-bvs
-wjG
+yjW
+ddv
+ddv
+jiS
+pAa
 scd
 hHF
 hHF
@@ -281392,8 +281415,8 @@ kXN
 sxp
 sue
 sue
-jQc
-wzL
+ddv
+ddv
 ddv
 ddv
 ddv
@@ -281799,7 +281822,7 @@ ecU
 yjW
 ddv
 yjW
-ddv
+iDE
 pAa
 pqX
 hHF
@@ -282201,7 +282224,7 @@ muu
 xWN
 cBC
 ddv
-iDE
+jiS
 wjG
 mhq
 sKP
@@ -282600,15 +282623,15 @@ sue
 sue
 wjG
 wjG
-wjG
+pAa
 wjG
 lpC
 pAa
 wjG
 pAa
 wjG
-hHF
-hHF
+pAa
+emp
 pAa
 wjG
 kXN
@@ -379895,9 +379918,9 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
+lRY
+npY
+cBW
 nad
 nad
 nad
@@ -380297,9 +380320,9 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
+xKx
+kgj
+cBW
 nad
 nad
 nad
@@ -380698,10 +380721,10 @@ jNC
 jNC
 jNC
 jNC
-jNC
 cBW
+kgj
+kgj
 jNC
-cBW
 nad
 nad
 nad
@@ -381101,9 +381124,9 @@ nad
 nad
 nad
 aOA
-oAz
-shd
-cBW
+kgj
+kgj
+jNC
 nad
 nad
 nad
@@ -381497,7 +381520,7 @@ nad
 nad
 nad
 nad
-nad
+jNC
 nad
 nad
 nad
@@ -381505,7 +381528,7 @@ nad
 xKx
 kgj
 kgj
-cBW
+jNC
 nad
 nad
 nad
@@ -381899,15 +381922,15 @@ nad
 nad
 nad
 nad
-nad
+jNC
 nad
 nad
 nad
 nad
 aOA
 kgj
-shd
-cBW
+kgj
+jNC
 nad
 nad
 nad
@@ -382302,14 +382325,14 @@ nad
 nad
 nad
 cBW
-jNC
 cBW
+nad
 nad
 nad
 hpz
 kgj
 kgj
-cBW
+jNC
 nad
 nad
 nad
@@ -382703,7 +382726,7 @@ nad
 nad
 nad
 nad
-jNC
+cBW
 nad
 nad
 nad
@@ -482408,7 +482431,7 @@ nad
 nad
 nad
 nad
-nad
+ltT
 nad
 nad
 nad
@@ -482792,6 +482815,11 @@ nad
 nad
 nad
 nad
+jCh
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -482805,12 +482833,7 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
-nad
+ltT
 nad
 nad
 nad
@@ -483194,25 +483217,25 @@ nad
 nad
 nad
 nad
+jCh
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
+ltT
+ltT
+ltT
+ltT
+ltT
+ltT
+ltT
+ltT
+ltT
 nad
 nad
 nad
@@ -483596,6 +483619,17 @@ nad
 nad
 nad
 nad
+jCh
+jCh
+jCh
+jCh
+jCh
+nad
+nad
+nad
+nad
+nad
+ltT
 nad
 nad
 nad
@@ -483603,18 +483637,7 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
+ltT
 nad
 nad
 nad
@@ -483998,6 +484021,17 @@ nad
 nad
 nad
 nad
+jCh
+jCh
+jCh
+jCh
+jCh
+nad
+nad
+nad
+nad
+nad
+ltT
 nad
 nad
 nad
@@ -484005,18 +484039,7 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
+ltT
 nad
 nad
 nad
@@ -484410,6 +484433,7 @@ nad
 nad
 nad
 nad
+ltT
 nad
 nad
 nad
@@ -484417,8 +484441,7 @@ nad
 nad
 nad
 nad
-nad
-nad
+ltT
 nad
 nad
 nad
@@ -484812,15 +484835,15 @@ nad
 nad
 nad
 nad
+ltT
+ltT
 nad
 nad
 nad
 nad
 nad
 nad
-nad
-nad
-nad
+ltT
 nad
 nad
 nad
@@ -485214,6 +485237,7 @@ nad
 nad
 nad
 nad
+ltT
 nad
 nad
 nad
@@ -485221,8 +485245,7 @@ nad
 nad
 nad
 nad
-nad
-nad
+ltT
 nad
 nad
 nad
@@ -485622,9 +485645,9 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
+ltT
+ltT
+ltT
 nad
 nad
 nad
@@ -486024,7 +486047,7 @@ nad
 nad
 nad
 nad
-nad
+ltT
 nad
 nad
 nad
@@ -486426,7 +486449,7 @@ nad
 nad
 nad
 nad
-nad
+ltT
 nad
 nad
 nad
@@ -486828,7 +486851,7 @@ nad
 nad
 nad
 nad
-nad
+ltT
 nad
 nad
 nad
@@ -487230,7 +487253,7 @@ nad
 nad
 nad
 nad
-nad
+ltT
 nad
 nad
 nad
@@ -487629,10 +487652,10 @@ ltT
 ltT
 ltT
 ltT
-nad
-nad
-nad
-nad
+ltT
+ltT
+ltT
+ltT
 nad
 nad
 nad
@@ -493258,10 +493281,10 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -493646,6 +493669,11 @@ nad
 nad
 nad
 nad
+jCh
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -493655,15 +493683,10 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -494048,6 +494071,11 @@ nad
 nad
 nad
 nad
+jCh
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -494057,15 +494085,10 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -494450,6 +494473,11 @@ nad
 nad
 nad
 nad
+jCh
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -494459,15 +494487,10 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
-nad
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
@@ -494852,11 +494875,11 @@ nad
 nad
 nad
 nad
-nad
-nad
-nad
-nad
-nad
+jCh
+jCh
+jCh
+jCh
+jCh
 nad
 nad
 nad
