@@ -21,7 +21,7 @@ GLOBAL_LIST_INIT(ghost_verbs, list(
 	set name = "Return to body"
 	set category = "Spirit"
 	if(isobserver(mob))
-		mob.get_ghost()
+		mob.grab_ghost(force = TRUE)
 
 /client/proc/descend()
 	set name = "Journey to the Underworld"

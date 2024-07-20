@@ -14,7 +14,7 @@
 	name = "poisoned bolt"
 	desc = "A durable iron bolt that will pierce a skull easily. This one is coated in a clear liquid."
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
-	icon_state = "arrow_poison"
+	icon_state = "bolt_poison"
 
 /obj/projectile/bullet/reusable/bolt
 	name = "bolt"
