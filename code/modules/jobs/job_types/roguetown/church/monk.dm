@@ -35,6 +35,7 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
+			pants = /obj/item/clothing/under/roguetown/trou
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 			backl = /obj/item/storage/backpack/rogue/satchel
 			backr = /obj/item/rogueweapon/shield/wood
@@ -45,6 +46,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+			pants = /obj/item/clothing/under/roguetown/trou
 			backl = /obj/item/storage/backpack/rogue/satchel
 			backr = /obj/item/rogueweapon/shield/wood
 		if(/datum/patron/divine/dendor) //Dendorites all busted. Play Druid.
@@ -70,6 +72,7 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			backr = /obj/item/rogueweapon/shield/wood
 		else
+			pants = /obj/item/clothing/under/roguetown/trou
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
 			neck = /obj/item/clothing/neck/roguetown/psicross/
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
