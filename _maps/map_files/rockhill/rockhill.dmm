@@ -16811,6 +16811,13 @@
 /obj/item/rogueweapon/huntingknife/idagger/steel,
 /obj/item/rogueweapon/huntingknife/idagger/steel,
 /obj/item/rogueweapon/huntingknife/idagger/steel,
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+/obj/item/quiver/arrows,
+/obj/item/quiver/arrows,
+/obj/item/quiver/arrows,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "sFi" = (
