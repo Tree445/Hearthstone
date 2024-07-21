@@ -331,6 +331,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Prisoner (Bog)"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/prisonerc
+	name = "Slave (Tribe)"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/hostage
 	name = "Hostage"
 	icon_state = "arrow"

@@ -1291,6 +1291,10 @@
 	icon_state = "iron_corner"
 	},
 /area/rogue/under/cavewet/bogcaves/sunkencity/psydon)
+"atn" = (
+/obj/effect/landmark/start/prisonerc,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "atx" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/rogue/church,
@@ -279425,7 +279429,7 @@ fPm
 fPm
 pAa
 hHF
-hHF
+atn
 hHF
 hHF
 pnn
@@ -281033,7 +281037,7 @@ ddv
 jiS
 pAa
 scd
-hHF
+atn
 hHF
 hHF
 gtF
@@ -281838,7 +281842,7 @@ iDE
 pAa
 pqX
 hHF
-hHF
+atn
 hHF
 sFe
 pAa
