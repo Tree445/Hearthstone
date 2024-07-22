@@ -12984,7 +12984,7 @@
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 32
 	},
-/turf/closed/mineral/rogue/bedrock,
+/turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "nZm" = (
 /obj/effect/decal/cobbleedge{
