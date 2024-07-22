@@ -32,7 +32,7 @@
 /obj/item/organ/breasts
 	name = "breasts"
 	icon_state = "breasts"
-	dropshrink = 1.5
+	dropshrink = 1.25
 	visible_organ = TRUE
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_BREASTS
@@ -43,7 +43,6 @@
 /obj/item/organ/belly
 	name = "belly"
 	icon_state = "belly"
-	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_STOMACH
 	slot = ORGAN_SLOT_BELLY

@@ -16,7 +16,12 @@ GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"Small" = 2,
 	"Normal" = 3,
 	"Large" = 4,
-	"Enormous" = 5
+	"Enormous" = 5,
+	"Towering" = 6,
+	"Gigantic" = 7,
+	"Gargantuan" = 8,
+	"Impossible" = 9,
+	"Ungodly" = 10,
 ))
 
 GLOBAL_LIST_INIT(named_belly_sizes, list(
