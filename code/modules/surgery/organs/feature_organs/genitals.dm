@@ -1,6 +1,7 @@
 /obj/item/organ/penis
 	name = "penis"
-	icon_state = "severedtail" //placeholder
+	icon_state = "penis"
+	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_PENIS
@@ -10,7 +11,8 @@
 
 /obj/item/organ/vagina
 	name = "vagina"
-	icon_state = "severedtail" //placeholder
+	icon_state = "vagina"
+	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_VAGINA
@@ -29,7 +31,8 @@
 
 /obj/item/organ/breasts
 	name = "breasts"
-	icon_state = "severedtail" //placeholder
+	icon_state = "breasts"
+	dropshrink = 1.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_BREASTS
@@ -39,7 +42,8 @@
 
 /obj/item/organ/belly
 	name = "belly"
-	icon_state = "severedtail" //placeholder
+	icon_state = "belly"
+	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_STOMACH
 	slot = ORGAN_SLOT_BELLY
@@ -49,7 +53,8 @@
 
 /obj/item/organ/testicles
 	name = "testicles"
-	icon_state = "severedtail" //placeholder
+	icon_state = "testicles"
+	dropshrink = 0.5
 	visible_organ = TRUE
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TESTICLES
