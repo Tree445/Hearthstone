@@ -102,12 +102,12 @@
 		update_damage_overlays()
 		if(levels >= 1)
 			//ouchie
-			affecting.try_crit(BCLASS_TWIST, 100*levels)
+			affecting.try_crit(BCLASS_TWIST, 125*levels)
 
 	if(chat_message)
 		to_chat(src, chat_message)
 
-	AdjustKnockdown(levels * 8)
+	AdjustKnockdown(levels * 15)
 
 /mob/living/carbon/human/proc/setup_human_dna()
 	//initialize dna. for spawned humans; overwritten by other code
