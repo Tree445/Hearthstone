@@ -1,16 +1,17 @@
-/datum/job/roguetown/prisonerb
-	title = "Slave (Tribe)"
+/datum/job/roguetown/prisonerc
+	//disabled cuz no balls
+	title = "Tribal Slave"
 	flag = PRISONERC
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "You are a slave in the tribe, likely for your crimes against it... Or something else, either way you live, mine and likely do other things as the tribals tell you to do."
 
-	outfit = /datum/outfit/job/roguetown/prisonerb
+	outfit = /datum/outfit/job/roguetown/prisonerc
 	bypass_jobban = TRUE
 	display_order = JDO_PRISONERC
 	give_bank_account = 10
@@ -20,7 +21,7 @@
 
 	cmode_music = 'sound/music/combat_bum.ogg'
 
-/datum/outfit/job/roguetown/prisonerb/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/prisonerc/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	if(H.mind)
