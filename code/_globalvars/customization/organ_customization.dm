@@ -19,6 +19,13 @@ GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"Enormous" = 5
 ))
 
+GLOBAL_LIST_INIT(named_belly_sizes, list(
+	"Flat" = 0,
+	"Small" = 1,
+	"Medium" = 2,
+	"Large" = 3,
+))
+
 GLOBAL_LIST_INIT(customizer_choices, build_customizer_choices())
 GLOBAL_LIST_INIT(customizers, build_customizers())
 

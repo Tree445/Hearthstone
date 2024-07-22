@@ -37,6 +37,16 @@
 	accessory_type = /datum/sprite_accessory/breasts/pair
 	var/breast_size = DEFAULT_BREASTS_SIZE
 
+/obj/item/organ/belly
+	name = "belly"
+	icon_state = "severedtail" //placeholder
+	visible_organ = TRUE
+	zone = BODY_ZONE_PRECISE_STOMACH
+	slot = ORGAN_SLOT_BELLY
+	organ_dna_type = /datum/organ_dna/belly
+	accessory_type = /datum/sprite_accessory/belly
+	var/belly_size = DEFAULT_BELLY_SIZE
+
 /obj/item/organ/testicles
 	name = "testicles"
 	icon_state = "severedtail" //placeholder
@@ -64,5 +74,10 @@
 
 /obj/item/organ/breasts/internal
 	name = "internal breasts"
+	visible_organ = FALSE
+	accessory_type = /datum/sprite_accessory/none
+
+/obj/item/organ/belly/internal
+	name = "internal belly"
 	visible_organ = FALSE
 	accessory_type = /datum/sprite_accessory/none
