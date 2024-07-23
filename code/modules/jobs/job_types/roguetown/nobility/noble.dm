@@ -72,12 +72,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
-		H.change_stat("strength", 1)
-		H.change_stat("perception", 1)
-		H.change_stat("intelligence", 2)
-		H.change_stat("constitution", 3)
-		H.change_stat("endurance", 2)
-		H.change_stat("fortune", 1)
+		H.change_stat("perception", 2)
+		H.change_stat("endurance", -2)
+		H.change_stat("strength", -3)
+		H.change_stat("constitution", 1)
+		H.change_stat("speed", 2)
 
 
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
