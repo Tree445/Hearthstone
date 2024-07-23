@@ -9062,6 +9062,7 @@
 	dir = 10
 	},
 /obj/item/natural/feather,
+/obj/item/scrying,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
 "KN" = (
