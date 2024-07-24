@@ -16,27 +16,28 @@
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
 	// Contributor after choices, if not contributor defaults to el rogue.
+	var/classchoice
 	if(check_contributor(H.ckey))
 		H.adjust_blindness(-3)
 		H.visible_message(span_info("I contributed into this world, I have been around..."))
-		var/contrclasses = list("Rogue","Assassin","Duelist")
-		var/contrclasschoice = input("Choose your archetypes", "Available archetypes") as anything in contrclasses
+		var/classes = list("Rogue","Assassin","Duelist")
+		classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	else //not contributor
 		H.adjust_blindness(-3)
-		var/contrclasses = list("Rogue","Duelist",)
-		var/contrclasschoice = input("Choose your archetypes", "Available archetypes") as anything in contrclasses
-		switch(contrclasschoice)
-			if("Rogue")
-				H.set_blindness(0)
-				roguearch(H)
-			if("Assassin")
-				H.set_blindness(0)
-				assassinarch(H)
-			if("Duelist")
-				H.set_blindness(0)
-				duelistarch(H)
+		var/classes = list("Rogue","Duelist",)
+		classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
+	switch(classchoice)
+		if("Rogue")
+			H.set_blindness(0)
+			roguearch(H)
+		if("Assassin")
+			H.set_blindness(0)
+			assassinarch(H)
+		if("Duelist")
+			H.set_blindness(0)
+			duelistarch(H)
 
-/datum/advclass/rogue/proc/roguearch(mob/living/carbon/human)
+/datum/outfit/job/roguetown/adventurer/rogue/proc/roguearch(mob/living/carbon/human/H)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
@@ -78,7 +79,7 @@
 	H.change_stat("intelligence", 2)
 
 
-/datum/advclass/rogue/proc/assassinarch(mob/living/carbon/human)
+/datum/outfit/job/roguetown/adventurer/rogue/proc/assassinarch(mob/living/carbon/human/H)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -120,7 +121,8 @@
 	H.visible_message(span_info("I honed my skills as a rogue through the years, and was skilled enough to become an assassin. Now it depends to me how I use my abilities."))
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
 
-/datum/advclass/rogue/proc/duelistarch(mob/living/carbon/human)
+/datum/outfit/job/roguetown/adventurer/rogue/proc/duelistarch(mob/living/carbon/human/H)
+	//less of other skills, more sword and knife combat skills.
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
@@ -128,7 +130,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
@@ -136,7 +138,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
@@ -152,8 +154,8 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 	cloak = /obj/item/clothing/cloak/half
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltr = /obj/item/rogueweapon/sword/rapier
-	beltl = /obj/item/rogueweapon/shield/buckler
+	beltl = /obj/item/rogueweapon/sword/rapier
+	beltr = /obj/item/rogueweapon/shield/buckler
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
@@ -161,4 +163,4 @@
 	H.change_stat("strength", 2)
 	H.change_stat("speed", pick(3,4))
 	H.change_stat("intelligence", 1)
-	H.visible_message(span_info("I trained as a swashbuckler, flair and precision is my weapon... And some dirty tricks perhaps. I can fool people into underestimating me, too."))
+	H.visible_message(span_info("I trained as a swashbuckler, flair and precision is my weapon... And some dirty tricks under my cape. I can fool people into underestimating me, their last mistake."))
