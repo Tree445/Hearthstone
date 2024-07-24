@@ -59,7 +59,7 @@
 		if(observer_privilege)
 			used_name = name
 		if(job == "Goblin King")
-			var/used_title =  "King or Queen of the Goblins"
+			var/used_title =  "King or Queen of the Tribe"
 		// Use the possibly modified title in the output
 			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [used_title].")
 		else
@@ -73,7 +73,6 @@
 				if(J.advjob_examine)
 					used_title = advjob
 				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [islatejoin ? "returning " : ""][race_name] [used_title].")
-
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
 			var/list/skin_tones = dna.species.get_skin_list()
@@ -98,6 +97,11 @@
 					slop_lore_string = ", <span class='danger'>A TRAITOR!</span>"
 			. += span_info("[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]")
 
+		var/usedrole = funnyrole
+		if(usedrole)
+			. += span_notice("[used_name] is a [usedrole].")
+		if(HAS_TRAIT(src, TRAIT_NOBLE))
+			. += span_notice("[used_name] is a <EM>NOBLE</EM>.")
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(H.marriedto == name)
@@ -117,7 +121,7 @@
 					commie_text = span_notice("Free man!")
 				else
 					commie_text = span_userdanger("BANDIT!")
-			if(mind.special_role == "Vampire Lord")
+			if(mind.special_role == "Vampire Lord" && !mind.has_antag_datum(/datum/antagonist/vampirelord/).disguised)
 				. += span_userdanger("A MONSTER!")
 			if(mind.assigned_role == "Lunatic")
 				. += span_userdanger("LUNATIC!")
@@ -497,6 +501,12 @@
 
 	if(!obscure_name && headshot_link)
 		. += "<a href='?src=[REF(src)];task=view_headshot;'>View headshot</a>"
+	
+	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
+	for(var/line in lines)
+		. += span_info(line)
+
+	. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
 
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))

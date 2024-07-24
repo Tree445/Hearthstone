@@ -114,6 +114,25 @@
 		for(var/obj/item/embedded as anything in embedded_objects)
 			bodypart_status += "<a href='?src=[owner_ref];embedded_object=[REF(embedded)];embedded_limb=[REF(src)]'>[embedded.name]</a>"
 	
+	if(owner)
+		if(body_zone == BODY_ZONE_CHEST || body_zone == BODY_ZONE_PRECISE_GROIN) //Vrell - Makes genitals visible when inspecting the chest.
+			bodypart_status += "<B>Genitalia:</B>"
+			if(owner.has_penis())
+				var/obj/item/organ/penis/ownerpenis = owner.getorgan(/obj/item/organ/penis)
+				bodypart_status += "[owner] has a [find_key_by_value(GLOB.named_penis_sizes, ownerpenis.penis_size)] penis."
+			if(owner.has_testicles())
+				var/obj/item/organ/testicles/ownerballs = owner.getorgan(/obj/item/organ/testicles)
+				bodypart_status += "[owner] has [find_key_by_value(GLOB.named_ball_sizes, ownerballs.ball_size)] testicles."
+			if(owner.has_breasts())
+				var/obj/item/organ/breasts/ownerbreasts = owner.getorgan(/obj/item/organ/breasts)
+				bodypart_status += "[owner] has [find_key_by_value(GLOB.named_breast_sizes, ownerbreasts.breast_size)] breasts."
+			var/mob/living/carbon/human/ownerussy = owner
+			if(ownerussy.has_belly())
+				var/obj/item/organ/belly/ownerbelly = ownerussy.getorgan(/obj/item/organ/belly)
+				bodypart_status += "[owner] has a [find_key_by_value(GLOB.named_belly_sizes, ownerbelly.belly_size)] belly."
+			if(owner.has_vagina())
+				bodypart_status += "[owner] has a vagina."
+
 	return bodypart_status
 
 /obj/item/bodypart/proc/check_for_injuries(mob/user, advanced = FALSE)

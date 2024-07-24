@@ -149,6 +149,9 @@
 		if("toggle_missing")
 			if(customizer.allows_disabling)
 				entry.disabled = !entry.disabled
+			if(ishuman(user)) // Vrell - idk why this is needed here but it fixes shit.
+				var/mob/living/carbon/human/humanized = user
+				humanized.update_body_parts(TRUE)
 		if("change_choice")
 			var/list/choice_list = list()
 			for(var/choice_type in customizer.customizer_choices)
@@ -164,6 +167,9 @@
 			customizer_entries += customizer.create_customizer_entry(src, choice_type)
 		else
 			choice.handle_topic(user, href_list, src, entry, customizer_type)
+	if(ishuman(user))
+		var/mob/living/carbon/human/humanized = user
+		humanized.update_body_parts(TRUE)
 
 /datum/preferences/proc/reset_all_customizer_accessory_colors()
 	for(var/datum/customizer_entry/entry as anything in customizer_entries)
@@ -216,8 +222,38 @@
 		return marking_color
 	return null
 
+/datum/preferences/proc/get_belly_color()
+	var/list/zone_list = body_markings[BODY_ZONE_CHEST]
+	if(!zone_list)
+		return null
+	for(var/marking_name in zone_list)
+		var/datum/body_marking/marking = GLOB.body_markings[marking_name]
+		if(!marking.covers_chest)
+			continue
+		var/marking_color = zone_list[marking_name]
+		return marking_color
+	return null
+
 /datum/preferences/proc/get_customizer_entry_of_type(entry_type)
 	for(var/datum/customizer_entry/entry as anything in customizer_entries)
 		if(entry.type == entry_type)
 			return entry
 	return null
+
+/datum/preferences/proc/genderize_customizer_entries()
+	customizer_entries = SANITIZE_LIST(customizer_entries)
+	var/datum/species/species = pref_species
+	var/list/customizers = species.customizers
+
+	/// Check if we have any missing customizer entries
+	for(var/datum/customizer/customizer_type as anything in customizers)
+		if(customizer_type.gender_enabled == null)
+			continue
+		for(var/datum/customizer_entry/entry as anything in customizer_entries)
+			if(entry.customizer_type != customizer_type)
+				continue
+			if(customizer_type.gender_enabled == gender)
+				entry.disabled = FALSE
+			else
+				entry.disabled = TRUE
+			break

@@ -9,18 +9,18 @@
 	dropshrink = 0.6
 	max_integrity = 10
 	force = 10
-/*
+
 /obj/item/ammo_casing/caseless/rogue/bolt/poison
 	name = "poisoned bolt"
 	desc = "A durable iron bolt that will pierce a skull easily. This one is coated in a clear liquid."
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison
-	icon_state = "arrow_poison"
-*/
+	icon_state = "bolt_poison"
+
 /obj/projectile/bullet/reusable/bolt
 	name = "bolt"
-	damage = 35
+	damage = 70
 	damage_type = BRUTE
-	armor_penetration = 35
+	armor_penetration = 50
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "bolt_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt
@@ -29,11 +29,11 @@
 	embedchance = 100
 	woundclass = BCLASS_STAB
 	flag = "bullet"
-	speed = 0.3
-/*
+	speed = 0.5
+
 /obj/projectile/bullet/reusable/bolt/poison
 	name = "poisoned bolt"
-	damage = 50
+	damage = 70
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bolt/poison
 
 
@@ -42,7 +42,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 7) //not gonna kill anyone, but they will be quite quiet
-*/
+
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
 	desc = "A wooden shaft with a pointy iron end."
@@ -57,9 +57,9 @@
 
 /obj/projectile/bullet/reusable/arrow
 	name = "arrow"
-	damage = 35
+	damage = 50
 	damage_type = BRUTE
-	armor_penetration = 10
+	armor_penetration = 40
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow
@@ -96,7 +96,7 @@
 
 /obj/projectile/bullet/reusable/arrow/poison
 	name = "arrow"
-	damage = 35
+	damage = 50
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow_proj"

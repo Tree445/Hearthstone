@@ -75,6 +75,7 @@
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
@@ -98,6 +99,7 @@
 		"Almondvalle" = SKIN_COLOR_ALMONDVALLE,
 		"Walnut Woods" = SKIN_COLOR_WALNUT_WOODS,
 		"Timberborn" = SKIN_COLOR_TIMBERBORN,
+		"Ashen" 	= SKIN_COLOR_ASHEN,
 	)
 
 /datum/species/elf/wood/get_hairc_list()

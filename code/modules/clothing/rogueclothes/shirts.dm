@@ -30,7 +30,7 @@
 	icon_state = "priestunder"
 	sleeved = null
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = HUMANLIKE_RACE_TYPES
+	allowed_race = NON_DWARVEN_RACE_TYPES
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	color = CLOTHING_BLACK
@@ -108,7 +108,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	name = "shirt"
-	desc = ""
+	desc = "A simple shirt."
 	icon_state = "shortshirt"
 	item_state = "shortshirt"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -133,7 +133,7 @@
 /obj/item/clothing/suit/roguetown/shirt/rags
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "rags"
-	desc = ""
+	desc = "Better than going naked? You be the judge."
 	body_parts_covered = CHEST|GROIN|VITALS
 	color = "#b0b0b0"
 	icon_state = "rags"
@@ -151,6 +151,18 @@
 	icon_state = "tunic"
 	item_state = "undershirt"
 	sleevetype = "tunic"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/suit/roguetown/shirt/tribalrag
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	name = "tribalrag"
+	desc = "Rags worn by southern tribals."
+	body_parts_covered = CHEST|VITALS
+	boobed = TRUE
+	icon_state = "tribalrag"
+	item_state = "tribalrag"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH|HIDEBOOB
@@ -218,10 +230,10 @@
 	icon_state = "silkdress"
 	item_state = "silkdress"
 	color = "#e6e5e5"
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 	color = CLOTHING_WHITE
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess/Initialize()
 	. = ..()
 	if(GLOB.lordprimary)
@@ -232,13 +244,13 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/black
 	color = CLOTHING_BLACK
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/green
 	color = CLOTHING_DARK_GREEN
-	
+
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random/Initialize()
 	. = ..()
 	color = pick("#e6e5e5", "#52BE80", "#C39BD3", "#EC7063","#5DADE2")
@@ -280,3 +292,57 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
+	name = "grenzelhoftian hip-shirt"
+	desc = ""
+	body_parts_covered = CHEST|GROIN|ARMS|VITALS
+	icon_state = "grenzelshirt"
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	boobed = TRUE
+	detail_tag = "_detail"
+	detail_color = CLOTHING_WHITE
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	var/picked = FALSE
+	colorgrenz = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/grenzelhoft/attack_right()
+	..()
+	if(!picked)
+		var/list/colors = list(
+		"PURPLE"="#865c9c",
+		"RED"="#933030",
+		"BROWN"="#685542",
+		"GREEN"="#79763f",
+		"BLUE"="#395480",
+		"YELLOW"="#b5b004",
+		"TEAL"="#249589",
+		"WHITE"="#ffffff",
+		"ORANGE"="#b86f0c",
+		"MAJENTA"="#962e5c")
+
+		var/mob/living/carbon/human/L = loc
+		var/choice = input(L, "Choose a color.", "GRENZELHOFTIAN COLORPLEX") as anything in colors
+		var/playerchoice = colors[choice]
+		picked = TRUE
+		detail_color = playerchoice
+		update_icon()
+		for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
+			testing("clothes to color are [V]")
+			if(V.colorgrenz)
+				V.detail_color = playerchoice
+				V.update_icon()
+		L.regenerate_icons()
+
+
+
+/obj/item/clothing/suit/roguetown/shirt/grenzelhoft/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)

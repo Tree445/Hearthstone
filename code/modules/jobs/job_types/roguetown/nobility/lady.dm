@@ -15,7 +15,7 @@
 
 	display_order = JDO_LADY
 	give_bank_account = TRUE
-	min_pq = 0
+	min_pq = 5
 	max_pq = null
 
 /datum/job/roguetown/exlady //just used to change the ladys title
@@ -49,6 +49,7 @@
 		else
 			armor = /obj/item/clothing/suit/roguetown/armor/armordress
 	head = /obj/item/clothing/head/roguetown/hennin
+	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female nobles
 //		SSticker.rulermob = H
 
 	id = /obj/item/clothing/ring/silver

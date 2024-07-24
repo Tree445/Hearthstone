@@ -30,6 +30,12 @@
 	name = "Round + Light"
 	icon_state = "roundlight"
 
+/datum/sprite_accessory/snout/vulp
+	name = "Vulp Two-shade"
+	icon_state = "vulp"
+	color_keys = 2
+	color_key_names = list("Snout", "Inner")
+
 /datum/sprite_accessory/snout/bird
 	name = "Beak"
 	icon_state = "bird"
@@ -63,6 +69,12 @@
 /datum/sprite_accessory/snout/hookbeakbig
 	name = "Hook Beak Big"
 	icon_state = "hookbeakbig"
+
+/datum/sprite_accessory/snout/bat
+	name = "Bat"
+	icon_state = "bat"
+	color_keys = 3
+	color_key_names = list("Top", "Detail", "Nose")
 
 /datum/sprite_accessory/snout/bug
 	name = "Bug"

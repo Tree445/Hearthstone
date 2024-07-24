@@ -17,16 +17,19 @@
 
 /datum/outfit/job/roguetown/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	beltl = /obj/item/flashlight/flare/torch
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-	cloak = /obj/item/clothing/cloak/stabard/grenzelhoft
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	pants = /obj/item/clothing/under/roguetown/trou/leather
 	neck = /obj/item/clothing/neck/roguetown/gorget
-	head = /obj/item/clothing/head/roguetown/chaperon
+	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+	head = /obj/item/clothing/head/roguetown/grenzelhofthat
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/grenzelhoft
+	pants = /obj/item/clothing/under/roguetown/grenzelpants
+	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
+	gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+
+	backpack_contents = list(/obj/item/roguekey/mercenary)
 
 	//quick and gay way to do random loadouts
 	var/equipment = rand(1, 2)
@@ -34,20 +37,7 @@
 		r_hand = /obj/item/rogueweapon/spear/billhook
 	else if (equipment == 2)
 		r_hand = /obj/item/rogueweapon/halberd
-	var/obj/item/flashlight/flare/torch/T = new()
-	T.spark_act()
-	H.put_in_hands(T,forced=TRUE)
 
-	if(H.gender == FEMALE)
-		var/acceptable = list("Tomboy", "Bob", "Curly Short")
-		if(!(H.hairstyle in acceptable))
-			H.hairstyle = pick(acceptable)
-			H.update_hair()
-	//Humie grenzelhofts are always set to be, well, grenzelhoft
-	if(ishumannorthern(H))
-		var/list/skin_slop = H.dna.species.get_skin_list()
-		H.skin_tone = skin_slop["Grenzelhoft"]
-		H.update_body()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)

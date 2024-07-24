@@ -46,10 +46,6 @@
 		ORGAN_SLOT_ANTENNAS = /obj/item/organ/antennas/moth,
 		ORGAN_SLOT_NECK_FEATURE = /obj/item/organ/neck_feature/moth_fluff,
 		ORGAN_SLOT_WINGS = /obj/item/organ/wings/moth,
-		ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
-		ORGAN_SLOT_PENIS = /obj/item/organ/penis,
-		ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		)
 	customizers = list(
 		/datum/customizer/organ/eyes/moth,
@@ -61,6 +57,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/lizard,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(
@@ -92,6 +89,16 @@
 		/datum/body_marking/moth/grayscale/jungle,
 		/datum/body_marking/moth/grayscale/witchwing,
 		/datum/body_marking/moth/grayscale/lovers,
+	)
+	descriptor_choices = list(
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/chitin,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
 	)
 
 /datum/species/moth/check_roundstart_eligible()

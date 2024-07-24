@@ -1,12 +1,10 @@
 /datum/advclass/amazon
 	name = "Amazon"
-	tutorial = "Amazons are warrior-women from the mysterious isle of Issa. These rare fighters are so tough they can beat an average man!"
+	tutorial = "Amazons are warrior-women from the mysterious isle of Issa."
 	allowed_sexes = list(FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/amazon
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	pickprob = 13
-	maximum_possible_slots = 2
 	category_tags = list(CTAG_ADVENTURER)
 
 	traits_applied = list(TRAIT_CRITICAL_RESISTANCE, TRAIT_NOPAINSTUN, TRAIT_STEELHEARTED)
@@ -14,8 +12,8 @@
 
 /datum/outfit/job/roguetown/adventurer/amazon/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -31,21 +29,17 @@
 	beltl = /obj/item/rogueweapon/huntingknife
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	backl = /obj/item/storage/backpack/rogue/satchel
-	if(prob(23))
-		armor = /obj/item/clothing/suit/roguetown/armor/leather
-	if(prob(23))
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-	if(prob(50))
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
+	if(prob(100))
+		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 	if(prob(75))
 		beltr = /obj/item/rogueweapon/sword/iron
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	else
 		r_hand = /obj/item/rogueweapon/spear
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	H.change_stat("strength", 2)
 	H.change_stat("intelligence", -2)
 	H.change_stat("constitution", 3)

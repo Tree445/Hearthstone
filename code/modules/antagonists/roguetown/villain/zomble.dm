@@ -14,9 +14,11 @@
 	var/ambushable = TRUE
 	var/soundpack_m
 	var/soundpack_f
+	/*
 	var/STASTR
 	var/STASPD
 	var/STAINT
+	*/
 	var/cmode_music
 	var/datum/patron/patron
 	var/list/base_intents
@@ -27,7 +29,6 @@
 	/// Traits applied to the owner mob when we turn into a zombie
 	var/static/list/traits_zombie = list(
 		TRAIT_CRITICAL_RESISTANCE,
-		TRAIT_NOROGSTAM,
 		TRAIT_NOMOOD,
 		TRAIT_NOHUNGER,
 		TRAIT_EASYDISMEMBER,
@@ -41,7 +42,6 @@
 		TRAIT_BASHDOORS,
 		TRAIT_SPELLCOCKBLOCK,
 		TRAIT_BLOODLOSS_IMMUNE,
-		TRAIT_LIMPDICK,
 		TRAIT_ZOMBIE_SPEECH,
 		TRAIT_ZOMBIE_IMMUNE,
 		TRAIT_EMOTEMUTE,
@@ -55,7 +55,6 @@
 		TRAIT_NOPAINSTUN,
 		TRAIT_NOBREATH,
 		TRAIT_TOXIMMUNE,
-		TRAIT_LIMPDICK,
 		TRAIT_ZOMBIE_IMMUNE,
 		TRAIT_ROTMAN,
 	)
@@ -86,9 +85,11 @@
 		soundpack_m = zombie.dna.species.soundpack_m
 		soundpack_f = zombie.dna.species.soundpack_f
 	base_intents = zombie.base_intents
+/*
 	STASTR = zombie.STASTR
 	STASPD = zombie.STASPD
 	STAINT = zombie.STAINT
+*/
 	cmode_music = zombie.cmode_music
 	patron = zombie.patron
 	return ..()
@@ -109,18 +110,22 @@
 		if(zombie.charflaw)
 			zombie.charflaw.ephemeral = FALSE
 		zombie.update_body()
+		/*
 		zombie.STASTR = STASTR
 		zombie.STASPD = STASPD
 		zombie.STAINT = STAINT
+		*/
 		zombie.cmode_music = cmode_music
 		zombie.set_patron(patron)
 		for(var/trait in traits_zombie)
 			REMOVE_TRAIT(zombie, trait, "[type]")
 		zombie.remove_client_colour(/datum/client_colour/monochrome)
 		if(has_turned && become_rotman)
+			/*
 			zombie.STACON = max(zombie.STACON - 2, 1) //ur rotting bro
 			zombie.STASPD = max(zombie.STASPD - 3, 1)
 			zombie.STAINT = max(zombie.STAINT - 3, 1)
+			*/
 			for(var/trait in traits_rotman)
 				ADD_TRAIT(zombie, trait, "[type]")
 			to_chat(zombie, span_green("I no longer crave for flesh... <i>But I still feel ill.</i>"))
@@ -187,6 +192,7 @@
 	zombie.cmode_music = 'sound/music/combat_weird.ogg'
 	zombie.set_patron(/datum/patron/inhumen/zizo)
 
+/*
 	// Outside of one 2% chance remaining for zombie era strength
 	if(prob(2))
 		zombie.STASTR = 18
@@ -195,6 +201,7 @@
 	zombie.STASPD = rand(5,7)
 
 	zombie.STAINT = 1
+*/
 	last_bite = world.time
 	has_turned = TRUE
 	// Drop your helm and gorgies boy you won't need it anymore!!!
@@ -208,7 +215,7 @@
 		zombie.dropItemToGround(zombie.get_item_by_slot(slot), TRUE)
 
 	// Ghosts you because this shit was just not working whatsoever, let the AI handle the rest
-	zombie.ghostize(FALSE)
+	//zombie.ghostize(FALSE)
 
 /datum/antagonist/zombie/greet()
 	to_chat(owner.current, span_userdanger("Death is not the end..."))
@@ -242,7 +249,7 @@
 		qdel(src)
 		return
 
-	zombie.can_do_sex = FALSE
+	zombie.can_do_sex = TRUE //lewd
 
 	zombie.blood_volume = BLOOD_VOLUME_NORMAL
 	zombie.setOxyLoss(0, updating_health = FALSE, forced = TRUE) //zombles dont breathe

@@ -46,15 +46,8 @@
 /mob/living/proc/check_prayer(mob/living/L,message)
 	if(!L || !message)
 		return FALSE
-	var/list/bannedwords = list("cock","dick","fuck","shit","pussy","cuck","fucker","fucked","cunt","asshole")
 	var/message2recognize = sanitize_hear_message(message)
 	var/mob/living/carbon/human/M = L
-	for(var/T in bannedwords)
-		if(findtext(message2recognize, T))
-			L.add_stress(/datum/stressevent/psycurse)
-			L.adjust_fire_stacks(100)
-			L.IgniteMob()
-			return FALSE
 	if(length(message2recognize) > 15)
 		if(L.has_flaw(/datum/charflaw/addiction/godfearing))
 			L.sate_addiction()
@@ -787,17 +780,38 @@
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 
+/datum/emote/living/scream/painscream/run_emote(mob/user, params, type_override, intentional, targetted)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.has_flaw(/datum/charflaw/addiction/masochist))
+			H.sate_addiction()
+
 /datum/emote/living/scream/agony
 	key = "agony"
 	message = "screams in agony!"
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 
+/datum/emote/living/screan/agony/run_emote(mob/user, params, type_override, intentional, targetted)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.has_flaw(/datum/charflaw/addiction/masochist))
+			H.sate_addiction()
+
 /datum/emote/living/scream/firescream
 	key = "firescream"
 	nomsg = TRUE
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
+
+/datum/emote/living/scream/firescream/run_emote(mob/user, params, type_override, intentional, targetted)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.has_flaw(/datum/charflaw/addiction/masochist))
+			H.sate_addiction()
 
 /datum/emote/living/aggro
 	key = "aggro"
@@ -824,6 +838,13 @@
 	emote_type = EMOTE_AUDIBLE
 	nomsg = TRUE
 	only_forced_audio = TRUE
+
+/datum/emote/living/pain/run_emote(mob/user, params, type_override, intentional, targetted)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.has_flaw(/datum/charflaw/addiction/masochist))
+			H.sate_addiction()
 
 /datum/emote/living/drown
 	key = "drown"

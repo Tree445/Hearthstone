@@ -17,14 +17,14 @@
                     owner.current.playsound_local(get_turf(owner.current), 'sound/music/wolfintro.ogg', 80, FALSE, pressure_affected = FALSE)
                     H.flash_fullscreen("redflash3")
                     transforming = world.time // timer
-    
+
     // Begin transformation
     else if(transforming)
         if (world.time >= transforming + 35 SECONDS) // Stage 3
             H.werewolf_transform()
             transforming = FALSE
             transformed = TRUE // Mark as transformed
-            
+
         else if (world.time >= transforming + 25 SECONDS) // Stage 2
             H.flash_fullscreen("redflash3")
             H.emote("agony", forced = TRUE)
@@ -35,27 +35,30 @@
         else if (world.time >= transforming + 10 SECONDS) // Stage 1
             H.emote("")
             to_chat(H, span_warning("I can feel my muscles aching, it feels HORRIBLE..."))
-        
+
 
     // Werewolf reverts to human form during the day
     else if(transformed)
         H.real_name = wolfname
         H.name = wolfname
 
-        if(GLOB.tod != "night")
-            if(!untransforming)
-                untransforming = world.time // Start untransformation phase
+        if(GLOB.tod != "night" && !untransforming) // Is it day and we arnt already turning back.
+            if(isturf(H.loc))
+                var/turf/loc = H.loc
+                if(loc.can_see_sky())
+                    untransforming = world.time // Start untransformation phase
 
+        if(untransforming)
             if (world.time >= untransforming + 25 SECONDS) // Untransform
                 H.emote("rage", forced = TRUE)
                 H.werewolf_untransform()
                 transformed = FALSE
                 untransforming = FALSE // Reset untransforming phase
-                
+
             else if (world.time >= untransforming + 10 SECONDS) // Alert player
                 H.flash_fullscreen("redflash1")
                 to_chat(H, span_warning("Daylight shines around me... the curse begins to fade."))
-			
+
 
 /mob/living/carbon/human/species/werewolf/death(gibbed)
 	werewolf_untransform(TRUE, gibbed)
@@ -134,9 +137,23 @@
 	ADD_TRAIT(W, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_IGNORESLOWDOWN, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_HARDDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_PIERCEIMMUNE, TRAIT_GENERIC)
 
 	invisibility = oldinv
 
+	if(getorganslot(ORGAN_SLOT_PENIS))
+		W.internal_organs_slot[ORGAN_SLOT_PENIS] = /obj/item/organ/penis/internal
+	if(getorganslot(ORGAN_SLOT_TESTICLES))
+		W.internal_organs_slot[ORGAN_SLOT_TESTICLES] = /obj/item/organ/testicles
+	if(getorganslot(ORGAN_SLOT_BREASTS))
+		W.internal_organs_slot[ORGAN_SLOT_BREASTS] = /obj/item/organ/breasts/internal
+	if(getorganslot(ORGAN_SLOT_BELLY))
+		W.internal_organs_slot[ORGAN_SLOT_BELLY] = /obj/item/organ/belly/internal
+	if(getorganslot(ORGAN_SLOT_VAGINA))
+		W.internal_organs_slot[ORGAN_SLOT_VAGINA] = /obj/item/organ/vagina/internal
+
+	W.client.prefs.sexable = client.prefs.sexable
 
 /mob/living/carbon/human/proc/werewolf_untransform(dead,gibbed)
 	if(!stored_mob)

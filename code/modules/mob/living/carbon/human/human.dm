@@ -33,8 +33,6 @@
 	if(user == src)
 		if(get_num_arms(FALSE) < 1)
 			return
-		if(!can_do_sex())
-			return
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 				if(underwear == "Nude")
@@ -53,6 +51,9 @@
 #endif
 
 /mob/living/carbon/human/Initialize()
+#ifdef MATURESERVER
+	sexcon = new /datum/sex_controller(src)
+#endif
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
 
@@ -79,7 +80,7 @@
 
 /mob/living/carbon/human/ZImpactDamage(turf/T, levels)
 	var/obj/item/bodypart/affecting
-	var/dam = levels * rand(10,50)
+	var/dam = levels * rand(10,25)
 	add_stress(/datum/stressevent/felldown)
 	var/chat_message
 	switch(rand(1,4))
@@ -93,15 +94,15 @@
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 			chat_message = span_danger("I fall flat! I'm winded!")
 			emote("gasp")
-			adjustOxyLoss(50)
+			adjustOxyLoss(25)
 		if(4)
 			affecting = get_bodypart(BODY_ZONE_HEAD)
 			chat_message = span_danger("I fall on my head!")
 	if(affecting && apply_damage(dam, BRUTE, affecting, run_armor_check(affecting, "blunt", damage = dam)))
 		update_damage_overlays()
 		if(levels >= 1)
-			//absurd damage to guarantee a crit
-			affecting.try_crit(BCLASS_TWIST, 300)
+			//ouchie
+			affecting.try_crit(BCLASS_TWIST, 125*levels)
 
 	if(chat_message)
 		to_chat(src, chat_message)
@@ -120,6 +121,7 @@
 		AddComponent(/datum/component/mood)
 
 /mob/living/carbon/human/Destroy()
+	QDEL_NULL(sexcon)
 	SShumannpc.processing -= src
 	QDEL_NULL(physiology)
 	GLOB.human_list -= src
@@ -327,8 +329,7 @@
 
 #ifdef MATURESERVER
 	if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
-		if(can_do_sex())
-			dat += "<tr><td><BR><B>Underwear:</B> <A href='?src=[REF(src)];undiesthing=1'>[underwear == "Nude" ? "Nothing" : "Remove"]</A></td></tr>"
+		dat += "<tr><td><BR><B>Underwear:</B> <A href='?src=[REF(src)];undiesthing=1'>[underwear == "Nude" ? "Nothing" : "Remove"]</A></td></tr>"
 #endif
 
 	dat += {"</table>"}
@@ -1190,3 +1191,19 @@
 
 /mob/living/carbon/human/species/zombie/krokodil_addict
 	race = /datum/species/krokodil_addict
+
+//Vrell - Moving this here to fix load order bugs
+/mob/living/carbon/human/has_penis()
+	return getorganslot(ORGAN_SLOT_PENIS)
+
+/mob/living/carbon/human/has_testicles()
+	return getorganslot(ORGAN_SLOT_TESTICLES)
+
+/mob/living/carbon/human/has_vagina()
+	return getorganslot(ORGAN_SLOT_VAGINA)
+
+/mob/living/carbon/human/has_breasts()
+	return getorganslot(ORGAN_SLOT_BREASTS)
+
+/mob/living/carbon/human/proc/has_belly()
+	return getorganslot(ORGAN_SLOT_BELLY)

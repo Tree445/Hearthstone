@@ -96,7 +96,7 @@
 	var/light_system = STATIC_LIGHT
 	///Bitflags to determine lighting-related atom properties.
 	var/light_flags = NONE
-	
+
 
 /**
   * Called when an atom is created in byond (built in engine proc)
@@ -500,13 +500,10 @@
 	if(reagents)
 		if(reagents.flags & TRANSPARENT)
 			if(length(reagents.reagent_list))
-				if(user.can_see_reagents()) //Show each individual reagent
+				if(user.can_see_reagents() || (user.Adjacent(src) && user.mind.get_skill_level(/datum/skill/misc/alchemy) >= 2)) //Show each individual reagent
 					. += "It contains:"
 					for(var/datum/reagent/R in reagents.reagent_list)
-						if(R.volume / 3 < 1)
-							. += "less than 1 oz of <font color=[R.color]>[R.name]</font>"
-						else
-							. += "[round(R.volume / 3)] oz of <font color=[R.color]>[R.name]</font>"
+						. += "[round(R.volume / 3, 0.1)] oz of <font color=[R.color]>[R.name]</font>"
 				else //Otherwise, just show the total volume
 					var/total_volume = 0
 					var/reagent_color
@@ -1132,6 +1129,8 @@
 			log_telecomms(log_text)
 		if(LOG_OOC)
 			log_ooc(log_text)
+		if(LOG_LOOC)
+			log_looc(log_text)
 		if(LOG_ADMIN)
 			log_admin(log_text)
 		if(LOG_ADMIN_PRIVATE)

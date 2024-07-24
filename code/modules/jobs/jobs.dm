@@ -62,7 +62,7 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 GLOBAL_LIST_INIT(noble_positions, list(
 	"King",
 	"Queen Consort",
-	"Prince",
+	"Royal Heir",
 	"Guard Captain",
 	"Bailiff",
 	"Councillor",
@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(church_positions, list(
 
 GLOBAL_LIST_INIT(yeoman_positions, list(
 	"Merchant",
-	"Barkeep",
+	"Innkeep",
 	"Archivist",
 	"Armorer",
 	"Weaponsmith",
@@ -122,13 +122,12 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Towner",
 	"Grabber",
 	"Nightmaster",
-	"Bath Wench",
+	"Nightswain",
 	"Docker",
 	"Prisoner",
 	"Beggar",
 	"Adventurer",
 	"Pilgrim",
-	"Drifter"
 ))
 
 GLOBAL_LIST_INIT(mercenary_positions, list(
@@ -137,7 +136,7 @@ GLOBAL_LIST_INIT(mercenary_positions, list(
 	"Veteran",
 ))
 
-GLOBAL_LIST_INIT(youngfolk_positions, list(
+GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Clerk",
 	"Smithy Apprentice",
@@ -145,7 +144,7 @@ GLOBAL_LIST_INIT(youngfolk_positions, list(
 	"Churchling",
 	"Servant",
 	"Shophand",
-	"Orphan",
+	"Vagabond",
 ))
 
 GLOBAL_LIST_INIT(allmig_positions, list(
@@ -159,10 +158,13 @@ GLOBAL_LIST_INIT(roguewar_positions, list(
 
 
 GLOBAL_LIST_INIT(goblin_positions, list(
-	"Goblin Cook",
-	"Goblin Guard",
-	"Goblin King",
-	"Goblin Smith",
+	"Tribal Cook",
+	"Tribal Guard",
+	"Chieftain",
+	"Tribal Smith",
+	"Tribal Shaman",
+	"Tribal Villager",
+	/*"Tribal Slave",*/
 ))
 
 
@@ -191,7 +193,7 @@ GLOBAL_LIST_INIT(job_assignment_order, get_job_assignment_order())
 	sorting_order += GLOB.church_positions
 	sorting_order += GLOB.yeoman_positions
 	sorting_order += GLOB.peasant_positions
-	sorting_order += GLOB.youngfolk_positions
+	sorting_order += GLOB.apprentices_positions
 	sorting_order += GLOB.goblin_positions
 	return sorting_order
 

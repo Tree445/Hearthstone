@@ -16,13 +16,34 @@
 	organ_type = /obj/item/organ/tail/vulpkanin
 	sprite_accessories = list(/datum/sprite_accessory/tail/fox)
 
-/datum/customizer/organ/tail/tajaran
-	customizer_choices = list(/datum/customizer_choice/organ/tail/tajaran)
+/datum/customizer/organ/tail/lupian
+	customizer_choices = list(/datum/customizer_choice/organ/tail/lupian)
 
-/datum/customizer_choice/organ/tail/tajaran
-	name = "Tajaran Tail"
-	organ_type = /obj/item/organ/tail/tajaran
-	sprite_accessories = list(/datum/sprite_accessory/tail/catbig)
+/datum/customizer_choice/organ/tail/lupian
+	name = "Lupian Tail"
+	organ_type = /obj/item/organ/tail/lupian
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/otie,
+		/datum/sprite_accessory/tail/shepherd,
+		/datum/sprite_accessory/tail/wolf,
+		/datum/sprite_accessory/tail/eevee,
+		/datum/sprite_accessory/tail/fox,
+		/datum/sprite_accessory/tail/fox2,
+		/datum/sprite_accessory/tail/husky
+		)
+
+/datum/customizer/organ/tail/tabaxi
+	customizer_choices = list(/datum/customizer_choice/organ/tail/tabaxi)
+
+/datum/customizer_choice/organ/tail/tabaxi
+	name = "Tabaxi Tail"
+	organ_type = /obj/item/organ/tail/cat
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/catbig,
+		/datum/sprite_accessory/tail/cat,
+		/datum/sprite_accessory/tail/tiger,
+		/datum/sprite_accessory/tail/leopard,
+		)
 
 /datum/customizer/organ/tail/lizard
 	customizer_choices = list(/datum/customizer_choice/organ/tail/lizard)
@@ -94,21 +115,12 @@
 		/datum/sprite_accessory/tail/leopard,
 		/datum/sprite_accessory/tail/deer,
 		/datum/sprite_accessory/tail/raccoon,
-		/datum/sprite_accessory/tail/data_shark,
 		/datum/sprite_accessory/tail/sabresune,
 		/datum/sprite_accessory/tail/lizard/smooth,
 		/datum/sprite_accessory/tail/lizard/dtiger,
 		/datum/sprite_accessory/tail/lizard/ltiger,
 		/datum/sprite_accessory/tail/lizard/spikes,
 		)
-
-/datum/customizer_choice/organ/tail/cat
-	name = "Cat Tail"
-	organ_type = /obj/item/organ/tail/cat
-	sprite_accessories = list(/datum/sprite_accessory/tail/cat)
-
-/datum/customizer/organ/tail/cat
-	customizer_choices = list(/datum/customizer_choice/organ/tail/cat)
 
 /datum/customizer/organ/tail/anthro
 	customizer_choices = list(/datum/customizer_choice/organ/tail/anthro)
@@ -166,7 +178,6 @@
 		/datum/sprite_accessory/tail/leopard,
 		/datum/sprite_accessory/tail/deer,
 		/datum/sprite_accessory/tail/raccoon,
-		/datum/sprite_accessory/tail/data_shark,
 		/datum/sprite_accessory/tail/sabresune,
 		/datum/sprite_accessory/tail/lizard/smooth,
 		/datum/sprite_accessory/tail/lizard/dtiger,

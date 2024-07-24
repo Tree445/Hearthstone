@@ -213,7 +213,26 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/dirt,
 				/turf/open/floor/rogue/grass,
 				/turf/open/water)
-	first_time_text = "Goblin Outpost"
+	first_time_text = "Goblin Fortress"
+	converted_type = /area/rogue/indoors/shelter/bog
+
+
+/area/rogue/outdoors/tribalfort
+	name = "tribalfort"
+	icon_state = "tribalfort"
+	ambientsounds = AMB_BOGDAY
+	ambientnight = AMB_BOGNIGHT
+	spookysounds = SPOOKY_FROG
+	spookynight = SPOOKY_GEN
+	droning_sound = 'sound/music/area/bog.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	ambush_times = list("night","dawn","dusk","day")
+	ambush_types = list(
+				/turf/open/floor/rogue/dirt,
+				/turf/open/floor/rogue/grass,
+				/turf/open/water)
+	first_time_text = "Tribal Ground"
 	converted_type = /area/rogue/indoors/shelter/bog
 
 
@@ -302,7 +321,21 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/goblin/npc/sea = 20)
 	converted_type = /area/rogue/outdoors/caves
 
-/area/rogue/under/cavewet/bogcaves
+/area/rogue/under/cavewet/bogcaves/chapel
+	first_time_text = "FLOODED CHAPEL"
+	spookysounds = SPOOKY_MYSTICAL
+	spookynight = SPOOKY_MYSTICAL
+	droning_sound = 'sound/music/area/magiciantower.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
+/area/rogue/under/cavewet/bogcaves/sunkencity
+	first_time_text = "FLOODED CHAPEL"
+	spookysounds = SPOOKY_MYSTICAL
+	spookynight = SPOOKY_MYSTICAL
+	droning_sound = 'sound/music/area/magiciantower.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
 
 /area/rogue/under/cave/spider
 	icon_state = "spider"

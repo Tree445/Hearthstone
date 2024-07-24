@@ -14,7 +14,7 @@
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/bogguardsman
 	give_bank_account = 16
-	min_pq = 0
+	min_pq = -2
 	max_pq = null
 	
 	cmode_music = 'sound/music/combat_bog.ogg'
@@ -75,11 +75,6 @@
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1)
 	if(H.mind)
 		assign_skills(H)
-	if(H.gender == FEMALE)
-		var/acceptable = list("Tomboy", "Bob", "Curly Short")
-		if(!(H.hairstyle in acceptable))
-			H.hairstyle = pick(acceptable)
-			H.update_hair()
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
@@ -99,6 +94,7 @@
 	bogger.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	bogger.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	bogger.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+	bogger.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	bogger.change_stat("strength", 2)
 	bogger.change_stat("perception", 2)
 	bogger.change_stat("constitution", 1)

@@ -6,7 +6,7 @@
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/nudist
 	traits_applied = list(TRAIT_NUDIST)
-	category_tags = list(CTAG_PILGRIM)
+	category_tags = list(CTAG_CHALLENGE)
 
 /datum/outfit/job/roguetown/adventurer/nudist
 	allowed_patrons = list(/datum/patron/divine/dendor)
@@ -25,4 +25,3 @@
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 4)
 	H.change_stat("constitution", 1)
-	H.change_stat("intelligence", -3)

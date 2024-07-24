@@ -103,12 +103,26 @@
 	reqs = list(/obj/item/natural/hide = 2)
 	sellprice = 26
 
+/datum/crafting_recipe/roguetown/leather/bikini
+	name = "leather bikini armor"
+	result = /obj/item/clothing/suit/roguetown/armor/leather/bikini
+	reqs = list(/obj/item/natural/hide = 2)
+	sellprice = 26
+
 /datum/crafting_recipe/roguetown/leather/hidearmor
 	name = "hide armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	reqs = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)
 	sellprice = 26
+
+/datum/crafting_recipe/roguetown/leather/hidebikini
+	name = "hide bikini armor"
+	result = /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fur = 1)
+	sellprice = 26
+
 
 /datum/crafting_recipe/roguetown/leather/cloak
 	name = "leather cloak"
@@ -123,7 +137,7 @@
 				/obj/item/natural/fibers = 1)
 
 /obj/item/clothing/cloak/raincloak/brown
-	sellprice = 20
+	sellprice = 3
 
 /datum/crafting_recipe/roguetown/leather/cloakfur
 	name = "fur cloak"
@@ -132,6 +146,14 @@
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted
 	sellprice = 55
+
+/datum/crafting_recipe/roguetown/leather/papakha
+	name = "papakha hat"
+	result = /obj/item/clothing/head/roguetown/papakha/crafted
+	reqs = list(/obj/item/natural/fur = 1, /obj/item/natural/fibers = 2)
+
+/obj/item/clothing/head/roguetown/papakha/crafted
+	sellprice = 10
 
 /datum/crafting_recipe/roguetown/leather/saddle
 	name = "saddle"
@@ -148,3 +170,21 @@
 	name = "Drum"
 	result = /obj/item/rogue/instrument/drum
 	reqs = list(/obj/item/natural/hide = 1,/obj/item/grown/log/tree/small = 1)
+
+/datum/crafting_recipe/roguetown/leather/volfhelm
+	name = "wolf helmet"
+	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+	reqs = list(/obj/item/natural/volf_head = 1, /obj/item/natural/hide = 2)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/furlinedboots
+	name = "fur-lined boots"
+	result = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	reqs = list(/obj/item/natural/hide = 1,/obj/item/natural/fur = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/furlinedanklets
+	name = "fur-lined anklets"
+	result = /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
+	reqs = list(/obj/item/natural/hide = 1,/obj/item/natural/fur = 1)
+	craftdiff = 1

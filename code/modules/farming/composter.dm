@@ -78,6 +78,8 @@
 	var/compost_value = 0
 	if(istype(attacking_item, /obj/item/reagent_containers/food/snacks/grown))
 		compost_value = 150
+	if(istype(attacking_item, /obj/item/reagent_containers/food/snacks/meat))
+		compost_value = 250
 	if(istype(attacking_item, /obj/item/natural/chaff))
 		compost_value = 150
 	if(istype(attacking_item, /obj/item/trash/applecore))
@@ -103,7 +105,7 @@
 	if(ready_compost < COMPOST_PER_PRODUCED_ITEM)
 		to_chat(user, span_warning("There's not enough processed compost!"))
 		return TRUE
-	var/do_time = using_tool ? 2 SECONDS : 4 SECONDS
+	var/do_time = using_tool ? 1 SECONDS : 2 SECONDS
 	var/fatigue = using_tool ? 0 : 5
 	if(do_after(user, get_farming_do_time(user, do_time), target = src))
 		apply_farming_fatigue(user, fatigue)

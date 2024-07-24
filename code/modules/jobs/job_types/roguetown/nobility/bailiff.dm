@@ -5,7 +5,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_BAILIFF
@@ -16,7 +16,7 @@
 	outfit = /datum/outfit/job/roguetown/bailiff
 
 	give_bank_account = 40
-	min_pq = 0
+	min_pq = 2
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard.ogg'

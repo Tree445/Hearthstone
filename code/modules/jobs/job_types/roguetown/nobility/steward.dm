@@ -22,6 +22,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/green
 		cloak = /obj/item/clothing/cloak/tabard/knight
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female nobles
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
 		pants = /obj/item/clothing/under/roguetown/tights/random
@@ -52,19 +53,3 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 
-	if(H.charflaw)
-		if(H.charflaw.type != /datum/charflaw/badsight)
-			var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_R_ARM)
-			if(O)
-				O.drop_limb()
-				qdel(O)
-			O = H.get_bodypart(BODY_ZONE_L_ARM)
-			if(O)
-				O.drop_limb()
-				qdel(O)
-			H.regenerate_limb(BODY_ZONE_R_ARM)
-			H.regenerate_limb(BODY_ZONE_L_ARM)
-			H.charflaw = new /datum/charflaw/badsight()
-			if(!istype(H.wear_mask, /obj/item/clothing/mask/rogue/spectacles))
-				qdel(H.wear_mask)
-				mask = /obj/item/clothing/mask/rogue/spectacles

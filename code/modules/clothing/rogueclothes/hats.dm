@@ -18,6 +18,25 @@
 	. = ..()
 	user.update_fov_angles()
 
+
+/obj/item/clothing/head/roguetown/antlerhood
+	name = "antlerhood"
+	desc = "A hood suited for druids and shamans."
+	color = null
+	flags_inv = HIDEEARS|HIDEHAIR
+	icon_state = "antlerhood"
+	item_state = "antlerhood"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	body_parts_covered = HEAD|HAIR|EARS|NECK
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = ""
+	max_integrity = 100
+	armor = list("blunt" = 16, "slash" = 19, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_TWIST)
+	anvilrepair = null
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+
 /obj/item/clothing/head/roguetown/roguehood
 	name = "hood"
 	desc = ""
@@ -25,8 +44,11 @@
 	icon_state = "basichood"
 	item_state = "basichood"
 	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi' //Overrides slot icon behavior
 	body_parts_covered = NECK
-	slot_flags = ITEM_SLOT_HEAD
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_CLOAK
+	sleevetype = null
+	sleeved = null
 	dynamic_hair_suffix = ""
 	edelay_type = 1
 	adjustable = CAN_CADJUST
@@ -36,7 +58,7 @@
 
 /obj/item/clothing/head/roguetown/roguehood/shalal
 	name = "keffiyeh"
-	desc = ""
+	desc = "A protective covering worn by those native to the desert."
 	color = null
 	icon_state = "shalal"
 	item_state = "shalal"
@@ -145,7 +167,7 @@
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144", "#b8252c")
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/AdjustClothes(mob/user)
@@ -160,6 +182,7 @@
 				var/mob/living/carbon/H = user
 				H.update_inv_head()
 				H.update_inv_wear_mask() //Snowflake case for Desert Merc hood
+				H.update_inv_cloak()
 			block2add = FOV_BEHIND
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
@@ -169,6 +192,7 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_head()
 					H.update_inv_wear_mask() //Snowflake case for Desert Merc hood
+					H.update_inv_cloak()
 		user.update_fov_angles()
 
 
@@ -193,6 +217,7 @@
 
 /obj/item/clothing/head/roguetown/strawhat
 	name = "straw hat"
+	desc = "Keeps the sun off your head while toiling the fields."
 	icon_state = "strawhat"
 	sewrepair = TRUE
 
@@ -222,6 +247,13 @@
 	name = "fur hat"
 	icon_state = "hatfur"
 	sewrepair = TRUE
+
+/obj/item/clothing/head/roguetown/papakha
+	name = "papakha"
+	icon_state = "papakha"
+	item_state = "papakha"
+	sewrepair = TRUE
+	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/roguetown/hatblu
 	name = "fur hat"
@@ -304,6 +336,7 @@
 
 /obj/item/clothing/head/roguetown/headband
 	name = "headband"
+	desc = "A simple headband to keep sweat out of your eyes."
 	icon_state = "headband"
 	item_state = "headband"
 	sewrepair = TRUE
@@ -392,6 +425,7 @@
 
 /obj/item/clothing/head/roguetown/hennin
 	name = "hennin"
+	desc = "A hat typically worn by women in nobility."
 	icon_state = "hennin"
 	sellprice = 19
 	dynamic_hair_suffix = "+generic"
@@ -399,6 +433,7 @@
 
 /obj/item/clothing/head/roguetown/paddedcap
 	name = "padded cap"
+	desc = "A modest arming cap"
 	icon_state = "armingcap"
 	item_state = "armingcap"
 	sleevetype = null
@@ -417,7 +452,7 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "helmet"
-	desc = ""
+	desc = "A helmet that doesn't get any more simple in design."
 	body_parts_covered = HEAD|HAIR|NOSE
 	icon_state = "nasal"
 	sleevetype = null
@@ -455,7 +490,7 @@
 	body_parts_covered = HEAD|HAIR
 
 /obj/item/clothing/head/roguetown/helmet/kettle
-	desc = "A steel helmet which protects the ears."
+	desc = "A steel helmet which protects the whole of the head."
 	icon_state = "kettle"
 	body_parts_covered = HEAD|HAIR|EARS
 	armor = list("blunt" = 80, "slash" = 90, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -744,3 +779,25 @@
 	sellprice = 100
 	resistance_flags = FIRE_PROOF
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/head/roguetown/grenzelhofthat
+	name = "grenzelhoft plume hat"
+	desc = "Slaying monsters or fair maidens: Grenzelhoft stands."
+	icon_state = "grenzelhat"
+	item_state = "grenzelhat"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	detail_tag = "_detail"
+	dynamic_hair_suffix = ""
+	max_integrity = 150
+	colorgrenz = TRUE
+
+/obj/item/clothing/head/roguetown/grenzelhofthat/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)

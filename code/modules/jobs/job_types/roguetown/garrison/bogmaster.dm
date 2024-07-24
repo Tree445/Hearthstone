@@ -17,7 +17,7 @@
 	outfit = /datum/outfit/job/roguetown/bogmaster
 
 	give_bank_account = 35
-	min_pq = 0
+	min_pq = 4
 	max_pq = null
 	cmode_music = 'sound/music/combat_bog.ogg'
 
@@ -76,7 +76,6 @@
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
 /obj/effect/proc_holder/spell/self/convertrole/bog
 	name = "Recruit Bogmen"

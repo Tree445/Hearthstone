@@ -18,7 +18,7 @@
 	outfit = /datum/outfit/job/roguetown/jester
 	display_order = JDO_JESTER
 	give_bank_account = TRUE
-	min_pq = -4 //retard jesters are funny so low PQ requirement
+	min_pq = -5 //retard jesters are funny so low PQ requirement
 	max_pq = null
 
 /datum/outfit/job/roguetown/jester/pre_equip(mob/living/carbon/human/H)
@@ -31,10 +31,6 @@
 	beltl = /obj/item/storage/belt/rogue/pouch
 	head = /obj/item/clothing/head/roguetown/jester
 	neck = /obj/item/clothing/neck/roguetown/coif
-	//Desc says grenzelhoft has great jesters so 50% change to raceswap because slop lore
-	if(ishumannorthern(H) && prob(50))
-		H.skin_tone = SKIN_COLOR_GRENZELHOFT
-		H.update_body()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)

@@ -35,6 +35,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("intelligence", 1)
 		H.change_stat("fortune", 2)
 		var/datum/antagonist/new_antag = new /datum/antagonist/prisoner()
@@ -45,6 +46,7 @@
 		H.change_stat("strength", -1)
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 		head = /obj/item/clothing/head/roguetown/hatblu
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female hostages
 	if(H.gender == MALE)
 		H.change_stat("strength", -1)
 		pants = /obj/item/clothing/under/roguetown/tights/purple

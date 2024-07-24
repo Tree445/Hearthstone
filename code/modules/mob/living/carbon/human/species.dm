@@ -117,13 +117,26 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
-		ORGAN_SLOT_PENIS = /obj/item/organ/penis,
-		ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		//ORGAN_SLOT_PENIS = /obj/item/organ/penis,
+		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
+		//ORGAN_SLOT_BELLY = /obj/item/organ/belly,
+		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		)
 	/// List of bodypart features of this species
 	var/list/bodypart_features
+
+	/// List of descriptor choices this species gets in preferences customization
+	var/list/descriptor_choices = list(
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/skin,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
+	)
 
 	var/obj/item/mutanthands
 
@@ -144,15 +157,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ///////////
 
 /datum/species/proc/is_organ_slot_allowed(mob/living/carbon/human/human, organ_slot)
-	switch(organ_slot)
-		if(ORGAN_SLOT_VAGINA)
-			return (human.gender == FEMALE)
-		if(ORGAN_SLOT_BREASTS)
-			return (human.gender == FEMALE)
-		if(ORGAN_SLOT_PENIS)
-			return (human.gender == MALE)
-		if(ORGAN_SLOT_TESTICLES)
-			return (human.gender == MALE)
 	return TRUE
 
 /datum/species/proc/is_bodypart_feature_slot_allowed(mob/living/carbon/human/human, feature_slot)
@@ -444,6 +448,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		C.add_bodypart_feature(feature)
 	if(pref_load)
 		pref_load.apply_customizers_to_character(C)
+		pref_load.apply_descriptors(C)
 	
 	for(var/language_type in languages)
 		C.grant_language(language_type)
@@ -538,6 +543,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "ADJ"
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
+		if(BODY_FRONT_FRONT_LAYER)
+			return "FFRONT"
 		if(BODY_UNDER_LAYER)
 			return "UNDER"
 

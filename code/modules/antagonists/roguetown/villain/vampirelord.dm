@@ -66,7 +66,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
-	ADD_TRAIT(owner.current, TRAIT_LIMPDICK, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
@@ -79,8 +78,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vamp_regenerate
 	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
 	vamp_look()
+	owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 	if(isspawn)
-		owner.current.verbs |= /mob/living/carbon/human/proc/disguise_button
 		add_objective(/datum/objective/vlordserve)
 		finalize_vampire_lesser()
 		for(var/obj/structure/vampire/bloodpool/mansion in GLOB.vampire_objects)
@@ -353,17 +352,18 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				var/turf/T = H.loc
 				if(T.can_see_sky())
 					if(T.get_lumcount() > 0.15)
-						if(!isspawn)
-							to_chat(H, span_warning("Astrata spurns me! I must get out of her rays!")) // VLord is more punished for daylight excursions.
-							var/turf/N = H.loc
-							if(N.can_see_sky())
-								if(N.get_lumcount() > 0.15)
-									H.fire_act(3)
-									handle_vitae(-500)
-							to_chat(H, span_warning("That was too close. I must avoid the sun."))
-						else if (isspawn && !disguised)
-							H.fire_act(1,5)
-							handle_vitae(-10)
+						if(!disguised)
+							if(!isspawn)
+								to_chat(H, span_warning("Astrata spurns me! I must get out of her rays!")) // VLord is more punished for daylight excursions.
+								var/turf/N = H.loc
+								if(N.can_see_sky())
+									if(N.get_lumcount() > 0.15)
+										H.fire_act(3)
+										handle_vitae(-500)
+								to_chat(H, span_warning("That was too close. I must avoid the sun."))
+							else
+								H.fire_act(1,5)
+								handle_vitae(-10)
 
 	if(H.on_fire)
 		if(disguised)
@@ -923,7 +923,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/two/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/noblejobs = list("King", "Queen Consort", "Prince", "Princess", "Hand", "Steward")
+	var/list/noblejobs = list("King", "Queen Consort", "Royal Heir", "Hand", "Steward")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in noblejobs)
 			return TRUE
@@ -1291,7 +1291,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(L.cmode)
 			willroll += 10
 		var/found_psycross = FALSE
-		for(var/obj/item/clothing/neck/roguetown/psicross/silver in L.contents)
+		for(var/obj/item/clothing/neck/roguetown/psicross/silver/I in L.contents) //Subpath fix.
 			found_psycross = TRUE
 			break
 			

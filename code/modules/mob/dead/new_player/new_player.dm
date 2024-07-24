@@ -185,6 +185,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 			to_chat(usr, span_boldwarning("The game is starting. You cannot join yet."))
 			return
 
+		if(client && client.prefs.is_active_migrant())
+			to_chat(usr, span_boldwarning("You are in the migrant queue."))
+			return
+
 		if(href_list["late_join"] == "override")
 			LateChoices()
 			return
@@ -250,6 +254,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 				to_chat(usr, span_warning("Server is full."))
 				return
 
+		if(client && client.prefs.is_active_migrant())
+			to_chat(usr, span_boldwarning("You are in the migrant queue."))
+			return
+
 		AttemptLateSpawn(href_list["SelectedJob"])
 		return
 
@@ -279,7 +287,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	var/list/dat = list()
 	dat += GLOB.roleplay_readme
 	if(dat)
-		var/datum/browser/popup = new(src, "Primer", "RATWOOD", 460, 550)
+		var/datum/browser/popup = new(src, "Primer", "HEARTHSTONE", 460, 550)
 		popup.set_content(dat.Join())
 		popup.open()
 
@@ -474,10 +482,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
 
-	// Jus remove them from drifter queue if they were in it.
-	// This shit shouldn't be firing before the round starts anyways sooo this is one of the only ways in
-	SSrole_class_handler.cleanup_drifter_queue(client)
-
 	testing("basedtest 1")
 
 	SSjob.AssignRole(src, rank, 1)
@@ -586,7 +590,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	omegalist += list(GLOB.yeoman_positions)
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.mercenary_positions)
-	omegalist += list(GLOB.youngfolk_positions)
+	omegalist += list(GLOB.apprentices_positions)
 	omegalist += list(GLOB.goblin_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
@@ -629,12 +633,12 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 					cat_name = "Yeomen"
 				if (PEASANTS)
 					cat_name = "Peasants"
-				if (YOUNGFOLK)
-					cat_name = "Sidefolk"
+				if (APPRENTICES)
+					cat_name = "Apprentices"
 				if (MERCENARIES)
 					cat_name = "Mercenaries"
-				if (GOBLIN)
-					cat_name = "Goblins"
+				if (TRIBAL)
+					cat_name = "Tribe"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"
@@ -722,12 +726,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	return
 
 /mob/living/carbon/human/after_creation()
-#ifdef MATURESERVER
-	if(gender == MALE)
-		sexcon = new/datum/sex_controller/male(src)
-	else
-		sexcon = new/datum/sex_controller/female(src)
-#endif
 	if(dna?.species)
 		dna.species.after_creation(src)
 	roll_stats()
@@ -736,7 +734,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	. = new_character
 	if(.)
 		new_character.key = key		//Manually transfer the key to log them in
-		new_character.can_do_sex()
 		new_character.stop_sound_channel(CHANNEL_LOBBYMUSIC)
 		var/area/joined_area = get_area(new_character.loc)
 		if(joined_area)
@@ -762,9 +759,9 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	src << browse(null, "window=preferences") //closes job selection
 	src << browse(null, "window=mob_occupation")
 	src << browse(null, "window=latechoices") //closes late job selection
+	src << browse(null, "window=migration") // Closes migrant menu
 
 	SStriumphs.remove_triumph_buy_menu(client)
-	SSrole_class_handler.cleanup_drifter_queue(client)
 
 	winshow(src, "preferencess_window", FALSE)
 	src << browse(null, "window=preferences_browser")
