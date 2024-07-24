@@ -19,7 +19,11 @@
 	if(check_contributor(H.ckey))
 		H.adjust_blindness(-3)
 		H.visible_message(span_info("I contributed into this world, I have been around..."))
-		var/contrclasses = list("Rogue","Assassin",)
+		var/contrclasses = list("Rogue","Assassin","Duelist")
+		var/contrclasschoice = input("Choose your archetypes", "Available archetypes") as anything in contrclasses
+	else //not contributor
+		H.adjust_blindness(-3)
+		var/contrclasses = list("Rogue","Duelist",)
 		var/contrclasschoice = input("Choose your archetypes", "Available archetypes") as anything in contrclasses
 		switch(contrclasschoice)
 			if("Rogue")
@@ -28,13 +32,6 @@
 			if("Assassin")
 				H.set_blindness(0)
 				assassinarch(H)
-			if("Duelist")
-				H.set_blindness(0)
-				duelistarch(H)
-		else
-			if("Rogue")
-				H.set_blindness(0)
-				roguearch(H)
 			if("Duelist")
 				H.set_blindness(0)
 				duelistarch(H)
@@ -124,7 +121,7 @@
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/advclass/rogue/proc/duelistarch(mob/living/carbon/human)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE) //big sword less other skills i guess
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
@@ -138,8 +135,8 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,2), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
