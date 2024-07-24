@@ -14,7 +14,7 @@
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/noble
 	give_bank_account = 22
-	min_pq = null
+	min_pq = 2
 	max_pq = null
 
 
