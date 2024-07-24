@@ -174,9 +174,9 @@
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 	name = "steel parrying dagger"
-	desc = "This is a parrying dagger made of solid steel, used to catch opponent's swords in the handguard."
+	desc = "This is a parrying dagger made of solid steel, used to catch opponent's weapons in the handguard."
 	icon_state = "spdagger"
-	wdefense = 5
+	wdefense = 6
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	icon_state = "sdaggeralt"
