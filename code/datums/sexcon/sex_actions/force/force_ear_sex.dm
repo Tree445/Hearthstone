@@ -1,5 +1,5 @@
 /datum/sex_action/force_ear_sex
-	name = "Force them to suck"
+	name = "Force fuck their ear"
 	require_grab = TRUE
 	stamina_cost = 1.0
 
@@ -17,7 +17,7 @@
 		return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_PRECISE_MOUTH))
+	if(!get_location_accessible(target, BODY_ZONE_PRECISE_EARS))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
