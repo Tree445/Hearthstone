@@ -5,8 +5,7 @@
 /datum/sex_action/ear_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	var/obj/item/organ/breasts/targetbreasts = target.getorgan(/obj/item/organ/breasts)
-	if(!target.targetbreasts.breast_size > 4)
+	if(!target.getorgan(/obj/item/organ/breasts).breast_size > 4)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
