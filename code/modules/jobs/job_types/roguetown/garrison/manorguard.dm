@@ -55,6 +55,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(2,3,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2,3,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)

@@ -59,6 +59,7 @@
 	backpack_contents = list(/obj/item/keyring/sheriff = 1, /obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
