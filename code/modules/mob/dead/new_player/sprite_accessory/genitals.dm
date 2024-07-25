@@ -161,14 +161,14 @@
 /datum/sprite_accessory/belly
 	icon = 'icons/mob/sprite_accessory/genitals/belly.dmi'
 	color_key_name = "Belly"
-	relevant_layers = list(BODY_BEHIND_LAYER,6) //hopefully goes behind breasts now
+	relevant_layers = list(BODY_BEHIND_LAYER,LEGCUFF_LAYER) //hopefully goes behind breasts now
 
 /datum/sprite_accessory/belly/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/belly/belleh = organ
 	return "belly_[icon_state]_[belleh.belly_size]"
 
 /datum/sprite_accessory/belly/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT_F, OFFSET_BELT_F)
+	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
 
 /datum/sprite_accessory/belly/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
