@@ -7,7 +7,7 @@
 	desc = "The most ancient and proud race. We are strong, independent Creachers that follow no masters and accept no compromise. \
 	Our empire, the Muhwing Dynasty, has ruled the great plains east of Rockhill for thousands of years- and for good reason. We are immaculate \
 	warriors, raised from birth to be immaculately powerful and hardy. Mages are rare amongst us, and very little crafts and writing exists in our empire beyond the practical. \
-	Though we are incredibly powerful and sturdy, the rest of our aspects are...lacking. The males of my race are undefeated in strength, but lack in the dexterity for lucky, decisive blows."
+	Though we are incredibly powerful and sturdy, the rest of our aspects are...lacking. Members of my race are undefeated in strength, but lack in the dexterity for lucky, decisive blows."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
@@ -30,8 +30,8 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
-	specstats = list("strength" = 3, "perception" = -1, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = -1, "fortune" = -1)
-	specstats_f = list("strength" = 2, "perception" = -1, "intelligence" = -1, "constitution" = 1, "endurance" = 0, "speed" = 0, "fortune" = 0)
+	specstats = list("strength" = 2, "perception" = -1, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = -1, "fortune" = -1)
+	specstats_f = list("strength" = 2, "perception" = -1, "intelligence" = -1, "constitution" = 1, "endurance" = 0, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
