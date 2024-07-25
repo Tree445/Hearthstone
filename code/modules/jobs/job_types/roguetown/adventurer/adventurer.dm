@@ -56,8 +56,6 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 /mob/living/carbon/human/proc/adv_hugboxing_moved()
 	UnregisterSignal(src, COMSIG_MOVABLE_MOVED)
 	to_chat(src, span_danger("I have [DisplayTimeText(GLOB.adventurer_hugbox_duration)] to begone!"))
-	//lets try to fix the eyes
-	src.eye_color = src.get_eye_color()
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_end)), GLOB.adventurer_hugbox_duration)
 
 /mob/living/carbon/human/proc/adv_hugboxing_end()
