@@ -243,7 +243,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			used_title = "Character Sheet"
 
 			// Top-level menu table
-			dat += "<table style='width: 100%; line-height: 20px;'>"
+			dat += "<table style='width: 125%; line-height: 30px;'>"
 			// FIRST ROW
 			dat += "<tr>"
 			dat += "<td style='width:33%;text-align:left'>"
@@ -419,10 +419,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
-				dat += "<br><img src='[headshot_link]' width='100px' height='100px'>"
+				dat += "<br><img src='[headshot_link]' width='250px' height='250x'>"
 			dat += "<br><b>NSFW Headshot:</b> <a href='?_src_=prefs;preference=nsfwheadshot;task=input'>Change</a>"
 			if(nsfwheadshot_link != null)
-				dat += "<br><img src='[nsfwheadshot_link]' width='100px' height='100px'>"
+				dat += "<br><img src='[nsfwheadshot_link]' width='250px' height='250px'>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -1532,7 +1532,7 @@ Slots: [job.spawn_positions]</span>
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
-					to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
+					to_chat(user, "<span class='notice'>Keep in mind that the photo will be sized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
 					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
 					if(new_headshot_link == null)
 						return
@@ -1548,7 +1548,7 @@ Slots: [job.spawn_positions]</span>
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
 				if("nsfwheadshot")
-					to_chat(user, "<span class='notice'>Finally a place to show it all.</span>"]</span>")
+					to_chat(user, "<span class='notice'>Finally a place to show it all.</span>")
 					var/new_nsfwheadshot_link = input(user, "Input the nsfw headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "NSFW Headshot", nsfwheadshot_link) as text|null
 					if(new_nsfwheadshot_link == null)
 						return
