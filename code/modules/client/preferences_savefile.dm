@@ -199,6 +199,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["key_bindings"]		>> key_bindings
 	
 	S["defiant"]			>> defiant
+	S["horniboi"]			>> horniboi
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -235,6 +236,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_islist(key_bindings, list())
 	defiant	= sanitize_integer(defiant, FALSE, TRUE, TRUE)
+	horniboi	= sanitize_integer(horniboi, FALSE, TRUE, TRUE)
 
 	//ROGUETOWN
 	parallax = PARALLAX_INSANE
@@ -298,6 +300,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pda_color"], pda_color)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["defiant"], defiant)
+	WRITE_FILE(S["horniboi"], horniboi)
 	return TRUE
 
 
@@ -427,6 +430,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["headshot_link"]			>> headshot_link
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
+
+	S["nsfwheadshot_link"]			>> nsfwheadshot_link
+	if(!valid_headshot_link(null, nsfwheadshot_link, TRUE))
+		nsfwheadshot_link = null
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -569,6 +576,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
+	WRITE_FILE(S["nsfwheadshot_link"] , nsfwheadshot_link)
 
 	WRITE_FILE(S["is_updated_for_genitalia"], TRUE)
 
