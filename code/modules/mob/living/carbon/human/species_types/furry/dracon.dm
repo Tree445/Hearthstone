@@ -4,7 +4,8 @@
 /datum/species/dracon
 	name = "Drakian"
 	id = "dracon"
-	desc = "In time you will learn the history of this race"
+	desc = "The most ancient and proud race. We are strong, independent Creachers that follow no masters and accept no compromise. \
+	Our empire, the Muhwing Dynasty, has ruled the great plains east of Rockhill for "
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
