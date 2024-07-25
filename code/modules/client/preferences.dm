@@ -1548,9 +1548,7 @@ Slots: [job.spawn_positions]</span>
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
 				if("nsfwheadshot")
-					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
-					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
-					to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look.</span>")
+					to_chat(user, "<span class='notice'>Finally a place to show it all.</span>"]</span>")
 					var/new_nsfwheadshot_link = input(user, "Input the nsfw headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "NSFW Headshot", nsfwheadshot_link) as text|null
 					if(new_nsfwheadshot_link == null)
 						return
