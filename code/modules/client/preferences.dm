@@ -243,7 +243,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			used_title = "Character Sheet"
 
 			// Top-level menu table
-			dat += "<table style='width: 125%; line-height: 30px;'>"
+			dat += "<table style='width: 100%; line-height: 20px;'>"
 			// FIRST ROW
 			dat += "<tr>"
 			dat += "<td style='width:33%;text-align:left'>"
@@ -419,10 +419,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
-				dat += "<br><img src='[headshot_link]' width='250px' height='250x'>"
+				dat += "<br><img src='[headshot_link]' width='125px' height='125x'>"
 			dat += "<br><b>NSFW Headshot:</b> <a href='?_src_=prefs;preference=nsfwheadshot;task=input'>Change</a>"
 			if(nsfwheadshot_link != null)
-				dat += "<br><img src='[nsfwheadshot_link]' width='250px' height='250px'>"
+				dat += "<br><img src='[nsfwheadshot_link]' width='125px' height='125px'>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
