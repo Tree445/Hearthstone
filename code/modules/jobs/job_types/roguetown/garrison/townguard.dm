@@ -3,8 +3,8 @@
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 9
-	spawn_positions = 9
+	total_positions = 8
+	spawn_positions = 8
 	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
@@ -50,19 +50,20 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 			to_chat(H, span_warning("You are a footsman of the guard. Well versed in various close-quarters weapons and aprehending street-savy criminals."))
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE) 
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE) 
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 			H.change_stat("strength", 2)
 			H.change_stat("constitution", 1)
 			H.change_stat("endurance", 1)
@@ -85,7 +86,7 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)		//Maybe take away? Leaving for now just as a fall-back for non-lethal ability.
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE) 
@@ -118,7 +119,6 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	cloak = /obj/item/clothing/cloak/stabard/guard
 	wrists = /obj/item/clothing/wrists/roguetown/bracers	//Would seperate to leather bracers for archer for dodge but - funnily, armor class doesn't exist on bracers.
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1)
-
 
 /mob/proc/haltyell()
 	set name = "HALT!"
