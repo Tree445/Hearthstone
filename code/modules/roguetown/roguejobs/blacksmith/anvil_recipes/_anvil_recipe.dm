@@ -48,7 +48,7 @@
 		qdel(I)
 		additional_items -= needed_item
 		progress = 0
-	if(moveup)
+	if(!moveup)
 		user.visible_message(span_warning("[user] fumbles with the bar!"))
 		return FALSE
 	else
