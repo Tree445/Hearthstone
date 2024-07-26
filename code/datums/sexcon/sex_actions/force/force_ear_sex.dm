@@ -1,12 +1,12 @@
 /datum/sex_action/force_ear_sex
-	name = "Force them to suck"
+	name = "Force fuck their ear"
 	require_grab = TRUE
 	stamina_cost = 1.0
 
 /datum/sex_action/force_ear_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.getorgan(/obj/item/organ/ears).fuckable)
+	if(!target.getorgan(/obj/item/organ/ears).fuckable)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
@@ -17,7 +17,7 @@
 		return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_PRECISE_MOUTH))
+	if(!get_location_accessible(target, BODY_ZONE_PRECISE_EARS))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
@@ -38,8 +38,10 @@
 		user.visible_message(span_love("cums into [target]'s ear!"))
 		user.sexcon.cum_into()
 
-	user.sexcon.perform_sex_action(target, 0, 7, FALSE)
-	if(!user.sexcon.considered_limp())
+	if(user.sexcon.considered_limp())
+		user.sexcon.perform_sex_action(target, 1.2, 3, FALSE)
+	else
+		user.sexcon.perform_sex_action(target, 2.4, 7, FALSE)
 		user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	target.sexcon.handle_passive_ejaculation()
 

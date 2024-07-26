@@ -119,6 +119,7 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	wrists = /obj/item/clothing/wrists/roguetown/bracers	//Would seperate to leather bracers for archer for dodge but - funnily, armor class doesn't exist on bracers.
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1)
 
+
 /mob/proc/haltyell()
 	set name = "HALT!"
 	set category = "Noises"
