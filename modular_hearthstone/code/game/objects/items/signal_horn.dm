@@ -8,7 +8,7 @@
 
 /obj/item/signal_horn/attack_self(mob/living/user)
 	. = ..()
-		user.visible_message(span_warning("[user] is about to sound the [src]!"))
+	user.visible_message(span_warning("[user] is about to sound the [src]!"))
 	if(do_after(user, 15))
 		sound_horn(user)
 
@@ -27,3 +27,4 @@
 		if(get_dist(player, src) > 7)
 			player.playsound_local(get_turf(player), 'modular_hearthstone/sound/items/signalhorn.ogg', 35, FALSE, pressure_affected = FALSE)
 			to_chat(player, span_warning("I hear the horn alarm!"))
+
