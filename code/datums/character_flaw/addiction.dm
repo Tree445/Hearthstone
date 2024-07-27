@@ -2,7 +2,7 @@
 /mob/living/carbon/human
 	var/datum/charflaw/charflaw
 	///used for in-round gained roles for examine.
-	var/funnyrole
+	var/funnyrole = ""
 
 /mob/proc/sate_addiction()
 	return

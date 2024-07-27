@@ -97,9 +97,8 @@
 					slop_lore_string = ", <span class='danger'>A TRAITOR!</span>"
 			. += span_info("[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]")
 
-		var/usedrole = funnyrole
-		if(usedrole)
-			. += span_notice("[used_name] is a [usedrole].")
+		if(src.funnyrole)
+			. += span_notice("[used_name] is a [funnyrole].")
 		if(HAS_TRAIT(src, TRAIT_NOBLE))
 			. += span_notice("[used_name] is a <EM>NOBLE</EM>.")
 		if(ishuman(user))
