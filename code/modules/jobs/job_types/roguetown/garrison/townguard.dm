@@ -89,7 +89,8 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	backr = /obj/item/storage/backpack/rogue/satchel/black
 	beltl = /obj/item/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather/black
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1)
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1)
 
 /datum/advclass/watchman/archer
 	name = "Watch Archer"
@@ -131,7 +132,8 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	backr = /obj/item/storage/backpack/rogue/satchel/black
 	beltl = /obj/item/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather/black
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1)
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1)
 
 /*
 /datum/outfit/job/roguetown/guardsman/pre_equip(mob/living/carbon/human/H)
