@@ -198,9 +198,9 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
-		STR.max_combined_w_class = 21
+		STR.max_combined_w_class = 42
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 3
+		STR.max_items = 6
 
 /obj/item/storage/backpack/rogue/attack_right(mob/user)
 	var/datum/component/storage/CP = GetComponent(/datum/component/storage)
@@ -229,5 +229,5 @@
 	if(STR)
 		STR.max_combined_w_class = 42
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 14
+		STR.max_items = 16
 		STR.not_while_equipped = TRUE
