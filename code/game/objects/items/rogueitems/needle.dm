@@ -94,6 +94,7 @@
 				if(I.obj_broken == TRUE)
 					I.obj_broken = FALSE
 				I.obj_integrity = I.max_integrity
+				I.update_overlays()
 				//Vrell - Part of storage item repair fix
 				if(target_storage)
 					target_storage.being_repaired = FALSE
