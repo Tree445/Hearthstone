@@ -218,6 +218,7 @@
 	defiant = 0
 	bypasssexable = TRUE
 	//cant find a way to recolor the sprite accessories for genitals, fml -vide
+	//Someone has to set those genitals all to "e8b59b" color, someone who knows.
 	if(prob(50)) //50% chance to be male or female
 		gender = MALE
 		name = "male feral goblin"
@@ -225,11 +226,9 @@
 		var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
 		testicles = new /obj/item/organ/testicles
 		testicles.ball_size = rand(3)
-		testicles.accessory_type.color = "e8b59b"
 		testicles.Insert(src)
 		var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
 		penis = new /obj/item/organ/penis
-		penis.accessory_type.color = "e8b59b"
 		penis.penis_size = rand(3)
 		penis.Insert(src)
 	else
@@ -239,7 +238,6 @@
 		var/obj/item/organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
 		breasts = new /obj/item/organ/breasts
 		breasts.breast_size = rand(10)
-		breasts.accessory_type.color = "e8b59b"
 		breasts.Insert(src)
 		var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
 		vagina = new /obj/item/organ/vagina
@@ -250,12 +248,10 @@
 			var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
 			testicles = new /obj/item/organ/testicles
 			testicles.ball_size = rand(3)
-			testicles.accessory_type.color = "e8b59b"
 			testicles.Insert(src)
 			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
 			penis = new /obj/item/organ/penis
 			penis.penis_size = rand(3)
-			penis.accessory_type.color = "e8b59b"
 			penis.Insert(src)
 	update_body_parts()
 	if(src.dna && src.dna.species)
