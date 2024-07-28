@@ -22,13 +22,20 @@
 
 /datum/outfit/job/roguetown/nightmaiden/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
 	neck = /obj/item/storage/belt/rogue/pouch
 	r_hand = /obj/item/roguekey/nightmaiden
 	l_hand = /obj/item/rogue/instrument/harp
-	pants = /obj/item/clothing/under/roguetown/tights/stockings/fishnet/random //Added fishnet stockings to the wenches
+	switch(H.patron?.type)
+		if(/datum/patron/divine/eora) //Eoran loadouts
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random
+			pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
+			shoes = /obj/item/clothing/shoes/roguetown/sandals
+		else
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+			armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
+			pants = /obj/item/clothing/under/roguetown/tights/stockings/fishnet/random //Added fishnet stockings to the wenches
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)

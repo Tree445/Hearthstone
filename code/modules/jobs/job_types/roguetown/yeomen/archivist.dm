@@ -16,21 +16,30 @@
 	max_pq = null
 
 /datum/outfit/job/roguetown/archivist
-	allowed_patrons = list(/datum/patron/divine/noc)
+	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/divine/eora)
 
 /datum/outfit/job/roguetown/archivist/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.gender == FEMALE)
-		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
-		pants = /obj/item/clothing/under/roguetown/tights/stockings/black
-		head  = /obj/item/clothing/head/roguetown/roguehood/black
+		switch(H.patron?.type) //Eoran loadouts
+			if(/datum/patron/divine/eora) //Eora content from Stonekeep
+				head = /obj/item/clothing/head/peaceflower
+				neck = /obj/item/clothing/neck/roguetown/psicross/eora
+				shoes = /obj/item/clothing/shoes/roguetown/sandals
+				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/purple
+				pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/black
+			else
+				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
+				pants = /obj/item/clothing/under/roguetown/tights/stockings/black
+				head  = /obj/item/clothing/head/roguetown/roguehood/black
+				shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		head = /obj/item/clothing/head/roguetown/nightman
+		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	H.virginity = TRUE
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/keyring/archivist
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
