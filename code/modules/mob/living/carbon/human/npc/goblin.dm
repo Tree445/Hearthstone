@@ -342,22 +342,18 @@
 	else
 		H.STAINT = 4
 	var/loadout = rand(1,5)
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	switch(loadout)
 		if(1) //tribal spear
 			r_hand = /obj/item/rogueweapon/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
-			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
-			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 		if(2) //tribal axe
 			r_hand = /obj/item/rogueweapon/stoneaxe
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
-			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
-			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 		if(3) //tribal club
 			r_hand = /obj/item/rogueweapon/mace/woodclub
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
-			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
-			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 			if(prob(10))
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
 		if(4) //lightly armored sword/flail/daggers
@@ -371,13 +367,9 @@
 				r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
 				l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/goblin
-			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
-			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
 		if(5) //heavy armored sword/flail/shields
-			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
-			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 			if(prob(30))
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin
 			else
