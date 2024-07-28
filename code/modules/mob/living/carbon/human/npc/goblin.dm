@@ -225,11 +225,11 @@
 		var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
 		testicles = new /obj/item/organ/testicles
 		testicles.ball_size = rand(3)
-		testicles.color = "e8b59b"
+		testicles.accessory_type.color = "e8b59b"
 		testicles.Insert(src)
 		var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
 		penis = new /obj/item/organ/penis
-		penis.color = "e8b59b"
+		penis.accessory_type.color = "e8b59b"
 		penis.penis_size = rand(3)
 		penis.Insert(src)
 	else
@@ -239,7 +239,7 @@
 		var/obj/item/organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
 		breasts = new /obj/item/organ/breasts
 		breasts.breast_size = rand(10)
-		breasts.color = "e8b59b"
+		breasts.accessory_type.color = "e8b59b"
 		breasts.Insert(src)
 		var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
 		vagina = new /obj/item/organ/vagina
@@ -250,12 +250,12 @@
 			var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
 			testicles = new /obj/item/organ/testicles
 			testicles.ball_size = rand(3)
-			testicles.color = "e8b59b"
+			testicles.accessory_type.color = "e8b59b"
 			testicles.Insert(src)
 			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
 			penis = new /obj/item/organ/penis
 			penis.penis_size = rand(3)
-			penis.color = "e8b59b"
+			penis.accessory_type.color = "e8b59b"
 			penis.Insert(src)
 	update_body_parts()
 	if(src.dna && src.dna.species)
@@ -350,12 +350,18 @@
 		if(1) //tribal spear
 			r_hand = /obj/item/rogueweapon/spear/stone
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 		if(2) //tribal axe
 			r_hand = /obj/item/rogueweapon/stoneaxe
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 		if(3) //tribal club
 			r_hand = /obj/item/rogueweapon/mace/woodclub
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 			if(prob(10))
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
 		if(4) //lightly armored sword/flail/daggers
@@ -369,9 +375,13 @@
 				r_hand = /obj/item/rogueweapon/huntingknife/stoneknife
 				l_hand = /obj/item/rogueweapon/huntingknife/stoneknife
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/goblin
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 			if(prob(80))
 				head = /obj/item/clothing/head/roguetown/helmet/leather/goblin
 		if(5) //heavy armored sword/flail/shields
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+			pants = /obj/item/clothing/under/roguetown/loincloth/brown
 			if(prob(30))
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin
 			else
