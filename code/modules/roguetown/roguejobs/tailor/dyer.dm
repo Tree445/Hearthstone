@@ -10,22 +10,29 @@
 	/// Allow holder'd mobs
 	var/allow_mobs = TRUE
 	var/list/allowed_types = list(
+			/obj/item/clothing/suit/roguetown,
+			/obj/item/clothing/suit/roguetown/shirt,
 			/obj/item/clothing/suit/roguetown/shirt/robe,
 			/obj/item/clothing/suit/roguetown/shirt/dress,
 			/obj/item/clothing/suit/roguetown/shirt/undershirt,
 			/obj/item/clothing/suit/roguetown/shirt/shortshirt,
 			/obj/item/clothing/under/roguetown/tights,
+			/obj/item/clothing/under/roguetown,
+			/obj/item/clothing/cloak,
 			/obj/item/clothing/cloak/raincloak,
 			/obj/item/clothing/cloak/cape,
 			/obj/item/clothing/cloak/half,
+			/obj/item/clothing/head/roguetown,
 			/obj/item/clothing/head/roguetown/roguehood,
 			/obj/item/clothing/head/roguetown/headband,
 			/obj/item/clothing/head/roguetown/armingcap,
 			/obj/item/clothing/head/roguetown/chaperon,
+			/obj/item/storage/belt/rogue,
 			/obj/item/storage/belt/rogue/leather/rope,
 			/obj/item/storage/belt/rogue/leather/cloth,
+			/obj/item/clothing/shoes/roguetown,
 			/obj/item/clothing/shoes/roguetown/simpleshoes,
-			/obj/item/clothing/suit/roguetown/armor/gambeson
+			/obj/item/clothing/suit/roguetown/armor/gambeson,
 			)
 	var/static/list/selectable_colors = list(
   		"White" = "#ffffff", 
@@ -67,6 +74,9 @@
 	return ..()
 
 /obj/machinery/gear_painter/attackby(obj/item/I, mob/living/user)
+	if(inserted)
+		inserted.forceMove(drop_location())
+		inserted = null
 	if(allow_mobs && istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/H = I
 		if(!user.transferItemToLoc(I, src))
@@ -80,8 +90,8 @@
 			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] inserts [I] into [src]'s receptable.</span>")
-
 		inserted = I
+		updateUsrDialog()
 	else
 		return ..()
 
