@@ -2,9 +2,12 @@
 	race = /datum/species/anthromorph
 
 /datum/species/anthromorph
-	name = "Wild-Kin" 
+	name = "Wild-Kin"
 	id = "anthromorph"
-	desc = "In time you will learn the history of this race"
+	desc = "Wild-Kin; a name for a furred creacher that does not fall under any particular race. \
+	It is sometimes difficult to tell one of us from another race at a glance; one of Wild-Kin ancestry may look very similar to a Tabaxi or Vulpkanin. \
+	Due to the fact we are so numerous, we are welcome almost anywhere, along with our Half-Kin sister-race \
+	We are average of constitution, strength, and intellegence."
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -70,6 +73,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/vagina/anthro,
 		)
 	body_marking_sets = list(
@@ -101,6 +105,16 @@
 		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
 		/datum/body_marking/spotted,
+	)
+	descriptor_choices = list(
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/skin_all,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
 	)
 
 /datum/species/anthromorph/on_species_gain(mob/living/carbon/C, datum/species/old_species)

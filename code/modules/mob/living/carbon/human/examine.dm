@@ -97,10 +97,11 @@
 					slop_lore_string = ", <span class='danger'>A TRAITOR!</span>"
 			. += span_info("[capitalize(m2)] [skin_tone_wording] is [skin_tone_seen][slop_lore_string]")
 
-		if(funnyrole)
-			. += span_info("[used_name] is a [funnyrole].")
+		var/usedrole = funnyrole
+		if(usedrole)
+			. += span_notice("[used_name] is a [usedrole].")
 		if(HAS_TRAIT(src, TRAIT_NOBLE))
-			. += span_info("[used_name] is a NOBLE.")
+			. += span_notice("[used_name] is a <EM>NOBLE</EM>.")
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(H.marriedto == name)
@@ -500,6 +501,10 @@
 
 	if(!obscure_name && headshot_link)
 		. += "<a href='?src=[REF(src)];task=view_headshot;'>View headshot</a>"
+	
+	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
+	for(var/line in lines)
+		. += span_info(line)
 
 	. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
 

@@ -104,6 +104,7 @@
 #define GUARD_CAPTAIN		(1<<5)
 #define BAILIFF		(1<<6)
 #define HOSTAGE		(1<<7)
+#define NOBLE		(1<<8)
 
 #define GARRISON		(1<<1)
 
@@ -165,8 +166,9 @@
 #define VILLAGER	(1<<14)
 #define PRISONERR	(1<<15)
 #define PRISONERB	(1<<16)
-#define LUNATIC		(1<<17)
-#define MIGRANT (1<<18)
+#define PRISONERC	(1<<17)
+#define LUNATIC		(1<<18)
+#define MIGRANT (1<<19)
 
 #define APPRENTICES	(1<<6)
 
@@ -191,8 +193,8 @@
 #define TRIBALCOOK	(1<<1)
 #define TRIBALGUARD	(1<<2)
 #define TRIBALSMITH	(1<<3)
-#define TRIBALSHAMAN	(1<<3)
-#define TRIBALVILLAGER	(1<<3)
+#define TRIBALSHAMAN	(1<<4)
+#define TRIBALVILLAGER	(1<<5)
 
 #define SLOP		(1<<9)
 
@@ -220,6 +222,7 @@
 #define JDO_CLERK 3.1
 #define JDO_BAILIFF 4
 #define JDO_COUNCILLOR 4.1
+#define JDO_NOBLE 5
 
 // Courtiers
 #define JDO_MAGICIAN 5
@@ -285,8 +288,9 @@
 
 #define JDO_PRISONERR 35
 #define JDO_PRISONERB 35.1
-#define JDO_HOSTAGE 35.2
-#define JDO_LUNATIC 35.3
+#define JDO_PRISONERC 35.2
+#define JDO_HOSTAGE 35.3
+#define JDO_LUNATIC 35.4
 
 #define JDO_CHIEFTAIN 36
 #define JDO_TRIBALCOOK 37

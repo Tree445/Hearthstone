@@ -108,6 +108,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Vagabond")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/mercenarylate
+	name = "Mercenarylate"
+	icon_state = "arrow"
+	jobspawn_override = list("Mercenary")
+	delete_after_roundstart = FALSE
+
 /obj/effect/landmark/start/desertriderlate
 	name = "DesertRiderlate"
 	icon_state = "arrow"
@@ -142,6 +148,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Guard Captain"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/noble
+	name = "Noble Guest"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/barkeep
 	name = "Innkeep"
 	icon_state = "arrow"
@@ -171,7 +181,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/manorguardsman
-	name = "Man at Arms"
+	name = "Royal Guard"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bogmaster
@@ -320,7 +330,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prince
-	name = "Scion"
+	name = "Royal Heir"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prisonerr
@@ -329,6 +339,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/prisonerb
 	name = "Prisoner (Bog)"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/prisonerc
+	name = "Tribal Slave"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/hostage
@@ -395,30 +409,34 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 //goblin
 
-/obj/effect/landmark/start/goblinking
+/obj/effect/landmark/start/chieftain
 	name = "Chieftain"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblincook
+/obj/effect/landmark/start/tribalcook
 	name = "Tribal Cook"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblinshaman
+/obj/effect/landmark/start/tribalvillager
+	name = "Tribal Villager"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/tribalshaman
 	name = "Tribal Shaman"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblinguard
+/obj/effect/landmark/start/tribalguard
 	name = "Tribal Guard"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblinsmith
+/obj/effect/landmark/start/tribalsmith
 	name = "Tribal Smith"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/goblinlate
-	name = "Goblinlate"
+/obj/effect/landmark/start/triballate
+	name = "triballate"
 	icon_state = "arrow"
-	jobspawn_override = list("Tribal Cook", "Tribal Guard", "Chieftain", "Tribal Smith", "Tribal Shaman")
+	jobspawn_override = list("Tribal Cook", "Tribal Guard", "Chieftain", "Tribal Smith", "Tribal Shaman", "Tribal Villager"/*, "Tribal Slave"*/)
 	delete_after_roundstart = FALSE
 
 // START LANDMARKS FOLLOW. Don't change the names unless

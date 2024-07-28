@@ -3,18 +3,18 @@
 	flag = KNIGHT
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	allowed_patrons = ALL_DIVINE_PATRONS
-	tutorial = "A Knight with expert training; Born into petty nobility and raised as a squire from a young age, now you Guard the king as his knight, answer to his commands, and protect his honor. You're wholy dedicated to him, and his safety. Do not fail him."
+	tutorial = "A knight with expert training; Born in a far away land and raised as a squire from a young age, now you make Rockhill your home. It is up to you to decide what path you will take, and who you may call your Lord."
 	display_order = JDO_KNIGHT
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/knight
 	give_bank_account = 22
-	min_pq = 0
+	min_pq = 1
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard2.ogg'
@@ -60,6 +60,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE) //Knight should NOT be 1 skill level away from Legenedary skills across fucking 3 weapon skills.
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE) //Already Expert at Swords, polearms and crossbows. 5 - master, 4 - Expert.
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)

@@ -64,6 +64,7 @@
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_markings = list(
@@ -144,5 +145,5 @@
 // oh yeah here we go again 85 to 23
 // changed my mind, if the accent were to return it should just be on a single subset of dwarves.
 /datum/species/dwarf/mountain/get_accent(mob/living/carbon/human/H)
-	return strings("dwarf_replacement.json", "dwarf")
+	return strings("dwarfcleaner_replacement.json", "dwarf")
 

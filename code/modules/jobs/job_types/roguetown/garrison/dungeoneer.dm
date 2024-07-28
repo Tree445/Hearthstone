@@ -15,7 +15,7 @@
 
 	outfit = /datum/outfit/job/roguetown/dungeoneer
 	give_bank_account = 5
-	min_pq = 0
+	min_pq = 1
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_weird.ogg'
@@ -24,6 +24,7 @@
 	..()
 	head = /obj/item/clothing/head/roguetown/menacing
 	pants = /obj/item/clothing/under/roguetown/trou
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	cloak = /obj/item/clothing/cloak/stabard/dungeon

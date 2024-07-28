@@ -46,7 +46,7 @@
 /obj/item/clothing/shoes/roguetown/ridingboots
 	name = "riding boots"
 	color = "#d5c2aa"
-	desc = "Boots worn by those who ride Saigas often."
+	desc = "Boots worn by those who ride Saigas often, complete with spurs."
 	gender = PLURAL
 	icon_state = "ridingboots"
 	item_state = "ridingboots"
@@ -58,7 +58,7 @@
 
 /obj/item/clothing/shoes/roguetown/simpleshoes
 	name = "shoes"
-	desc = "Better than going barefoot."
+	desc = "Pair of simple, cheap shoes."
 	gender = PLURAL
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
@@ -102,7 +102,7 @@
 
 /obj/item/clothing/shoes/roguetown/shalal
 	name = "babouche"
-	desc = "Simple cheap shoes."
+	desc = "Shoes with a point at the toes."
 	gender = PLURAL
 	icon_state = "shalal"
 	item_state = "shalal"
@@ -153,7 +153,27 @@
 
 /obj/item/clothing/shoes/roguetown/grenzelhoft
 	name = "grenzelhoft boots"
+	desc = "A pair of fine boots worn by mercenaries."
 	icon_state = "grenzelboots"
 	item_state = "grenzelboots"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	armor = list("blunt" = 15, "slash" = 15, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	name = "fur lined boots"
+	desc = "Leather boots lined with fur."
+	gender = PLURAL
+	icon_state = "furlinedboots"
+	item_state = "furlinedboots"
+	sewrepair = TRUE
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/boots/furlinedanklets
+	name = "fur lined anklets"
+	desc = "Leather anklets lined with fur, foot remains bare."
+	gender = PLURAL
+	icon_state = "furlinedanklets"
+	item_state = "furlinedanklets"
+	sewrepair = TRUE
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	isbarefoot = TRUE

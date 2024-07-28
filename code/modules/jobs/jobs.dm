@@ -68,6 +68,7 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Councillor",
 	"Steward",
 	"Knight",
+	"Noble Guest",
 ))
 
 GLOBAL_LIST_INIT(courtier_positions, list(
@@ -163,6 +164,8 @@ GLOBAL_LIST_INIT(goblin_positions, list(
 	"Chieftain",
 	"Tribal Smith",
 	"Tribal Shaman",
+	"Tribal Villager",
+	/*"Tribal Slave",*/
 ))
 
 

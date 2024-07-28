@@ -202,11 +202,13 @@
 	var/datum/organ_dna/breasts/breasts_dna = organ_dna
 	var/datum/customizer_entry/organ/breasts/breasts_entry = entry
 	breasts_dna.breast_size = breasts_entry.breast_size
+	breasts_dna.lactating = breasts_entry.lactating
 
 /datum/customizer_choice/organ/breasts/generate_pref_choices(list/dat, datum/preferences/prefs, datum/customizer_entry/entry, customizer_type)
 	..()
 	var/datum/customizer_entry/organ/breasts/breasts_entry = entry
 	dat += "<br>Breast size: <a href='?_src_=prefs;task=change_customizer;customizer=[customizer_type];customizer_task=breast_size''>[find_key_by_value(GLOB.named_breast_sizes, breasts_entry.breast_size)]</a>"
+	dat += "<br>Lactation: <a href='?_src_=prefs;task=change_customizer;customizer=[customizer_type];customizer_task=lactating''>[breasts_entry.lactating ? "Enabled" : "Disabled"]</a>"
 
 /datum/customizer_choice/organ/breasts/handle_topic(mob/user, list/href_list, datum/preferences/prefs, datum/customizer_entry/entry, customizer_type)
 	..()
@@ -218,9 +220,12 @@
 				return
 			var/new_size = GLOB.named_breast_sizes[named_size]
 			breasts_entry.breast_size = sanitize_integer(new_size, MIN_BREASTS_SIZE, MAX_BREASTS_SIZE, DEFAULT_BREASTS_SIZE)
+		if("lactating")
+			breasts_entry.lactating = !breasts_entry.lactating
 
 /datum/customizer_entry/organ/breasts
 	var/breast_size = DEFAULT_BREASTS_SIZE
+	var/lactating = FALSE
 
 /datum/customizer/organ/breasts/human
 	customizer_choices = list(/datum/customizer_choice/organ/breasts/human)
@@ -238,6 +243,69 @@
 		/datum/sprite_accessory/breasts/quad,
 		/datum/sprite_accessory/breasts/sextuple,
 		)
+
+/datum/customizer_entry/organ/belly
+	var/belly_size = DEFAULT_BELLY_SIZE
+
+/datum/customizer/organ/belly
+	abstract_type = /datum/customizer/organ/belly
+	name = "Belly"
+	allows_disabling = TRUE
+	default_disabled = FALSE
+
+/datum/customizer/organ/belly/is_allowed(datum/preferences/prefs)
+	return TRUE
+
+/datum/customizer_choice/organ/belly
+	abstract_type = /datum/customizer_choice/organ/belly
+	name = "Belly"
+	customizer_entry_type = /datum/customizer_entry/organ/belly
+	organ_type = /obj/item/organ/belly
+	organ_slot = ORGAN_SLOT_BELLY
+	organ_dna_type = /datum/organ_dna/belly
+
+/datum/customizer_choice/organ/belly/validate_entry(datum/preferences/prefs, datum/customizer_entry/entry)
+	..()
+	var/datum/customizer_entry/organ/belly/belly_entry = entry
+	belly_entry.belly_size = sanitize_integer(belly_entry.belly_size, MIN_BELLY_SIZE, MAX_BELLY_SIZE, DEFAULT_BELLY_SIZE)
+
+/datum/customizer_choice/organ/belly/imprint_organ_dna(datum/organ_dna/organ_dna, datum/customizer_entry/entry, datum/preferences/prefs)
+	..()
+	var/datum/organ_dna/belly/belly_dna = organ_dna
+	var/datum/customizer_entry/organ/belly/belly_entry = entry
+	belly_dna.belly_size = belly_entry.belly_size
+
+/datum/customizer_choice/organ/belly/generate_pref_choices(list/dat, datum/preferences/prefs, datum/customizer_entry/entry, customizer_type)
+	..()
+	var/datum/customizer_entry/organ/belly/belly_entry = entry
+	dat += "<br>Belly size: <a href='?_src_=prefs;task=change_customizer;customizer=[customizer_type];customizer_task=belly_size''>[find_key_by_value(GLOB.named_belly_sizes, belly_entry.belly_size)]</a>"
+
+/datum/customizer_choice/organ/belly/handle_topic(mob/user, list/href_list, datum/preferences/prefs, datum/customizer_entry/entry, customizer_type)
+	..()
+	var/datum/customizer_entry/organ/belly/belly_entry = entry
+	switch(href_list["customizer_task"])
+		if("belly_size")
+			var/named_size = input(user, "Choose your belly size:", "Character Preference", find_key_by_value(GLOB.named_belly_sizes, belly_entry.belly_size)) as anything in GLOB.named_belly_sizes
+			if(isnull(named_size))
+				return
+			var/new_size = GLOB.named_belly_sizes[named_size]
+			belly_entry.belly_size = sanitize_integer(new_size, MIN_BELLY_SIZE, MAX_BELLY_SIZE, DEFAULT_BELLY_SIZE)
+
+/datum/customizer/organ/belly/human
+	customizer_choices = list(/datum/customizer_choice/organ/belly/human)
+
+/datum/customizer_choice/organ/belly/human
+	sprite_accessories = list(/datum/sprite_accessory/belly)
+	allows_accessory_color_customization = FALSE
+
+/datum/customizer/organ/belly/animal
+	customizer_choices = list(/datum/customizer_choice/organ/belly/animal)
+
+/datum/customizer_choice/organ/belly/animal
+	sprite_accessories = list(
+		/datum/sprite_accessory/belly
+		)
+
 
 /datum/customizer/organ/vagina
 	abstract_type = /datum/customizer/organ/vagina
@@ -263,6 +331,7 @@
 		/datum/sprite_accessory/vagina/human,
 		/datum/sprite_accessory/vagina/gaping,
 		/datum/sprite_accessory/vagina/hairy,
+		/datum/sprite_accessory/vagina/extrahairy,
 		)
 	allows_accessory_color_customization = FALSE
 
@@ -274,6 +343,7 @@
 		/datum/sprite_accessory/vagina/human,
 		/datum/sprite_accessory/vagina/gaping,
 		/datum/sprite_accessory/vagina/hairy,
+		/datum/sprite_accessory/vagina/extrahairy,
 		/datum/sprite_accessory/vagina/spade,
 		/datum/sprite_accessory/vagina/furred,
 		)
@@ -286,6 +356,7 @@
 		/datum/sprite_accessory/vagina/human,
 		/datum/sprite_accessory/vagina/gaping,
 		/datum/sprite_accessory/vagina/hairy,
+		/datum/sprite_accessory/vagina/extrahairy,
 		/datum/sprite_accessory/vagina/spade,
 		/datum/sprite_accessory/vagina/furred,
 		/datum/sprite_accessory/vagina/cloaca,

@@ -46,15 +46,8 @@
 /mob/living/proc/check_prayer(mob/living/L,message)
 	if(!L || !message)
 		return FALSE
-	var/list/bannedwords = list("cock","dick","fuck","shit","pussy","cuck","fucker","fucked","cunt","asshole")
 	var/message2recognize = sanitize_hear_message(message)
 	var/mob/living/carbon/human/M = L
-	for(var/T in bannedwords)
-		if(findtext(message2recognize, T))
-			L.add_stress(/datum/stressevent/psycurse)
-			L.adjust_fire_stacks(100)
-			L.IgniteMob()
-			return FALSE
 	if(length(message2recognize) > 15)
 		if(L.has_flaw(/datum/charflaw/addiction/godfearing))
 			L.sate_addiction()
@@ -1372,3 +1365,27 @@
 	else
 		to_chat(user, span_warning("You're incapable of slapping in your current state."))
 */
+
+/datum/emote/living/shake
+	key = "shake"
+	key_third_person = "shakes"
+	message = "shakes their head."
+	emote_type = EMOTE_VISIBLE
+
+/mob/living/carbon/human/verb/emote_shake()
+	set name = "Shake Head"
+	set category = "Emotes"
+
+	emote("shake", intentional = TRUE)
+
+/datum/emote/living/squint
+	key = "squint"
+	key_third_person = "squints"
+	message = "squints their eyes."
+	emote_type = EMOTE_VISIBLE
+
+/mob/living/carbon/human/verb/emote_squint()
+	set name = "Squint"
+	set category = "Emotes"
+
+	emote("squint", intentional = TRUE)

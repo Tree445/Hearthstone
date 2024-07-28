@@ -1,14 +1,16 @@
+//man someone who can, fix those layerings i spent a whole day but this shit just wont work right-er than this. -- vide
+
 /datum/sprite_accessory/penis
 	icon = 'icons/mob/sprite_accessory/genitals/penis.dmi'
 	color_key_name = "Member"
-	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_FRONT_LAYER) //Vrell - Yes I know this is hacky but it works for now
+	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_FRONT_LAYER) //Vrell - Yes I know this is hacky but it works for now
 
 /datum/sprite_accessory/penis/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
 
 /datum/sprite_accessory/penis/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	//var/obj/item/organ/penis/pp = organ
-	return "[icon_state]_1" //For now just the small state
+	var/obj/item/organ/penis/pp = organ
+	return "[icon_state]_[pp.penis_size]"
 
 /datum/sprite_accessory/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
@@ -65,7 +67,7 @@
 /datum/sprite_accessory/testicles
 	icon = 'icons/mob/sprite_accessory/genitals/testicles.dmi'
 	color_key_name = "Sack"
-	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/testicles/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
@@ -85,7 +87,7 @@
 /datum/sprite_accessory/breasts
 	icon = 'icons/mob/sprite_accessory/genitals/breasts.dmi'
 	color_key_name = "Breasts"
-	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/breasts/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/breasts/badonkers = organ
@@ -133,6 +135,11 @@
 	name = "Hairy"
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
+/datum/sprite_accessory/vagina/extrahairy
+	icon_state = "extrahairy"
+	name = "Extra Hairy"
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
 /datum/sprite_accessory/vagina/spade
 	icon_state = "spade"
 	name = "Spade"
@@ -152,3 +159,23 @@
 	icon_state = "cloaca"
 	name = "Cloaca"
 	default_colors = list("f99696")
+
+/datum/sprite_accessory/belly
+	icon = 'icons/mob/sprite_accessory/genitals/belly.dmi'
+	color_key_name = "Belly"
+	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
+
+/datum/sprite_accessory/belly/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	var/obj/item/organ/belly/belleh = organ
+	return "belly_[icon_state]_[belleh.belly_size]"
+
+/datum/sprite_accessory/belly/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
+
+/datum/sprite_accessory/belly/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
+
+/datum/sprite_accessory/belly
+	icon_state = "pair"
+	name = "Belly"
+	color_key_defaults = list(KEY_CHEST_COLOR)

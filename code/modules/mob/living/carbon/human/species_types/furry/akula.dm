@@ -4,7 +4,10 @@
 /datum/species/akula
 	name = "Axian"
 	id = "akula"
-	desc = "In time you will learn the history of this race"
+	desc = "An empre, now a diaspora. \
+	In old times, the empire of Ei'doan was a mighty mercantile and colonial force that ruled the seas. A century of steady decline saw them cede, lose. or abandon most of our overseas colonies. \
+	Many Akula who had come to these colonies during the empire's height simply stayed, due to marrying into certain families, or to keep their livelihoods. It is not rare to find one of my kind in nobility, or townhood, or as a wanderer. \
+	Though a strong naval tradition has left us sharp-witted and strong, we are poorly-adapted to see well in such a boggy, rocky locale."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
@@ -58,6 +61,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/lizard,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_marking_sets = list(
@@ -70,6 +74,16 @@
 		/datum/body_marking/butt,
 		/datum/body_marking/tonage,
 		/datum/body_marking/tiger/dark,
+	)
+	descriptor_choices = list(
+		/datum/descriptor_choice/body,
+		/datum/descriptor_choice/stature,
+		/datum/descriptor_choice/face,
+		/datum/descriptor_choice/face_exp,
+		/datum/descriptor_choice/scales,
+		/datum/descriptor_choice/voice,
+		/datum/descriptor_choice/prominent_one,
+		/datum/descriptor_choice/prominent_two,
 	)
 
 /datum/species/akula/check_roundstart_eligible()

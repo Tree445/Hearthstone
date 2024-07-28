@@ -60,8 +60,8 @@
 	// Dont need to violate self
 	if(user == victim)
 		return FALSE
-	// If user and victim both are not deviant, then user needs to violate target
-	if(user.deviant && victim.deviant)
+	// If user and victim both are not defiant, then no violation needs to happen
+	if(!user.defiant && !victim.defiant)
 		return FALSE
 	// Need to violate AFK clients
 	if(!victim.client)
@@ -101,7 +101,7 @@
 	// ZAPED
 	to_chat(user, span_boldwarning(pick(list("I feel tainted...", "I feel less human..."))))
 	log_combat(user, victim, "Initiated rape against")
-	adjust_playerquality(-2, user.ckey, reason = "Initiated rape on an AFK/resisting person.")
+	adjust_playerquality(-4, user.ckey, reason = "Initiated rape on an AFK/resisting person.")
 	user.client.prefs.violated[victim.mind.key] = world.time
 
 /datum/sex_controller/proc/adjust_speed(amt)
@@ -517,7 +517,7 @@
 	var/datum/sex_action/action = SEX_ACTION(current_action)
 	action.on_start(user, target)
 	while(TRUE)
-		if(target.client.prefs.sexable == FALSE)
+		if(!isnull(target.client) && target.client.prefs.sexable == FALSE) //Vrell - Needs changed to let me test sex mechanics solo
 			break
 		if(!user.rogfat_add(action.stamina_cost * get_stamina_cost_multiplier()))
 			break
