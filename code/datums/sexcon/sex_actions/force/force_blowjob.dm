@@ -1,20 +1,22 @@
 /datum/sex_action/force_blowjob
-	name = "Force them to suck"
+	name = "Force them to suck cock"
 	require_grab = TRUE
 	stamina_cost = 1.0
 
-/datum/sex_action/force_blowjob/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_blowjob/shows_on_menu(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
 		return FALSE
 	return TRUE
 
-/datum/sex_action/force_blowjob/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_blowjob/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN))
-		return FALSE
+	if(ishuman(user))
+		var/mob/living/carbon/human/userhuman = user
+		if(userhuman.wear_pants)
+			return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_PENIS))
@@ -23,11 +25,11 @@
 		return
 	return TRUE
 
-/datum/sex_action/force_blowjob/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_blowjob/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] forces [target]'s head down to swallow and suck on their cock!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
-/datum/sex_action/force_blowjob/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_blowjob/on_perform(mob/living/user, mob/living/target)
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] forces [target] to suck their cock."))
 	target.make_sucking_noise()
 
@@ -41,10 +43,10 @@
 		user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	target.sexcon.handle_passive_ejaculation()
 
-/datum/sex_action/force_blowjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_blowjob/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] pulls their cock out of [target]'s throat."))
 
-/datum/sex_action/force_blowjob/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_blowjob/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
 		return TRUE
 	return FALSE

@@ -1,8 +1,8 @@
 /datum/sex_controller
 	/// The user and the owner of the controller
-	var/mob/living/carbon/human/user
+	var/mob/living/user
 	/// Target of our actions, can be ourself
-	var/mob/living/carbon/human/target
+	var/mob/living/target
 	/// Whether the user desires to stop his current action
 	var/desire_stop = FALSE
 	/// What is the current performed action
@@ -23,7 +23,7 @@
 	var/last_pain = 0
 	var/ejacmessaged = 0
 
-/datum/sex_controller/New(mob/living/carbon/human/owner)
+/datum/sex_controller/New(mob/living/owner)
 	user = owner
 
 /datum/sex_controller/Destroy()
@@ -43,7 +43,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/can_violate_victim(mob/living/carbon/human/victim)
+/datum/sex_controller/proc/can_violate_victim(mob/living/victim)
 	if(!user.client)
 		return FALSE
 	if(!user.mind)
@@ -56,7 +56,7 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/need_to_be_violated(mob/living/carbon/human/victim)
+/datum/sex_controller/proc/need_to_be_violated(mob/living/victim)
 	// Dont need to violate self
 	if(user == victim)
 		return FALSE
@@ -71,7 +71,7 @@
 		return TRUE
 	return FALSE
 
-/datum/sex_controller/proc/violate_victim(mob/living/carbon/human/victim)
+/datum/sex_controller/proc/violate_victim(mob/living/victim)
 	if(!user.client)
 		return
 	if(!victim.mind)
@@ -138,9 +138,7 @@
 	else
 		user.clear_fullscreen("horny")
 
-/datum/sex_controller/proc/start(mob/living/carbon/human/new_target)
-	if(!ishuman(new_target))
-		return
+/datum/sex_controller/proc/start(mob/living/new_target)
 	set_target(new_target)
 	show_ui()
 
@@ -236,7 +234,7 @@
 /datum/sex_controller/proc/adjust_arousal(amount)
 	set_arousal(arousal + amount)
 
-/datum/sex_controller/proc/perform_deepthroat_oxyloss(mob/living/carbon/human/action_target, oxyloss_amt)
+/datum/sex_controller/proc/perform_deepthroat_oxyloss(mob/living/action_target, oxyloss_amt)
 	var/oxyloss_multiplier = 0
 	switch(force)
 		if(SEX_FORCE_LOW)
@@ -252,7 +250,7 @@
 		return
 	action_target.adjustOxyLoss(oxyloss_amt)
 
-/datum/sex_controller/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, pain_amt, giving)
+/datum/sex_controller/proc/perform_sex_action(mob/living/action_target, arousal_amt, pain_amt, giving)
 	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
 		arousal_amt *=2
 		if(rand(10) == 1) //1 in 10th percent chance each action to emit the message so they know who the fuckin' with.
@@ -517,8 +515,9 @@
 	var/datum/sex_action/action = SEX_ACTION(current_action)
 	action.on_start(user, target)
 	while(TRUE)
-		if(!isnull(target.client) && target.client.prefs.sexable == FALSE) //Vrell - Needs changed to let me test sex mechanics solo
-			break
+		if(!target.bypasssexable)
+			if(!isnull(target.client) && target.client.prefs.sexable == FALSE) //Vrell - Needs changed to let me test sex mechanics solo
+				break
 		if(!user.rogfat_add(action.stamina_cost * get_stamina_cost_multiplier()))
 			break
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
@@ -561,18 +560,19 @@
 		return FALSE
 	if(action.check_incapacitated && user.incapacitated())
 		return FALSE
+	var/mob/living/carbon/human/userino = user 
 	if(action.check_same_tile)
 		var/same_tile = (get_turf(user) == get_turf(target))
-		var/grab_bypass = (action.aggro_grab_instead_same_tile && user.get_highest_grab_state_on(target) == GRAB_AGGRESSIVE)
+		var/grab_bypass = (action.aggro_grab_instead_same_tile && userino.get_highest_grab_state_on(target) == GRAB_AGGRESSIVE)
 		if(!same_tile && !grab_bypass)
 			return FALSE
 	if(action.require_grab)
-		var/grabstate = user.get_highest_grab_state_on(target)
+		var/grabstate = userino.get_highest_grab_state_on(target)
 		if(grabstate == null || grabstate < action.required_grab_state)
 			return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/set_target(mob/living/carbon/human/new_target)
+/datum/sex_controller/proc/set_target(mob/living/new_target)
 	target = new_target
 
 /datum/sex_controller/proc/get_speed_multiplier()
