@@ -134,7 +134,7 @@
 
 /datum/patron/divine/eora
 	name = "Eora"
-	domain = "Saint of the Love, Life and Beauty"
+	domain = "Goddess of the Love, Life and Beauty"
 	desc = "Blind love for all, without a shred of hate in her heart"
 	worshippers = "Lovers, Harlots, Doting Grandparents"
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
