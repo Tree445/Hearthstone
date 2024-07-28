@@ -177,6 +177,12 @@
 	i_type = "Tools"
 */
 
+/datum/anvil_recipe/tools/glassbottle
+	name = "Glass bottle"
+	req_bar = /obj/item/ingot/glass
+	created_item = /obj/item/reagent_containers/glass/bottle
+	i_type = "General"
+
 /datum/anvil_recipe/tools/cupssteel
 	name = "Goblets 3x"
 	req_bar = /obj/item/ingot/steel
