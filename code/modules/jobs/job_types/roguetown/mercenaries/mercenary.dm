@@ -15,6 +15,7 @@
 	outfit = null	//Handled by classes
 	outfit_female = null
 	advclass_cat_rolls = list(CTAG_MERCENARY = 20)
+	always_show_on_latechoices = TRUE
 
 /datum/job/roguetown/mercenary/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

@@ -3,17 +3,19 @@
 	flag = MANATARMS
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 4
+	spawn_positions = 4
+	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	tutorial = "Having proven yourself loyal and capable, you have been knighted to serve the realm as the monarch's personal guard. You listen to your Lord and the Captain of the Guard, defending your Lord and realm."
 	display_order = JDO_CASTLEGUARD
 	whitelist_req = TRUE
+	always_show_on_latechoices = TRUE
 
 	outfit = /datum/outfit/job/roguetown/manorguard
-	advclass_cat_rolls = list(CTAG_GUARD = 20)
+	advclass_cat_rolls = list(CTAG_ROYALGUARD = 20)
 
 	give_bank_account = 22
 	min_pq = 1
@@ -25,6 +27,9 @@
 	..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
 		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/surcoat/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
@@ -59,7 +64,7 @@
 	tutorial = "While other knights may specialize in horse riding and swords, you specialize in two-handed weapons and maces. People may fear the mounted knights, but they should truly fear those who come off their mount.."
 	outfit = /datum/outfit/job/roguetown/manorguard/heavy
 
-	category_tags = list(CTAG_GUARD)
+	category_tags = list(CTAG_ROYALGUARD)
 
 /datum/outfit/job/roguetown/manorguard/heavy/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -110,7 +115,7 @@
 	tutorial = "You are acustomed to traditional knight training, swords, shields, and mounts. You are swifter than some other knights and you know it; it's time to make use of it.."
 	outfit = /datum/outfit/job/roguetown/manorguard/knight
 
-	category_tags = list(CTAG_GUARD)
+	category_tags = list(CTAG_ROYALGUARD)
 
 /datum/outfit/job/roguetown/manorguard/knight/pre_equip(mob/living/carbon/human/H)
 	..()
