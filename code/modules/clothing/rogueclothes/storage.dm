@@ -229,5 +229,5 @@
 	if(STR)
 		STR.max_combined_w_class = 42
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 13
+		STR.max_items = 14
 		STR.not_while_equipped = TRUE
