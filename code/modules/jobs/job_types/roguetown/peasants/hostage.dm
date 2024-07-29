@@ -44,9 +44,15 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	if(H.gender == FEMALE)
 		H.change_stat("strength", -1)
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
-		head = /obj/item/clothing/head/roguetown/hatblu
+		switch(H.patron?.type)
+			if(/datum/patron/divine/eora) //Eoran loadouts
+				armor = pick(/obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random, /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy)
+				head  = /obj/item/clothing/head/peaceflower
+			else
+				armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
+				head = /obj/item/clothing/head/roguetown/hatblu
 		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female hostages
+
 	if(H.gender == MALE)
 		H.change_stat("strength", -1)
 		pants = /obj/item/clothing/under/roguetown/tights/purple
