@@ -39,7 +39,7 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/traps, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 		H.change_stat("intelligence", 1)
