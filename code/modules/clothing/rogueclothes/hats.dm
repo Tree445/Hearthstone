@@ -772,7 +772,7 @@
 			adjustable = CADJUSTED
 			icon_state = "hounskull_visor_raised"
 			body_parts_covered = HEAD|EARS|HAIR
-			flags_inv = HIDEEARS
+			flags_inv = HIDEEARS|HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
