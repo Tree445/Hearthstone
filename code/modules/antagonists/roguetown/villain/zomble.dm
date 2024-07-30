@@ -84,11 +84,9 @@
 		soundpack_m = zombie.dna.species.soundpack_m
 		soundpack_f = zombie.dna.species.soundpack_f
 	base_intents = zombie.base_intents
-/*
 	STASTR = zombie.STASTR
 	STASPD = zombie.STASPD
 	STAINT = zombie.STAINT
-*/
 	cmode_music = zombie.cmode_music
 	patron = zombie.patron
 	return ..()
@@ -109,11 +107,9 @@
 		if(zombie.charflaw)
 			zombie.charflaw.ephemeral = FALSE
 		zombie.update_body()
-		/*
 		zombie.STASTR = STASTR
 		zombie.STASPD = STASPD
 		zombie.STAINT = STAINT
-		*/
 		zombie.cmode_music = cmode_music
 		zombie.set_patron(patron)
 		for(var/trait in traits_zombie)
