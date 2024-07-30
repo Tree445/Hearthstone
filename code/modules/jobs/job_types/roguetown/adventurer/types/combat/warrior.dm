@@ -109,7 +109,8 @@
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-				backr = /obj/item/rogueweapon/stoneaxe/battle
+				backr = /obj/item/rogueweapon/stoneaxe/woodcut/steel
+				r_hand = /obj/item/rogueweapon/shield/wood
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/rogueweapon/huntingknife
 
