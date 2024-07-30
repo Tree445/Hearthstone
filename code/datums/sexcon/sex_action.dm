@@ -18,20 +18,20 @@
 	/// If a grab is required, this is the required state of it
 	var/required_grab_state = GRAB_AGGRESSIVE
 
-/datum/sex_action/proc/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/proc/can_perform(mob/living/user, mob/living/target)
 	return TRUE
 
-/datum/sex_action/proc/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/proc/on_start(mob/living/user, mob/living/target)
 	return
 
-/datum/sex_action/proc/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/proc/on_perform(mob/living/user, mob/living/target)
 	return
 
-/datum/sex_action/proc/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/proc/on_finish(mob/living/user, mob/living/target)
 	return
 
-/datum/sex_action/proc/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/proc/is_finished(mob/living/user, mob/living/target)
 	return FALSE
 
-/datum/sex_action/proc/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/proc/shows_on_menu(mob/living/user, mob/living/target)
 	return TRUE

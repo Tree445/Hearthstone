@@ -91,6 +91,7 @@
 			qdel(underworld_spirit)
 			ghost.mind.transfer_to(target, TRUE)
 		target.grab_ghost(force = TRUE) // even suicides
+		target.remove_client_colour(/datum/client_colour/monochrome)
 		target.emote("breathgasp")
 		target.Jitter(100)
 		target.update_body()

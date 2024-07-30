@@ -64,6 +64,8 @@
 
 /mob/living
 	var/tempatarget = null
+	//use for npcs that can be fucked
+	var/bypasssexable = FALSE
 
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)

@@ -3,14 +3,14 @@
 	require_grab = TRUE
 	stamina_cost = 1.0
 
-/datum/sex_action/force_suck_nipples/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_suck_nipples/shows_on_menu(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
 	return TRUE
 
-/datum/sex_action/force_suck_nipples/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_suck_nipples/can_perform(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_CHEST))
@@ -21,11 +21,11 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/force_suck_nipples/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_suck_nipples/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] forces [target]'s head down to swallow and suck on their nipples!"))
 	playsound(target, list('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 20, TRUE, ignore_walls = FALSE)
 
-/datum/sex_action/force_suck_nipples/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_suck_nipples/on_perform(mob/living/user, mob/living/target)
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] forces [target] to suck their nipples."))
 	target.make_sucking_noise()
 
@@ -43,10 +43,10 @@
 		to_chat(target, span_notice("I can taste milk."))
 		to_chat(user, span_notice("I can feel milk leak from my buds."))
 
-/datum/sex_action/force_suck_nipples/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_suck_nipples/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] pulls their nipples out of [target]'s mouth."))
 
-/datum/sex_action/force_suck_nipples/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/force_suck_nipples/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())
 		return TRUE
 	return FALSE

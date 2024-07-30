@@ -344,3 +344,6 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 
 /obj/item/natural/rock/gem
 	mineralType = /obj/item/roguegem/random
+
+/obj/item/natural/rock/sand
+	mineralType = /obj/item/rogueore/sand

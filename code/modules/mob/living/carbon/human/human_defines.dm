@@ -113,6 +113,10 @@
 
 	var/headshot_link = null
 
+	var/datum/charflaw/charflaw
+	///used for in-round gained roles for examine.
+	var/funnyrole
+
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\
 	/datum/rmb_intent/strong,\

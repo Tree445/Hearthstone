@@ -63,6 +63,13 @@
 	icon_state = "orecoal[rand(1,3)]"
 	..()
 
+/obj/item/rogueore/sand
+	name = "sand"
+	desc = "A pile of sand waiting to be glass."
+	icon_state = "oresand"
+	smeltresult = /obj/item/ingot/glass
+	sellprice = 4
+
 /obj/item/ingot
 	name = "ingot"
 	icon = 'icons/roguetown/items/ore.dmi'
@@ -143,3 +150,10 @@
 	icon_state = "ingotsteel"
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 40
+
+/obj/item/ingot/glass
+	name = "glass sheet"
+	desc = "Glass, Essential for bottles and windows."
+	icon_state = "ingotglass"
+	smeltresult = /obj/item/ingot/glass
+	sellprice = 15

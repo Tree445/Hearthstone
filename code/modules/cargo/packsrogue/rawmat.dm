@@ -24,6 +24,21 @@
 	/obj/item/rogueore/coal,
 	/obj/item/rogueore/coal)
 
+/datum/supply_pack/rogue/rawmats/sand
+	name = "Sand"
+	cost = 24
+	contains = list(/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand,
+	/obj/item/rogueore/sand)
+
 /datum/supply_pack/rogue/rawmats/cloth
 	name = "Cloth"
 	cost = 10

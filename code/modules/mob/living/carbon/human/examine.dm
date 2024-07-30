@@ -1,13 +1,11 @@
 /mob/living/carbon/human/proc/on_examine_face(mob/living/carbon/human/user)
-	if(!istype(user))
-		return
 	if(user.mind)
 		user.mind.i_know_person(src)
+	/*
 	if(!isdarkelf(user) && isdarkelf(src))
 		user.add_stress(/datum/stressevent/delf)
 	if(!istiefling(user) && istiefling(src))
 		user.add_stress(/datum/stressevent/tieb)
-	/*
 	if(!isargonian(user) && isargonian(src))
 		user.add_stress(/datum/stressevent/brazillian)
 	*/
@@ -56,15 +54,14 @@
 	else
 		on_examine_face(user)
 		var/used_name = name
+		var/datum/job/J = SSjob.GetJob(job)
+		var/used_title = J.title
 		if(observer_privilege)
-			used_name = name
-		if(job == "Goblin King")
-			var/used_title =  "King or Queen of the Tribe"
+			used_name = real_name
+		if(job)
 		// Use the possibly modified title in the output
 			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [used_title].")
 		else
-			var/datum/job/J = SSjob.GetJob(job)
-			var/used_title = J.title
 			if(J.f_title && (t_He == "She"))
 				used_title = J.f_title
 			if(J.wanderer_examine)
@@ -73,6 +70,9 @@
 				if(J.advjob_examine)
 					used_title = advjob
 				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [islatejoin ? "returning " : ""][race_name] [used_title].")
+
+		if(GLOB.lord_titles[name])
+			. += span_notice("[m3] been granted the title of \"[GLOB.lord_titles[name]]\".")
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
 			var/list/skin_tones = dna.species.get_skin_list()
@@ -132,7 +132,7 @@
 		if(commie_text)
 			. += commie_text
 		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
-			. += span_notice("Comrade!")
+			. += span_notice("Fellow Giver!")
 
 	if(leprosy == 1)
 		. += span_necrosis("A LEPER...")

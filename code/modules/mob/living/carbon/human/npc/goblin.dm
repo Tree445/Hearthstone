@@ -1,6 +1,5 @@
 /mob/living/carbon/human/species/goblin
 	name = "goblin"
-
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
 	icon_state = "blank"
 	race = /datum/species/goblin
@@ -96,26 +95,36 @@
 
 
 
-/datum/species/goblin
+/datum/species/goblin 
 	name = "goblin"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
 	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE)
-	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
 	nojumpsuit = 1
 	sexes = 1
-	offset_features = list(OFFSET_HANDS = list(0,-4), OFFSET_HANDS_F = list(0,-4))
 	damage_overlay_type = ""
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/goblin,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		)
+	offset_features = list(
+		OFFSET_ID = list(0,-4), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
+		OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,-4), OFFSET_HEAD = list(0,-4), \
+		OFFSET_FACE = list(0,-4), OFFSET_BELT = list(0,-4), OFFSET_BACK = list(0,-3), \
+		OFFSET_NECK = list(0,-4), OFFSET_MOUTH = list(0,-4), OFFSET_PANTS = list(0,0), \
+		OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,-3), \
+		OFFSET_ID_F = list(0,-5), OFFSET_GLOVES_F = list(0,-4), OFFSET_WRISTS_F = list(0,-4), OFFSET_HANDS_F = list(0,-4), \
+		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-5), OFFSET_HEAD_F = list(0,-5), \
+		OFFSET_FACE_F = list(0,-5), OFFSET_BELT_F = list(0,-4), OFFSET_BACK_F = list(0,-4), \
+		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
 	var/raceicon = "goblin"
 
@@ -205,7 +214,47 @@
 
 /mob/living/carbon/human/species/goblin/after_creation()
 	..()
-	gender = MALE
+	. = ..()
+	defiant = 0
+	bypasssexable = TRUE
+	//cant find a way to recolor the sprite accessories for genitals, fml -vide
+	//Someone has to set those genitals all to "e8b59b" color, someone who knows.
+	if(prob(50)) //50% chance to be male or female
+		gender = MALE
+		name = "male goblin"
+		real_name = "male goblin"
+		var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+		testicles = new /obj/item/organ/testicles
+		testicles.ball_size = rand(3)
+		testicles.Insert(src)
+		var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+		penis = new /obj/item/organ/penis
+		penis.penis_size = rand(3)
+		penis.Insert(src)
+	else
+		gender = FEMALE
+		name = "female goblin"
+		real_name = "female goblin"
+		var/obj/item/organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
+		breasts = new /obj/item/organ/breasts
+		breasts.breast_size = rand(10)
+		breasts.Insert(src)
+		var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
+		vagina = new /obj/item/organ/vagina
+		vagina.Insert(src)
+		if(prob(5)) //5 chance to be dickgirl
+			name = "futa goblin"
+			real_name = "futa goblin"
+			var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+			testicles = new /obj/item/organ/testicles
+			testicles.ball_size = rand(3)
+			testicles.Insert(src)
+			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+			penis = new /obj/item/organ/penis
+			penis.penis_size = rand(3)
+			penis.Insert(src)
+	update_body_parts()
+
 	if(src.dna && src.dna.species)
 		src.dna.species.soundpack_m = new /datum/voicepack/male/goblin()
 		src.dna.species.soundpack_f = new /datum/voicepack/male/goblin()
@@ -226,8 +275,6 @@
 		QDEL_NULL(src.charflaw)
 	update_body()
 	faction = list("orcs")
-	name = "goblin"
-	real_name = "goblin"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
@@ -296,6 +343,8 @@
 	else
 		H.STAINT = 4
 	var/loadout = rand(1,5)
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	switch(loadout)
 		if(1) //tribal spear
 			r_hand = /obj/item/rogueweapon/spear/stone
@@ -419,3 +468,48 @@
 	. = ..()
 
 
+//here for compat with shitstone
+/mob/living/carbon/human/species/goblin/sexy
+	name = "sexable goblin"
+
+/mob/living/carbon/human/species/goblin/sexy/after_creation()
+	. = ..()
+	defiant = 0
+	bypasssexable = TRUE
+	//cant find a way to recolor the sprite accessories for genitals, fml -vide
+	//Someone has to set those genitals all to "e8b59b" color, someone who knows.
+	if(prob(50)) //50% chance to be male or female
+		gender = MALE
+		name = "male goblin"
+		real_name = "male goblin"
+		var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+		testicles = new /obj/item/organ/testicles
+		testicles.ball_size = rand(3)
+		testicles.Insert(src)
+		var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+		penis = new /obj/item/organ/penis
+		penis.penis_size = rand(3)
+		penis.Insert(src)
+	else
+		gender = FEMALE
+		name = "female goblin"
+		real_name = "female goblin"
+		var/obj/item/organ/breasts/breasts = src.getorganslot(ORGAN_SLOT_BREASTS)
+		breasts = new /obj/item/organ/breasts
+		breasts.breast_size = rand(10)
+		breasts.Insert(src)
+		var/obj/item/organ/vagina/vagina = src.getorganslot(ORGAN_SLOT_VAGINA)
+		vagina = new /obj/item/organ/vagina
+		vagina.Insert(src)
+		if(prob(5)) //5 chance to be dickgirl
+			name = "futa goblin"
+			real_name = "futa goblin"
+			var/obj/item/organ/testicles/testicles = src.getorganslot(ORGAN_SLOT_TESTICLES)
+			testicles = new /obj/item/organ/testicles
+			testicles.ball_size = rand(3)
+			testicles.Insert(src)
+			var/obj/item/organ/penis/penis = src.getorganslot(ORGAN_SLOT_PENIS)
+			penis = new /obj/item/organ/penis
+			penis.penis_size = rand(3)
+			penis.Insert(src)
+	update_body_parts()

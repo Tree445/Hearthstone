@@ -2,7 +2,7 @@
 	name = "Suck their nipples"
 	check_same_tile = FALSE
 
-/datum/sex_action/suck_nipples/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/suck_nipples/shows_on_menu(mob/living/user, mob/living/target)
 	if(user == target)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
@@ -20,10 +20,10 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_action/suck_nipples/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/suck_nipples/on_start(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] starts sucking [target]'s nipples..."))
 
-/datum/sex_action/suck_nipples/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/suck_nipples/on_perform(mob/living/user, mob/living/target)
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] sucks [target]'s nipples..."))
 	user.make_sucking_noise()
 
@@ -37,10 +37,10 @@
 		to_chat(user, span_notice("I can taste milk."))
 		to_chat(target, span_notice("I can feel milk leak from my buds."))
 
-/datum/sex_action/suck_nipples/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/suck_nipples/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] stops sucking [target]'s nipples ..."))
 
-/datum/sex_action/suck_nipples/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/sex_action/suck_nipples/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())
 		return TRUE
 	return FALSE
