@@ -134,9 +134,9 @@
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
 )
-#define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra)
+#define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/eora)
 
-#define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/pestra)
+#define ALL_ACOLYTE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/pestra, /datum/patron/divine/eora)
 
 #define ALL_DIVINE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
 
@@ -195,11 +195,15 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_DISABLED 		"CAT_DISABLED" 		// Disabled, aka don't make it fuckin APPEAR
 #define CTAG_PILGRIM 		"CAT_PILGRIM"  		// Pilgrim classes
 #define CTAG_ADVENTURER 	"CAT_ADVENTURER"  	// Adventurer classes
+#define CTAG_MERCENARY		"CAT_MERCENARY"		// Mercenary classes
 #define CTAG_TOWNER 		"CAT_TOWNER"  		// Villager class - Villagers can use it
 #define CTAG_ANTAG 			"CAT_ANTAG"  		// Antag class - results in an antag
 #define CTAG_BANDIT			"CAT_BANDIT"		// Bandit class - Tied to the bandit antag really
 #define CTAG_CHALLENGE 		"CAT_CHALLENGE"  	// Challenge class - Meant to be free for everyone
-#define CTAG_CONTRIBUTOR 		"CAT_CONTRIBUTOR"  	// Contributor classes so they can get some appreciation.
+#define CTAG_CONTRIBUTOR 	"CAT_CONTRIBUTOR"  	// Contributor classes so they can get some appreciation.
+
+#define CTAG_WATCH			"CAT_WATCH"			// Town-Watch classes; sloppy class selection system.
+#define CTAG_ROYALGUARD		"CAT_ROYALGUARD"	// Royal Guard classes; sloppy class selection system.
 
 /*
 	Defines for the triumph buy datum categories

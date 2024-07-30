@@ -1,4 +1,3 @@
-
 /datum/job/roguetown/priest
 	title = "Priest"
 	flag = PRIEST
@@ -23,7 +22,7 @@
 	max_pq = null
 
 /datum/outfit/job/roguetown/priest
-	allowed_patrons = list(/datum/patron/divine/astrata)
+	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/eora)
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -58,6 +57,7 @@
 		H.change_stat("constitution", -1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
+		H.cmode_music = 'sound/music/combat_clergy.ogg'
 	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells
 	C.grant_spells_priest(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
@@ -88,7 +88,7 @@
 			continue
 		if(!istype(HU.head, /obj/item/clothing/head/roguetown/crown/serpcrown))
 			continue
-		
+
 		//Abdicate previous King
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.mind)
