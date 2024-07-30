@@ -13,11 +13,6 @@ GLOBAL_LIST_INIT(character_accents, list("No accent"=/datum/char_accent/none,
 /datum/char_accent
 	var/name
 
-/datum/char_accent/proc/mob_created(mob/user)
-	var/mob/living/carbon/human/H = user
-	if(H.mind)
-		H.char_accent = name
-
 /mob/living/carbon/human
 	var/char_accent = "No accent"
 
