@@ -8,6 +8,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/paladin
 	traits_applied = list(TRAIT_HEAVYARMOR)
 	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 3		//Paladins are near identical to Templar, which is a limited role. So, limited slots. You are rare anyway.
 
 /datum/outfit/job/roguetown/adventurer/paladin
 	allowed_patrons = ALL_CLERIC_PATRONS
@@ -52,7 +53,7 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(2,3), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 			H.change_stat("perception", 1)

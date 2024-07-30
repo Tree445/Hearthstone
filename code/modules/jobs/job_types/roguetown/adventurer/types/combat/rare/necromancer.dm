@@ -7,6 +7,7 @@
 	pickprob = 30
 	traits_applied = list(TRAIT_ZOMBIE_IMMUNE)
 	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 1	//Keep being told this slot is playable, can't find people actually playing. Future-proofing if I'm not being gaslit.
 
 /datum/outfit/job/roguetown/adventurer/necromancer
 	allowed_patrons = list(/datum/patron/inhumen/zizo)

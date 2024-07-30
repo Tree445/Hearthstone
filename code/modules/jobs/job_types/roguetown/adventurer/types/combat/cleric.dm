@@ -6,7 +6,6 @@
 	allowed_races = RACES_ALL_KINDS
 	vampcompat = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
-	traits_applied = list(TRAIT_HEAVYARMOR)
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/cleric
@@ -63,6 +62,7 @@
 			H.change_stat("strength", 1)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)		//No medium armor for you; just dodge better.
 		if("War Cleric")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a cleric of the war domain. Experienced in both the granting of life and the taking of it. Unfortunately your study of warcraft has weakened your divine abilities..."))
@@ -89,6 +89,7 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2) // Stronger but less intelligent/quick compared to life clerics.
 			H.change_stat("speed", -1)
+			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)		//Gets medium armor since war cleric; you can go be a tanky-boy due to lower spell power.
 		if("Nature Cleric")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a cleric of the nature domain."))
@@ -120,6 +121,7 @@
 			H.change_stat("strength", 1)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)		//No medium armor for you; just dodge better.
 
 	armor = /obj/item/clothing/suit/roguetown/armor/plate
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -139,8 +141,6 @@
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)

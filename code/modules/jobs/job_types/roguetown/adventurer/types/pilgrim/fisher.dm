@@ -10,15 +10,12 @@
 /datum/outfit/job/roguetown/adventurer/fisher/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(0,0,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axes, pick(0,1,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, pick(0,1,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(0,1,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,2,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(3,3,4), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
@@ -30,15 +27,13 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
-
+		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 4, TRUE)
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 2)
 		H.change_stat("constitution", 1)
 		H.change_stat("speed", 1)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 5, TRUE)
-		else
-			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)		//Gives master fishing level if old.
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
