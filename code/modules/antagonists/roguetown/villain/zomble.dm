@@ -14,11 +14,9 @@
 	var/ambushable = TRUE
 	var/soundpack_m
 	var/soundpack_f
-	/*
 	var/STASTR
 	var/STASPD
 	var/STAINT
-	*/
 	var/cmode_music
 	var/datum/patron/patron
 	var/list/base_intents
