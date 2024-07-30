@@ -1,10 +1,10 @@
 //AKA cryosleep.
 
 /obj/structure/long_sleep //Shamelessly jury-rigged from the way Fallout13 handles this.
-	name = "long-sleeper cabins"
-	desc = "A door to the lower levels of the ship, where weary souls rest until another voyage.\n(Drag your sprite onto this to exit the round!)"
-	icon = 'icons/roguetown/misc/doors.dmi'
-	icon_state = "woodhandle"
+	name = "longsleep mushshroom"
+	desc = "A magical mushroom capable of transporting people elsewhere.\n(Drag your sprite onto this to exit the round!)"
+	icon = 'icons/roguetown/misc/longsleep.dmi'
+	icon_state = "longsleep"
 	layer = ABOVE_MOB_LAYER
 	density = TRUE
 	anchored = TRUE
@@ -28,7 +28,7 @@
 		return
 	if(user.incapacitated() || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
-	user.visible_message("<span class='warning'>[user] [departing_mob == user ? "is trying to leave for the lower decks!" : "is trying to send [departing_mob] to the lower decks!"]</span>", "<span class='notice'>You [departing_mob == user ? "are trying to go to the lower decks." : "are trying to send [departing_mob] to the lower decks."]</span>")
+	user.visible_message("<span class='warning'>[user] [departing_mob == user ? "is trying to teleport using the longsleep mushshroom!" : "is trying to teleport [departing_mob] using the long mushshroom!"]</span>", "<span class='notice'>You [departing_mob == user ? "are trying to go to teleport using the longsleep mushshroom." : "are trying to teleport [departing_mob] using the longsleep mushshroom."]</span>")
 	in_use = TRUE
 	if(!do_after(user, 50, target = src))
 		in_use = FALSE

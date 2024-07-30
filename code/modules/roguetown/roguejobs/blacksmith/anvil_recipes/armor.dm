@@ -9,7 +9,7 @@
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/ichaincoif
-	name = "Chain Coif"
+	name = "Iron Chain Coif"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/neck/roguetown/chaincoif/iron
 	i_type = "Armor"
@@ -160,7 +160,7 @@
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/chaincoif
-	name = "Chain Coif"
+	name = "Steel chain Coif"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/neck/roguetown/chaincoif
 	i_type = "Armor"
@@ -267,10 +267,10 @@
 	i_type = "Armor"
 
 /datum/anvil_recipe/armor/helmetpig
-	name = "Pigface Helmet (+1 Steel)"
+	name = "Bascinet Pigface Helmet (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/pigface
+	created_item = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 	craftdiff = 2
 	i_type = "Armor"
 

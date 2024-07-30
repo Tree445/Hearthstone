@@ -15,7 +15,7 @@
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 35
-	min_pq = 4
+	min_pq = 3
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_guard.ogg'
@@ -49,6 +49,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 6, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)		//Actual cancer but he fucks. Hard.
 		H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)

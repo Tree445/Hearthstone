@@ -8,7 +8,7 @@
 	organ_dna_type = /datum/organ_dna/penis
 	accessory_type = /datum/sprite_accessory/penis/human
 	var/penis_size = DEFAULT_PENIS_SIZE
-
+	
 /obj/item/organ/vagina
 	name = "vagina"
 	icon_state = "vagina"
@@ -18,6 +18,7 @@
 	slot = ORGAN_SLOT_VAGINA
 	accessory_type = /datum/sprite_accessory/vagina/human
 	var/pregnant = FALSE
+	var/fertility = TRUE
 
 /obj/item/organ/vagina/proc/be_impregnated(mob/living/carbon/human/father)
 	if(pregnant)
@@ -39,6 +40,13 @@
 	organ_dna_type = /datum/organ_dna/breasts
 	accessory_type = /datum/sprite_accessory/breasts/pair
 	var/breast_size = DEFAULT_BREASTS_SIZE
+	var/lactating = FALSE
+	var/milk_stored = 0
+	var/milk_max = 75
+
+/obj/item/organ/breasts/New()
+	..()
+	milk_max = max(75, breast_size * 100)
 
 /obj/item/organ/belly
 	name = "belly"
@@ -60,6 +68,7 @@
 	organ_dna_type = /datum/organ_dna/testicles
 	accessory_type = /datum/sprite_accessory/testicles/pair
 	var/ball_size = DEFAULT_TESTICLES_SIZE
+	var/virility = TRUE
 
 /obj/item/organ/testicles/internal
 	name = "internal testicles"

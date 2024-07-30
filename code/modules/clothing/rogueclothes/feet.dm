@@ -46,7 +46,7 @@
 /obj/item/clothing/shoes/roguetown/ridingboots
 	name = "riding boots"
 	color = "#d5c2aa"
-	desc = "Boots worn by those who ride Saigas often."
+	desc = "Boots worn by those who ride Saigas often, complete with spurs."
 	gender = PLURAL
 	icon_state = "ridingboots"
 	item_state = "ridingboots"
@@ -58,7 +58,7 @@
 
 /obj/item/clothing/shoes/roguetown/simpleshoes
 	name = "shoes"
-	desc = "Better than going barefoot."
+	desc = "Pair of simple, cheap shoes."
 	gender = PLURAL
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
@@ -85,15 +85,15 @@
 	color = "#cbcac9"
 
 /obj/item/clothing/shoes/roguetown/gladiator
-	name = "leather sandals"
-	desc = ""
+	name = "leather soleae"
+	desc = "A form of fashionable sandaled boots whose design comes from a distant land, with straps that extend partway up the lower leg."
 	gender = PLURAL
 	icon_state = "gladiator"
 	item_state = "gladiator"
 	sewrepair = TRUE
 
 /obj/item/clothing/shoes/roguetown/sandals
-	name = "sandals"
+	name = "leather sandals"
 	desc = ""
 	gender = PLURAL
 	icon_state = "sandals"
@@ -102,10 +102,25 @@
 
 /obj/item/clothing/shoes/roguetown/shalal
 	name = "babouche"
-	desc = "Simple cheap shoes."
+	desc = "Shoes with a point at the toes."
 	gender = PLURAL
 	icon_state = "shalal"
 	item_state = "shalal"
+	sewrepair = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/carapace
+	name = "carapace boots"
+	desc = "Boots made from carapace for added protection."
+	body_parts_covered = FEET
+	icon_state = "carapaceboots"
+	item_state = "carapaceboots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	armor = list("blunt" = 60, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	anvilrepair = null
+	smeltresult = /obj/item/ash
 	sewrepair = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armoriron
@@ -153,6 +168,7 @@
 
 /obj/item/clothing/shoes/roguetown/grenzelhoft
 	name = "grenzelhoft boots"
+	desc = "A pair of fine boots worn by mercenaries."
 	icon_state = "grenzelboots"
 	item_state = "grenzelboots"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'

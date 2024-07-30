@@ -26,6 +26,8 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
 		if(/datum/patron/divine/pestra)
 			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
+		if(/datum/patron/divine/eora) //Eora content from Stonekeep
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
 
 	// CLASS ARCHETYPES
 	H.adjust_blindness(-3)
@@ -80,6 +82,7 @@
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 			H.change_stat("intelligence", 1)
 			H.change_stat("strength", 2)
