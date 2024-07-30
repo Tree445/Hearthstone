@@ -256,7 +256,7 @@
 	throw_range = 1
 	icon_state = "beartrap"
 	desc = ""
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	var/armed = 0
 	var/trap_damage = 90
 	embedding = list("embedded_unsafe_removal_time" = 40, "embedded_pain_chance" = 10, "embedded_pain_multiplier" = 1, "embed_chance" = 0, "embedded_fall_chance" = 0)
@@ -323,9 +323,11 @@
 
 /obj/item/restraints/legcuffs/beartrap/armed
 	armed = TRUE
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage
 	armed = TRUE
+	w_class = WEIGHT_CLASS_BULKY
 	alpha = 80
 
 /obj/item/restraints/legcuffs/beartrap/Initialize()
@@ -357,6 +359,7 @@
 	alpha = 255
 	update_icon()
 	playsound(src.loc, 'sound/items/beartrap.ogg', 300, TRUE, -1)
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/restraints/legcuffs/beartrap/Crossed(AM as mob|obj)
 	if(armed && isturf(loc))
