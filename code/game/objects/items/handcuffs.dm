@@ -256,6 +256,7 @@
 	throw_range = 1
 	icon_state = "beartrap"
 	desc = ""
+	w_class = WEIGHT_CLASS_BULKY
 	var/armed = 0
 	var/trap_damage = 90
 	embedding = list("embedded_unsafe_removal_time" = 40, "embedded_pain_chance" = 10, "embedded_pain_multiplier" = 1, "embed_chance" = 0, "embedded_fall_chance" = 0)
