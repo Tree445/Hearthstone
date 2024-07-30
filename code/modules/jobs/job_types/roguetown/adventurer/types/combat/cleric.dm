@@ -123,7 +123,8 @@
 			H.change_stat("endurance", 2)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)		//No medium armor for you; just dodge better.
 
-	armor = /obj/item/clothing/suit/roguetown/armor/plate
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
@@ -135,12 +136,11 @@
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife)
 	if(classchoice == "Nature Cleric")
 		beltr = /obj/item/rogueweapon/sword
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		armor = /obj/item/clothing/suit/roguetown/armor/leather
 		pants = /obj/item/clothing/under/roguetown/trou
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	C.grant_spells(H)
+	C.grant_spells_cleric(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
