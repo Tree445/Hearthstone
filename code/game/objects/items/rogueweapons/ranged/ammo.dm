@@ -141,6 +141,6 @@
 	caliber = "musketball"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball"
-	dropshrink = 0.5
+	dropshrink = 0
 	possible_item_intents = list(/datum/intent/use)
 	max_integrity = 0
