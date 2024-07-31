@@ -28,13 +28,13 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/huntingknife
-	shoes = /obj/item/clothing/shoes/roguetown/gladiator
-	backl = /obj/item/storage/backpack/rogue/satchel
-	if(prob(100))
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		shoes = /obj/item/clothing/shoes/roguetown/boots
+	else
+		shoes = /obj/item/clothing/shoes/roguetown/gladiator
+	backl = /obj/item/storage/backpack/rogue/satchel
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(75))
 		beltr = /obj/item/rogueweapon/sword/iron
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
@@ -47,7 +47,7 @@
 	H.change_stat("perception", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 1)
-	if(H.wear_mask) //for stupid retards with bad eyes
+	if(H.wear_mask) //Handles if you have bad eyes and glasses. Sorry, bub, none for you.
 		var/obj/I = H.wear_mask
 		H.dropItemToGround(H.wear_mask, TRUE)
 		qdel(I)

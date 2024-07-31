@@ -25,23 +25,25 @@
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-			cloak = /obj/item/clothing/cloak/raincloak/brown
-			cloak = /obj/item/clothing/cloak/raincloak/green
+			if(prob(50))
+				cloak = /obj/item/clothing/cloak/raincloak/brown
+			else
+				cloak = /obj/item/clothing/cloak/raincloak/green
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1)
 			beltl = /obj/item/quiver/arrows
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(4,5,5,6), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)			//Was random between 4-6, just give them 5.
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)

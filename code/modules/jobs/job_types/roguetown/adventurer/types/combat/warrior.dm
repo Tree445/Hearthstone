@@ -6,7 +6,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/sfighter
-	traits_applied = list(TRAIT_HEAVYARMOR)
+	traits_applied = list(TRAIT_MEDIUMARMOR)
 
 	category_tags = list(CTAG_ADVENTURER)
 
@@ -22,19 +22,19 @@
 		if("Warrior")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Warriors are well rounded fighters, experienced often in many theaters of warfare and battle they are capable of rising to any challenge that might greet them on the path."))
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, rand(1,2), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, rand(1,2), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)	//Bit strong but Cleric and Barb get 1 so, let him have something nice.
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, rand(1,3), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,1,2), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(2,3), TRUE)
@@ -50,8 +50,6 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 			if(prob(70))
 				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-			else if(prob(50))
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 			else
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/scale
 			if(prob(20))
@@ -93,26 +91,31 @@
 			belt = /obj/item/storage/belt/rogue/leather
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+			armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron		//No more random armor, just take the decent one. You don't get a helm anyway.
 			if(prob(40))
-				armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 				backr = /obj/item/rogueweapon/sword/long
 			else if(prob(60))
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 				r_hand = /obj/item/rogueweapon/spear/billhook
 			else
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/scale // No helms for monster hunters.
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
-				backr = /obj/item/rogueweapon/stoneaxe/battle
+				H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+				backr = /obj/item/rogueweapon/stoneaxe/woodcut/steel
+				r_hand = /obj/item/rogueweapon/shield/wood
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/rogueweapon/huntingknife
+
+			ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)		//Basically you are getting kinda worse stats/skills, so here, heavy armor training kind sir.
+			
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/black
 	else
@@ -121,5 +124,4 @@
 		H.update_body()
 		pants = /obj/item/clothing/under/roguetown/tights/black
 
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

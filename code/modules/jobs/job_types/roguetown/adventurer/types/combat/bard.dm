@@ -76,10 +76,10 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(0,1), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/music, rand(3,5), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/music, 5, TRUE)
 			head = /obj/item/clothing/head/roguetown/bardhat
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/tights/random
@@ -110,7 +110,6 @@
 		else
 			backr = /obj/item/rogue/instrument/lute
 
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)

@@ -1,5 +1,5 @@
 /datum/advclass/dbomb
-	name = "Vagrant"
+	name = "Dwarf Vagrant"
 	tutorial = "Dwarves like to blow things up."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(/datum/species/dwarf/mountain)
@@ -28,7 +28,7 @@
 	if(prob(50))
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
