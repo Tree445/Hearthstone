@@ -125,6 +125,97 @@
 	become_rot_type = null
 	rotprocess = null
 
+/obj/item/reagent_containers/food/snacks/rogue/breastmilkcheese
+	name = "breastmilk cheese"
+	desc = "A wheel of mozzarella cheese, adorned with a little bit of mold."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "freshcheese"
+	bitesize = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("cheese" = 1)
+	foodtype = GRAIN
+	eat_effect = null
+	rotprocess = 20 MINUTES
+	become_rot_type = null
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/rogue/breastmilkcheesewheel
+	name = "wheel of breastmilk cheddar"
+	desc = "A golden wheel of cheddar cheese."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "cheesewheel"
+	bitesize = 6
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("cheese" = 1)
+	eat_effect = null
+	rotprocess = 20 MINUTES
+	slices_num = 6
+	slice_batch = TRUE
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/breastmilkcheddarwedge
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/breastmilkcheesewheel/aged
+
+/obj/item/reagent_containers/food/snacks/rogue/breastmilkcheesewheel/aged
+	name = "wheel of aged breastmilk cheese"
+	desc = "A wheel with intricate patterns of several types of mold with a pungent aroma."
+	icon_state = "blue_cheese"
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/breastmilkcheesewheel/aged
+	become_rot_type = null
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/breastmilkcheddarwedge
+	name = "wedge of breastmilk cheese"
+	desc = "An invigorating wedge of cheddar cheese."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "cheese_wedge"
+	bitesize = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("cheese" = 1)
+	eat_effect = null
+	rotprocess = 20 MINUTES
+	slices_num = 3
+	slice_batch = TRUE
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/breastmilkcheddarslice
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/breastmilkcheddarwedge/aged
+	baitchance = 100
+	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 10,
+					/obj/item/reagent_containers/food/snacks/fish/eel = 5,
+					/obj/item/reagent_containers/food/snacks/fish/angler = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/breastmilkcheddarwedge/aged
+	name = "wedge of aged breastmilk cheese"
+	desc = "A dangerous piece of cheese for the brave."
+	icon_state = "blue_cheese_wedge"
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/cheddarslice/aged
+	become_rot_type = null
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/breastmilkcheddarslice
+	name = "slice of breastmilk cheese"
+	desc = "A soft, creamy slice of cheddar cheese."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "cheese_slice"
+	bitesize = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("cheese" = 1)
+	eat_effect = null
+	rotprocess = 20 MINUTES
+	slices_num = null
+	slice_path = null
+	become_rot_type = null
+	baitchance = 100
+	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 10,
+					/obj/item/reagent_containers/food/snacks/fish/eel = 5)
+
+/obj/item/reagent_containers/food/snacks/rogue/breastmilkcheddarslice/aged
+	name = "slice of aged breastmilk cheese"
+	desc = "A dangerous slice of cheese."
+	icon_state = "blue_cheese_slice"
+	become_rot_type = null
+	rotprocess = null
 
 /obj/item/reagent_containers/food/snacks/rogue/honey
 	name = "honey"

@@ -48,6 +48,47 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	slices_num = 0
 
+/obj/item/reagent_containers/food/snacks/breastmilkbutter
+	icon = 'icons/roguetown/items/food.dmi'
+	name = "breastmilk butter"
+	desc = "A small crock of butter, with a creamy surface."
+	icon_state = "butter6"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
+	foodtype = DAIRY
+	slice_path = /obj/item/reagent_containers/food/snacks/breastmilkbutterslice
+	slices_num = 6
+	slice_batch = FALSE
+	bitesize = 6
+
+/obj/item/reagent_containers/food/snacks/breastmilkbutter/update_icon()
+	if(slices_num)
+		icon_state = "butter[slices_num]"
+	else
+		icon_state = "butter_slice"
+
+/obj/item/reagent_containers/food/snacks/breastmilkbutter/On_Consume(mob/living/eater)
+	..()
+	if(slices_num)
+		if(bitecount == 1)
+			slices_num = 5
+		if(bitecount == 2)
+			slices_num = 4
+		if(bitecount == 3)
+			slices_num = 3
+		if(bitecount == 4)
+			slices_num = 2
+		if(bitecount == 5)
+			changefood(slice_path, eater)
+
+/obj/item/reagent_containers/food/snacks/breastmilkbutterslice
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "butter_slice"
+	name = "breastmilk butter"
+	desc = "A small slice of creamy butter!"
+	foodtype = DAIRY
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	slices_num = 0
+
 /obj/item/reagent_containers/food/snacks/fat
 	icon = 'icons/roguetown/items/food.dmi'
 	name = "fat"
