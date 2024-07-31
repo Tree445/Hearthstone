@@ -1,3 +1,4 @@
+
 /datum/job/roguetown/priest
 	title = "Priest"
 	flag = PRIEST
@@ -27,16 +28,23 @@
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
-	head = /obj/item/clothing/head/roguetown/priestmask
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
-	pants = /obj/item/clothing/under/roguetown/tights/black
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	switch(H.patron?.type)
+		if(/datum/patron/divine/eora) //Eora content from Stonekeep
+			head = /obj/item/clothing/head/roguetown/eoramask
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			shoes = /obj/item/clothing/shoes/roguetown/sandals
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora/alt
+		else
+			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+			head = /obj/item/clothing/head/roguetown/priestmask
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
+			pants = /obj/item/clothing/under/roguetown/tights/black
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	beltl = /obj/item/keyring/priest
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	id = /obj/item/clothing/ring/active/nomag
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(
 		/obj/item/needle/pestra = 1,

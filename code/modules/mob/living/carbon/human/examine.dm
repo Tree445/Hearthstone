@@ -132,7 +132,7 @@
 		if(commie_text)
 			. += commie_text
 		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
-			. += span_notice("Fellow Giver!")
+			. += span_notice("Comrade!")
 
 	if(leprosy == 1)
 		. += span_necrosis("A LEPER...")
