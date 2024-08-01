@@ -52,6 +52,16 @@
 	name = "mothers' cheese"
 	desc = "A ball of cheese with a similar consistency to feta, consumed as part of certain Eoran fertility rites, or more rarely as a private indulgence between partners."
 	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "freshcheese"
+	bitesize = 1
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	w_class = WEIGHT_CLASS_TINY
+	tastes = list("cheese" = 1)
+	foodtype = GRAIN
+	eat_effect = null
+	rotprocess = 20 MINUTES
+	become_rot_type = null
+	slice_path = null
 	tastes = list("soft cheese" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar
