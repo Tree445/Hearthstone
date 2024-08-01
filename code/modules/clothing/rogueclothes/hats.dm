@@ -541,6 +541,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
+	icon = 'modular_hearthstone/icons/obj/items/clothes/head/sallet.dmi'	// modularized for Hearthstone
 	icon_state = "sallet"
 	desc = "A steel helmet which protects the ears."
 	smeltresult = /obj/item/ingot/steel
@@ -550,6 +551,7 @@
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
 	name = "visored sallet"
 	desc = "A steel helmet which protects the ears, nose, and eyes."
+	icon = 'modular_hearthstone/icons/obj/items/clothes/head/sallet_visor.dmi'	// modularized for Hearthstone
 	icon_state = "sallet_visor"
 	adjustable = CAN_CADJUST
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
@@ -741,7 +743,18 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 
-/obj/item/clothing/head/roguetown/helmet/heavy/pigface
+/obj/item/clothing/head/roguetown/helmet/bascinet
+	name = "bascinet"
+	desc = "A steel bascinet helmet without a visor protecting the the head and ears."
+	icon_state = "bascinet_novisor"
+	item_state = "bascinet_novisor"
+	emote_environment = 3
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 	name = "pigface bascinet"
 	desc = "A steel bascinet helmet with a pigface visor protecting the head, ears, nose, mouth, and eyes. Add a feather to show the colors of your family or allegiance."
 	icon_state = "hounskull"
@@ -752,15 +765,16 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
+	max_integrity = 400
 
-/obj/item/clothing/head/roguetown/helmet/heavy/pigface/AdjustClothes(mob/user)
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/AdjustClothes(mob/user)
 	if(loc == user)
 		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			icon_state = "hounskull_visor_raised"
 			body_parts_covered = HEAD|EARS|HAIR
-			flags_inv = HIDEEARS
+			flags_inv = HIDEEARS|HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
@@ -778,7 +792,7 @@
 					H.update_inv_head()
 		user.update_fov_angles()
 
-/obj/item/clothing/head/roguetown/helmet/heavy/pigface/attackby(obj/item/W, mob/living/user, params)
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/attackby(obj/item/W, mob/living/user, params)
 	..()
 	if(istype(W, /obj/item/natural/feather) && !detail_tag)
 		var/list/colors = list(
@@ -810,7 +824,7 @@
 			var/mob/living/carbon/H = user
 			H.update_inv_head()
 
-/obj/item/clothing/head/roguetown/helmet/heavy/pigface/update_icon()
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/update_icon()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
@@ -818,17 +832,6 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
-
-/obj/item/clothing/head/roguetown/helmet/bascinet
-	name = "bascinet"
-	desc = "A steel bascinet helmet without a visor protecting the the head and ears."
-	icon_state = "bascinet_novisor"
-	item_state = "bascinet_novisor"
-	emote_environment = 3
-	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEEARS|HIDEHAIR
-	block2add = FOV_BEHIND
-	smeltresult = /obj/item/ingot/steel
 
 /obj/item/clothing/head/roguetown/helmet/carapacecap
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
