@@ -9,20 +9,6 @@
 	max_integrity = 400
 	var/list/obj/item/to_grind = list()
 
-/*/obj/structure/fluff/millstone/attackby(obj/item/W, mob/living/user, params)
-	if(istype(W, /obj/item/reagent_containers/food/snacks))
-		var/obj/item/reagent_containers/food/snacks/S = W
-		if(S.mill_result)
-			if(do_after(user, 10, target = src))
-				new S.mill_result(get_turf(loc))
-				qdel(S)
-			return
-	if(istype(W, /obj/item/natural/stone))
-		if(do_after(user, 10, target = src))
-			new /obj/item/reagent_containers/powder/flour/salt(get_turf(loc))
-			qdel(W)
-		return
-	..()*/
 /obj/structure/fluff/millstone/Initialize()
 	create_reagents(900, DRAINABLE | AMOUNT_VISIBLE | REFILLABLE)
 	. = ..()
