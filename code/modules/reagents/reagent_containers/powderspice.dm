@@ -156,7 +156,7 @@
 	new /obj/effect/decal/cleanable/food/flour(get_turf(src))
 	..()
 	qdel(src)
-	
+
 /datum/chemical_reaction/graintopowder
 	name = "Powder Piling"
 	id = "powderpiling"
@@ -166,6 +166,16 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/reagent_containers/powder/flour(location)
+
+/datum/chemical_reaction/salttopowder
+	name = "Powder Piling"
+	id = "powderpiling"
+	required_reagents = list(/datum/reagent/consumable/sodiumchloride = 15)
+
+/datum/chemical_reaction/salttopowder/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= created_volume, i++)
+		new /obj/item/reagent_containers/powder/flour/salt(location)
 
 /obj/item/reagent_containers/powder/flour/salt
 	name = "salt"
