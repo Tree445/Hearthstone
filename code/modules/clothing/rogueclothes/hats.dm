@@ -632,7 +632,7 @@
 			adjustable = CADJUSTED
 			icon_state = "knightum"
 			body_parts_covered = HEAD|HAIR|EARS
-			flags_inv = HIDEEARS
+			flags_inv = HIDEEARS|HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
@@ -683,6 +683,54 @@
 			H.update_inv_head()
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight
+	name = "royal guard's helmet"
+	desc = "A helmet worn by those in the royal guard. Decorated with gold, its white feather a sign of the oath made to protect the royals until death."
+	icon_state = "royalguardhelmet"
+	item_state = "royalguardhelmet"
+	adjustable = CAN_CADJUST
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight/black
+	color = CLOTHING_BLACK
+
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			icon_state = "royalguardhelmetum"
+			body_parts_covered = HEAD|HAIR|EARS
+			flags_inv = HIDEEARS|HIDEHAIR
+			flags_cover = null
+			emote_environment = 0
+			update_icon()
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+			block2add = null
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			emote_environment = 3
+			update_icon()
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight/update_icon()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
