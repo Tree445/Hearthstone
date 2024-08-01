@@ -20,7 +20,7 @@
 	min_pq = 1
 	max_pq = null
 
-	cmode_music = 'sound/music/combat_guard2.ogg'
+	cmode_music = 'sound/music/combat_knight.ogg'
 
 /datum/job/roguetown/royalguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -46,7 +46,7 @@
 		H.name = "[honorary] [prev_name]"
 
 /datum/outfit/job/roguetown/royalguard
-	head = /obj/item/clothing/head/roguetown/helmet/bascinet
+	head = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
 	gloves = /obj/item/clothing/gloves/roguetown/chain
