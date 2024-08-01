@@ -51,6 +51,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/mothercheese
 	name = "mothers' cheese"
 	desc = "A ball of cheese with a similar consistency to feta, consumed as part of certain Eoran fertility rites, or more rarely as a private indulgence between partners."
+	icon = 'icons/roguetown/items/food.dmi'
 	tastes = list("soft cheese" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar
