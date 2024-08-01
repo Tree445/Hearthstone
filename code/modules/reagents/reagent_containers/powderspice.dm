@@ -168,7 +168,7 @@
 		new /obj/item/reagent_containers/powder/flour(location)
 
 /datum/chemical_reaction/salttopowder
-	name = "Powder Piling"
+	name = "Powder Piling Salt"
 	id = "powderpiling"
 	required_reagents = list(/datum/reagent/consumable/sodiumchloride = 15)
 
