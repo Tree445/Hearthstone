@@ -32,12 +32,28 @@
 
 	subtype_reqs = FALSE
 
-/datum/crafting_recipe/roguetown/cooking/cheesewhee
+/datum/crafting_recipe/roguetown/cooking/cheese/mothersmilk
+	name = "fresh mothers' cheese"
+	reqs = list(
+		/datum/reagent/consumable/mothersmilk = 5,
+		/obj/item/reagent_containers/powder/flour/salt = 1)
+	result = list(/obj/item/reagent_containers/food/snacks/rogue/mothercheese,
+				/obj/item/reagent_containers/food/snacks/rogue/mothercheese,
+				/obj/item/reagent_containers/food/snacks/rogue/mothercheese)
+
+/datum/crafting_recipe/roguetown/cooking/cheesewheel
 	name = "cheese wheel"
 	reqs = list(/obj/item/reagent_containers/food/snacks/rogue/cheese = 6)
 	result = /obj/item/reagent_containers/food/snacks/rogue/cheddar
 
-	subtype_reqs = FALSE
+	subtype_reqs = TRUE
+
+/datum/crafting_recipe/roguetown/cooking/cheesewheel/mother
+	name = "wheel of mothers' cheese"
+	reqs = list(/obj/item/reagent_containers/food/snacks/rogue/mothercheese = 6)
+	result = /obj/item/reagent_containers/food/snacks/rogue/mothercheese/wheel
+
+	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/cooking/soap
 	name = "soap"
