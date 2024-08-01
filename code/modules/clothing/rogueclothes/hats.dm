@@ -541,6 +541,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
+	icon = 'modular_hearthstone/icons/obj/items/clothes/head/sallet.dmi' // modularized for Hearthstone
 	icon_state = "sallet"
 	desc = "A steel helmet which protects the ears."
 	smeltresult = /obj/item/ingot/steel
