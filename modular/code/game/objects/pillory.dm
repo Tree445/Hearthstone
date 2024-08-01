@@ -10,7 +10,7 @@
 	buckle_lying = 0
 	buckle_prevents_pull = TRUE
 	anchored = TRUE
-	density = FALSE
+	density = TRUE
 	layer = ABOVE_ALL_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 	var/latched = FALSE
@@ -146,6 +146,8 @@
 
 	var/mob/living/carbon/human/H = M
 
+	density = FALSE
+
 	if (H.dna)
 		if (H.dna.species)
 			var/datum/species/S = H.dna.species
@@ -187,6 +189,7 @@
 			return FALSE
 	else
 		..()
+		density = TRUE
 
 	..()
 
