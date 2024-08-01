@@ -50,3 +50,36 @@
 		target.blur_eyes(10)
 		return TRUE
 	return FALSE
+
+/obj/effect/proc_holder/spell/invoked/forced_orgasm
+	name = "Power Word Bliss"
+	desc = ""
+	overlay_state = "bliss"
+	releasedrain = 30
+	chargedrain = 0
+	chargetime = 0
+	range = 7
+	warnie = "sydwarning"
+	movement_interrupt = FALSE
+	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
+	sound = 'sound/magic/heal.ogg'
+	invocation_type = "none"
+	associated_skill = /datum/skill/magic/holy
+	antimagic_allowed = TRUE
+	charge_max = 10 SECONDS
+	miracle = TRUE
+	devotion_cost = 10
+
+/obj/effect/proc_holder/spell/invoked/forced_orgasm/cast(list/targets, mob/living/user)
+	if(isliving(targets[1]))
+		var/mob/living/target = targets[1]
+		if(target.client.prefs.sexable == FALSE)
+			to_chat(user, "<span class='warning'>The target can not be affected!</span>")
+			return FALSE
+		target.sexcon.ejaculate(target)
+		target.visible_message(span_warning("[target] is struck by the sudden bliss!"), span_warning("I can't control my pleasure!"))
+		if(prob(33))
+			target.sexcon.ejaculate(target)
+			target.visible_message(span_warning("[target] is overpowered by the sudden bliss!"), span_warning("It can't stop!"))
+		target.Stun(10)
+	return TRUE
