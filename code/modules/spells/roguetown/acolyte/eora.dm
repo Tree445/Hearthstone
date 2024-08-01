@@ -73,13 +73,13 @@
 /obj/effect/proc_holder/spell/invoked/forced_orgasm/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(target.client.prefs.sexable == FALSE)
+		if(target.client.prefs.sexable == FALSE || target.defiant)
 			to_chat(user, "<span class='warning'>The target can not be affected!</span>")
 			return FALSE
 		target.sexcon.ejaculate(target)
-		target.visible_message(span_warning("[target] is struck by the sudden bliss!"), span_warning("I can't control my pleasure!"))
+		target.visible_message(span_warning("[target] is struck by sudden bliss!"), span_warning("I can't control my pleasure!"))
 		if(prob(33))
 			target.sexcon.ejaculate(target)
-			target.visible_message(span_warning("[target] is overpowered by the sudden bliss!"), span_warning("It can't stop!"))
+			target.visible_message(span_warning("[target] is overpowered by sudden bliss!"), span_warning("It won't stop!"))
 		target.Jitter(10)
 	return TRUE
