@@ -213,6 +213,15 @@
 			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
 	..()
 
+/datum/reagent/consumable/mothersmilk
+	name = "Mothers' Milk"
+	description = "An opaque white liquid produced by the mammary glands of humanoids. In brief, breastmilk."
+	color = "#DFDFDF" // rgb: 223, 223, 223
+	taste_description = "cloyingly sweet milk"
+	glass_icon_state = "glass_white"
+	glass_name = "glass of mothers' milk"
+	glass_desc = "Milk derived from a humanoid source. Some Eorans might swear by its use in rituals of fertility or as a private indulgence between partners, but honest merchants refuse to deal in the substance or products made from it."
+
 /datum/reagent/consumable/soymilk
 	name = "Soy Milk"
 	description = "An opaque white liquid made from soybeans."

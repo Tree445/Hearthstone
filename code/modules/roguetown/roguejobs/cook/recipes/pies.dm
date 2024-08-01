@@ -24,6 +24,16 @@
 	warming = 10 MINUTES
 	eat_effect = null
 
+/obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/cooked
+	icon_state = "pie"
+	desc = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/pieslice/mothersmilk
+	slices_num = 6
+	slice_batch = TRUE
+	warming = 10 MINUTES
+	eat_effect = null
+
 /obj/item/reagent_containers/food/snacks/rogue/pie/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(!.) //if we're not being caught
@@ -72,6 +82,19 @@
 	bitesize = 3
 	eat_effect = /datum/status_effect/buff/foodbuff
 
+/obj/item/reagent_containers/food/snacks/rogue/pieslice/mothersmilk
+	icon = 'icons/roguetown/items/food.dmi'
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	tastes = list("pie" = 1)
+	name = "Eoran pie slice"
+	desc = ""
+	icon_state = "slice"
+	filling_color = "#FFFFFF"
+	foodtype = GRAIN | DAIRY | SUGAR
+	warming = 10 MINUTES
+	bitesize = 3
+	eat_effect = /datum/status_effect/buff/foodbuff
+
 /obj/item/reagent_containers/food/snacks/rogue/piedough
 	name = "pie dough"
 	desc = ""
@@ -94,7 +117,29 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/rogue/piedough
 
+/datum/crafting_recipe/roguetown/cooking/piedough/mothersmilk
+	name = "Eoran pie dough"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/powder/flour= 2,
+		/datum/reagent/consumable/mothersmilk = 15,
+		/obj/item/reagent_containers/powder/flour/salt = 1,
 
+	)
+	result = /obj/item/reagent_containers/food/snacks/rogue/piedough/mothersmilk
+
+/obj/item/reagent_containers/food/snacks/rogue/piedough/mothersmilk
+	name = "Eoran pie dough"
+	desc = "Pie dough produced with mothers' milk and salt instead of butter, used to make meals that are intended as an indulgence between loving couples."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "piedough"
+	slices_num = 0
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/cooked
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("sweet dough" = 1)
+	foodtype = GRAIN
+	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 /datum/crafting_recipe/roguetown/cooking/berrypie
 	name = "berry pie"
@@ -226,3 +271,47 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	eat_effect = /datum/status_effect/buff/foodbuff
 	tastes = list("eggs" = 1)
+
+/datum/crafting_recipe/roguetown/cooking/berrypie/mothersmilk
+	name = "Eoran berry pie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/piedough/mothersmilk = 1)
+	parts = list(
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 3)
+	result = /obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/berry
+
+
+/datum/crafting_recipe/roguetown/cooking/applepie/mothersmilk
+	name = "Eoran apple pie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/apple = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/piedough/mothersmilk = 1)
+	parts = list(
+		/obj/item/reagent_containers/food/snacks/grown/apple = 3)
+	result = /obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/apple
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/berry
+	name = "Eoran berry pie"
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/cooked/berry
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/cooked/berry
+	name = "Eoran berry pie"
+	desc = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	eat_effect = /datum/status_effect/buff/foodbuff
+	tastes = list("berries" = 1)
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/apple
+	name = "Eoran apple pie"
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/cooked/apple
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/mothersmilk/cooked/apple
+	name = "Eoran apple pie"
+	desc = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
+	eat_effect = /datum/status_effect/buff/foodbuff
+	tastes = list("apples" = 1)
