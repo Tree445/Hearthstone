@@ -81,5 +81,5 @@
 		if(prob(33))
 			target.sexcon.ejaculate(target)
 			target.visible_message(span_warning("[target] is overpowered by the sudden bliss!"), span_warning("It can't stop!"))
-		target.Stun(10)
+		target.Jitter(10)
 	return TRUE
