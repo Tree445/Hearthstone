@@ -541,7 +541,6 @@
 
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
-	icon = 'modular_hearthstone/icons/obj/items/clothes/head/sallet.dmi'	// modularized for Hearthstone
 	icon_state = "sallet"
 	desc = "A steel helmet which protects the ears."
 	smeltresult = /obj/item/ingot/steel
@@ -551,7 +550,6 @@
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
 	name = "visored sallet"
 	desc = "A steel helmet which protects the ears, nose, and eyes."
-	icon = 'modular_hearthstone/icons/obj/items/clothes/head/sallet_visor.dmi'	// modularized for Hearthstone
 	icon_state = "sallet_visor"
 	adjustable = CAN_CADJUST
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
