@@ -10,7 +10,7 @@
 	buckle_lying = 0
 	buckle_prevents_pull = TRUE
 	anchored = TRUE
-	density = TRUE
+	density = FALSE
 	layer = ABOVE_ALL_MOB_LAYER
 	plane = GAME_PLANE_UPPER
 	var/latched = FALSE
