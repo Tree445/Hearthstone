@@ -145,6 +145,16 @@
 	dynamic_hair_suffix = ""
 	sewrepair = TRUE
 
+/obj/item/clothing/head/roguetown/psydonhood
+	name = "psydon hood"
+	desc = "Blood of Psydon preserve me."
+	color = null
+	icon_state = "psydonhood"
+	item_state = "psydonhood"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	sewrepair = TRUE
+
 /obj/item/clothing/head/roguetown/dendormask
 	name = "briarmask"
 	desc = "A mask of wood worn by druids in service to Dendor."
@@ -759,6 +769,16 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/clothing/head/roguetown/helmet/heavy/eorahelm
+    name = "eora helmet"
+    desc = "Headwear commonly worn by Templars in service to Eora. The chained heart on its front demonstrates its wearer's commitment to protect unbound love, even at ones own expense."
+    icon_state = "eorahelm"
+    item_state = "eorahelm"
+    emote_environment = 3
+    flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+    block2add = FOV_BEHIND
+    smeltresult = /obj/item/ingot/steel
+
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	name = "noc helmet"
 	desc = "Hearwear commonly worn by Templars in service to Noc. Without the night there can be no day, without Noc there can be no light in the dark hours."
@@ -799,6 +819,17 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/helmetbars
+	name = "helmetbars"
+	desc = "A steel bascinet helmet with metal bars protecting the face"
+	icon_state = "helmetbars"
+	item_state = "helmetbars"
+	emote_environment = 3
+	body_parts_covered = HEAD|HAIR|EARS|NOSE
+	flags_inv = HIDEEARS|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel	
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 	name = "pigface bascinet"

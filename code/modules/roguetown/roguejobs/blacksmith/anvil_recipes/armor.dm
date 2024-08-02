@@ -274,6 +274,13 @@
 	craftdiff = 2
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/helmetbars
+	name = "Barred Bascinet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/helmetbars
+	craftdiff = 2
+	i_type = "Armor"
+
 /datum/anvil_recipe/armor/bascinet
 	name = "Bascinet Helmet"
 	req_bar = /obj/item/ingot/steel
@@ -312,6 +319,14 @@
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
+	craftdiff = 2
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/eorahelm
+	name = "Eora Helmet (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/eorahelm
 	craftdiff = 2
 	i_type = "Armor"
 
