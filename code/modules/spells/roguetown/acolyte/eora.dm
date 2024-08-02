@@ -51,14 +51,14 @@
 		return TRUE
 	return FALSE
 
-/obj/effect/proc_holder/spell/invoked/forced_orgasm
-	name = "Power Word Bliss"
+/obj/effect/proc_holder/spell/invoked/forced_pleasure
+	name = "Overwhelming Bliss"
 	desc = ""
 	overlay_state = "bliss"
 	releasedrain = 30
 	chargedrain = 0
 	chargetime = 0
-	range = 7
+	range = 2
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross/eora)
@@ -66,20 +66,26 @@
 	invocation_type = "none"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
-	charge_max = 10 SECONDS
+	charge_max = 40 SECONDS
 	miracle = TRUE
 	devotion_cost = 10
 
-/obj/effect/proc_holder/spell/invoked/forced_orgasm/cast(list/targets, mob/living/user)
+/obj/effect/proc_holder/spell/invoked/forced_pleasure/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(target.client.prefs.sexable == FALSE || target.defiant)
+		if(target.client.prefs.sexable == FALSE)
 			to_chat(user, "<span class='warning'>The target can not be affected!</span>")
 			return FALSE
-		target.sexcon.ejaculate(target)
-		target.visible_message(span_warning("[target] is struck by sudden bliss!"), span_warning("I can't control my pleasure!"))
-		if(prob(33))
-			target.sexcon.ejaculate(target)
-			target.visible_message(span_warning("[target] is overpowered by sudden bliss!"), span_warning("It won't stop!"))
-		target.Jitter(10)
+		target.visible_message(span_warning("[target] is struck by sudden bliss!"), span_warning("I was shocked by the overwhelming bliss!"))
+		var/choice = alert(target, "Do you wish to give into bliss?", "", "Yes", "No")
+		switch(choice)
+			if("Yes")
+				target.visible_message(span_warning("[target] is overpowered by sudden bliss!"), span_warning("I gave in to bliss!"))
+				target.Jitter(10)
+				if(prob(33))
+					target.sexcon.ejaculate(target)
+					target.Stun(10)
+			if("No")
+				target.visible_message(span_warning("[target] refuses to give in!"), span_warning("I refuse to give in!"))
+				return FALSE
 	return TRUE
