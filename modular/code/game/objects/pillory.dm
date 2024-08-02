@@ -146,8 +146,6 @@
 
 	var/mob/living/carbon/human/H = M
 
-	density = FALSE
-
 	if (H.dna)
 		if (H.dna.species)
 			var/datum/species/S = H.dna.species
@@ -155,6 +153,7 @@
 			if (istype(S))
 				//H.cut_overlays()
 				H.update_body_parts_head_only()
+				density = FALSE
 				switch(H.dna.species.name)
 					if ("Dwarf", "Dwarf", "Kobold", "Goblin", "Verminvolk")
 						H.set_mob_offsets("bed_buckle", _x = 0, _y = PILLORY_HEAD_OFFSET)
@@ -190,8 +189,8 @@
 	else
 		..()
 		density = TRUE
-
 	..()
+	density = TRUE
 
 #undef PILLORY_HEAD_OFFSET
 
