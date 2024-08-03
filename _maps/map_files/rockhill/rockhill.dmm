@@ -1642,7 +1642,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "aFk" = (
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/manor)
@@ -3047,6 +3047,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
+"bTX" = (
+/obj/item/rogueweapon/spear,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet/bogcaves)
 "bTY" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/twig,
@@ -4977,6 +4981,10 @@
 /area/rogue/indoors/town/manor)
 "dFC" = (
 /obj/structure/fluff/walldeco/bigpainting,
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 8
+	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "dGb" = (
@@ -6187,7 +6195,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "eNG" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /obj/structure/flora/roguegrass,
@@ -8148,7 +8156,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "gIz" = (
 /obj/structure/table/wood{
 	icon_state = "largetable"
@@ -8416,7 +8424,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "gVR" = (
 /obj/effect/spawner/lootdrop/roguetown/sewers,
 /obj/effect/spawner/lootdrop/roguetown/sewers,
@@ -11968,7 +11976,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "kkK" = (
 /obj/effect/landmark/start/villager{
 	dir = 1
@@ -12080,7 +12088,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "kri" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -15001,8 +15009,9 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "nlM" = (
-/turf/closed/wall/mineral/rogue/craftstone,
-/area/rogue/outdoors/town/roofs)
+/mob/living/simple_animal/hostile/retaliate/gaseousform,
+/turf/open/floor/rogue/tile,
+/area/rogue/indoors)
 "nlU" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/town/church)
@@ -16080,7 +16089,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "oml" = (
 /turf/open/floor/rogue/rooftop/green/corner1{
 	dir = 10
@@ -17558,7 +17567,8 @@
 "pJm" = (
 /obj/structure/closet/crate/chest/gold,
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/obj/item/clothing/neck/roguetown/blkknight,
+/obj/effect/spawner/lootdrop/roguetown/sewers,
+/obj/item/storage/belt/rogue/leather/black,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "pKb" = (
@@ -17680,7 +17690,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "pPy" = (
 /obj/structure/flora/roguetree/stump/log,
 /turf/open/floor/rogue/dirt/road,
@@ -18701,7 +18711,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "qLl" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1
@@ -19619,11 +19629,8 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/beach)
 "rFD" = (
-/obj/structure/table/wood{
-	icon_state = "largetable";
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
+/obj/structure/mineral_door/wood,
+/turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors)
 "rFH" = (
 /obj/structure/mineral_door/wood/fancywood{
@@ -19949,7 +19956,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "rVB" = (
 /obj/structure/table/church,
 /obj/item/candle/yellow,
@@ -20343,7 +20350,7 @@
 	dir = 1;
 	icon_state = "wooden_floor2"
 	},
-/area/rogue/outdoors/town/roofs)
+/area/rogue/indoors/town)
 "snI" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/item/reagent_containers/glass/pot,
@@ -24216,8 +24223,12 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "vXG" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/outdoors/town/roofs)
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/chair/wood/rogue{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors)
 "vXH" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue/end{
 	dir = 4
@@ -24915,6 +24926,11 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
+/area/rogue/under/cavewet/bogcaves)
+"wHS" = (
+/obj/structure/closet/crate/roguecloset/inn/chest,
+/obj/effect/spawner/lootdrop/roguetown/sewers,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet/bogcaves)
 "wHW" = (
 /obj/item/rogueweapon/huntingknife,
@@ -407976,7 +407992,7 @@ iEr
 iEr
 iEr
 pJm
-ooJ
+nlM
 ooJ
 irz
 eWl
@@ -409500,12 +409516,12 @@ fZJ
 fZJ
 fZJ
 fZJ
-nlM
-vXG
-vXG
-vXG
+evo
+thT
+thT
+thT
 qKu
-nlM
+evo
 uJh
 fZJ
 gYV
@@ -409593,7 +409609,7 @@ eWl
 eWl
 pSi
 iEr
-iEr
+jiT
 rpC
 jiT
 tvE
@@ -409902,12 +409918,12 @@ fZJ
 fZJ
 fZJ
 fZJ
-vXG
+thT
 rVz
 pPs
 pPs
 pPs
-vXG
+thT
 uJh
 fZJ
 gYV
@@ -409995,8 +410011,8 @@ dLe
 eWl
 hDT
 iEr
-iEr
 tTW
+jiT
 jiT
 tvE
 iEr
@@ -410304,12 +410320,12 @@ fZJ
 fZJ
 fZJ
 fZJ
-vXG
+thT
 aET
 pPs
 pPs
 kkF
-vXG
+thT
 uJh
 fZJ
 gYV
@@ -410397,7 +410413,7 @@ iEr
 iEr
 iEr
 iEr
-iEr
+jiT
 jiT
 jiT
 tvE
@@ -410710,8 +410726,8 @@ snF
 pPs
 pPs
 gVH
-fZJ
-vXG
+oTD
+thT
 uJh
 fZJ
 gYV
@@ -410801,7 +410817,7 @@ iEr
 fRt
 iEr
 iEr
-beA
+rFD
 iEr
 iEr
 fyc
@@ -411108,12 +411124,12 @@ fZJ
 fZJ
 fZJ
 fZJ
-vXG
+thT
 pPs
 pPs
 pPs
 omd
-vXG
+thT
 fZJ
 fZJ
 gYV
@@ -411510,12 +411526,12 @@ fZJ
 fZJ
 fZJ
 fZJ
-vXG
+thT
 kqU
 aET
 pPs
 eNa
-vXG
+thT
 fZJ
 fZJ
 gYV
@@ -411912,12 +411928,12 @@ fZJ
 fZJ
 fZJ
 fZJ
-nlM
-vXG
-vXG
+evo
+thT
+thT
 gIy
-vXG
-nlM
+thT
+evo
 fZJ
 fZJ
 gYV
@@ -418819,11 +418835,11 @@ whb
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
+cSl
+dVO
+dVO
+dVO
+dVO
 whb
 whb
 whb
@@ -419220,13 +419236,13 @@ fyc
 fyc
 fyc
 fyc
-fyc
-fyc
-fyc
-fyc
-fyc
-fyc
-fyc
+whb
+cSl
+dVO
+cSl
+cSl
+dVO
+whb
 fyc
 fyc
 fyc
@@ -419617,21 +419633,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
 whb
 whb
+cSl
+cSl
+cSl
+cSl
+cSl
+cSl
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -420019,21 +420035,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
 whb
+cSl
+kty
+cSl
+cSl
+cSl
+cSl
+bee
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -420421,21 +420437,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+cSl
+cSl
+cSl
+cSl
+cSl
+dVO
+kty
+cSl
+cSl
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -420823,21 +420839,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+cSl
+cSl
+bee
+cSl
+cSl
+cSl
+cSl
+cSl
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -421225,21 +421241,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+cSl
+dVO
+cSl
+cSl
+bee
+bee
+cSl
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -421627,21 +421643,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+cSl
+cSl
+cSl
+cSl
+cSl
+cSl
+cSl
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -422029,21 +422045,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
+cSl
+cSl
+bee
+cSl
+cSl
+bee
+cSl
+cSl
+cSl
+bee
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -422431,21 +422447,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
+cSl
+cSl
+cSl
+cSl
+cSl
+cSl
+kty
+cSl
+cSl
+cSl
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -422833,21 +422849,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+cSl
+cSl
+cSl
+bee
+cSl
+cSl
+cSl
+cSl
+cSl
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -423235,21 +423251,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+cSl
+cSl
+cSl
+bTX
+cSl
+cSl
+cSl
+cSl
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -423637,21 +423653,21 @@ vIa
 vIa
 vIa
 whb
+fyc
+whb
+whb
+whb
+bee
+cSl
+cSl
+cSl
+cSl
+cSl
 whb
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -424039,21 +424055,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
+cSl
+cSl
+cSl
+cSl
+cSl
+bee
+cSl
+cSl
+cSl
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -424441,21 +424457,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
+cSl
+cSl
+cSl
+cSl
+cSl
+cSl
+bee
+cSl
+cSl
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -424843,21 +424859,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
+bee
+cSl
+cSl
+bee
+cSl
+cSl
+cSl
+cSl
+cSl
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -425245,21 +425261,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
+bee
+cSl
+kty
+cSl
+bee
+cSl
+cSl
+cSl
+cSl
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -425647,21 +425663,21 @@ vIa
 vIa
 vIa
 whb
+fyc
+whb
+whb
+cSl
+cSl
+cSl
+cSl
+cSl
+kty
+cSl
+cSl
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -426049,21 +426065,21 @@ vIa
 vIa
 vIa
 whb
+fyc
+whb
+whb
+cSl
+cSl
+cSl
+cSl
+cSl
+cSl
+cSl
+bee
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -426451,21 +426467,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+dVO
+cSl
+cSl
+cSl
+cSl
+cSl
+dVO
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -426853,21 +426869,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
+dVO
+dVO
+dVO
+dVO
+dVO
+dVO
+dVO
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -427255,21 +427271,21 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
 whb
+dVO
+wHS
+dVO
+wHS
+dVO
 whb
 whb
 whb
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -427657,6 +427673,7 @@ vIa
 vIa
 vIa
 whb
+fyc
 whb
 whb
 whb
@@ -427670,8 +427687,7 @@ whb
 whb
 whb
 whb
-whb
-whb
+fyc
 whb
 whb
 whb
@@ -428059,21 +428075,21 @@ vIa
 vIa
 vIa
 whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
-whb
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
+fyc
 whb
 whb
 whb
@@ -512900,7 +512916,7 @@ xou
 xou
 xou
 xou
-xou
+gye
 xou
 nqU
 sYx
@@ -513298,9 +513314,9 @@ nqU
 nqU
 nqU
 nqU
+dsu
+dsu
 xou
-dsu
-dsu
 xou
 xou
 xou
@@ -513701,8 +513717,8 @@ sXU
 xou
 nqU
 dFC
-rFD
 qXQ
+xou
 xou
 xou
 xou
@@ -514102,9 +514118,9 @@ nqU
 pMi
 xou
 nqU
-xou
 tFI
 ubb
+xou
 xou
 xou
 xou
@@ -514504,9 +514520,9 @@ nqU
 hgl
 xou
 nqU
-egV
+vXG
 aES
-aES
+xou
 xou
 xou
 xou
