@@ -2420,19 +2420,9 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
 "bqi" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/rogue/wallfire/candle/l,
-/obj/structure/table/wood{
-	dir = 10;
-	icon_state = "tablewood2"
-	},
-/obj/structure/table/wood{
-	dir = 10;
-	icon_state = "tablewood2"
-	},
-/obj/item/needle/thorn,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town)
+/obj/item/rogueweapon/spear,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet/bogcaves)
 "bqt" = (
 /obj/structure/stairs{
 	dir = 1
@@ -3047,10 +3037,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
-"bTX" = (
-/obj/item/rogueweapon/spear,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cavewet/bogcaves)
 "bTY" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/rogue/twig,
@@ -9568,6 +9554,10 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
+"hQq" = (
+/obj/structure/roguemachine/scomm/l,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/town/basement)
 "hQE" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4
@@ -10347,11 +10337,12 @@
 	},
 /area/rogue/outdoors/town/roofs)
 "iDq" = (
-/obj/structure/mineral_door/wood/donjon{
-	locked = 1
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/chair/wood/rogue{
+	dir = 8
 	},
-/turf/closed/mineral/random/rogue,
-/area/rogue/under/cavewet/bogcaves)
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors)
 "iDD" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
@@ -15009,9 +15000,10 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "nlM" = (
-/mob/living/simple_animal/hostile/retaliate/gaseousform,
-/turf/open/floor/rogue/tile,
-/area/rogue/indoors)
+/obj/structure/closet/crate/roguecloset/inn/chest,
+/obj/effect/spawner/lootdrop/roguetown/sewers,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet/bogcaves)
 "nlU" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/town/church)
@@ -22024,6 +22016,20 @@
 	icon_state = "plating2"
 	},
 /area/rogue/indoors/town/shop)
+"tTk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/l,
+/obj/structure/table/wood{
+	dir = 10;
+	icon_state = "tablewood2"
+	},
+/obj/structure/table/wood{
+	dir = 10;
+	icon_state = "tablewood2"
+	},
+/obj/item/needle/thorn,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "tTm" = (
 /obj/structure/table/wood,
 /turf/open/floor/rogue/tile,
@@ -24223,11 +24229,8 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "vXG" = (
-/obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/chair/wood/rogue{
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood/spiral,
+/mob/living/simple_animal/hostile/retaliate/gaseousform,
+/turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "vXH" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue/end{
@@ -24926,11 +24929,6 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
-/area/rogue/under/cavewet/bogcaves)
-"wHS" = (
-/obj/structure/closet/crate/roguecloset/inn/chest,
-/obj/effect/spawner/lootdrop/roguetown/sewers,
-/turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet/bogcaves)
 "wHW" = (
 /obj/item/rogueweapon/huntingknife,
@@ -192792,9 +192790,9 @@ iTw
 txa
 yfk
 dQY
+hQq
 yfk
-yfk
-txa
+jyI
 vRu
 vRu
 vRu
@@ -193598,7 +193596,7 @@ yfk
 iTw
 aVv
 iTw
-txa
+jyI
 vRu
 vRu
 vRu
@@ -194000,7 +193998,7 @@ yfk
 iTw
 fjV
 iTw
-txa
+jyI
 vRu
 vRu
 rSC
@@ -195206,7 +195204,7 @@ hza
 iTw
 wKL
 iTw
-txa
+jyI
 vRu
 vRu
 vRu
@@ -196010,7 +196008,7 @@ hza
 yfk
 iTw
 iTw
-txa
+jyI
 vRu
 vRu
 vRu
@@ -306607,7 +306605,7 @@ oyE
 lfB
 feU
 hra
-bqi
+tTk
 aUE
 feU
 wbg
@@ -407992,7 +407990,7 @@ iEr
 iEr
 iEr
 pJm
-nlM
+vXG
 ooJ
 irz
 eWl
@@ -423258,7 +423256,7 @@ whb
 cSl
 cSl
 cSl
-bTX
+bqi
 cSl
 cSl
 cSl
@@ -427277,9 +427275,9 @@ whb
 whb
 whb
 dVO
-wHS
+nlM
 dVO
-wHS
+nlM
 dVO
 whb
 whb
@@ -514520,7 +514518,7 @@ nqU
 hgl
 xou
 nqU
-vXG
+iDq
 aES
 xou
 xou
@@ -523776,7 +523774,7 @@ ovn
 ovn
 whb
 whb
-iDq
+whb
 whb
 uyE
 sYx
