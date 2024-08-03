@@ -6,7 +6,7 @@
 	icon_state = "matchlock0"
 	item_state = "matchlock"
 	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, INTENT_GENERIC)
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/xbow
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/flintlock
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	randomspread = 1
@@ -112,7 +112,7 @@
 	cocked = FALSE
 	..()
 
-/obj/item/ammo_box/magazine/internal/shot/xbow
+/obj/item/ammo_box/magazine/internal/shot/flintlock
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet
 	caliber = "musketball"
 	max_ammo = 1
