@@ -318,10 +318,10 @@
 	craftdiff = 2
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/beakhelmet
+/datum/anvil_recipe/armor/heavy/beakhelmet
 	name = "Beak Helmet"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/head/roguetown/helmet/beakhelmet
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/beakhelmet
 	craftdiff = 2
 	i_type = "Armor"	
 
