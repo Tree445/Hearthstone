@@ -2691,9 +2691,6 @@
 	icon_state = "vertw"
 	},
 /area/rogue/indoors/town/manor)
-"bAT" = (
-/turf/closed/wall/mineral/rogue/decostone/end,
-/area/rogue/indoors/shelter/mountains)
 "bBu" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/blood/tracks,
@@ -4338,10 +4335,6 @@
 /obj/item/natural/cloth,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
-"dbF" = (
-/obj/structure/bars/cemetery,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/mountains)
 "dbH" = (
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/dirt/road,
@@ -9042,10 +9035,6 @@
 	},
 /turf/open/floor/rogue/metal/barograte/open,
 /area/rogue/under/cavewet/bogcaves/sunkencity/psydon)
-"hqJ" = (
-/obj/structure/bars/cemetery,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/mountains)
 "hqV" = (
 /obj/structure/closet/crate/chest/crafted,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -9122,11 +9111,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/under/cavewet/bogcaves/sunkencity)
-"hvg" = (
-/turf/closed/wall/mineral/rogue/decostone/end{
-	dir = 4
-	},
-/area/rogue/indoors/shelter/mountains)
 "hvi" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -15983,9 +15967,6 @@
 /obj/structure/fluff/walldeco/wantedposter,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
-"ohP" = (
-/turf/closed,
-/area/rogue/indoors/shelter/mountains)
 "ohQ" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -16729,11 +16710,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
-"oQV" = (
-/turf/closed/wall/mineral/rogue/decostone/end{
-	dir = 1
-	},
-/area/rogue/indoors/shelter/mountains)
 "oQZ" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/closed/mineral/rogue,
@@ -18677,10 +18653,6 @@
 /obj/structure/mineral_door/wood,
 /turf/open/water/swamp,
 /area/rogue/indoors)
-"qKf" = (
-/obj/structure/flora/roguegrass/bush,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors/shelter/mountains)
 "qKh" = (
 /obj/structure/table/wood{
 	dir = 5;
@@ -19086,11 +19058,6 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
-"reJ" = (
-/obj/structure/closet/dirthole/closed,
-/obj/structure/gravemarker,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/mountains)
 "reO" = (
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town)
@@ -20634,10 +20601,6 @@
 /obj/effect/decal/remains/wolf,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
-"sCi" = (
-/obj/structure/closet/dirthole/grave,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/mountains)
 "sDX" = (
 /obj/effect/decal/remains/wolf,
 /turf/open/floor/rogue/cobble,
@@ -20837,9 +20800,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors/town/magician)
-"sOG" = (
-/turf/closed/wall/mineral/rogue/decostone/center,
-/area/rogue/indoors/shelter/mountains)
 "sPb" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 4;
@@ -23799,10 +23759,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
-"vBe" = (
-/obj/machinery/light/rogue/firebowl,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors/shelter/mountains)
 "vBH" = (
 /obj/item/reagent_containers/food/snacks/crow{
 	dir = 8
@@ -256797,19 +256753,19 @@ tmH
 tmH
 tmH
 tmH
-hqJ
-sCi
-reJ
-sCi
-reJ
-reJ
-reJ
-reJ
-sCi
-vET
-vET
-qKf
-dbF
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
@@ -257199,19 +257155,19 @@ tmH
 tmH
 tmH
 tmH
-hqJ
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-qKf
-dbF
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
@@ -257601,19 +257557,19 @@ tmH
 tmH
 tmH
 tmH
-hqJ
-sCi
-reJ
-sCi
-reJ
-reJ
-sCi
-sCi
-vBe
-vET
-vET
-qKf
-dbF
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
@@ -258003,19 +257959,19 @@ tmH
 tmH
 tmH
 tmH
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
-vET
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
@@ -258405,19 +258361,19 @@ tmH
 tmH
 tmH
 tmH
-hqJ
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-dbF
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
@@ -258807,19 +258763,19 @@ tmH
 tmH
 tmH
 tmH
-hqJ
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-dbF
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
@@ -259209,19 +259165,19 @@ tmH
 tmH
 tmH
 tmH
-hvg
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-ohP
-hvg
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
@@ -259611,19 +259567,19 @@ tmH
 tmH
 tmH
 tmH
-sOG
-oQV
-hqJ
-hqJ
-hqJ
-vET
-hqJ
-hqJ
-hqJ
-hqJ
-hqJ
-bAT
-sOG
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
+tmH
 tmH
 tmH
 tmH
