@@ -2420,8 +2420,17 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
 "bqi" = (
-/obj/structure/closet/crate/chest,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/rogue/wallfire/candle/l,
+/obj/structure/table/wood{
+	dir = 10;
+	icon_state = "tablewood2"
+	},
+/obj/structure/table/wood{
+	dir = 10;
+	icon_state = "tablewood2"
+	},
+/obj/item/needle/thorn,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "bqt" = (
@@ -19963,12 +19972,7 @@
 /area/rogue/indoors)
 "rWO" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/wood{
-	dir = 10;
-	icon_state = "tablewood2"
-	},
-/obj/item/needle/thorn,
-/obj/item/needle/thorn,
+/obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "rXm" = (
@@ -306586,9 +306590,9 @@ aOv
 oyE
 lfB
 feU
-rdT
-vxM
+hra
 bqi
+aUE
 feU
 wbg
 wVI
@@ -307794,7 +307798,7 @@ thT
 dHZ
 hra
 hra
-thT
+rdT
 dHZ
 wbg
 wbg
@@ -308197,7 +308201,7 @@ vxM
 gAP
 aMv
 thT
-odX
+thT
 wVI
 wVI
 jXw
@@ -410708,7 +410712,7 @@ pPs
 gVH
 fZJ
 vXG
-fZJ
+uJh
 fZJ
 gYV
 hUa
@@ -512007,12 +512011,12 @@ xAt
 xAt
 xAt
 xAt
-xAt
-xAt
-xAt
-xAt
-xAt
-xAt
+lLa
+lLa
+lLa
+lLa
+lLa
+lLa
 xAt
 xAt
 xAt
@@ -512409,12 +512413,12 @@ xAt
 xAt
 xAt
 xAt
-xAt
-xAt
-xAt
-xAt
-xAt
-xAt
+lLa
+sXz
+sXz
+sXz
+sXz
+lLa
 xAt
 xAt
 xAt
@@ -512811,12 +512815,12 @@ xAt
 xAt
 xAt
 xAt
-xAt
-xAt
-xAt
-xAt
-xAt
-xAt
+lLa
+sXz
+sXz
+sXz
+sXz
+lLa
 xAt
 xAt
 xAt
@@ -513213,12 +513217,12 @@ xAt
 xAt
 xAt
 xAt
-xAt
-xAt
-xAt
-xAt
-xAt
-xAt
+lLa
+sXz
+sXz
+sXz
+sXz
+lLa
 xAt
 xAt
 xAt
@@ -513615,12 +513619,12 @@ xAt
 xAt
 xAt
 xAt
-xAt
-xAt
-xAt
-xAt
-xAt
-xAt
+lLa
+sXz
+sXz
+sXz
+sXz
+lLa
 xAt
 xAt
 xAt
@@ -514017,12 +514021,12 @@ xAt
 xAt
 xAt
 xAt
-xAt
-xAt
-xAt
-xAt
-xAt
-xAt
+lLa
+sXz
+sXz
+sXz
+sXz
+lLa
 xAt
 xAt
 xAt
@@ -514419,12 +514423,12 @@ xAt
 xAt
 xAt
 xAt
-xAt
-xAt
-xAt
-xAt
-xAt
-xAt
+lLa
+lLa
+lLa
+lLa
+lLa
+lLa
 xAt
 xAt
 xAt
