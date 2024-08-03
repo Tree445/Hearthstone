@@ -136,6 +136,22 @@
 	toggle_icon_state = TRUE
 	max_integrity = 100
 
+/obj/item/clothing/head/roguetown/roguehood/tricksterhood
+	name = "trickster hood"
+	desc = "A hood worn by those who favor Xylix the trickster. And strange and unusual garment, as befits the wearer no doubt, complete with a rope around the neck to fit it into place."
+	color = null
+	icon_state = "tricksterhood"
+	item_state = "tricksterhood"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	body_parts_covered = NECK
+	slot_flags = ITEM_SLOT_HEAD
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	dynamic_hair_suffix = ""
+	edelay_type = 1
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
+	max_integrity = 100	
+
 /obj/item/clothing/head/roguetown/necrahood
 	name = "death shroud"
 	color = null
@@ -920,6 +936,26 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/beakhelmet
+	name = "beak helmet"
+	desc = "Odd spherical helmet with a beaklike visor."
+	icon_state = "beakhelmet"
+	item_state = "beakhelmet"
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/head/roguetown/helmet/heavy/blacksunhelm
+	name = "black sun helmet"
+	desc = "Headwear worn by Graggarite fanatics. A twisted depiction of the black sun, a single hate-filled eye peers out of its grinning face."
+	icon_state = "blacksunhelm"
+	item_state = "blacksunhelm"
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel	
 
 /obj/item/clothing/head/roguetown/helmet/carapacecap
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
