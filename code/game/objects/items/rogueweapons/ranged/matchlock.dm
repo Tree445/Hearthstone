@@ -5,7 +5,7 @@
 	icon = 'icons/roguetown/weapons/32.dmi'
 	icon_state = "matchlock0"
 	item_state = "matchlock"
-	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, INTENT_GENERIC)
+	possible_item_intents = list(/datum/intent/shoot/flintlock, /datum/intent/arc/flintlock, INTENT_GENERIC)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/flintlock
     slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
