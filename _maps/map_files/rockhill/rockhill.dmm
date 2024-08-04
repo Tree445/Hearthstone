@@ -4016,10 +4016,7 @@
 /area/rogue/indoors)
 "cIV" = (
 /obj/effect/decal/cleanable/blood/bubblegum,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/rogue/tile{
-	icon_state = "bfloorz"
-	},
+/turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors)
 "cJZ" = (
 /obj/structure/closet/crate/chest,
@@ -6138,9 +6135,9 @@
 	},
 /area/rogue/outdoors/bog)
 "eGD" = (
-/mob/living/carbon/human/species/skeleton/npc/dungeon/ambush,
-/turf/open/floor/rogue/carpet/lord/center,
-/area/rogue/indoors)
+/mob/living/carbon/human/species/skeleton/npc/dungeon,
+/turf/open/water/swamp,
+/area/rogue/under/cavewet/bogcaves)
 "eHe" = (
 /obj/structure/table/wood{
 	dir = 9;
@@ -20930,6 +20927,10 @@
 "skn" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves/chapel)
+"skF" = (
+/mob/living/carbon/human/species/skeleton/npc/dungeon/ambush,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "skP" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 1
@@ -43632,9 +43633,9 @@ whb
 whb
 whb
 whb
+eGD
 cSl
-cSl
-cSl
+eGD
 cSl
 cSl
 cSl
@@ -44436,10 +44437,10 @@ whb
 whb
 whb
 whb
+eGD
 cSl
 cSl
 eMz
-cSl
 cSl
 cSl
 cSl
@@ -45645,9 +45646,9 @@ whb
 cSl
 cSl
 cSl
-cSl
-cSl
-cSl
+hGf
+mfl
+mfl
 hGf
 whb
 whb
@@ -46047,7 +46048,7 @@ whb
 cSl
 cSl
 cSl
-cSl
+hGf
 iSb
 iSb
 hGf
@@ -46449,7 +46450,7 @@ whb
 cSl
 cSl
 cSl
-cSl
+hGf
 lVZ
 iSb
 hGf
@@ -53686,8 +53687,8 @@ whb
 whb
 whb
 hGf
-iSb
-iSb
+mfl
+mfl
 hGf
 hGf
 hGf
@@ -57311,7 +57312,7 @@ vuU
 mus
 iSb
 iSb
-mxx
+iSb
 iSb
 tCX
 iSb
@@ -67369,13 +67370,13 @@ hwg
 wer
 hHI
 xBB
-yca
+dzI
 yca
 yca
 mJC
 yca
 mJC
-hHF
+skF
 uVQ
 odi
 odi
@@ -68565,7 +68566,7 @@ tdz
 oEL
 pAV
 yhO
-yca
+dzI
 yca
 pAV
 uTi
@@ -68576,7 +68577,7 @@ kKf
 hHI
 nRs
 yca
-yca
+dzI
 yca
 yca
 yca
@@ -68980,7 +68981,7 @@ yca
 yca
 pRO
 yca
-yca
+dzI
 yca
 wPu
 oEL
@@ -69368,8 +69369,8 @@ pAV
 pAV
 pAV
 pAV
-oEL
-oEL
+pAV
+pAV
 cIV
 pAV
 pAV
@@ -70170,7 +70171,6 @@ odi
 lVS
 qxH
 xBl
-eGD
 xBl
 xBl
 xBl
@@ -70180,7 +70180,8 @@ xBl
 xBl
 xBl
 xBl
-eGD
+xBl
+xBl
 xBl
 xBl
 xBl
@@ -70188,7 +70189,7 @@ xBl
 tAX
 iyN
 yca
-dzI
+yca
 yca
 fAV
 odi
@@ -70980,7 +70981,7 @@ lun
 yca
 yca
 yca
-dzI
+yca
 yca
 yca
 yca
@@ -72195,7 +72196,7 @@ pAV
 xBl
 awI
 xBl
-dzI
+yca
 yca
 wPu
 cps
