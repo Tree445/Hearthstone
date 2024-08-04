@@ -113,7 +113,8 @@
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap
 	neck = /obj/item/clothing/neck/roguetown/coif
 	belt = /obj/item/storage/belt/rogue/leather/hand
-	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+	if(prob(30))
+		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	if(H.gender == FEMALE)
 		H.STASTR = rand(10,13)
 	else
