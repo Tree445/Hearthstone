@@ -49,13 +49,13 @@
 				dirtext = ", although I cannot make out a direction"
 		var/disttext
 		switch(distance)
-			if(0 to 15)
+			if(0 to 20)
 				disttext = " very close"
-			if(15 to 30)
+			if(20 to 40)
 				disttext = " close"
-			if(30 to 50)
+			if(40 to 80)
 				disttext = ""
-			if(50 to 100)
+			if(80 to 160)
 				disttext = " far"
 			else
 				disttext = " very far"
