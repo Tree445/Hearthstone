@@ -4557,6 +4557,13 @@
 	},
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor)
+"dmC" = (
+/obj/structure/bars,
+/turf/open/water/river{
+	dir = 4;
+	icon_state = "rockwd"
+	},
+/area/rogue/under/cavewet/bogcaves)
 "dmI" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/shirt/rags,
@@ -6846,6 +6853,10 @@
 /mob/living/carbon/human/species/skeleton/npc,
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
+"fwp" = (
+/obj/structure/bars,
+/turf/closed/mineral/rogue,
+/area/rogue/under/cave)
 "fwE" = (
 /obj/structure/chair/wood/rogue{
 	dir = 4
@@ -9207,8 +9218,11 @@
 /area/rogue/outdoors/town)
 "hAC" = (
 /obj/structure/bars,
-/turf/closed/mineral/rogue,
-/area/rogue/under/cave)
+/turf/open/water/river{
+	dir = 1;
+	icon_state = "rockwd"
+	},
+/area/rogue/under/cavewet/bogcaves)
 "hAL" = (
 /obj/structure/chair/bench/couchablack/r,
 /turf/open/floor/carpet/inn,
@@ -17756,6 +17770,10 @@
 /obj/item/bedsheet/rogue/fabric,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor)
+"pTq" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "pTE" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/naturalstone,
@@ -21608,10 +21626,6 @@
 	icon_state = "vertw"
 	},
 /area/rogue/indoors/town/tavern)
-"txQ" = (
-/obj/structure/spider/stickyweb,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cave)
 "txR" = (
 /obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/naturalstone,
@@ -202610,7 +202624,7 @@ dSL
 dSL
 dSL
 dSL
-fKC
+dSL
 gxt
 gxt
 wjG
@@ -203012,7 +203026,7 @@ dSL
 dSL
 dSL
 dSL
-gxt
+dSL
 gxt
 gxt
 wjG
@@ -203410,11 +203424,11 @@ dSL
 dSL
 dSL
 dSL
+dqU
 dSL
 dSL
 dSL
 dSL
-gxt
 gxt
 gxt
 ryI
@@ -203811,13 +203825,13 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-dSL
+fKC
 gxt
-gxt
+dSL
+dSL
+dSL
+dSL
+dSL
 gxt
 ryI
 oLb
@@ -204190,9 +204204,9 @@ lrs
 rSC
 rSC
 ike
-hAC
+fwp
 ike
-txQ
+pTq
 hJf
 dVO
 dVO
@@ -204207,19 +204221,19 @@ hJf
 dVO
 dVO
 gut
+dVO
 dSL
 dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-dSL
-fKC
 gxt
 gxt
+dSL
+dSL
+dSL
+dSL
+dSL
 gxt
 ryI
 ryI
@@ -204592,7 +204606,7 @@ lrs
 rSC
 rSC
 ike
-hAC
+fwp
 ike
 ike
 dVO
@@ -204615,13 +204629,13 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-fKC
 gxt
 gxt
+dSL
+dSL
+dSL
+dSL
+dSL
 gxt
 wjG
 aXS
@@ -204994,8 +205008,8 @@ lrs
 rSC
 rSC
 ike
-hAC
-txQ
+fwp
+pTq
 ike
 dhm
 hJf
@@ -205011,20 +205025,20 @@ dVO
 dVO
 aab
 aab
+dmC
+dmC
+dmC
+dmC
+dmC
+hAC
+aab
+aab
 dSL
 dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-dSL
-gxt
-gxt
-gxt
-gxt
+aab
 wjG
 wjG
 wjG
@@ -205418,14 +205432,14 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-fKC
 gxt
 gxt
 gxt
+dSL
+dSL
+dSL
+dSL
+dSL
 gxt
 gxt
 gxt
@@ -205819,15 +205833,15 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-dSL
+fKC
 gxt
 gxt
 gxt
-gxt
+dSL
+dSL
+dSL
+dSL
+dSL
 gxt
 gxt
 gxt
@@ -206221,16 +206235,16 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
+gxt
+gxt
+gxt
+gxt
 dqU
 dqU
-gxt
-gxt
-gxt
-gxt
+dqU
+dqU
+dqU
+dSL
 gxt
 gxt
 gxt
@@ -206623,18 +206637,18 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-dqU
-dqU
-dqU
-dqU
-dSL
 gxt
 gxt
 gxt
+gxt
+dqU
+dqU
+dqU
+dqU
+dqU
+dqU
+dqU
+dSL
 gxt
 gxt
 gxt
@@ -207025,21 +207039,21 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dSL
-dqU
-dqU
-dqU
-dqU
-dqU
-dqU
-dSL
 gxt
 gxt
 gxt
 gxt
+dqU
+dqU
+dqU
+dqU
+dqU
+dqU
+dqU
+dqU
+dqU
+dqU
+dSL
 gxt
 gxt
 gxt
@@ -207427,10 +207441,10 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dqU
+gxt
+gxt
+gxt
+gxt
 dqU
 dqU
 dqU
@@ -207829,10 +207843,10 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dqU
+gxt
+gxt
+gxt
+gxt
 dqU
 dqU
 dqU
@@ -208231,10 +208245,10 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dSL
-dqU
+gxt
+gxt
+gxt
+gxt
 dqU
 dqU
 dqU
@@ -208634,10 +208648,10 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dSL
-dqU
-dqU
+gxt
+gxt
+gxt
+gxt
 dqU
 dqU
 dqU
@@ -209036,11 +209050,11 @@ dSL
 dSL
 dSL
 dSL
-dSL
-dqU
-dqU
-dqU
-dqU
+gxt
+gxt
+gxt
+gxt
+gxt
 dqU
 dqU
 dqU
@@ -209429,7 +209443,6 @@ gxt
 gxt
 gxt
 gxt
-gxt
 dSL
 dSL
 dSL
@@ -209446,8 +209459,9 @@ gxt
 gxt
 gxt
 gxt
-gxt
-gxt
+dqU
+dqU
+dqU
 dqU
 dqU
 dqU
@@ -209840,7 +209854,6 @@ dSL
 dSL
 dSL
 dSL
-fKC
 gxt
 gxt
 gxt
@@ -209851,8 +209864,9 @@ gxt
 gxt
 gxt
 gxt
-gxt
-gxt
+dqU
+dqU
+dqU
 dqU
 dqU
 dqU
