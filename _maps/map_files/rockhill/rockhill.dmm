@@ -9205,13 +9205,6 @@
 /obj/structure/gravemarker,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
-"hAC" = (
-/obj/structure/stairs{
-	dir = 4;
-	icon_state = "stairs"
-	},
-/turf/closed,
-/area/rogue/indoors/town/church/chapel)
 "hAL" = (
 /obj/structure/chair/bench/couchablack/r,
 /turf/open/floor/carpet/inn,
@@ -293454,7 +293447,7 @@ eOg
 ntK
 ntK
 ntK
-hAC
+oDA
 hcx
 cHG
 fxx
