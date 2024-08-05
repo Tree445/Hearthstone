@@ -1132,7 +1132,6 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
 	},
-/obj/item/clothing/neck/roguetown/psicross/wood,
 /obj/item/clothing/neck/roguetown/psicross/eora,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church/chapel)
@@ -1277,7 +1276,9 @@
 	icon_state = "longtable"
 	},
 /obj/machinery/light/rogue/wallfire/candle/blue,
-/obj/item/clothing/neck/roguetown/psicross/astrata,
+/obj/item/clothing/neck/roguetown/psicross/ravox{
+	pixel_y = 5
+	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church/chapel)
 "ajj" = (
@@ -1734,7 +1735,6 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
 	},
-/obj/item/clothing/neck/roguetown/psicross/pestra,
 /obj/item/clothing/neck/roguetown/psicross/pestra,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church/chapel)
@@ -4159,13 +4159,6 @@
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
-"cRb" = (
-/obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
-	lockid = "church"
-	},
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/town/church/chapel)
 "cRl" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -13329,7 +13322,9 @@
 /area/rogue/indoors/town/manor)
 "lma" = (
 /obj/structure/mineral_door/wood/donjon/stone{
-	lockid = "church"
+	locked = 1;
+	lockid = "church";
+	name = "Temple of the One"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church/chapel)
@@ -16449,7 +16444,7 @@
 	dir = 1;
 	icon_state = "longtable_mid"
 	},
-/obj/item/clothing/neck/roguetown/psicross,
+/obj/item/clothing/neck/roguetown/psicross/astrata,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church/chapel)
 "omr" = (
@@ -321546,7 +321541,7 @@ pQd
 pQd
 vtw
 vtw
-cRb
+lma
 fEK
 ihO
 ihO
