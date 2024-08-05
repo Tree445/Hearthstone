@@ -727,6 +727,7 @@
 			icon_state = "knightum"
 			body_parts_covered = HEAD|HAIR|EARS
 			flags_inv = HIDEEARS|HIDEHAIR
+			flags_inv = HIDEEARS|HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
@@ -833,6 +834,54 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight
+	name = "royal guard's helmet"
+	desc = "A helmet worn by those in the royal guard. Decorated with gold, its white feather a sign of the oath made to protect the royals until death."
+	icon_state = "royalguardhelmet"
+	item_state = "royalguardhelmet"
+	adjustable = CAN_CADJUST
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight/black
+	color = CLOTHING_BLACK
+
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight/AdjustClothes(mob/user)
+	if(loc == user)
+		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			icon_state = "royalguardhelmetum"
+			body_parts_covered = HEAD|HAIR|EARS
+			flags_inv = HIDEEARS|HIDEHAIR
+			flags_cover = null
+			emote_environment = 0
+			update_icon()
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_head()
+			block2add = null
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			emote_environment = 3
+			update_icon()
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_head()
+		user.update_fov_angles()
+
+/obj/item/clothing/head/roguetown/helmet/heavy/royalknight/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 	name = "bucket helmet"
 	desc = "A helmet which covers the whole of the head. Offers excellent protection."
@@ -848,6 +897,20 @@
 	desc = "Headwear commonly worn by Templars in service to Astrata. The firstborn child's light will forever shine on within its crest."
 	icon_state = "astratahelm"
 	item_state = "astratahelm"
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/heavy/eorahelm
+    name = "eora helmet"
+    desc = "Headwear commonly worn by Templars in service to Eora. The chained heart on its front demonstrates its wearer's commitment to protect unbound love, even at ones own expense."
+    icon_state = "eorahelm"
+    item_state = "eorahelm"
+    emote_environment = 3
+    flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+    block2add = FOV_BEHIND
+    smeltresult = /obj/item/ingot/steel
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	block2add = FOV_BEHIND
@@ -913,6 +976,18 @@
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	flags_inv = HIDEEARS|HIDEHAIR
 	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/helmetbars
+	name = "helmetbars"
+	desc = "A steel bascinet helmet with metal bars protecting the face"
+	icon_state = "helmetbars"
+	item_state = "helmetbars"
+	emote_environment = 3
+	body_parts_covered = HEAD|HAIR|EARS|NOSE
+	flags_inv = HIDEEARS|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel	
 	smeltresult = /obj/item/ingot/steel	
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
