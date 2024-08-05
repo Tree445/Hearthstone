@@ -75,7 +75,7 @@
 	above_floor = /turf/open/floor/rogue/blocks
 	baseturfs = list(/turf/open/floor/rogue/blocks)
 	neighborlay = "dirtedge"
-	climbdiff = 4	// Increased over normal stone's 3 because of the higher skill requirement and material cost to build.
+	climbdiff = 4
 	damage_deflection = 10
 
 // Copypasta spaghetti from rogue/stone/window. Just add water.
