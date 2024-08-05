@@ -93,7 +93,7 @@
 
 /turf/closed/wall/mineral/rogue/craftstone/window/Initialize()
 	. = ..()
-	icon_state = "stone"
+	icon_state = "stonewindow"
 	var/mutable_appearance/M = mutable_appearance(icon, "stonehole", layer = ABOVE_NORMAL_TURF_LAYER)
 	add_overlay(M)
 
