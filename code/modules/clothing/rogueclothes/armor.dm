@@ -158,6 +158,57 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
+/obj/item/clothing/suit/roguetown/armor/plate/graggariteplate
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "graggarite cuirass"
+	desc = "Armor worn by Graggarites, heavy, the spikes on its shoulders add to its weight."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "graggarite_chestplate"
+	item_state = "graggarite_chestplate"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM	
+
+/obj/item/clothing/suit/roguetown/armor/plate/foresterarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "forester armor"
+	desc = "Armor made from wood, surprisingly effective."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "forester_chestplate"
+	item_state = "forester_chestplate"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ash
+	armor_class = ARMOR_CLASS_MEDIUM	
+
+/obj/item/clothing/suit/roguetown/armor/plate/darkelfchestplate
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "raider cuirass"
+	desc = "A set of plate armor worn by Dark Elf surface raiders on slavehunts. Decorated with gold, and with a fur lining around the shoulders, it seems more suited for intimidation than practical use."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "darkelf_chestplate"
+	item_state = "darkelf_chestplate"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM	
+
 /obj/item/clothing/suit/roguetown/armor/plate/halfplateroyalguard
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "royal halfplate"
@@ -191,6 +242,13 @@
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
 
+/obj/item/clothing/suit/roguetown/armor/plate/dwarvenfull
+	name = "dwarven fullplate"
+	desc = "Extremely heavy Dwarven armor. Difficult to wear, only Dwarves seem to master its awkward fit."
+	icon_state = "dwarven_chestplate"
+	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+	equip_delay_self = 80	
+
 /obj/item/clothing/suit/roguetown/armor/plate/full/bikini
 	name = "fullplate bikini"
 	desc = "Full plate in bikini form, full package and full exposure."
@@ -207,6 +265,23 @@
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
+/obj/item/clothing/suit/roguetown/armor/plate/footmanplate
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "footman cuirass"
+	desc = "A light plate of steel worn by Grenzelhoft Footmen. A rather advanced piece of armor, provides adequate protection while still retaining some ease of movement."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "footman_chestplate"
+	item_state = "footman_chestplate"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM	
+
 /obj/item/clothing/suit/roguetown/armor/plate/scale
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "scalemail"
@@ -218,7 +293,20 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_MEDIUM			
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/katefractoiiarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "katefractoii armor"
+	desc = "Connected steel plates make up the basis of this armor. Worn by the elite Katefractoii of the Zybantine Empire."
+	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	allowed_sex = list(MALE, FEMALE)
+	icon_state = "katefractoii_chestplate"
+	max_integrity = 200
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM				
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
 	slot_flags = ITEM_SLOT_ARMOR

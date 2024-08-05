@@ -136,6 +136,19 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/clothing/shoes/roguetown/boots/katefractoiiboots
+	name = "katefractoii boots"
+	desc = "Boots worn by the elite Katefractoii heavy cavalry."
+	body_parts_covered = FEET
+	icon_state = "katefractoii_boots"
+	item_state = "katefractoii_boots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "steel plated boots"
 	desc = "A heavy pair of steel plated boots."
@@ -149,6 +162,58 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 
+/obj/item/clothing/shoes/roguetown/boots/darkelfboots
+	name = "raider boots"
+	desc = "Dark Elf raider boots, rather comfortable to wear."
+	body_parts_covered = FEET
+	icon_state = "darkelf_boots"
+	item_state = "darkelf_boots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/shoes/roguetown/boots/dwarvenboots
+	name = "dwarven boots"
+	desc = "Heavy boots worn by Dwarven soldiers. They see a lot of use in the mountainous regions of the Dwarven Federation."
+	body_parts_covered = FEET
+	icon_state = "dwarven_boots"
+	item_state = "dwarven_boots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/shoes/roguetown/boots/graggariteboots
+	name = "graggarite boots"
+	desc = "Heavy steel boots worn by Graggarites."
+	body_parts_covered = FEET
+	icon_state = "graggarite_boots"
+	item_state = "graggarite_boots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel		
+
+/obj/item/clothing/shoes/roguetown/boots/footmanboots
+	name = "footman boots"
+	desc = "A pair of pointed steel boots worn by Grenzelhoftian Footmen."
+	body_parts_covered = FEET|LEGS|GROIN
+	icon_state = "footman_boots"
+	item_state = "footman_boots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
 /obj/item/clothing/shoes/roguetown/boots/leather
 	name = "leather boots"
 	//dropshrink = 0.75
@@ -158,6 +223,16 @@
 	item_state = "leatherboots"
 	sewrepair = TRUE
 	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/roguetown/boots/foresterboots
+	name = "forester boots"
+	//dropshrink = 0.75
+	desc = "Boots made of wood."
+	gender = PLURAL
+	icon_state = "forester_shoes"
+	item_state = "forester_shoes"
+	sewrepair = TRUE
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)	
 
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"

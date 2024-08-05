@@ -119,6 +119,30 @@
 	craftdiff = 3
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/footmanplate
+	name = "Footman Armour (+2 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/footmanplate
+	craftdiff = 3
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/katefractoiiarmor
+	name = "Katefractoii Armour (+2 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/katefractoiiarmor
+	craftdiff = 3
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/darkelfchestplate
+	name = "Raider Armour (+2 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/darkelfchestplate
+	craftdiff = 3
+	i_type = "Armor"		
+
 /datum/anvil_recipe/armor/platefull
 	name = "Full-Plate Armour (+3 Steel)"
 	req_bar = /obj/item/ingot/steel
@@ -126,6 +150,14 @@
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/full
 	craftdiff = 4
 	i_type = "Armor"
+
+/datum/anvil_recipe/armor/dwarvenfull
+	name = "Full-Plate Armour (+3 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/dwarvenfull
+	craftdiff = 4
+	i_type = "Armor"	
 
 /datum/anvil_recipe/armor/platebikini
 	name = "Half-Plate Bikini (+2 Steel +1 Cloth)"
@@ -177,12 +209,35 @@
 	created_item = /obj/item/clothing/gloves/roguetown/plate
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/footmangauntlets
+	name = "Footman Gauntlets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/gloves/roguetown/footmangauntlets
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/katefractoii_gauntlets
+	name = "Katefractoii Gauntlets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/gloves/roguetown/katefractoiigauntlets
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/darkelfbracers
+	name = "Raider Gauntlets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/gloves/roguetown/darkelfbracers
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/dwarvengauntlets
+	name = "Dwarven Gauntlets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/gloves/roguetown/dwarvengauntlets
+	i_type = "Armor"	
+
 /datum/anvil_recipe/armor/chainleg
 	name = "Chain Chausses"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/under/roguetown/chainlegs
 	i_type = "Armor"
-
 
 /datum/anvil_recipe/armor/chainskirt
 	name = "Chain Skirt"
@@ -311,6 +366,34 @@
 	craftdiff = 2
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/footmanhelmet
+	name = "Footman Helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/footmanhelmet
+	craftdiff = 2
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/katefractoiihelmet
+	name = "Katefractoii Helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/katefractoiihelmet
+	craftdiff = 2
+	i_type = "Armor"		
+
+/datum/anvil_recipe/armor/darkelfhelmet
+	name = "Raider Helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/darkelfhelmet
+	craftdiff = 2
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/dwarvenhelmet
+	name = "Dwarven Helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/dwarvenhelmet
+	craftdiff = 2
+	i_type = "Armor"				
+
 /datum/anvil_recipe/armor/bascinet
 	name = "Bascinet Helmet"
 	req_bar = /obj/item/ingot/steel
@@ -344,6 +427,30 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/shoes/roguetown/boots/armor
 	i_type = "Armor"
+
+/datum/anvil_recipe/armor/footmanboots
+	name = "Footman Boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/footmanboots
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/katefractoiiboots
+	name = "Katefractoii Boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/katefractoiiboots
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/darkelfboots
+	name = "Raider Boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/darkelfboots
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/dwarvenboots
+	name = "Dwarven Boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/dwarvenboots
+	i_type = "Armor"	
 
 /datum/anvil_recipe/armor/platemask/steel
 	name = "Mask"

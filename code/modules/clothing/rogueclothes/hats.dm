@@ -143,9 +143,12 @@
 	icon_state = "tricksterhood"
 	item_state = "tricksterhood"
 	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 	body_parts_covered = NECK
 	slot_flags = ITEM_SLOT_HEAD
-	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEFACIALHAIR|HIDEHAIR
 	dynamic_hair_suffix = ""
 	edelay_type = 1
 	adjustable = CAN_CADJUST
@@ -553,7 +556,7 @@
 	desc = "A helmet with two wings on its sides."
 	icon_state = "wingedcap"
 	max_integrity = 200
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'	
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	body_parts_covered = HEAD|HAIR
@@ -572,6 +575,21 @@
 	smeltresult = /obj/item/ingot/steel
 	body_parts_covered = HEAD|HAIR|EARS
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/roguetown/helmet/footmanhelmet
+	name = "footman helmet"
+	desc = "A standard issue helmet in the ranks of the Grenzelhoftian army. A perfected version of the sallet design, providing excellent protection, especially when paired with a bervor or gorget."
+	icon_state = "footmanhelmet"
+	item_state = "footmanhelmet"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	smeltresult = /obj/item/ingot/steel
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS|HIDEHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	block2add = FOV_BEHIND
+	max_integrity = 400
 
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
 	name = "visored sallet"
@@ -634,6 +652,56 @@
 	icon_state = "gatehelm"
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/head/roguetown/helmet/forestermask
+	name = "forester helmet"
+	desc = "A helmet made of wood, worn by those who feel more at home in the forests than the cities."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "foresterhelmet"
+	item_state = "foresterhelmet"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ash
+
+/obj/item/clothing/head/roguetown/helmet/heavy/darkelfhelmet
+	name = "raider helmet"
+	desc = "This horned helmet is commonly worn by Dark Elf surface raiders, and is clearly designed to frighten."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "darkelfhelmet"
+	item_state = "darkelfhelmet"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/head/roguetown/helmet/heavy/dwarvenhelmet
+	name = "dwarven helmet"
+	desc = "A helmet commonly worn by soldiers of the Dwarven Federation. Fits snugly on the head, with just enough space for ones beard to stick out from under it."
+	icon_state = "dwarvenhelmet"
+	item_state = "dwarvenhelmet"
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel		
+
+/obj/item/clothing/head/roguetown/helmet/heavy/katefractoiihelmet
+	name = "katefractoii helmet"
+	desc = "A tall helmet worn in the hot arid empire of Zybantium. Worn by the Katefractoii, an elite force of heavy cavalry units."
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	icon_state = "katefractoiihelmet"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	body_parts_covered = FULL_HEAD
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 
@@ -950,13 +1018,29 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/blacksunhelm
 	name = "black sun helmet"
-	desc = "Headwear worn by Graggarite fanatics. A twisted depiction of the black sun, a single hate-filled eye peers out of its grinning face."
+	desc = "Headwear worn by fanatical Graggarites, usually those in positions of leadership. A twisted depiction of the black sun, a single hate-filled eye peers out of its grinning face."
 	icon_state = "blacksunhelm"
 	item_state = "blacksunhelm"
 	emote_environment = 3
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/head/roguetown/helmet/heavy/graggaritehelmet
+	name = "graggarite helmet"
+	desc = "A steel helmet worn by Graggarite warriors. Its design is made to resemble Graggar himself, his head sprouting spikes, all the while he remains grinning madly."
+	icon_state = "graggaritehelmet"
+	item_state = "graggaritehelmet"
+	emote_environment = 3
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	armor = list("blunt" = 60, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
+	max_integrity = 150
+	anvilrepair = TRUE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	blocksound = PLATEHIT
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel		
 
 /obj/item/clothing/head/roguetown/helmet/carapacecap
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
