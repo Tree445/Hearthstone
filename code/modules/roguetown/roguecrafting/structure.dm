@@ -87,6 +87,14 @@
 /obj/structure/fermenting_barrel/crafted
 	sellprice = 6
 
+/datum/crafting_recipe/roguetown/armor/barrelarmor
+	name = "barrel armor"
+	result = /obj/item/clothing/suit/roguetown/armor/barrelarmor
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry
+
 /datum/crafting_recipe/roguetown/roguebin
 	name = "wooden bin"
 	result = /obj/item/roguebin
@@ -187,10 +195,12 @@
 	verbage = "constructs"
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/structure/dyestation
-	name = "dye station"
-	result = /obj/machinery/gear_painter
-	reqs = list(/obj/item/natural/stone = 2)
+/datum/crafting_recipe/roguetown/structure/dye_bin
+	name = "dye bin"
+	result = /obj/structure/dye_bin
+	reqs = list(
+		/obj/item/grown/log/tree/small = 1,
+	)
 	verbage_simple = "make"
 	verbage = "makes"
 	craftdiff = 0
