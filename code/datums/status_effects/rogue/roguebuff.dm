@@ -146,3 +146,23 @@
 	name = "Dazed"
 	desc = ""
 	icon_state = "weed"
+
+/datum/status_effect/buff/astratablessed
+	id = "Astrata's Blessing"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/astratablessed
+	effectedstats = list("fortune" = 1)
+
+/atom/movable/screen/alert/status_effect/buff/astratablessed
+	name = "Astrata's Blessing"
+	desc = "I feel empowered by the sun in the sky."
+	icon_state = "buff"
+
+/datum/status_effect/buff/nocblessed
+	id = "Noc's Blessing"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/nocblessed
+	effectedstats = list("fortune" = 1)
+
+/atom/movable/screen/alert/status_effect/buff/nocblessed
+	name = "Noc's Blessing"
+	desc = "I feel empowered by the moon in the sky."
+	icon_state = "buff"

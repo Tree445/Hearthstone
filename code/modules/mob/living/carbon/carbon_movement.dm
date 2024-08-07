@@ -22,15 +22,20 @@
 
 /mob/living/carbon/Move(NewLoc, direct)
 	. = ..()
+	var/nutriadjwalk = NUTRITION_ADJUST_WALK
+	var/nutriadjrun = NUTRITION_ADJUST_RUN
+	if(HAS_TRAIT(src, TRAIT_RAVOX))
+		nutriadjwalk = NUTRITION_ADJUST_WALK_RAVOX
+		nutriadjrun = NUTRITION_ADJUST_RUN_RAVOX
 	if(. && !(movement_type & FLOATING)) //floating is easy
 		if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 			set_nutrition(NUTRITION_LEVEL_FED - 1)	//just less than feeling vigorous
 			set_hydration(HYDRATION_LEVEL_START_MAX - 1)	//just less than feeling vigorous
 		else if(stat != DEAD)
-			adjust_nutrition(-(0.05))
-			adjust_hydration(-(0.05))
+			adjust_nutrition(-(nutriadjwalk))
+			adjust_hydration(-(nutriadjwalk))
 			if(m_intent == MOVE_INTENT_RUN)
-				adjust_nutrition(-(0.1))
-				adjust_hydration(-(0.1))
+				adjust_nutrition(-(nutriadjrun))
+				adjust_hydration(-(nutriadjrun))
 		if(m_intent == MOVE_INTENT_RUN) //sprint fatigue add
 			rogfat_add(2)

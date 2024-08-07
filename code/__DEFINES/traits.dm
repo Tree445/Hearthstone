@@ -42,6 +42,11 @@
 #define TRAIT_SOUL_EXAMINE "Blessing of Necra" //can check bodies to see if they have departed
 #define TRAIT_CRACKHEAD "Blessing of Baotha" //will never overdose
 #define TRAIT_COMMIE "Blessing of Matthios" //recognized by bandits as an ally
+#define TRAIT_ABYSSOR "Blessing of Abyssor" //cant drown
+#define TRAIT_ASTRATA "Blessing of Astrata" //+1 fortune during day
+#define TRAIT_NOC "Blessing of Noc" //+1 fortune at night
+#define TRAIT_RAVOX "Blessing of Ravox" //takes twice as long to get hungry/thirsty
+#define TRAIT_XYLIX "Blessing of Xylix" //special thieves cant language
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -101,6 +106,11 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NORUN = span_warning("My body has atrophied in my state of decay; my leg joints just don't have the strength or durability for running anymore"),
 	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."),
 	TRAIT_SEEDKNOW = span_info("I know which seeds grow which crops."),
+	TRAIT_ABYSSOR = span_info("I cannot drown."),
+	TRAIT_ASTRATA = span_info("The sun brings me good fortune."),
+	TRAIT_NOC = span_info("The moon brings me good fortune."),
+	TRAIT_XYLIX = span_info("I know how to speak in code that only fellow tricksters can understand."),
+	TRAIT_RAVOX = span_info("I can go significantly longer without food or drink.")
 ))
 
 // trait accessor defines
