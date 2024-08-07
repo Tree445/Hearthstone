@@ -9,7 +9,7 @@
 	space_chance = 66
 	default_priority = 80
 	icon_state = "asse"
-	spans = list(SPAN_XYLIX)
+	spans = list(SPAN_PAPYRUS)
 	syllables = list("trick", "peasant", "torch", "cards", "gamble", "cottar", "knight", "bog", "mire", "dice", "dragon", "speak",
 		"limner", "caudle", "fel", "trencher", "volf", "skelelon", "zomble", "kingsfield", "rockhill", "prince", "princess", "trap",
 		"dawn", "dusk", "night", "day", "table", "bench", "tunnel", "roof", "floorboards",
