@@ -4,6 +4,7 @@
 	desc = "Maybe they exist, maybe they do not, but you don't care. It's only your will, not an unseen force's."
 	worshippers = "Madmen, beasts and the ones beyond saving"
 	associated_faith = /datum/faith/godless
+	mob_traits = list(TRAIT_SILLYPERSON)
 	preference_accessible = TRUE
 	undead_hater = FALSE
 	confess_lines = list(
