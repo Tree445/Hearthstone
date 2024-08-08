@@ -67,6 +67,9 @@
 	if(isliving(targets[1]))
 		testing("revived1")
 		var/mob/living/target = targets[1]
+		if(!HAS_TRAIT(target, TRAIT_SILLYPERSON))
+			to_chat(user, span_warning("Astrata's light has no effect! She denies aiding a non-believer!"))
+			return FALSE
 		if(target == user)
 			return FALSE
 		if(target.stat < DEAD)
@@ -80,9 +83,6 @@
 			target.visible_message(span_danger("[target] is unmade by holy light!"), span_userdanger("I'm unmade by holy light!"))
 			target.gib()
 			return TRUE
-		if(!HAS_TRAIT(target, TRAIT_SILLYPERSON))
-			to_chat(user, span_warning("Astrata's light has no effect! She denies aiding a non-believer!"))
-			return FALSE
 		if(!target.revive(full_heal = FALSE))
 			to_chat(user, span_warning("Nothing happens."))
 			return FALSE
