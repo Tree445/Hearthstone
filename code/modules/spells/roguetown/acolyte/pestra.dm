@@ -109,6 +109,9 @@
 
 // consider adding functionality to regrow one entire organ or limb per casting?
 /obj/effect/proc_holder/spell/invoked/attach_bodypart/cast(list/targets, mob/living/user)
+	if(!HAS_TRAIT(target, TRAIT_SILLYPERSON))
+		to_chat(user, span_warning("Pestra's grace has no effect, they do not wish to aid a non-believer..."))
+		return FALSE
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
 		for(var/obj/item/bodypart/limb as anything in get_limbs(human_target, user))
@@ -167,6 +170,9 @@
 					break
 		if(!has_rot)
 			to_chat(user, span_warning("Nothing happens."))
+			return FALSE
+		if(!HAS_TRAIT(target, TRAIT_SILLYPERSON))
+			to_chat(user, span_warning("Pestra's grace has no effect, they do not wish to aid a non-believer..."))
 			return FALSE
 		if(GLOB.tod == "night")
 			to_chat(user, span_warning("Let there be light."))
