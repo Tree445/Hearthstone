@@ -62,7 +62,7 @@
 		/datum/customizer/organ/snout/tabaxi,
 		/datum/customizer/organ/tail/tabaxi,
 		/datum/customizer/organ/testicles/external,
-		/datum/customizer/organ/penis/knotted,
+		/datum/customizer/organ/penis/feline,
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/vagina/animal,

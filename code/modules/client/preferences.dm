@@ -154,7 +154,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/descriptor_entries = list()
 	var/defiant = TRUE
 
-	var/datum/char_accent/char_accent = "No accent"
+	var/datum/char_accent = new /datum/char_accent/none()
 
 
 /datum/preferences/New(client/C)
@@ -1574,6 +1574,7 @@ Slots: [job.spawn_positions]</span>
 						if(charflaw.desc)
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
 
+
 				if("char_accent")
 					var/list/accent = GLOB.character_accents.Copy()
 					var/result = input(user, "Select an accent", "Roguetown") as null|anything in accent
@@ -2091,7 +2092,7 @@ Slots: [job.spawn_positions]</span>
 		character.update_hair()
 		character.update_body_parts(redraw = TRUE)
 
-	character.char_accent = char_accent.name
+	character.char_accent = char_accent
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
