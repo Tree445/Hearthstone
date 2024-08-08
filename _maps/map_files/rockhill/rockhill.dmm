@@ -3010,6 +3010,13 @@
 	icon_state = "bfloorz"
 	},
 /area/rogue/indoors)
+"bJF" = (
+/obj/structure/long_sleep{
+	pixel_y = -1;
+	pixel_x = -1
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/vikingarea)
 "bJG" = (
 /obj/effect/decal/cobbleedge{
 	dir = 6
@@ -16766,7 +16773,10 @@
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/manor)
 "nPP" = (
-/obj/structure/long_sleep,
+/obj/structure/long_sleep{
+	pixel_y = -1;
+	pixel_x = -1
+	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "nPR" = (
@@ -141133,7 +141143,7 @@ mMS
 fWc
 vzh
 vzh
-vzh
+bJF
 vzh
 vzh
 vzh
