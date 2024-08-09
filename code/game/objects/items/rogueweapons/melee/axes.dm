@@ -106,13 +106,6 @@
 /datum/intent/axe/cut/battle
 	penfactor = 30
 
-/datum/intent/axe/chop/battle
-	penfactor = 70
-	damfactor = 1.2 //36 on battleaxe
-
-/datum/intent/axe/cut/battle
-	penfactor = 30
-
 /obj/item/rogueweapon/stoneaxe/battle
 	force = 25
 	force_wielded = 30
