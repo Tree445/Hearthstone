@@ -5,8 +5,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	outfit = /datum/outfit/job/roguetown/adventurer/knighterrant
-	maximum_possible_slots = 2		//Two knights prior to role disabling, so - you get 2. Don't waste it.
-	pickprob = 50
+	maximum_possible_slots = 0		//Two knights prior to role disabling, so - you get 2. Don't waste it.
+	pickprob = 0
 	traits_applied = list(TRAIT_HEAVYARMOR, TRAIT_NOBLE)
 	category_tags = list(CTAG_ADVENTURER)
 
