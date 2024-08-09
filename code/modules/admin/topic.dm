@@ -1114,6 +1114,10 @@
 		var/mob/M = locate(href_list["adminplayeropts"])
 		show_player_panel(M)
 
+	else if(href_list["adminpqadjust"])
+		var/mob/living/M = locate(href_list["adminpqadjust"])
+		adjustpq(M)
+
 	else if(href_list["adminplayerobservefollow"])
 		if(!isobserver(usr) && !check_rights(R_ADMIN))
 			return
