@@ -167,7 +167,6 @@
 	force = 22
 	force_wielded = 28
 	desc = "A steel woodcutting axe. Performs much better than its iron counterpart."
-	force = 26
 	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
 	wdefense = 3
