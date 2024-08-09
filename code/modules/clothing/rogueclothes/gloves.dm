@@ -38,6 +38,16 @@
 	anvilrepair = null
 	sewrepair = TRUE
 
+/obj/item/clothing/gloves/roguetown/forestergloves
+	name = "forester gloves"
+	desc = "Wooden gloves."
+	icon_state = "forester_gauntlets"
+	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 1, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
+	resistance_flags = null
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+
 /obj/item/clothing/gloves/roguetown/leather/black
 	color = CLOTHING_BLACK
 
@@ -105,6 +115,80 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/gloves/roguetown/dwarvengauntlets
+	name = "dwarven gauntlets"
+	desc = "A set of Dwarven gauntlets. Heavy, but very protective."
+	icon_state = "dwarven_gauntlets"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	resistance_flags = null
+	blocksound = PLATEHIT
+
+	max_integrity = 300
+	blade_dulling = DULLING_BASH
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/gloves/roguetown/graggaritegauntlets
+	name = "graggarite gauntlets"
+	desc = "Heavy gauntlets worn by Graggarites. A Graggarite can kill with their hands alone, even disarmed the blood will flow."
+	icon_state = "graggarite_gauntlets"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	resistance_flags = null
+	blocksound = PLATEHIT
+
+	max_integrity = 300
+	blade_dulling = DULLING_BASH
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/gloves/roguetown/katefractoiigauntlets
+	name = "katefractoii gauntlets"
+	desc = "Gauntlets worn by Katefractoii elite heavy cavalry."
+	icon_state = "katefractoii_gauntlets"
+	armor = list("blunt" = 60, "slash" = 100, "stab" = 80, "bullet" = 20, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT)
+	resistance_flags = null
+	blocksound = CHAINHIT
+	max_integrity = 200
+	blade_dulling = DULLING_BASHCHOP
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/gloves/roguetown/footmangauntlets
+	name = "footman gauntlets"
+	desc = "Gauntlets worn by Grenzelhoftian Footmen. Easy to move in."
+	icon_state = "footman_gauntlets"
+	item_state = "footman_gauntlets"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	resistance_flags = null
+	blocksound = PLATEHIT
+    
+	max_integrity = 300
+	blade_dulling = DULLING_BASH
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/gloves/roguetown/darkelfbracers
+	name = "raider bracers"
+	desc = "A set of bracers worn by Dark Elf surface raiders, the lack of finger protection means there is better ease of movement."
+	icon_state = "darkelf_gauntlets"
+	item_state = "darkelf_gauntlets"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	resistance_flags = null
+	blocksound = PLATEHIT	
 
 /obj/item/clothing/gloves/roguetown/grenzelgloves
 	name = "grenzelhoft gloves"
