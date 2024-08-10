@@ -6,7 +6,7 @@
 	allowed_races = RACES_ALL_KINDS
 	vampcompat = FALSE
 	outfit = /datum/outfit/job/roguetown/adventurer/cleric
-	traits_applied = list(TRAIT_HEAVYARMOR)
+	traits_applied = list(TRAIT_MEDIUMARMOR)
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/cleric
@@ -95,7 +95,8 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
 
-	armor = /obj/item/clothing/suit/roguetown/armor/plate
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
@@ -107,14 +108,12 @@
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife)
 	if(classchoice == "Nature Cleric")
 		beltr = /obj/item/rogueweapon/sword
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		armor = /obj/item/clothing/suit/roguetown/armor/leather
 		pants = /obj/item/clothing/under/roguetown/trou
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 
-	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	C.grant_spells(H)
+	C.grant_spells_cleric(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
