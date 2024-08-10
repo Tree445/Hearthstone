@@ -26,7 +26,8 @@
 	nodismemsleeves = TRUE
 	flags_inv = HIDEBOOB|HIDECROTCH
 
-//Handles debuff from wearing armor you don't have skill for. Annoyingly also does this if holding it, but oh well. Just drop it.
+//Handles debuff from wearing armor. This is slop, it just makes it so you can't put it on.
+//Preferably - make a way to check when armor is on apply status effect of a debuff to stats, on remove, remove debuff. - Tried it a few ways, kept breaking.
 /obj/item/clothing/suit/roguetown/armor/mob_can_equip(mob/user, mob/equipper, slot)
 	var/mob/living/carbon/human/H = user
 	if(armor_class == ARMOR_CLASS_HEAVY)
