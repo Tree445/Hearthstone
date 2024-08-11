@@ -20,7 +20,7 @@
 	color = "#d46000"
 	taste_description = "raw fortitude"
 	overdose_threshold = 0
-	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	alpha = 200
 
 /datum/reagent/medicine/fortitudepot/on_mob_life(mob/living/carbon/M)
@@ -35,7 +35,7 @@
 	color = "#7efff9"
 	taste_description = "fleeting swirls"
 	overdose_threshold = 0
-	metabolization_rate = 0.8 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	alpha = 225
 
 /datum/reagent/medicine/swiftnesspot/on_mob_life(mob/living/carbon/M)
@@ -50,7 +50,7 @@
 	color = "#922296"
 	taste_description = "whispering insight"
 	overdose_threshold = 0
-	metabolization_rate = 0.8 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	alpha = 225
 
 /datum/reagent/medicine/intellectpot/on_mob_life(mob/living/carbon/M)
