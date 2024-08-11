@@ -26,4 +26,4 @@
 	name = "Virility Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/virilitypot)
 	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 1, /datum/reagent/consumable/breastmilk = 5, /obj/item/clothing/head/peaceflower = 1)
-	craftdiff = 3
+	craftdiff = 2
