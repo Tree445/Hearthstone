@@ -19,8 +19,8 @@
 	reagent_state = LIQUID
 	color = "#d46000"
 	taste_description = "raw fortitude"
-	overdose_threshold = 20
-	metabolization_rate = 0 
+	overdose_threshold = 19
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	alpha = 200
 
 /datum/reagent/medicine/fortitudepot/overdose_process(mob/living/carbon/M)
@@ -36,8 +36,8 @@
 	reagent_state = LIQUID
 	color = "#7efff9"
 	taste_description = "fleeting swirls"
-	overdose_threshold = 20
-	metabolization_rate = 0 
+	overdose_threshold = 19
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM 
 	alpha = 225
 
 /datum/reagent/medicine/swiftnesspot/overdose_process(mob/living/carbon/M)
@@ -53,8 +53,8 @@
 	reagent_state = LIQUID
 	color = "#922296"
 	taste_description = "whispering insight"
-	overdose_threshold = 20
-	metabolization_rate = 0 
+	overdose_threshold = 19
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM 
 	alpha = 225
 
 /datum/reagent/medicine/intellectpot/overdose_process(mob/living/carbon/M)
@@ -70,8 +70,8 @@
 	reagent_state = LIQUID
 	color = "#ffa6f8"
 	taste_description = "aching virility"
-	overdose_threshold = 10
-	metabolization_rate = 0 
+	overdose_threshold = 9
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM 
 	alpha = 225
 
 /datum/reagent/medicine/virilitypot/overdose_process(mob/living/carbon/M)
