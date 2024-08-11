@@ -188,7 +188,7 @@
 
 /obj/item/storage/backpack/rogue/skit
 	name = "doctor bag"
-	color = CLOTHING_WHITE
+	color = CLOTHING_BLACK
 	desc = "Emergency surgical bag."
 	icon_state = "satchel"
 	item_state = "satchel"
