@@ -1243,7 +1243,7 @@
 /datum/emote/living/warcry
 	key = "warcry"
 	key_third_person = "warcrys"
-	message = "shouts a war cry!"
+	message = "shouts an inspiring battle cry!"
 	emote_type = EMOTE_AUDIBLE
 
 /mob/living/carbon/human/verb/emote_warcry()
@@ -1257,7 +1257,7 @@
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.silent || !C.can_speak_vocal())
-			message = "makes a muffled shout."
+			message = "makes a muffled shout!"
 
 /datum/emote/living/custom
 	key = "me"
