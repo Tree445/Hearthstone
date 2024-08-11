@@ -3576,4 +3576,6 @@
 #include "modular_hearthstone\code\modules\roguetown\roguejobs\alchemist\reagent.dm"
 #include "modular_hearthstone\code\modules\roguetown\roguejobs\alchemist\container.dm"
 #include "modular_hearthstone\code\datums\status_effects\rogue\roguebuff.dm"
+#include "modular_hearthstone\code\game\objects\items\rogueitems\natural\animals.dm"
+#include "modular_hearthstone\code\game\objects\items\rogueitems\hearthnatural.dm"
 // END_INCLUDE
