@@ -19,7 +19,7 @@
 /datum/crafting_recipe/roguetown/alchemy/intellectpot
 	name = "Intellect Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/intellectpot)
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/reagent_containers/food/snacks/grown/apple = 1, /obj/item/ash = 1, /obj/item/natural/bone = 2, /obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1 )
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/reagent_containers/food/snacks/grown/apple = 1, /obj/item/ash = 1, /obj/item/natural/bone = 2, /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed = 1 )
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/alchemy/virilitypot
