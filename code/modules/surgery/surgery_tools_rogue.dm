@@ -112,8 +112,7 @@
 	var/cool_timer
 	/// Whether or not we are heated up
 	var/heated = FALSE
-	smeltresult = /obj/item/ingot/steel /// this things unique it can remain steel. also if you HAVE to smelt your surg kit back this atleast somewhat breaks even.
-
+	smeltresult = list(/obj/item/ingot/iron, /obj/item/ingot/iron)
 /obj/item/rogueweapon/surgery/cautery/examine(mob/user)
 	. = ..()
 	if(heated)
