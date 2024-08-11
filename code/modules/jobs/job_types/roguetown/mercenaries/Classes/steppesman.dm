@@ -46,7 +46,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
-	H.change_stat("endurance", 1)
+	H.change_stat("endurance", 2)
 	H.change_stat("speed", 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)			//No medium armor, use light armors.
 	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)	//Since Desert Rider gets medium armor and dodge expert, and you don't, here. Stronk now.
