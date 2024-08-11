@@ -2,7 +2,7 @@
 	id = "fortitudebuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/fortitude
 	effectedstats = list("strength" = 1, "constitution" = 3)
-	duration = 100
+	duration = 1500
 
 /atom/movable/screen/alert/status_effect/buff/fortitude
 	name = "Fortitude"
@@ -13,7 +13,7 @@
 	id = "swiftnessbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/swiftness
 	effectedstats = list("speed" = 3, "dexterity" = 1)
-	duration = 100
+	duration = 1500
 
 /atom/movable/screen/alert/status_effect/buff/swiftness
 	name = "Swiftness"
@@ -24,7 +24,7 @@
 	id = "intellectbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/intellect
 	effectedstats = list("intelligence" = 2, "perception" = 4)
-	duration = 100
+	duration = 1500
 
 /atom/movable/screen/alert/status_effect/buff/intellect
 	name = "Intellect"
@@ -35,7 +35,7 @@
 /datum/status_effect/buff/virilitybuff
 	id = "virilitybuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/virility
-	duration = 100
+	duration = 3000
 
 /atom/movable/screen/alert/status_effect/buff/virility
 	name = "Virility"
