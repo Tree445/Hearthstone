@@ -24,7 +24,7 @@
 	alpha = 200
 
 /datum/reagent/medicine/fortitudepot/on_mob_life(mob/living/carbon/M)
-	M.apply_status_effect(/datum/status_effect/debuff/fortitudebuff)
+	M.apply_status_effect(/datum/status_effect/buff/fortitudebuff)
 	..()
 	. = 1 
 	
@@ -39,7 +39,7 @@
 	alpha = 225
 
 /datum/reagent/medicine/swiftnesspot/on_mob_life(mob/living/carbon/M)
-	M.apply_status_effect(/datum/status_effect/debuff/swiftnessbuff)
+	M.apply_status_effect(/datum/status_effect/buff/swiftnessbuff)
 	..()
 	. = 1 
 
@@ -54,7 +54,7 @@
 	alpha = 225
 
 /datum/reagent/medicine/intellectpot/on_mob_life(mob/living/carbon/M)
-	M.apply_status_effect(/datum/status_effect/debuff/intellectbuff)
+	M.apply_status_effect(/datum/status_effect/buff/intellectbuff)
 	..()
 	. = 1 
 
@@ -69,6 +69,6 @@
 	alpha = 225
 
 /datum/reagent/medicine/virilitypot/on_mob_life(mob/living/carbon/M)
-	M.apply_status_effect(/datum/status_effect/debuff/virilitybuff)
+	M.apply_status_effect(/datum/status_effect/buff/virilitybuff)
 	.. ()
 	. = 1 
