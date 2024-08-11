@@ -7,7 +7,7 @@
 /datum/status_effect/debuff/swiftnessbuff
 	id = "swiftnessbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt1
-	effectedstats = list("speed" = 5, "dexterity" = 2)
+	effectedstats = list("speed" = 3, "dexterity" = 1)
 	duration = 100
 
 /datum/status_effect/debuff/intellectbuff
