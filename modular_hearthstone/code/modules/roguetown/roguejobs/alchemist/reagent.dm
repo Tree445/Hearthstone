@@ -19,12 +19,14 @@
 	reagent_state = LIQUID
 	color = "#d46000"
 	taste_description = "raw fortitude"
-	overdose_threshold = 19
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+	metabolization_rate = 0 
 	alpha = 200
 
 /datum/reagent/medicine/fortitudepot/overdose_process(mob/living/carbon/M)
 	M.apply_status_effect(/datum/status_effect/buff/fortitudebuff)
+	if(holder.has_reagent(/datum/reagent/medicine/fortitudepot))
+		holder.remove_reagent(/datum/reagent/medicine/fortitudepot, 20)
 	..()
 	. = 1 
 
@@ -34,12 +36,14 @@
 	reagent_state = LIQUID
 	color = "#7efff9"
 	taste_description = "fleeting swirls"
-	overdose_threshold = 19
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+	metabolization_rate = 0 
 	alpha = 225
 
 /datum/reagent/medicine/swiftnesspot/overdose_process(mob/living/carbon/M)
 	M.apply_status_effect(/datum/status_effect/buff/swiftnessbuff)
+	if(holder.has_reagent(/datum/reagent/medicine/swiftnesspot))
+		holder.remove_reagent(/datum/reagent/medicine/swiftnesspot, 20)
 	..()
 	. = 1 
 
@@ -49,12 +53,14 @@
 	reagent_state = LIQUID
 	color = "#922296"
 	taste_description = "whispering insight"
-	overdose_threshold = 19
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+	metabolization_rate = 0 
 	alpha = 225
 
 /datum/reagent/medicine/intellectpot/overdose_process(mob/living/carbon/M)
 	M.apply_status_effect(/datum/status_effect/buff/intellectbuff)
+	if(holder.has_reagent(/datum/reagent/medicine/intellectpot))
+		holder.remove_reagent(/datum/reagent/medicine/intellectpot, 20)
 	..()
 	. = 1 
 
@@ -64,11 +70,13 @@
 	reagent_state = LIQUID
 	color = "#ffa6f8"
 	taste_description = "aching virility"
-	overdose_threshold = 9
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 10
+	metabolization_rate = 0 
 	alpha = 225
 
 /datum/reagent/medicine/virilitypot/overdose_process(mob/living/carbon/M)
 	M.apply_status_effect(/datum/status_effect/buff/virilitybuff)
+	if(holder.has_reagent(/datum/reagent/medicine/virilitypot))
+		holder.remove_reagent(/datum/reagent/medicine/virilitypot, 10)
 	.. ()
 	. = 1 

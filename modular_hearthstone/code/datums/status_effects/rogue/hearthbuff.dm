@@ -23,7 +23,7 @@
 /datum/status_effect/buff/intellectbuff
 	id = "intellectbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/intellect
-	effectedstats = list("intelligence" = 2, "perception" = 4)
+	effectedstats = list("intelligence" = 2, "perception" = 2)
 	duration = 1500
 
 /atom/movable/screen/alert/status_effect/buff/intellect
