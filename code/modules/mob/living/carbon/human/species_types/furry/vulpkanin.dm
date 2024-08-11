@@ -64,7 +64,7 @@
 		/datum/customizer/organ/snout/vulpkanin,
 		/datum/customizer/organ/ears/vulpkanin,
 		/datum/customizer/organ/testicles/external,
-		/datum/customizer/organ/penis/knotted,
+		/datum/customizer/organ/penis/canine,
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/belly/animal,
 		/datum/customizer/organ/vagina/animal,

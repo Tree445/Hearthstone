@@ -87,6 +87,46 @@
 /obj/structure/fermenting_barrel/crafted
 	sellprice = 6
 
+/datum/crafting_recipe/roguetown/armor/barrelarmor
+	name = "barrel armor"
+	result = /obj/item/clothing/suit/roguetown/armor/barrelarmor
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/armor/foresterarmor
+	name = "forester armor"
+	result = /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/armor/forestershoes
+	name = "forester shoes"
+	result = /obj/item/clothing/shoes/roguetown/boots/forestershoes
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/armor/forestergauntlets
+	name = "forester gauntlets"
+	result = /obj/item/clothing/gloves/roguetown/forestergauntlets
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry	
+
+/datum/crafting_recipe/roguetown/armor/foresterhelmet
+	name = "forester helmet"
+	result = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry		
+
 /datum/crafting_recipe/roguetown/roguebin
 	name = "wooden bin"
 	result = /obj/item/roguebin
@@ -187,10 +227,12 @@
 	verbage = "constructs"
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/structure/dyestation
-	name = "dye station"
-	result = /obj/machinery/gear_painter
-	reqs = list(/obj/item/natural/stone = 2)
+/datum/crafting_recipe/roguetown/structure/dye_bin
+	name = "dye bin"
+	result = /obj/structure/dye_bin
+	reqs = list(
+		/obj/item/grown/log/tree/small = 1,
+	)
 	verbage_simple = "make"
 	verbage = "makes"
 	craftdiff = 0

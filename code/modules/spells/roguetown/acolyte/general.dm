@@ -20,6 +20,9 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
+		if(HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
+			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
+			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(50)
@@ -45,7 +48,7 @@
 			if(/datum/patron/divine/xylix)
 				target.visible_message(span_info("A fugue seems to manifest briefly across [target]!"), span_notice("My wounds vanish as if they had never been there! "))
 			if(/datum/patron/divine/pestra)
-				target.visible_message(span_info("A aura of clinical care encompasses [target]!"), span_notice("I'm sewn back together by sacred medicine!"))
+				target.visible_message(span_info("An aura of clinical care encompasses [target]!"), span_notice("I'm sewn back together by sacred medicine!"))
 			if(/datum/patron/divine/malum)
 				target.visible_message("<span class='info'>A tempering heat is discharged out of [target]!</span>", "<span class='notice'>I feel the heat of a forge soothing my pains!</span>")
 			if(/datum/patron/divine/eora)
@@ -104,6 +107,9 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
+		if(HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
+			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
+			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(100)

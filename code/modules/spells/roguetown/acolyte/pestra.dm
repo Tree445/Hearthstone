@@ -109,18 +109,22 @@
 
 // consider adding functionality to regrow one entire organ or limb per casting?
 /obj/effect/proc_holder/spell/invoked/attach_bodypart/cast(list/targets, mob/living/user)
+	. = ..()
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
+		if(HAS_TRAIT(human_target, TRAIT_FAITHLESS)) //go find a surgeon, non-believer
+			to_chat(user, span_warning("Pestra's grace has no effect, they do not wish to aid a non-believer..."))
+			return FALSE
 		for(var/obj/item/bodypart/limb as anything in get_limbs(human_target, user))
 			if(human_target.get_bodypart(limb.body_zone) || !limb.attach_limb(human_target))
 				continue
 			human_target.visible_message(span_info("\The [limb] attaches itself to [human_target]!"), \
-								span_notice("\The [limb] attaches itself to me!"))
+			span_notice("\The [limb] attaches itself to me!"))
 		for(var/obj/item/organ/organ as anything in get_organs(human_target, user))
 			if(human_target.getorganslot(organ.slot) || !organ.Insert(human_target))
 				continue
 			human_target.visible_message(span_info("\The [organ] attaches itself to [human_target]!"), \
-								span_notice("\The [organ] attaches itself to me!"))
+			span_notice("\The [organ] attaches itself to me!"))
 		if(!(human_target.mob_biotypes & MOB_UNDEAD))
 			for(var/obj/item/bodypart/limb as anything in human_target.bodyparts)
 				limb.rotted = FALSE
@@ -155,6 +159,9 @@
 	if(isliving(targets[1]))
 		testing("curerot1")
 		var/mob/living/target = targets[1]
+		if(HAS_TRAIT(target, TRAIT_FAITHLESS))
+			to_chat(user, span_warning("Pestra's grace has no effect, they do not wish to aid a non-believer..."))
+			return FALSE
 		if(target == user)
 			return FALSE
 		var/datum/antagonist/zombie/was_zombie = target.mind?.has_antag_datum(/datum/antagonist/zombie)
