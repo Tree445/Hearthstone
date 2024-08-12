@@ -2808,6 +2808,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
+"bEQ" = (
+/obj/structure/closet/crate/chest,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/sugarcane,
+/obj/item/seeds/sugarcane,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors)
 "bFr" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -305704,7 +305711,7 @@ uaL
 fxx
 fxx
 hSV
-ktX
+bEQ
 ltT
 ltT
 lJX
