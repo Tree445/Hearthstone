@@ -230,3 +230,15 @@
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 
+/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	//seed = /obj/item/seeds/sugarcane
+	name = "sugarcane"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "sugarcane"
+	gender = PLURAL
+	filling_color = "#f5f2d9"
+	bitesize_mod = 2
+	foodtype = SUGAR
+	tastes = list("sugar" = 1)
+	grind_results = list(/datum/reagent/sugar = 10)
