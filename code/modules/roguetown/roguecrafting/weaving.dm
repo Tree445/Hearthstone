@@ -151,7 +151,7 @@
 	reqs = list(/obj/item/natural/silk = 3,
 				/obj/item/clothing/ring/gold = 1)
 	craftdiff = 5
-	sellprice = 80
+	sellprice = 50
 
 /datum/crafting_recipe/roguetown/weaving/exoticsilkmask
 	name = "Exotic Silk Mask"
@@ -159,7 +159,7 @@
 	reqs = list(/obj/item/natural/silk = 1,
 				/obj/item/clothing/ring/gold = 1)
 	craftdiff = 5
-	sellprice = 80
+	sellprice = 50
 
 /datum/crafting_recipe/roguetown/weaving/exoticsilkbelt
 	name = "Exotic Silk Belt"
@@ -167,4 +167,4 @@
 	reqs = list(/obj/item/natural/silk = 2,
 				/obj/item/clothing/ring/gold = 1)
 	craftdiff = 5
-	sellprice = 80
+	sellprice = 50
