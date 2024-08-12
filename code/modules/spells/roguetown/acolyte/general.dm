@@ -33,6 +33,8 @@
 		switch(user.patron.type)
 			if(/datum/patron/old_god)
 				target.visible_message(span_info("A strange stirring feeling pours from [target]!"), span_notice("Sentimental thoughts drive away my pains!"))
+			if(/datum/patron/old_god/viking)
+				target.visible_message(span_info("A steadfast and relentless aura pours from [target]!"), span_notice("The gods lend me there strength!"))
 			if(/datum/patron/divine/astrata)
 				target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
 			if(/datum/patron/divine/noc)
