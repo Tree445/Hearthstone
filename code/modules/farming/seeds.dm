@@ -77,3 +77,6 @@
 	seed_identity = "berry seeds"
 	plant_def_type = /datum/plant_def/berry_poison
 
+/obj/item/seeds/sugarcane
+	seed_identity = "sugarcane seeds"
+	plant_def_type = /datum/plant_def/sugarcane

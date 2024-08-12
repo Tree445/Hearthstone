@@ -231,12 +231,13 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 
 /obj/item/reagent_containers/food/snacks/grown/sugarcane
-	//seed = /obj/item/seeds/sugarcane
+	seed = /obj/item/seeds/sugarcane
 	name = "sugarcane"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "sugarcane"
 	gender = PLURAL
+	dropshrink = 0.75
 	filling_color = "#f5f2d9"
 	bitesize_mod = 2
 	foodtype = SUGAR
