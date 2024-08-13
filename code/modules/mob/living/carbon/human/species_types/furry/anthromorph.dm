@@ -13,7 +13,7 @@
 	Many Wild-Kin believe that remaining civilized is of the utmost importance to keep their humanity and differentiate them from the beasts of the wilderness. \
 	They fear that they will be unable to resist Dendor’s Call when the time comes for him to gather his children.<br>\
 	<br>\
-	We are highly perceptive and skilled with a bow but slow to learn new skills and ideas."
+	We are highly perceptive but slow to learn new skills and ideas."
 
 	skin_tone_wording = "Habitat"
 	default_color = "444"
@@ -47,8 +47,8 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
-	specstats = list("strength" = 1, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = -1, "speed" = 0, "fortune" = 0)
-	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = -1, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0)
+	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
+	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

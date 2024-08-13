@@ -10,9 +10,7 @@
 	However, despite differences in appearance and geographical origin, all Humens have the same capabilities.<br>\
 	Humens hold dear the belief that they are the firstborn children of Psydon, \
 	Knowledge of good and evil is his divine gift bestowed upon them. \
-	The Divine Pantheon is the predominant religion of their kind.<br>\
-	<br>\
-	We have a well of endurance that other races lack."
+	The Divine Pantheon is the predominant religion of their kind."
 
 	skin_tone_wording = "Ancestry"
 
@@ -44,8 +42,8 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
-	specstats = list("strength" = 0, "perception" = -1, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = 0, "fortune" = 0)
-	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 1, "constitution" = 0, "endurance" = 2, "speed" = 0, "fortune" = 0)
+	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
+	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
