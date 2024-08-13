@@ -8,9 +8,9 @@
 	The Elves are marked apart from other races by their ethereal grace and long lives. \
 	Like Humens, they live throughout the lands of Grimoria. \
 	Yet, unlike other races, they prefer to dwell in lands untouched by civilization.<br>\
-	Elves can be hard to tell apart from Humens at a glance but can be easily distinguished once acquainted. \
+	Elves can be difficult to distinguish from Humens at a glance until one is better acquainted with them. \
 	They are lighter and often more slender than men and bear fairy-like features upon their faces and ears.<br>\
-	The Elves worship the Divine Pantheon in the same manner as Humens, though they often practice a much older variation of the religion.<br>\
+	The Elves commonly worship the Divine Pantheon in much the same way that Humens do, though they tend towards older practices and beliefs about the Ten.<br>\
 	<br>\
 	Magic comes easily to us, and we are swifter than other races. However, our bodies are weak and fragile."
 
