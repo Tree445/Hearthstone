@@ -12,7 +12,7 @@
 /datum/statpack/agile/tricky
 	name = "Tricky"
 	desc = "Swift feet with a mind to match and a tiny sliver of the Ten's own luck... or not."
-	stat_array = list(STAT_STRENGTH = -1, STAT_PERCEPTION = 1, STAT_INTELLIGENCE = 1, STAT_ENDURANCE = -1, STAT_SPEED = 1, STAT_FORTUNE = list(-1, 1))
+	stat_array = list(STAT_STRENGTH = -1, STAT_PERCEPTION = 1, STAT_ENDURANCE = -1, STAT_SPEED = 1, STAT_FORTUNE = list(-1, 1))
 
 /datum/statpack/agile/thug
 	name = "Thuggish"
