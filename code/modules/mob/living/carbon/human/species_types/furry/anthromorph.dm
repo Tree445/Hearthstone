@@ -9,7 +9,7 @@
 	Wild-Kin arise in all the lands of Grimoria and are nearly as widespread as Humens.<br>\
 	Wild-Kin are humanoid animals, sometimes limited to one specific species or a hybrid of multiple. \
 	Of all the races, Wild-Kin has the most variety in appearance.<br>\
-	Despite the Wild Folk’s connection to Dendor, he is not the most favored god of their kind. \
+	Despite the Wild Volk’s connection to Dendor, he is not the most favored god of their kind. \
 	Many Wild-Kin believe that remaining civilized is of the utmost importance to keep their humanity and differentiate them from the beasts of the wilderness. \
 	They fear that they will be unable to resist Dendor’s Call when the time comes for him to gather his children.<br>\
 	<br>\
