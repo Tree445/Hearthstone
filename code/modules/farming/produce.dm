@@ -230,3 +230,30 @@
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 
+/obj/item/reagent_containers/food/snacks/grown/rogue/potato
+	seed = /obj/item/seeds/potato
+	name = "potato"
+	desc = ""
+	icon_state = "potato"
+	tastes = list("starchy" = 1)
+	bitesize = 5
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	dropshrink = 0.75
+	//var/color_index = "good"
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/vodka
+	rotprocess = 15 MINUTES
+	
+/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	seed = /obj/item/seeds/sugarcane
+	name = "sugarcane"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "sugarcane"
+	gender = PLURAL
+	dropshrink = 0.75
+	filling_color = "#f5f2d9"
+	bitesize_mod = 2
+	foodtype = SUGAR
+	tastes = list("sugar" = 1)
+	grind_results = list(/datum/reagent/sugar = 10)
