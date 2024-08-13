@@ -4,10 +4,17 @@
 /datum/species/demihuman
 	name = "Half-Kin"
 	id = "demihuman"
-	desc = "Half-Kin, earth-borne, magyck-touched. Many names exist for my race, characterized by our varied appearance. \
-	Wild-Kin are by far the most numerous people due to the fact we are, usually, compatible with almost all other races. \
-	Due to the fact we are so numerous, we are welcome almost anywhere, along with our Wild-Kin sister race \
-	We are average of constitution, strength, and intellegence."
+	desc = "<b>Half-Kin</b><br>\
+	A halfbreed that arises in Humens with Wild-Kin in their lineage. \
+	They are children of Dendor by blood, but their Humen heritage makes this connection powerless. \
+	Half-Kin are said to be the only ones of Dendor’s kin that can resist his Call of the Wild.<br>\
+	They bear animalistic features, most commonly bestial ears and tails modifying their base Humen form. \
+	These features that mark Half-Kin apart can skip generations, and many halfbreeds are born to Humen parents with only a distant Wild-Kin ancestor.<br>\
+	As they are typically born to Humens, most Half-Kin worship the Divine Pantheon.<br>\
+	<br>\
+	Our bodies bear the flaws and benefits of both Humens and Wild-Kin, to a lesser degree. \
+	We are skilled with bows and have great endurance. However, we adapt slowly to new ideas."
+
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
@@ -37,8 +44,8 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
-	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
-	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = -1, "perception" = 2, "intelligence" = -1, "constitution" = 0, "endurance" = 2, "speed" = 0, "fortune" = 0)
 	enflamed_icon = "widefire"
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,
@@ -112,15 +119,15 @@
 
 /datum/species/demihuman/get_skin_list()
 	return list(
-		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
-		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
-		"Avar" = SKIN_COLOR_AVAR,
+		"Frostlander" = SKIN_COLOR_GRENZELHOFT,
+		"Umberite" = SKIN_COLOR_HAMMERHOLD,
+		"Grenzelhoft" = SKIN_COLOR_AVAR,
 		"Rockhill" = SKIN_COLOR_ROCKHILL,
-		"Otava" = SKIN_COLOR_OTAVA,
-		"Etrusca" = SKIN_COLOR_ETRUSCA,
-		"Gronn" = SKIN_COLOR_GRONN,
-		"Giza" = SKIN_COLOR_GIZA,
-		"Shalvistine" = SKIN_COLOR_SHALVISTINE,
-		"Lalvestine" = SKIN_COLOR_LALVESTINE,
-		"Ebon" = SKIN_COLOR_EBON,
+		"Heartfell" = SKIN_COLOR_OTAVA,
+		"Highlander" = SKIN_COLOR_ETRUSCA,
+		"Moravian" = SKIN_COLOR_GRONN,
+		"Forester" = SKIN_COLOR_GIZA,
+		"Zybantine" = SKIN_COLOR_SHALVISTINE,
+		"Merkite" = SKIN_COLOR_LALVESTINE,
+		"Valorian" = SKIN_COLOR_EBON,
 	)
