@@ -1,4 +1,4 @@
-// Statpacks focusing on strength - perfect for warrior and melee-fighters.
+// Statpacks focusing warrior, farmer, and melee-fighters.
 /datum/statpack/physical/trained
 	name = "Trained"
 	desc = "Years honing your physique has left you with a physical edge, but your faculties have been neglected somewhat."

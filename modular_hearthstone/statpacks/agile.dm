@@ -1,4 +1,4 @@
-// Statpacks focusing on speed - perfect for Ranger/Rogue archetypes.
+// Statpacks focusing on Ranger/Rogue archetypes.
 /datum/statpack/agile/swift
 	name = "Swift"
 	desc = "With the wind in your hair and trouble at your back, your speed has oft been your salvation."
@@ -22,4 +22,4 @@
 /datum/statpack/agile/wary
 	name = "Wary"
 	desc = "Eyes forward, ever and always. A careful course has always seen you through... so far."
-	stat_array = list(STAT_STRENGTH = -1, STAT_PERCEPTION = 1, STAT_INTELLIGENCE = 1, STAT_CONSTITUTION = 1, STAT_SPEED = -1)
+	stat_array = list(STAT_STRENGTH = -1, STAT_PERCEPTION = 2, STAT_INTELLIGENCE = 1, STAT_CONSTITUTION = 1, STAT_SPEED = -1)
