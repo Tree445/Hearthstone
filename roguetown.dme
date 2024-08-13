@@ -3543,6 +3543,7 @@
 #include "modular\code\modules\maturity-prompt\code\config_entries.dm"
 #include "modular\code\modules\maturity-prompt\code\maturity_prompt.dm"
 #include "modular\code\modules\maturity-prompt\code\maturity_subsystem.dm"
+#include "modular_hearthstone\_statpacks.dm"
 #include "modular_hearthstone\code\datums\accents.dm"
 #include "modular_hearthstone\code\datums\sexcon\item_helpers.dm"
 #include "modular_hearthstone\code\datums\sexcon\sex_actions\candle\candle_body.dm"
@@ -3579,4 +3580,8 @@
 #include "modular_hearthstone\code\modules\roguetown\roguejobs\alchemist\reagent.dm"
 #include "modular_hearthstone\code\modules\roguetown\roguejobs\cook\recipes\misc.dm"
 #include "modular_hearthstone\code\modules\spells\roguetown\wizard.dm"
+#include "modular_hearthstone\statpacks\agile.dm"
+#include "modular_hearthstone\statpacks\mental.dm"
+#include "modular_hearthstone\statpacks\physical.dm"
+#include "modular_hearthstone\statpacks\wildcard.dm"
 // END_INCLUDE
