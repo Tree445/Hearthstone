@@ -180,12 +180,3 @@
 	chargetime = 0.75
 	chargedrain = 1.5
 	charging_slowdown = 2.5
-
-/obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
-	name = "reinforced longbow"
-	desc = "A bow that nearly looks to be as large as nearly double the user's torso! Sporting reinforced wood it appears capable of sporting some major draw strength."
-	icon_state = "longbow"
-	possible_item_intents = list(/datum/intent/shoot/bow/longbow, /datum/intent/arc/bow/longbow,INTENT_GENERIC)
-	randomspread = 1	//Bit less accurate
-	spread = 1			//Bit less accurate
-	damfactor = 1.2		//Larger draw strength than a normal bow, still less than a crossbow.
