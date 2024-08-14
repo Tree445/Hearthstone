@@ -137,7 +137,7 @@
 		// do the generic stuff first then replace it w/ patron specific things... if it exists
 		// for reference, cloistered devouts are lightly armored/unarmored but get patron-specific stuff (if applicable) and a devo regen
 		head = /obj/item/clothing/head/roguetown/roguehood/black
-		armor = /obj/item/clothing/suit/roguetown/shirt/robe/nun
+		armor = /obj/item/clothing/suit/roguetown/shirt/robe
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 		wrists = null
 		beltr = null
