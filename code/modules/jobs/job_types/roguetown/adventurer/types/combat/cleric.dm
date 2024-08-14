@@ -179,7 +179,5 @@
 	if (classchoice == "Cloistered Devout")
 		// start with passive devo gain and ability to gain up to T3 spells
 		C.passive_devotion_gain += 0.5
-		C.max_progression = CLERIC_REQ_3
-		C.max_devotion = CLERIC_REQ_3
 	// HEARTHSTONE ADDITION END
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
