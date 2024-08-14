@@ -2,12 +2,12 @@
 /datum/statpack/agile/swift
 	name = "Swift"
 	desc = "With the wind in your hair and trouble at your back, your speed has oft been your salvation."
-	stat_array = list(STAT_STRENGTH = -1, STAT_CONSTITUTION = -1, STAT_ENDURANCE = 1, STAT_SPEED = 2)
+	stat_array = list(STAT_STRENGTH = -1, STAT_PERCEPTION = -1, STAT_CONSTITUTION = -1, STAT_ENDURANCE = 1, STAT_SPEED = 2)
 
 /datum/statpack/agile/hardy
 	name = "Hardy"
 	desc = "Uniquely Pestran fortitude affords you the means to shrug off illnesses and poisons that others might not."
-	stat_array = list(STAT_STRENGTH = -1, STAT_CONSTITUTION = 2, STAT_ENDURANCE = 1, STAT_SPEED = -1)
+	stat_array = list(STAT_STRENGTH = -1, STAT_CONSTITUTION = 2,  STAT_INTELLIGENCE = 1, STAT_ENDURANCE = 1, STAT_SPEED = -1)
 
 /datum/statpack/agile/tricky
 	name = "Tricky"
