@@ -36,6 +36,18 @@
 	desc = "My body can barely hold it!"
 	icon_state = "hunger3"
 
+//ARMOR WEARING STRAIN
+
+/datum/status_effect/debuff/armorfail
+	id = "armorfail1"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/mediumfail
+	effectedstats = list("strength" = -3, "constitution" = -2, "endurance" = -2, "speed" = -4)
+
+/atom/movable/screen/alert/status_effect/debuff/mediumfail
+	name = "Armor Strain"
+	desc = "This armor is too heavy to move in.. I have no training in this!"
+	icon_state = "muscles"		//Placeholder
+
 //SILVER DAGGER EFFECT
 
 /datum/status_effect/debuff/silver_curse
@@ -188,3 +200,13 @@
 	name = "Muscle Soreness"
 	desc = "My muscles need some sleep to recover."
 	icon_state = "muscles"
+
+/datum/status_effect/debuff/devitalised
+	id = "devitalised"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/devitalised
+	effectedstats = list("fortune" = -3)
+	duration = 20 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/devitalised
+	name = "Devitalised"
+	desc = "Something has been taken from me, and it will take time to recover."

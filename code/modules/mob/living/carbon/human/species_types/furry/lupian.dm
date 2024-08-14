@@ -45,6 +45,7 @@
 		)
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0) //0 total
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0) //0 total
+	race_bonus = list(STAT_INTELLIGENCE = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -58,10 +59,6 @@
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_TAIL = /obj/item/organ/tail/lupian,
 		ORGAN_SLOT_SNOUT = /obj/item/organ/snout/lupian,
-		ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
-		ORGAN_SLOT_PENIS = /obj/item/organ/penis/knotted,
-		ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		)
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,
