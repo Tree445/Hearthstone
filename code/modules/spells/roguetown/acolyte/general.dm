@@ -139,9 +139,6 @@
 						situational_bonus = 25
 			if(/datum/patron/godless)
 				target.visible_message(span_info("Without any particular cause or reason, [target] is healed!"), span_notice("My wounds close without cause."))
-				// we believe only in ourselves
-				if (target == user)
-					conditional_buff = TRUE
 			else
 				target.visible_message(span_info("A choral sound comes from above and [target] is healed!"), span_notice("I am bathed in healing choral hymns!"))
 
