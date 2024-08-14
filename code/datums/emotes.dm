@@ -83,7 +83,8 @@
 		var/mob/living/L = user
 		for(var/obj/item/implant/I in L.implants)
 			I.trigger(key, L)
-		pitch = L.voice_pitch
+		if(L.voice_pitch)
+			pitch = L.voice_pitch
 
 	var/sound/tmp_sound = get_sound(user)
 	if(!istype(tmp_sound))
