@@ -10,7 +10,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 
-	tutorial = "You have likely seen the brutality of the Northmen firsthand. Put aside any notion of rescue, and serve the warband well. You know they sacrifice slaves to their twisted god, Graggar, so try and at least appear somewhat useful for the cruel pillagers, tend the farm, and try not to draw too much attention."
+	tutorial = "The fact you haven't been sacrificed to some dark god is proof enough that your captors are not as cruel as those that hail from the Frost Lands, in spite of this, they can be harsh taskmasters. At this point you've given up hope of rescue, do as your captors say, and you might yet live to see another day, and if you are truly lucky, they might even ransom you."
 	whitelist_req = FALSE
 
 	

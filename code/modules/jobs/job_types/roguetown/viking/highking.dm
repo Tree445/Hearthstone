@@ -9,9 +9,8 @@
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
-	allowed_patrons = list(/datum/patron/inhumen/graggar)
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/viking)
-	tutorial = "Hailing from the freezing cold Frost Lands, you lead your warband to its newest prize, Rockhill. Graggar's bloodlust must be sated. Topple the statues of the southerner's weak gods, burn their churches, take their valuables and take them as slaves so that they might be sacrificed to Graggar. May the black sun darken the sky for all time!"
+	tutorial = "You and your clan left the Narvali Highlands some time ago, in search of glory. Not nearly as barbaric as your cousins from the Frost Lands, nevertheless you still retain that fire in your heart for pillaging. The Isle of Enigma is a pretty target, and isolated enough so that you won't draw enough attention. But be warned, Rockhill could very well crush your warband if ever tensions were to get out of hand. Will you show these southerners you are not fanatical warriors they make you out to be, or will you prove them right in senseless slaughter?"
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/highking
 
@@ -22,18 +21,31 @@
 
 /datum/outfit/job/roguetown/highking/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/blacksunhelm
-	backr = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/stoneaxe/battle
-	r_hand = /obj/item/rogueweapon/sword/cursedsword
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	pants = /obj/item/clothing/under/roguetown/platelegs
-	gloves = /obj/item/clothing/gloves/roguetown/graggaritegauntletsleader
-	belt = /obj/item/storage/belt/rogue/leather
-	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/graggaritearmorleader
-	shoes = /obj/item/clothing/shoes/roguetown/boots/graggaritebootsleader
-	cloak = /obj/item/clothing/cloak/cape
+	if(H.gender == MALE)
+		head = /obj/item/clothing/head/roguetown/helmet/winged
+		backr = /obj/item/storage/backpack/rogue/satchel
+		beltl = /obj/item/rogueweapon/stoneaxe/battle
+		beltr = /obj/item/rogueweapon/sword
+		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+		pants = /obj/item/clothing/under/roguetown/platelegs/skirt
+		belt = /obj/item/storage/belt/rogue/leather
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/ironharness
+		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+		cloak = /obj/item/clothing/cloak/raincloak/furcloak
+	else
+		head = /obj/item/clothing/head/roguetown/helmet/winged
+		backr = /obj/item/storage/backpack/rogue/satchel
+		beltl = /obj/item/rogueweapon/stoneaxe/battle
+		beltr = /obj/item/rogueweapon/sword
+		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
+		pants = /obj/item/clothing/under/roguetown/platelegs/skirt
+		belt = /obj/item/storage/belt/rogue/leather
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+		armor = /obj/item/clothing/suit/roguetown/armor/plate/bikini
+		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+		cloak = /obj/item/clothing/cloak/raincloak/furcloak
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	if(H.mind)

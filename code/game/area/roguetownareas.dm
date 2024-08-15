@@ -253,7 +253,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/dirt,
 				/turf/open/floor/rogue/grass,
 				/turf/open/water)
-	first_time_text = "The Deep North"
+	first_time_text = "Viking Cove"
 	converted_type = /area/rogue/indoors/shelter/bog
 
 

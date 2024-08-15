@@ -9,8 +9,7 @@
 	spawn_positions = 3
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
-	allowed_patrons = list(/datum/patron/inhumen/graggar)
-	tutorial = "A hardened warrior from the Frost Lands. Follow the leader of your warband, and serve Graggar well. May the black sun darken the sky for all time!"
+	tutorial = "You are a Berserkir, a clan warrior. Do as your leader says and there may yet be glory to be found."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vikinggrunt
 
@@ -21,18 +20,28 @@
 
 /datum/outfit/job/roguetown/vikinggrunt/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet/graggaritehelmet
-	backr = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
-	r_hand = /obj/item/rogueweapon/shield/wood/crafted
-	gloves = /obj/item/clothing/gloves/roguetown/graggaritegauntlets
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/stoneaxe/battle
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/graggaritearmor
-	shoes = /obj/item/clothing/shoes/roguetown/boots/graggariteboots
+	if(H.gender == MALE)
+		head = /obj/item/clothing/head/roguetown/helmet/horned
+		backr = /obj/item/storage/backpack/rogue/satchel
+		beltl = /obj/item/rogueweapon/stoneaxe/battle
+		beltr = /obj/item/rogueweapon/sword
+		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+		pants = /obj/item/clothing/under/roguetown/chainlegs/skirt
+		belt = /obj/item/storage/belt/rogue/leather
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/ironharness
+		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	else
+		head = /obj/item/clothing/head/roguetown/helmet/horned
+		backr = /obj/item/storage/backpack/rogue/satchel
+		beltl = /obj/item/rogueweapon/stoneaxe/battle
+		beltr = /obj/item/rogueweapon/sword
+		pants = /obj/item/clothing/under/roguetown/chainlegs/skirt
+		belt = /obj/item/storage/belt/rogue/leather
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
+		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	if(H.mind)
@@ -63,5 +72,3 @@
 		H.change_stat("constitution", 4)
 		H.change_stat("endurance", 3)
 		H.change_stat("speed", -2)
-
-
