@@ -10,7 +10,7 @@
 	movement_interrupt = FALSE
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
-	sound = 'sound/magic/heal.ogg'
+	sound = 'sound/magic/webspin.ogg'
 	invocation = "My trick is done, I'll speed from sight! I'll move so fast that joy takes flight!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
@@ -33,12 +33,12 @@
 	overlay_state = "Laughing God"
 	releasedrain = 30
 	chargedrain = 0
-	chargetime = 0
+	chargetime = 5
 	range = 5
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
-	sound = 'sound/magic/heal.ogg'
+	sound = 'sound/magic/webspin.ogg'
 	invocation = "The Trickster skirts the edges of the rule, whilst witless louts are made to act the fool!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
@@ -49,14 +49,18 @@
 
 /obj/effect/proc_holder/spell/invoked/Laughing_god/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
-		var/mob/living/target = targets[1]
-		var/giggle_to_public = pick("[target] giggles!", "[target] struggles to not chuckle!", "[target] starts to laugh!", "[target]' frowns, as if they don't get the joke")
-		var/giggle_to_target = pick("That is so funny!", "You start to giggle!", "Your mouth turns upwards in a smile!", "What a horrible thing to say...")
-		target.visible_message(span_warning("[giggle_to_public]"), span_warning("[giggle_to_target]"))
-		target.Stun(10)
-		target.Jitter(rand(5))
-		if(prob(66))
-			target.emote(pick("giggle","laugh","chuckle"))
+		if(prob(85))
+			var/mob/living/target = targets[1]
+			var/giggle_to_public = pick("[target] giggles!", "[target] struggles to not chuckle!", "[target] starts to laugh!", "[target]' frowns, as if they don't get the joke")
+			var/giggle_to_target = pick("That is so funny!", "You start to giggle!", "Your mouth turns upwards in a smile!", "What a horrible thing to say...")
+			target.visible_message(span_warning("[giggle_to_public]"), span_warning("[giggle_to_target]"))
+			target.Stun(10)
+			target.Jitter(rand(5))
+			if(prob(66))
+				target.emote(pick("giggle","laugh","chuckle"))
+		else 
+			user.Stun(40) 
+			user.visible_message(span_user(Looks like I'm the fool..."))
 
 
 /obj/effect/proc_holder/spell/invoked/Smokebomb
@@ -76,7 +80,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	miracle = TRUE
-	devotion_cost = 25
+	devotion_cost = 40
 
 /obj/effect/proc_holder/spell/invoked/Smokebomb/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -85,7 +89,7 @@
 			return FALSE
 		target.visible_message(span_warning("[target] vanishes in a puff of smoke!"), span_notice("You vanish in a puff of smoke!"))
 		animate(target, alpha = 0, time = 1 SECONDS, easing = EASE_IN)
-		target.mob_timers[MT_INVISIBILITY] = world.time + 25 SECONDS
-		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 25 SECONDS)
-		addtimer(CALLBACK(target, TYPE_PROC_REF(/atom/movable, visible_message), span_warning("[target] fades back into view."), span_notice("You become visible again.")), 25 SECONDS)
+		target.mob_timers[MT_INVISIBILITY] = world.time + 20 SECONDS
+		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 20 SECONDS)
+		addtimer(CALLBACK(target, TYPE_PROC_REF(/atom/movable, visible_message), span_warning("[target] fades back into view."), span_notice("You become visible again.")), 20 SECONDS)
 	return FALSE
