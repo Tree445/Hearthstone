@@ -46,7 +46,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2 , TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3 , TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
