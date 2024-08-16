@@ -174,10 +174,14 @@
 				armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
 	// HEARTHSTONE ADDITION END
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	C.grant_spells_cleric(H)
 	// HEARTHSTONE ADDITION: cloistered devout devo regen & tier buff
 	if (classchoice == "Cloistered Devout")
 		// start with passive devo gain and ability to gain up to T3 spells
 		C.passive_devotion_gain += 0.5
+		C.max_progression = CLERIC_REQ_3
+		C.max_devotion = CLERIC_REQ_3
+		C.grant_spells(H) // don't give churn as an extra spell to cloistered since they get their patron's full spell list (up to t3)
+	else
+		C.grant_spells_cleric(H)
 	// HEARTHSTONE ADDITION END
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
