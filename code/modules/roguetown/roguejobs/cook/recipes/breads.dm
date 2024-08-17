@@ -179,7 +179,7 @@
 	icon_state = "loaf6"
 	slices_num = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/breadslice
-	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 24)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("spelt" = 1)
 	foodtype = GRAIN
