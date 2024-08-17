@@ -2760,7 +2760,6 @@
 /area/rogue/indoors/town/tavern)
 "bzI" = (
 /obj/structure/fluff/railing/stonehedge,
-/obj/structure/flora/roguegrass/bush/wall/tall,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "bAw" = (
@@ -6277,6 +6276,13 @@
 /obj/structure/flora/roguegrass/bush,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
+"elc" = (
+/obj/structure/roguemachine/scomm/l{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield)
 "elg" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -8818,6 +8824,10 @@
 /obj/item/reagent_containers/food/snacks/smallrat,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
+"grQ" = (
+/obj/structure/bars,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/mountains)
 "grZ" = (
 /obj/structure/closet/crate/roguecloset/inn/chest,
 /turf/open/floor/rogue/ruinedwood{
@@ -11641,6 +11651,10 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"izL" = (
+/obj/structure/roguemachine/atm,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield)
 "izO" = (
 /obj/structure/lever{
 	redstone_id = "gobcell2"
@@ -14814,6 +14828,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
+/obj/structure/bars,
 /turf/open/transparent/openspace,
 /area/rogue/indoors)
 "kYh" = (
@@ -18760,11 +18775,9 @@
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "opc" = (
-/obj/structure/fluff/railing/wood{
-	pixel_y = -9
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors)
+/obj/structure/fluff/railing/stonehedge,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield)
 "opv" = (
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
@@ -24895,6 +24908,12 @@
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
+"tbC" = (
+/obj/structure/bars,
+/turf/open/floor/rogue/rooftop/green{
+	dir = 1
+	},
+/area/rogue/indoors)
 "tbG" = (
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/water/swamp,
@@ -30834,6 +30853,10 @@
 	icon_state = "wooden_floort"
 	},
 /area/rogue/outdoors/beach)
+"xLQ" = (
+/obj/structure/bars,
+/turf/open/floor/rogue/rooftop/green,
+/area/rogue/indoors)
 "xMn" = (
 /obj/item/roguegem/random,
 /turf/open/floor/rogue/metal/barograte,
@@ -302595,11 +302618,11 @@ fxx
 fxx
 fxx
 efg
-pAa
+ryI
 syM
 syM
-pAa
-qvR
+ryI
+elc
 fxx
 fxx
 wSn
@@ -302996,8 +303019,8 @@ fxx
 fxx
 fxx
 uDd
-pAa
-pAa
+ryI
+ryI
 xWT
 xWT
 syM
@@ -303397,8 +303420,8 @@ ntc
 boU
 fxx
 qvR
-pAa
-pAa
+ryI
+ryI
 wmj
 xWT
 xWT
@@ -303795,11 +303818,11 @@ qvR
 qvR
 qvR
 qvR
-xtH
+qvR
 fxx
 fxx
 qvR
-pAa
+wOD
 dwQ
 xWT
 xWT
@@ -304196,18 +304219,18 @@ wSn
 wSn
 uaL
 wSn
-qvR
+spp
 bzI
 fxx
 fxx
 qvR
-pAa
-pAa
-pAa
-pAa
+ryI
+trG
+trG
+ryI
 xWT
-pAa
-qvR
+ryI
+izL
 fxx
 fxx
 wSn
@@ -304603,7 +304626,7 @@ bzI
 fxx
 fxx
 qvR
-pAa
+wOD
 dUb
 xWT
 dTD
@@ -305005,12 +305028,12 @@ bzI
 fxx
 fxx
 uaL
-pAa
+wOD
 sPd
 jyb
-pAa
+wOD
 xWT
-pAa
+ryI
 qvR
 fxx
 fxx
@@ -305407,12 +305430,12 @@ uaL
 fxx
 fxx
 uaL
-pAa
-pAa
-pAa
-pAa
-pAa
-pAa
+ryI
+trG
+trG
+ryI
+trG
+ryI
 qvR
 fxx
 fxx
@@ -306212,10 +306235,10 @@ fxx
 fxx
 ntc
 ntc
+lgA
 ntc
 ntc
-ntc
-ntc
+lgA
 ntc
 ntc
 fxx
@@ -306612,14 +306635,14 @@ uaL
 uaL
 fxx
 fxx
-ntc
+uaL
 qvR
 qvR
 uaL
 qvR
 uaL
 qvR
-ntc
+uaL
 fxx
 fxx
 qvR
@@ -307426,7 +307449,7 @@ qvR
 wSn
 fxx
 fxx
-qvR
+rBC
 ryI
 trG
 hSV
@@ -309034,7 +309057,7 @@ qvR
 wSn
 fxx
 fxx
-qvR
+rBC
 ryI
 trG
 hSV
@@ -309423,7 +309446,7 @@ qvR
 qvR
 qvR
 qvR
-xtH
+opc
 fxx
 fxx
 wSn
@@ -309825,7 +309848,7 @@ tuJ
 wSn
 qvR
 qvR
-ntc
+uaL
 fxx
 fxx
 qvR
@@ -310226,8 +310249,8 @@ qvR
 wSn
 uaL
 wSn
-qvR
-xtH
+spp
+opc
 fxx
 fxx
 qvR
@@ -310629,7 +310652,7 @@ wSn
 wSn
 qvR
 qvR
-xtH
+opc
 fxx
 fxx
 qvR
@@ -311031,17 +311054,17 @@ qvR
 qvR
 qvR
 qvR
-xtH
+qvR
 fxx
 fxx
-ntc
+uaL
 qvR
 wSn
 uaL
 qvR
 qvR
 qvR
-xtH
+qvR
 fxx
 fxx
 qvR
@@ -311438,7 +311461,7 @@ fxx
 fxx
 ntc
 ntc
-efg
+lgA
 ntc
 ntc
 xqL
@@ -315869,12 +315892,12 @@ uaL
 fxx
 fxx
 uaL
-tev
+fTe
 fxx
 fxx
 fxx
 qvR
-hqY
+mHb
 wSn
 qvR
 wSn
@@ -406725,7 +406748,7 @@ erZ
 mpm
 msk
 ltT
-opc
+ltT
 kYc
 lVe
 erZ
@@ -415568,7 +415591,7 @@ erZ
 erZ
 trT
 uLh
-erZ
+grQ
 uLh
 sqW
 erZ
@@ -509239,10 +509262,10 @@ wQI
 jYm
 erZ
 jYm
-mpm
-erZ
-hdB
-hdB
+trT
+rUn
+xLQ
+csk
 hNP
 usw
 usw
@@ -511653,7 +511676,7 @@ wQI
 ybl
 iNS
 iNS
-hdB
+tbC
 hdB
 hNP
 usw
