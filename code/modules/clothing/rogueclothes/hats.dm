@@ -85,7 +85,7 @@
 			adjustable = CADJUSTED
 			if(toggle_icon_state)
 				icon_state = "[initial(icon_state)]_t"
-			flags_inv = |HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+			flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 			body_parts_covered = NECK|HAIR|EARS|HEAD
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
@@ -95,7 +95,7 @@
 			block2add = FOV_BEHIND
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			flags_inv = |HIDEHAIR
+			flags_inv = HIDEHAIR
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
@@ -166,7 +166,7 @@
 	color = null
 	icon_state = "psydonhood"
 	item_state = "psydonhood"
-	flags_inv = |HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	sewrepair = TRUE
 
@@ -186,7 +186,7 @@
 	icon_state = "necromhood"
 	item_state = "necromhood"
 	body_parts_covered = NECK
-	flags_inv = |HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	sewrepair = TRUE
 
@@ -196,7 +196,7 @@
 	color = null
 	icon_state = "priesthead"
 	item_state = "priesthead"
-	flags_inv = |HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	sewrepair = TRUE
 
@@ -228,7 +228,7 @@
 			adjustable = CADJUSTED
 			if(toggle_icon_state)
 				icon_state = "[initial(icon_state)]_t"
-			flags_inv = |HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+			flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 			body_parts_covered = NECK|HAIR|EARS|HEAD
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
@@ -253,7 +253,7 @@
 	desc = "A hood commonly worn by executioners. Hides the face, the stigma of pulling that lever makes many executioners outcasts in their own right."
 	icon_state = "menacing"
 	item_state = "menacing"
-	flags_inv = |HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	dynamic_hair_suffix = ""
 	sewrepair = TRUE
 	//dropshrink = 0.75

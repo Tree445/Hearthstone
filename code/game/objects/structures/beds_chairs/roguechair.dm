@@ -302,7 +302,7 @@
 /obj/item/bedroll
     name = "rolled bedroll"
     icon = 'icons/obj/bodybag.dmi'
-	icon_state = "shroud"
+    icon_state = "shroud"
     w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/bedroll/MiddleClick(mob/user, params)
