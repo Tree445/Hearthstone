@@ -145,6 +145,14 @@
 					var/mob/living/carbon/H = user
 					H.update_inv_wear_mask()
 
+/obj/item/clothing/mask/rogue/banditblack
+	name = "bandit mask"
+	icon_state = "highwayblack"
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = NECK|MOUTH
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	sewrepair = TRUE			
+
 /obj/item/clothing/mask/rogue/physician
 	name = "plague mask"
 	desc = "What better laboratory than the blood-soaked battlefield?"

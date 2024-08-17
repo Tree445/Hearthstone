@@ -1,31 +1,29 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/wendigo
 	icon = 'icons/roguetown/mob/monster/giantmobs.dmi'
 	name = "Wendigo"
-	icon_state = "wendigo"
-	icon_living = "wendigo"
+	icon_state = "wendigo_noblood"
+	icon_living = "wendigo_noblood"
 	icon_dead = "wendigo_dead"
+	speak_emote = list("speaks")
+	emote_hear = list("speaks.")
+	emote_see = list("speaks.")
 	gender = MALE
 	emote_hear = null
 	emote_see = null
-	speak_emote = list("HELP!!!")
-	emote_hear = list("WHO'S THERE?!?!?!")
-	emote_see = list("HELP ME!!!")
-	speak_chance = 3
 	turns_per_move = 3
 	see_in_dark = 10
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/bite)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 10,
-						/obj/item/natural/hide = 10, /obj/item/natural/bundle/bone/full = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 13,
+						/obj/item/natural/hide = 15, /obj/item/natural/bundle/bone/full = 3)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 350
-	maxHealth = 450
+	health = 400
+	maxHealth = 500
 	melee_damage_lower = 45
 	melee_damage_upper = 70
 	vision_range = 6
-	aggro_vision_range = 4
-	environment_smash = ENVIRONMENT_SMASH_NONE
+	aggro_vision_range = 5
 	retreat_distance = 0
 	minimum_distance = 0
 	milkies = FALSE
@@ -38,14 +36,20 @@
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 10
-	del_on_deaggro = 44 SECONDS
+	del_on_deaggro = 10 SECONDS
 	retreat_health = 0
 	food = 0
-	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
+	attack_sound = list('sound/vo/mobs/wendigo/wendigoattack1.ogg','sound/vo/mobs/wendigo/wendigoattack2.ogg')
 	dodgetime = 0
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/item/rogueweapon/stoneaxe/battle
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wendigo/get_sound(input)
+	switch(input)
+		if("idle")
+			return pick('sound/vo/mobs/wendigo/wendigoidle1.ogg','sound/vo/mobs/wendigo/wendigoidle2.ogg','sound/vo/mobs/wendigo/wendigoidle3.ogg')
+		if("aggro")
+			return pick('sound/vo/mobs/wendigo/wendigoaggro1.ogg','sound/vo/mobs/wendigo/wendigoaggro2.ogg')
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wendigo/death(gibbed)
 	..()

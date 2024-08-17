@@ -19,6 +19,7 @@
 /datum/outfit/job/roguetown/tribevillager/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	belt = /obj/item/storage/belt/rogue/leather
 	backr = /obj/item/storage/backpack/rogue/backpack
