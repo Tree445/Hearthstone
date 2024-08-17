@@ -49,9 +49,9 @@
 
 /obj/effect/proc_holder/spell/invoked/Laughing_god/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
-		if(prob(85))
+		if(prob(75))
 			var/mob/living/target = targets[1]
-			var/giggle_to_public = pick("[target] giggles!", "[target] struggles to not chuckle!", "[target] starts to laugh!", "[target]' frowns, as if they don't get the joke")
+			var/giggle_to_public = pick("[target] giggles!", "[target] struggles to not chuckle!", "[target] starts to laugh!", "[target] frowns, as if they don't get the joke")
 			var/giggle_to_target = pick("That is so funny!", "You start to giggle!", "Your mouth turns upwards in a smile!", "What a horrible thing to say...")
 			target.visible_message(span_warning("[giggle_to_public]"), span_warning("[giggle_to_target]"))
 			target.Stun(10)
@@ -60,7 +60,7 @@
 				target.emote(pick("giggle","laugh","chuckle"))
 		else 
 			user.Stun(40) 
-			user.visible_message(span_user(Looks like I'm the fool..."))
+			user.visible_message(span_userdanger("Looks like I am the fool..."))
 
 
 /obj/effect/proc_holder/spell/invoked/Smokebomb
