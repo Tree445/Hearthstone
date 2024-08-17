@@ -4113,6 +4113,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
+"cGr" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/wendigo,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
 "cGw" = (
 /turf/open/floor/rogue/tile{
 	icon_state = "glyph1"
@@ -13634,6 +13638,10 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
+"klO" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/wendigo,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
 "kms" = (
 /obj/structure/chair/wood/rogue/fancy{
 	dir = 4
@@ -23371,6 +23379,12 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
+"sdB" = (
+/obj/item/clothing/shoes/roguetown/boots/psydonianknightboots,
+/obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor,
+/obj/item/clothing/head/roguetown/helmet/heavy/psydonianknighthelm,
+/turf/open/floor/rogue/blocks/newstone,
+/area/rogue/under/cavewet/bogcaves/sunkencity)
 "sdR" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/chair/wood/rogue{
@@ -25528,6 +25542,12 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
+"tPA" = (
+/obj/item/clothing/shoes/roguetown/boots/psydonianknightboots,
+/obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor,
+/obj/item/clothing/head/roguetown/helmet/heavy/psydonianknighthelm,
+/turf/open/floor/rogue/metal/barograte,
+/area/rogue/under/cavewet/bogcaves/sunkencity/psydon)
 "tRf" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -28708,6 +28728,12 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
+"wAb" = (
+/obj/item/clothing/shoes/roguetown/boots/psydonianknightboots,
+/obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor,
+/obj/item/clothing/head/roguetown/helmet/heavy/psydonianknighthelm,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet/bogcaves/sunkencity)
 "wAm" = (
 /turf/closed/wall/mineral/rogue/decostone/long,
 /area/rogue/indoors/town/church)
@@ -47315,7 +47341,7 @@ bpD
 whb
 lBC
 cue
-jAY
+tPA
 jAY
 jAY
 bgS
@@ -48960,7 +48986,7 @@ acK
 acK
 acK
 adG
-abc
+wAb
 acK
 acK
 acL
@@ -70229,7 +70255,7 @@ bpD
 abe
 abl
 abx
-abx
+sdB
 abe
 abO
 abT
@@ -241311,7 +241337,7 @@ wLx
 sYx
 wLx
 sYx
-sYx
+cGr
 sYx
 wLx
 wLx
@@ -263708,7 +263734,7 @@ odi
 odi
 odi
 sYx
-sYx
+cGr
 odi
 sYx
 sYx
@@ -266558,7 +266584,7 @@ sYx
 odi
 sYx
 odi
-odi
+klO
 sYx
 sYx
 sYx
@@ -316722,7 +316748,7 @@ uRH
 odi
 uRH
 odi
-odi
+klO
 odi
 odi
 odi
@@ -329749,7 +329775,7 @@ khC
 wLx
 sYx
 odi
-sYx
+cGr
 odi
 odi
 odi

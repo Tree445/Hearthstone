@@ -40,9 +40,11 @@
 	ADD_TRAIT(H, TRAIT_BANDITCAMP, TRAIT_GENERIC)
 	if(H.gender == FEMALE)
 		H.change_stat("strength", -1)
+		head = /obj/item/clothing/head/roguetown/helmet/cage
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 	if(H.gender == MALE)
 		H.change_stat("strength", -1)
+		head = /obj/item/clothing/head/roguetown/helmet/cage
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 		armor = /obj/item/clothing/suit/roguetown/shirt/tunic/random
