@@ -9,6 +9,7 @@
 	spawn_positions = 2
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
+	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 
 	tutorial = "The fact you haven't been sacrificed to some dark god is proof enough that your captors are not as cruel as those that hail from the Frost Lands, in spite of this, they can be harsh taskmasters. At this point you've given up hope of rescue, do as your captors say, and you might yet live to see another day, and if you are truly lucky, they might even ransom you."
 	whitelist_req = FALSE

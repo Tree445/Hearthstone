@@ -10,7 +10,8 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "You are a Berserkir, a clan warrior. Do as your leader says and there may yet be glory to be found."
-	whitelist_req = FALSE
+  show_in_credits = FALSE		//Stops Scom from announcing their arrival.
+  whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vikinggrunt
 
 	display_order = JDO_VIKINGGRUNT
@@ -54,7 +55,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2 , TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3 , TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
@@ -67,8 +68,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
 
-		H.change_stat("strength", 4)
+		H.change_stat("strength", 3)		//Same as captain.
 		H.change_stat("intelligence", -2)
-		H.change_stat("constitution", 4)
+		H.change_stat("constitution", 3)
 		H.change_stat("endurance", 3)
 		H.change_stat("speed", -2)

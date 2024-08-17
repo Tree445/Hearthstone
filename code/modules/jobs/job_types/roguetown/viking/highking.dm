@@ -9,6 +9,7 @@
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
+	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/viking)
 	tutorial = "You and your clan left the Narvali Highlands some time ago, in search of glory. Not nearly as barbaric as your cousins from the Frost Lands, nevertheless you still retain that fire in your heart for pillaging. The Isle of Enigma is a pretty target, and isolated enough so that you won't draw enough attention. But be warned, Rockhill could very well crush your warband if ever tensions were to get out of hand. Will you show these southerners you are not fanatical warriors they make you out to be, or will you prove them right in senseless slaughter?"
 	whitelist_req = FALSE
@@ -71,17 +72,17 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
 
-		H.change_stat("strength", 4)
+		H.change_stat("strength", 4)		//Same as heavy royal guard; highest of normal roles in game.
 		H.change_stat("intelligence", -2)
-		H.change_stat("constitution", 4)
+		H.change_stat("constitution", 4)	//Fucking strong; maybe consider toning down if too much still.
 		H.change_stat("endurance", 3)
 		H.change_stat("speed", -2)
-
+	
 /obj/effect/proc_holder/spell/self/convertrole/viking
-	name = "Recruit Thrall"
-	new_role = "Graggarite Thrall"
+	name = "Recruit Clanshield"
+	new_role = "Viking Clanshield"
 	recruitment_faction = "Viking"
-	recruitment_message = "Serve Graggar, %RECRUIT!"
-	accept_message = "FOR THE BLACK SUN!"
+	recruitment_message = "Serve the clan, %RECRUIT!"
+	accept_message = "FOR THE CLAN!"
 	refuse_message = "I refuse."
 
