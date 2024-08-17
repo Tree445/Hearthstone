@@ -5,8 +5,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
 	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
-	var/pot_reagent	//The reagent that is added to the pot when this object is added to it.
-	var/distill_amt = 12
 	var/list/pipe_reagents = list()
 	var/seed
 	var/bitesize_mod = 0
@@ -55,7 +53,6 @@
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer
 	distill_amt = 24
-	pot_reagent = /datum/reagent/consumable/wheat_grain
 	grind_results = list(/datum/reagent/floure = 10)
 
 /obj/item/reagent_containers/food/snacks/grown/oat

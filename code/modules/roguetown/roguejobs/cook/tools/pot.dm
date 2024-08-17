@@ -19,8 +19,6 @@
 	possible_item_intents = list(INTENT_GENERIC, /datum/intent/fill, INTENT_POUR, INTENT_SPLASH)
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
 	slot_flags = null
-	//var/list/contained_ingredients = new/list()
-	var/isBoiling = FALSE
 	
 /obj/item/reagent_containers/glass/pot/stone
 	//for stone crafting.
