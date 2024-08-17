@@ -33,7 +33,7 @@
 	name = "fish chowder"
 	reqs = list(
 		/datum/reagent/water = 30,
-		/obj/item/reagent_containers/food/snacks/fish = 1,
+		/obj/item/reagent_containers/food/snacks/fish/carp = 1,
 		/obj/item/reagent_containers/food/snacks/grown/rogue/potato= 1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/soup/fishchowder,
 					/obj/item/reagent_containers/food/snacks/rogue/soup/fishchowder,

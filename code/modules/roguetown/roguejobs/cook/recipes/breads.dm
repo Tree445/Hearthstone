@@ -517,4 +517,3 @@
 	tastes = list("sugar and crispy dough" = 1)
 	foodtype = SUGAR
 	eat_effect = /datum/status_effect/buff/foodbuff
-	rotprocess = 30 MINUTES

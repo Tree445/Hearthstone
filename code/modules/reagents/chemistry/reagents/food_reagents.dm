@@ -477,13 +477,6 @@
 	color = "#FFFFFF" // rgb: 0, 0, 0
 	taste_description = "chalky wheat"
 
-/datum/reagent/consumable/wheat_grain
-	name = "wheat_grain"
-	description = "The grain of a bushel of wheat."
-	reagent_state = SOLID
-	color = "#e3e4a3" // rgb: 0, 0, 0
-	taste_description = "grainy wheat"
-
 /datum/reagent/consumable/flour/reaction_turf(turf/T, reac_volume)
 	if(!isspaceturf(T))
 		var/obj/effect/decal/cleanable/food/flour/reagentdecal = new(T)
