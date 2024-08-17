@@ -4512,6 +4512,17 @@
 	dir = 8
 	},
 /area/rogue/indoors/town/manor)
+"cUK" = (
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors)
 "cUW" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -402340,7 +402351,7 @@ wKa
 wKa
 rrn
 xou
-xou
+cUK
 lVe
 rZk
 usw
