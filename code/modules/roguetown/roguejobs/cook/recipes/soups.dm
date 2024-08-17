@@ -2,7 +2,7 @@
 	name = "soup"
 	subtype_reqs = FALSE
 	craftdiff = 0
-	
+	reqs = list()
 
 /datum/crafting_recipe/roguetown/cooking/soup/gruel
 	name = "gruel"
