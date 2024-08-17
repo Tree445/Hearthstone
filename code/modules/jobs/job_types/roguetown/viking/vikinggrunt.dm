@@ -10,7 +10,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
-	allowed_patrons = list(/datum/patron/inhumen/graggar)
+	allowed_patrons = list(/datum/patron/inhumen/graggar, /datum/patron/inhumen/zizo, /datum/patron/inhumen/baotha, /datum/patron/inhumen/matthios)
 	tutorial = "A hardened warrior from the Frost Lands. Follow the leader of your warband, and serve Graggar well. May the black sun darken the sky for all time!"
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vikinggrunt
