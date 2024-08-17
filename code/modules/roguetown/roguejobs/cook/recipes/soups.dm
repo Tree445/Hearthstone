@@ -2,32 +2,42 @@
 	name = "soup"
 	subtype_reqs = FALSE
 	craftdiff = 0
-	reqs = list()
+	reqs = list(/datum/reagent/water = 10000,
+	)
+	req_table = FALSE
+	tools = list(/obj/item/reagent_containers/glass/pot)
 
 /datum/crafting_recipe/roguetown/cooking/soup/gruel
 	name = "gruel"
 	reqs = list(
-		/datum/reagent/water = 15,
+		/datum/reagent/water = 30,
 		/obj/item/reagent_containers/food/snacks/grown/wheat= 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/soup/gruel=3)
+	result = list(	/obj/item/reagent_containers/food/snacks/rogue/soup/gruel,
+					/obj/item/reagent_containers/food/snacks/rogue/soup/gruel,
+					/obj/item/reagent_containers/food/snacks/rogue/soup/gruel)
+	
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/cooking/soup/simplestew
 	name = "simple stew"
 	reqs = list(
-		/datum/reagent/water = 15,
+		/datum/reagent/water = 30,
 		/obj/item/reagent_containers/food/snacks/rogue/meat/steak= 1,
 		/obj/item/reagent_containers/food/snacks/grown/rogue/potato= 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/soup/simplestew=3)
+	result = list(	/obj/item/reagent_containers/food/snacks/rogue/soup/simplestew,
+					/obj/item/reagent_containers/food/snacks/rogue/soup/simplestew,
+					/obj/item/reagent_containers/food/snacks/rogue/soup/simplestew)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/cooking/soup/fishchowder
 	name = "fish chowder"
 	reqs = list(
-		/datum/reagent/water = 15,
+		/datum/reagent/water = 30,
 		/obj/item/reagent_containers/food/snacks/fish = 1,
 		/obj/item/reagent_containers/food/snacks/grown/rogue/potato= 1)
-	result = list(/obj/item/reagent_containers/food/snacks/rogue/soup/fishchowder=3)
+	result = list(/obj/item/reagent_containers/food/snacks/rogue/soup/fishchowder,
+					/obj/item/reagent_containers/food/snacks/rogue/soup/fishchowder,
+					/obj/item/reagent_containers/food/snacks/rogue/soup/fishchowder)
 	craftdiff = 1
 
 /obj/item/reagent_containers/food/snacks/rogue/soup/gruel
