@@ -21,24 +21,24 @@
 /datum/outfit/job/roguetown/vikinggrunt/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.gender == MALE)
-		head = /obj/item/clothing/head/roguetown/helmet/leather/bearhelm
+		head = /obj/item/clothing/head/roguetown/helmet/horned
 		backr = /obj/item/storage/backpack/rogue/satchel
 		beltl = /obj/item/rogueweapon/stoneaxe/battle
 		beltr = /obj/item/rogueweapon/sword
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 		pants = /obj/item/clothing/under/roguetown/chainlegs/skirt
 		belt = /obj/item/storage/belt/rogue/leather
-		neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/ironharness
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	else
-		head = /obj/item/clothing/head/roguetown/helmet/leather/bearhelm
+		head = /obj/item/clothing/head/roguetown/helmet/horned
 		backr = /obj/item/storage/backpack/rogue/satchel
 		beltl = /obj/item/rogueweapon/stoneaxe/battle
 		beltr = /obj/item/rogueweapon/sword
 		pants = /obj/item/clothing/under/roguetown/chainlegs/skirt
 		belt = /obj/item/storage/belt/rogue/leather
-		neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 

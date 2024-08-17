@@ -29,7 +29,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 		pants = /obj/item/clothing/under/roguetown/platelegs/skirt
 		belt = /obj/item/storage/belt/rogue/leather
-		neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		armor = /obj/item/clothing/suit/roguetown/armor/plate/half/ironharness
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak
@@ -41,7 +41,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 		pants = /obj/item/clothing/under/roguetown/platelegs/skirt
 		belt = /obj/item/storage/belt/rogue/leather
-		neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+		neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 		armor = /obj/item/clothing/suit/roguetown/armor/plate/bikini
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		cloak = /obj/item/clothing/cloak/raincloak/furcloak

@@ -30,11 +30,11 @@
 	. = ..()
 	H.verbs |= /mob/living/carbon/human/proc/tribalannouncement
 	H.verbs |= /mob/living/carbon/human/proc/tribalopenslot
-	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/clothing/mask/rogue/facemask
+	neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 	head = /obj/item/clothing/head/roguetown/antlerhood

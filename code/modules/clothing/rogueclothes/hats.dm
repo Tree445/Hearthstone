@@ -37,23 +37,6 @@
 	sewrepair = TRUE
 	blocksound = SOFTHIT
 
-/obj/item/clothing/head/roguetown/sackhood
-	name = "sackhood"
-	desc = "A simple sack repurposed into a mask."
-	color = null
-	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE
-	icon_state = "sackhood"
-	item_state = "sackhood"
-	body_parts_covered = HEAD|HAIR|EARS|NECK
-	slot_flags = ITEM_SLOT_HEAD
-	dynamic_hair_suffix = ""
-	max_integrity = 100
-	armor = list("blunt" = 16, "slash" = 19, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_TWIST)
-	anvilrepair = null
-	sewrepair = TRUE
-	blocksound = SOFTHIT
-
 /obj/item/clothing/head/roguetown/roguehood
 	name = "hood"
 	desc = ""
@@ -266,7 +249,7 @@
 
 
 /obj/item/clothing/head/roguetown/menacing
-	name = "executioner hood"
+	name = "sack hood"
 	desc = "A hood commonly worn by executioners. Hides the face, the stigma of pulling that lever makes many executioners outcasts in their own right."
 	icon_state = "menacing"
 	item_state = "menacing"
@@ -968,6 +951,9 @@
 	desc = "A steel bascinet helmet with an elongated visor protecting the head, ears, nose, mouth, and eyes. Add a feather to show the colors of your family or allegiance."
 	icon_state = "hounskull"
 	item_state = "hounskull"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64	
 	adjustable = CAN_CADJUST
 	emote_environment = 3
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -983,6 +969,9 @@
 			adjustable = CADJUSTED
 			icon_state = "hounskull_um"
 			item_state = "hounskull_um"
+			mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+			worn_x_dimension = 64
+			worn_y_dimension = 64
 			body_parts_covered = HEAD|EARS|HAIR
 			flags_inv = HIDEEARS|HIDEHAIR
 			flags_cover = null
@@ -1135,9 +1124,8 @@
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "volf helmet"
-	desc = "A helmet made using the remains of a volf, surprisingly comfortable.."
+	desc = "Bandit initiation rites involve the slaying of a volf."
 	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEHAIR|HIDEEARS
 	icon_state = "volfhead"
 	item_state = "volfhead"
 	armor = list("blunt" = 47, "slash" = 27, "stab" = 37, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -1145,20 +1133,6 @@
 	anvilrepair = null
 	sewrepair = TRUE
 	blocksound = SOFTHIT
-
-/obj/item/clothing/head/roguetown/helmet/leather/bearhelm
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	name = "bear helmet"
-	desc = "Upon closer inspection, this is made of volf fur, not bear fur, but who will know the difference?"
-	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEHAIR|HIDEEARS
-	icon_state = "bearpelt"
-	item_state = "bearpelt"
-	armor = list("blunt" = 50, "slash" = 30, "stab" = 40, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
-	anvilrepair = null
-	sewrepair = TRUE
-	blocksound = SOFTHIT	
 
 /obj/item/clothing/head/roguetown/wizhat
 	name = "wizard hat"
@@ -1442,53 +1416,3 @@
 	block2add = FOV_BEHIND
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	smeltresult = /obj/item/ash
-
-/obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm
-	name = "spellslinger helmet"
-	desc = "A helmet commonly worn by those with a mastery of both swordsmanship and magic." //Maybe give this armor set antimagic in the future?
-	icon_state = "spellslingerhelmet"
-	item_state = "spellslingerhelmet"
-	emote_environment = 3
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	block2add = FOV_BEHIND
-	smeltresult = /obj/item/ingot/steel
-
-/obj/item/clothing/head/roguetown/helmet/cage
-	name = "cage"
-	desc = "A cage worn by criminals as punishment."
-	icon_state = "cage"
-	item_state = "cage"
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	smeltresult = /obj/item/ingot/iron
-
-/obj/item/clothing/head/roguetown/helmet/heavy/psydonianknighthelm
-	name = "psydonian knight helmet"
-	desc = "PSYDON lives."
-	icon_state = "psydonianknighthelm"
-	item_state = "psydonianknighthelm"
-	emote_environment = 3
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	block2add = FOV_BEHIND
-	smeltresult = /obj/item/ingot/steel
-
-/obj/item/clothing/head/roguetown/helmet/heavy/zealothelm
-	name = "zealot helmet"
-	desc = "A helmet designed to reflect the face of those whom its wearer is tormenting. Commonly worn by the underlings of Inquisitors."
-	icon_state = "zealotshelmet"
-	item_state = "zealotshelmet"
-	emote_environment = 3
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	block2add = FOV_BEHIND
-	smeltresult = /obj/item/ingot/steel
-
-/obj/item/clothing/head/roguetown/helmet/heavy/zybantinehelm
-	name = "zybantine helmet"
-	desc = "A helmet worn by soldiers of the Zybantine Empire."
-	icon_state = "zybantinehelm"
-	item_state = "zybantinehelm"
-	emote_environment = 3
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	block2add = FOV_BEHIND
-	smeltresult = /obj/item/ingot/steel

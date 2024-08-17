@@ -804,6 +804,7 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	nodismemsleeves = TRUE
 
+
 /obj/item/clothing/cloak/stole
 	name = "stole"
 	desc = "Garments of a priest, usually worn when giving religious speeches to the people."
