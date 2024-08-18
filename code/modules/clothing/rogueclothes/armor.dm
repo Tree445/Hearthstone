@@ -763,7 +763,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/spiderarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "spider cuirass"
-	desc = "A basic cuirass of steel. Lightweight and durable."
+	desc = "A cuirass of steel decorated with the image of a spider."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "spiderarmor"
 	item_state = "spiderarmor"
@@ -805,7 +805,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/brigandarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "iron cuirass"
-	desc = "A basic cuirass of iron. Lightweight and durable."
+	desc = "A basic cuirass of iron, lightweight and provides adequate protection."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "brigand"
 	item_state = "brigand"
