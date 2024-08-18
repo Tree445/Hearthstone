@@ -1443,7 +1443,6 @@
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	smeltresult = /obj/item/ash
 
-<<<<<<< Updated upstream
 /obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm
 	name = "spellslinger helmet"
 	desc = "A helmet commonly worn by those with a mastery of both swordsmanship and magic." //Maybe give this armor set antimagic in the future?
@@ -1493,7 +1492,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
-=======
+
 /obj/item/clothing/head/roguetown/helmet/brigandhelmet
 	name = "iron helmet"
 	desc = "A"
@@ -1513,5 +1512,4 @@
 	body_parts_covered = HEAD|HAIR|EARS
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
 	block2add = FOV_BEHIND
-	smeltresult = /obj/item/ingot/steel	
->>>>>>> Stashed changes
+	smeltresult = /obj/item/ingot/steel
