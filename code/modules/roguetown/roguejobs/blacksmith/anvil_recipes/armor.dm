@@ -606,6 +606,7 @@
 	craftdiff = 4	//Heavy helm
 	i_type = "Armor"
 
+<<<<<<< Updated upstream
 /datum/anvil_recipe/armor/spellslingerhelm
 	name = "Spellslinger Helmet (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
@@ -694,4 +695,34 @@
 	additional_items = list(/obj/item/natural/fur)
 	created_item = /obj/item/clothing/head/roguetown/helmet/leather/bearhelm
 	craftdiff = 1
+=======
+/datum/anvil_recipe/armor/roguetown/spiderhelmet
+	name = "Spider Helmet (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/head/roguetown/helmet/spiderhelmet
+	craftdiff = 2
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/brigandhelmet
+	name = "Iron Helmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/brigandhelmet
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/spiderarmor
+	name = "Spider Armor (+1 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/spiderarmor
+	craftdiff = 2
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/brigandarmor
+	name = "Iron Breastplate (+1 Iron)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/ingot/iron)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/brigandarmor
+	craftdiff = 2
+>>>>>>> Stashed changes
 	i_type = "Armor"	

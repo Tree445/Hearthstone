@@ -1443,6 +1443,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	smeltresult = /obj/item/ash
 
+<<<<<<< Updated upstream
 /obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm
 	name = "spellslinger helmet"
 	desc = "A helmet commonly worn by those with a mastery of both swordsmanship and magic." //Maybe give this armor set antimagic in the future?
@@ -1492,3 +1493,25 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
+=======
+/obj/item/clothing/head/roguetown/helmet/brigandhelmet
+	name = "iron helmet"
+	desc = "A"
+	block2add = FOV_BEHIND
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
+	icon_state = "brigandhelm"
+	item_state = "brigandhelm"
+	var/picked = FALSE
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/head/roguetown/helmet/spiderhelmet
+	name = "spider helmet"
+	desc = "A helmet worn by Dark Elf surface raiders."
+	icon_state = "spiderhelm"
+	item_state = "spiderhelm"
+	emote_environment = 3
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
+	block2add = FOV_BEHIND
+	smeltresult = /obj/item/ingot/steel	
+>>>>>>> Stashed changes
