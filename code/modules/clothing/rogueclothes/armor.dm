@@ -743,7 +743,6 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
-<<<<<<< Updated upstream
 /obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "spellslinger cuirass"
@@ -751,15 +750,6 @@
 	body_parts_covered = CHEST|VITALS
 	icon_state = "spellslingerarmor"
 	item_state = "spellslingerarmor"
-=======
-/obj/item/clothing/suit/roguetown/armor/plate/spiderarmor
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "spider cuirass"
-	desc = "A basic cuirass of steel. Lightweight and durable."
-	body_parts_covered = CHEST|VITALS
-	icon_state = "spiderarmor"
-	item_state = "spiderarmor"
->>>>>>> Stashed changes
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = CLOTHED_RACES_TYPES
 	nodismemsleeves = TRUE
@@ -770,7 +760,14 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
-<<<<<<< Updated upstream
+/obj/item/clothing/suit/roguetown/armor/plate/spiderarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "spider cuirass"
+	desc = "A basic cuirass of steel. Lightweight and durable."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "spiderarmor"
+	item_state = "spiderarmor"
+
 /obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "psydonian knight cuirass"
@@ -804,7 +801,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
-=======
+
 /obj/item/clothing/suit/roguetown/armor/plate/brigandarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "iron cuirass"
@@ -819,5 +816,4 @@
 	max_integrity = 100
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
-	armor_class = ARMOR_CLASS_MEDIUM	
->>>>>>> Stashed changes
+	armor_class = ARMOR_CLASS_MEDIUM
