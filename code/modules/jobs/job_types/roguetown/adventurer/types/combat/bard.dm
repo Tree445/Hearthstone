@@ -8,7 +8,6 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/bard
-	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/bard/pre_equip(mob/living/carbon/human/H)
@@ -49,7 +48,6 @@
 			H.change_stat("perception", 2)
 			H.change_stat("endurance", 1)
 			H.change_stat("speed", 2)
-			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if("Skald")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Skalds are wandering storytellers, and for many villages they are local historians keeping the tales of great legends and heroes alive."))
@@ -81,7 +79,6 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("strength", 1)
 			H.change_stat("speed", 1)
-			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if("Arcanist")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Some bards are can craft musical sorceries, so it makes sense some pick up actual ones. Perhaps not as good as the real deal, of course."))

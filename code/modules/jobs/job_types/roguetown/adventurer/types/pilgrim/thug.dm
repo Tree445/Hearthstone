@@ -13,7 +13,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE) // Same as melee-watch
+	H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE) 
 	H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
