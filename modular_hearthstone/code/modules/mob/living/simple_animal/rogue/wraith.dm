@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/rogue/wraith
+/mob/living/simple_animal/hostile/rogue/ghost/wraith
 	name = "wraith"
 	desc = ""
 	icon = 'modular_hearthstone/icons/mob/wraiths.dmi'
@@ -19,9 +19,9 @@
 	response_help_continuous = "passes through"
 	response_help_simple = "pass through"
 	dodging = TRUE
-	dodge_prob = 90
-	maxHealth = 100
-	health = 100
+	dodge_prob = 10
+	maxHealth = 200
+	health = 200
 	layer = 16
 	plane = 16
 	spacewalk = TRUE
@@ -42,30 +42,30 @@
 	del_on_death = TRUE
 	STALUC = 20
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	loot = list(/obj/item/reagent_containers/powder/moondust)
+	loot = list(/obj/item/soul_fragment)
 	minbodytemp = 0
 	faction = list("undead")
 	footstep_type = null
-	defprob = 50 //decently skilled
+	defprob = 20 //decently skilled
 	defdrain = 20
-	dodgetime = 70
+	dodgetime = 10
 	canparry = TRUE
 	retreat_health = null
 
-/mob/living/simple_animal/hostile/rogue/wraith/wraith2
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2
 	icon_state = "wraith2"
 	icon_living = "wraith2"
 	icon_dead = null
 
-/mob/living/simple_animal/hostile/rogue/wraith/wraith3
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith3
 	icon_state = "wraith3"
 	icon_living = "wraith3"
 	icon_dead = null
 
-/mob/living/simple_animal/hostile/rogue/wraith/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
 	return FALSE
 
-/mob/living/simple_animal/hostile/rogue/wraith/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)
@@ -114,24 +114,24 @@
 
 	return ..()
 
-/mob/living/simple_animal/hostile/rogue/wraith/death(gibbed)
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/death(gibbed)
 	emote("death")
 	..()
 
-/mob/living/simple_animal/hostile/rogue/wraith/Life()
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/Life()
 	. = ..()
 	if(!target)
 		if(prob(90))
 			emote(pick("idle"), TRUE)
 
 
-/mob/living/simple_animal/hostile/rogue/wraith/taunted(mob/user)
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/taunted(mob/user)
 	emote("aggro")
 	GiveTarget(user)
 	return
 
 
-/mob/living/simple_animal/hostile/rogue/wraith/get_sound(input)
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/get_sound(input)
 	switch(input)
 		if("aggro")
 			return pick('sound/vo/mobs/wraith/wraith_scream.ogg','sound/vo/mobs/wraith/wraith_scream2.ogg','sound/vo/mobs/wraith/wraith_scream3.ogg','sound/vo/mobs/wraith/wraith_scream4.ogg','sound/vo/mobs/wraith/wraith_scream5.ogg')
@@ -140,7 +140,7 @@
 		if("death")
 			return pick('sound/vo/mobs/wraith/wraith_death.ogg', 'sound/vo/mobs/wraith/wraith_death2.ogg')
 
-/mob/living/simple_animal/hostile/rogue/wraith/AttackingTarget()
+/mob/living/simple_animal/hostile/rogue/ghost/wraith/AttackingTarget()
 	. = ..()
 	emote("aggro")
 	if(. && prob(60) && iscarbon(target))
