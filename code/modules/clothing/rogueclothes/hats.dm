@@ -1495,7 +1495,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/brigandhelmet
 	name = "iron helmet"
-	desc = "A"
+	desc = "A helmet made of iron, provides adequate protection at the expense of vision."
 	block2add = FOV_BEHIND
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
 	icon_state = "brigandhelm"
@@ -1505,7 +1505,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/spiderhelmet
 	name = "spider helmet"
-	desc = "A helmet worn by Dark Elf surface raiders."
+	desc = "A wide steel helmet with six vision slits making it appear like the head of a spider."
 	icon_state = "spiderhelm"
 	item_state = "spiderhelm"
 	emote_environment = 3
