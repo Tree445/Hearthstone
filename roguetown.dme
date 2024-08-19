@@ -3587,7 +3587,6 @@
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\wendigo.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\wraith.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\creacher\volf.dm"
-#include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\wendigo.dm"
 #include "modular_hearthstone\code\modules\mob\sprite_accessory\hair_styles.dm"
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
 #include "modular_hearthstone\code\modules\roguetown\roguecrafting\alchemy.dm"
