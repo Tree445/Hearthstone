@@ -20,7 +20,7 @@
 /datum/outfit/job/roguetown/monk
 	name = "Acolyte"
 	jobtype = /datum/job/roguetown/monk
-	allowed_patrons = ALL_DIVINE_PATRONS //Eora content from Stonekeep
+	allowed_patrons = ALL_DIVINE_PATRONS
 
 /datum/outfit/job/roguetown/monk/pre_equip(mob/living/carbon/human/H)
 	..()
