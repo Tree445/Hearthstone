@@ -54,7 +54,7 @@
 
 /obj/effect/track/Initialize()
 	. = ..()
-	real_image = image(icon, src, real_icon_state, ABOVE_OPEN_TURF_LAYER)
+	real_image = image(icon, src, real_icon_state, ABOVE_OPEN_TURF_LAYER) //Default image in case manually created.
 
 /obj/effect/track/Destroy(force)
 	real_image = null
@@ -158,6 +158,7 @@
 			facing = "southwest"
 		if(SOUTHEAST)
 			facing = "southeast"
+	real_image = image(icon, src, real_icon_state, ABOVE_OPEN_TURF_LAYER, track_source.dir) //Recreate image with correct dir.
 	deletion_timer = addtimer(CALLBACK(src, PROC_REF(track_expire)), 15 MINUTES, TIMER_STOPPABLE) //Tracks naturally expire after 15 minutes (although at that point their DC is pretty high anyways.)
 
 ///Adds a new person to the list of people who can see this track.
@@ -171,6 +172,8 @@
 /obj/effect/track/proc/remove_knower(mob/living/tracker)
 	SIGNAL_HANDLER
 	UnregisterSignal(tracker, COMSIG_PARENT_QDELETING)
+	if(tracker.client)
+		tracker.client.images -= real_image
 	known_by -= tracker
 	if(creator == tracker)
 		creator = null
