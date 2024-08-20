@@ -451,10 +451,10 @@
 	reqs = list(/obj/item/natural/fibers = 2,
 				/obj/item/grown/log/tree/stick = 2)
 
+// Gives a rusty beartrap; if you want non-rusty ones, go to smith. Prevents the dumb mass-trapping stuff.
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"
-	result = list(/obj/item/restraints/legcuffs/beartrap,
-				/obj/item/restraints/legcuffs/beartrap)
+	result = list(/obj/item/restraints/legcuffs/beartrap)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/fibers = 2,
 				/obj/item/ingot/iron = 1)
@@ -499,6 +499,15 @@
 	verbage = "crafted"
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/skullcrotch
+	name = "skull pants"
+	result = /obj/item/clothing/under/roguetown/trou/skullcrotchplate
+	reqs = list(/obj/item/natural/bone = 1,
+				/obj/item/natural/fibers = 1)
+	sellprice = 1
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0	
 
 /datum/crafting_recipe/roguetown/antlerhood
 	name = "antlerhood"
@@ -511,10 +520,7 @@
 	verbage_simple = "sew"
 	verbage = "sews"
 	craftdiff = 0
-
-
-
-/datum/crafting_recipe/roguetown/bonespear
+	/datum/crafting_recipe/roguetown/bonespear
 	name = "bone spear"
 	result = /obj/item/rogueweapon/spear/bonespear
 	reqs = list(/obj/item/rogueweapon/woodstaff = 1,

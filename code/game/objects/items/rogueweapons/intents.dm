@@ -461,6 +461,8 @@
 	miss_text = "slashes the air!"
 	item_d_type = "slash"
 
+
+
 /datum/intent/simple/bite
 	name = "bite"
 	icon_state = "instrike"
@@ -468,6 +470,35 @@
 	animname = "blank22"
 	blade_class = BCLASS_CUT
 	hitsound = "smallslash"
+	chargetime = 0
+	penfactor = 0
+	swingdelay = 3
+	candodge = TRUE
+	canparry = TRUE
+	item_d_type = "stab"
+
+
+/datum/intent/simple/axe
+	name = "hack"
+	icon_state = "instrike"
+	attack_verb = list("hacks at", "chops at", "bashes")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = list("genchop", "genslash")
+	chargetime = 0
+	penfactor = 0
+	swingdelay = 3
+	candodge = TRUE
+	canparry = TRUE
+	item_d_type = "slash"
+
+/datum/intent/simple/spear
+	name = "spear"
+	icon_state = "instrike"
+	attack_verb = list("stabs", "skewers", "bashes")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = list("genthrust", "genstab")
 	chargetime = 0
 	penfactor = 0
 	swingdelay = 3

@@ -27,6 +27,19 @@
 	/// The rate at which the plant drains water, if zero then it'll be able to live without water
 	var/water_drain_rate = 2 / (1 MINUTES)
 
+/datum/plant_def/shroom
+	name = "shroom spores"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "shroom"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/shroom
+	produce_amount = 3
+	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES
+
+
 /datum/plant_def/wheat
 	name = "wheat stalks"
 	icon = 'icons/roguetown/misc/crops.dmi'
@@ -96,3 +109,27 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
+
+/datum/plant_def/potato
+	name = "potato plant"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "potato"
+	produce_amount = 3
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 6 MINUTES
+	produce_time = 3 MINUTES
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/potato
+	//uproot_loot = list(/obj/item/grown/log/tree/small)
+	//perennial = TRUE
+	
+/datum/plant_def/sugarcane
+	name = "sugarcane"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "sugarcane"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/sugarcane
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES

@@ -53,6 +53,10 @@
 	seed_identity = "wheat seeds"
 	plant_def_type = /datum/plant_def/wheat
 
+/obj/item/seeds/shroom
+	seed_identity = "elder shroom seeds"
+	plant_def_type = /datum/plant_def/shroom
+
 /obj/item/seeds/wheat/oat
 	seed_identity = "oat seeds"
 	plant_def_type = /datum/plant_def/oat
@@ -77,3 +81,10 @@
 	seed_identity = "berry seeds"
 	plant_def_type = /datum/plant_def/berry_poison
 
+/obj/item/seeds/potato
+	seed_identity = "potato seeds"
+	plant_def_type = /datum/plant_def/potato
+
+/obj/item/seeds/sugarcane
+	seed_identity = "sugarcane seeds"
+	plant_def_type = /datum/plant_def/sugarcane

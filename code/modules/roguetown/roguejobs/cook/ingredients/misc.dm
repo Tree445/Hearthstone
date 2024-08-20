@@ -137,3 +137,28 @@
 	tastes = list("sweetness and light" = 1)
 	eat_effect = null
 	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/mashedpotatoes
+	name = "mashed potatoes"
+	desc = "A bowl of mashed potatoes."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "mashedpotatoes"
+	bitesize = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	w_class = WEIGHT_CLASS_SMALL
+	tastes = list("creamy and light" = 1)
+	eat_effect = null
+	rotprocess = null
+
+
+/obj/item/reagent_containers/food/snacks/rogue/flatpie
+	name = "flat pie"
+	desc = "Flat bread topped with cheese in a creamy sauce."
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "flatpie"
+	bitesize = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("Savory, cheesy, with hints of herb" = 1)
+	eat_effect = /datum/status_effect/buff/foodbuff
+	rotprocess = null

@@ -100,18 +100,11 @@
 	item_d_type = "slash"
 
 /datum/intent/axe/chop/battle
-	penfactor = 70
-	damfactor = 1.2 //36 on battleaxe
+	penfactor = 40		//Was 70, 40 is near-equal to spear. This is same pen as an arrow basically; be greatful.
+	damfactor = 1.2 	//36 base damage on battleaxe; scales with strength.
 
 /datum/intent/axe/cut/battle
-	penfactor = 30
-
-/datum/intent/axe/chop/battle
-	penfactor = 70
-	damfactor = 1.2 //36 on battleaxe
-
-/datum/intent/axe/cut/battle
-	penfactor = 30
+	penfactor = 30		//10 less than chop, and 0.2 less damage than chop. But less stamina cost.
 
 /obj/item/rogueweapon/stoneaxe/battle
 	force = 25
@@ -167,7 +160,6 @@
 	force = 22
 	force_wielded = 28
 	desc = "A steel woodcutting axe. Performs much better than its iron counterpart."
-	force = 26
 	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
 	wdefense = 3

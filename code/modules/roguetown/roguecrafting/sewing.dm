@@ -16,6 +16,12 @@
 	reqs = list(/obj/item/natural/cloth = 2)
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/sewing/sackhood
+	name = "sack hood"
+	result = list(/obj/item/clothing/head/roguetown/sackhood)
+	reqs = list(/obj/item/natural/fibers = 3)
+	craftdiff = 0	
+
 /datum/crafting_recipe/roguetown/sewing/burial_shroud
 	name = "winding sheet"
 	result = list(/obj/item/burial_shroud)
@@ -64,6 +70,20 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/sewing/plainpants
+	name = "plain pants"
+	result = list(/obj/item/clothing/under/roguetown/trou/plainpants)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/sewing/stripedpants
+	name = "striped pants"
+	result = list(/obj/item/clothing/under/roguetown/trou/stripedpants)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/sewing/workervest
 	name = "striped tunic"
 	result = list(/obj/item/clothing/suit/roguetown/armor/workervest)
@@ -99,7 +119,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/sack
-	name = "sack hood"
+	name = "executioner hood"
 	result = list(/obj/item/clothing/head/roguetown/menacing)
 	reqs = list(/obj/item/natural/cloth = 3,)
 	craftdiff = 1
