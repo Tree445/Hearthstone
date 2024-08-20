@@ -270,7 +270,7 @@
 	icon_state = "oa_short"
 	item_state = "oa_short"
 	boobed = TRUE
-	max_integrity = 250
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -632,7 +632,7 @@
 	desc = "A basic iron cuirass worn by soldiers in Grenzelhoft."
 	icon_state = "footmanchestplate"
 	item_state = "footmanchestplate"
-	max_integrity = 250
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -642,7 +642,7 @@
 	desc = "Armor worn by Graggarite fanatics in battle."
 	icon_state = "graggaritechestplate"
 	item_state = "graggaritechestplate"
-	max_integrity = 250
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -669,7 +669,7 @@
 	desc = "Lamellar armor worn by the elite Katefractoii heavy cavalry."
 	icon_state = "katefractoiichestplate"
 	item_state = "katefractoiichestplate"
-	max_integrity = 250
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -814,7 +814,7 @@
 	allowed_race = CLOTHED_RACES_TYPES
 	do_sound = FALSE
 	blocking_behavior = null
-	max_integrity = 100
+	max_integrity = 200
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
