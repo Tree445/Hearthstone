@@ -9,6 +9,7 @@
 	spawn_positions = 2
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
+	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 
 	tutorial = "You have likely seen the brutality of the Northmen firsthand. Put aside any notion of rescue, and serve the warband well. You know they sacrifice slaves to their twisted god, Graggar, so try and at least appear somewhat useful for the cruel pillagers, tend the farm, and try not to draw too much attention."
 	whitelist_req = FALSE
@@ -19,7 +20,7 @@
 	min_pq = -10
 	max_pq = null
 
-/datum/outfit/job/roguetown/farmer/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/vikingfarmer/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)

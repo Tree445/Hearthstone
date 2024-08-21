@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur_old
 	icon = 'icons/roguetown/mob/monster/minotaur.dmi'
 	name = "Minotaur"
 	icon_state = "Gor"
@@ -44,23 +44,35 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/item/rogueweapon/stoneaxe/battle
 
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/death(gibbed)
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur_old/death(gibbed)
 	..()
 	update_icon()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/taunted(mob/user)
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur_old/taunted(mob/user)
 	emote("aggro")
 	Retaliate()
 	GiveTarget(user)
 	return
 
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/Life()
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur_old/Life()
 	..()
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
 
-/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur_old/get_sound(input)
+	switch(input)
+		if("aggro")
+			return pick('sound/vo/mobs/minotaur/minoroar.ogg','sound/vo/mobs/minotaur/minoroar2.ogg','sound/vo/mobs/minotaur/minoroar3.ogg','sound/vo/mobs/minotaur/minoroar4.ogg')
+		if("pain")
+			return pick('sound/vo/mobs/minotaur/minopain.ogg', 'sound/vo/mobs/minotaur/minopain2.ogg')
+		if("death")
+			return pick('sound/vo/mobs/minotaur/minodie.ogg', 'sound/vo/mobs/minotaur/minodie2.ogg')
+		if("idle")
+			return pick('sound/vo/mobs/minotaur/minoidle.ogg', 'sound/vo/mobs/minotaur/minoidle2.ogg')
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/minotaur_old/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)
