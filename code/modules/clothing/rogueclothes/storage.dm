@@ -211,6 +211,7 @@
 		STR.max_combined_w_class = 42
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 12
+		STR.not_while_equipped = TRUE
 
 /obj/item/storage/backpack/rogue/skit/PopulateContents()
 	new /obj/item/rogueweapon/surgery/scalpel(src)
