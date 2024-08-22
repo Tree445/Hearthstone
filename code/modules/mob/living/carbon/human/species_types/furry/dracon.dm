@@ -32,7 +32,7 @@
 		)
 	specstats = list("strength" = 2, "perception" = -1, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = -1, "fortune" = -1)
 	specstats_f = list("strength" = 2, "perception" = -1, "intelligence" = -1, "constitution" = 1, "endurance" = 0, "speed" = 1, "fortune" = -1)
-	race_bonus = list(STAT_STRENGTH = 1, STAT_ENDURANCE = -1)
+	race_bonus = list(STAT_CONSTITUTION = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -87,6 +87,8 @@
 		/datum/body_marking/tiger/dark,
 		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/splotches,
+		/datum/body_marking/splotcheswap,
 	)
 	languages = list(
 		/datum/language/common,

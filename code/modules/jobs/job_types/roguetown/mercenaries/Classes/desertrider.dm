@@ -63,7 +63,7 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-			H.change_stat("strength", 1)	//Less strength then sword-role but more speed; trade-off.
+			H.change_stat("strength", 1)
 			H.change_stat("endurance", 2)
 			H.change_stat("constitution", 1)
 			H.change_stat("perception", 3)
@@ -79,6 +79,6 @@
 			neck = /obj/item/clothing/neck/roguetown/shalal
 
 	backpack_contents = list(/obj/item/roguekey/mercenary)
-
+  
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

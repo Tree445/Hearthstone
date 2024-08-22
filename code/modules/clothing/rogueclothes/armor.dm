@@ -265,6 +265,7 @@
 /obj/item/clothing/suit/roguetown/armor/shortbrigandine
 	name = "fancy brigandine"
 	desc = "A coat with plates concealed inside an exterior fabric. This one is a bit nicer looking than most others and the fabric on the exterior of the armor better conceals the plate beneath."
+	body_parts_covered = CHEST|VITALS
 	icon_state = "oa_short"
 	item_state = "oa_short"
 	boobed = TRUE
@@ -277,7 +278,7 @@
 	desc = "A lightweight piece of protection centered around the belly."
 	icon_state = "metal_vest"
 	item_state = "metal_vest"
-	max_integrity = 100
+	max_integrity = 150
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_LIGHT
 
@@ -288,7 +289,7 @@
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "lamellar"
-	max_integrity = 200
+	max_integrity = 250
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
@@ -630,7 +631,7 @@
 	desc = "A basic iron cuirass worn by soldiers in Grenzelhoft."
 	icon_state = "footmanchestplate"
 	item_state = "footmanchestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -640,7 +641,7 @@
 	desc = "Armor worn by Graggarite fanatics in battle."
 	icon_state = "graggaritechestplate"
 	item_state = "graggaritechestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -667,7 +668,7 @@
 	desc = "Lamellar armor worn by the elite Katefractoii heavy cavalry."
 	icon_state = "katefractoiichestplate"
 	item_state = "katefractoiichestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -812,7 +813,7 @@
 	allowed_race = CLOTHED_RACES_TYPES
 	do_sound = FALSE
 	blocking_behavior = null
-	max_integrity = 100
+	max_integrity = 200
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM

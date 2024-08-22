@@ -16,7 +16,6 @@
 	base_intents = list(/datum/intent/simple/bite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 13,
 						/obj/item/natural/hide = 15, /obj/item/natural/bundle/bone/full = 3)
-	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 400
 	maxHealth = 500
