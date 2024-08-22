@@ -7,7 +7,7 @@
 #define DEBUG
 // END_PREFERENCES
 // BEGIN_INCLUDE
-#include "_maps\_basemap.dm"
+#include "_maps\rockhill.dm"
 #include "_maps\templates\bog_shack_small.dm"
 #include "_maps\templates\sewers.dm"
 #include "_maps\templates\smalldungeons.dm"
@@ -3583,9 +3583,9 @@
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\orc.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\rogue_corpse.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\simple_skeleton.dm"
+#include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\wendigo.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\wraith.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\creacher\volf.dm"
-#include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\wendigo.dm"
 #include "modular_hearthstone\code\modules\mob\sprite_accessory\hair_styles.dm"
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
 #include "modular_hearthstone\code\modules\roguetown\roguecrafting\alchemy.dm"
