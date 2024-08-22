@@ -26,7 +26,8 @@
 		TRAIT_IGNOREDAMAGESLOWDOWN,
 		TRAIT_HARDDISMEMBER, //Decapping Volfs causes them to bug out, badly, and need admin intervention to fix. Bandaid fix.
 		TRAIT_PIERCEIMMUNE, //Prevents weapon dusting and caltrop effects due to them transforming when killed/stepping on shards.
-		TRAIT_IGNORESLOWDOWN
+		TRAIT_IGNORESLOWDOWN,
+		TRAIT_PERFECT_TRACKER//Hearthstone change.
 	)
 	inherent_biotypes = MOB_HUMANOID
 	armor = 30
@@ -38,6 +39,7 @@
 	soundpack_f = /datum/voicepack/werewolf
 	specstats = list("strength" = 8, "perception" = 7, "intelligence" = -6, "constitution" = 8, "endurance" = 8, "speed" = 3, "fortune" = 0)
 	specstats_f = list("strength" = 8, "perception" = 7, "intelligence" = -6, "constitution" = 8, "endurance" = 8, "speed" = 3, "fortune" = 0)
+	race_bonus = list(STAT_STRENGTH = 8, STAT_PERCEPTION = 7, STAT_INTELLIGENCE = -6, STAT_CONSTITUTION = 8, STAT_ENDURANCE = 8, STAT_SPEED = 3)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
