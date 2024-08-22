@@ -201,7 +201,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/ironarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "iron chestplate"
-	desc = "A basic cuirass of steel. Lightweight and durable."
+	desc = "A basic cuirass of iron. Lightweight and durable."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "ironarmor"
 	item_state = "ironarmor"
@@ -266,6 +266,7 @@
 /obj/item/clothing/suit/roguetown/armor/shortbrigandine
 	name = "fancy brigandine"
 	desc = "A coat with plates concealed inside an exterior fabric. This one is a bit nicer looking than most others and the fabric on the exterior of the armor better conceals the plate beneath."
+	body_parts_covered = CHEST|VITALS
 	icon_state = "oa_short"
 	item_state = "oa_short"
 	boobed = TRUE
@@ -278,7 +279,7 @@
 	desc = "A lightweight piece of protection centered around the belly."
 	icon_state = "metal_vest"
 	item_state = "metal_vest"
-	max_integrity = 100
+	max_integrity = 150
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_LIGHT
 
@@ -289,7 +290,7 @@
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "lamellar"
-	max_integrity = 200
+	max_integrity = 250
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
@@ -631,7 +632,7 @@
 	desc = "A basic iron cuirass worn by soldiers in Grenzelhoft."
 	icon_state = "footmanchestplate"
 	item_state = "footmanchestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -641,7 +642,7 @@
 	desc = "Armor worn by Graggarite fanatics in battle."
 	icon_state = "graggaritechestplate"
 	item_state = "graggaritechestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -668,7 +669,7 @@
 	desc = "Lamellar armor worn by the elite Katefractoii heavy cavalry."
 	icon_state = "katefractoiichestplate"
 	item_state = "katefractoiichestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -741,4 +742,79 @@
 	max_integrity = 300
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "spellslinger cuirass"
+	desc = "Armor of a spellslinger, provides adequate protection while still looking very nice."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "spellslingerarmor"
+	item_state = "spellslingerarmor"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/spiderarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "spider cuirass"
+	desc = "A cuirass of steel decorated with the image of a spider."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "spiderarmor"
+	item_state = "spiderarmor"
+
+/obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "psydonian knight cuirass"
+	desc = "PSYDON's heart still beats."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "psydonianknightarmor"
+	item_state = "psydonianknightarmor"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/zybantinearmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "zybantinearmor"
+	desc = "Medium armor worn by Zybantine soldiers."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "zybantinearmor"
+	item_state = "zybantinearmor"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/brigandarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "iron cuirass"
+	desc = "A basic cuirass of iron, lightweight and provides adequate protection."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "brigand"
+	item_state = "brigand"
+	armor = list("blunt" = 80, "slash" = 60, "stab" = 20, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 200
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
