@@ -158,7 +158,7 @@
 
 /datum/supply_pack/rogue/weapons/bullets
 	name = "Bullets"
-	cost = 15
+	cost = 150
 	contains = list(
 					/obj/item/ammo_casing/caseless/rogue/bullet,
 					/obj/item/ammo_casing/caseless/rogue/bullet,
@@ -169,7 +169,7 @@
 
 /datum/supply_pack/rogue/weapons/ammopouch/bullets
 	name = "Ammo Pouch"
-	cost = 50
+	cost = 300
 	contains = list(
 					/obj/item/ammopouch/bullets,
 					/obj/item/ammopouch/bullets,
