@@ -820,7 +820,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/elfcuirass
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "elf cuirass"
-	desc = "An elegant cuirass in the Elven style.."
+	desc = "An elegant cuirass in the Elven style."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "chestplate"
 	item_state = "chestplate"
