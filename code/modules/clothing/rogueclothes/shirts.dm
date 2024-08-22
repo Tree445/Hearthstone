@@ -283,6 +283,15 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 	color = null
 
+/obj/item/clothing/suit/roguetown/shirt/undershirt/bra
+	name = "bra"
+	desc = "Undergarments worn by women."
+	icon_state = "bra"
+	item_state = "bra"
+	allowed_sex = list(MALE, FEMALE)
+	body_parts_covered = CHEST
+	color = null	
+
 /obj/item/clothing/suit/roguetown/shirt/jester
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "jester's tunick"

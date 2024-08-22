@@ -138,6 +138,18 @@
 	icon_state = "leathertrou"
 	color = "#151615"
 
+/obj/item/clothing/under/roguetown/trou/shortpants
+	name = "desert pants"
+	desc = "Short bottoms commonly worn in the deserts."
+	icon_state = "harem_pants"
+	item_state = "harem_pants"
+
+/obj/item/clothing/under/roguetown/trou/undergarments
+	name = "undergarments"
+	desc = "Used for hiding your dignity."
+	icon_state = "underwear"
+	item_state = "underwear"
+
 /obj/item/clothing/under/roguetown/chainlegs
 	name = "steel chain chausses"
 	desc = "Chain leggings composed of interlinked metal rings."

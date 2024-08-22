@@ -54,6 +54,14 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 
+/obj/item/storage/belt/rogue/leather/ornate
+	name = "ornate belt"
+	desc = "An ornate belt decorated with gold."
+	icon_state = "ornate_belt"
+	sellprice = 50
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing	
+
 /obj/item/storage/belt/rogue/leather/shalal
 	name = "shalal belt"
 	icon_state = "shalal"
@@ -63,6 +71,12 @@
 	name = "black belt"
 	icon_state = "blackbelt"
 	sellprice = 10
+
+/obj/item/storage/belt/rogue/leather/blackleather
+	name = "black leather belt"
+	icon_state = "blackleatherbelt"
+	sewrepair = TRUE
+	sellprice = 10	
 
 /obj/item/storage/belt/rogue/leather/plaquesilver
 	name = "plaque belt"

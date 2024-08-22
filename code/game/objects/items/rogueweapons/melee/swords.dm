@@ -683,7 +683,7 @@
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
-	bigboy = 1
+	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
 	pixel_y = -16

@@ -50,6 +50,13 @@
 				/obj/item/natural/fibers = 2)
 	sellprice = 30
 
+/datum/crafting_recipe/roguetown/leather/ammopouch
+	name = "ammo pouch"
+	result = /obj/item/ammopouch
+	reqs = list(/obj/item/natural/hide = 2,
+				/obj/item/natural/fibers = 2)
+	sellprice = 50	
+
 /datum/crafting_recipe/roguetown/leather/gloves
 	name = "leather gloves (x2)"
 	result = list(/obj/item/clothing/gloves/roguetown/leather,
@@ -75,6 +82,12 @@
 	result = list(/obj/item/clothing/under/roguetown/trou/leather)
 	reqs = list(/obj/item/natural/hide = 1)
 	sellprice = 10
+
+/datum/crafting_recipe/roguetown/leather/pants
+	name = "black leather belt"
+	result = list(/obj/item/storage/belt/rogue/leather/blackleather)
+	reqs = list(/obj/item/natural/hide = 1)
+	sellprice = 10	
 
 /datum/crafting_recipe/roguetown/leather/shoes
 	name = "leather shoes (x3)"

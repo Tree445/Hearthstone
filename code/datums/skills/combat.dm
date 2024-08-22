@@ -68,3 +68,6 @@
 
 /datum/skill/combat/shields
 	name = "Shields"
+
+/datum/skill/combat/firearms
+	name = "Firearms"

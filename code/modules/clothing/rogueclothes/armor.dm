@@ -138,7 +138,6 @@
 	max_integrity = 150
 	equip_delay_self = 30
 
-
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel half-plate"
@@ -816,4 +815,22 @@
 	max_integrity = 100
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/iron
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/elfcuirass
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "elf cuirass"
+	desc = "An elegant cuirass in the Elven style.."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "chestplate"
+	item_state = "chestplate"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	boobed = TRUE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM

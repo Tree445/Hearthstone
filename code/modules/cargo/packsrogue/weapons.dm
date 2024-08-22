@@ -156,6 +156,36 @@
 					/obj/item/quiver/bolts,
 				)
 
+/datum/supply_pack/rogue/weapons/bullets
+	name = "Bullets"
+	cost = 15
+	contains = list(
+					/obj/item/ammo_casing/caseless/rogue/bullet,
+					/obj/item/ammo_casing/caseless/rogue/bullet,
+					/obj/item/ammo_casing/caseless/rogue/bullet,
+					/obj/item/ammo_casing/caseless/rogue/bullet,
+					/obj/item/ammo_casing/caseless/rogue/bullet,
+					)
+
+/datum/supply_pack/rogue/weapons/ammopouch/bullets
+	name = "Ammo Pouch"
+	cost = 50
+	contains = list(
+					/obj/item/ammopouch/bullets,
+					/obj/item/ammopouch/bullets,
+					/obj/item/ammopouch/bullets,
+				)
+
+/datum/supply_pack/rogue/weapons/matchlock
+	name = "Matchlock"
+	cost = 600
+	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock)
+
+/datum/supply_pack/rogue/weapons/jezail
+	name = "Jezail"
+	cost = 600
+	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/jezail)	
+
 /*
 /datum/supply_pack/rogue/weapons/Parrows
 	name = "Poisoned Arrows"

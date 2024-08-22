@@ -310,3 +310,29 @@
 	resistance_flags = FIRE_PROOF
 	sellprice = 15
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/neck/roguetown/psicross/ornate
+	name = "ornate amulet"
+	desc = ""
+	icon_state = "ornate"
+	item_state = "ornate"
+	//dropshrink = 0.75
+	resistance_flags = FIRE_PROOF
+	sellprice = 150
+
+/obj/item/clothing/neck/roguetown/psicross/skull
+	name = "skull necklace"
+	desc = ""
+	icon_state = "skullnecklace"
+	item_state = "skullnecklace"
+	//dropshrink = 0.75
+	sellprice = 1
+
+/obj/item/clothing/neck/roguetown/psicross/gskull
+	name = "golden skull necklace"
+	desc = ""
+	icon_state = "skullamulet"
+	item_state = "skullamulet"
+	//dropshrink = 0.75
+	resistance_flags = FIRE_PROOF
+	sellprice = 100		

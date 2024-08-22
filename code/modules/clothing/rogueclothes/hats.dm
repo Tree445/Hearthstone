@@ -54,6 +54,23 @@
 	sewrepair = TRUE
 	blocksound = SOFTHIT
 
+/obj/item/clothing/head/roguetown/swordmanshalal
+	name = "decorated keffiyeh"
+	desc = "A more decorated keffiyeh typically worn by Sayf Majaaniun."
+	color = null
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
+	icon_state = "shalalswordman"
+	item_state = "shalalswordman"
+	body_parts_covered = HEAD|HAIR|EARS|NECK
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = ""
+	max_integrity = 100
+	armor = list("blunt" = 16, "slash" = 19, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_TWIST)
+	anvilrepair = null
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+
 /obj/item/clothing/head/roguetown/roguehood
 	name = "hood"
 	desc = ""

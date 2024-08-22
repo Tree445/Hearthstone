@@ -31,6 +31,13 @@
 	craftdiff = 3
 	sellprice = 35
 
+/datum/crafting_recipe/roguetown/weaving/desertpants
+	name = "desert pants"
+	result = list(/obj/item/clothing/under/roguetown/trou/shortpants)
+	reqs = list(/obj/item/natural/cloth = 3)
+	craftdiff = 3
+	sellprice = 35	
+
 /datum/crafting_recipe/roguetown/weaving/shepardmask
 	name = "half-mask"
 	result = list(/obj/item/clothing/mask/rogue/shepherd)
@@ -51,7 +58,14 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/monk)
 	reqs = list(/obj/item/natural/cloth = 3)
 	craftdiff = 4
-	sellprice = 25	
+	sellprice = 25
+
+/datum/crafting_recipe/roguetown/weaving/purplerobes
+	name = "purple robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/purplerobe)
+	reqs = list(/obj/item/natural/cloth = 3)
+	craftdiff = 4
+	sellprice = 25		
 
 /datum/crafting_recipe/roguetown/weaving/astratarobe
 	name = "astrata robes"

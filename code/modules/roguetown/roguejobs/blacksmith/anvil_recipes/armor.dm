@@ -724,3 +724,11 @@
 	created_item = /obj/item/clothing/suit/roguetown/armor/plate/brigandarmor
 	craftdiff = 2
 	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/plate/elfcuirass
+	name = "Elf Cuirass (+2 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/elfcuirass
+	craftdiff = 3
+	i_type = "Armor"
