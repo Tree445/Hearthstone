@@ -39,8 +39,7 @@
 			H.change_stat("constitution", 1)
 			H.change_stat("perception", 1)
 			H.change_stat("speed", 2)
-			r_hand = /obj/item/rogueweapon/sword/long/marlin
-			backr = /obj/item/rogueweapon/sword/long/rider
+			backr = /obj/item/rogueweapon/sword/long/marlin
 			shoes = /obj/item/clothing/shoes/roguetown/shalal
 			head = /obj/item/clothing/head/roguetown/swordmanshalal
 			gloves = /obj/item/clothing/gloves/roguetown/angle
