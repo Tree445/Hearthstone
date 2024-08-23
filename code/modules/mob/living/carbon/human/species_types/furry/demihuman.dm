@@ -127,7 +127,7 @@
 		"Heartfell" = SKIN_COLOR_OTAVA,
 		"Highlander" = SKIN_COLOR_ETRUSCA,
 		"Moravian" = SKIN_COLOR_GRONN,
-		"Forester" = SKIN_COLOR_GIZA,
+		"Gizan" = SKIN_COLOR_GIZA,
 		"Zybantine" = SKIN_COLOR_SHALVISTINE,
 		"Merkite" = SKIN_COLOR_LALVESTINE,
 		"Valorian" = SKIN_COLOR_EBON,
