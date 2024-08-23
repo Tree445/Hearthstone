@@ -89,6 +89,16 @@
 	rotprocess = null
 	dropshrink = 0.60
 
+/datum/crafting_recipe/roguetown/cooking/uncookedapplejam
+	name = "uncooked apple jam"
+	reqs = list(
+		/obj/item/reagent_containers/glass/beaker/jar = 1,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 2,
+		/obj/item/reagent_containers/powder/sugar = 1)
+	result = /obj/item/reagent_containers/food/snacks/rogue/uncookedapplejam
+	craftdiff = 2
+	subtype_reqs = FALSE
+
 /obj/item/reagent_containers/food/snacks/rogue/uncookedapplejam
 	name = "uncooked apple jam"
 	desc = ""
@@ -98,8 +108,17 @@
 	foodtype = SUGAR
 	eat_effect = /datum/status_effect/buff/foodbuff
 	bitesize = 3
-	rotprocess = null
+	rotprocess = null	
 	dropshrink = 0.60
+
+/datum/crafting_recipe/roguetown/cooking/applejam
+	name = "apple jam"
+	reqs = list(
+		/datum/reagent/water = 10)
+	result = /obj/item/reagent_containers/food/snacks/rogue/applejam
+	craftdiff = 2
+	subtype_reqs = FALSE
+	tools = list(/obj/item/reagent_containers/glass/pot)
 
 /obj/item/reagent_containers/food/snacks/rogue/applejam
 	name = "apple jam"
@@ -110,6 +129,61 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("oversweet apple" = 1)
 	foodtype = SUGAR
+	bitesize = 3
+	rotprocess = null
+	dropshrink = 0.60
+	trash = /obj/item/reagent_containers/glass/beaker/jar
+
+/datum/crafting_recipe/roguetown/cooking/uncookedappletart
+	name = "uncooked apple tart"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/rogue/sweetdough= 1,
+		/obj/item/reagent_containers/food/snacks/rogue/applejam= 1)
+	result = list(	/obj/item/reagent_containers/food/snacks/rogue/uncookedappletart = 1,
+					/obj/item/reagent_containers/glass/beaker/jar = 1)
+	craftdiff = 2
+	subtype_reqs = FALSE
+
+/obj/item/reagent_containers/food/snacks/rogue/uncookedappletart
+	name = "uncooked apple tart"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "uncookedappletart"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/appletart
+	w_class = WEIGHT_CLASS_BULKY
+	tastes = list("crispy sweetened dough with a sugar glaze and hints of rosewater" = 1)
+	foodtype = SUGAR
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+	bitesize = 6
+	rotprocess = 30 MINUTES
+	dropshrink = 0.80
+
+/obj/item/reagent_containers/food/snacks/rogue/appletart
+	name = "apple tart"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "appletart"
+	slices_num = 6
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/appletartslice
+	list_reagents = list(/datum/reagent/consumable/nutriment = 48)
+	w_class = WEIGHT_CLASS_BULKY
+	tastes = list("A crispy dough with delicate, sweet apple filling" = 1)
+	foodtype = SUGAR
+	eat_effect = /datum/status_effect/buff/foodbuff
+	bitesize = 6
+	dropshrink = 0.80
+
+/obj/item/reagent_containers/food/snacks/rogue/appletartslice
+	name = "apple tart slice"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "appletartslice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("Soft, sweet filling, with a flaky dough" = 1)
+	foodtype = SUGAR
+	eat_effect = /datum/status_effect/buff/foodbuff
 	bitesize = 3
 	rotprocess = null
 	dropshrink = 0.60
