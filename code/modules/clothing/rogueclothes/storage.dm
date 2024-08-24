@@ -230,6 +230,7 @@
 			/obj/item/natural/bundle/cloth
 			/obj/item/natural/worms/leech
 			/obj/item/natural/worms/leech/cheele
+			/obj/item/reagent_containers/lux
 
 /obj/item/storage/backpack/rogue/skit/PopulateContents()
 	new /obj/item/rogueweapon/surgery/scalpel(src)
