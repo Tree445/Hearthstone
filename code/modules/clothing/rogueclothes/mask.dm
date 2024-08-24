@@ -189,3 +189,12 @@
 	body_parts_covered = EYES
 	sewrepair = TRUE
 	tint = 2
+
+/obj/item/clothing/mask/rogue/fakeclothblindfold
+	name = "fake cloth blindfold"
+	desc = "A blindfold made of cloth."
+	icon_state = "clothblindfold"
+	max_integrity = 10
+	integrity_failure = 0.5
+	body_parts_covered = EYES
+	sewrepair = TRUE
