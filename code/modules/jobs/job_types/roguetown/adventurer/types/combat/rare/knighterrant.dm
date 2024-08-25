@@ -4,7 +4,7 @@
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/adventurer/knighterrant
-	maximum_possible_slots = 6 // testing purposes!
+	maximum_possible_slots = 10 // testing purposes!
 	pickprob = 100 // for testing purposes
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_cavalry.ogg' // Spanish guitars fuck, don't @ me
