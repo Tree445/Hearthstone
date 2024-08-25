@@ -536,3 +536,17 @@
 				/obj/item/natural/bone = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/rockball
+	name = "rock matchlock ball"
+	result = list(
+				/obj/item/ammo_casing/caseless/rogue/bullet/stone,
+				/obj/item/ammo_casing/caseless/rogue/bullet/stone,
+				/obj/item/ammo_casing/caseless/rogue/bullet/stone,
+				/obj/item/ammo_casing/caseless/rogue/bullet/stone,
+				/obj/item/ammo_casing/caseless/rogue/bullet/stone)
+	reqs = list(/obj/item/natural/stone = 5)
+	tools = list(/obj/item/rogueweapon/hammer)
+	verbage_simple = "carve"
+	verbage = "carves"
+	craftdiff = 3

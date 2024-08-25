@@ -144,3 +144,29 @@
 	dropshrink = 0.5
 	possible_item_intents = list(/datum/intent/use)
 	max_integrity = 0.1
+
+/obj/projectile/bullet/reusable/bullet/stone
+	name = "stone ball"
+	damage = 25
+	damage_type = BRUTE
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/bullet/stone
+	range = 20
+	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
+	embedchance = 50
+	woundclass = BCLASS_STAB
+	flag = "bullet"
+	armor_penetration = 25
+	speed = 0.1
+
+/obj/item/ammo_casing/caseless/rogue/bullet/stone
+	name = "stone sphere"
+	desc = "A small stone sphere. This should go well with gunpowder."
+	projectile_type = /obj/projectile/bullet/reusable/bullet/stone
+	caliber = "musketball"
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball"
+	dropshrink = 0.5
+	possible_item_intents = list(/datum/intent/use)
+	max_integrity = 0.1
