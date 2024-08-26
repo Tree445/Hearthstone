@@ -5,7 +5,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/adventurer/cavalry
-	maximum_possible_slots = 6 // TESTING PURPOSES, WILL SEE HOW MANY STAY AFTER TESTS
+	maximum_possible_slots = 4 // TESTING PURPOSES, WILL SEE HOW MANY STAY AFTER TESTS
 	pickprob = 100 // TESTING PURPOSES, WILL SEE HOW MANY STAY AFTER TESTS
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_STEELHEARTED)
 	category_tags = list(CTAG_ADVENTURER)
