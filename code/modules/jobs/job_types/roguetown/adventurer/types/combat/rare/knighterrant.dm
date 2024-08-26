@@ -39,8 +39,8 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 	if(H.age == AGE_OLD)   // something about being careful of old ppl in a line of work where ppl die young. Old age cavalry would be suicide but go on
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE) // up to Apprentice
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE) // up to Apprentice
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE) // up to Journeyman. If you go old, might as well give you a bone.
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE) // up to Journeyman
 	H.change_stat("strength", 2)
 	H.change_stat("constitution", 2)
 	H.change_stat("endurance", 2)
