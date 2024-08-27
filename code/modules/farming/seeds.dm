@@ -88,3 +88,7 @@
 /obj/item/seeds/sugarcane
 	seed_identity = "sugarcane seeds"
 	plant_def_type = /datum/plant_def/sugarcane
+
+/obj/item/seeds/pumpkin
+	seed_identity = "pumpkin seeds"
+	plant_def_type = /datum/plant_def/pumpkin
