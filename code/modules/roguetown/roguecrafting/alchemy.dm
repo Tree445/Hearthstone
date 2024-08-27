@@ -51,6 +51,6 @@
 /datum/crafting_recipe/roguetown/alchemy/glassbottles
 	name = "2x glass bottles"
 	result = list(/obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/bottle)
-	reqs = list(/obj/item/rogueore/coal, /obj/item/natural/stone, /obj/item/natural/stone)
-	craftdiff = 0
+	reqs = list(/obj/item/natural/stone = 2, /obj/item/rogueore/coal = 1)
+	craftdiff = 1	//It hard break rock.... (Stops large amount of easy glass crafting by nobodies)
 	structurecraft = /obj/machinery/light/rogue/hearth
