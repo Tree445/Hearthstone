@@ -75,6 +75,17 @@
 	export_price = 3
 	importexport_amt = 10
 
+/datum/roguestock/stockpile/silk
+	name = "Silk"
+	desc = "Strands of high-quality silk to make luxury clothing."
+	item_type = /obj/item/natural/silk
+	held_items = list(0, 2)
+	payout_price = 2
+	withdraw_price = 4
+	transport_fee = 1
+	export_price = 4
+	importexport_amt = 10
+
 /datum/roguestock/stockpile/hide
 	name = "Hide"
 	desc = "Stripped hide from animals."
@@ -119,6 +130,17 @@
 	export_price = 3
 	importexport_amt = 10
 
+/datum/roguestock/stockpile/oats
+	name = "Oats"
+	desc = "Oat grain."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/oat
+	held_items = list(0, 4)
+	payout_price = 2
+	withdraw_price = 3
+	transport_fee = 1
+	export_price = 3
+	importexport_amt = 10
+
 /datum/roguestock/stockpile/apple
 	name = "Apple"
 	desc = "Harvested produce."
@@ -136,7 +158,7 @@
 	item_type = /obj/item/reagent_containers/food/snacks/grown/rogue/potato
 	held_items = list(0, 0)
 	payout_price = 3
-	withdraw_price = 5
+	withdraw_price = 6
 	transport_fee = 1
 	export_price = 5
 	importexport_amt = 5
@@ -204,7 +226,7 @@
 	payout_price = 6
 	withdraw_price = 10
 	transport_fee = 3
-	export_price = 5
+	export_price = 10
 	importexport_amt = 5
 
 /datum/roguestock/stockpile/carp

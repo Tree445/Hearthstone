@@ -21559,6 +21559,10 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/tavern)
+"pMn" = (
+/obj/structure/roguemachine/bounty,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/town)
 "pMx" = (
 /obj/structure/fluff/statue/secret{
 	color = "#3F3E3D";
@@ -22619,6 +22623,10 @@
 "quL" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
@@ -309928,7 +309936,7 @@ wKT
 xpM
 wbg
 wbg
-wVI
+pMn
 uqe
 uqe
 uqe

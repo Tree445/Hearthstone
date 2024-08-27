@@ -253,7 +253,7 @@
 	icon_state = "potato"
 	tastes = list("starchy" = 1)
 	bitesize = 5
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)	//Better than apple, still not a whole meal.
 	dropshrink = 0.75
 	//var/color_index = "good"
 	can_distill = TRUE
