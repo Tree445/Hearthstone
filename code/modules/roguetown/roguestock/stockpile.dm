@@ -80,10 +80,10 @@
 	desc = "Stripped hide from animals."
 	item_type = /obj/item/natural/hide
 	held_items = list(0, 0)
-	payout_price = 10
-	withdraw_price = 15
+	payout_price = 6
+	withdraw_price = 12
 	transport_fee = 3
-	export_price = 15
+	export_price = 12
 	importexport_amt = 5
 
 /datum/roguestock/stockpile/fur
@@ -91,10 +91,10 @@
 	desc = "Hide with a long winter coat from animals."
 	item_type = /obj/item/natural/fur
 	held_items = list(0, 0)
-	payout_price = 15
-	withdraw_price = 23
+	payout_price = 10
+	withdraw_price = 20
 	transport_fee = 5
-	export_price = 23
+	export_price = 20
 	importexport_amt = 5
 
 /datum/roguestock/stockpile/salt
@@ -157,7 +157,7 @@
 	desc = "Edible flesh harvested from animals."
 	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
 	held_items = list(0, 0)
-	payout_price = 5
+	payout_price = 4
 	withdraw_price = 8
 	transport_fee = 2
 	export_price = 8
@@ -168,7 +168,7 @@
 	desc = "Edible flesh harvested from birds."
 	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
 	held_items = list(0, 0)
-	payout_price = 5
+	payout_price = 4
 	withdraw_price = 8
 	transport_fee = 2
 	export_price = 8
