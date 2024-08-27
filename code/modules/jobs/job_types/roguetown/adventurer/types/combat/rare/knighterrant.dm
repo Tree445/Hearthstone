@@ -1,6 +1,6 @@
 /datum/advclass/knighterrant
 	name = "Knight-errant"
-	tutorial = "Once part of a noble family, you were cast away. Yet, your honor remains intact - and your victories many. When a warrior is gone, that will be his best and only bulwark."
+	tutorial = "Once part of a noble family, you were cast away. A path closes, yet a thousand open up, brimming with the opportunity of new victories. When a warrior is gone, that will be his best and only bulwark."
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
