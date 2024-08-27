@@ -273,3 +273,13 @@
 	foodtype = SUGAR
 	tastes = list("sugar" = 1)
 	grind_results = list(/datum/reagent/sugar = 10)
+
+/obj/item/reagent_containers/food/snacks/grown/pumpkin
+	seed = /obj/item/seeds/pumpkin
+	name = "pumpkin"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "pumpkin"
+	tastes = list("pumpkin" = 1)
+	dropshrink = 0.75
+	bitesize_mod = 3
