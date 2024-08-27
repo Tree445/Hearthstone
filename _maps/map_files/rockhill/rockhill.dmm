@@ -18583,12 +18583,6 @@
 /obj/structure/bars,
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/rtfield)
-"nKn" = (
-/obj/structure/mineral_door/wood/window{
-	lockid = "tavern"
-	},
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/town/tavern)
 "nKt" = (
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/twig,
@@ -411651,7 +411645,7 @@ wan
 lHe
 lHe
 lHe
-nKn
+wan
 fZJ
 fZJ
 fZJ
@@ -412053,7 +412047,7 @@ wan
 xYz
 xYz
 xYz
-nKn
+voa
 fZJ
 fZJ
 fZJ
@@ -412455,7 +412449,7 @@ yab
 peZ
 peZ
 dPs
-vka
+wan
 fZJ
 fZJ
 fZJ
@@ -412857,7 +412851,7 @@ wan
 tIi
 jDY
 uDy
-vka
+wan
 fZJ
 fZJ
 fZJ
