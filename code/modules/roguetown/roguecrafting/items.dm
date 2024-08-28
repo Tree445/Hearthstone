@@ -499,12 +499,42 @@
 	verbage = "crafted"
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/tribalskull
+	name = "wendigo helmet"
+	result = /obj/item/clothing/head/roguetown/tribalskull
+	reqs = list(/obj/item/natural/bone = 3,
+				/obj/item/natural/fibers = 1)
+	sellprice = 10
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0
+
 /datum/crafting_recipe/roguetown/skullcrotch
-	name = "skull pants"
-	result = /obj/item/clothing/under/roguetown/trou/skullcrotchplate
+	name = "skull belt"
+	result = /obj/item/storage/belt/rogue/bone/skullbelt
 	reqs = list(/obj/item/natural/bone = 1,
 				/obj/item/natural/fibers = 1)
 	sellprice = 4
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0	
+
+/datum/crafting_recipe/roguetown/bonearmor
+	name = "bone armor"
+	result = /obj/item/clothing/suit/roguetown/armor/bone/chestplate
+	reqs = list(/obj/item/natural/bone = 3,
+				/obj/item/natural/fibers = 1)
+	sellprice = 1
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0	
+
+/datum/crafting_recipe/roguetown/bonegreaves
+	name = "bone greaves"
+	result = /obj/item/clothing/shoes/roguetown/boots/bonegreaves
+	reqs = list(/obj/item/natural/bone = 2,
+				/obj/item/natural/fibers = 1)
+	sellprice = 1
 	verbage_simple = "craft"
 	verbage = "crafted"
 	craftdiff = 0	

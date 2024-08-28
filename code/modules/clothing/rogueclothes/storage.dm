@@ -295,3 +295,11 @@
 	icon_state = "exoticsilkbelt"
 	heldz_items = 1
 	sewrepair = TRUE
+
+/obj/item/storage/belt/rogue/bone/skullbelt
+	name = "skull belt"
+	desc = "Worn by barbarians, tribals and madmen. Not in that particular order."
+	icon_state = "skullcrotch"
+	item_state = "skullcrotch"
+	heldz_items = 3
+
