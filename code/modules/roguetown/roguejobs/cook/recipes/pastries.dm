@@ -221,7 +221,7 @@
 	name = "uncooked berry jam"
 	reqs = list(
 		/obj/item/reagent_containers/glass/beaker/jar = 1,
-		/obj/item/reagent_containers/food/snacks/grown/berries = 3,
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 3,
 		/obj/item/reagent_containers/powder/sugar = 1)
 	result = /obj/item/reagent_containers/food/snacks/rogue/uncookedberryjam
 	craftdiff = 2
