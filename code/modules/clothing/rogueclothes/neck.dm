@@ -356,3 +356,29 @@
 	body_parts_covered = NECK|MOUTH
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
+
+/obj/item/clothing/neck/roguetown/psicross/ornate
+	name = "ornate amulet"
+	desc = ""
+	icon_state = "ornate"
+	item_state = "ornate"
+	//dropshrink = 0.75
+	resistance_flags = FIRE_PROOF
+	sellprice = 150
+
+/obj/item/clothing/neck/roguetown/psicross/skull
+	name = "skull necklace"
+	desc = ""
+	icon_state = "skullnecklace"
+	item_state = "skullnecklace"
+	//dropshrink = 0.75
+	sellprice = 1
+
+/obj/item/clothing/neck/roguetown/psicross/gskull
+	name = "golden skull necklace"
+	desc = ""
+	icon_state = "skullamulet"
+	item_state = "skullamulet"
+	//dropshrink = 0.75
+	resistance_flags = FIRE_PROOF
+	sellprice = 100		

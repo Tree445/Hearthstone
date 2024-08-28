@@ -1531,26 +1531,6 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 
-/obj/item/clothing/head/roguetown/helmet/brigandhelmet
-	name = "iron helmet"
-	desc = "A helmet made of iron, provides adequate protection at the expense of vision."
-	block2add = FOV_BEHIND
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
-	icon_state = "brigandhelm"
-	item_state = "brigandhelm"
-	smeltresult = /obj/item/ingot/iron
-
-/obj/item/clothing/head/roguetown/helmet/spiderhelmet
-	name = "spider helmet"
-	desc = "A wide steel helmet with six vision slits making it appear like the head of a spider."
-	icon_state = "spiderhelm"
-	item_state = "spiderhelm"
-	emote_environment = 3
-	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
-	block2add = FOV_BEHIND
-	smeltresult = /obj/item/ingot/steel
-
 /obj/item/clothing/head/roguetown/helmet/heavy/xylixcagehelm
 	name = "xylix cage helmet"
 	desc = "Headwear commonly worn by acolytes who worship Xylix. Life is a cage and we must all do our time."

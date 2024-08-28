@@ -331,3 +331,8 @@
 	name = "hide cloak"
 	result = /obj/item/clothing/cloak/hidecloak
 	reqs = list(/obj/item/natural/hide = 3)
+
+/datum/crafting_recipe/roguetown/leather/blackleatherbelt
+	name = "black leather belt"
+	result = /obj/item/storage/belt/rogue/leather/blackleather
+	reqs = list(/obj/item/natural/hide = 1)

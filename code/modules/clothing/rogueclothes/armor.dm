@@ -760,14 +760,6 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
 
-/obj/item/clothing/suit/roguetown/armor/plate/spiderarmor
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "spider cuirass"
-	desc = "A cuirass of steel decorated with the image of a spider."
-	body_parts_covered = CHEST|VITALS
-	icon_state = "spiderarmor"
-	item_state = "spiderarmor"
-
 /obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "psydonian knight cuirass"
@@ -800,22 +792,6 @@
 	max_integrity = 300
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
-	armor_class = ARMOR_CLASS_MEDIUM
-
-/obj/item/clothing/suit/roguetown/armor/plate/brigandarmor
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "iron cuirass"
-	desc = "A basic cuirass of iron, lightweight and provides adequate protection."
-	body_parts_covered = CHEST|VITALS
-	icon_state = "brigand"
-	item_state = "brigand"
-	armor = list("blunt" = 80, "slash" = 60, "stab" = 20, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	allowed_race = CLOTHED_RACES_TYPES
-	do_sound = FALSE
-	blocking_behavior = null
-	max_integrity = 200
-	anvilrepair = /datum/skill/craft/armorsmithing
-	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/plate/rustedarmor

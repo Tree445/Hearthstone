@@ -566,3 +566,20 @@
 				/obj/item/natural/bone = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/skullnecklace
+	name = "skull necklace"
+	result = /obj/item/clothing/neck/roguetown/psicross/skull
+	reqs = list(/obj/item/natural/bone = 1,
+				/obj/item/natural/fibers = 1)
+	sellprice = 1
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0		
+
+/datum/crafting_recipe/roguetown/banner
+	name = "battle standard"
+	result = /obj/item/rogueweapon/spear/banner
+	reqs = list(/obj/item/grown/log/tree/stick = 1,
+				/obj/item/grown/log/tree/small = 1)
+	craftdiff = 1
