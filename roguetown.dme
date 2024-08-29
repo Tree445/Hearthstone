@@ -2264,6 +2264,7 @@
 #include "code\modules\jobs\job_types\roguetown\courtier\physician.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\bogguard.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\bogmaster.dm"
+#include "code\modules\jobs\job_types\roguetown\garrison\dungeoneer.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\gatemaster.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\royalguard.dm"
 #include "code\modules\jobs\job_types\roguetown\garrison\sheriff.dm"
