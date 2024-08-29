@@ -28,23 +28,23 @@
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+			neck = /obj/item/clothing/neck/roguetown/chaincoif
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			wrists = /obj/item/clothing/wrists/roguetown/bracers
 			belt = /obj/item/storage/belt/rogue/leather/black
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 			backr = /obj/item/rogueweapon/shield/tower
 			beltr = /obj/item/flashlight/flare/torch/lantern
-			beltl = /obj/item/rogueweapon/sword/short
+			beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 			if(prob(15))
 				r_hand = /obj/item/rogueweapon/eaglebeak/lucerne
 			else
 				r_hand = /obj/item/rogueweapon/spear/billhook
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -85,10 +85,10 @@
 				beltl = /obj/item/rogueweapon/stoneaxe/woodcut/steel
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
