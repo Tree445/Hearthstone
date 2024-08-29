@@ -501,3 +501,73 @@
 		icon_state = "pumpkincandy2"
 	if(bitecount == 5)
 		icon_state = "pumpkincandy1"
+
+/datum/crafting_recipe/roguetown/cooking/applecandy
+	name = "apple candy"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/rogue/candybase = 1,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 1)
+	result = /obj/item/reagent_containers/food/snacks/rogue/applecandy
+	craftdiff = 1
+	subtype_reqs = FALSE
+	tools = list(/obj/item/reagent_containers/glass/pot)
+
+/obj/item/reagent_containers/food/snacks/rogue/applecandy
+	name = "apple candy"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "applecandy6"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("sweet, tart apple candy" = 1)
+	foodtype = SUGAR
+	bitesize = 6
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/applecandy/On_Consume(mob/living/eater)
+	..()
+	if(bitecount == 1)
+		icon_state = "applecandy5"
+	if(bitecount == 2)
+		icon_state = "applecandy4"
+	if(bitecount == 3)
+		icon_state = "applecandy3"
+	if(bitecount == 4)
+		icon_state = "applecandy2"
+	if(bitecount == 5)
+		icon_state = "applecandy1"
+
+/datum/crafting_recipe/roguetown/cooking/berrycandy
+	name = "berry candy"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/rogue/candybase = 1,
+		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1)
+	result = /obj/item/reagent_containers/food/snacks/rogue/berrycandy
+	craftdiff = 1
+	subtype_reqs = FALSE
+	tools = list(/obj/item/reagent_containers/glass/pot)
+
+/obj/item/reagent_containers/food/snacks/rogue/berrycandy
+	name = "berry candy"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "berrycandy6"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("sweet, tart berry candy" = 1)
+	foodtype = SUGAR
+	bitesize = 6
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/berrycandy/On_Consume(mob/living/eater)
+	..()
+	if(bitecount == 1)
+		icon_state = "berrycandy5"
+	if(bitecount == 2)
+		icon_state = "berrycandy4"
+	if(bitecount == 3)
+		icon_state = "berrycandy3"
+	if(bitecount == 4)
+		icon_state = "berrycandy2"
+	if(bitecount == 5)
+		icon_state = "berrycandy1"
