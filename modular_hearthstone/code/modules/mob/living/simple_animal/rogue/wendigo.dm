@@ -17,8 +17,8 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 13,
 						/obj/item/natural/hide = 15, /obj/item/natural/bundle/bone/full = 3)
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 250
-	maxHealth = 300
+	health = 400
+	maxHealth = 500
 	melee_damage_lower = 35
 	melee_damage_upper = 50
 	vision_range = 6
@@ -31,7 +31,7 @@
 	pooptype = null
 	STACON = 15
 	STASTR = 15
-	STASPD = 3
+	STASPD = 5
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 10
