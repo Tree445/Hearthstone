@@ -1,12 +1,12 @@
 /datum/advclass/cavalry
-	name = "Cavalry" // Medium armor fighter, melee-focused, expert at 1-2 weapons, mediocre at rest. 
+	name = "Cavalry" // Medium armor fighter, melee-focused, expert at 1 weapon + some wrestling proefficiency, mediocre at rest. 
 	tutorial = "You wandered off from your home seeking adventure, roaming to greener pastures for honor and chilvalry. You became an instrument of war, sitting atop a saiga, weapon and shield in hand! What will await here?"
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/adventurer/cavalry
-	maximum_possible_slots = 4 // TESTING PURPOSES, WILL SEE HOW MANY STAY AFTER TESTS
-	pickprob = 100 // TESTING PURPOSES, WILL SEE HOW MANY STAY AFTER TESTS
+	maximum_possible_slots = 4 // Seems like an OK number??? May remove cap otherwise but lower pick prob too
+	pickprob = 50 // might as well bring it down to KE
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_STEELHEARTED)
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_cavalry.ogg' // Spanish guitars fuck, don't @ me
@@ -54,9 +54,10 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+			ADD_TRAIT.(H, TRAIT_SCHIZO_AMBIENCE)
 			H.change_stat("strength", 2)
-			H.change_stat("endurance", 2)
-			H.change_stat("constitution", 2)
+			H.change_stat("endurance", 1)
+			H.change_stat("constitution", 1)
 			H.change_stat("intelligence", -1)
 			H.change_stat("speed", -1)
 			H.change_stat("perception", -1) // The idea here is a knight with good proficiency at spears and shield! He can still learn something, maybe.
@@ -76,12 +77,9 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
-			if(prob(33))
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-				beltl = /obj/item/rogueweapon/sword/short
-			else if(prob(33))
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-				beltl = /obj/item/rogueweapon/sword/falchion
+			if(prob(1)) //If you're THAT lucky.
+				H.mind.adjust_skillrank(/datum/skill/combat/axes, 5, TRUE)
+				beltl = /obj/item/rogueweapon/stoneaxe/battle
 			else
 				H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE)
 				beltl = /obj/item/rogueweapon/stoneaxe/woodcut/steel
@@ -94,15 +92,15 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.change_stat("perception", -1)
-			H.change_stat("endurance", 3)
-			H.change_stat("intelligence", -1)
+			H.mind.adjust_skillrank(/datum/skill/labor/lumberjacking, 2, TRUE) //i mean, if you have axes, might as well?
+			H.change_stat("perception", -2)
+			H.change_stat("endurance", 2)
+			H.change_stat("intelligence", -2)
 			H.change_stat("speed", -1)
 			H.change_stat("strength", 2)
-			H.change_stat("constitution",2) // Gimmick is war. Hand to hand, sword or axe. War. Ideally, still on saiga. good sword/axe, good wrestling/unarmed, shit otherwise
+			H.change_stat("constitution",1) // Gimmick is war. Hand to hand, axe is rad. War. Ideally, still on saiga. good axe, good wrestling/unarmed, shit otherwise
 		if("Conqueror")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You can't quite recall something such as an easy life. Your arms are accustomed to the weight of a tool of war in hand. Gladly you obey and go where duty calls - to confront destiny, weapon in hand."))
@@ -120,7 +118,7 @@
 			backpack_contents = list(/obj/item/rogueweapon/huntingknife = 1)
 			beltl = /obj/item/rogueweapon/flail
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
@@ -133,7 +131,7 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.change_stat("perception", -2)
-			H.change_stat("endurance", 3)
+			H.change_stat("endurance", 1)
 			H.change_stat("intelligence", -2)
 			H.change_stat("strength", 2)
 			H.change_stat("speed", -1)
