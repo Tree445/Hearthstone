@@ -57,7 +57,7 @@
 			ADD_TRAIT.(H, TRAIT_SCHIZO_AMBIENCE)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 1)
-			H.change_stat("constitution", 1)
+			H.change_stat("constitution", 2)
 			H.change_stat("intelligence", -1)
 			H.change_stat("speed", -1)
 			H.change_stat("perception", -1) // The idea here is a knight with good proficiency at spears and shield! He can still learn something, maybe.
