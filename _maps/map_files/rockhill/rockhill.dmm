@@ -6400,12 +6400,6 @@
 /obj/structure/fermenting_barrel,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
-"eew" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/blocks{
-	icon_state = "newstone2"
-	},
-/area/rogue/indoors/town/church)
 "eeD" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/powder/flour/salt,
@@ -7992,23 +7986,15 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
 "fnF" = (
-/obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
-	lockid = "church"
-	},
-/turf/open/floor/rogue/churchmarble,
-/area/rogue/indoors/town/church)
-"foh" = (
-/obj/item/natural/stone,
-/turf/open/floor/rogue/concrete,
-/area/rogue/under/cavewet/bogcaves/sunkencity)
-"foR" = (
-/obj/structure/fluff/railing/wood,
 /obj/structure/stairs/stone{
 	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/church)
+"foh" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/cavewet/bogcaves/sunkencity)
 "foS" = (
 /obj/structure/rack/rogue,
 /obj/item/roguekey/roomiv{
@@ -8578,6 +8564,12 @@
 /obj/structure/fluff/walldeco/chains,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors)
+"fLH" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/blocks{
+	icon_state = "newstone2"
+	},
+/area/rogue/indoors/town/church)
 "fLI" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -13448,8 +13440,8 @@
 /turf/open/floor/rogue/ruinedwood/platform,
 /area/rogue/indoors)
 "jjS" = (
-/obj/structure/fluff/railing/wood,
-/turf/closed/wall/mineral/rogue/decostone/long,
+/obj/machinery/light/rogue/firebowl,
+/turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/church)
 "jkg" = (
 /obj/structure/table/wood{
@@ -14655,6 +14647,12 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
+"kiD" = (
+/obj/machinery/light/rogue/torchholder/r{
+	dir = 4
+	},
+/turf/open/floor/rogue/churchmarble,
+/area/rogue/indoors/town/church)
 "kiR" = (
 /obj/item/grown/log/tree/stick,
 /turf/open/floor/rogue/dirt,
@@ -22129,7 +22127,9 @@
 /obj/structure/stairs/stone{
 	dir = 4
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
 /area/rogue/indoors/town/church)
 "pHg" = (
 /obj/structure/table/wood,
@@ -24005,6 +24005,13 @@
 "qXC" = (
 /turf/closed/wall/mineral/rogue/stone/window/blue_moss,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
+"qXN" = (
+/obj/structure/fluff/railing/wood,
+/obj/structure/stairs/stone{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/rogue/indoors/town/church)
 "qXQ" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -24383,6 +24390,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
+"rkW" = (
+/obj/machinery/light/rogue/torchholder/r{
+	dir = 2;
+	pixel_y = 16
+	},
+/turf/open/floor/rogue/blocks/stonered,
+/area/rogue/indoors/town/church)
 "rlK" = (
 /obj/item/grown/log/tree,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -25032,11 +25046,11 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "rKn" = (
-/obj/machinery/light/rogue/torchholder/r{
-	dir = 2;
-	pixel_y = 16
+/obj/structure/mineral_door/wood/donjon/stone{
+	locked = 1;
+	lockid = "church"
 	},
-/turf/open/floor/rogue/blocks/stonered,
+/turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
 "rKq" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner{
@@ -26015,12 +26029,6 @@
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves)
-"sqt" = (
-/obj/machinery/light/rogue/torchholder/r{
-	dir = 4
-	},
-/turf/open/floor/rogue/churchmarble,
-/area/rogue/indoors/town/church)
 "squ" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town/roofs)
@@ -27772,8 +27780,8 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
 "tHC" = (
-/obj/machinery/light/rogue/firebowl,
-/turf/open/floor/rogue/grass,
+/obj/structure/roguewindow/stained/silver,
+/turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/church)
 "tHN" = (
 /obj/machinery/light/rogue/torchholder/c{
@@ -28326,13 +28334,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
-"ueJ" = (
-/obj/structure/fluff/railing/wood,
-/obj/machinery/light/rogue/torchholder/r{
-	dir = 4
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/indoors/town/church)
 "ueR" = (
 /obj/structure/glowshroom,
 /obj/structure/spacevine,
@@ -32563,10 +32564,11 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "xnv" = (
-/obj/structure/stairs/stone{
-	dir = 8
+/obj/structure/fluff/railing/wood,
+/obj/machinery/light/rogue/torchholder/r{
+	dir = 4
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/church)
 "xny" = (
 /obj/item/flashlight/flare/torch,
@@ -32964,10 +32966,6 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors)
-"xzD" = (
-/obj/structure/roguewindow/stained/silver,
-/turf/open/floor/rogue/blocks/stonered,
-/area/rogue/indoors/town/church)
 "xzN" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled,
 /turf/open/floor/rogue/dirt/road,
@@ -425733,7 +425731,7 @@ teW
 kqc
 wAm
 wAm
-jjS
+wAm
 vMQ
 vsf
 qpX
@@ -426143,7 +426141,7 @@ bEL
 jiv
 jiv
 nzv
-teW
+nzv
 teW
 teW
 fZJ
@@ -426535,9 +426533,9 @@ jiv
 uSx
 teW
 nSr
-xnv
-xnv
-foR
+fnF
+fnF
+qXN
 nSr
 nSr
 qpX
@@ -427343,7 +427341,7 @@ nSr
 jiv
 nSr
 vIX
-eew
+fLH
 nSr
 teW
 ael
@@ -427351,7 +427349,7 @@ cLL
 wUw
 wUw
 wUw
-ueJ
+xnv
 enq
 fZJ
 fZJ
@@ -427742,11 +427740,11 @@ tML
 tML
 qpX
 teW
-fnF
+rKn
 cAe
 teW
 teW
-fnF
+rKn
 teW
 bHY
 syv
@@ -428150,7 +428148,7 @@ tak
 ovP
 uAj
 teW
-tHC
+jjS
 syv
 fVE
 wUw
@@ -431762,11 +431760,11 @@ teW
 tML
 tML
 cAe
-fnF
+rKn
 tML
 tML
 tML
-fnF
+rKn
 tML
 cfY
 cfY
@@ -433369,8 +433367,8 @@ uBv
 tML
 tML
 tML
-xzD
-fnF
+tHC
+rKn
 tML
 rMM
 cfY
@@ -433775,7 +433773,7 @@ uAj
 uAj
 tML
 tML
-rKn
+rkW
 tcW
 tcW
 tcW
@@ -434175,7 +434173,7 @@ ojp
 nIr
 uAj
 uAj
-sqt
+kiD
 pzU
 cfY
 cfY
@@ -435383,7 +435381,7 @@ uAj
 uAj
 tML
 tML
-rKn
+rkW
 bWq
 iMA
 iMA
