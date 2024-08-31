@@ -122,6 +122,11 @@
 		fertilize_amount = 150
 	else if (istype(attacking_item, /obj/item/compost))
 		fertilize_amount = 150
+	else if (istype(attacking_item, /obj/item/fertilizer))
+		to_chat(user, span_notice("Something about this mixture..."))
+		fertilize_soil()
+		qdel(attacking_item)
+		return TRUE
 	if(fertilize_amount > 0)
 		if(nutrition >= MAX_PLANT_NUTRITION * 0.8)
 			to_chat(user, span_warning("The soil is already fertilized!"))
@@ -239,6 +244,8 @@
 	update_icon()
 
 /obj/structure/soil/proc/bless_soil()
+	if(blessed_time > 15 MINUTES)
+		return
 	blessed_time = 15 MINUTES
 	// It's a miracle! Plant comes back to life when blessed by Dendor
 	if(plant && plant_dead)
@@ -253,6 +260,17 @@
 	// And it grows a little!
 	if(plant)
 		add_growth(2 MINUTES)
+
+/obj/structure/soil/proc/fertilize_soil()
+	blessed_time = 60 MINUTES //Meant to outlast the effects of dendor's blessing
+
+	// Similar effects on nutrition
+	if(nutrition < 100)
+		adjust_nutrition(max(100 - nutrition, 0))
+	// Similar effects on water
+	if(water < 100)
+		adjust_water(max(100 - water, 0))
+	//No growth bonus nor plant revival.
 
 /obj/structure/soil/proc/adjust_water(adjust_amount)
 	water = clamp(water + adjust_amount, 0, MAX_PLANT_WATER)
