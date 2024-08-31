@@ -280,6 +280,7 @@
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "pumpkin"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	tastes = list("pumpkin" = 1)
 	dropshrink = 0.75
 	bitesize_mod = 3
@@ -290,6 +291,18 @@
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "carrot"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("carrot" = 1)
 	dropshrink = 0.75
 	bitesize_mod = 2
+
+/obj/item/reagent_containers/food/snacks/grown/garlic
+	seed = /obj/item/seeds/garlic
+	name = "garlic"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "garlic"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("garlic" = 1)
+	dropshrink = 0.75
+	bitesize_mod = 1
