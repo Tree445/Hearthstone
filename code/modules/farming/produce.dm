@@ -283,3 +283,13 @@
 	tastes = list("pumpkin" = 1)
 	dropshrink = 0.75
 	bitesize_mod = 3
+
+/obj/item/reagent_containers/food/snacks/grown/carrot
+	seed = /obj/item/seeds/carrot
+	name = "carrot"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "carrot"
+	tastes = list("carrot" = 1)
+	dropshrink = 0.75
+	bitesize_mod = 2
