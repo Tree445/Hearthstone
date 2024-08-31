@@ -460,6 +460,10 @@
 	// Lots of weeds harm the plant
 	if(weeds >= MAX_PLANT_WEEDS * 0.6)
 		adjust_plant_health(-dt * PLANT_WEEDS_HARM_RATE)
+
+	// Blessed plants don't drain water
+	if(blessed_time > 0)
+		drain_rate = 0
 	// Regenerate plant health if we dont drain water, or we have the water
 	if(drain_rate <= 0 || water > 0)
 		adjust_plant_health(dt * PLANT_REGENERATION_RATE)
