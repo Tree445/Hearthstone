@@ -571,3 +571,53 @@
 		icon_state = "berrycandy2"
 	if(bitecount == 5)
 		icon_state = "berrycandy1"
+
+/datum/crafting_recipe/roguetown/cooking/rawcarrotcake
+	name = "raw carrot cake"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/rogue/sweetdough= 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 3)
+	result = list(	/obj/item/reagent_containers/food/snacks/rogue/rawcarrotcake = 1)
+	craftdiff = 1
+	subtype_reqs = FALSE
+
+/obj/item/reagent_containers/food/snacks/rogue/rawcarrotcake
+	name = "raw carrot cake"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "rawcarrotcake"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/carrotcake
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("sweet, spiced carrot cake" = 1)
+	foodtype = SUGAR
+	eat_effect = /datum/status_effect/debuff/uncookedfood
+	rotprocess = 30 MINUTES
+
+/obj/item/reagent_containers/food/snacks/rogue/carrotcake
+	name = "carrot cake"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "carrotcake"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 48)
+	slices_num = 6
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/carrotcakeslice
+	dropshrink = 0.80
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("sweet, spiced carrot cake" = 1)
+	foodtype = SUGAR
+	bitesize = 3
+	rotprocess = null
+
+/obj/item/reagent_containers/food/snacks/rogue/carrotcakeslice
+	name = "carrot cake slice"
+	desc = ""
+	icon = 'icons/roguetown/items/food.dmi'
+	icon_state = "carrotcakeslice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
+	w_class = WEIGHT_CLASS_NORMAL
+	tastes = list("sweet, spiced carrot cake" = 1)
+	foodtype = SUGAR
+	bitesize = 3
+	rotprocess = null
+	dropshrink = 0.60
