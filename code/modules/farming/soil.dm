@@ -490,7 +490,7 @@
 	// If soil is blessed, grow faster and take up less nutriments
 	if(blessed_time > 0)
 		growth_multiplier *= 2.0
-		nutriment_eat_mutliplier *= 0.4
+		nutriment_eat_mutliplier *= 0.0
 	// If there's too many weeds, they hamper the growth of the plant
 	if(weeds >= MAX_PLANT_WEEDS * 0.3)
 		growth_multiplier *= 0.75

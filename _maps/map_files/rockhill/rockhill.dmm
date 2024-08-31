@@ -2930,6 +2930,12 @@
 /obj/item/seeds/sugarcane,
 /obj/item/seeds/sugarcane,
 /obj/item/seeds/sugarcane,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/garlic,
+/obj/item/seeds/garlic,
+/obj/item/seeds/garlic,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
 "bFc" = (
@@ -10707,6 +10713,10 @@
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/town)
+"hxm" = (
+/obj/structure/composter,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "hxn" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/rogue/carpet,
@@ -22379,6 +22389,9 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
+/obj/item/seeds/carrot,
+/obj/item/seeds/carrot,
+/obj/item/seeds/carrot,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
 "qpt" = (
@@ -22952,6 +22965,11 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/garrison)
+"qKU" = (
+/obj/item/fertilizer,
+/obj/item/fertilizer,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield)
 "qLl" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1
@@ -322095,7 +322113,7 @@ lvc
 fxx
 fxx
 fxx
-wSn
+qKU
 wSn
 wSn
 wSn
@@ -322896,7 +322914,7 @@ ryI
 ltT
 byt
 ryI
-uaL
+hxm
 fxx
 fxx
 uaL
