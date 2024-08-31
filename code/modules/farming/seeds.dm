@@ -96,3 +96,7 @@
 /obj/item/seeds/carrot
 	seed_identity = "carrot seeds"
 	plant_def_type = /datum/plant_def/carrot
+
+/obj/item/seeds/garlic
+	seed_identity = "garlic seeds"
+	plant_def_type = /datum/plant_def/garlic
