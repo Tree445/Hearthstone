@@ -528,6 +528,15 @@
 	craftdiff = 1
 	subtype_reqs = FALSE
 
+/datum/crafting_recipe/roguetown/cooking/garlictoastslice
+	name = "garlic toast"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/rogue/breadslice/toastbuttered = 1,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1)
+	result = /obj/item/reagent_containers/food/snacks/rogue/garlictoast
+	craftdiff = 1
+	subtype_reqs = FALSE
+
 /obj/item/reagent_containers/food/snacks/rogue/garlictoast
 	name = "garlic toast"
 	desc = ""
