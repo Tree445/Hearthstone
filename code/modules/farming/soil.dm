@@ -494,7 +494,7 @@
 	// If soil is blessed, grow faster and take up less nutriments
 	if(blessed_time > 0)
 		growth_multiplier *= 2.0
-		nutriment_eat_mutliplier *= 0.0
+		nutriment_eat_mutliplier *= 0.4
 	// If there's too many weeds, they hamper the growth of the plant
 	if(weeds >= MAX_PLANT_WEEDS * 0.3)
 		growth_multiplier *= 0.75
@@ -546,7 +546,9 @@
 
 	adjust_water(-dt * SOIL_WATER_DECAY_RATE)
 	adjust_nutrition(-dt * SOIL_NUTRIMENT_DECAY_RATE)
-
+	if(blessed_time > 0)
+		nutrition = 100
+		water = 100
 	tilled_time = max(tilled_time - dt, 0)
 	blessed_time = max(blessed_time - dt, 0)
 
