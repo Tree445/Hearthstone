@@ -65,7 +65,7 @@
 			H.set_blindness(0)
 			to_chat(H, span_warning("You've seen battle, and you've known victory! Yet here you are- forced to roam for glory. If all men knew that banishment would be like this, we'd have a world of exiles."))
 			shoes = /obj/item/clothing/shoes/roguetown/ridingboots
-			head = /obj/item/clothing/head/roguetown/helmet
+			head = /obj/item/clothing/head/roguetown/helmet/ironplatehelmet
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -136,6 +136,12 @@
 			H.change_stat("strength", 2)
 			H.change_stat("speed", -1)
 			H.change_stat("constitution", 3) // You're the closest to a civilized barbarian. You smash shit. You crush armor. That is it. Yes, it's a For Honor reference.
+			H.verbs |= /mob/proc/conqrah
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
+
+/mob/proc/conqrah()
+	set name = "RAH!"
+	set category = "Noises"
+	emote("conqrah")
