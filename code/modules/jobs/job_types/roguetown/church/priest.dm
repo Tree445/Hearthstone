@@ -22,7 +22,7 @@
 	max_pq = null
 
 /datum/outfit/job/roguetown/priest
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/eora)
+	allowed_patrons = ALL_DIVINE_PATRONS // Whoah, removes an arbitrary restriction.
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
