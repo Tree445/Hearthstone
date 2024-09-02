@@ -90,7 +90,7 @@
 	H.change_stat("strength", 4)
 	H.change_stat("constitution", 3)
 	H.change_stat("endurance", 3)
-	H.change_stat("speed", -2)		//Lower speed for more strength and con of other knight, and to off-set endurance. (They need the end-stam for 2 handed.)
+	H.change_stat("speed", -3)		//Lower speed for more strength and con of other knight, and to off-set endurance. (They need the end-stam for 2 handed.)
 	// Decorative helberd, 2-handed
 	if(prob(33))
 		backl = /obj/item/rogueweapon/halberd/bardiche
@@ -108,6 +108,17 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/royalknight
+	pants = /obj/item/clothing/under/roguetown/heavyroyalplatelegs
+	cloak = /obj/item/clothing/cloak/cape/guard
+	gloves = /obj/item/clothing/gloves/roguetown/plate
+	neck = /obj/item/clothing/neck/roguetown/gorget
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/heavyplateroyalguard
+	shoes = /obj/item/clothing/shoes/plate
+	beltl = /obj/item/keyring/guardcastle
+	belt = /obj/item/storage/belt/rogue/leather/black
+	backr = /obj/item/storage/backpack/rogue/satchel/black
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1)
 
 /datum/advclass/royalguard/knight
@@ -148,6 +159,12 @@
 	H.change_stat("perception", 1)
 	H.change_stat("constitution", 2)
 	H.change_stat("endurance", 2)
+	// Armor section
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/royalknight
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/halfplateroyalguard
+	cloak = /obj/item/clothing/cloak/half
+	gloves = /obj/item/clothing/gloves/roguetown/chain
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 	// Flail + tower shield
 	if(prob (33))
 		beltr = /obj/item/rogueweapon/flail
@@ -159,12 +176,6 @@
 	// Bastard sword (traditional knight loadout; can be 1-handed but far better 2-handed. Higher stam drain.)
 	else
 		backl = /obj/item/rogueweapon/sword/long
-	// Armor section
-	head = /obj/item/clothing/head/roguetown/helmet/heavy/royalknight
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/halfplateroyalguard
-	cloak = /obj/item/clothing/cloak/half
-	gloves = /obj/item/clothing/gloves/roguetown/chain
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armoriron
 
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1)
 

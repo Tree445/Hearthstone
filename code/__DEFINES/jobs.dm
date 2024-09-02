@@ -102,7 +102,7 @@
 #define STEWARD		(1<<3)
 #define KNIGHT		(1<<4)
 #define GUARD_CAPTAIN		(1<<5)
-#define BAILIFF		(1<<6)
+#define JUDGE	(1<<6)
 #define HOSTAGE		(1<<7)
 #define NOBLE		(1<<8)
 
@@ -201,7 +201,11 @@
 #define VIKINGFARMER	(1<<1)
 #define VIKINGGRUNT	(1<<1)
 
-#define SLOP		(1<<10)
+#define VAMPIRE		(1<<10)
+#define VAMPTHRALL	(1<<0)
+#define VAMPSMITH	(1<<1)
+
+#define SLOP		(1<<11)
 
 #define TESTER		(1<<0)
 #define DEATHKNIGHT (1<<1)
@@ -225,7 +229,7 @@
 #define JDO_HAND 2
 #define JDO_STEWARD 3
 #define JDO_CLERK 3.1
-#define JDO_BAILIFF 4
+#define JDO_JUDGE 4
 #define JDO_COUNCILLOR 4.1
 #define JDO_NOBLE 5
 
@@ -308,3 +312,6 @@
 #define JDO_HIGHKING 42
 #define JDO_VIKINGFARMER 43
 #define JDO_VIKINGGRUNT 44
+
+#define JDO_VAMPTHRALL 45
+#define JDO_VAMPSMITH 46

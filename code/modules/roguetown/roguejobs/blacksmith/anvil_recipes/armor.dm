@@ -116,6 +116,19 @@
 	created_item = /obj/item/clothing/mask/rogue/facemask
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/goldmask
+	name = "Gold Mask"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/mask/rogue/goldmask
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/goldarmor
+	name = "Gold Chestplate (+1 Gold)"
+	req_bar = /obj/item/ingot/gold
+	additional_items = list(/obj/item/ingot/gold)
+	created_item = /obj/item/clothing/suit/roguetown/armor/goldchestplate
+	i_type = "Armor"
+
 /datum/anvil_recipe/armor/skullcap
 	name = "Skullcap"
 	req_bar = /obj/item/ingot/iron
@@ -377,6 +390,13 @@
 	craftdiff = 3	//It's plate but medium armor style; slightly lower crafting than plate proper.
 	i_type = "Armor"
 
+/datum/anvil_recipe/armor/scaledchestplate
+	name = "Scaled Armor"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/scaled
+	craftdiff = 2	
+	i_type = "Armor"
+
 /datum/anvil_recipe/armor/platebracer
 	name = "Plate Bracers"
 	req_bar = /obj/item/ingot/steel
@@ -522,7 +542,7 @@
 	name = "Beak Helmet"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/beakhelmet
-	craftdiff = 4	//One of the best helms in the game.
+	craftdiff = 4	//One of the best helms in the game. //It looks so fucking good
 	i_type = "Armor"	
 
 /datum/anvil_recipe/armor/helmetknight
@@ -566,42 +586,169 @@
 	craftdiff = 2
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/astratahelm
-	name = "Astrata Helmet (+1 Steel)"
+/datum/anvil_recipe/armor/spellslingerhelm
+	name = "Spellslinger Helmet (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/spellslingerhelm
 	craftdiff = 4	//Heavy helm
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/eorahelm
-	name = "Eora Helmet (+1 Steel)"
+/datum/anvil_recipe/armor/zealothelm
+	name = "Zealot Helmet"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/eorahelm
-	craftdiff = 4	//Heavy helm
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/zealothelm
+	craftdiff = 2
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/necrahelm
-	name = "Necra Helmet (+1 Steel)"
+/datum/anvil_recipe/armor/cagehelm
+	name = "Iron Cage"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/cage
+	craftdiff = 2
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/zybantinehelm
+	name = "Zybantine Helmet (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/necrahelm
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/zybantinehelm
 	craftdiff = 4	//Heavy helm
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/spellslingergauntlets
+	name = "Spellslinger Gauntlets"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/gloves/roguetown/plate/spellslingergauntlets
+	craftdiff = 4	//It's plate
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/nochelm
-	name = "Noc Helmet (+1 Steel)"
+/datum/anvil_recipe/armor/zybantinegauntlets
+	name = "Zybantine Gauntlets"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
-	craftdiff = 4 	//Heavy helm
+	created_item = /obj/item/clothing/gloves/roguetown/plate/zybantinegauntlets
+	craftdiff = 4	//It's plate
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/spellslingerboots
+	name = "Spellslinger Boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/spellslingerboots
+	craftdiff = 4
 	i_type = "Armor"
 
-/datum/anvil_recipe/armor/dendorhelm
-	name = "Dendor Helmet (+1 Steel)"
+/datum/anvil_recipe/armor/zybantineboots
+	name = "Zybantine Boots"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/shoes/roguetown/boots/zybantineboots
+	craftdiff = 4
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/plate/spellslingerarmor
+	name = "Spellslinger Armour (+2 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor
+	craftdiff = 3
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/plate/zybantinearmor
+	name = "Zybantine Armour (+2 Steel)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/ingot/steel)
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/zybantinearmor
+	craftdiff = 3
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/volfhelm
+	name = "Volf Helmet (+1 Fur)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/fur)
+	created_item = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
+	craftdiff = 1
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/vikinghelmet
+	name = "Viking Helmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/vikinghelmet
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/vikingbodyguardhelm
+	name = "Bodyguard Helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/vikingbodyguardhelmet
+	craftdiff = 2
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/vikingbodyguardarmor
+	name = "Bodyguard Armor (+1 Steel)"
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
-	craftdiff = 4	//Heavy helm
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/vikingbodyguardchestplate
+	craftdiff = 2
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/pothelmet
+	name = "Pot Helmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/ironpothelmet
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/ironplatehelm
+	name = "Iron Plate Helmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/ironplatehelmet
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/valorianhelm
+	name = "Valorian Helmet"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/head/roguetown/helmet/valorianhelmet
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/valoriandecoratedhelm
+	name = "Valorian Helmet (+1 Cloth)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/roguetown/helmet/valoriandecoratedhelm
+	i_type = "Armor"	
+
+/datum/anvil_recipe/armor/zybanturiflehelm
+	name = "Janissary Helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/zybanturiflehelm
+	craftdiff = 2
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/decoratedhelmetknight
+	name = "Decorated Knight's Helmet (+1 Steel, +1 Cloth)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedknighthelm
+	craftdiff = 4
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/decoratedhelmetpig
+	name = "Decorated Pigface Helmet (+1 Steel, +1 Cloth)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/roguetown/helmet/decoratedhounskull
+	craftdiff = 3
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/decoratedhelmetbuc
+	name = "Decorated Bucket Helmet (+1 Steel, +1 Cloth)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedbucket
+	craftdiff = 3
+	i_type = "Armor"
+
+/datum/anvil_recipe/armor/decoratedhelmetbucgold
+	name = "Decorated Gold-Trimmed Bucket Helmet (+1 Steel, +1 Cloth)"
+	req_bar = /obj/item/ingot/steel
+	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/decoratedgbucket
+	craftdiff = 3
 	i_type = "Armor"

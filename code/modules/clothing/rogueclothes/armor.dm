@@ -138,7 +138,6 @@
 	max_integrity = 150
 	equip_delay_self = 30
 
-
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "steel half-plate"
@@ -201,7 +200,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/ironarmor
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "iron chestplate"
-	desc = "A basic cuirass of steel. Lightweight and durable."
+	desc = "A basic cuirass of iron. Lightweight and durable."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "ironarmor"
 	item_state = "ironarmor"
@@ -219,8 +218,8 @@
 	name = "royal halfplate"
 	desc = "A basic cuirass of steel, decorated with gold."
 	body_parts_covered = CHEST|VITALS
-	icon_state = "halfplateroyalguard"
-	item_state = "halfplateroyalguard"
+	icon_state = "royal"
+	item_state = "royal"
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed_race = CLOTHED_RACES_TYPES
 	nodismemsleeves = TRUE
@@ -266,6 +265,7 @@
 /obj/item/clothing/suit/roguetown/armor/shortbrigandine
 	name = "fancy brigandine"
 	desc = "A coat with plates concealed inside an exterior fabric. This one is a bit nicer looking than most others and the fabric on the exterior of the armor better conceals the plate beneath."
+	body_parts_covered = CHEST|VITALS
 	icon_state = "oa_short"
 	item_state = "oa_short"
 	boobed = TRUE
@@ -278,7 +278,7 @@
 	desc = "A lightweight piece of protection centered around the belly."
 	icon_state = "metal_vest"
 	item_state = "metal_vest"
-	max_integrity = 100
+	max_integrity = 150
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_LIGHT
 
@@ -289,7 +289,7 @@
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "lamellar"
-	max_integrity = 200
+	max_integrity = 250
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	equip_delay_self = 40
@@ -631,7 +631,7 @@
 	desc = "A basic iron cuirass worn by soldiers in Grenzelhoft."
 	icon_state = "footmanchestplate"
 	item_state = "footmanchestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM
 
@@ -641,7 +641,7 @@
 	desc = "Armor worn by Graggarite fanatics in battle."
 	icon_state = "graggaritechestplate"
 	item_state = "graggaritechestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -668,7 +668,7 @@
 	desc = "Lamellar armor worn by the elite Katefractoii heavy cavalry."
 	icon_state = "katefractoiichestplate"
 	item_state = "katefractoiichestplate"
-	max_integrity = 100
+	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
 	armor_class = ARMOR_CLASS_MEDIUM	
 
@@ -742,3 +742,174 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "spellslinger cuirass"
+	desc = "Armor of a spellslinger, provides adequate protection while still looking very nice."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "spellslingerarmor"
+	item_state = "spellslingerarmor"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "psydonian knight cuirass"
+	desc = "PSYDON's heart still beats."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "psydonianknightarmor"
+	item_state = "psydonianknightarmor"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/zybantinearmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "zybantinearmor"
+	desc = "Medium armor worn by Zybantine soldiers."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "zybantinearmor"
+	item_state = "zybantinearmor"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 300
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/rustedarmor
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "rusted cuirass"
+	desc = "A rusted, battered chestplate from a bygone era. Are you sure you want to wear this?"
+	body_parts_covered = CHEST|VITALS
+	icon_state = "rustplate"
+	item_state = "rustplate"
+	armor = list("blunt" = 100, "slash" = 55, "stab" = 15, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	do_sound = FALSE
+	blocking_behavior = null
+	smeltresult = /obj/item/ash
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/nephilimchest
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "nephilim armor"
+	desc = "Armor once worn by the descendents of giants."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "nephilimplate"
+	item_state = "nephilimplate"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 85, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 350
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/plate/heavyplateroyalguard
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "royal heavyplate"
+	desc = "An extremely heavy piece of armor made of steel and decorated with golden pauldrons."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "heavyroyalplate"
+	item_state = "heavyroyalplate"
+	armor = list("blunt" = 100, "slash" = 100, "stab" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	nodismemsleeves = TRUE
+	do_sound = FALSE
+	blocking_behavior = null
+	max_integrity = 350
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	armor_class = ARMOR_CLASS_HEAVY
+
+/obj/item/clothing/suit/roguetown/armor/leathervest
+	name = "leather vest"
+	desc = "A simple vest made of leather, provides poor protection."
+	icon_state = "leathervest"
+	item_state = "leathervest"
+	allowed_race = CLOTHED_RACES_TYPES
+
+/obj/item/clothing/suit/roguetown/armor/valorianarmor
+	name = "valorian armor"
+	desc = "Valorian armor made using heavy cloth."
+	icon_state = "valorian_armor"
+	item_state = "valorian_armor"
+	allowed_race = CLOTHED_RACES_TYPES
+
+/obj/item/clothing/suit/roguetown/armor/plate/scaled
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "scaled armor"
+	desc = "Thin metal plates layered over one another to provide protection."
+	body_parts_covered = CHEST|VITALS
+	allowed_sex = list(MALE, FEMALE)
+	icon_state = "scale_armor"
+	max_integrity = 250
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/iron
+	equip_delay_self = 20
+	armor_class = ARMOR_CLASS_LIGHT	
+
+/obj/item/clothing/suit/roguetown/armor/plate/vikingbodyguardchestplate
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "bodyguard armor"
+	desc = "Lamellar armor worn by Viking bodyguards."
+	body_parts_covered = CHEST|VITALS|GROIN|LEGS
+	allowed_sex = list(MALE, FEMALE)
+	icon_state = "vikingbodyguardc"
+	max_integrity = 250
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	equip_delay_self = 40
+	armor_class = ARMOR_CLASS_MEDIUM		
+
+/obj/item/clothing/suit/roguetown/armor/goldchestplate
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "golden chestplate"
+	desc = "A cuirass made of pure gold."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "gold_chestplate"
+	item_state = "gold_chestplate"
+	armor = list("blunt" = 80, "slash" = 60, "stab" = 20, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed_race = CLOTHED_RACES_TYPES
+	blocking_behavior = null
+	max_integrity = 450
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/gold
+	armor_class = ARMOR_CLASS_MEDIUM	
+
+/obj/item/clothing/suit/roguetown/armor/bone/chestplate
+	name = "bone chestplate"
+	desc = "A chestplate made using bone."
+	body_parts_covered = CHEST
+	icon_state = "bonearmor"
+	item_state = "bonrearmor"
+	smeltresult = /obj/item/ash
+	equip_delay_self = 15
+
+/obj/item/clothing/suit/roguetown/armor/hide/bearfur
+	name = "bear fur"
+	desc = "Thick and warm."
+	body_parts_covered = CHEST|VITALS
+	icon_state = "bearfur"
+	item_state = "bearfur"
+	smeltresult = /obj/item/ash

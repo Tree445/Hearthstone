@@ -16,11 +16,13 @@
 
 /datum/outfit/job/roguetown/tribalguard/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	head = /obj/item/clothing/head/roguetown/helmet/leather/volfhead
+	shoes = /obj/item/clothing/shoes/roguetown/boots/bonegreaves
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
+	armor = /obj/item/clothing/suit/roguetown/armor/bone/chestplate
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
-	belt = /obj/item/storage/belt/rogue/leather
+	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+	belt = /obj/item/storage/belt/rogue/bone/skullbelt
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/rope/chain = 1)
 	H.verbs |= /mob/proc/haltyell
@@ -40,6 +42,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE) //Hearthstone change.
 		H.change_stat("strength", 1)
 		H.change_stat("perception", 2)
 		H.change_stat("constitution", 1)

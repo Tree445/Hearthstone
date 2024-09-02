@@ -9,7 +9,7 @@
 	name = "coif"
 	icon_state = "coif"
 	item_state = "coif"
-	flags_inv = HIDEHAIR
+	flags_inv = HIDEEARS|HIDEHAIR
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	blocksound = SOFTHIT
 	body_parts_covered = NECK|HAIR|EARS|HEAD
@@ -33,20 +33,54 @@
 				H.update_inv_head()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			flags_inv = HIDEHAIR
+			flags_inv = HIDEEARS|HIDEHAIR
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
 					H.update_inv_neck()
 					H.update_inv_head()
 
+/obj/item/clothing/neck/roguetown/shawl
+	name = "shawl"
+	desc = "A shawl worn by those who inhabit the deserts to help keep the sun off their heads."
+	icon_state = "shawl"
+	item_state = "shawl"
+	flags_inv = HIDEEARS|HIDEHAIR
+	slot_flags = ITEM_SLOT_NECK
+	blocksound = SOFTHIT
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	armor = list("blunt" = 33, "slash" = 12, "stab" = 22, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
+	sewrepair = TRUE
 
+/obj/item/clothing/neck/roguetown/shawl/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = null
+			body_parts_covered = NECK
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_neck()
+				H.update_inv_head()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = HIDEEARS|HIDEHAIR
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_neck()
+					H.update_inv_head()
 
 /obj/item/clothing/neck/roguetown/chaincoif
 	name = "steel chain coif"
 	icon_state = "chaincoif"
 	item_state = "chaincoif"
-	flags_inv = HIDEHAIR
+	flags_inv = HIDEEARS|HIDEHAIR
 	armor = list("blunt" = 30, "slash" = 60, "stab" = 45, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 	max_integrity = 200
@@ -74,7 +108,7 @@
 				H.update_inv_head()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			flags_inv = HIDEHAIR
+			flags_inv = HIDEEARS|HIDEHAIR
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
@@ -160,25 +194,45 @@
 	desc = ""
 	icon_state = "necra"
 
-/obj/item/clothing/neck/roguetown/psicross/ravox
-	name = "amulet of Ravox"
-	desc = ""
-	icon_state = "ravox"
-
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Eora"
 	desc = ""
 	icon_state = "eora"
 
-
 /obj/item/clothing/neck/roguetown/psicross/pestra
 	name = "amulet of Pestra"
 	desc = ""
+	icon_state = "pestra"
+
+/obj/item/clothing/neck/roguetown/psicross/xylix
+	name = "amulet of Xylix"
+	desc = ""
+	icon_state = "xylix"
+
+/obj/item/clothing/neck/roguetown/psicross/malum
+	name = "amulet of Malum"
+	desc = ""
+	icon_state = "malum"
+
+/obj/item/clothing/neck/roguetown/psicross/ravox
+	name = "amulet of Ravox"
+	desc = ""
+	icon_state = "ravox"
+
+/obj/item/clothing/neck/roguetown/psicross/abyssor
+	name = "amulet of Abyssor"
+	desc = ""
+	icon_state = "abyssor"
 
 /obj/item/clothing/neck/roguetown/psicross/wood
 	name = "wooden psycross"
 	icon_state = "psicrossw"
 	sellprice = 0
+
+/obj/item/clothing/neck/roguetown/psicross/talisman
+	name = "talisman"
+	icon_state = "talisman"
+	sellprice = 0	
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
@@ -256,6 +310,7 @@
 	name = "eye of horuz"
 	desc = ""
 	icon_state = "horus"
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 30
@@ -265,7 +320,65 @@
 	name = "desert rider medal"
 	desc = ""
 	icon_state = "shalal"
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 15
 	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/neck/roguetown/collar/feldcollar
+	name = "high collar"
+	desc = "A high collar which covers half the face up to the nose."
+	icon_state = "feldcollar"
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+
+/obj/item/clothing/neck/roguetown/collar/surgcollar
+	name = "high collar"
+	desc = "A high collar which covers half the face up to the nose."
+	icon_state = "surgcollar"
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+
+/obj/item/clothing/neck/roguetown/mantle/wizardmantle
+	name = "wizard mantle"
+	desc = "A short cloak worn around the neck of wizards, typically those who specialize in water magics."
+	icon_state = "wizardmantle"
+
+/obj/item/clothing/neck/roguetown/nephilbervor
+	name = "nephilim neckguard"
+	desc = "An neckguard once worn by the descendents of giants."
+	icon_state = "nephilimneckguard"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ash
+	max_integrity = 350
+	resistance_flags = FIRE_PROOF
+	slot_flags = ITEM_SLOT_NECK
+	body_parts_covered = NECK|MOUTH
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	blocksound = PLATEHIT
+
+/obj/item/clothing/neck/roguetown/psicross/ornate
+	name = "ornate amulet"
+	desc = ""
+	icon_state = "ornate"
+	item_state = "ornate"
+	//dropshrink = 0.75
+	resistance_flags = FIRE_PROOF
+	sellprice = 150
+
+/obj/item/clothing/neck/roguetown/psicross/skull
+	name = "skull necklace"
+	desc = ""
+	icon_state = "skullnecklace"
+	item_state = "skullnecklace"
+	//dropshrink = 0.75
+	sellprice = 1
+
+/obj/item/clothing/neck/roguetown/psicross/gskull
+	name = "golden skull necklace"
+	desc = ""
+	icon_state = "skullamulet"
+	item_state = "skullamulet"
+	//dropshrink = 0.75
+	resistance_flags = FIRE_PROOF
+	sellprice = 100		

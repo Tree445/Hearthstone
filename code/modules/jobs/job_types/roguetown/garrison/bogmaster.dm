@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "You are the most experienced idiot to volunteer to the Bog Guard... What a mistake that was. You report to the Bailiff, and your job is to keep the bogmen in line and to ensure the routes to the town are safe. May the nine have mercy on you..."
+	tutorial = "You are the most experienced idiot to volunteer to the Bog Guard... What a mistake that was. You report to the Judge, and your job is to keep the bogmen in line and to ensure the routes to the town are safe. May the nine have mercy on you..."
 	display_order = JDO_BOGMASTER
 	whitelist_req = TRUE
 
@@ -68,6 +68,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE) //Hearthstone change.
 		H.change_stat("strength", 3)
 		H.change_stat("constitution", 2)
 		H.change_stat("perception", 2)

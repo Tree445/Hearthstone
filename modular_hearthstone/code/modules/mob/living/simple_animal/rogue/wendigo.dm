@@ -16,12 +16,11 @@
 	base_intents = list(/datum/intent/simple/bite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 13,
 						/obj/item/natural/hide = 15, /obj/item/natural/bundle/bone/full = 3)
-	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 400
 	maxHealth = 500
-	melee_damage_lower = 45
-	melee_damage_upper = 70
+	melee_damage_lower = 35
+	melee_damage_upper = 50
 	vision_range = 6
 	aggro_vision_range = 5
 	retreat_distance = 0
@@ -30,8 +29,8 @@
 	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
-	STACON = 19
-	STASTR = 16
+	STACON = 15
+	STASTR = 15
 	STASPD = 5
 	deaggroprob = 0
 	defprob = 40

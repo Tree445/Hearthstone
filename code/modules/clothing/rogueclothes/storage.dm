@@ -186,33 +186,53 @@
 	alternate_worn_layer = UNDER_CLOAK_LAYER
 	sewrepair = TRUE
 
-/obj/item/storage/backpack/rogue/skit
-	name = "doctor bag"
-	color = CLOTHING_BLACK
-	desc = "Emergency surgical bag."
-	icon_state = "satchel"
-	item_state = "satchel"
+/obj/item/storage/belt/rogue/pouch/skit
+	name = "surgical pouch"
+	desc = "Emergency surgical pouch."
+	icon_state = "pouch"
+	item_state = "pouch"
 	icon = 'icons/roguetown/clothing/storage.dmi'
-	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	resistance_flags = NONE
+	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("whips", "lashes")
 	max_integrity = 300
 	equip_sound = 'sound/blank.ogg'
+	content_overlays = FALSE
 	bloody_icon_state = "bodyblood"
-	alternate_worn_layer = UNDER_CLOAK_LAYER
 	sewrepair = TRUE
 
-/obj/item/storage/backpack/rogue/skit/ComponentInitialize()
+/obj/item/storage/belt/rogue/pouch/skit/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
 		STR.max_combined_w_class = 42
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 12
+		STR.set_holdable(list(
+			/obj/item/rogueweapon/surgery/scalpel,
+			/obj/item/rogueweapon/surgery/saw,
+			/obj/item/rogueweapon/surgery/hemostat,
+			/obj/item/rogueweapon/surgery/hemostat,
+			/obj/item/rogueweapon/surgery/retractor,
+			/obj/item/rogueweapon/surgery/bonesetter,
+			/obj/item/rogueweapon/surgery/cautery,
+			/obj/item/needle,
+			/obj/item/needle/thorn,
+			/obj/item/needle/pestra,
+			/obj/item/reagent_containers/glass/bottle/waterskin,
+			/obj/item/reagent_containers/glass/bottle,
+			/obj/item/natural/fibers,
+			/obj/item/natural/cloth,
+			/obj/item/natural/bundle/fibers,
+			/obj/item/natural/bundle/cloth,
+			/obj/item/natural/worms/leech,
+			/obj/item/natural/worms/leech/cheele,
+			/obj/item/reagent_containers/lux
+		))
 
-/obj/item/storage/backpack/rogue/skit/PopulateContents()
+/obj/item/storage/belt/rogue/pouch/skit/PopulateContents()
 	new /obj/item/rogueweapon/surgery/scalpel(src)
 	new /obj/item/rogueweapon/surgery/saw(src)
 	new /obj/item/rogueweapon/surgery/hemostat(src)
@@ -274,3 +294,24 @@
 	icon_state = "exoticsilkbelt"
 	heldz_items = 1
 	sewrepair = TRUE
+
+/obj/item/storage/belt/rogue/bone/skullbelt
+	name = "skull belt"
+	desc = "Worn by barbarians, tribals and madmen. Not in that particular order."
+	icon_state = "skullcrotch"
+	item_state = "skullcrotch"
+	heldz_items = 3
+
+/obj/item/storage/belt/rogue/leather/ornate
+	name = "ornate belt"
+	desc = "An ornate belt decorated with gold."
+	icon_state = "ornate_belt"
+	sellprice = 50
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing	
+
+/obj/item/storage/belt/rogue/leather/blackleather
+	name = "black leather belt"
+	icon_state = "blackleatherbelt"
+	sewrepair = TRUE
+	sellprice = 10	
