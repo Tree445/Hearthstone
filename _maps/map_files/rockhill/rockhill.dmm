@@ -3832,6 +3832,14 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town/church)
+"clt" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/rogue/indoors/town/church)
 "clA" = (
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
@@ -14122,6 +14130,10 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/bog)
+"jNh" = (
+/obj/structure/closet/dirthole/grave,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town)
 "jNl" = (
 /obj/structure/rack/rogue/shelf/big,
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -19314,7 +19326,7 @@
 "nNQ" = (
 /obj/structure/closet/dirthole/grave,
 /obj/item/natural/worms,
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "nOn" = (
 /obj/structure/bed/rogue/inn/hay,
@@ -27227,13 +27239,9 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors)
 "tkZ" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 4
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
-/area/rogue/indoors/town/church)
+/obj/structure/closet/dirthole/grave,
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/outdoors/town)
 "tlb" = (
 /obj/structure/roguewindow,
 /turf/open/floor/rogue/ruinedwood,
@@ -323708,7 +323716,7 @@ ejY
 trI
 uHj
 uHj
-tkZ
+clt
 uwn
 xKF
 qPA
@@ -326938,10 +326946,10 @@ kJX
 jHc
 jHc
 fDw
-mYJ
+jNh
 nNQ
-mYJ
-mYJ
+jNh
+jNh
 rfx
 uLu
 esR
@@ -328954,7 +328962,7 @@ rfx
 rfx
 rfx
 rfx
-rfx
+tkZ
 rfx
 rfx
 rfx
