@@ -10364,13 +10364,8 @@
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town)
 "hcp" = (
-/obj/machinery/light/rogue/torchholder/r,
-/obj/structure/chair/bench/church/r{
-	dir = 1
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
+/obj/structure/roguewindow/openclose,
+/turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
 "hcq" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
@@ -11845,6 +11840,7 @@
 	pixel_x = 32;
 	pixel_y = 0
 	},
+/obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -19206,6 +19202,10 @@
 /obj/structure/handcart,
 /obj/item/rogueweapon/stoneaxe/woodcut,
 /obj/item/rogueweapon/pick/steel,
+/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/sickle,
+/obj/item/rogueweapon/thresher,
+/obj/item/rogueweapon/hoe,
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church)
 "nJQ" = (
@@ -27227,9 +27227,6 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors)
 "tkZ" = (
-/obj/structure/chair/bench/church{
-	dir = 1
-	},
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
@@ -30410,7 +30407,9 @@
 /turf/closed/wall/mineral/rogue/stone/blue_moss,
 /area/rogue/under/cavewet/bogcaves/chapel)
 "vCr" = (
-/obj/structure/chair/bench/church/mid,
+/obj/structure/chair/bench/church/mid{
+	dir = 1
+	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -323709,8 +323708,8 @@ ejY
 trI
 uHj
 uHj
-uHj
 tkZ
+uwn
 xKF
 qPA
 wOR
@@ -325318,7 +325317,7 @@ suN
 uHj
 nrx
 idG
-hcp
+obL
 xKF
 qPA
 wOR
@@ -326924,7 +326923,7 @@ aem
 oIv
 cdn
 dsW
-vCr
+obL
 xKF
 qPA
 vWe
@@ -327326,7 +327325,7 @@ oIv
 oIv
 oIv
 oIv
-obL
+uHj
 xKF
 qPA
 vWe
@@ -433440,7 +433439,7 @@ erZ
 erZ
 fZJ
 fZJ
-rxp
+hcp
 uKB
 nTR
 uBv
@@ -433842,7 +433841,7 @@ erZ
 erZ
 fZJ
 fZJ
-rxp
+hcp
 uKB
 nTR
 ojp
@@ -434244,7 +434243,7 @@ vIa
 vIa
 fZJ
 fZJ
-rxp
+hcp
 uKB
 nTR
 ojp
