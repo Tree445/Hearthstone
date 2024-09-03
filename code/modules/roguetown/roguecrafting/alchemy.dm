@@ -73,13 +73,13 @@
 	name = "transmute water to milk"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/milk = 1)
 	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /datum/reagent/water = 45)
-	craftdiff = 2
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/w2w
 	name = "transmute water to wine" /// eat your heart out god.
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1)
 	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /datum/reagent/water = 45)
-	craftdiff = 2
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/g2wes
 	name = "transmute grain to westleach"
@@ -97,25 +97,19 @@
 	name = "transmute fiber to grain"
 	result = list(/obj/item/reagent_containers/food/snacks/grown/wheat = 1)
 	reqs = list(/obj/item/natural/fibers = 4)
-	craftdiff = 3
+	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/b2app
 	name = "transmute berry to apple"
 	result = list(/obj/item/reagent_containers/food/snacks/grown/apple = 1)
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2)
-	craftdiff = 3
+	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/s2coa
 	name = "transmute stone to coal"
 	result = list(/obj/item/rogueore/coal = 1)
 	reqs = list(/obj/item/natural/stone = 4)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/alchemy/c2irn
-	name = "transmute coal to iron"
-	result = list(/obj/item/rogueore/iron = 1)
-	reqs = list(/obj/item/rogueore/coal = 2)
-	craftdiff = 3
+	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/i2gol
 	name = "transmute iron to gold"
@@ -127,25 +121,25 @@
 	name = "transmute gold to toper"
 	result = list(/obj/item/roguegem/yellow = 1)
 	reqs = list(/obj/item/rogueore/gold = 2, /obj/item/natural/stone = 1)
-	craftdiff = 4
+	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/t2gem
 	name = "transmute toper to gemerald"
 	result = list(/obj/item/roguegem/green = 1)
 	reqs = list(/obj/item/roguegem/yellow = 1, /obj/item/rogueore/gold = 2)
-	craftdiff = 4
+	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/g2saf
 	name = "transmute gemerald to saffira"
 	result = list(/obj/item/roguegem/violet = 1)
 	reqs = list(/obj/item/roguegem/green = 1, /obj/item/rogueore/gold = 2)
-	craftdiff = 4
+	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/s2blo
 	name = "transmute saffira to blortz"
 	result = list(/obj/item/roguegem/blue = 1)
 	reqs = list(/obj/item/roguegem/violet = 1, /obj/item/rogueore/gold = 2)
-	craftdiff = 4
+	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/r2dia
 	name = "transmute blortz to diamond"
