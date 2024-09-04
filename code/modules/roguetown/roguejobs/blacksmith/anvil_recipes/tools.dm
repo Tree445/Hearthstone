@@ -4,7 +4,8 @@
 	name = "Surgery Kit (+1 iron +1 hide)"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron, /obj/item/natural/hide)
-	created_item = /obj/item/storage/belt/rogue/pouch/skit
+	created_item = /obj/item/storage/backpack/rogue/backpack/surgery
+
 	i_type = "Tools"
 	
 /datum/anvil_recipe/tools/torch
