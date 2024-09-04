@@ -444,6 +444,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
 
+	S["vampireheadshot_link"]			>> vampireheadshot_link
+	if(!valid_vampireheadshot_link(null, vampireheadshot_link, TRUE))
+		vampireheadshot_link = null
+
+	S["werewolfheadshot_link"]			>> werewolfheadshot_link
+	if(!valid_werewolfheadshot_link(null, werewolfheadshot_link, TRUE))
+		werewolfheadshot_link = null
+
 	S["pronouns"] >> pronouns
 	S["voice_type"] >> voice_type
 	//try to fix any outdated data if necessary
@@ -591,6 +599,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
+	WRITE_FILE(S["vampireheadshot_link"] , vampireheadshot_link)
+	WRITE_FILE(S["werewolfheadshot_link"] , werewolfheadshot_link)
 	WRITE_FILE(S["statpack"] , statpack.type)
 	WRITE_FILE(S["voice_type"] , voice_type)
 	WRITE_FILE(S["pronouns"] , pronouns)
