@@ -45,7 +45,7 @@
 			return
 
 	if(is_misc_banned(key_name(src), BAN_MISC_LOOC)) //Prevent from opening the panel entirely
-		to_chat(src, span_danger("I have been banned from LOOC."))
+		to_chat(src.mob, span_danger("I have been banned from LOOC.")) //Type is client, so do src.mob to ensure it prints to client.
 		return //Forcibly return.
 
 	msg = emoji_parse(msg)
