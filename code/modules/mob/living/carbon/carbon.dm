@@ -762,6 +762,9 @@
 		sight |= (SEE_TURFS|SEE_MOBS|SEE_OBJS)
 		see_in_dark = max(see_in_dark, 8)
 
+	if(HAS_TRAIT(src, TRAIT_NOCSIGHT))
+		E.lighting_alpha = LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT
+
 	if(see_override)
 		see_invisible = see_override
 	. = ..()
