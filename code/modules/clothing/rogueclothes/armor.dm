@@ -768,7 +768,7 @@
 	if(active_item)
 		return
 	else
-		if((user.mind.get_skill_level(/datum/skill/magic/arcane))
+		if(user.mind.get_skill_level(/datum/skill/magic/arcane))
 			active_item = TRUE
 			user.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			to_chat(user, span_notice("Magicks flow throughout your body."))
