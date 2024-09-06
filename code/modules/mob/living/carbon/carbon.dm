@@ -764,6 +764,7 @@
 
 	if(HAS_TRAIT(src, TRAIT_NOCSIGHT))
 		E.lighting_alpha = LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT
+		E.see_in_dark = 7
 
 	if(see_override)
 		see_invisible = see_override
