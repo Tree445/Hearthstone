@@ -768,23 +768,29 @@
 	if(active_item)
 		return
 	else
-		active_item = TRUE
-		user.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-		to_chat(user, span_notice("Magicks flow throughout your body."))
-		user.change_stat("intelligence", 3) //Additional cooldown (scales with int)
-		saved_spells = user.mind.spell_list
-		saved_points = user.mind.spell_points
-		return
+		if((user.mind.get_skill_level(/datum/skill/magic/arcane))
+			active_item = TRUE
+			user.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+			to_chat(user, span_notice("Magicks flow throughout your body."))
+			user.change_stat("intelligence", 3) //Additional cooldown (scales with int)
+			saved_spells = user.mind.spell_list
+			saved_points = user.mind.spell_points
+			return
+		else
+			to_chat(user, span_warning("The curiass feels cold and dead."))
 
 /obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/dropped(mob/living/user)
 	if(active_item)
-		to_chat(user, span_notice("Gone is the arcane magicks enhancing thine abilities..."))
-		user.change_stat("intelligence", -3) //Ensure to not give inf intelligence.
-		user.mind.adjust_skillrank(/datum/skill/magic/arcane, -1, TRUE)
-		user.mind.spell_list = saved_spells
-		user.mind.spell_points = saved_points //So we don't softlock people with negative spellpoints.
-		active_item = FALSE
-		return
+		if(user.mind.get_skill_level(/datum/skill/magic/arcane))
+			to_chat(user, span_notice("Gone is the arcane magicks enhancing thine abilities..."))
+			user.change_stat("intelligence", -3) //Ensure to not give inf intelligence.
+			user.mind.adjust_skillrank(/datum/skill/magic/arcane, -1, TRUE)
+			user.mind.spell_list = saved_spells
+			user.mind.spell_points = saved_points //So we don't softlock people with negative spellpoints.
+			active_item = FALSE
+			return
+		else
+			to_chat(user, span_warning("The feeling of death and decay departs the moment you leave the curiass be."))
 
 /obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor
 	slot_flags = ITEM_SLOT_ARMOR
