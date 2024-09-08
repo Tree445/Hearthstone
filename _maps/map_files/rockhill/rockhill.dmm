@@ -4323,16 +4323,6 @@
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
-"cCU" = (
-/obj/structure/closet/crate/chest,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/cabbage,
-/obj/item/seeds/onion,
-/obj/item/seeds/onion,
-/obj/item/seeds/onion,
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors)
 "cDC" = (
 /obj/structure/rack/rogue,
 /obj/item/roguekey/garrison,
@@ -4974,6 +4964,7 @@
 	},
 /obj/item/storage/pill_bottle/dice,
 /obj/item/reagent_containers/peppermill,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
 "dav" = (
@@ -6783,6 +6774,16 @@
 	icon_state = "weird1"
 	},
 /area/rogue/under/cavewet/bogcaves/sunkencity)
+"eqK" = (
+/obj/structure/closet/crate/chest,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/cabbage,
+/obj/item/seeds/onion,
+/obj/item/seeds/onion,
+/obj/item/seeds/onion,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors)
 "eqL" = (
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
@@ -10583,6 +10584,7 @@
 	},
 /obj/item/reagent_containers/peppermill,
 /obj/item/reagent_containers/peppermill,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/tavern)
 "hhw" = (
@@ -25175,6 +25177,7 @@
 	},
 /obj/structure/fermenting_barrel/random/beer,
 /obj/item/reagent_containers/peppermill,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor)
 "rNH" = (
@@ -28734,6 +28737,7 @@
 	pixel_y = 10
 	},
 /obj/item/reagent_containers/peppermill,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors)
 "utI" = (
@@ -328609,7 +328613,7 @@ wSn
 lVe
 lVe
 qmg
-cCU
+eqK
 qpf
 nKt
 lVe
