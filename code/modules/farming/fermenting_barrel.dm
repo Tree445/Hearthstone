@@ -71,6 +71,7 @@
 	if(broken)
 		icon_state = "barrel_destroyed"
 
+
 /datum/crafting_recipe/fermenting_barrel
 	name = "Wooden Barrel"
 	result = /obj/structure/fermenting_barrel

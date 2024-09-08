@@ -36,7 +36,7 @@
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_nutrition = 30
 	produce_nutrition = 20
-	maturation_time = 5 MINUTES
+	maturation_time = 10 MINUTES
 	produce_time = 2 MINUTES
 
 
@@ -49,7 +49,7 @@
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_nutrition = 30
 	produce_nutrition = 20
-	maturation_time = 5 MINUTES
+	maturation_time = 10 MINUTES
 	produce_time = 2 MINUTES
 
 /datum/plant_def/oat
@@ -61,7 +61,7 @@
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
 	maturation_nutrition = 30
 	produce_nutrition = 20
-	maturation_time = 5 MINUTES
+	maturation_time = 10 MINUTES
 	produce_time = 2 MINUTES
 
 /datum/plant_def/apple
@@ -74,7 +74,7 @@
 	produce_amount = 3
 	maturation_nutrition = 60
 	produce_nutrition =  30
-	maturation_time = 6 MINUTES
+	maturation_time = 12 MINUTES
 	produce_time = 3 MINUTES
 
 /datum/plant_def/pipeweed
@@ -99,7 +99,7 @@
 	produce_amount = 3
 	maturation_nutrition = 60
 	produce_nutrition =  30
-	maturation_time = 6 MINUTES
+	maturation_time = 12 MINUTES
 	produce_time = 3 MINUTES
 
 /datum/plant_def/berry_poison
@@ -117,7 +117,7 @@
 	produce_amount = 3
 	maturation_nutrition = 60
 	produce_nutrition =  30
-	maturation_time = 6 MINUTES
+	maturation_time = 12 MINUTES
 	produce_time = 3 MINUTES
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/potato
 	
@@ -129,7 +129,7 @@
 	produce_amount = 4
 	maturation_nutrition = 30
 	produce_nutrition = 20
-	maturation_time = 5 MINUTES
+	maturation_time = 10 MINUTES
 	produce_time = 2 MINUTES
 
 /datum/plant_def/pumpkin
@@ -140,7 +140,7 @@
 	produce_amount = 3
 	maturation_nutrition = 30
 	produce_nutrition = 20
-	maturation_time = 6 MINUTES
+	maturation_time = 12 MINUTES
 	produce_time = 2 MINUTES
 	weed_immune = FALSE
 
@@ -152,7 +152,7 @@
 	produce_amount = 4
 	maturation_nutrition = 30
 	produce_nutrition = 20
-	maturation_time = 4 MINUTES
+	maturation_time = 8 MINUTES
 	produce_time = 2 MINUTES
 	weed_immune = FALSE
 
@@ -164,6 +164,30 @@
 	produce_amount = 4
 	maturation_nutrition = 30
 	produce_nutrition = 20
-	maturation_time = 5 MINUTES
+	maturation_time = 10 MINUTES
+	produce_time = 2 MINUTES
+	weed_immune = FALSE
+
+/datum/plant_def/onion
+	name = "onion"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "onion"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/onion/rogue
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 10 MINUTES
+	produce_time = 2 MINUTES
+	weed_immune = FALSE
+
+/datum/plant_def/cabbage
+	name = "cabbage"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "cabbage"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 10 MINUTES
 	produce_time = 2 MINUTES
 	weed_immune = FALSE
