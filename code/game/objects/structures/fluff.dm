@@ -928,7 +928,7 @@
 					if(!L.rogfat_add(rand(4,6)))
 						if(ishuman(L))
 							var/mob/living/carbon/human/H = L
-							if(H.tiredness >= 70)
+							if(H.tiredness >= 75)
 								H.apply_status_effect(/datum/status_effect/debuff/trainsleep)
 						probby = 0
 					if(!(L.mobility_flags & MOBILITY_STAND))
