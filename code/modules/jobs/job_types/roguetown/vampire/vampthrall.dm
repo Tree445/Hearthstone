@@ -8,8 +8,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
-	spells = list(/obj/effect/proc_holder/spell/self/convertrole/vampire,
-	/obj/effect/proc_holder/spell/targeted/shapeshift/bat)
+	spells = list(/obj/effect/proc_holder/spell/self/convertrole/vampire)
 	tutorial = "Outcasted from society and under rule of the Vampire Lord, either as a worshipping fanatic or a victim of circumstance, you are caught in the middle of two Lords. You are a lowly peasant who will choose their path in this world. Do you serve your Lord, or will you try to win over your abusors?"
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vampthrall
