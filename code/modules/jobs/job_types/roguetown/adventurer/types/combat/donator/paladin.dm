@@ -75,7 +75,7 @@
 					cloak = /obj/item/clothing/cloak/tabard/crusader/pestra
 				if("Noc")
 					cloak = /obj/item/clothing/cloak/tabard/crusader/noc
-		    backr = /obj/item/rogueweapon/sword/long
+			backr = /obj/item/rogueweapon/sword/long
 			backl = /obj/item/storage/backpack/rogue/satchel
 		if("Battle Master")
 			H.set_blindness(0)
