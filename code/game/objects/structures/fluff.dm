@@ -299,6 +299,9 @@
 	icon_state = "border"
 	passcrawl = FALSE
 
+/obj/structure/fluff/railing/border/inverted
+	icon_state = "borderinv"
+
 /obj/structure/fluff/railing/fence
 	name = "palisade"
 	desc = ""
@@ -928,7 +931,7 @@
 					if(!L.rogfat_add(rand(4,6)))
 						if(ishuman(L))
 							var/mob/living/carbon/human/H = L
-							if(H.tiredness >= 50)
+							if(H.tiredness >= 75)
 								H.apply_status_effect(/datum/status_effect/debuff/trainsleep)
 						probby = 0
 					if(!(L.mobility_flags & MOBILITY_STAND))
@@ -939,7 +942,7 @@
 						user.visible_message(span_info("[user] trains on [src]!"))
 						var/boon = user.mind.get_learning_boon(W.associated_skill)
 						var/amt2raise = L.STAINT/2
-						if(user.mind.get_skill_level(W.associated_skill) >= SKILL_LEVEL_APPRENTICE)
+						if(user.mind.get_skill_level(W.associated_skill) >= SKILL_LEVEL_JOURNEYMAN)
 							to_chat(user, span_warning("I've learned all I can from doing this, it's time for the real thing."))
 							amt2raise = 0
 						if(amt2raise > 0)
@@ -1159,7 +1162,7 @@
 							*/
 							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
 								surname2use = thegroom.dna.species.random_surname()
-								thegroom.change_name(copytext(thegroom.real_name, 1,index))	
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
 							else
 								surname2use = copytext(thegroom.real_name, index)
 								thegroom.change_name(copytext(thegroom.real_name, 1,index))
@@ -1327,7 +1330,7 @@
 	icon = 'icons/roguetown/items/natural.dmi'
 	icon_state = "headstake"
 	density = FALSE
-	anchored = TRUE	
+	anchored = TRUE
 	dir = SOUTH
 	var/obj/item/grown/log/tree/stake/stake
 	var/obj/item/bodypart/head/victim
@@ -1341,7 +1344,7 @@
 	stake = locate(/obj/item/grown/log/tree/stake) in parts_list
 
 ///obj/structure/fluff/headstake/Initialize()
-//	. = ..()	
+//	. = ..()
 
 /obj/structure/fluff/headstake/OnCrafted(dirin, user)
 	dir = SOUTH
