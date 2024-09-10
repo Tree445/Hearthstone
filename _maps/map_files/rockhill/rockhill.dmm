@@ -1271,11 +1271,12 @@
 /area/rogue/outdoors/rtfield)
 "aor" = (
 /obj/structure/closet/crate/chest,
-/obj/item/reagent_containers/food/snacks/egg/gland,
-/obj/item/reagent_containers/food/snacks/egg/gland,
-/obj/item/reagent_containers/food/snacks/egg/gland,
-/obj/item/reagent_containers/food/snacks/egg/gland,
-/obj/item/reagent_containers/food/snacks/egg/gland,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/egg,
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
 	},
@@ -8601,10 +8602,9 @@
 /obj/item/seeds/wheat,
 /obj/item/seeds/apple,
 /obj/item/seeds/apple,
-/obj/item/seeds,
-/obj/item/seeds,
 /obj/item/seeds/potato,
 /obj/item/seeds/potato,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church/chapel)
 "fMc" = (
@@ -16206,6 +16206,7 @@
 /obj/structure/fluff/millstone{
 	pixel_y = 7
 	},
+/obj/item/reagent_containers/peppermill,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church/chapel)
 "loJ" = (
