@@ -931,7 +931,7 @@
 					if(!L.rogfat_add(rand(4,6)))
 						if(ishuman(L))
 							var/mob/living/carbon/human/H = L
-							if(H.tiredness >= 75)
+							if(H.tiredness >= 50)
 								H.apply_status_effect(/datum/status_effect/debuff/trainsleep)
 						probby = 0
 					if(!(L.mobility_flags & MOBILITY_STAND))
@@ -942,7 +942,7 @@
 						user.visible_message(span_info("[user] trains on [src]!"))
 						var/boon = user.mind.get_learning_boon(W.associated_skill)
 						var/amt2raise = L.STAINT/2
-						if(user.mind.get_skill_level(W.associated_skill) >= SKILL_LEVEL_JOURNEYMAN)
+						if(user.mind.get_skill_level(W.associated_skill) >= SKILL_LEVEL_APPRENTICE)
 							to_chat(user, span_warning("I've learned all I can from doing this, it's time for the real thing."))
 							amt2raise = 0
 						if(amt2raise > 0)
