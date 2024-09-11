@@ -232,6 +232,7 @@
 	name = "Fluffy (Short)"
 	icon_state = "fluffyshort"
 	icon = 'modular_hearthstone/icons/mob/sprite_accessory/hair/hair_styles.dmi'
+
 /datum/sprite_accessory/hair/head/fluffy
 	name = "Fluffy"
 	icon_state = "fluffy"
