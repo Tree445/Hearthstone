@@ -33789,6 +33789,12 @@
 	pixel_y = -6;
 	redstone_id = "stewardshutterout"
 	},
+/obj/structure/lever/wall{
+	dir = 4;
+	name = "reception desk shutter";
+	pixel_y = 6;
+	redstone_id = "stewardshutter"
+	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "xXI" = (
