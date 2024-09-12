@@ -21,9 +21,10 @@
 
 /obj/item/quiver/attack_turf(turf/T, mob/living/user)
 	if(arrows.len >= max_storage)
+		to_chat(user, span_warning("Your [src.name] is full!"))
 		return
+	to_chat(user, span_notice("You begin to gather the ammunition..."))
 	for(var/obj/item/ammo_casing/caseless/rogue/arrow in T.contents)
-		to_chat(user, span_notice("You begin to gather the ammunition..."))
 		if(do_after(user, 5))
 			if(!eatarrow(arrow))
 				break
