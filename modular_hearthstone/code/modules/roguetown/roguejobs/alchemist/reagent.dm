@@ -1,17 +1,23 @@
-/datum/reagent/medicine/paralysispot                           // This is a tool of a hot topic. This may be removed entirely if people can abuse it in one way or another. 
-	name = "Paralysis Potion"
-	description = "Paralyzes those it enters."
+/datum/reagent/medicine/soporpot
+	name = "Soporific Potion"
+	description = "Weakens those it enters."
 	reagent_state = LIQUID
 	color = "#fcefa8"
-	taste_description = "stiffness"
-	overdose_threshold = 5
+	taste_description = "drowsyness"
+	overdose_threshold = 0
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	alpha = 225
 
-/datum/reagent/medicine/paralysispot/overdose_process(mob/living/L)
-	L.Paralyze(200)
+/datum/reagent/medicine/soporpot/on_mob_life(mob/living/carbon/M)
+	M.confused += 1
+	M.dizziness += 1
+	M.rogstam_add(-5)
+	if(M.rogfat > 80)
+		M.apply_status_effect(/datum/status_effect/debuff/soporific)
+	else
+		M.rogfat_add(15)
 	..()
-	. = 1 
+	. = 1
 
 /datum/reagent/medicine/fortitudepot
 	name = "Fortitude Potion"
