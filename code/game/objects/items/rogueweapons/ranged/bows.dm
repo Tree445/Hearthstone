@@ -56,6 +56,7 @@
 	if(user.client)
 		if(user.client.chargedprog >= 100)
 			spread = 0
+			adjust_experience(user, /datum/skill/combat/bows, user.STAINT * 4)
 		else
 			spread = 150 - (150 * (user.client.chargedprog / 100))
 	else
