@@ -122,9 +122,9 @@
 	desc = span_red("YUCK!")
 
 /datum/stressevent/psycurse
-	timer = 60 MINUTES
-	stressadd = 10
-	desc = span_red("Oh no! I've received divine punishment!")
+	timer = 999 MINUTES
+	stressadd = 5
+	desc = span_boldred("Oh no! I've received divine punishment!")
 
 /datum/stressevent/virginchurch
 	timer = 999 MINUTES
