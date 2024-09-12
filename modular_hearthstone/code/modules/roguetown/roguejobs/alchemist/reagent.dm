@@ -4,7 +4,7 @@
 	reagent_state = LIQUID
 	color = "#fcefa8"
 	taste_description = "drowsyness"
-	overdose_threshold = 33
+	overdose_threshold = 31
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	alpha = 225
 
