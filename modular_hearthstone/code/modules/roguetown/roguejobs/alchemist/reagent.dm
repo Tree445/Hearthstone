@@ -4,7 +4,7 @@
 	reagent_state = LIQUID
 	color = "#fcefa8"
 	taste_description = "drowsyness"
-	overdose_threshold = 0
+	overdose_threshold = 33
 	metabolization_rate = 1 * REAGENTS_METABOLISM
 	alpha = 225
 
@@ -19,6 +19,11 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/soporpot/overdose_process(mob/living/carbon/M)
+	M.drowsiness += 2
+	M.confused += 2
+	..()
+	. = 1 
 /datum/reagent/medicine/fortitudepot
 	name = "Fortitude Potion"
 	description = "Increases one's Strength and Constitution."
