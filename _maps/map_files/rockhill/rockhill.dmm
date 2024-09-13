@@ -12131,12 +12131,6 @@
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/vikingarea)
-"ieh" = (
-/obj/structure/bed/rogue/inn/wool,
-/obj/item/bedsheet/rogue/pelt,
-/obj/effect/landmark/start/weaponsmith,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town)
 "iek" = (
 /obj/structure/stairs{
 	dir = 8
@@ -23188,7 +23182,7 @@
 "qad" = (
 /obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/pelt,
-/obj/effect/landmark/start/armorsmith,
+/obj/effect/landmark/start/blacksmith,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
 "qas" = (
@@ -415167,7 +415161,7 @@ vka
 fZJ
 fZJ
 xMr
-ieh
+qad
 ous
 ous
 dHZ

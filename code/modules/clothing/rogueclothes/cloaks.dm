@@ -1254,7 +1254,7 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	nodismemsleeves = TRUE
 
-	/obj/item/clothing/cloak/combattantecloak
+/obj/item/clothing/cloak/combattantecloak
 	name = "combattantecloak"
 	desc = "A cloak designed for members of the Combattante Association"
 	color = null
