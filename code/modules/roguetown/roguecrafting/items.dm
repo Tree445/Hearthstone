@@ -377,6 +377,15 @@
 	skillcraft = /datum/skill/misc/sewing
 	req_table = FALSE
 
+/datum/crafting_recipe/roguetown/bagx5
+	name = "bag x5"
+	result = /obj/item/storage/roguebag/crafted = 5
+	reqs = list(/obj/item/natural/fibers = 5,
+				/obj/item/natural/cloth = 5)
+	tools = list(/obj/item/needle)
+	skillcraft = /datum/skill/misc/sewing
+	req_table = FALSE
+
 /datum/crafting_recipe/roguetown/psydonhood
 	name = "psydon hood"
 	result = /obj/item/clothing/head/roguetown/psydonhood
