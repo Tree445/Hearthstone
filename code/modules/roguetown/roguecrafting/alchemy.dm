@@ -160,8 +160,8 @@
 	craftdiff = 6
 
 /datum/crafting_recipe/roguetown/alchemy/e2s
-	name = "transmute steel to silver" // This is gonna be ass to make. Have fun. (2 gold ORE, and 4 steel INGOTs.)
+	name = "transmute steel to silver" // This is gonna be ass to make. Have fun. (2 gold ORE, and 4 steel INGOTs, and 2 seffira)
 	result = list(/obj/item/ingot/silver = 1)
-	reqs = list(/obj/item/rogueore/gold = 2, /obj/item/ingot/steel = 4)
+	reqs = list(/obj/item/rogueore/gold = 2, /obj/item/ingot/steel = 4, /obj/item/roguegem/violet = 2)
 	craftdiff = 6
 
