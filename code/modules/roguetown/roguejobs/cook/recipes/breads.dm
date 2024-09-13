@@ -506,7 +506,7 @@
 	craftdiff = 1
 	subtype_reqs = FALSE
 
-/obj/item/reagent_containers/food/snacks/rogue/sweetroll
+/* /obj/item/reagent_containers/food/snacks/rogue/sweetroll
 	name = "sweetroll"
 	desc = ""
 	icon = 'icons/roguetown/items/food.dmi'
@@ -516,7 +516,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("sugar and crispy dough" = 1)
 	foodtype = SUGAR
-	eat_effect = /datum/status_effect/buff/foodbuff
+	eat_effect = /datum/status_effect/buff/foodbuff */
 
 /datum/crafting_recipe/roguetown/cooking/garlictoastslice
 	name = "garlic toast"

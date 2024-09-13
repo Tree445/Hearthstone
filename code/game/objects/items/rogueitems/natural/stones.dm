@@ -131,6 +131,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	desc = "A piece of rough ground stone."
 	gripped_intents = null
 	dropshrink = 0.75
+	mill_result = /obj/item/reagent_containers/powder/salt
 	possible_item_intents = list(INTENT_GENERIC)
 	force = 10
 	throwforce = 15
