@@ -25,6 +25,16 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		cloak = /obj/item/clothing/cloak/apron/brown
 		backl = /obj/item/storage/backpack/rogue/backpack
+		backpack_contents = list(
+			/obj/item/roguegem/yellow, 
+			/obj/item/roguegem/yellow, 
+			/obj/item/roguegem/yellow, 
+			/obj/item/natural/stone, 
+			/obj/item/natural/stone, 
+			/obj/item/natural/stone,
+			/obj/item/seeds/pipeweed,
+			/obj/item/fertilizer) // Starting supplies for making a millstone and potions. No starting money, though. 
+
 	else
 		switch(H.patron?.type)
 			if(/datum/patron/divine/eora)
