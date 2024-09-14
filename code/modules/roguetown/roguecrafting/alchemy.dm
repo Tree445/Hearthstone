@@ -242,8 +242,7 @@
 	result = list(/obj/item/reagent_containers/powder/moondust)
 	reqs = list(
 		/obj/item/ash = 1, 
-		/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, 
-		/datum/reagent/berrypoison = 2) // Probably better to just buy from the merchant.
+		/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 2) // Probably better to just buy from the merchant.
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/t2sub
