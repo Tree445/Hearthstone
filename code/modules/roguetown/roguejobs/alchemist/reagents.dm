@@ -56,14 +56,14 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	alpha = 173
 
-/datum/reagent/medicine/majorhealthpot/on_mob_life(mob/living/carbon/M) // Double the healing of regular health pots.
+/datum/reagent/medicine/majorhealthpot/on_mob_life(mob/living/carbon/M) // Triple the healing of regular health pots.
 	var/list/wCount = M.get_wounds()
 	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
 		M.blood_volume = min(M.blood_volume+100, BLOOD_VOLUME_MAXIMUM)
 	else
 		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
 	if(wCount.len > 0)	
-		M.heal_wounds(3)
+		M.heal_wounds(4)
 		M.update_damage_overlays()
 	M.adjustBruteLoss(-1.5*REM, 0) // 20u = 150 points of healing.
 	M.adjustFireLoss(-1.5*REM, 0)
