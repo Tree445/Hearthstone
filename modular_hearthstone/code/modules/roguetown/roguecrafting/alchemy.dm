@@ -7,8 +7,8 @@
 		/obj/item/hearthnatural/beespider_fang = 1 )
 	craftdiff = 4
 
-/datum/crafting_recipe/roguetown/alchemy/fortitudepot
-	name = "Fortitude Potion"
+/datum/crafting_recipe/roguetown/alchemy/strengthpot
+	name = "Strength Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/fortitudepot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
