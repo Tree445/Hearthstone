@@ -163,7 +163,7 @@
 	invocation = "HO HO HO"
 	clothes_req = FALSE
 	say_destination = FALSE // Santa moves in mysterious ways
-
+/*
 /obj/effect/proc_holder/spell/aoe_turf/timestop
 	name = "Stop Time"
 	desc = ""
@@ -195,7 +195,7 @@
 
 /obj/effect/proc_holder/spell/aoe_turf/timestop_greater/cast(list/targets, mob/user = usr)
 	new /obj/effect/timestop/magic(get_turf(user), timestop_range, timestop_duration, list(user))
-
+*/ 
 /obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf
 	name = "Summon Volf"
 	desc = ""
