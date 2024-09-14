@@ -3247,11 +3247,6 @@
 /obj/item/roguekey/roomhunt,
 /turf/open/floor/rogue/tile/checkeralt,
 /area/rogue/indoors/town/tavern)
-"bKp" = (
-/obj/effect/landmark/start/clerk,
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/hexstone,
-/area/rogue/indoors/town/manor)
 "bLf" = (
 /obj/structure/mineral_door/wood/donjon{
 	dir = 1;
@@ -9718,6 +9713,7 @@
 	dir = 1
 	},
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
+/obj/effect/landmark/start/clerk,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
 "gxt" = (
@@ -301372,7 +301368,7 @@ wbg
 mwE
 gPy
 xXF
-bKp
+xmu
 lbV
 gPy
 xAt
