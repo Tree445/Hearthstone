@@ -192,12 +192,18 @@
 	metabolization_rate = 0.5
 
 /datum/reagent/mfire/on_mob_life(mob/living/carbon/M)
-	if(!HAS_TRAIT(M, TRAIT_MALUMSGRACE))
+	if(HAS_TRAIT(M, TRAIT_MALUMSGRACE)) 
+		M.apply_status_effect(/datum/status_effect/buff/mfire)
+		if(holder.has_reagent(/datum/reagent/mfire))
+			holder.remove_reagent(/datum/reagent/mfire, 15)
+	if(HAS_TRAIT(M, TRAIT_CRACKHEAD)) // Baotha says you can do this drug too
+		M.apply_status_effect(/datum/status_effect/buff/mfire)
+		if(holder.has_reagent(/datum/reagent/mfire))
+			holder.remove_reagent(/datum/reagent/mfire, 15)
+	else
 		M.adjust_fire_stacks(1) // You snorted divine fire and you're not one of his faithful? Burn.
 		var/burndmg = max(0.3*M.fire_stacks, 0.3)
 		M.adjustFireLoss(burndmg, 0)
-	else
-		M.apply_status_effect(/datum/status_effect/buff/mfire)
 	..()
 	. = 1
 

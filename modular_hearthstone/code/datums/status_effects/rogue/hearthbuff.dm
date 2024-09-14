@@ -75,10 +75,10 @@
 	desc = ""
 	icon_state = "intellect"
 
-/datum/status_effect/buff/mfire
+/datum/status_effect/buff/mfire // Requires a ground riddle of steel and being a follower of malum or baotha. Best case, this is used for a chunky mining buff, as intended.
 	id = "mfirebuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/mfire
-	effectedstats = list("strength" = 2, "endurance" = 3, "fortune" = 5) // Requires a ground riddle of steel and being a follower of malum. Best case, this is used for a chunky mining buff, as intended. Can nerf if it becomes a problem.
+	effectedstats = list("strength" = 1, "endurance" = 3, "fortune" = 5) 
 	duration = 5 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/mfire
