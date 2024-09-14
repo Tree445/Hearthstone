@@ -65,11 +65,11 @@
 	if(wCount.len > 0)	
 		M.heal_wounds(3)
 		M.update_damage_overlays()
-	M.adjustBruteLoss(-1*REM, 0) // 20u = 130 points of healing.
-	M.adjustFireLoss(-1*REM, 0)
-	M.adjustOxyLoss(-2, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
-	M.adjustCloneLoss(-2*REM, 0)
+	M.adjustBruteLoss(-1.5*REM, 0) // 20u = 150 points of healing.
+	M.adjustFireLoss(-1.5*REM, 0)
+	M.adjustOxyLoss(-3, 0)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3*REM)
+	M.adjustCloneLoss(-3*REM, 0)
 	..()
 	. = 1
 
