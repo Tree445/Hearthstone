@@ -41,7 +41,6 @@
 			/obj/item/roguegem/yellow, 
 			/obj/item/roguegem/yellow, 
 			/obj/item/roguegem/yellow, 
-			/obj/item/roguegem/blue, 
 			/obj/item/natural/stone, 
 			/obj/item/natural/stone, 
 			/obj/item/natural/stone,
