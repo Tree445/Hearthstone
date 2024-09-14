@@ -53,7 +53,6 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1,
-		/obj/item/reagent_containers/powder/sublimate = 1,
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 1,
 		/obj/item/reagent_containers/food/snacks/fish = 1)
 	craftdiff = 2
@@ -63,7 +62,6 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 3,
-		/obj/item/reagent_containers/powder/sublimate = 2,
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2,
 		/obj/item/reagent_containers/food/snacks/fish = 2)
 	craftdiff = 2
@@ -73,7 +71,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1,
-		/obj/item/reagent_containers/powder/sublimate = 2,
+		/obj/item/reagent_containers/powder/sublimate = 1,
 		/obj/item/reagent_containers/food/snacks/grown/apple = 2,
 		/obj/item/reagent_containers/food/snacks/fish/clownfish = 1,
 		/obj/item/natural/bone = 2)
@@ -84,7 +82,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot,/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 3,
-		/obj/item/reagent_containers/powder/sublimate = 4,
+		/obj/item/reagent_containers/powder/sublimate = 2,
 		/obj/item/reagent_containers/food/snacks/grown/apple = 4,
 		/obj/item/reagent_containers/food/snacks/fish/clownfish = 2,
 		/obj/item/natural/bone = 4)
