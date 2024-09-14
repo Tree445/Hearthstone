@@ -194,7 +194,7 @@
 	name = "transmute iron to toper"
 	result = list(/obj/item/roguegem/yellow = 1)
 	reqs = list(
-		/obj/item/rogueore/iron = 2, 
+		/obj/item/rogueore/iron = 1, 
 		/obj/item/natural/stone = 1)
 	craftdiff = 4
 
