@@ -12,7 +12,7 @@
 /datum/status_effect/buff/swiftnessbuff
 	id = "swiftnessbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/swiftness
-	effectedstats = list("speed" = 5)
+	effectedstats = list("speed" = 5, "endurance" = 3)
 	duration = 2 MINUTES
 
 /atom/movable/screen/alert/status_effect/buff/swiftness
