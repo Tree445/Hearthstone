@@ -70,7 +70,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
 		/obj/item/reagent_containers/powder/sublimate = 4, 
-		/obj/item/hearthnatural/beespider_fang = 2, 
+		/obj/item/hearthnatural/beespider_fang = 1, 
 		/obj/item/reagent_containers/food/snacks/smallrat = 1)
 	craftdiff = 6
 
