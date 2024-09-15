@@ -60,9 +60,10 @@
 	update_icon()
 	update_desc()
 
-/obj/item/keyring/proc/removefromring(mob/user, obj/item/roguekey/K)
+/obj/item/keyring/proc/removefromring(mob/user)
 	if(!keys.len)
 		return
+	var/obj/item/roguekey/K = keys[keys.len]
 	keys -= K
 	K.loc = user.loc
 	update_icon()
@@ -96,11 +97,9 @@
 
 /obj/item/keyring/attack_right(mob/user)
 	if(keys.len)
-		var/obj/item/roguekey/K = keys.len > 1 ? input(user, "Which key?", "Keyring") as null|anything in keys : keys[1]
-		if(K && user.canUseTopic(src, BE_CLOSE))
-			to_chat(user, span_notice("I pull [K] off the ring."))
-			removefromring(user, K)
-			user.put_in_active_hand(K)
+		to_chat(user, span_notice("I steal a key off the ring."))
+		var/obj/item/roguekey/K = removefromring(user)
+		user.put_in_active_hand(K)
 
 /obj/item/keyring/update_icon()
 	..()
@@ -127,6 +126,7 @@
 			desc += span_info("\n- [KE.name ? "A [KE.name]." : "An unknown key."]")
 	else
 		desc = ""
+
 /obj/item/keyring/butcher	// Just incase, butcher can at least see to getting farmers incase there are none given he sucks at farming.
 	keys = list(/obj/item/roguekey/farm, /obj/item/roguekey/butcher)
 
@@ -135,7 +135,6 @@
 
 /obj/item/keyring/judge
 	keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
-
 
 /obj/item/keyring/councillor
 	keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard)
