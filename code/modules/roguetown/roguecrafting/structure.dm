@@ -633,12 +633,12 @@
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/structure/dummy2
-	name = "advanced training dummy"
+	name = "sentient sparring dummy"
 	result = /obj/structure/fluff/statue/tdummy2
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/reagent_containers/lux = 1,
 				/obj/item/natural/fibers = 1)
 	verbage_simple = "construct"
 	verbage = "constructs"
-	skillcraft = /datum/skill/craft/carpentry
+	skillcraft = /datum/skill/misc/alchemy
 	craftdiff = 3
