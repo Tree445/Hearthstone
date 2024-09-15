@@ -763,30 +763,30 @@
 	var/saved_spells //Needs to be used to stop infinite spells
 	var/saved_points //Ditto. All spells acquired with this armor will vanish after being dropped.
 
-/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/equipped(mob/living/user) //copypasta from dragon ring. I'm lazy.
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/equipped(mob/living/user) //WARNING NOTE: We suffer an equip() bug that essentially boils down to bad coding/futureproofing. USE COMPONENTS IN THE FUTURE.
 	. = ..()
 	if(active_item)
 		return
 	else
+		if(slot != SLOT_ARMOR) //Hopefully stops one part of the bug, but won't fix the other. TODO: Rework equip and de-equip.
+			return //No.
 		if(user.mind.get_skill_level(/datum/skill/magic/arcane))
 			active_item = TRUE
 			user.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			to_chat(user, span_notice("Magicks flow throughout your body."))
 			user.change_stat("intelligence", 3) //Additional cooldown (scales with int)
-			saved_spells = user.mind.spell_list
-			saved_points = user.mind.spell_points
 			return
 		else
 			to_chat(user, span_warning("The curiass feels cold and dead."))
 
-/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/dropped(mob/living/user)
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/dropped(mob/living/user) //Remove some bugfixing stuff in exchange for stricter checks.
 	if(active_item)
+		if(slot != SLOT_ARMOR)
+			return //No.
 		if(user.mind.get_skill_level(/datum/skill/magic/arcane))
 			to_chat(user, span_notice("Gone is the arcane magicks enhancing thine abilities..."))
 			user.change_stat("intelligence", -3) //Ensure to not give inf intelligence.
 			user.mind.adjust_skillrank(/datum/skill/magic/arcane, -1, TRUE)
-			user.mind.spell_list = saved_spells
-			user.mind.spell_points = saved_points //So we don't softlock people with negative spellpoints.
 			active_item = FALSE
 			return
 		else
