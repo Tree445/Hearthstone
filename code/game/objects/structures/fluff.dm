@@ -913,7 +913,7 @@
 	icon_state = "td"
 
 /obj/structure/fluff/statue/tdummy2
-	name = "Sentient Sparing Dummy"
+	name = "Sentient Sparring Dummy"
 	icon_state = "p_dummy"
 	color = COLOR_LUX
 	icon = 'icons/roguetown/misc/structure.dmi'
