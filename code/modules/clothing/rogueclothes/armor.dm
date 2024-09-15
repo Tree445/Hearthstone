@@ -760,10 +760,8 @@
 	smeltresult = /obj/item/ingot/steel
 	armor_class = ARMOR_CLASS_LIGHT //Designed for the infirm.
 	var/active_item = FALSE //Prevents issues like dragon ring giving negative str instead
-	var/saved_spells //Needs to be used to stop infinite spells
-	var/saved_points //Ditto. All spells acquired with this armor will vanish after being dropped.
 
-/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/equipped(mob/living/user) //WARNING NOTE: We suffer an equip() bug that essentially boils down to bad coding/futureproofing. USE COMPONENTS IN THE FUTURE.
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/equipped(mob/living/user) //copypasta from dragon ring. I'm lazy.
 	. = ..()
 	if(active_item)
 		return
@@ -781,16 +779,17 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/dropped(mob/living/user) //Remove some bugfixing stuff in exchange for stricter checks.
 	if(active_item)
-		if(slot != SLOT_ARMOR)
-			return //No.
 		if(user.mind.get_skill_level(/datum/skill/magic/arcane))
-			to_chat(user, span_notice("Gone is the arcane magicks enhancing thine abilities..."))
-			user.change_stat("intelligence", -3) //Ensure to not give inf intelligence.
-			user.mind.adjust_skillrank(/datum/skill/magic/arcane, -1, TRUE)
-			active_item = FALSE
-			return
+			var/mob/living/carbon/human/H = user
+			if(H.get_item_by_slot(SLOT_ARMOR) == src) //Hopefully fixes this last issue.
+				to_chat(H, span_notice("Gone is the arcane magicks enhancing thine abilities..."))
+				H.change_stat("intelligence", -3) //Ensure to not give inf intelligence.
+				H.mind.adjust_skillrank(/datum/skill/magic/arcane, -1, TRUE)
+				active_item = FALSE
+				return
 		else
 			to_chat(user, span_warning("The feeling of death and decay departs the moment you leave the curiass be."))
+
 
 /obj/item/clothing/suit/roguetown/armor/plate/psydonianknightarmor
 	slot_flags = ITEM_SLOT_ARMOR
