@@ -237,6 +237,7 @@
 	item_state = "sack_rope"
 	icon = 'icons/roguetown/items/misc.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_HIP
 	resistance_flags = NONE
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	max_integrity = 300
@@ -414,7 +415,7 @@
 		color = "#d9d0cb"	
 	return TRUE
 
-/obj/item/reagent_containers/powder/flour/attack_hand(mob/user)
+/obj/item/reagent_containers/powder/flour/attack_hand(mob/living/user)
 	if(water_added)
 		playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
 		if(do_after(user,3 SECONDS, target = src))

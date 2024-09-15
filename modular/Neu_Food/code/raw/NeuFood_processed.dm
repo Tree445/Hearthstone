@@ -102,7 +102,7 @@
 		color = "#d9d0cb"	
 	return TRUE
 
-/obj/item/reagent_containers/powder/sugar/attack_hand(mob/user)
+/obj/item/reagent_containers/powder/sugar/attack_hand(mob/living/user)
 	if(water_added)
 		playsound(get_turf(user), 'modular/Neu_Food/sound/kneading_alt.ogg', 90, TRUE, -1)
 		if(do_after(user,3 SECONDS, target = src))

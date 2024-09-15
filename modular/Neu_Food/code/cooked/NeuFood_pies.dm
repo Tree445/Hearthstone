@@ -138,7 +138,7 @@
 			qdel(I)
 			return
 		if(meaty && process_step == 3 && do_after(user,short_cooktime, target = src))
-		user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
+			user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 			to_chat(user, "<span class='notice'>Filling the meat pie to the brim. Still lacks a pie roof.</span>")
 			process_step += 1
 			update_icon()
