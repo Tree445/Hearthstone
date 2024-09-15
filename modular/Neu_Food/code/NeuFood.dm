@@ -176,7 +176,7 @@
 	..()
 	update_icon()
 
-/obj/item/reagent_containers/glass/bowl/attackby(obj/item/I, mob/user, params) // lets you eat with a spoon from a bowl
+/obj/item/reagent_containers/glass/bowl/attackby(obj/item/I, mob/living/user, params) // lets you eat with a spoon from a bowl
 	if(istype(I, /obj/item/kitchen/spoon))
 		if(reagents.total_volume > 0)
 			beingeaten()
@@ -229,6 +229,69 @@
 	icon_state ="book8_0"
 	base_icon_state = "book8"
 	bookfile = "Neu_cooking.json"
+
+/obj/item/storage/foodbag
+	name = "food pouch"
+	desc = "A small pouch for carrying handfuls of food items."
+	icon_state = "sack_rope"
+	item_state = "sack_rope"
+	icon = 'icons/roguetown/items/misc.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	resistance_flags = NONE
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	max_integrity = 300
+
+/obj/item/storage/foodbag/examine(mob/user)
+	. = ..()
+	if(contents.len)
+		. += span_notice("[contents.len] thing[contents.len > 1 ? "s" : ""] in the sack.")
+
+/obj/item/storage/foodbag/attack_right(mob/user)
+	. = ..()
+	if(.)
+		return
+	user.changeNext_move(CLICK_CD_MELEE)
+	testing("yea144")
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/list/things = STR.contents()
+	if(things.len)
+		testing("yea64")
+		var/obj/item/I = pick(things)
+		STR.remove_from_storage(I, get_turf(user))
+		user.put_in_hands(I)
+
+/obj/item/storage/foodbag/update_icon()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	var/list/things = STR.contents()
+	if(things.len)
+		icon_state = "sack_rope"
+		w_class = WEIGHT_CLASS_NORMAL
+	else
+		icon_state = "sack_rope"
+		w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/foodbag/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 20
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = 5
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/food/snacks/rogue/berrycandy,
+		/obj/item/reagent_containers/food/snacks/rogue/applecandy,
+		/obj/item/reagent_containers/food/snacks/rogue/raisins,
+		/obj/item/reagent_containers/food/snacks/rogue/crackerscooked
+		))
+	STR.click_gather = TRUE
+	STR.attack_hand_interact = FALSE
+	STR.collection_mode = COLLECT_EVERYTHING
+	STR.dump_time = 0
+	STR.allow_quick_gather = TRUE
+	STR.allow_quick_empty = TRUE
+	STR.allow_look_inside = FALSE
+	STR.allow_dump_out = TRUE
+	STR.display_numerical_stacking = TRUE
+
 
 /* * * * * * * * * * * * * * *	*
  *								*
@@ -326,7 +389,7 @@
 	..()
 	qdel(src)
 
-/obj/item/reagent_containers/powder/flour/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/powder/flour/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	var/obj/item/reagent_containers/R = I
 	if(user.mind)
@@ -374,7 +437,7 @@
 	qdel(src)
 
 /*	..................   Food platter   ................... */
-/obj/item/cooking/platter/attackby(obj/item/I, mob/user, params)
+/obj/item/cooking/platter/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked))
 		if(isturf(loc)&& (found_table))

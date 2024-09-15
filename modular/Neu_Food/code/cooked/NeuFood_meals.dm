@@ -89,7 +89,7 @@
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
-/obj/item/reagent_containers/food/snacks/rogue/wienerpotato/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/food/snacks/rogue/wienerpotato/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(!experimental_inhand)
 		return
@@ -112,7 +112,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_EXTREME
-/obj/item/reagent_containers/food/snacks/rogue/wienerpotato/plated/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/food/snacks/rogue/wienerpotato/plated/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(!experimental_inhand)
 		return
@@ -137,7 +137,7 @@
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
 	eat_effect = /datum/status_effect/buff/foodbuff
-/obj/item/reagent_containers/food/snacks/rogue/wieneronions/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/food/snacks/rogue/wieneronions/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(!experimental_inhand)
 		return
@@ -160,7 +160,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	trash = /obj/item/cooking/platter
 	rotprocess = SHELFLIFE_EXTREME
-/obj/item/reagent_containers/food/snacks/rogue/wieneronions/plated/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/food/snacks/rogue/wieneronions/plated/attackby(obj/item/I, mob/living/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
 	if(!experimental_inhand)
 		return
@@ -301,7 +301,7 @@
 	cooked_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
 	rotprocess = SHELFLIFE_DECENT
-/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/attackby(obj/item/I, mob/user, params)
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/attackby(obj/item/I, mob/living/user, params)
 	var/obj/item/reagent_containers/peppermill/mill = I
 	if (!isturf(src.loc) || \
 		!(locate(/obj/structure/table) in src.loc) && \
