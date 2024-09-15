@@ -12,83 +12,71 @@
 	throwforce = 0
 	var/list/keys = list()
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK|ITEM_SLOT_MOUTH|ITEM_SLOT_WRISTS
+	equip_sound = 'sound/foley/footsteps/armor/chain (2).ogg'
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	anvilrepair = /datum/skill/craft/blacksmithing
+
+/obj/item/storage/keyring/Initialize()
+    . = ..()
+    if(keys.len)
+        for(var/X in keys)
+            new X(src)
+            keys -= X
+    update_icon()
+    update_desc()
 
 /obj/item/storage/keyring/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
-		STR.max_items = 5
+		STR.max_combined_w_class = 20
+		STR.max_w_class = WEIGHT_CLASS_SMALL
+		STR.max_items = 9
+		STR.click_gather = TRUE
+		STR.allow_dump_out = TRUE
+		STR.rustle_sound = FALSE
 		STR.set_holdable(list(
-			/obj/item/roguekey/lord,
-			/obj/item/roguekey/royal,
-			/obj/item/roguekey/manor,
-			/obj/item/roguekey/garrison,
-			/obj/item/roguekey/dungeon,
-			/obj/item/roguekey/vault,
-			/obj/item/roguekey/sheriff,
-			/obj/item/roguekey/judge,
-			/obj/item/roguekey/merchant,
-			/obj/item/roguekey/shop,
-		    /obj/item/roguekey/tavern,
-			/obj/item/roguekey/velder,
-			/obj/item/roguekey/tavern/village,
-			/obj/item/roguekey/roomi/village,
-			/obj/item/roguekey/roomii/village,
-			/obj/item/roguekey/roomiii/village,
-			/obj/item/roguekey/roomiv/village,
-			/obj/item/roguekey/roomv/village,
-			/obj/item/roguekey/roomvi/village,
-			/obj/item/roguekey/roomi,
-			/obj/item/roguekey/roomii,
-			/obj/item/roguekey/roomiii,
-			/obj/item/roguekey/roomiv,
-			/obj/item/roguekey/roomv,
-			/obj/item/roguekey/roomvi,
-			/obj/item/roguekey/roomhunt,
-			/obj/item/roguekey/vampire,
-			/obj/item/roguekey/blacksmith,
-			/obj/item/roguekey/blacksmith/town,
-			/obj/item/roguekey/walls,
-			/obj/item/roguekey/farm,
-			/obj/item/roguekey/butcher,
-			/obj/item/roguekey/church,
-			/obj/item/roguekey/priest,
-			/obj/item/roguekey/tower,
-			/obj/item/roguekey/mage,
-			/obj/item/roguekey/graveyard,
-			/obj/item/roguekey/mason,
-			/obj/item/roguekey/nightman,
-			/obj/item/roguekey/nightmaiden,
-			/obj/item/roguekey/mercenary,
-			/obj/item/roguekey/physician,
-			/obj/item/roguekey/puritan,
-			/obj/item/roguekey/confession,
-			/obj/item/roguekey/hand,
-			/obj/item/roguekey/steward,
-			/obj/item/roguekey/archive,
-			/obj/item/roguekey/porta,
-			/obj/item/roguekey/custom,
+			/obj/item/roguekey,,
 			/obj/item/customblank,
 		))
-
-/obj/item/storage/keyring/Initialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
-
-	if(keys.len)
-		for(var/X in keys)
-			addtoring(new X())
-			keys -= X
-	update_icon()
-	update_desc()
 
 /obj/item/storage/keyring/attack_right(mob/user)
 	var/datum/component/storage/CP = GetComponent(/datum/component/storage)
 	if(CP)
 		CP.rmb_show(user)
 		return TRUE
+
+/obj/item/storage/keyring/update_icon()
+    ..()
+    switch(contents.len)
+        if(0)
+            icon_state = "keyring0"
+        if(1)
+            icon_state = "keyring1"
+        if(2)
+            icon_state = "keyring2"
+        if(3)
+            icon_state = "keyring3"
+        if(4)
+            icon_state = "keyring4"
+        else
+            icon_state = "keyring5"
+
+/obj/item/storage/keyring/proc/update_desc()
+	if(contents.len)
+		desc = span_info("Holds \Roman[contents.len] key\s, including:")
+		for(var/obj/item/roguekey/KE in contents)
+			desc += span_info("\n- [KE.name ? "A [KE.name]." : "	An unknown key."]")
+	else
+		desc = ""
+
+/obj/item/storage/keyring/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+    . = ..()
+    playsound(src, "sound/items/gems (1).ogg", 100, FALSE)
+    update_desc()
+
+/obj/item/storage/keyring/Exited(atom/movable/gone, direction)
+    . = ..()
 
 /obj/item/storage/keyring/getonmobprop(tag)
 	. = ..()
@@ -119,24 +107,6 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/item/storage/keyring/proc/addtoring(obj/item/I)
-	if(!I || !istype(I))
-		return 0
-	I.loc = src
-	keys += I
-	update_icon()
-	update_desc()
-
-/obj/item/storage/keyring/proc/removefromring(mob/user)
-	if(!keys.len)
-		return
-	var/obj/item/roguekey/K = keys[keys.len]
-	keys -= K
-	K.loc = user.loc
-	update_icon()
-	update_desc()
-	return K
-
 /obj/item/storage/keyring/pre_attack(target, user, params)
 	. = ..()
 	var/used_hash
@@ -151,48 +121,6 @@
 	for(var/obj/item/roguekey/K in keys)
 		if(istype(K, /obj/item/roguekey/lord))
 			K.lockhash = used_hash
-
-/obj/item/storage/keyring/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/roguekey))
-		if(keys.len >= 10)
-			to_chat(user, span_warning("Too many keys."))
-			return
-		user.dropItemToGround(I)
-		addtoring(I)
-	else
-		return ..()
-
-/obj/item/storage/keyring/attack_right(mob/user)
-	if(keys.len)
-		to_chat(user, span_notice("I steal a key off the ring."))
-		var/obj/item/roguekey/K = removefromring(user)
-		user.put_in_active_hand(K)
-
-/obj/item/storage/keyring/update_icon()
-	..()
-	if(!keys.len)
-		icon_state = "keyring0"
-		return
-	if(keys.len >= 5)
-		icon_state = "keyring5"
-		return
-	switch(keys.len)
-		if(1)
-			icon_state = "keyring1"
-		if(2)
-			icon_state = "keyring2"
-		if(3)
-			icon_state = "keyring3"
-		if(4)
-			icon_state = "keyring4"
-
-/obj/item/storage/keyring/proc/update_desc()
-	if(keys.len)
-		desc = span_info("Holds \Roman[keys.len] key\s, including:")
-		for(var/obj/item/roguekey/KE in keys)
-			desc += span_info("\n- [KE.name ? "A [KE.name]." : "An unknown key."]")
-	else
-		desc = ""
 
 /obj/item/storage/keyring/butcher	// Just incase, butcher can at least see to getting farmers incase there are none given he sucks at farming.
 	keys = list(/obj/item/roguekey/farm, /obj/item/roguekey/butcher)

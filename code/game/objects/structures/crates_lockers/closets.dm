@@ -279,9 +279,9 @@
 		return
 	if(istype(I,/obj/item/storage/keyring))
 		var/obj/item/storage/keyring/R = I
-		if(!R.keys.len)
+		if(!R.contents.len)
 			return
-		var/list/keysy = shuffle(R.keys.Copy())
+		var/list/keysy = shuffle(R.contents.Copy())
 		for(var/obj/item/roguekey/K in keysy)
 			if(user.cmode)
 				if(!do_after(user, 10, TRUE, src))
