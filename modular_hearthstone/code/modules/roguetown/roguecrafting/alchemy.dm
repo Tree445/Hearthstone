@@ -1,7 +1,13 @@
+/datum/crafting_recipe/roguetown/alchemy/paralysispot
+	name = "Paralysis Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/paralysispot)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 2, /obj/item/roguegem/diamond = 1, /obj/item/hearthnatural/beespider_fang = 1 )
+	craftdiff = 4
+
 /datum/crafting_recipe/roguetown/alchemy/soporpot
 	name = "Soporific Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/soporpot)
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 2, /obj/item/hearthnatural/beespider_fang = 2 )
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 2, /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 2 )
 	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/alchemy/fortitudepot

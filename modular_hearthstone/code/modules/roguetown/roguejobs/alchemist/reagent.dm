@@ -1,3 +1,18 @@
+/datum/reagent/medicine/paralysispot                           // This is a tool of a hot topic. This may be removed entirely if people can abuse it in one way or another. 
+	name = "Paralysis Potion"
+	description = "Paralyzes those it enters."
+	reagent_state = LIQUID
+	color = "#fcefa8"
+	taste_description = "stiffness"
+	overdose_threshold = 5
+	metabolization_rate = 1 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/paralysispot/overdose_process(mob/living/L)
+	L.Paralyze(200)
+	..()
+	. = 1 
+
 /datum/reagent/medicine/soporpot
 	name = "Soporific Potion"
 	description = "Weakens those it enters."
