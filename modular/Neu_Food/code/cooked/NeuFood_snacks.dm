@@ -39,6 +39,7 @@
 			if(!mill.reagents.has_reagent(/datum/reagent/consumable/blackpepper, 1))
 				to_chat(user, "There's not enough black pepper to make anything with.")
 				return TRUE
+			user.mind.adjust_experience(/datum/skill/craft/cooking, user.STAINT * 0.8)
 			mill.reagents.remove_reagent(/datum/reagent/consumable/blackpepper, 1)
 			new /obj/item/reagent_containers/food/snacks/rogue/peppersteak(loc)
 			qdel(src)
