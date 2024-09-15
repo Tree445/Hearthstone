@@ -53,6 +53,7 @@
 			H.change_stat("strength", 1)
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if("War Cleric")
 			H.set_blindness(0)
@@ -77,6 +78,7 @@
 			H.change_stat("endurance", 2) // Stronger but less intelligent/quick compared to life clerics.
 			H.change_stat("speed", -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 		if("Nature Cleric")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a cleric of the nature domain."))
@@ -96,6 +98,7 @@
 			H.change_stat("endurance", 2)
 			H.change_stat("speed", 1)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 		// HEARTHSTONE ADD: cloistered cleric subclass (lighter armored and equipped)
 		if("Cloistered Devout")
 			// Devout start without the typical cleric medium/heavy armor shtick and without much in the way of weapons or skills to use them.
@@ -113,6 +116,7 @@
 			H.change_stat("strength", -2)
 			H.change_stat("perception", 2)
 			H.change_stat("speed", 1)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 		// HEARTHSTONE ADDITION END
 
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
@@ -177,12 +181,7 @@
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	// HEARTHSTONE ADDITION: cloistered devout devo regen & tier buff
 	if (classchoice == "Cloistered Devout")
-		// start with passive devo gain and ability to gain up to T3 spells
-		C.passive_devotion_gain += 0.5 //REQUIRES passive_progression_gain to function.
-		C.passive_progression_gain += 0.5 //People need to check how this works in future.
-		C.max_progression = CLERIC_REQ_3
-		C.max_devotion = CLERIC_REQ_4 //They have the same CAPACITY as priest, but will never be able to reach cure rot/T4 spells
-		C.grant_spells(H) // don't give churn as an extra spell to cloistered since they get their patron's full spell list (up to t3)
+		C.grant_spells_devout(H)
 	else
 		C.grant_spells_cleric(H)
 	// HEARTHSTONE ADDITION END
