@@ -33,7 +33,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-		neck = /obj/item/keyring/innkeep
+		neck = /obj/item/storage/keyring/innkeep
 		cloak = /obj/item/clothing/cloak/apron/waist
 		H.change_stat("strength", 2)
 		H.change_stat("endurance", 1)
@@ -42,7 +42,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltl = /obj/item/keyring/innkeep
+		beltl = /obj/item/storage/keyring/innkeep
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)

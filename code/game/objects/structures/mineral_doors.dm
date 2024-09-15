@@ -272,7 +272,7 @@
 	icon_state = "[base_state][door_opened ? "open":""]"
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/roguekey) || istype(I, /obj/item/keyring))
+	if(istype(I, /obj/item/roguekey) || istype(I, /obj/item/storage/keyring))
 		trykeylock(I, user)
 //	else if(user.used_intent.type != INTENT_HARM)
 //		return attack_hand(user)
@@ -288,8 +288,8 @@
 	if(lockbroken)
 		to_chat(user, span_warning("The lock to this door is broken."))
 	user.changeNext_move(CLICK_CD_MELEE)
-	if(istype(I,/obj/item/keyring))
-		var/obj/item/keyring/R = I
+	if(istype(I,/obj/item/storage/keyring))
+		var/obj/item/storage/keyring/R = I
 		if(!R.keys.len)
 			return
 		var/list/keysy = shuffle(R.keys.Copy())
