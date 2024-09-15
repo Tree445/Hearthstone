@@ -5471,7 +5471,7 @@
 /area/rogue/indoors/town/garrison)
 "dnZ" = (
 /obj/structure/closet/crate/chest,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors)
 "doK" = (
@@ -6565,10 +6565,10 @@
 /area/rogue/indoors)
 "eeD" = (
 /obj/structure/closet/crate/chest,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
@@ -9047,7 +9047,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
 "fVa" = (
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
 "fVd" = (
@@ -9641,7 +9641,7 @@
 /area/rogue/indoors/town/manor)
 "gtV" = (
 /obj/effect/decal/cleanable/food/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet/bogcaves)
 "gug" = (
@@ -11227,8 +11227,8 @@
 /obj/item/natural/cloth,
 /obj/item/natural/cloth,
 /obj/item/reagent_containers/food/snacks/butter,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /obj/item/flashlight/flare/torch/metal,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
@@ -12399,10 +12399,10 @@
 "iqB" = (
 /obj/structure/closet/crate/chest,
 /obj/machinery/light/rogue/wallfire/candle/r,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
@@ -13015,8 +13015,8 @@
 	dir = 10;
 	icon_state = "largetable"
 	},
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/tavern)
 "iMA" = (
@@ -15193,8 +15193,8 @@
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town)
 "kra" = (
@@ -15414,7 +15414,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/outdoors/rtfield)
 "kxD" = (
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "kxU" = (
@@ -20823,7 +20823,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/tribalfort)
 "ozm" = (
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet/bogcaves)
 "ozw" = (
@@ -25099,10 +25099,12 @@
 /obj/item/reagent_containers/food/snacks/grown/wheat,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
 /obj/item/reagent_containers/food/snacks/grown/wheat,
-/obj/item/reagent_containers/food/snacks/grown/rogue/potato,
-/obj/item/reagent_containers/food/snacks/grown/rogue/potato,
-/obj/item/reagent_containers/food/snacks/grown/rogue/potato,
-/obj/item/reagent_containers/food/snacks/grown/rogue/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato/rogue,
+/obj/item/reagent_containers/food/snacks/grown/potato/rogue,
+/obj/item/reagent_containers/food/snacks/grown/cabbage/rogue,
+/obj/item/reagent_containers/food/snacks/grown/cabbage/rogue,
+/obj/item/reagent_containers/food/snacks/grown/onion/rogue,
+/obj/item/reagent_containers/food/snacks/grown/onion/rogue,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "rqZ" = (
@@ -27897,8 +27899,8 @@
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors)
 "tux" = (
@@ -28042,14 +28044,18 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/powder/sugar,
 /obj/item/reagent_containers/powder/sugar,
-/obj/item/reagent_containers/food/snacks/grown/rogue/potato,
-/obj/item/reagent_containers/food/snacks/grown/rogue/potato,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
 /obj/item/reagent_containers/food/snacks/egg,
+/obj/item/reagent_containers/food/snacks/grown/potato/rogue,
+/obj/item/reagent_containers/food/snacks/grown/potato/rogue,
+/obj/item/reagent_containers/food/snacks/grown/onion/rogue,
+/obj/item/reagent_containers/food/snacks/grown/onion/rogue,
+/obj/item/reagent_containers/food/snacks/grown/cabbage/rogue,
+/obj/item/reagent_containers/food/snacks/grown/cabbage/rogue,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/tavern)
 "tyy" = (
@@ -32093,11 +32099,11 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/tavern)
 "wyA" = (
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
+/obj/item/reagent_containers/powder/salt,
 /obj/structure/closet/crate/chest,
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
@@ -33913,7 +33919,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/reagent_containers/powder/flour/salt,
+/obj/item/reagent_containers/powder/salt,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "xHp" = (
