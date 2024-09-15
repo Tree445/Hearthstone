@@ -761,7 +761,7 @@
 	armor_class = ARMOR_CLASS_LIGHT //Designed for the infirm.
 	var/active_item = FALSE //Prevents issues like dragon ring giving negative str instead
 
-/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/equipped(mob/living/user) //copypasta from dragon ring. I'm lazy.
+/obj/item/clothing/suit/roguetown/armor/plate/spellslingerarmor/equipped(mob/living/user, slot) //I forgor.
 	. = ..()
 	if(active_item)
 		return
