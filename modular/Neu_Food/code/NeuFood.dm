@@ -239,7 +239,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP
 	resistance_flags = NONE
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	max_integrity = 300
 
 /obj/item/storage/foodbag/examine(mob/user)
