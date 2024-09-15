@@ -915,7 +915,7 @@
 /obj/structure/fluff/statue/tdummy2
 	name = "advanced practice dummy"
 	icon_state = "p_dummy"
-	color = COLOR_BLUE
+	color = COLOR_LUX
 	icon = 'icons/roguetown/misc/structure.dmi'
 
 /obj/structure/fluff/statue/tdummy2/attackby(obj/item/W, mob/user, params)
