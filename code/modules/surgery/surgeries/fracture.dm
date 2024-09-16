@@ -49,6 +49,8 @@
 	return TRUE
 
 /datum/surgery_step/set_bone/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	display_results(user, target, span_notice("I successfully set the bone in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] successfully sets the bone in [target]'s [parse_zone(target_zone)]!"),
 		span_notice("[user] successfully sets the bone in [target]'s [parse_zone(target_zone)]!"))
@@ -56,4 +58,5 @@
 	if(bodypart)
 		for(var/datum/wound/fracture/bone in bodypart.wounds)
 			bone.set_bone()
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE

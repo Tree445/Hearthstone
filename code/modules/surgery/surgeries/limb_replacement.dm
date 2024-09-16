@@ -41,6 +41,8 @@
 	return TRUE
 
 /datum/surgery_step/replace_limb/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/mob/living/M = user
+
 	var/obj/item/bodypart/existing = target.get_bodypart(check_zone(target_zone))
 	if(existing)
 		if(istype(tool, /obj/item/organ_storage))
@@ -58,4 +60,5 @@
 		log_combat(user, target, "augmented", addition="by giving him new [parse_zone(target_zone)] INTENT: [uppertext(user.a_intent?.name)]")
 	else
 		to_chat(user, span_warning("[target] has no organic [parse_zone(target_zone)] there!"))
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE

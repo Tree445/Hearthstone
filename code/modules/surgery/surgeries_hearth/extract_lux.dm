@@ -37,6 +37,8 @@
 	return TRUE
 
 /datum/surgery_step/extract_lux/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	target.emote("painscream")
 	if(target.has_status_effect(/datum/status_effect/debuff/devitalised))
 		display_results(user, target, span_notice("You cannot draw lux from [target]; they have none left to give."),
@@ -49,4 +51,5 @@
 			"[user] extracts lux from [target]'s innards.")
 		new /obj/item/reagent_containers/lux(target.loc)
 		target.apply_status_effect(/datum/status_effect/debuff/devitalised)
+		M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE

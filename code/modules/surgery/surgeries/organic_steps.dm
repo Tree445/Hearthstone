@@ -23,8 +23,11 @@
 	return TRUE
 
 /datum/surgery_step/incise/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	display_results(user, target, span_notice("Blood pools around the incision in [target]'s [parse_zone(target_zone)]."),
 		span_notice("Blood pools around the incision in [target]'s [parse_zone(target_zone)]."))
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*0.4)
 	var/obj/item/bodypart/gotten_part = target.get_bodypart(check_zone(target_zone))
 	if(gotten_part)
 		gotten_part.add_wound(/datum/wound/slash/incision)
@@ -50,9 +53,12 @@
 	return TRUE
 
 /datum/surgery_step/clamp/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	display_results(user, target, span_notice("I clamp the bleeders in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] clamps the bleeders in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] clamps the bleeders in [target]'s [parse_zone(target_zone)]."))
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*0.4)
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	bodypart?.add_embedded_object(tool, crit_message = FALSE)
 	return TRUE
@@ -78,9 +84,12 @@
 	return TRUE
 
 /datum/surgery_step/retract/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+	
 	display_results(user, target, span_notice("I retract [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] retract [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] retract [target]'s [parse_zone(target_zone)]."))
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*0.4)
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	bodypart?.add_embedded_object(tool, crit_message = FALSE)
 	return TRUE
@@ -113,9 +122,12 @@
 	return TRUE
 
 /datum/surgery_step/cauterize/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	display_results(user, target, span_notice("I cauterize the wounds on [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] cauterizes the wounds on [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] cauterizes the wounds on [target]'s [parse_zone(target_zone)]."))
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*0.4)
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	if(bodypart)
 		for(var/datum/wound/bleeder in bodypart.wounds)
@@ -162,9 +174,12 @@
 	return TRUE
 
 /datum/surgery_step/saw/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	display_results(user, target, span_notice("I saw [target]'s [parse_zone(target_zone)] open."),
 		span_notice("[user] saws [target]'s [parse_zone(target_zone)] open!"),
 		span_notice("[user] saws [target]'s [parse_zone(target_zone)] open!"))
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*0.4)
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	if(bodypart)
 		var/fracture_type = /datum/wound/fracture
@@ -202,9 +217,12 @@
 	return TRUE
 
 /datum/surgery_step/drill/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	var/mob/living/M = user
+
 	display_results(user, target, span_notice("I drill into [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] drills into [target]'s [parse_zone(target_zone)]!"),
 		span_notice("[user] drills into [target]'s [parse_zone(target_zone)]!"))
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*0.4)
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	bodypart?.add_wound(/datum/wound/puncture/drilling)
 	target.emote("scream")

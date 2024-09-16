@@ -41,6 +41,8 @@
 	return TRUE
 
 /datum/surgery_step/remove_object/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	var/objects = 0
 	if(bodypart)
@@ -56,6 +58,7 @@
 		display_results(user, target, span_notice("I successfully remove [objects] object[s] from [target]'s [bodypart]."),
 			span_notice("[user] successfully removes [objects] object[s] from [target]'s [bodypart]!"),
 			span_notice("[user] successfully removes [objects] object[s] from [target]'s [bodypart]!"))
+		M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*1.5)
 	else if(bodypart)
 		to_chat(user, span_warning("I find no objects embedded in [target]'s [bodypart]!"))
 	else
