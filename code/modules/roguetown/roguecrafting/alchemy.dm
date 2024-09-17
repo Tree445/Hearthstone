@@ -252,7 +252,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/t2sub
-	name = "Sublimate Toper"
+	name = "Sublimate Toper Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
@@ -262,7 +262,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/g2sub
-	name = "Sublimate Gemerald"
+	name = "Sublimate Gemerald Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -273,7 +273,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/s2sub
-	name = "Sublimate Saffira"
+	name = "Sublimate Saffira Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -285,7 +285,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/b2sub
-	name = "Sublimate Blortz"
+	name = "Sublimate Blortz Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -298,7 +298,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/r2sub
-	name = "Sublimate Rontz"
+	name = "Sublimate Rontz Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -313,7 +313,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/d2sub
-	name = "Sublimate Dorpel"
+	name = "Sublimate Dorpel Dust"
 	result = list(
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
