@@ -127,7 +127,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/water = 1)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
-		/datum/reagent/water/gross = 90) // 45 u allows for bottle duping. This requires 30oz containers, preventing the dupe.
+		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/w2m
@@ -135,7 +135,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/milk = 1)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
-		/datum/reagent/water = 90) // 45 u allows for bottle duping. This requires 30oz containers, preventing the dupe.
+		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/w2w
@@ -143,7 +143,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
-		/datum/reagent/water = 90) // 45 u allows for bottle duping. This requires 30oz containers, preventing the dupe.
+		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/g2wes
