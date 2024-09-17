@@ -4,7 +4,7 @@
 /datum/species/dracon
 	name = "Drakian"
 	id = "dracon"
-	desc = "<b>Axian</b><br>\
+	desc = "<b>Drakian</b><br>\
 		Centuries ago, the Drakian people spanned all along what is now the Dwarven Federation, but during what was known as 'The Dark Year', they were forced out of their lifelong homes in the mountain ranges and scattered to the wind, ending up all over the world where it isn't too cold. \
 		Self righteous and prideful, Drakians often point their snouts up at those they consider to be lesser races, a strong people, but not very dextrous. \
 		Mages are rare in Drakian society, and Drakians much prefer to be soldiers of some sort than any other role. They predominantly worship Ravox."
