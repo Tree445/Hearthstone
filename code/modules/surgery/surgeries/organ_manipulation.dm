@@ -129,6 +129,8 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	return TRUE
 
 /datum/surgery_step/manipulate_organs/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	if(istype(tool, /obj/item/organ_storage))
 		tool.icon_state = initial(tool.icon_state)
 		tool.desc = initial(tool.desc)
@@ -143,6 +145,7 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 		display_results(user, target, span_notice("I insert [tool] into [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] inserts [tool] into [target]'s [parse_zone(target_zone)]!"),
 			span_notice("[user] inserts something into [target]'s [parse_zone(target_zone)]!"))
+		M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 		return TRUE
 	var/obj/item/organ/selected_organ = target.getorganslot(user.organ_slot_selected)
 	if(QDELETED(selected_organ) || (selected_organ.owner != target))
@@ -157,6 +160,7 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	selected_organ.Remove(target)
 	selected_organ.forceMove(target.drop_location())
 	user.put_in_hands(selected_organ)
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE
 
 /datum/surgery_step/make_organs
@@ -212,6 +216,8 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	return TRUE
 
 /datum/surgery_step/make_organs/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	if(!isnull(target.getorganslot(user.organ_slot_selected)))
 		to_chat(user, span_warning("[target] alread has that organ!"))
 		return FALSE
@@ -223,4 +229,5 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	var/datum/organ_dna/organ_template = carbonized.dna.organ_dna[user.organ_slot_selected]
 	var/obj/item/organ/organ_to_add = organ_template.create_organ(target)
 	organ_to_add.Insert(target)
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE

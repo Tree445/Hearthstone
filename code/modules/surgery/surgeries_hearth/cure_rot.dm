@@ -32,6 +32,8 @@
 
 // most of this is copied from the Cure Rot spell
 /datum/surgery_step/burn_rot/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
+	var/mob/living/M = user
+
 	var/burndam = 20
 	if(user.mind)
 		burndam -= (user.mind.get_skill_level(/datum/skill/misc/medicine) * 3)
@@ -68,4 +70,5 @@
 		"[user] burns the rot within [target].",
 		"[user] takes a [tool] to [target]'s innards.")
 	target.take_bodypart_damage(null, burndam)
+	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE
