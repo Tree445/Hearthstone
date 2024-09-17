@@ -5,9 +5,9 @@
 	name = "Verminvolk"
 	id = "anthromorphsmall"
 	desc = ""<b>Verminvolk</b><br>\
-		A squat, unusual people, they are greatly related to Wild-Kin, in the same way a Kobold might be related to a dragon. 
-		Like Wild-Kin their appearance can vary greatly, and they are largely looked down upon by their more pure brethren due in part to their height. 
-		But in spite of this Verminvolk make the most of their lot in life, a cheery folk, you'll find them working as artisans, bakers, cheesemakers, a few of them even working as watchmen. 
+		A squat, unusual people, they are greatly related to Wild-Kin, in the same way a Kobold might be related to a dragon. \
+		Like Wild-Kin their appearance can vary greatly, and they are largely looked down upon by their more pure brethren due in part to their height. \
+		But in spite of this Verminvolk make the most of their lot in life, a cheery folk, you'll find them working as artisans, bakers, cheesemakers, a few of them even working as watchmen. \
 		They, like Wild-Kin, worship Dendor primarily in the Divine Pantheon, but many also worship Eora, Malum, and Abyssor."
 
 	default_color = "444"
