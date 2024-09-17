@@ -47,12 +47,9 @@
 	return TRUE
 
 /datum/surgery_step/amputate/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	var/mob/living/M = user
-
 	display_results(user, target, span_notice("I sever [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] severs [target]'s [parse_zone(target_zone)]!"),
 		span_notice("[user] severs [target]'s [parse_zone(target_zone)]!"))
 	var/obj/item/bodypart/target_limb = target.get_bodypart(check_zone(target_zone))
 	target_limb?.drop_limb()
-	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE

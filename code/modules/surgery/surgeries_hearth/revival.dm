@@ -36,8 +36,6 @@
 	return TRUE
 
 /datum/surgery_step/infuse_lux/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	var/mob/living/M = user
-
 	var/revive_pq = PQ_GAIN_REVIVE
 	if(target.mob_biotypes & MOB_UNDEAD)
 		display_results(user, target, span_notice("You cannot infuse life into the undead! The rot must be cured first."),
@@ -63,7 +61,6 @@
 	target.Jitter(100)
 	target.update_body()
 	target.visible_message(span_notice("[target] is dragged back from Necra's hold!"), span_green("I awake from the void."))
-	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	qdel(tool)
 	if(target.mind)
 		if(revive_pq && !HAS_TRAIT(target, TRAIT_IWASREVIVED) && user?.ckey)

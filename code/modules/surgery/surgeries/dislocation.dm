@@ -51,8 +51,6 @@
 	return TRUE
 
 /datum/surgery_step/relocate_bone/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	var/mob/living/M = user
-
 	display_results(user, target, span_notice("I successfully relocate the bone in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] successfully relocate the bone in [target]'s [parse_zone(target_zone)]!"),
 		span_notice("[user] successfully relocate the bone in [target]'s [parse_zone(target_zone)]!"))
@@ -60,5 +58,4 @@
 	if(bodypart)
 		for(var/datum/wound/dislocation/bone in bodypart.wounds)
 			bone.relocate_bone()
-	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE

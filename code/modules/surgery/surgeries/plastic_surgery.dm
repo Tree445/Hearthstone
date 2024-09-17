@@ -32,8 +32,6 @@
 	return TRUE
 
 /datum/surgery_step/reshape_face/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	var/mob/living/M = user
-
 	var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(target_zone))
 	if(bodypart?.has_wound(/datum/wound/facial/disfigurement))
 		display_results(user, target, span_notice("I successfully restore [target]'s appearance."),
@@ -66,7 +64,6 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/human_target = target
 		human_target.sec_hud_set_ID()
-	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE
 
 /datum/surgery_step/reshape_face/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent, success_prob)

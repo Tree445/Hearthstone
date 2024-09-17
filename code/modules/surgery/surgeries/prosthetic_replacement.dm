@@ -65,8 +65,6 @@
 	return TRUE
 
 /datum/surgery_step/add_prosthetic/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-	var/mob/living/M = user
-
 	if(istype(tool, /obj/item/organ_storage))
 		tool.icon_state = initial(tool.icon_state)
 		tool.desc = initial(tool.desc)
@@ -81,5 +79,4 @@
 	display_results(user, target, span_notice("I succeed transplanting [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] successfully transplants [target]'s [parse_zone(target_zone)] with [tool]!"),
 		span_notice("[user] successfully transplants [target]'s [parse_zone(target_zone)]!"))
-	M.mind.adjust_experience(/datum/skill/misc/medicine, M.STAINT*5)
 	return TRUE
