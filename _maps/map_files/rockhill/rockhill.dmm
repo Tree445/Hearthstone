@@ -7,9 +7,10 @@
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/under/cavewet/bogcaves)
 "aac" = (
+/obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/landmark/start/druid,
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield)
+/area/rogue/indoors/town/church/chapel)
 "aad" = (
 /turf/closed/mineral/rogue,
 /area/rogue/under/cavewet)
@@ -2664,6 +2665,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/rtfield)
+"bqH" = (
+/obj/item/rogueweapon/hoe,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "bqP" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
@@ -13198,12 +13203,9 @@
 	},
 /area/rogue/indoors/town/church/chapel)
 "iRN" = (
-/obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/druid{
-	dir = 8
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors)
+/obj/item/rogueweapon/shovel,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "iRR" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -17132,6 +17134,10 @@
 	icon_state = "weird1"
 	},
 /area/rogue/under/town/basement)
+"lLK" = (
+/obj/effect/landmark/start/druid,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "lMc" = (
 /obj/machinery/light/rogue/torchholder/r,
 /obj/structure/chair/stool/rogue,
@@ -22543,6 +22549,15 @@
 /obj/structure/fluff/walldeco/wantedposter,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"pDA" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/item/reagent_containers/glass/bucket/wooden,
+/obj/item/storage/roguebag{
+	pixel_y = -7;
+	pixel_x = 9
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "pDF" = (
 /obj/structure/table/wood{
 	icon_state = "map5"
@@ -23645,9 +23660,6 @@
 /area/rogue/indoors)
 "qoi" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/druid{
-	dir = 8
-	},
 /obj/effect/landmark/start/farmer{
 	dir = 8
 	},
@@ -29896,6 +29908,11 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/dirt/snow,
 /area/rogue/outdoors/vikingarea)
+"uPa" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/effect/landmark/start/druid,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "uPg" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/ruinedwood,
@@ -304288,7 +304305,7 @@ qvR
 uaL
 qvR
 qvR
-aac
+qvR
 qvR
 qvR
 qvR
@@ -324398,7 +324415,7 @@ qvR
 wSn
 wOD
 dUZ
-iRN
+dUZ
 kRf
 ltT
 ltT
@@ -428056,7 +428073,7 @@ nSr
 teW
 ael
 cLL
-hqI
+iRN
 fUr
 hqI
 wte
@@ -428456,9 +428473,9 @@ teW
 uzT
 fnF
 teW
-htU
-hqI
-htU
+pDA
+bqH
+aac
 hqI
 gdJ
 uGf
@@ -429663,9 +429680,9 @@ rSg
 swm
 teW
 ajj
+lLK
 hqI
-hqI
-fUr
+uPa
 tML
 tML
 ffv
