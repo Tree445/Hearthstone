@@ -5,9 +5,9 @@
 	name = "Axian"
 	id = "akula"
 	desc = "<b>Axian</b><br>\
-		A race of sharklike people, Axian settlements are dotted along the coastline of the continents. 
-		A society mainly consisting of fishermen, the Axians ply their trade, and are some of the best sailors in all of Grimoria. 
-		Some Axians go so far as to put down the rod and take up the cutlass, roaming the seas as pirates. 
+		A race of sharklike people, Axian settlements are dotted along the coastline of the continents. \
+		A society mainly consisting of fishermen, the Axians ply their trade, and are some of the best sailors in all of Grimoria. \
+		Some Axians go so far as to put down the rod and take up the cutlass, roaming the seas as pirates. \
 		Clever and strong, the Axians can make the most of bad situations, and rarely give up. Abyssor, Malum and Ravox are their preferred gods of worship."
 
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
