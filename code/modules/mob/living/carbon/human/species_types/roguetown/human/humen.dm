@@ -9,7 +9,7 @@
 		It is largely recognized that they are the children of Psydon, formed in his image. Humens appear in all shapes and sizes, and no two humen is the same, so it is said. \
 		Those humens from Grenzelhoft are light in skintone, and predominantly have blue eyes, while a humen born in Zybantine may have a darker complexion. \
 		Despite any geographical difference between these humens, they are largely the same, the only difference being any potential accent they may have developed as they were raised in different cultures. \
-		Humens predominantly worship the divine pantheon, and some fanatical humens even go so far as to worship Psydon himself.
+		Humens predominantly worship the divine pantheon, and some fanatical humens even go so far as to worship Psydon himself."
 
 	skin_tone_wording = "Ancestry"
 
