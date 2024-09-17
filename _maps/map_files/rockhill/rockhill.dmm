@@ -2665,10 +2665,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/rtfield)
-"bqH" = (
-/obj/item/rogueweapon/hoe,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors/town/church/chapel)
 "bqP" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/bath)
@@ -13203,7 +13199,13 @@
 	},
 /area/rogue/indoors/town/church/chapel)
 "iRN" = (
+/obj/structure/closet/crate/chest{
+	locked = 1;
+	lockid = "church"
+	},
+/obj/item/rogueweapon/hoe,
 /obj/item/rogueweapon/shovel,
+/obj/item/rogueweapon/thresher,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/church/chapel)
 "iRR" = (
@@ -428474,7 +428476,7 @@ uzT
 fnF
 teW
 pDA
-bqH
+hqI
 aac
 hqI
 gdJ
