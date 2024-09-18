@@ -1,7 +1,7 @@
 /datum/advclass/seamstress
 	name = "Seamster"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = list(RACES_ALL_KINDS, /datum/species/seelie,)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 

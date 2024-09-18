@@ -7,7 +7,7 @@
 	spawn_positions = 3
 
 	f_title = "Maid"
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = list(RACES_ALL_KINDS, /datum/species/seelie,)
 	allowed_ages = ALL_AGES_LIST
 
 	tutorial = "Servitude unto death; your blade a charcuterie of artisanal cheeses and meat, your armor wit and classical training. \
