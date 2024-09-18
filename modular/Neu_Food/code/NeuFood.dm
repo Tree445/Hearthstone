@@ -111,7 +111,7 @@
 				return
 			held_item.reagents.trans_to(src, 3, transfered_by = user)
 			var/stealth = user.mind.get_skill_level(/datum/skill/misc/sneaking)
-			var/soh = (6 - (stealth + rand(0,4))) // master level sneaking means a 80% chance of not being noticed at all, and expert being a 20% chance.
+			var/soh = (6 - (stealth + rand(0,4))) // master level sneaking means a 80% chance of not being noticed at all, decreasing in increments of 20% per level under.
 			if(soh >= 1)
 				user.visible_message(span_warning("[user] slips something into the [src]"), span_warning("I hastily transfer some of the reagents to [src]."), vision_distance = soh)
 			else
