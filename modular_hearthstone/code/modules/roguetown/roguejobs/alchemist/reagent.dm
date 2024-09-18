@@ -9,7 +9,7 @@
 	alpha = 225
 
 /datum/reagent/medicine/paralysispot/overdose_process(mob/living/L)
-	L.Paralyze(200)
+	L.Paralyze(500)
 	..()
 	. = 1 
 

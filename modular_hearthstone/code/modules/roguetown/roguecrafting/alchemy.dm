@@ -3,9 +3,9 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/paralysispot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
-		/obj/item/reagent_containers/powder/sublimate = 2, 
+		/obj/item/reagent_containers/powder/sublimate = 3, 
 		/obj/item/hearthnatural/beespider_fang = 1 )
-	craftdiff = 4
+	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/soporpot
 	name = "Soporific Poison"
