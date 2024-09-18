@@ -366,6 +366,30 @@
 
 	req_table = FALSE
 
+/datum/crafting_recipe/roguetown/tranq //Coded, but commented out pending balance discussion.
+	name = "tranquilizer bolt"
+	result = /obj/item/ammo_casing/caseless/rogue/bolt/tranq
+	reqs = list(
+		/obj/item/ammo_casing/caseless/rogue/bolt = 1,
+		/datum/reagent/medicine/soporpot = 30
+		)
+
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/tranq //Coded, but commented out pending balance discussion.
+	name = "tranquilizer bolt (x3)"
+	result = list(
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq
+				)
+	reqs = list(
+		/obj/item/ammo_casing/caseless/rogue/bolt = 3,
+		/datum/reagent/medicine/soporpot = 90
+		)
+
+	req_table = FALSE
+
 /*
 /datum/crafting_recipe/roguetown/poisonbolt_five //Coded, but commented out pending balance discussion.
 	name = "poisoned bolts (x5)"
