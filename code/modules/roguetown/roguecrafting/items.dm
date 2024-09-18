@@ -379,15 +379,17 @@
 	req_table = FALSE
 
 /datum/crafting_recipe/roguetown/tranq //Coded, but commented out pending balance discussion.
-	name = "tranquilizer bolt (x3)"
+	name = "tranquilizer bolt (x5)"
 	result = list(
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
 				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
 				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
 				/obj/item/ammo_casing/caseless/rogue/bolt/tranq
 				)
 	reqs = list(
 		/obj/item/ammo_casing/caseless/rogue/bolt = 3,
-		/datum/reagent/medicine/soporpot = 90
+		/datum/reagent/medicine/soporpot = 150
 		)
 
 	req_table = FALSE

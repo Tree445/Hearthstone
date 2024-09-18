@@ -92,6 +92,25 @@
 		else if(slice(W, user))
 			return 1
 	..()
+/*	........   Spicing and Poisoning   ................ */
+
+// Used for adding reagents from bottles into food items.
+
+/obj/item/reagent_containers/food/snacks/rogue/MiddleClick(mob/living/user, params) 
+	. = ..()
+	
+	var/obj/item/held_item = user.get_active_held_item()
+	
+	if(held_item)
+		if(istype(held_item, /obj/item/reagent_containers/glass/bottle))
+			if(!held_item.reagents.total_volume)
+				to_chat(user, span_warning("[held_item] is empty!"))
+				return
+			if(src.reagents.total_volume >= src.reagents.maximum_volume)
+				to_chat(user, span_warning("You can't add anymore to [src]!"))
+				return
+			held_item.reagents.trans_to(src, 3, transfered_by = user)
+			user.visible_message(span_warning("[user] slips something into the [src]"), span_notice("I transfer some of the reagents to [src]."), vision_distance = 2)
 
 /*	........   Kitchen tools / items   ................ */
 /obj/item/kitchen/spoon
