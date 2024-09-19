@@ -1627,12 +1627,6 @@
 "aBh" = (
 /turf/open/water/cleanshallow,
 /area/rogue/under/town/basement)
-"aBn" = (
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 26
-	},
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors/town/church/chapel)
 "aCe" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/machinery/light/rogue/firebowl/stump/snow{
@@ -1811,6 +1805,12 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
+"aIG" = (
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "aII" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/food/snacks/grown/apple,
@@ -3934,6 +3934,13 @@
 /obj/item/roguekey/nightmaiden,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
+"clX" = (
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
+/obj/item/quiver/bolts,
+/obj/structure/closet/crate/roguecloset/inn/chest,
+/obj/item/storage/foodbag/hardtack,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison)
 "clY" = (
 /obj/structure/flora/roguegrass,
 /obj/item/natural/poo,
@@ -8794,11 +8801,9 @@
 /turf/closed/mineral/rogue,
 /area/rogue/under/town/sewer)
 "fKf" = (
-/obj/structure/fluff/railing/wood,
-/obj/structure/flora/ausbushes/ywflowers,
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/grass,
-/area/rogue/indoors/town/church/chapel)
+/obj/structure/spider/stickyweb,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/cavewet/bogcaves)
 "fKC" = (
 /turf/open/water/river{
 	dir = 1;
@@ -17195,6 +17200,9 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter)
+"lOw" = (
+/turf/closed,
+/area/rogue/outdoors/rtfield)
 "lOz" = (
 /obj/structure/mineral_door/bars{
 	lockid = "graveyard"
@@ -25847,13 +25855,6 @@
 "rSC" = (
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
-"rSF" = (
-/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
-/obj/item/quiver/bolts,
-/obj/structure/closet/crate/roguecloset/inn/chest,
-/obj/item/storage/foodbag/hardtack,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/town/garrison)
 "rSG" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/cobble,
@@ -29038,6 +29039,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood/platform,
 /area/rogue/outdoors/vikingarea)
+"ujK" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/spider{
+	tame = 1
+	},
+/obj/structure/spider/stickyweb,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/cavewet/bogcaves)
 "ujO" = (
 /turf/closed/wall/mineral/rogue/tent,
 /area/rogue/outdoors/bog)
@@ -30114,6 +30122,12 @@
 /obj/item/candle/yellow/lit,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
+"uUA" = (
+/obj/structure/fluff/railing/wood,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "uUV" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/goat,
 /turf/open/floor/rogue/dirt,
@@ -231190,8 +231204,8 @@ gxt
 gxt
 gxt
 gxt
-gxt
-gxt
+fKf
+qtE
 gxt
 gxt
 gxt
@@ -231592,10 +231606,10 @@ gxt
 gxt
 gxt
 gxt
-gxt
-gxt
-gxt
-gxt
+fKf
+ujK
+qtE
+fKf
 gxt
 gxt
 gxt
@@ -231994,11 +232008,11 @@ gxt
 gxt
 gxt
 gxt
-gxt
-gxt
-gxt
-gxt
-gxt
+qtE
+qtE
+fKf
+qtE
+fKf
 gxt
 gxt
 gxt
@@ -232397,10 +232411,10 @@ gxt
 gxt
 gxt
 gxt
-gxt
-gxt
-gxt
-gxt
+fKf
+qtE
+ujK
+qtE
 gxt
 gxt
 gxt
@@ -232799,9 +232813,9 @@ gxt
 gxt
 gxt
 gxt
-gxt
-gxt
-gxt
+fKf
+qtE
+fKf
 gxt
 gxt
 gxt
@@ -334104,9 +334118,9 @@ kVc
 wSn
 uaL
 qvR
-qvR
-uaL
-uaL
+lOw
+lOw
+lOw
 wSn
 pwu
 wSn
@@ -334506,9 +334520,9 @@ kVc
 wSn
 qvR
 uaL
-qvR
-uaL
-wSn
+lOw
+lOw
+lOw
 qvR
 wSn
 kVc
@@ -334908,9 +334922,9 @@ kVc
 kVc
 qvR
 wSn
-wSn
-uaL
-wSn
+lOw
+lOw
+lOw
 qvR
 hcW
 hcW
@@ -335310,9 +335324,9 @@ kVc
 kVc
 kVc
 kVc
-qvR
-wSn
-qvR
+lOw
+lOw
+lOw
 hcW
 hcW
 hcW
@@ -427700,7 +427714,7 @@ tML
 wAm
 wAm
 wAm
-aBn
+aIG
 hqI
 bPz
 enq
@@ -429310,7 +429324,7 @@ hqI
 hqI
 hqI
 hqI
-fKf
+uUA
 enq
 ffv
 ffv
@@ -495645,7 +495659,7 @@ erZ
 nEd
 fVQ
 lgN
-rSF
+clX
 lgN
 fVQ
 nEd
