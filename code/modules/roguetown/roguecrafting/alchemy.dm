@@ -26,9 +26,8 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/manapot,/obj/item/reagent_containers/glass/bottle/rogue/manapot,/obj/item/reagent_containers/glass/bottle/rogue/manapot)
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 3,
-		/obj/item/reagent_containers/powder/sublimate = 3,
-		/obj/item/reagent_containers/food/snacks/fish/eel = 2)
-	craftdiff = 3
+		/obj/item/reagent_containers/powder/sublimate = 2)
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/alchemy/minorhealthpot
 	name = "Minor Health Potion"
