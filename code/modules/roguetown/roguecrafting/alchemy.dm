@@ -19,7 +19,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
 		/obj/item/reagent_containers/powder/sublimate = 1)
-	craftdiff = 3
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/alchemy/manna_pot_3x
 	name = "3x Manna Potion"
