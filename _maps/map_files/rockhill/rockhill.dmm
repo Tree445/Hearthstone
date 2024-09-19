@@ -1627,6 +1627,12 @@
 "aBh" = (
 /turf/open/water/cleanshallow,
 /area/rogue/under/town/basement)
+"aBn" = (
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 26
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "aCe" = (
 /obj/structure/flora/tree/jungle/small,
 /obj/machinery/light/rogue/firebowl/stump/snow{
@@ -8788,8 +8794,11 @@
 /turf/closed/mineral/rogue,
 /area/rogue/under/town/sewer)
 "fKf" = (
-/turf/open/floor/rogue/greenstone,
-/area/rogue/under/town/basement)
+/obj/structure/fluff/railing/wood,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/town/church/chapel)
 "fKC" = (
 /turf/open/water/river{
 	dir = 1;
@@ -10199,6 +10208,7 @@
 /obj/item/reagent_containers/powder/flour,
 /obj/item/reagent_containers/powder/flour,
 /obj/item/reagent_containers/food/snacks/butter,
+/obj/item/reagent_containers/powder/flour,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "gPy" = (
@@ -18306,6 +18316,9 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 8
 	},
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/pumpkin,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
 "mMJ" = (
@@ -18770,6 +18783,9 @@
 /obj/item/storage/keyring,
 /obj/item/storage/keyring,
 /obj/item/storage/keyring,
+/obj/item/storage/foodbag/hardtack,
+/obj/item/storage/foodbag/hardtack,
+/obj/item/storage/foodbag/hardtack,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "ndj" = (
@@ -25831,6 +25847,13 @@
 "rSC" = (
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
+"rSF" = (
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
+/obj/item/quiver/bolts,
+/obj/structure/closet/crate/roguecloset/inn/chest,
+/obj/item/storage/foodbag/hardtack,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/garrison)
 "rSG" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/cobble,
@@ -26768,6 +26791,7 @@
 /area/rogue/indoors/town/dwarfin)
 "sxW" = (
 /obj/structure/closet/crate/roguecloset,
+/obj/item/storage/foodbag/hardtack,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "syh" = (
@@ -29035,6 +29059,7 @@
 /area/rogue/outdoors/vikingarea)
 "ukv" = (
 /obj/item/roguebin/crackers,
+/obj/item/storage/foodbag/hardtack,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "ukD" = (
@@ -32613,6 +32638,7 @@
 /obj/item/roguekey/walls,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
+/obj/item/storage/foodbag/hardtack,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison)
 "wPt" = (
@@ -209378,14 +209404,14 @@ txa
 txa
 txa
 txa
-fKf
 txa
 txa
 txa
 txa
 txa
 txa
-spR
+iTw
+iTw
 spR
 aKH
 spR
@@ -209781,13 +209807,13 @@ fPR
 fAs
 txa
 txa
-txa
 gwd
 gEj
 gQl
 hff
 txa
-cEK
+iTw
+iTw
 cEK
 cEK
 cEK
@@ -210187,8 +210213,8 @@ gch
 gch
 gch
 gch
-gch
 txa
+iTw
 iTw
 spR
 cEK
@@ -210585,12 +210611,12 @@ iTw
 cBf
 txa
 fPQ
-gch
 gxc
 gch
 gch
 gch
 txa
+iTw
 iTw
 spR
 cEK
@@ -210989,10 +211015,10 @@ txa
 txa
 txa
 txa
-txa
 gSG
 txa
 txa
+iTw
 iTw
 spR
 cEK
@@ -211393,8 +211419,8 @@ iTw
 rSG
 iTw
 iTw
-iTw
 hCL
+iTw
 iTw
 cEK
 cEK
@@ -211794,9 +211820,9 @@ txa
 txa
 txa
 ppi
-cBf
 hiz
 txa
+iTw
 icI
 ivV
 aoF
@@ -426468,10 +426494,10 @@ nKu
 nSr
 sIE
 teW
-teW
-teW
-teW
-ffv
+hqI
+fUr
+wte
+enq
 ffv
 ffv
 ffv
@@ -426870,10 +426896,10 @@ bEL
 jiv
 jjS
 teW
-teW
-teW
-teW
-ffv
+hqI
+hqI
+uGf
+enq
 ffv
 ffv
 ffv
@@ -427272,10 +427298,10 @@ nKu
 nSr
 vIX
 teW
-teW
-teW
-teW
-ffv
+fUr
+hqI
+wUw
+enq
 ffv
 ffv
 ffv
@@ -427674,10 +427700,10 @@ tML
 wAm
 wAm
 wAm
-wAm
-wAm
-tML
-ffv
+aBn
+hqI
+bPz
+enq
 ffv
 ffv
 ffv
@@ -428078,7 +428104,7 @@ cLL
 iRN
 fUr
 hqI
-wte
+uGf
 enq
 ffv
 ffv
@@ -429284,7 +429310,7 @@ hqI
 hqI
 hqI
 hqI
-bPz
+fKf
 enq
 ffv
 ffv
@@ -495619,7 +495645,7 @@ erZ
 nEd
 fVQ
 lgN
-jMW
+rSF
 lgN
 fVQ
 nEd
