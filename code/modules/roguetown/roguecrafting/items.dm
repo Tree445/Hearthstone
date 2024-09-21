@@ -352,7 +352,7 @@
 
 	req_table = FALSE
 
-/datum/crafting_recipe/roguetown/soporarrow_five // Your symmetry is irrelevant here.
+/datum/crafting_recipe/roguetown/soporarrow_five
 	name = "soporific arrow (x5)"
 	result = list(
 				/obj/item/ammo_casing/caseless/rogue/arrow/sopor,
@@ -419,9 +419,11 @@
 
 	req_table = FALSE
 
-/datum/crafting_recipe/roguetown/soporarrow_3_stone
-	name = "soporific stone arrow (x3)"
+/datum/crafting_recipe/roguetown/soporarrow_5_stone
+	name = "soporific stone arrow (x5)"
 	result = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
 				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
 				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
 				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor
