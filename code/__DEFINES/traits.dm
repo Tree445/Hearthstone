@@ -138,7 +138,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FAITHLESS = span_warning("I don't hold them in my thoughts or prayers - the Gods won't care for me, if they ever did in the first place."),
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
 	TRAIT_NOCSIGHT = "Noc blesses my eyes to be unburdened by the night.", //Hearthstone change.
-	TRAIT_MALUMSGRACE = "Malum is my muse." // Hearthstone change
+	TRAIT_MALUMSGRACE = "Malum is my muse.", // Hearthstone change
+	TRAIT_BOG_TREKKING = "Expert in navigating these lands." // Hearthstone change
 ))
 
 // trait accessor defines
@@ -368,6 +369,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define INNATE_TRAIT "innate"
 
 // unique trait sources, still defines
+#define TRAIT_BOG_TREKKING "trekking"
 #define CLONING_POD_TRAIT "cloning-pod"
 #define STATUE_MUTE "statue"
 #define CHANGELING_DRAIN "drain"
