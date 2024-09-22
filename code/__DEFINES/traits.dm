@@ -27,7 +27,7 @@
 #define TRAIT_CYCLOPS_RIGHT "Cyclops (Right)" //poked right eye
 #define TRAIT_RETARD_ANATOMY "Inhumen Anatomy" //can't wear hats and shoes
 #define TRAIT_NASTY_EATER "Inhumen Digestion" //can eat rotten food, organs, poison berries, and drink murky water
-#define TRAIT_WILD_EATER "Beastly Digestion" //can eat raw and rotten food and drink murky water
+#define TRAIT_WILD_EATER "Beastly Digestion" //can eat raw and rotten food and drink murky water +HS EDIT:Poison berries too
 #define TRAIT_NOFALLDAMAGE1 "Minor fall damage immunity"
 #define TRAIT_MISSING_NOSE "Missing Nose" //halved stamina regeneration
 #define TRAIT_DISFIGURED "Disfigured"
