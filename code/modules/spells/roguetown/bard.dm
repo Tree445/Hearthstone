@@ -3,23 +3,24 @@
 /obj/effect/proc_holder/spell/invoked/mockery
 	name = "Viscious Mockery"
 	overlay_state = "null"
-	releasedrain = 30
-	chargetime = 30
+	releasedrain = 50
+	chargetime = 0
 	range = 6
 	warnie = "mockery"
 	movement_interrupt = FALSE
+	no_early_release = FALSE
 	chargedloop = null
 	sound = 'sound/magic/whiteflame.ogg'
 	associated_skill = /datum/skill/magic/arcane
 	xp_gain = FALSE
 	antimagic_allowed = FALSE
-	charge_max = 10 SECONDS
-	invocation = "@generate_bard_insult@"
+	charge_max = 60 SECONDS
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = FALSE
 
 /obj/effect/proc_holder/spell/invoked/mockery/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
+		user.say(generate_insult(), forced = "spell")
 		var/mob/living/carbon/target = targets[1]
 		target.apply_status_effect(/datum/status_effect/buff/egomangled)
 		target.visible_message("<span class='info'>A look of deep hurt crosses [target]'s face. Their eyes seem to glaze over.</span>", "<span class='notice'>Those words sting worse than any blade.</span>")
@@ -29,14 +30,52 @@
 		return TRUE
 	return FALSE
 
-function generate_bard_insult()
-	return "@run_or_give_up@, you @generic_insult@!"
+/datum/status_effect/buff/egomangled
+	id = "egomangled"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/egomangled
+	effectedstats = list("speed" = -2, "fortune" = -5)
+	duration = 30 SECONDS
 
-function generic_insult()
-	return "@bard_insult_adjective1@ @bard_insult_adjective2@ @bard_insult_noun@"
+/datum/status_effect/buff/egomangled/on_apply()
+	. = ..()
+	owner.add_stress(/datum/stressevent/egomangled)
+	if(owner?.client)
+		if(owner.client.screen && owner.client.screen.len)
+			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
+			PM.backdrop(owner)
+			PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in owner.client.screen
+			PM.backdrop(owner)
+			PM = locate(/atom/movable/screen/plane_master/game_world_above) in owner.client.screen
+			PM.backdrop(owner)
 
-function run_or_give_up()
-	var/list/bard_give_up = list(
+/datum/status_effect/buff/egomangled/on_remove()
+	owner.remove_stress(/datum/stressevent/egomangled)
+	if(owner?.client)
+		if(owner.client.screen && owner.client.screen.len)
+			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
+			PM.backdrop(owner)
+			PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in owner.client.screen
+			PM.backdrop(owner)
+			PM = locate(/atom/movable/screen/plane_master/game_world_above) in owner.client.screen
+			PM.backdrop(owner)
+
+	. = ..()
+
+/atom/movable/screen/alert/status_effect/buff/egomangled
+	name = "Mangled Ego"
+	desc = ""
+	icon_state = "acid"
+
+/datum/stressevent/egomangled
+	timer = 3 MINUTES
+	stressadd = 5
+
+proc/generate_insult()
+	var temp = run_or_give_up() +", you "+generic_insult()+"!"
+	return temp
+
+proc/run_or_give_up()
+	var/list/bard_give_up_list = list(
 		"Abandon hope", 
 		"Accept your failure", 
 		"Accept your fall", 
@@ -95,10 +134,14 @@ function run_or_give_up()
 		"Take your face hence", 
 		"Turn tail"
 		)
-	return bard_give_up.GetRandom()
+	return pick(bard_give_up_list)
 
-function bard_insult_adjective1()
-	var/list/bard_insult_adjective1 = list(
+proc/generic_insult()
+	var temp = bard_insult_adjective1()+" "+bard_insult_adjective2()+" "+bard_insult_noun()
+	return temp
+
+proc/bard_insult_adjective1()
+	var/list/bard_insult_adjective1_list = list(
 		"artless", 
 		"baffled", 
 		"bawdy", 
@@ -178,10 +221,10 @@ function bard_insult_adjective1()
 		"worthless", 
 		"yeasty"
 		)
-	return bard_insult_adjective1.GetRandom()
+	return pick(bard_insult_adjective1_list)
 
-function bard_insult_adjective2()
-	var/list/bard_insult_adjective2 = list(
+proc/bard_insult_adjective2()
+	var/list/bard_insult_adjective2_list = list(
 		"base-court", 
 		"bat-fowling", 
 		"beef-witted", 
@@ -253,10 +296,10 @@ function bard_insult_adjective2()
 		"weevil-witted", 
 		"wibble-sucking"
 		)
-	return bard_insult_adjective_two.GetRandom()
+	return pick(bard_insult_adjective2_list)
 
-function bard_insult_noun()
-	var/list/bard_insult_noun = list(
+proc/bard_insult_noun()
+	var/list/bard_insult_noun_list = list(
 		"apple-john", 
 		"baggage", 
 		"bandersnitch", 
@@ -361,44 +404,4 @@ function bard_insult_noun()
 		"yak-dropping", 
 		"zombie-fodder"
 		)
-	return bard_insult_noun.GetRandom()
-
-/datum/status_effect/buff/egomangled
-	id = "egomangled"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/egomangled
-	effectedstats = list("fortune" = -5)
-	duration = 30 SECONDS
-
-/datum/status_effect/buff/egomangled/on_apply()
-	. = ..()
-	owner.add_stress(/datum/stressevent/egomangled)
-	if(owner?.client)
-		if(owner.client.screen && owner.client.screen.len)
-			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_above) in owner.client.screen
-			PM.backdrop(owner)
-
-/datum/status_effect/buff/egomangled/on_remove()
-	owner.remove_stress(/datum/stressevent/egomangled)
-	if(owner?.client)
-		if(owner.client.screen && owner.client.screen.len)
-			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_fov_hidden) in owner.client.screen
-			PM.backdrop(owner)
-			PM = locate(/atom/movable/screen/plane_master/game_world_above) in owner.client.screen
-			PM.backdrop(owner)
-
-	. = ..()
-
-/atom/movable/screen/alert/status_effect/buff/egomangled
-	name = "Mangled Ego"
-	desc = ""
-	icon_state = "acid"
-
-/datum/stressevent/egomangled
-	timer = 3 MINUTES
-	stressadd = 5
+	return pick(bard_insult_noun_list)
