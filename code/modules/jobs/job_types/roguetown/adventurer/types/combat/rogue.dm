@@ -13,6 +13,7 @@
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_blindness(-3)
+	H.grant_language(/datum/language/thievescant)
 	var/classes = list("Rogue","Duelist",)
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)

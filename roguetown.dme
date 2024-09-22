@@ -8,6 +8,7 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\roguetown.dm"
 #include "_maps\templates\bog_shack_small.dm"
 #include "_maps\templates\sewers.dm"
 #include "_maps\templates\smalldungeons.dm"
@@ -2355,6 +2356,7 @@
 #include "code\modules\language\roguetown\hellspeak.dm"
 #include "code\modules\language\roguetown\orc.dm"
 #include "code\modules\language\roguetown\sandspeak.dm"
+#include "code\modules\language\roguetown\thievescant.dm"
 #include "code\modules\language\roguetown\undead.dm"
 #include "code\modules\library\book.dm"
 #include "code\modules\library\lib_codex_gigas.dm"
