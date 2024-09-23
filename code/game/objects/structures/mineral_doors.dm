@@ -367,7 +367,7 @@
 				playsound(src.loc, pick('sound/items/pickgood1.ogg','sound/items/pickgood2.ogg'), 5, TRUE)
 				to_chat(user, "<span class='warning'>Click...</span>")
 				if(L.mind)
-					//add experience
+					L.mind.adjust_experience(/datum/skill/misc/lockpicking, L.STAINT * 2)
 				if(lockprogress >= locktreshold)
 					to_chat(user, "<span class='deadsay'>The locking mechanism gives.</span>")
 					lock_toggle(user)
@@ -378,7 +378,7 @@
 				playsound(loc, 'sound/items/pickbad.ogg', 40, TRUE)
 				I.take_damage(1, BRUTE, "blunt")
 				to_chat(user, "<span class='warning'>Clack.</span>")
-				//add experience
+				L.mind.adjust_experience(/datum/skill/misc/lockpicking, L.STAINT * 0.5)
 				continue
 		return
 
