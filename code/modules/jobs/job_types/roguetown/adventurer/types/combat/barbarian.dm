@@ -127,7 +127,9 @@
 			H.change_stat("strength", 3) 
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 2)
-			ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) //doubles bite damage, which is 50% of STR. 
+			ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) //doubles bite damage, which is 50% of STR.
+			ADD_TRAIT(H, TRAIT_DEATHBYSNOOSNOO, TRAIT_GENERIC) //doubles sex damage
+
 /*
 			if("ROLL THE DICE!")
 				if(prob(49)) // Warrior
