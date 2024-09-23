@@ -51,7 +51,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	cloak = /obj/item/clothing/cloak/cape/puritan
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	backpack_contents = list(/obj/item/storage/keyring/puritan = 1, /obj/item/rogueweapon/huntingknife/idagger/silver = 2, /obj/item/storage/belt/rogue/pouch/coins/rich)
 	beltr =  /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	head = /obj/item/clothing/head/roguetown/puritan
