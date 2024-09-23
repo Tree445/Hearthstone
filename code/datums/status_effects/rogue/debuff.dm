@@ -214,8 +214,8 @@
 /datum/status_effect/debuff/cursedbychurch
 	id = "cursedbychurch"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/cursedbychurch
-	effectedstats = list("fortune" = -5, "speed" = -5, "strength" = -10,) // good luck escaping, heretic.
-	duration = 160 MINUTES // This is why we respect the Priest/ess.
+	effectedstats = list("fortune" = -5, "speed" = -5, "strength" = -2,) // good luck escaping, heretic.
+	duration = 15 MINUTES // This is why we respect the Priest/ess.
 
 /atom/movable/screen/alert/status_effect/debuff/cursedbychurch
 	name = "Cursed by the Church!"
