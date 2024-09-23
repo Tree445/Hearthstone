@@ -92,6 +92,7 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 3)
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
+			ADD_TRAIT(W, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC) //Hearthstone change.
 		if("Ravager") //Lower constitution/weaponskills, but they're better at unarmed combat than barbs are with a weapon. Good skills, not much gear. Gets extra bite damage.
 			H.set_blindness(0)
 			to_chat(H, span_warning("Some barbarians eschew the axe in favour of the most faithful weapons anyone could hope for: fist, claw, and fang."))
