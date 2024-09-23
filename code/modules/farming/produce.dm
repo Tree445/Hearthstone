@@ -110,6 +110,7 @@
 	rotprocess = 20 MINUTES
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/medicine/shroomt
+	mill_result = /obj/item/reagent_containers/powder/flour // mushroom flour. it exists. and its gross.
 
 /obj/item/reagent_containers/food/snacks/grown/apple/On_Consume(mob/living/eater)
 	..()
@@ -226,6 +227,34 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = 15 MINUTES
 
+/obj/item/reagent_containers/food/snacks/grown/poppy
+	seed = /obj/item/seeds/poppy
+	name = "poppy flower"
+	desc = "a flower known for its use in ozium creation"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	icon_state = "Poppy Flower"
+	filling_color = "#008000"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/ozium = 5)
+	tastes = list("sweet" = 1,"bitterness" = 1)
+	mill_result = /obj/item/reagent_containers/powder/ozium
+	rotprocess = 15 MINUTES
+
+/obj/item/reagent_containers/food/snacks/grown/herbs
+	seed = /obj/item/seeds/herbs
+	name = "wild herbs"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = "an assortment of herbs known to sooth pain"
+	icon_state = "Herbs"
+	filling_color = "#008000"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("sweet" = 1,"bitterness" = 1)
+	mill_result = /obj/item/reagent_containers/powder/heal
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/medicine/minorhealthpot = 5)
+	rotprocess = 15 MINUTES
+
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
 	seed = null
 	name = "westleach leaf"
@@ -283,6 +312,7 @@
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "pumpkin"
+	mill_result = /obj/item/reagent_containers/food/snacks/rogue/pumpkinspice
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	tastes = list("pumpkin" = 1)
 	dropshrink = 0.75
