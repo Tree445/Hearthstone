@@ -13,6 +13,7 @@
 	..() // Compared to the Warrior the barbarian is more suited to the wilds. But they are able to make use of almost any weapon by talent and killer instinct.
 	H.adjust_blindness(-3)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/barbarian_rage)
+	ADD_TRAIT(H, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC) //Hearthstone change.
 	var/classes = list("Warrior","Hunter Killer", "Ravager")
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)
@@ -92,7 +93,6 @@
 			H.change_stat("constitution", 2)
 			H.change_stat("endurance", 3)
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
-			ADD_TRAIT(W, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC) //Hearthstone change.
 		if("Ravager") //Lower constitution/weaponskills, but they're better at unarmed combat than barbs are with a weapon. Good skills, not much gear. Gets extra bite damage.
 			H.set_blindness(0)
 			to_chat(H, span_warning("Some barbarians eschew the axe in favour of the most faithful weapons anyone could hope for: fist, claw, and fang."))
