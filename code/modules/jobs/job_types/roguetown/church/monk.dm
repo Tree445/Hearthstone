@@ -28,7 +28,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/church = 1)
+	backpack_contents = list(/obj/item/roguekey/church = 1, /obj/item/needle/pestra = 1,) // Doktor, HEAL me!
 	switch(H.patron?.type)
 		if(/datum/patron/divine/astrata)
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
@@ -90,7 +90,7 @@
 			shoes = shoes = /obj/item/clothing/shoes/roguetown/sandals
 			shirt =	/obj/item/clothing/suit/roguetown/shirt/undershirt/ravoxrobe			
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, rand(3, 4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
@@ -98,9 +98,38 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		H.change_stat("intelligence", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("perception", -1)
+		switch(H.patron?.type)
+		if(/datum/patron/divine/malum)
+			if(H.mind)
+				H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/craft/Armorsmithing, 2, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/craft/Smelting, 2, TRUE)
+		if(/datum/patron/divine/pestra)
+			if(H.mind)
+				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		if(/datum/patron/divine/abyssor)
+			if(H.mind)
+				H.mind.adjust_skillrank(/datum/skill/misc/fishing, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
+		if(/datum/patron/divine/dendor)
+			if(H.mind)
+				H.mind.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/taming, 3, TRUE)
+		if(/datum/patron/divine/eora)
+			if(H.mind)
+			ADD_TRAIT(H, TRAIT_GOODLOVER) //   ( ͡° ͜ʖ ͡°)
+		if(/datum/patron/divine/xylix)
+			if(H.mind)
+				H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+				H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE) // the eyes and ears of the Church
+		if(/datum/patron/divine/noc)
+			if(H.mind)
+				H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // shouldn't be that bad.
+				H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+		H.change_stat("intelligence", 4) // dedicated crafters
+		H.change_stat("endurance", 3)
+		H.change_stat("perception", 2)
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 
