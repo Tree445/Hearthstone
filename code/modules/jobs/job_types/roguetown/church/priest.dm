@@ -139,7 +139,7 @@
 				continue
 			if(H.real_name == inputty)
 				found = TRUE
-				H.add_stress(/datum/stressevent/psycurse)
+				target.apply_status_effect(/datum/status_effect/debuff/cursedbychurch)
 		if(!found)
 			return FALSE
 		GLOB.excommunicated_players += inputty
