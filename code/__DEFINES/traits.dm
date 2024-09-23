@@ -141,6 +141,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NOCSIGHT = "Noc blesses my eyes to be unburdened by the night.", //Hearthstone change.
 	TRAIT_MALUMSGRACE = "Malum is my muse.", // Hearthstone change
 	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed." // Hearthstone change
+	TRAIT_BOG_TREKKING = "Expert in navigating these lands." // Hearthstone change
 ))
 
 // trait accessor defines
