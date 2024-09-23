@@ -109,7 +109,6 @@
 	worn_y_dimension = 64
 	rotprocess = 20 MINUTES
 	can_distill = TRUE
-	grind_results = /obj/item/reagent_containers/powder/flour
 	distill_reagent = /datum/reagent/medicine/shroomt
 	mill_result = /obj/item/reagent_containers/powder/flour // mushroom flour. it exists. and its gross.
 
@@ -239,7 +238,6 @@
 	foodtype = VEGETABLES
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/ozium = 5)
 	tastes = list("sweet" = 1,"bitterness" = 1)
-	grind_results = /obj/item/reagent_containers/powder/ozium
 	mill_result = /obj/item/reagent_containers/powder/ozium
 	rotprocess = 15 MINUTES
 
@@ -253,7 +251,6 @@
 	bitesize_mod = 2
 	foodtype = VEGETABLES
 	tastes = list("sweet" = 1,"bitterness" = 1)
-	grind_results = /obj/item/reagent_containers/powder/heal
 	mill_result = /obj/item/reagent_containers/powder/heal
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/medicine/minorhealthpot = 5)
 	rotprocess = 15 MINUTES
