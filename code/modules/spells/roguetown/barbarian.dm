@@ -62,8 +62,8 @@
 
 /obj/effect/proc_holder/spell/self/rav_claws/cast(mob/user = usr)
 	..()
-	var/obj/item/rogueweapon/werewolf_claw/left/l
-	var/obj/item/rogueweapon/werewolf_claw/right/r
+	var/obj/item/rogueweapon/rav_claw/left/l
+	var/obj/item/rogueweapon/rav_claw/right/r
 
 	l = user.get_active_held_item()
 	r = user.get_inactive_held_item()
