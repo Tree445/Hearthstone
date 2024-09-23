@@ -352,6 +352,7 @@
 	/datum/job/roguetown/undertaker,\
 	/datum/job/roguetown/priest,\
 	/datum/job/roguetown/puritan,\
+	/datum/job/roguetown/templargrand,\
 	/datum/job/roguetown/templar
 
 #define PEASANT_ROLES \
