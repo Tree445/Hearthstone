@@ -13,7 +13,6 @@
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_blindness(-3)
-	H.grant_language(/datum/language/thievescant)
 	var/classes = list("Rogue","Duelist",)
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)
@@ -58,8 +57,9 @@
 	H.change_stat("speed", pick(3,4))
 	H.change_stat("intelligence", 2)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/rogue_knock)
+	H.grant_language(/datum/language/thievescant)
 	to_chat(H, "<span class='info'>I can gesture in thieves' cant with ,t before my speech.</span>")
-	
+
 // Less thief-ish skills, but you have better starting skills and no strength penalty. Plus, shield skill and a parry dagger.
 /datum/outfit/job/roguetown/adventurer/rogue/proc/duelistarch(mob/living/carbon/human/H)
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -97,6 +97,8 @@
 	H.change_stat("strength", 1)
 	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 2)
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/rogue_knock)
+	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC) //extra damage to groin (dirty fighting)
 	H.visible_message(span_info("I trained as a swashbuckler, flair and precision is my weapon... And some dirty tricks under my cape. I can fool people into underestimating me, their last mistake."))
+	H.grant_language(/datum/language/thievescant)
 	to_chat(H, "<span class='info'>I can gesture in thieves' cant with ,t before my speech.</span>")
+	
