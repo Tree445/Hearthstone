@@ -46,7 +46,7 @@
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //! Will always find any tracks and analyzes them perfectly.
 #define TRAIT_NOCSIGHT "Blessing of Noc" // I can see just a bit more clearly in darkness.
 #define TRAIT_MALUMSGRACE "Malum's Grace" // For now, just means you dont combust when snorting malum's fire.
-#define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage
+#define TRAIT_DEATHBYSNOOSNOO "Bed Breaker" // double sex damage (requires strong intent)
 //Hearthstone end.
 
 // PATRON GOD TRAITS

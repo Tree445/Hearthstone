@@ -126,7 +126,7 @@
 				armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 			H.change_stat("intelligence", -2) 
 			H.change_stat("strength", 3) 
-			H.change_stat("constitution", 2)
+			H.change_stat("constitution", 3)
 			H.change_stat("endurance", 2)
 			ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) //doubles bite damage, which is 50% of STR.
 			ADD_TRAIT(H, TRAIT_DEATHBYSNOOSNOO, TRAIT_GENERIC) //doubles sex damage

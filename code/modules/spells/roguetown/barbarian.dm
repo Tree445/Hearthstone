@@ -20,6 +20,8 @@
 		user.visible_message("<span class='info'>[user]'s muscles tense up beyond imagination.</span>", "<span class='notice'>My muscles tense up beyond imagination.</span>")
 		user.add_stress(/datum/stressevent/barbarian_rage)
 		target.apply_status_effect(/datum/status_effect/buff/barbarian_rage)
+		ADD_TRAIT(target, TRAIT_NOPAIN, TRAIT_GENERIC)
+		ADD_TRAIT(target, TRAIT_NOPAINSTUN, TRAIT_GENERIC)
 		return TRUE
 	return FALSE
 
@@ -42,6 +44,8 @@
 	target.adjustOxyLoss(50)
 	target.visible_message("<span class='info'>[owner]'s rage subsides.</span>", "<span class='notice'>My rage subsides.</span>")
 	target.apply_status_effect(/datum/status_effect/debuff/trainsleep)
+	REMOVE_TRAIT(target, TRAIT_NOPAIN, TRAIT_GENERIC)
+	REMOVE_TRAIT(target, TRAIT_NOPAINSTUN, TRAIT_GENERIC)
 	. = ..()
 
 /datum/stressevent/barbarian_rage
