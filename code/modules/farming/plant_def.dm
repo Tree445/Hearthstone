@@ -52,7 +52,7 @@
 	maturation_time = 10 MINUTES
 	produce_time = 5 MINUTES
 
-/datum/plant_def/herb
+/datum/plant_def/herbs
 	name = "herb bush"
 	icon = 'icons/roguetown/misc/crops.dmi'
 	icon_state = "herbs"

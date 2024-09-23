@@ -57,7 +57,7 @@
 	seed_identity = "elder shroom seeds"
 	plant_def_type = /datum/plant_def/shroom
 
-/obj/item/seeds/herb
+/obj/item/seeds/herbs
 	seed_identity = "herb seeds"
 	plant_def_type = /datum/plant_def/herbs
 
