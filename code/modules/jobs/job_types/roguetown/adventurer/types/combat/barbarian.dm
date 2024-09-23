@@ -13,7 +13,8 @@
 	..() // Compared to the Warrior the barbarian is more suited to the wilds. But they are able to make use of almost any weapon by talent and killer instinct.
 	H.adjust_blindness(-3)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/barbarian_rage)
-	ADD_TRAIT(H, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC) //Hearthstone change.
+
+	ADD_TRAIT(H, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC) //danger sense.
 	var/classes = list("Warrior","Hunter Killer", "Ravager")
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 	switch(classchoice)
@@ -128,6 +129,7 @@
 			H.change_stat("strength", 3) 
 			H.change_stat("constitution", 3)
 			H.change_stat("endurance", 2)
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rav_claws)
 			ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) //doubles bite damage, which is 50% of STR.
 			ADD_TRAIT(H, TRAIT_DEATHBYSNOOSNOO, TRAIT_GENERIC) //doubles sex damage
 
