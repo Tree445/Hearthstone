@@ -140,7 +140,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
 	TRAIT_NOCSIGHT = "Noc blesses my eyes to be unburdened by the night.", //Hearthstone change.
 	TRAIT_MALUMSGRACE = "Malum is my muse.", // Hearthstone change
-	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed." // Hearthstone change
+	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
 	TRAIT_BOG_TREKKING = "Expert in navigating these lands." // Hearthstone change
 ))
 
