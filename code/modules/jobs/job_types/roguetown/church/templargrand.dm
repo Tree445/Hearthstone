@@ -4,12 +4,12 @@
 	title = "Grand Templar"
 	department_flag = CHURCHMEN
 	faction = "Station"
-	tutorial = "The Strongest. You vowed to defend the church and the priest till the dae you die. You might be described as a tank among men, but in reality, you are a shining light in the darkness."
+	tutorial = "The Strongest. You have vowed and sworn your life to the Priest or Priestess on the Isle of Enigma. Interfaith politics or lordly politics have never interested you ever and todae marks your solem vigil over the land."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_patrons = ALL_CLERIC_PATRONS
 	outfit = /datum/outfit/job/roguetown/grandtemplar
-	min_pq = 15
+	min_pq = 5
 	max_pq = null
 	total_positions = 1
 	spawn_positions = 1
@@ -92,10 +92,9 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE) // dont give them any ranged stuff. thats what churchlings/inquis/confessor do.
 		H.change_stat("strength", 3)
-		H.change_stat("intelligence", 3)
+		H.change_stat("intelligence", 2)
 		H.change_stat("constitution", 3)
 		H.change_stat("endurance", 3)
-		H.change_stat("fortune", 3)
 		H.change_stat("speed", -1)
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

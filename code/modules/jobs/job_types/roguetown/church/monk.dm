@@ -28,7 +28,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/church = 1, /obj/item/needle/pestra = 1,) // Doktor, HEAL me!
+	backpack_contents = list(/obj/item/roguekey/church = 1, /obj/item/storage/belt/rogue/pouch/skit =1,) // Doktor, HEAL me!
 	switch(H.patron?.type)
 		if(/datum/patron/divine/astrata)
 			head = /obj/item/clothing/head/roguetown/roguehood/astrata
