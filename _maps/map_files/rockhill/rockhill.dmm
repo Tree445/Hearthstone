@@ -22586,8 +22586,8 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/item/reagent_containers/glass/bucket/wooden,
 /obj/item/storage/roguebag{
-	pixel_y = -7;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = -7
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/town/church/chapel)
@@ -72039,7 +72039,7 @@ aci
 aci
 abg
 abg
-abe
+abg
 abg
 abg
 abg
