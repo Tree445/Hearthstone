@@ -184,15 +184,15 @@
 		hand.host = target
 		hand.bodypart = bodypart
 		hand.forceMove(target)
-		var/choice = alert(target, "A skeletal hand attempts to grapple your nether region!", "", "Accept it!", "Fight it!")
 		bodypart.add_embedded_object(hand, silent = TRUE, crit_message = FALSE)
-		switch(choice)
-		//IF YOU CHOOSE Accept it! - YOU RECIEVE PLEASURE
-			if("Accept it!")
-				hand.pleasureaccepted = TRUE
-			if("Fight it!")
-				hand.pleasureaccepted = FALSE
-		return TRUE
+		if(user.zone_selected == BODY_ZONE_CHEST)
+			var/choice = alert(target, "A skeletal hand attempts to grapple your nether region!", "", "Accept it!", "Fight it!")
+			switch(choice)
+			//IF YOU CHOOSE Accept it! - YOU RECIEVE PLEASURE
+				if("Accept it!")
+					hand.pleasureaccepted = TRUE
+				if("Fight it!")
+					hand.pleasureaccepted = FALSE
 	return FALSE
 
 /obj/item/chilltouch5e
@@ -270,6 +270,87 @@
 				playsound(get_turf(host), pick('sound/combat/hits/punch/punch (1).ogg','sound/combat/hits/punch/punch (2).ogg','sound/combat/hits/punch/punch (3).ogg'), 100, FALSE, -1)
 				target.apply_damage(oxy_drain*mult*3, BRUTE, bodypart)
 				bodypart.update_disabled()
+	return FALSE
+
+//==============================================
+//	CONTROL FLAMES
+//==============================================
+//lame. skip
+
+//==============================================
+//	CREATE BONFIRE
+//==============================================
+//lame. skip
+
+//==============================================
+//	DANCING LIGHTS
+//==============================================
+//lame. skip
+
+//==============================================
+//	DECOMPOSE
+//==============================================
+// Notes: turn a freshly dead body into a rotman
+/obj/effect/proc_holder/spell/invoked/decompose5e
+	name = "Decompose"
+	overlay_state = "null"
+	releasedrain = 50
+	chargetime = 1
+	charge_max = 1 SECONDS
+	//chargetime = 10
+	//charge_max = 30 SECONDS
+	range = 6
+	warnie = "spellwarning"
+	movement_interrupt = FALSE
+	no_early_release = FALSE
+	chargedloop = null
+	sound = 'sound/magic/whiteflame.ogg'
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	cost = 1
+
+	xp_gain = TRUE
+	miracle = FALSE
+
+	invocation = ""
+	invocation_type = "shout" //can be none, whisper, emote and shout
+
+/obj/effect/proc_holder/spell/invoked/decompose5e/cast(list/targets, mob/living/user)
+	if(!isliving(targets[1]))
+		var/mob/living/target = targets[1]
+		if(target == user)
+			return FALSE
+		var/has_rot = FALSE
+		if(iscarbon(target))
+			var/mob/living/carbon/stinky = target
+			for(var/obj/item/bodypart/bodypart as anything in stinky.bodyparts)
+				if(bodypart.rotted || bodypart.skeletonized)
+					has_rot = TRUE
+					break
+		if(has_rot)
+			to_chat(user, span_warning("Already rotted."))
+			return FALSE
+		//do some sounds and effects or something (flies?)
+		if(target.mind)
+			target.mind.add_antag_datum(/datum/antagonist/zombie)
+		target.Unconscious(20 SECONDS)
+		target.emote("breathgasp")
+		target.Jitter(100)
+		var/datum/component/rot/rot = target.GetComponent(/datum/component/rot)
+		if(rot)
+			rot.amount = 100
+		if(iscarbon(target))
+			var/mob/living/carbon/stinky = target
+			for(var/obj/item/bodypart/rotty in stinky.bodyparts)
+				rotty.rotted = TRUE
+				rotty.update_limb()
+				rotty.update_disabled()
+		target.update_body()
+		if(HAS_TRAIT(target, TRAIT_ROTMAN))
+			target.visible_message(span_notice("[target]'s body rots!"), span_green("I feel rotten!"))
+		else
+			target.visible_message(span_warning("[target]'s body fails to rot!"), span_warning("I feel no different..."))
+		return TRUE
 	return FALSE
 
 /*

@@ -35,3 +35,4 @@
 	H.change_stat("strength", 2)
 	H.change_stat("intelligence", -2)
 	H.change_stat("speed", -1)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/decompose5e)
