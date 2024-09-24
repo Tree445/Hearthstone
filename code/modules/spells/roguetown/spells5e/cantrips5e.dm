@@ -177,13 +177,21 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/carbon/target = targets[1]
-		var/obj/item/bodypart/bodypart = target.get_bodypart(check_zone(user.zone_selected))
+		var/obj/item/bodypart/bodypart = target.get_bodypart(user.zone_selected)
 		if(!bodypart)
 			return FALSE
 		var/obj/item/chilltouch5e/hand = new(target)
-		var/obj/item/natural/worms/leech/test = new(target)
 		hand.host = target
-		bodypart.add_embedded_object(test, silent = TRUE)
+		hand.bodypart = bodypart
+		hand.forceMove(target)
+		var/choice = alert(target, "A skeletal hand attempts to grapple your nether region!", "", "Accept it!", "Fight it!")
+		bodypart.add_embedded_object(hand, silent = TRUE, crit_message = FALSE)
+		switch(choice)
+		//IF YOU CHOOSE Accept it! - YOU RECIEVE PLEASURE
+			if("Accept it!")
+				hand.pleasureaccepted = TRUE
+			if("Fight it!")
+				hand.pleasureaccepted = FALSE
 		return TRUE
 	return FALSE
 
@@ -198,17 +206,21 @@
 	throwforce = 0
 	max_integrity = 10
 
-	var/oxy_drain = 20
-	var/pleasure = 20
+	var/oxy_drain = 2
+	var/pleasure = 1
+	var/curprocs = 0
+	var/procsmax = 50
+	var/pleasureaccepted = FALSE
 	var/mob/living/host //who are we stuck to?
+	var/obj/item/bodypart/bodypart //where are we stuck to?
 
 	embedding = list(
-		"embedded_unsafe_removal_time" = 0,
+		"embedded_unsafe_removal_time" = 20,
 		"embedded_pain_chance" = 0,
 		"embedded_pain_multiplier" = 0,
 		"embed_chance" = 100,
 		"embedded_fall_chance" = 0)
-	//item_flags = DROPDEL | ABSTRACT | NOBLUDGEON
+	item_flags = DROPDEL
 	destroy_sound = 'sound/magic/vlightning.ogg'
 
 /obj/item/chilltouch5e/Initialize()
@@ -222,34 +234,42 @@
 		START_PROCESSING(SSobj, src)
 
 /obj/item/chilltouch5e/process()
+	var/hand_proc = pick(1,2,3,4,5)
+	var/mult = pick(1,2)
+	var/mob/living/target = host
 	if(!is_embedded)
 		host = null
 		return PROCESS_KILL
+	if(curprocs >= procsmax)
+		host = null
+		return PROCESS_KILL
+	if(!host)
 		qdel(src)
-	if(!host)
 		return FALSE
-	var/obj/item/bodypart/bodypart = loc
-	to_chat(host, "<span class='warning'>Checking for user.</span>")
-	if(!host)
-		return
-	to_chat(host, "<span class='warning'>Found user.</span>")
-	switch(bodypart)
-		if(BODY_ZONE_HEAD) //choke
-			to_chat(host, "<span class='warning'>choke</span>")
-			host.adjustOxyLoss(-oxy_drain)
-		if(BODY_ZONE_CHEST) //pleasure if erp, hurt if not
-			if(host.client.prefs.sexable == TRUE)
-				host.sexcon.perform_sex_action(host, 0.5, 0, TRUE)
+	curprocs++
+	if(hand_proc == 1)
+		switch(bodypart.name)
+			if(BODY_ZONE_HEAD) //choke
+				to_chat(host, "<span class='warning'>[host] chokes!</span>")
+				playsound(get_turf(host), pick('sound/combat/shove.ogg'), 100, FALSE, -1)
+				playsound(get_turf(host), pick('sound/vo/throat.ogg','sound/vo/throat2.ogg','sound/vo/throat3.ogg'), 100, FALSE, -1)
+
+				target.adjustOxyLoss(oxy_drain*mult*2)
+			if(BODY_ZONE_CHEST) //pleasure if erp, hurt if not
+				//if erp allowed & said yes to prompt pleasure them & combat mode OFF
+				if(target.client.prefs.sexable == TRUE && pleasureaccepted)
+					to_chat(host, "<span class='warning'>[host] feels otherworld pleasure!</span>")
+					playsound(get_turf(host), pick('sound/misc/mat/insert (1).ogg','sound/misc/mat/insert (2).ogg'), 100, FALSE, -1)
+					target.sexcon.perform_sex_action(host, pleasure*mult*3, 0, TRUE)
+				else //damage
+					to_chat(host, "<span class='warning'>[host] is pummeled!</span>")
+					playsound(get_turf(host), pick('sound/combat/hits/punch/punch_hard (1).ogg','sound/combat/hits/punch/punch_hard (2).ogg','sound/combat/hits/punch/punch_hard (3).ogg'), 100, FALSE, -1)
+					target.adjustBruteLoss(oxy_drain*mult*3)
 			else
-				host.adjustBruteLoss(-oxy_drain)
-		if(BODY_ZONE_L_ARM) //disable arm
-			bodypart.set_disabled(BODYPART_DISABLED_WOUND)
-		if(BODY_ZONE_R_ARM) //disable arm
-			bodypart.set_disabled(BODYPART_DISABLED_WOUND)
-		if(BODY_ZONE_L_LEG) //slow
-			host.add_movespeed_modifier(MOVESPEED_ID_DISLOCATION_LEFT_LEG, multiplicative_slowdown = DISLOCATED_ADD_SLOWDOWN)
-		if(BODY_ZONE_R_LEG) //slow
-			host.add_movespeed_modifier(MOVESPEED_ID_DISLOCATION_RIGHT_LEG, multiplicative_slowdown = DISLOCATED_ADD_SLOWDOWN)
+				to_chat(host, "<span class='warning'>[host]'s [bodypart] is twisted!</span>")
+				playsound(get_turf(host), pick('sound/combat/hits/punch/punch (1).ogg','sound/combat/hits/punch/punch (2).ogg','sound/combat/hits/punch/punch (3).ogg'), 100, FALSE, -1)
+				target.apply_damage(oxy_drain*mult*3, BRUTE, bodypart)
+				bodypart.update_disabled()
 	return FALSE
 
 /*
