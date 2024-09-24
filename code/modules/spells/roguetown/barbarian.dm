@@ -71,14 +71,14 @@
 		if(istype(user.get_active_held_item(), /obj/item/rogueweapon/rav_claw))
 			user.dropItemToGround(l, TRUE)
 			user.dropItemToGround(r, TRUE)
-			user.visible_message("<span class='info'>[user]'s claws retract.</span>", "<span class='notice'>Claws retract back into [user]'s hands.</span>")
+			user.visible_message("<span class='info'>[user]'s claws retract.</span>", "<span class='notice'>Claws retract back into my hands.</span>")
 			extended = FALSE
 	else
 		l = new(user,1)
 		r = new(user,2)
 		user.put_in_hands(l, TRUE, FALSE, TRUE)
 		user.put_in_hands(r, TRUE, FALSE, TRUE)
-		user.visible_message("<span class='info'>[user]'s claws extend.</span>", "<span class='notice'>Claws extend from [user]'s hands.</span>")
+		user.visible_message("<span class='info'>[user]'s claws extend.</span>", "<span class='notice'>Claws extend from my hands.</span>")
 		extended = TRUE
 	
 /obj/item/rogueweapon/rav_claw //this is essentially a hunting knife that uses unarmed. Not that op

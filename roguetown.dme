@@ -8,6 +8,7 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\roguetest.dm"
 #include "_maps\templates\bog_shack_small.dm"
 #include "_maps\templates\sewers.dm"
 #include "_maps\templates\smalldungeons.dm"
@@ -3368,6 +3369,7 @@
 #include "code\modules\spells\roguetown\acolyte\noc.dm"
 #include "code\modules\spells\roguetown\acolyte\pestra.dm"
 #include "code\modules\spells\roguetown\acolyte\xylix.dm"
+#include "code\modules\spells\roguetown\spells5e\cantrips5e.dm"
 #include "code\modules\spells\spell_types\aimed.dm"
 #include "code\modules\spells\spell_types\area_teleport.dm"
 #include "code\modules\spells\spell_types\barnyard.dm"
