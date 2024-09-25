@@ -22,7 +22,7 @@
 	max_pq = null
 
 /datum/outfit/job/roguetown/priest
-	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/eora)
+	allowed_patrons = ALL_DIVINE_PATRONS
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -131,7 +131,8 @@
 			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the light!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				if(H.real_name == inputty)
-					H.remove_stress(/datum/stressevent/psycurse)
+					target.apply_status_effect(/datum/status_effect/debuff/cursedbychurch)
+
 			return
 		var/found = FALSE
 		for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -143,7 +144,7 @@
 		if(!found)
 			return FALSE
 		GLOB.excommunicated_players += inputty
-		priority_announce("[real_name] has put Xylix's curse of woe on [inputty] for offending the church!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
+		priority_announce("[real_name] has put Xylix's curse of woe on [inputty] for offending the church! They are excommunicated and ought to be presented before the Lord of the Land!", title = "SHAME", sound = 'sound/misc/excomm.ogg')
 
 /mob/living/carbon/human/proc/churchannouncement()
 	set name = "Announcement"

@@ -214,9 +214,9 @@
 /datum/status_effect/debuff/cursedbychurch
 	id = "cursedbychurch"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/cursedbychurch
-	effectedstats = list("fortune" = -5, "speed" = -5, "strength" = -2,) // good luck escaping, heretic.
-	duration = 15 MINUTES // This is why we respect the Priest/ess.
+	effectedstats = list("fortune" = -5, "speed" = -5, "strength" = -5,) // good luck escaping, heretic.
+	duration = 30 MINUTES // This is why we respect the Priest/ess.
 
 /atom/movable/screen/alert/status_effect/debuff/cursedbychurch
 	name = "Cursed by the Church!"
-	desc = "I have been excommunicated by the leader of the Church and I feel my strength weaver!"
+	desc = "I have been excommunicated by the leader of the Church and I feel my strength leave me! I am bound to get hunted by a number of people now..."
