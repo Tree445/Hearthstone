@@ -563,6 +563,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/buff/frostbite5e
 	duration = 20 SECONDS
 	var/static/mutable_appearance/frost = mutable_appearance('icons/effects/effects.dmi', "light_snow")
+	effectedstats = list("speed" = 2)
 
 /atom/movable/screen/alert/status_effect/buff/frostbite5e
 	name = "Frostbite"

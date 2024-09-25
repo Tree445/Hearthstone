@@ -58,8 +58,8 @@
 				var/datum/status_effect/buff/compelledduel5eshame shame = new /datum/status_effect/buff/compelledduel5eshame
 				shame.shamer = user
 				target.apply_status_effect(shame)
-				//user laugh
-				//target whimper
+				//user laugh target.emote("laugh")
+				//target whimper target.emote("whimper")
 
 /datum/status_effect/buff/compelledduel5e
 	id = "compelled duel"
