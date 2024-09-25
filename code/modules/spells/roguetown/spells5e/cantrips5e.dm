@@ -443,7 +443,7 @@
 //==============================================
 // Notes: You hurl a bubble of acid, a slow moving bubble projectile that deals light burn damage in an aoe
 /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e
-	name = "Acid Splash"
+	name = "Eldritch Blast"
 	desc = ""
 	clothes_req = FALSE
 	range = 8
