@@ -562,7 +562,7 @@
 	id = "frostbite"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/frostbite5e
 	duration = 20 SECONDS
-	var/static/mutable_appearance/frost = mutable_appearance('icons/effects/effects.dmi', "light_snow")
+	var/static/mutable_appearance/frost = mutable_appearance('icons/effects/weather_effects.dmi', "light_snow")
 	effectedstats = list("speed" = -2)
 
 /atom/movable/screen/alert/status_effect/buff/frostbite5e
@@ -625,6 +625,67 @@
 	desc = "A mentor is guiding me."
 	icon_state = "buff"
 
+//==============================================
+//	INFESTATION
+//==============================================
+/obj/effect/proc_holder/spell/invoked/infestation5e
+	name = "Infestation"
+	overlay_state = "null"
+	releasedrain = 50
+	chargetime = 1
+	charge_max = 1 SECONDS
+	//chargetime = 10
+	//charge_max = 30 SECONDS
+	range = 8
+	warnie = "spellwarning"
+	movement_interrupt = FALSE
+	no_early_release = FALSE
+	chargedloop = null
+	sound = 'sound/magic/whiteflame.ogg'
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	cost = 1
+
+	xp_gain = FALSE
+	miracle = FALSE
+
+	invocation = ""
+	invocation_type = "shout" //can be none, whisper, emote and shout
+	
+/obj/effect/proc_holder/spell/invoked/infestation5e/cast(list/targets, mob/living/user)
+	if(isliving(targets[1]))
+		var/mob/living/carbon/target = targets[1]
+		target.apply_status_effect(/datum/status_effect/buff/infestation5e/) //apply debuff
+
+/datum/status_effect/buff/infestation5e
+	id = "infestation"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/infestation5e
+	duration = 10 SECONDS
+	effectedstats = list("constitution" = -2)
+	var/static/mutable_appearance/rotten = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
+
+/atom/movable/screen/alert/status_effect/buff/infestation5e
+	name = "Infestation"
+	desc = "Fleas and mites are biting my skin."
+	icon_state = "debuff"
+
+/datum/status_effect/buff/infestation5e/on_apply()
+	. = ..()
+	var/mob/living/target = owner
+	target.add_overlay(rotten)
+	target.update_vision_cone()
+
+/datum/status_effect/buff/infestation5e/on_remove()
+	var/mob/living/target = owner
+	target.cut_overlay(rotten)
+	target.update_vision_cone()
+	. = ..()
+
+/datum/status_effect/buff/infestation5e/tick()
+	var/mob/living/target = owner
+	target.adjustToxLoss(2)
+	target.adjustBruteLoss(1)
+
 /*
 X = added
 S = skipped
@@ -644,8 +705,8 @@ S Friends	Enchantment	1 Action	Self	Concentration, up to 1 minute	S, M
 X Frostbite	Evocation	1 Action	60 feet	Instantaneous	V, S
 Green-Flame Blade	Evocation	1 Action	Self (5-foot radius)	Instantaneous	S, M
 X Guidance	Divination	1 Action	Touch	Concentration up to 1 minute	V, S
-Gust	Transmutation	1 Action	30 feet	Instantaneous	V, S
-Hand of Radiance (UA)	Evocation	1 Action	5 feet	Instantaneous	V, S
+S Gust	Transmutation	1 Action	30 feet	Instantaneous	V, S
+S Hand of Radiance (UA)	Evocation	1 Action	5 feet	Instantaneous	V, S
 Infestation	Conjuration	1 Action	30 feet	Instantaneous	V, S, M
 Light	Evocation	1 Action	Touch	1 hour	V, M
 Lightning Lure	Evocation	1 Action	Self (15-foot radius)	Instantaneous	V
