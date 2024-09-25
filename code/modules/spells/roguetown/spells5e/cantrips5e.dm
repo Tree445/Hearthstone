@@ -169,10 +169,7 @@
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-//make a melee weapon attack
-//on hit. do normal weapon damage and apply a buff to target: Booming Blade
-//if that target moves during Booming Blade buff
-//creat a small explosion on the target
+	
 /obj/effect/proc_holder/spell/invoked/boomingblade5e/cast(list/targets, mob/living/user)
 	var/mob/living/carbon/target = targets[1]
 	var/mob/living/L = target
@@ -489,17 +486,19 @@
 	aoe_range = 1
 
 /*
-Acid Splash	Conjuration	1 Action	60 Feet	Instantaneous	V, S
-XBlade Ward	Abjuration	1 Action	Self	1 round	V, S
-Booming Blade	Evocation	1 Action	Self (5-foot radius)	1 round	S, M
-XChill Touch	Necromancy	1 Action	120 feet	1 round	V, S
-Control Flames	Transmutation	1 Action	60 Feet	Instantaneous or 1 hour	S
-Create Bonfire	Conjuration	1 Action	60 Feet	Concentration, up to 1 minute	V, S
-Dancing Lights	Evocation	1 Action	120 feet	Concentration up to 1 minute	V, S, M
-Decompose (HB)	Necromancy	1 Action	Touch	1 minute	V, S
-Druidcraft	Transmutation	1 Action	30 Feet	Instantaneous	V, S
-Eldritch Blast	Evocation	1 Action	120 Feet	Instantaneous	V, S
-Encode Thoughts	Enchantment	1 Action	Self	8 hours	S
+X = added
+S = skipped
+X Acid Splash	Conjuration	1 Action	60 Feet	Instantaneous	V, S
+X Blade Ward	Abjuration	1 Action	Self	1 round	V, S
+X Booming Blade	Evocation	1 Action	Self (5-foot radius)	1 round	S, M
+X Chill Touch	Necromancy	1 Action	120 feet	1 round	V, S
+S Control Flames	Transmutation	1 Action	60 Feet	Instantaneous or 1 hour	S
+S Create Bonfire	Conjuration	1 Action	60 Feet	Concentration, up to 1 minute	V, S
+S Dancing Lights	Evocation	1 Action	120 feet	Concentration up to 1 minute	V, S, M
+X Decompose (HB)	Necromancy	1 Action	Touch	1 minute	V, S
+S Druidcraft	Transmutation	1 Action	30 Feet	Instantaneous	V, S
+X Eldritch Blast	Evocation	1 Action	120 Feet	Instantaneous	V, S
+S Encode Thoughts	Enchantment	1 Action	Self	8 hours	S
 Fire Bolt	Evocation	1 Action	120 feet	Instantaneous	V, S
 Friends	Enchantment	1 Action	Self	Concentration, up to 1 minute	S, M
 Frostbite	Evocation	1 Action	60 feet	Instantaneous	V, S
