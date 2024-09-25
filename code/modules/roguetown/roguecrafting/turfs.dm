@@ -237,6 +237,8 @@
 /datum/crafting_recipe/roguetown/turfs/dirt/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return
+	if(istype(T, /turf/open/floor/rogue/grass))
+		return
 	if(!istype(T, /turf/open/floor/rogue))
 		if(!istype(T, /turf/open/transparent/openspace))
 			if(!istype(T, /turf/open/water))
