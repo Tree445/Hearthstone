@@ -257,7 +257,6 @@
 
 // Notes: sorcerer, warlock, wizard
 /obj/effect/proc_holder/spell/invoked/chilltouch5e/cast(list/targets, mob/living/user)
-	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/carbon/target = targets[1]
 		var/obj/item/bodypart/bodypart = target.get_bodypart(user.zone_selected)
@@ -524,6 +523,63 @@
 	flag = "magic"
 	hitsound = 'sound/blank.ogg'
 	aoe_range = 0
+
+//==============================================
+//	FROSTBITE
+//==============================================
+/obj/effect/proc_holder/spell/invoked/frostbite5e
+	name = "Booming Blade"
+	overlay_state = "blade_burst"
+	releasedrain = 50
+	chargetime = 1
+	charge_max = 1 SECONDS
+	//chargetime = 10
+	//charge_max = 30 SECONDS
+	range = 6
+	warnie = "spellwarning"
+	movement_interrupt = FALSE
+	no_early_release = FALSE
+	chargedloop = null
+	sound = 'sound/magic/whiteflame.ogg'
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	cost = 1
+
+	xp_gain = FALSE
+	miracle = FALSE
+
+	invocation = ""
+	invocation_type = "shout" //can be none, whisper, emote and shout
+	
+/obj/effect/proc_holder/spell/invoked/frostbite5e/cast(list/targets, mob/living/user)
+	if(isliving(targets[1]))
+		var/mob/living/carbon/target = targets[1]
+		target.apply_status_effect(/datum/status_effect/buff/frostbite5e/) //apply debuff
+		target.adjustFireLoss(12) //damage
+		target.adjustBruteLoss(12)
+
+/datum/status_effect/buff/frostbite5e
+	id = "frostbite"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/frostbite5e
+	duration = 20 SECONDS
+	var/static/mutable_appearance/frost = mutable_appearance('icons/effects/effects.dmi', "light_snow")
+
+/atom/movable/screen/alert/status_effect/buff/frostbite5e
+	name = "Frostbite"
+	desc = "I can feel myself slowing down."
+	icon_state = "debuff"
+
+/datum/status_effect/buff/frostbite5e/on_apply()
+	. = ..()
+	var/mob/living/target = owner
+	target.add_overlay(frost)
+	target.update_vision_cone()
+
+/datum/status_effect/buff/frostbite5e/on_remove()
+	var/mob/living/target = owner
+	target.cut_overlay(frost)
+	target.update_vision_cone()
+	. = ..()
 /*
 X = added
 S = skipped
