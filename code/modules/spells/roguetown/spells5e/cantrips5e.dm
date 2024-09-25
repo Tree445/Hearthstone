@@ -528,8 +528,8 @@
 //	FROSTBITE
 //==============================================
 /obj/effect/proc_holder/spell/invoked/frostbite5e
-	name = "Booming Blade"
-	overlay_state = "blade_burst"
+	name = "Frostbite"
+	overlay_state = "null"
 	releasedrain = 50
 	chargetime = 1
 	charge_max = 1 SECONDS
@@ -563,7 +563,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/buff/frostbite5e
 	duration = 20 SECONDS
 	var/static/mutable_appearance/frost = mutable_appearance('icons/effects/effects.dmi', "light_snow")
-	effectedstats = list("speed" = 2)
+	effectedstats = list("speed" = -2)
 
 /atom/movable/screen/alert/status_effect/buff/frostbite5e
 	name = "Frostbite"
@@ -581,6 +581,50 @@
 	target.cut_overlay(frost)
 	target.update_vision_cone()
 	. = ..()
+
+//==============================================
+//	GUIDANCE
+//==============================================
+/obj/effect/proc_holder/spell/invoked/guidance5e
+	name = "Guidance"
+	overlay_state = "null"
+	releasedrain = 50
+	chargetime = 1
+	charge_max = 1 SECONDS
+	//chargetime = 10
+	//charge_max = 30 SECONDS
+	range = 6
+	warnie = "spellwarning"
+	movement_interrupt = FALSE
+	no_early_release = FALSE
+	chargedloop = null
+	sound = 'sound/magic/whiteflame.ogg'
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	cost = 1
+
+	xp_gain = FALSE
+	miracle = FALSE
+
+	invocation = ""
+	invocation_type = "shout" //can be none, whisper, emote and shout
+	
+/obj/effect/proc_holder/spell/invoked/guidance5e/cast(list/targets, mob/living/user)
+	if(isliving(targets[1]))
+		var/mob/living/carbon/target = targets[1]
+		target.apply_status_effect(/datum/status_effect/buff/guidance5e/) //apply debuff
+
+/datum/status_effect/buff/guidance5e
+	id = "frostbite"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/guidance5e
+	duration = 30 SECONDS
+	effectedstats = list("intelligence" = 2)
+
+/atom/movable/screen/alert/status_effect/buff/guidance5e
+	name = "Guidance"
+	desc = "A mentor is guiding me."
+	icon_state = "buff"
+
 /*
 X = added
 S = skipped
@@ -597,9 +641,9 @@ X Eldritch Blast	Evocation	1 Action	120 Feet	Instantaneous	V, S
 S Encode Thoughts	Enchantment	1 Action	Self	8 hours	S
 X Fire Bolt	Evocation	1 Action	120 feet	Instantaneous	V, S
 S Friends	Enchantment	1 Action	Self	Concentration, up to 1 minute	S, M
-Frostbite	Evocation	1 Action	60 feet	Instantaneous	V, S
+X Frostbite	Evocation	1 Action	60 feet	Instantaneous	V, S
 Green-Flame Blade	Evocation	1 Action	Self (5-foot radius)	Instantaneous	S, M
-Guidance	Divination	1 Action	Touch	Concentration up to 1 minute	V, S
+X Guidance	Divination	1 Action	Touch	Concentration up to 1 minute	V, S
 Gust	Transmutation	1 Action	30 feet	Instantaneous	V, S
 Hand of Radiance (UA)	Evocation	1 Action	5 feet	Instantaneous	V, S
 Infestation	Conjuration	1 Action	30 feet	Instantaneous	V, S, M
