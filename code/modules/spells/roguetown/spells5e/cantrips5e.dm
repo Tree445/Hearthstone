@@ -148,7 +148,7 @@
 //==============================================
 /obj/effect/proc_holder/spell/invoked/boomingblade5e
 	name = "Booming Blade"
-	overlay_state = "null"
+	overlay_state = "blade_burst"
 	releasedrain = 50
 	chargetime = 1
 	charge_max = 1 SECONDS
@@ -438,6 +438,55 @@
 			target.visible_message(span_warning("[target]'s body fails to rot!"), span_warning("I feel no different..."))
 		return TRUE
 	return FALSE
+//==============================================
+//	ELDRITCH BLAST
+//==============================================
+// Notes: You hurl a bubble of acid, a slow moving bubble projectile that deals light burn damage in an aoe
+/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e
+	name = "Acid Splash"
+	desc = ""
+	clothes_req = FALSE
+	range = 8
+	projectile_type = /obj/projectile/magic/aoe/fireball/eldritchblast5e
+	overlay_state = "force_dart"
+	sound = list('sound/magic/whiteflame.ogg')
+	active = FALSE
+
+	releasedrain = 30
+	chargedrain = 1
+	chargetime = 3
+	charge_max = 3 SECONDS //cooldown
+
+	warnie = "spellwarning"
+	no_early_release = TRUE
+	movement_interrupt = FALSE
+	antimagic_allowed = FALSE //can you use it if you are antimagicked?
+	charging_slowdown = 3
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	cost = 1
+
+	xp_gain = FALSE
+	miracle = FALSE
+
+	invocation = ""
+	invocation_type = "shout" //can be none, whisper, emote and shout
+
+/obj/projectile/magic/aoe/fireball/eldritchblast5e
+	name = "eldritch blast"
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "arcane_barrage"
+	speed = 0.3
+	exp_heavy = 0
+	exp_light = 0
+	exp_flash = 0
+	exp_fire = -1
+	damage = 10
+	damage_type = BRUTE
+	nodamage = FALSE
+	flag = "magic"
+	hitsound = 'sound/blank.ogg'
+	aoe_range = 1
 
 /*
 Acid Splash	Conjuration	1 Action	60 Feet	Instantaneous	V, S

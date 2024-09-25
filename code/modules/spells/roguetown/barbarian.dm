@@ -3,7 +3,7 @@
 	name = "Rage"
 	desc = "Fly into a rage increasing your physical stats."
 	range = 1
-	overlay_state = "null"
+	overlay_state = "bcry"
 	releasedrain = 30
 	cast_without_targets = TRUE
 	charge_max = 60 SECONDS
