@@ -929,7 +929,7 @@
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-
+/*
 /obj/item/clothing/neck/roguetown/blkknight
 	name = "dragonscale necklace"
 	desc = ""
@@ -979,7 +979,7 @@
 	else
 		to_chat(user, span_notice("Strange, I don't feel that power anymore.."))
 		armor = getArmor("blunt" = 100, "slash" = 100, "stab" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
-
+*/
 /obj/item/clothing/suit/roguetown/armor/plate/blkknight
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "blacksteel plate"

@@ -1067,8 +1067,6 @@
 							I = new /obj/item/clothing/gloves/roguetown/plate(user.loc)
 						if(9)
 							I = new /obj/item/clothing/wrists/roguetown/bracers(user.loc)
-						if(10)
-							I = new /obj/item/clothing/neck/roguetown/blkknight(user.loc)
 					if(I)
 						I.sellprice = 0
 					playsound(loc,'sound/items/carvgood.ogg', 50, TRUE)
