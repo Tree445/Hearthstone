@@ -28,7 +28,10 @@
 	var/mob/living/carbon/target = targets[1]
 	if (isLiving(target))
 		
-		//MAKE USER SAY SOMETHING DUEL RELATED
+		//user is pacified due to the pop-up on the opponents screen
+		user.apply_status_effect(/datum/status_effect/buff/compelledduel5epacify)
+		//target is pacified due to the user being pacified, cant ignore prompt and get the upperhand.
+		target.apply_status_effect(/datum/status_effect/buff/compelledduel5epacify)
 
 		var/choice = alert(target, "[user] challenges you to a duel!", "", "Accept!", "Decline!")
 		switch(choice)
@@ -44,15 +47,19 @@
 				user.apply_status_effect(targetBuff)
 				target.apply_status_effect(userBuff)
 
-				//give them both a 5 second pacifist trait to prepare
+				//give them both a 3 second pacifist trait to prepare
 				user.apply_status_effect(/datum/status_effect/buff/compelledduel5epacify)
 				target.apply_status_effect(/datum/status_effect/buff/compelledduel5epacify)
 				
+				//target flourishes his blade or gets into a fighting stance
+
 			if("Decline!")
 				//target is a coward, shame them
 				var/datum/status_effect/buff/compelledduel5eshame shame = new /datum/status_effect/buff/compelledduel5eshame
 				shame.shamer = user
 				target.apply_status_effect(shame)
+				//user laugh
+				//target whimper
 
 /datum/status_effect/buff/compelledduel5e
 	id = "compelled duel"
@@ -79,7 +86,7 @@
 /datum/status_effect/buff/compelledduel5epacify
 	id = "duel prepare"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/compelledduel5epacify
-	duration = 5 SECONDS
+	duration = 3 SECONDS
 
 /atom/movable/screen/alert/status_effect/buff/compelledduel5epacify
 	name = "Duel Preparation"
