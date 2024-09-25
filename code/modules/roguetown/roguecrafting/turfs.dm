@@ -224,6 +224,25 @@
 				return
 	return TRUE
 
+/datum/crafting_recipe/roguetown/turfs/dirt
+	name = "dirt floor"
+	result = /turf/open/floor/rogue/dirt/road
+	reqs = list(/obj/item/natural/dirtclod = 4)
+	skillcraft = /datum/skill/craft/crafting
+	verbage_simple = "spread"
+	verbage = "spreads"
+	tools = list(/obj/item/rogueweapon/shovel)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/turfs/dirt/TurfCheck(mob/user, turf/T)
+	if(isclosedturf(T))
+		return
+	if(!istype(T, /turf/open/floor/rogue))
+		if(!istype(T, /turf/open/transparent/openspace))
+			if(!istype(T, /turf/open/water))
+				return
+	return TRUE
+
 /datum/crafting_recipe/roguetown/turfs/tentwall
 	name = "tent wall"
 	result = /turf/closed/wall/mineral/rogue/tent
