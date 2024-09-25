@@ -76,6 +76,8 @@
 	else
 		l = new(user,1)
 		r = new(user,2)
+		ADD_TRAIT(l, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+		ADD_TRAIT(r, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 		user.put_in_hands(l, TRUE, FALSE, TRUE)
 		user.put_in_hands(r, TRUE, FALSE, TRUE)
 		user.visible_message("<span class='info'>[user]'s claws extend.</span>", "<span class='notice'>Claws extend from my hands.</span>")
