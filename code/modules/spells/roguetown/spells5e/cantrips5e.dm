@@ -30,6 +30,11 @@
 
 */
 
+// Ham-Hole's notes: When thinking about an ultimate magic update. I would have non-cantrip spells be refunded on sleep.
+// in DND a wizard must prepare his spells each day. I would also attempt to bring a per-day limit to spells that are of high level.
+// With that in mind, since these spells are ones which are permanently attached to your character (in my future update)
+// these are the ones that don't provide you experience since they are spammable. These are also meant to damage/utility scale with arcane knowledge.
+
 //==============================================
 //	ACID SPLASH
 //==============================================
@@ -58,7 +63,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = TRUE
+	xp_gain = FALSE
 	miracle = FALSE
 
 	invocation = ""
@@ -109,7 +114,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = TRUE
+	xp_gain = FALSE
 	miracle = FALSE
 
 	invocation = ""
@@ -141,7 +146,88 @@
 //==============================================
 //	BOOMING BLADE
 //==============================================
-//skipped until I do weapon attack spells
+/obj/effect/proc_holder/spell/invoked/boomingblade5e
+	name = "Booming Blade"
+	overlay_state = "null"
+	releasedrain = 50
+	chargetime = 1
+	charge_max = 1 SECONDS
+	//chargetime = 10
+	//charge_max = 30 SECONDS
+	range = 6
+	warnie = "spellwarning"
+	movement_interrupt = FALSE
+	no_early_release = FALSE
+	chargedloop = null
+	sound = 'sound/magic/whiteflame.ogg'
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	cost = 1
+
+	xp_gain = FALSE
+	miracle = FALSE
+
+	invocation = ""
+	invocation_type = "shout" //can be none, whisper, emote and shout
+//make a melee weapon attack
+//on hit. do normal weapon damage and apply a buff to target: Booming Blade
+//if that target moves during Booming Blade buff
+//creat a small explosion on the target
+/obj/effect/proc_holder/spell/invoked/boomingblade5e/cast(list/targets, mob/living/user)
+	var/mob/living/carbon/target = targets[1]
+	var/mob/living/L = target
+	var/mob/U = user
+	var/obj/item/held_item = user.get_active_held_item() //get held item
+	if(held_item)
+		held_item.melee_attack_chain(U, L)
+		target.apply_status_effect(/datum/status_effect/buff/boomingblade5e/) //apply buff
+
+/datum/status_effect/buff/boomingblade5e
+	id = "booming blade"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/boomingblade5e
+	duration = 10 SECONDS
+	var/turf/start_pos
+	var/static/mutable_appearance/glow = mutable_appearance('icons/effects/effects.dmi', "empdisable", -MUTATIONS_LAYER)
+
+/atom/movable/screen/alert/status_effect/buff/boomingblade5e
+	name = "Booming Blade"
+	desc = "I feel if I move I am in serious trouble."
+	icon_state = "debuff"
+
+/datum/status_effect/buff/boomingblade5e/on_apply()
+	. = ..()
+	var/mob/living/target = owner
+	target.add_overlay(glow)
+	target.update_vision_cone()
+	start_pos = get_turf(target) //set buff starting position
+
+/datum/status_effect/buff/boomingblade5e/on_remove()
+	var/mob/living/target = owner
+	target.cut_overlay(glow)
+	target.update_vision_cone()
+	. = ..()
+
+/datum/status_effect/buff/boomingblade5e/proc/boom()
+	var/exp_heavy = 0
+	var/exp_light = 1
+	var/exp_flash = 1
+	var/exp_fire = 0
+	explosion(owner, -1, exp_heavy, exp_light, exp_flash, 0, flame_range = exp_fire)
+	to_chat(owner, "<span class='warning'>Booming blade activates!</span>")
+
+/datum/status_effect/buff/boomingblade5e/tick()
+	var/turf/new_pos = get_turf(owner)
+	var/startX = start_pos.x
+	var/startY = start_pos.y
+	var/newX = new_pos.x
+	var/newY = new_pos.y
+	if(startX != newX || startY != newY)//if target moved
+		//explosion
+		if(!owner.anti_magic_check())
+			boom()
+		Destroy(src)
+
+
 
 //==============================================
 //	CHILL TOUCH
@@ -166,7 +252,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = TRUE
+	xp_gain = FALSE
 	miracle = FALSE
 
 	invocation = ""
@@ -355,9 +441,9 @@
 
 /*
 Acid Splash	Conjuration	1 Action	60 Feet	Instantaneous	V, S
-Blade Ward	Abjuration	1 Action	Self	1 round	V, S
+XBlade Ward	Abjuration	1 Action	Self	1 round	V, S
 Booming Blade	Evocation	1 Action	Self (5-foot radius)	1 round	S, M
-Chill Touch	Necromancy	1 Action	120 feet	1 round	V, S
+XChill Touch	Necromancy	1 Action	120 feet	1 round	V, S
 Control Flames	Transmutation	1 Action	60 Feet	Instantaneous or 1 hour	S
 Create Bonfire	Conjuration	1 Action	60 Feet	Concentration, up to 1 minute	V, S
 Dancing Lights	Evocation	1 Action	120 feet	Concentration up to 1 minute	V, S, M
