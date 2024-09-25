@@ -1,6 +1,7 @@
 /obj/structure/closet/crate/coffin/sarcophagus
 	name = "sarcophagus"
 	icon_state = "sarcophagus"
+	desc = "A place for the dignified dead to rest."
 	anchored = TRUE
 	resistance_flags = null
 	open_sound_volume = 25
