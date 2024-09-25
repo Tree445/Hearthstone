@@ -485,6 +485,45 @@
 	hitsound = 'sound/blank.ogg'
 	aoe_range = 1
 
+//==============================================
+//	ELDRITCH BLAST
+//==============================================
+// Notes: You hurl a bubble of acid, a slow moving bubble projectile that deals light burn damage in an aoe
+
+/obj/effect/proc_holder/spell/invoked/projectile/firebolt5e
+	name = "Fire Bolt"
+	desc = ""
+	clothes_req = FALSE
+	range = 8
+	projectile_type = /obj/projectile/magic/aoe/fireball/firebolt5e
+	overlay_state = "fireball_multi"
+	sound = list('sound/magic/whiteflame.ogg')
+	active = FALSE
+	releasedrain = 30
+	chargedrain = 1
+	chargetime = 3
+	charge_max = 3 SECONDS
+	warnie = "spellwarning"
+	no_early_release = TRUE
+	movement_interrupt = FALSE
+	charging_slowdown = 3
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane
+	cost = 1
+	xp_gain = TRUE
+
+/obj/projectile/magic/aoe/fireball/firebolt5e
+	name = "fireball"
+	exp_heavy = 0
+	exp_light = 0
+	exp_flash = 1
+	exp_fire = -1
+	damage = 20
+	damage_type = BURN
+	nodamage = FALSE
+	flag = "magic"
+	hitsound = 'sound/blank.ogg'
+	aoe_range = 0
 /*
 X = added
 S = skipped
@@ -499,8 +538,8 @@ X Decompose (HB)	Necromancy	1 Action	Touch	1 minute	V, S
 S Druidcraft	Transmutation	1 Action	30 Feet	Instantaneous	V, S
 X Eldritch Blast	Evocation	1 Action	120 Feet	Instantaneous	V, S
 S Encode Thoughts	Enchantment	1 Action	Self	8 hours	S
-Fire Bolt	Evocation	1 Action	120 feet	Instantaneous	V, S
-Friends	Enchantment	1 Action	Self	Concentration, up to 1 minute	S, M
+X Fire Bolt	Evocation	1 Action	120 feet	Instantaneous	V, S
+S Friends	Enchantment	1 Action	Self	Concentration, up to 1 minute	S, M
 Frostbite	Evocation	1 Action	60 feet	Instantaneous	V, S
 Green-Flame Blade	Evocation	1 Action	Self (5-foot radius)	Instantaneous	S, M
 Guidance	Divination	1 Action	Touch	Concentration up to 1 minute	V, S
