@@ -41,6 +41,7 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, rand(1,2), TRUE)
@@ -102,7 +103,6 @@
 	
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	if(prob(23))
 		if(!H.has_language(/datum/language/elvish))
 			H.grant_language(/datum/language/elvish)
