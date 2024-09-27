@@ -21,6 +21,7 @@
 	/datum/species/kobold,\
 	/datum/species/anthromorphbig,\
 	/datum/species/goblinp,\
+	/datum/species/seelie,\
 )
 
 #define RACES_RESPECTED \
@@ -50,8 +51,7 @@
 	/datum/species/kobold
 
 #define RACES_DESPISED \
-	/datum/species/goblinp,\
-	/datum/species/seelie
+	/datum/species/goblinp
 
 #define RACES_ALL_KINDS list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED)
 
