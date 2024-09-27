@@ -42,10 +42,14 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // shouldn't be that bad.
+			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
 		if(/datum/patron/divine/dendor) //Dendorites all busted. Play Druid.
 			head = /obj/item/clothing/head/roguetown/helmet/dendorculthelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+			H.mind.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/taming, 3, TRUE)
 		if(/datum/patron/divine/necra) //disabled and moved unto gravedigger, but code supports it
 			head = /obj/item/clothing/head/roguetown/roguehood/necracolytehood
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
@@ -65,12 +69,16 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
+			ADD_TRAIT(H, TRAIT_GOODLOVER)
 		if(/datum/patron/divine/xylix)
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/xylixcagehelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/xylix
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			pants = /obj/item/clothing/under/roguetown/loincloth
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
+			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE) // the eyes and ears of the Church
 		if(/datum/patron/divine/malum)
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/malum
@@ -103,26 +111,6 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		if(/datum/patron/divine/abyssor)
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/misc/fishing, 3, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-		if(/datum/patron/divine/dendor)
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/misc/taming, 3, TRUE)
-		if(/datum/patron/divine/eora)
-			if(H.mind)
-				ADD_TRAIT(H, TRAIT_GOODLOVER)
-		if(/datum/patron/divine/xylix)
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE) // the eyes and ears of the Church
-		if(/datum/patron/divine/noc)
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // shouldn't be that bad.
-				H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
 		H.change_stat("intelligence", 4) // dedicated crafters
 		H.change_stat("endurance", 3)
 		H.change_stat("perception", 2)
