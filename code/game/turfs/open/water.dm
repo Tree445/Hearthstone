@@ -57,6 +57,10 @@
 
 /turf/open/water/Exited(atom/movable/AM, atom/newloc)
 	. = ..()
+	var/mob/living/carbon/human/FM = AM
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return
+
 	for(var/obj/structure/S in src)
 		if(S.obj_flags & BLOCK_Z_OUT_DOWN)
 			return
@@ -111,6 +115,10 @@
 
 /turf/open/water/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
+	var/mob/living/carbon/human/FM = AM
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return
+
 	for(var/obj/structure/S in src)
 		if(S.obj_flags & BLOCK_Z_OUT_DOWN)
 			return
@@ -212,6 +220,10 @@
 		O.extinguish()
 
 /turf/open/water/get_slowdown(mob/user)
+	var/mob/living/carbon/human/FM = user
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return
+
 	var/returned = slowdown
 	if(user.mind && swim_skill)
 		returned = returned - (user.mind.get_skill_level(/datum/skill/misc/swimming))
@@ -271,6 +283,9 @@
 
 /turf/open/water/swamp/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
+	var/mob/living/carbon/human/FM = AM
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return
 	if(isliving(AM) && !AM.throwing)
 		if(!prob(3))
 			return
@@ -288,7 +303,14 @@
 				var/obj/item/natural/worms/leech/I = new(C)
 				BP.add_embedded_object(I, silent = TRUE)
 				return .
-
+/turf/open/water/swamp/get_slowdown(mob/user)
+	var/returned = slowdown
+	var/negate_slowdown = FALSE
+	if(HAS_TRAIT(user, TRAIT_BOG_TREKKING))
+		negate_slowdown = TRUE
+	if(negate_slowdown)
+		returned = max(returned-1.5, 0)
+	return returned
 /turf/open/water/swamp/deep
 	name = "murk"
 	desc = "Deep water with several weeds and algae on the surface."
@@ -300,6 +322,9 @@
 
 /turf/open/water/swamp/deep/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
+	var/mob/living/carbon/human/FM = AM
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return
 	if(isliving(AM) && !AM.throwing)
 		if(!prob(8))
 			return
@@ -362,6 +387,9 @@
 
 /turf/open/water/river/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
+	var/mob/living/carbon/human/FM = AM
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return
 	if(isliving(AM))
 		if(!river_processing)
 			river_processing = addtimer(CALLBACK(src, PROC_REF(process_river)), 5, TIMER_STOPPABLE)

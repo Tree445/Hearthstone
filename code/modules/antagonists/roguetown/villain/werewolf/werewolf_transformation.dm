@@ -120,6 +120,8 @@
 	W.STASTR = 20
 	W.STACON = 20
 	W.STAEND = 20
+	if(isseelie(W.stored_mob))
+		W.change_stat("speed", -3)
 
 	W.AddSpell(new /obj/effect/proc_holder/spell/self/howl)
 	W.AddSpell(new /obj/effect/proc_holder/spell/self/claws)
@@ -144,6 +146,7 @@
 	ADD_TRAIT(W, TRAIT_HARDDISMEMBER, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_PIERCEIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_PERFECT_TRACKER, TRAIT_GENERIC) //Hearthstone change.
+	ADD_TRAIT(W, TRAIT_DEATHBYSNOOSNOO, TRAIT_GENERIC) //Hearthstone change.
 
 	invisibility = oldinv
 
@@ -190,6 +193,8 @@
 	W.mind.known_skills = WA.stored_skills.Copy()
 	W.mind.skill_experience = WA.stored_experience.Copy()
 
+	if(isseelie(W.stored_mob))
+		W.change_stat("speed", 3)
 	W.RemoveSpell(new /obj/effect/proc_holder/spell/self/howl)
 	W.RemoveSpell(new /obj/effect/proc_holder/spell/self/claws)
 

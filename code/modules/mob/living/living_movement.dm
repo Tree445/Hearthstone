@@ -52,7 +52,7 @@
 			mod = CONFIG_GET(number/movedelay/run_delay)
 		if(MOVE_INTENT_SNEAK)
 			mod = 6
-	var/spdchange = (10-STASPD)*0.1
+	var/spdchange = (10-STASPD)*0.15
 	spdchange = clamp(spdchange, -0.5, 1)  //if this is not clamped, maniacs will run at unfathomable speed
 	mod = mod+spdchange
 	//maximum speed is achieved at 15spd, everything else results in insanity
@@ -85,7 +85,7 @@
 		if(pulling != src)
 			if(isliving(pulling))
 				var/mob/living/L = pulling
-				if(!slowed_by_drag || (L.mobility_flags & MOBILITY_STAND) || L.buckled || grab_state >= GRAB_AGGRESSIVE)
+				if((!slowed_by_drag || (L.mobility_flags & MOBILITY_STAND) || L.buckled || grab_state >= GRAB_AGGRESSIVE) && !(isseelie(src)))
 					remove_movespeed_modifier(MOVESPEED_ID_BULKY_DRAGGING)
 					return
 				add_movespeed_modifier(MOVESPEED_ID_BULKY_DRAGGING, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)

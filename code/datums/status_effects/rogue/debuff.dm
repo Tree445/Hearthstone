@@ -209,8 +209,8 @@
 
 /atom/movable/screen/alert/status_effect/debuff/devitalised
 	name = "Devitalised"
-	desc = "Something has been taken from me, and it will take time to recover."
-
+	desc = "Something has been taken from me, and it will take time to r
+  
 /datum/status_effect/debuff/cursedbychurch
 	id = "cursedbychurch"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/cursedbychurch
@@ -219,4 +219,26 @@
 
 /atom/movable/screen/alert/status_effect/debuff/cursedbychurch
 	name = "Cursed by the Church!"
-	desc = "I have been excommunicated by the leader of the Church and I feel my strength leave me! I am bound to get hunted by a number of people now..."
+	desc = "I have been excommunicated by the leader of the Church and I feel my strength leave me! I am bound to get hunted by a number of people now.
+  
+/datum/status_effect/buff/seelie/sad
+	id = "Seelie Curse"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/seelie/sad
+	effectedstats = list("fortune" = -2)
+	duration = 60 SECONDS
+
+/atom/movable/screen/alert/status_effect/buff/seelie/sad
+	name = "Seelie Curse"
+	desc = "A nearby Seelie has spread their poor mood unto me."
+	icon_state = "stressb"
+
+/datum/status_effect/debuff/seelie_wing_curse
+	id = "seelie_wing_curse"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/seelie_wing_curse
+	effectedstats = list("fortune" = -2)
+	duration = 4 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/seelie_wing_curse
+	name = "Curse of the Seelie"
+	desc = "I've been cursed for my horrific deed..."
+	icon_state = "stressb"
