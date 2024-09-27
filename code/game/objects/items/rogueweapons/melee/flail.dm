@@ -186,7 +186,7 @@
 	minstr = 12
 	wbalance = -2
 	smeltresult = /obj/item/ingot/iron
-	associated_skill = /datum/skill/combat/polearms
+	associated_skill = /datum/skill/combat/whipsflails
 	dropshrink = 0.6
 	blade_dulling = DULLING_BASHCHOP
 	wdefense = 1
