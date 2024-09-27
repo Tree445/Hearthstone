@@ -82,6 +82,7 @@
 	icon_state ="Crystal"
 	light_range = 1.5
 	light_power = 150
+	sellprice = 200
 	drop_sound = 'sound/items/gem.ogg'
 	pickup_sound =  list('sound/vo/mobs/ghost/whisper (1).ogg','sound/vo/mobs/ghost/whisper (2).ogg','sound/vo/mobs/ghost/whisper (3).ogg')
 
