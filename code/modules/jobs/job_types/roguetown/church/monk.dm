@@ -23,7 +23,6 @@
 	allowed_patrons = ALL_DIVINE_PATRONS
 
 /datum/outfit/job/roguetown/monk/pre_equip(mob/living/carbon/human/H)
-	..()
 	H.virginity = TRUE
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
@@ -60,6 +59,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			pants = /obj/item/clothing/under/roguetown/tights/black
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
+			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
 		if(/datum/patron/divine/eora) //Eora content from Stonekeep
 			head = /obj/item/clothing/head/roguetown/eoramask
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
@@ -77,12 +77,17 @@
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor =	/obj/item/clothing/suit/roguetown/armor/leathervest
+			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/Armorsmithing, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/Smelting, 2, TRUE)
 		if(/datum/patron/divine/abyssor)
 			head = /obj/item/clothing/head/roguetown/helmet/abyssorhat
 			neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
 			pants = /obj/item/clothing/under/roguetown/tights/purple
 			armor =	/obj/item/clothing/suit/roguetown/shirt/robe/abyssoracorobe
 			shoes = /obj/item/clothing/shoes/roguetown/boots
+			H.mind.adjust_skillrank(/datum/skill/misc/fishing, 3, TRUE)
+			H.mind.adjust_skillran(/datum/skill/misc/swimming, 3, TRUE)
 		if(/datum/patron/divine/ravox)
 			head = /obj/item/clothing/head/roguetown/roguehood/flagellanthood
 			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
@@ -90,7 +95,7 @@
 			shoes = shoes = /obj/item/clothing/shoes/roguetown/sandals
 			shirt =	/obj/item/clothing/suit/roguetown/shirt/undershirt/ravoxrobe			
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, , 4TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, rand(3, 4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
@@ -98,15 +103,6 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		switch(H.patron?.type)
-		if(/datum/patron/divine/malum)
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/craft/Armorsmithing, 2, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/craft/Smelting, 2, TRUE)
-		if(/datum/patron/divine/pestra)
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 		if(/datum/patron/divine/abyssor)
 			if(H.mind)
 				H.mind.adjust_skillrank(/datum/skill/misc/fishing, 3, TRUE)
@@ -117,7 +113,7 @@
 				H.mind.adjust_skillrank(/datum/skill/misc/taming, 3, TRUE)
 		if(/datum/patron/divine/eora)
 			if(H.mind)
-			ADD_TRAIT(H, TRAIT_GOODLOVER) //   ( ͡° ͜ʖ ͡°)
+				ADD_TRAIT(H, TRAIT_GOODLOVER)
 		if(/datum/patron/divine/xylix)
 			if(H.mind)
 				H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
