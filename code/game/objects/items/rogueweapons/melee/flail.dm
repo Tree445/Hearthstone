@@ -140,7 +140,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_BELT
 	associated_skill = /datum/skill/combat/whipsflails
-	anvilrepair = /datum/skill/craft/tanning
+	sewrepair = TRUE
+	embedding = list("embedded_pain_multiplier" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = WHIPWOOSH
 	throwforce = 5
