@@ -370,7 +370,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Guard Captain",
 	"Court Magician",
 	"Templar",
-	"Grand Templar",
+	"Grandmaster",
 	"Bog Guard",
 	"Bog Master",
 	"Knight"
@@ -418,7 +418,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Guard Captain",
 	"Court Magician",
 	"Templar",
-	"Grand Templar",
+	"Grandmaster",
 	"Bog Guard",
 	"Bog Master",
 	"Knight",

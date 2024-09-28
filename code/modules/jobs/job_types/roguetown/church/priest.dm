@@ -131,7 +131,7 @@
 			priority_announce("[real_name] has forgiven [inputty]. Once more walk in the light!", title = "Hail the Ten!", sound = 'sound/misc/bell.ogg')
 			for(var/mob/living/carbon/human/H in GLOB.player_list)
 				if(H.real_name == inputty)
-					.remove_stress(/datum/stressevent/psycurse)
+					H.remove_stress(/datum/stressevent/psycurse)
 			return
 		var/found = FALSE
 		for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -139,7 +139,7 @@
 				continue
 			if(H.real_name == inputty)
 				found = TRUE
-				.remove_stress(/datum/stressevent/psycurse)
+				H.add_stress(/datum/stressevent/psycurse)
 		if(!found)
 			return FALSE
 		GLOB.excommunicated_players += inputty
