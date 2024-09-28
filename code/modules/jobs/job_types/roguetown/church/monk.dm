@@ -49,7 +49,7 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 			H.mind.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/taming, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/taming, 3, TRUE)
 		if(/datum/patron/divine/necra) //disabled and moved unto gravedigger, but code supports it
 			head = /obj/item/clothing/head/roguetown/roguehood/necracolytehood
 			neck = /obj/item/clothing/neck/roguetown/psicross/necra
@@ -69,7 +69,7 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
-			ADD_TRAIT(H, TRAIT_GOODLOVER)
+			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 		if(/datum/patron/divine/xylix)
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/xylixcagehelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/xylix
@@ -86,16 +86,17 @@
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor =	/obj/item/clothing/suit/roguetown/armor/leathervest
 			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/Armorsmithing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/Smelting, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/mining, 5, TRUE)
 		if(/datum/patron/divine/abyssor)
 			head = /obj/item/clothing/head/roguetown/helmet/abyssorhat
 			neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
 			pants = /obj/item/clothing/under/roguetown/tights/purple
 			armor =	/obj/item/clothing/suit/roguetown/shirt/robe/abyssoracorobe
 			shoes = /obj/item/clothing/shoes/roguetown/boots
-			H.mind.adjust_skillrank(/datum/skill/misc/fishing, 3, TRUE)
-			H.mind.adjust_skillran(/datum/skill/misc/swimming, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 		if(/datum/patron/divine/ravox)
 			head = /obj/item/clothing/head/roguetown/roguehood/flagellanthood
 			neck = /obj/item/clothing/neck/roguetown/psicross/ravox

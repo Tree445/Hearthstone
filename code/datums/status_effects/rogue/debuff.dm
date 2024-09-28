@@ -209,17 +209,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/devitalised
 	name = "Devitalised"
-	desc = "Something has been taken from me, and it will take time to r
-  
-/datum/status_effect/debuff/cursedbychurch
-	id = "cursedbychurch"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/cursedbychurch
-	effectedstats = list("fortune" = -3, "speed" = -3, "strength" = -3,) // good luck escaping, heretic.
-	duration = 15 MINUTES // This is why we respect the Priest/ess.
-
-/atom/movable/screen/alert/status_effect/debuff/cursedbychurch
-	name = "Cursed by the Church!"
-	desc = "I have been excommunicated by the leader of the Church and I feel my strength leave me! I am bound to get hunted by a number of people now.
+	desc = "Something has been taken from me, and it will take time to recover." 
   
 /datum/status_effect/buff/seelie/sad
 	id = "Seelie Curse"

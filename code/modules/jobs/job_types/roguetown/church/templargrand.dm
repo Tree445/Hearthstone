@@ -1,5 +1,3 @@
-//shield flail or longsword, tief can be this with red cross
-
 /datum/job/roguetown/templargrand
 	title = "Grand Templar"
 	department_flag = CHURCHMEN
@@ -83,7 +81,7 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		h.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE) // actual ass, but worse. Good luck.
