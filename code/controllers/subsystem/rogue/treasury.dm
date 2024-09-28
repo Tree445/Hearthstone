@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(treasury)
 	var/treasury_value = 0
 	var/list/bank_accounts = list()
 	var/list/stockpile_datums = list()
-	var/multiple_item_penalty = 0.66
+	/* var/multiple_item_penalty = 0.66 */ 
 	var/interest_rate = 0.25
 	var/next_treasury_check = 0
 	var/list/log_entries = list()
@@ -69,8 +69,8 @@ SUBSYSTEM_DEF(treasury)
 				continue
 			if(!I.submitted_to_stockpile)
 				I.submitted_to_stockpile = TRUE
-			if(I.type in stockpile_items)
-				stockpile_items[I.type] *= multiple_item_penalty
+			/* if(I.type in stockpile_items)
+				stockpile_items[I.type] *= multiple_item_penalty */
 			else
 				stockpile_items[I.type] = I.get_real_price()
 			amt_to_generate += (stockpile_items[I.type]*interest_rate)
