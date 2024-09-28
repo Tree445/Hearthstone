@@ -31,7 +31,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/cache_skin
 	var/cache_eyes
 	var/cache_hair
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/vlord/batform // VERY SCARY BATFORM. DO NOT GIVE OUT.
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
 
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)

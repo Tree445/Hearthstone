@@ -26,7 +26,7 @@
 	var/cache_skin
 	var/cache_eyes
 	var/cache_hair
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
+	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform // lesser batform. Feel free to give out.
 
 /datum/antagonist/vampire/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/vampire/lesser))

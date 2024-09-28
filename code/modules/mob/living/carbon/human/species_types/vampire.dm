@@ -133,6 +133,7 @@
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/bat
 	name = "Bat Form"
+	name = "Lesser Bat Form"
 	desc = ""
 	invocation = ""
 	charge_max = 1000
@@ -140,12 +141,21 @@
 	die_with_shapeshifted_form =  TRUE
 	shapeshift_type = /mob/living/simple_animal/hostile/retaliate/bat
 
+/obj/effect/proc_holder/spell/targeted/shapeshift/vlord
+	name = "Greater Bat Form"
+	desc = ""
+	invocation = ""
+	charge_max = 500
+	cooldown_min = 500
+	die_with_shapeshifted_form =  TRUE
+	shapeshift_type = /mob/living/simple_animal/hostile/retaliate/bat
+
 /obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform
 	name = "Mist Form"
 	desc = ""
 	invocation = ""
-	charge_max = 50
-	cooldown_min = 50
+	charge_max = 1000
+	cooldown_min = 1000
 	die_with_shapeshifted_form =  FALSE
 	shapeshift_type = /mob/living/simple_animal/hostile/retaliate/gaseousform
 
