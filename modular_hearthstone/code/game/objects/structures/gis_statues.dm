@@ -63,6 +63,26 @@
 	desc = ""
 	icon_state = "noble_r"
 
+/obj/structure/statue/saints/noble2_l
+	name = "statue"
+	desc = ""
+	icon_state = "noble2_l"
+
+/obj/structure/statue/saints/noble2_r
+	name = "statue"
+	desc = ""
+	icon_state = "noble2_r"
+
+/obj/structure/statue/saints/noble3_l
+	name = "statue"
+	desc = ""
+	icon_state = "noble3_l"
+
+/obj/structure/statue/saints/noble3_r
+	name = "statue"
+	desc = ""
+	icon_state = "noble3_r"
+
 /obj/structure/statue/saints/knight
 	name = "statue"
 	desc = ""
@@ -72,6 +92,16 @@
 	name = "statue"
 	desc = ""
 	icon_state = "knight2"
+
+/obj/structure/statue/saints/knight_r
+	name = "statue"
+	desc = ""
+	icon_state = "knight_r"
+
+/obj/structure/statue/saints/knight_l
+	name = "statue"
+	desc = ""
+	icon_state = "knight_l"
 
 /obj/structure/statue/saints/martyr
 	name = "statue"
@@ -107,6 +137,33 @@
 	name = "statue"
 	desc = ""
 	icon_state = "acolyte_alt_r"
+
+
+/obj/structure/statue/saints/paladin
+	name = "statue"
+	desc = ""
+	icon_state = "paladin"
+
+/obj/structure/statue/saints/paladin_l
+	name = "statue"
+	desc = ""
+	icon_state = "paladin_l"
+
+/obj/structure/statue/saints/paladin_r
+	name = "statue"
+	desc = ""
+	icon_state = "paladin_r"
+
+
+/obj/structure/statue/saints/paladin2_l
+	name = "statue"
+	desc = ""
+	icon_state = "paladin2_l"
+
+/obj/structure/statue/saints/paladin2_r
+	name = "statue"
+	desc = ""
+	icon_state = "paladin2_r"
 
 /obj/machinery/light/rogue/firebowl/church/acolyte
 	icon = 'modular_hearthstone/icons/obj/gis_statues.dmi'
