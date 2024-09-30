@@ -28,6 +28,7 @@
 	/mob/living/simple_animal/hostile/rogue/skeleton/spear = 3,
 	/mob/living/simple_animal/hostile/rogue/skeleton/guard = 3,
 	/mob/living/simple_animal/hostile/rogue/skeleton/bow = 3,
+	/mob/living/carbon/human/species/skeleton/dwarf/npc/ambush = 1,
 	)
 	lootcount = 1
 
@@ -38,6 +39,7 @@
 	/mob/living/simple_animal/hostile/rogue/skeleton/guard/shield = 3,
 	/mob/living/simple_animal/hostile/rogue/skeleton/guard/xbow = 3,
 	/mob/living/carbon/human/species/skeleton/npc/dungeon/ambush = 3,
+	/mob/living/carbon/human/species/skeleton/dwarf/npc/dungeon = 1,
 	/mob/living/simple_animal/hostile/rogue/ghost/wraith = 2,
 	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2 = 2,
 	/mob/living/simple_animal/hostile/rogue/ghost/wraith/wraith2 = 2,
@@ -50,5 +52,6 @@
 	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard = 3,
 	/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear = 3,
 	/mob/living/carbon/human/species/skeleton/npc/dungeon/ambush = 3,
+	/mob/living/carbon/human/species/skeleton/dwarf/npc/dungeon = 1,
 	)
 	lootcount = 1

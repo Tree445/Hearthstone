@@ -165,6 +165,52 @@
 	desc = ""
 	icon_state = "paladin2_r"
 
+/obj/structure/statue/saints/magelady_l
+	name = "statue"
+	desc = ""
+	icon_state = "magelady_l"
+
+/obj/structure/statue/saints/magelady2_l
+	name = "statue"
+	desc = ""
+	icon_state = "magelady2_l"
+
+/obj/structure/statue/saints/magelady3_l
+	name = "statue"
+	desc = ""
+	icon_state = "magelady3_l"
+
+/obj/structure/statue/saints/magelady_r
+	name = "statue"
+	desc = ""
+	icon_state = "magelady_r"
+
+/obj/structure/statue/saints/magelady2_r
+	name = "statue"
+	desc = ""
+	icon_state = "magelady2_r"
+
+/obj/structure/statue/saints/magelady3_r
+	name = "statue"
+	desc = ""
+	icon_state = "magelady3_r"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /obj/machinery/light/rogue/firebowl/church/acolyte
 	icon = 'modular_hearthstone/icons/obj/gis_statues.dmi'
 	icon_state = "acolyte_candle1"
