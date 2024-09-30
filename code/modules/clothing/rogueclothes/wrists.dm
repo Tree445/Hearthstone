@@ -7,7 +7,7 @@
 
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "bracers"
-	desc = ""
+	desc = "Steel bracers to protect the forearm."
 	body_parts_covered = ARMS
 	icon_state = "bracers"
 	item_state = "bracers"
@@ -17,6 +17,19 @@
 	max_integrity = 150
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/wrists/roguetown/vambraces
+	name = "iron couter"
+	desc = "Protection mainly focused around the elbows."
+	body_parts_covered = ARMS
+	icon_state = "vambraces"
+	item_state = "vambraces"
+	armor = list("blunt" = 70, "slash" = 90, "stab" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	blocksound = PLATEHIT
+	max_integrity = 100
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/wrists/roguetown/bracers/carapace
 	name = "carapace bracers"
@@ -62,3 +75,16 @@
 	icon_state = "nocwrappings"
 	item_state = "nocwrappings"
 	sewrepair = TRUE
+
+/obj/item/clothing/wrists/roguetown/nephilbracers
+	name = "nephilim bracers"
+	desc = "Bracers once worn by the descendents of giants."
+	body_parts_covered = ARMS
+	icon_state = "nephilimwrist"
+	item_state = "nephilimwrist"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	blocksound = PLATEHIT
+	max_integrity = 150
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ash

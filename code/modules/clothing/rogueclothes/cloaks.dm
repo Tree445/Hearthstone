@@ -17,7 +17,7 @@
 
 /obj/item/clothing/cloak/tabard
 	name = "tabard"
-	desc = "A hooded vest meant for knights."
+	desc = "A long vest meant for knights."
 	color = null
 	icon_state = "tabard"
 	item_state = "tabard"
@@ -47,12 +47,14 @@
 		return
 	if(world.time > (the_time + 30 SECONDS))
 		return
+	var/symbol_chosen = FALSE
 	if(design == "Symbol")
 		design = null
-		design = input(user, "Select a symbol.","Tabard Design") as null|anything in list("chalice","psy","peace","z","imp","skull","widow","arrow")
+		design = input(user, "Select a symbol.","Tabard Design") as null|anything in list("chalice","psy","z","imp","skull","widow","arrow")
 		if(!design)
 			return
 		design = "_[design]"
+		symbol_chosen = TRUE
 	var/colorone = input(user, "Select a primary color.","Tabard Design") as null|anything in CLOTHING_COLOR_NAMES
 	if(!colorone)
 		return
@@ -75,6 +77,7 @@
 			detail_tag = "_box"
 		if("Diamonds")
 			detail_tag = "_dim"
+	boobed_detail = symbol_chosen
 	color = clothing_color2hex(colorone)
 	if(colortwo)
 		detail_color = clothing_color2hex(colortwo)
@@ -103,6 +106,7 @@
 /obj/item/clothing/cloak/tabard/crusader
 	detail_tag = "_psy"
 	detail_color = CLOTHING_RED
+	boobed_detail = FALSE
 
 /obj/item/clothing/cloak/tabard/crusader/Initialize()
 	..()
@@ -400,7 +404,7 @@
 	name = "jupon"
 	icon_state = "surcoat"
 
-/obj/item/clothing/cloak/stabard/surcoat/bailiff
+/obj/item/clothing/cloak/stabard/surcoat/judge
 	color = "#641E16"
 
 /obj/item/clothing/cloak/stabard/surcoat/councillor
@@ -514,7 +518,6 @@
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
 //	allowed_sex = list(MALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 	detail_tag = "_det"
 	detail_color = CLOTHING_PURPLE
 
@@ -801,9 +804,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 	nodismemsleeves = TRUE
-
 
 /obj/item/clothing/cloak/stole
 	name = "stole"
@@ -829,7 +830,6 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -842,7 +842,6 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -863,7 +862,6 @@
 	toggle_icon_state = FALSE
 	color = CLOTHING_BLACK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 	flags_inv = null
 
 /obj/item/clothing/cloak/half/brown
@@ -880,7 +878,6 @@
 	icon_state = "guardcloak"
 	color = CLOTHING_RED
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = NON_DWARVEN_RACE_TYPES
 	inhand_mod = FALSE
 
 /obj/item/clothing/cloak/half/vet/Initialize()
@@ -1052,3 +1049,211 @@
 /obj/item/clothing/cloak/stabard/guardhood/Destroy()
 	GLOB.lordcolor -= src
 	return ..()
+
+/obj/item/clothing/cloak/templar/psydon
+	name = "psydon tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Psydon on it."
+	icon_state = "tabard_weeping"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/astrata
+	name = "astratan tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Astrata on it."
+	icon_state = "tabard_astrata_alt"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/noc
+	name = "noc tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Noc on it."
+	icon_state = "tabard_noc"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/dendor
+	name = "dendor tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Dendor on it."
+	icon_state = "tabard_dendor"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/necra
+	name = "necra tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Necra on it."
+	icon_state = "tabard_necra"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/abyssor
+	name = "abyssor tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Abyssor on it."
+	icon_state = "tabard_abyssor"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/malum
+	name = "malum tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Malum on it."
+	icon_state = "tabard_malum"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/eora
+	name = "eora tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Eora on it."
+	icon_state = "tabard_eora"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/pestra
+	name = "pestra tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Pestra on it."
+	icon_state = "tabard_pestra"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/ravox
+	name = "ravox tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Ravox on it."
+	icon_state = "tabard_ravox"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/templar/xylix
+	name = "xylix tabard"
+	desc = "A medieval overcoat meant to be used over the armor. This one has the symbol of Xylix on it."
+	icon_state = "tabard_xylix"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN
+	boobed = TRUE
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/cape/crusader
+	name = "crusader cloak"
+	desc = "A cloak worn by templars on crusade, once a common sight in the deserts of Zybantine during the first few crusades led by what was then known as the Grenzelhoft Coalition."
+	icon_state = "crusader_cloak"
+	item_state = "crusader_cloak"
+
+/obj/item/clothing/cloak/cape/tribalcloak
+	name = "fur cloak"
+	desc = "A cloak made of thick fur which covers both the front and back for maximum warmth."
+	icon_state = "tribal"
+	item_state = "tribal"
+
+/obj/item/clothing/cloak/feltcloak
+	name = "felt cloak"
+	desc = "An extremely long cloak which goes down past the knees."
+	color = null
+	icon_state = "cancloak"
+	item_state = "cancloak"
+	alternate_worn_layer = TABARD_LAYER
+	body_parts_covered = CHEST|GROIN|VITALS
+	allowed_race = CLOTHED_RACES_TYPES
+	flags_inv = HIDECROTCH|HIDEBOOB
+
+/obj/item/clothing/cloak/hidecloak
+	name = "hide cloak"
+	desc = "A tattered cloak made of animal hide."
+	color = null
+	icon_state = "mantle_hide"
+	item_state = "mantle_hide"
+	alternate_worn_layer = TABARD_LAYER
+	allowed_race = CLOTHED_RACES_TYPES
+
+/obj/item/clothing/cloak/vampcloak
+	name = "dark cloak"
+	desc = "A heavy black cloak which covers the whole body."
+	icon_state = "vamplordcloak"
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	slot_flags = ITEM_SLOT_CLOAK
+	allowed_sex = list(MALE, FEMALE)
+	nodismemsleeves = TRUE
+
+/obj/item/clothing/cloak/combattante
+	name = "\improper Combattante cloak"
+/obj/item/clothing/cloak/combattante
+	name = "\improper Combattante cloak"
+	desc = "A cloak designed for members of the Combattante Association"
+	icon_state = "combattante"
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	nodismemsleeves = TRUE

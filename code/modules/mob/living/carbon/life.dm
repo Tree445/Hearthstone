@@ -17,9 +17,9 @@
 
 		if (QDELETED(src))
 			return
-		
+
 		handle_wounds()
-		handle_embedded_objects()
+		//handle_embedded_objects()
 		handle_blood()
 		handle_roguebreath()
 		var/bprv = handle_bodyparts()
@@ -37,7 +37,15 @@
 
 		//Healing while sleeping in a bed
 		if(IsSleeping())
-			var/sleepy_mod = buckled?.sleepy || 0.5
+			//Hearthstone change - beds need no buckle.
+			var/sleepy_mod = 0.5
+			if(buckled?.sleepy)
+				sleepy_mod = buckled.sleepy
+			else if(isturf(loc)) //No illegal tech.
+				var/obj/structure/bed/rogue/bed = locate() in loc
+				if(bed)
+					sleepy_mod = bed.sleepy
+			//Hearthstone end.
 			var/yess = HAS_TRAIT(src, TRAIT_NOHUNGER)
 			if(nutrition > 0 || yess)
 				rogstam_add(sleepy_mod * 15)
@@ -59,7 +67,16 @@
 					Sleeping(300)
 		else if(!IsSleeping() && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 			// Resting on a bed or something
+			//Hearthstone change - beds don't need buckles.
+			var/sleepy_mod = 0
 			if(buckled?.sleepy)
+				sleepy_mod = buckled.sleepy
+			else if(isturf(loc) && !(mobility_flags & MOBILITY_STAND))
+				var/obj/structure/bed/rogue/bed = locate() in loc
+				if(bed)
+					sleepy_mod = bed.sleepy
+			if(sleepy_mod > 0)
+			//Hearthstone end.
 				if(eyesclosed)
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon..."))
@@ -67,7 +84,7 @@
 					if(fallingas > 15)
 						Sleeping(300)
 				else
-					rogstam_add(buckled.sleepy * 10)
+					rogstam_add(sleepy_mod * 10)
 			// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
 			else if(!(mobility_flags & MOBILITY_STAND))
 				if(eyesclosed)
@@ -81,6 +98,9 @@
 			else if(fallingas)
 				fallingas = 0
 			tiredness = min(tiredness + 1, 100)
+				
+		if(!IsSleeping() && (mobility_flags & MOBILITY_STAND) && isseelie(src) && (haswings(src) == TRUE) && !(buckled)) //Very slop but dont know of another way
+			fairy_hover()
 
 		handle_brain_damage()
 
@@ -89,7 +109,18 @@
 
 
 	check_cremation()
-
+	//Seelie luck aura
+	if(isseelie(src) && !IsSleeping())
+		for(var/mob/living/carbon/human/H in view(1, src))
+			if(!H || isseelie(H))
+				continue
+			switch(src.aura)
+				if(FALSE)
+					H.apply_status_effect(/datum/status_effect/buff/seelie/sad)
+					H.remove_status_effect(/datum/status_effect/buff/seelie/happy)
+				if(TRUE)
+					H.apply_status_effect(/datum/status_effect/buff/seelie/happy)
+					H.remove_status_effect(/datum/status_effect/buff/seelie/sad)
 	//Updates the number of stored chemicals for powers
 //	handle_changeling()
 
@@ -175,7 +206,7 @@
 /mob/living/carbon/handle_inwater()
 	..()
 	if(!(mobility_flags & MOBILITY_STAND))
-		if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		if(HAS_TRAIT(src, TRAIT_NOBREATH) || HAS_TRAIT(src, TRAIT_WATERBREATHING))
 			return TRUE
 		adjustOxyLoss(5)
 		emote("drown")
@@ -846,7 +877,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 				chest.skeletonized = TRUE
 				if(ishuman(src))
 					var/mob/living/carbon/human/H = src
-					H.underwear = "Nude"
+					qdel(H.underwear)
 				should_update_body = TRUE
 				if(dna && dna.species)
 					if(dna && dna.species && !(NOBLOOD in dna.species.species_traits))
@@ -908,3 +939,26 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		return
 
 	heart.beating = !status
+
+/mob/living/carbon/proc/fairy_hover()
+	//Fairy hovering animation
+	/*
+	anim_counter += 1
+	if(anim_counter >= 50)
+		animate(src, pixel_y = pixel_y + 2, time = 10, loop = -1)
+
+	else if(amin_counter >= 70)
+		animate(src, pixel_y = pixel_y - 2, time = 10, loop = -1)
+
+	else if(anim_counter >= 100)
+		anim_counter = 0
+		*/
+
+	//TODO: Check is animate stopping is causing weird visual glitch (it was, checking for sleep before calling fairy_hover fixed this)
+	if(!resting && !wallpressed)
+		animate(src, pixel_y = pixel_y + 2, time = 5, loop = -1)
+	sleep(5)
+	if(!resting && !wallpressed)
+		animate(src, pixel_y = pixel_y - 2, time = 5, loop = -1)
+
+	//animate(src, pixel_x = rand(-2, 2), pixel_y = rand(-2, 2), time = 20)

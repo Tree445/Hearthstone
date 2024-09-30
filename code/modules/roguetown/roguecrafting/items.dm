@@ -20,6 +20,22 @@
 	verbage = "sews"
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/cloth5x
+	name = "cloth 5x"
+	result = list(
+				/obj/item/natural/cloth,
+				/obj/item/natural/cloth,
+				/obj/item/natural/cloth,
+				/obj/item/natural/cloth,
+				/obj/item/natural/cloth,
+				)
+	reqs = list(/obj/item/natural/fibers = 10)
+	tools = list(/obj/item/needle)
+	skillcraft = /datum/skill/misc/sewing
+	verbage_simple = "sew"
+	verbage = "sews"
+	craftdiff = 0
+
 /datum/crafting_recipe/roguetown/clothbelt
 	name = "cloth belt"
 	result = /obj/item/storage/belt/rogue/leather/cloth
@@ -208,9 +224,19 @@
 				/obj/item/natural/hide = 1)
 	skillcraft = /datum/skill/craft/carpentry
 
+/datum/crafting_recipe/roguetown/spoon
+	name = "spoon"
+	result = list(/obj/item/kitchen/spoon,
+				/obj/item/kitchen/spoon)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
+/datum/crafting_recipe/roguetown/rollingpin
+	name = "rollingpin"
+	result = /obj/item/kitchen/rollingpin
+	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/item/rogueweapon/shield/wood/crafted
-	sellprice = 6
+	sellprice = 10
 
 /datum/crafting_recipe/roguetown/woodbucket
 	name = "wooden bucket"
@@ -242,7 +268,7 @@
 
 /datum/crafting_recipe/roguetown/pot
 	name = "stone pot"
-	result = /obj/item/reagent_containers/glass/pot/stone
+	result = /obj/item/reagent_containers/glass/bucket/pot
 	reqs = list(/obj/item/natural/stone = 2)
 
 /datum/crafting_recipe/roguetown/stonearrow
@@ -272,7 +298,16 @@
 				/obj/item/ammo_casing/caseless/rogue/arrow = 1,
 				/datum/reagent/berrypoison = 5
 				)
-	req_table = TRUE
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/soporarrow
+	name = "soporific arrow"
+	result = /obj/item/ammo_casing/caseless/rogue/arrow/sopor
+	reqs = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow = 1,
+				/datum/reagent/medicine/soporpot = 10
+				)
+	req_table = FALSE
 
 /datum/crafting_recipe/roguetown/poisonarrow_stone
 	name = "poisoned stone arrow"
@@ -281,7 +316,16 @@
 				/obj/item/ammo_casing/caseless/rogue/arrow/stone = 1,
 				/datum/reagent/berrypoison = 5
 				)
-	req_table = TRUE
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/soporarrow_stone
+	name = "soporific stone arrow"
+	result = /obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor
+	reqs = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone = 1,
+				/datum/reagent/medicine/soporpot = 6
+				)
+	req_table = FALSE
 
 /*
 /datum/crafting_recipe/roguetown/poisonbolt //Coded, but commented out pending balance discussion.
@@ -306,7 +350,50 @@
 				/datum/reagent/berrypoison = 25
 				)
 
-	req_table = TRUE
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/soporarrow_five
+	name = "soporific arrow (x5)"
+	result = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/sopor
+				)
+	reqs = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow = 5,
+				/datum/reagent/medicine/soporpot = 30
+				)
+
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/tranq
+	name = "tranquilizer bolt"
+	result = /obj/item/ammo_casing/caseless/rogue/bolt/tranq
+	reqs = list(
+		/obj/item/ammo_casing/caseless/rogue/bolt = 1,
+		/datum/reagent/medicine/soporpot = 30
+		)
+
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/tranqfive
+	name = "tranquilizer bolt (x5)"
+	result = list(
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq,
+				/obj/item/ammo_casing/caseless/rogue/bolt/tranq
+				)
+	reqs = list(
+		/obj/item/ammo_casing/caseless/rogue/bolt = 5,
+		/datum/reagent/medicine/soporpot = 150
+		)
+
+	req_table = FALSE
+
 /*
 /datum/crafting_recipe/roguetown/poisonbolt_five //Coded, but commented out pending balance discussion.
 	name = "poisoned bolts (x5)"
@@ -330,29 +417,57 @@
 				/datum/reagent/berrypoison = 25
 				)
 
-	req_table = TRUE
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/soporarrow_5_stone
+	name = "soporific stone arrow (x5)"
+	result = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor,
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone/sopor
+				)
+	reqs = list(
+				/obj/item/ammo_casing/caseless/rogue/arrow/stone = 5,
+				/datum/reagent/medicine/soporpot = 30
+				)
+
+	req_table = FALSE
 
 /datum/crafting_recipe/roguetown/mortar
 	name = "stone mortar"
 	result = /obj/item/reagent_containers/glass/mortar
 	reqs = list(/obj/item/natural/stone = 1)
-	tools = list(/obj/item/rogueweapon/huntingknife) // Intended to be either stone knife or steel hunting knife
 	craftdiff = 1
-	subtype_reqs = TRUE //Unsure if needed for stone knife to work, feel free to remove this if not.
 
 /datum/crafting_recipe/roguetown/pestle
 	name = "stone pestle"
 	result = /obj/item/pestle
 	reqs = list(/obj/item/natural/stone = 1)
-	tools = list(/obj/item/rogueweapon/huntingknife) // Intended to be either stone knife or steel hunting knife
 	craftdiff = 1
-	subtype_reqs = TRUE //Unsure if needed for stone knife to work, feel free to remove this if not.
+
 
 /datum/crafting_recipe/roguetown/bag
 	name = "bag"
 	result = /obj/item/storage/roguebag/crafted
 	reqs = list(/obj/item/natural/fibers = 1,
 				/obj/item/natural/cloth = 1)
+	tools = list(/obj/item/needle)
+	skillcraft = /datum/skill/misc/sewing
+	req_table = FALSE
+
+/datum/crafting_recipe/roguetown/bagx5
+	name = "bag x5"
+	result = list(
+				/obj/item/storage/roguebag/crafted,
+				/obj/item/storage/roguebag/crafted,
+				/obj/item/storage/roguebag/crafted,
+				/obj/item/storage/roguebag/crafted,
+				/obj/item/storage/roguebag/crafted,
+				)
+	reqs = list(/obj/item/natural/fibers = 5,
+				/obj/item/natural/cloth = 5)
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
 	req_table = FALSE
@@ -416,14 +531,13 @@
 
 
 /obj/item/clothing/mask/cigarette/pipe/crafted
-	sellprice = 6
+	sellprice = 7
 
 /datum/crafting_recipe/roguetown/rod
 	name = "fishing rod"
 	result = /obj/item/fishingrod/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 		/obj/item/natural/fibers = 2)
-
 
 /obj/item/fishingrod/crafted
 	sellprice = 8
@@ -433,8 +547,9 @@
 	result = /obj/item/rogueweapon/shovel/small
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 			/obj/item/grown/log/tree/stick = 1)
+
 /obj/item/rogueweapon/shovel/small/crafted
-	sellprice = 5
+	sellprice = 6
 
 /datum/crafting_recipe/roguetown/book_crafting_kit
 	name = "book crafting kit"
@@ -451,10 +566,10 @@
 	reqs = list(/obj/item/natural/fibers = 2,
 				/obj/item/grown/log/tree/stick = 2)
 
+// Gives a rusty beartrap; if you want non-rusty ones, go to smith. Prevents the dumb mass-trapping stuff.
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"
-	result = list(/obj/item/restraints/legcuffs/beartrap,
-				/obj/item/restraints/legcuffs/beartrap)
+	result = list(/obj/item/restraints/legcuffs/beartrap)
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/fibers = 2,
 				/obj/item/ingot/iron = 1)
@@ -482,7 +597,7 @@
 	result = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	reqs = list(/obj/item/natural/hide = 1,
 				/obj/item/natural/fibers = 1)
-	sellprice = 6
+	sellprice = 8
 	tools = list(/obj/item/needle)
 	skillcraft = /datum/skill/misc/sewing
 	verbage_simple = "sew"
@@ -499,6 +614,45 @@
 	verbage = "crafted"
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/tribalskull
+	name = "wendigo helmet"
+	result = /obj/item/clothing/head/roguetown/tribalskull
+	reqs = list(/obj/item/natural/bone = 3,
+				/obj/item/natural/fibers = 1)
+	sellprice = 10
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/skullcrotch
+	name = "skull belt"
+	result = /obj/item/storage/belt/rogue/bone/skullbelt
+	reqs = list(/obj/item/natural/bone = 1,
+				/obj/item/natural/fibers = 1)
+	sellprice = 4
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0	
+
+/datum/crafting_recipe/roguetown/bonearmor
+	name = "bone armor"
+	result = /obj/item/clothing/suit/roguetown/armor/bone/chestplate
+	reqs = list(/obj/item/natural/bone = 3,
+				/obj/item/natural/fibers = 1)
+	sellprice = 1
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0	
+
+/datum/crafting_recipe/roguetown/bonegreaves
+	name = "bone greaves"
+	result = /obj/item/clothing/shoes/roguetown/boots/bonegreaves
+	reqs = list(/obj/item/natural/bone = 2,
+				/obj/item/natural/fibers = 1)
+	sellprice = 1
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0	
 
 /datum/crafting_recipe/roguetown/antlerhood
 	name = "antlerhood"
@@ -512,7 +666,13 @@
 	verbage = "sews"
 	craftdiff = 0
 
-
+/datum/crafting_recipe/roguetown/boneaxe
+	name = "bone axe"
+	result = /obj/item/rogueweapon/stoneaxe/boneaxe
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/natural/bone = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/bonespear
 	name = "bone spear"
@@ -522,11 +682,19 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
 
-
-/datum/crafting_recipe/roguetown/boneaxe
-	name = "bone axe"
-	result = /obj/item/rogueweapon/stoneaxe/boneaxe
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/bone = 2,
+/datum/crafting_recipe/roguetown/skullnecklace
+	name = "skull necklace"
+	result = /obj/item/clothing/neck/roguetown/psicross/skull
+	reqs = list(/obj/item/natural/bone = 1,
 				/obj/item/natural/fibers = 1)
-	craftdiff = 2
+	sellprice = 1
+	verbage_simple = "craft"
+	verbage = "crafted"
+	craftdiff = 0		
+
+/datum/crafting_recipe/roguetown/banner
+	name = "battle standard"
+	result = /obj/item/rogueweapon/spear/banner
+	reqs = list(/obj/item/grown/log/tree/stick = 1,
+				/obj/item/grown/log/tree/small = 1)
+	craftdiff = 1

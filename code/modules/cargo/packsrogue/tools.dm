@@ -32,6 +32,11 @@
 					/obj/item/rope/chain,
 				)
 
+/datum/supply_pack/rogue/tools/lockpicks
+	name = "Lockpicks"
+	cost = 20
+	contains = list(/obj/item/lockpickring/mundane)
+
 /datum/supply_pack/rogue/tools/sacks
 	name = "Sacks"
 	cost = 10
@@ -71,6 +76,15 @@
 					/obj/item/reagent_containers/glass/bottle/rogue,
 					/obj/item/reagent_containers/glass/bottle/rogue,
 					/obj/item/reagent_containers/glass/bottle/rogue,
+				)
+
+/datum/supply_pack/rogue/tools/jar
+	name = "Glass Jars"
+	cost = 15
+	contains = list(
+					/obj/item/reagent_containers/glass/beaker/jar,
+					/obj/item/reagent_containers/glass/beaker/jar,
+					/obj/item/reagent_containers/glass/beaker/jar,
 				)
 
 /datum/supply_pack/rogue/tools/matches
@@ -125,9 +139,9 @@
 /datum/supply_pack/rogue/tools/keyrings
 	name = "Keyrings"
 	cost = 8
-	contains = list(/obj/item/keyring,
-					/obj/item/keyring,
-					/obj/item/keyring)
+	contains = list(/obj/item/storage/keyring,
+					/obj/item/storage/keyring,
+					/obj/item/storage/keyring)
 
 /datum/supply_pack/rogue/tools/needles
 	name = "Needles"

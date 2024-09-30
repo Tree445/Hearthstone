@@ -5,15 +5,9 @@
 	name = "Half-Elf"
 	id = "helf"
 	desc = "<b>Half Elf</b><br>\
-	The child of an Elf and Humen, Half-Elves are generally frowned \
-	upon by more conservative peoples, although as racial tensions lower, \
-	more and more half-elves are being born. To the point that some scholars \
-	worry that someday, it may be impossible to distinguish the two species. \
-	Half-Elves are extremely diverse, as they bring in human and elvish culture\
-	and it is widely considered that Half-Elf culture is simply a melting pot of \
-	various other cultures condensing into one vibrant entity. \
-	Due to their heritage, Half-Elves tend to gain racial traits depending on how strong their fathers, or mothers, genes were. \
-	Half-Elves also typically try to find identity in one of two regions they have similarities towards."
+		Half-Elves are the offspring of both Humens and Elves. Half-Elves take on aspects of both their parents, the gracefulness of the Elves with the ambition of Humens. \
+		Half-Elves have much to prove to the world, looked down upon by many Elves, although Humans seem to get on fine with them. \
+		Half-Elves appear all over the world where both Humens and Elves intermingle, and predominantly worship the divine pantheon."
 
 	skin_tone_wording = "Identity"
 	default_color = "FFFFFF"
@@ -26,7 +20,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/mob/species/male.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
@@ -42,17 +36,18 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 1, "constitution" = -1, "endurance" = -1, "speed" = 1, "fortune" = -1)
 	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 1, "constitution" = -2, "endurance" = 0, "speed" = 2, "fortune" = -1)
+	race_bonus = list(STAT_PERCEPTION = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes/halfelf,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/elfw,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
@@ -64,6 +59,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
@@ -76,11 +72,11 @@
 
 /datum/species/human/halfelf/get_skin_list()
 	return list(
-		"Timber-Gronn" = SKIN_COLOR_TIMBER_GRONN,
-		"Giza-Azure" = SKIN_COLOR_GIZA_AZURE,
-		"Walnut-Stine" = SKIN_COLOR_WALNUT_STINE,
-		"Etrustcan-Dandelion" = SKIN_COLOR_ETRUSTCAN_DANDELION,
-		"Ebon-Born" = SKIN_COLOR_EBON_BORN,
+		"Frost-Scion" = SKIN_COLOR_TIMBER_GRONN,
+		"Shade-Forester" = SKIN_COLOR_GIZA_AZURE,
+		"Fable-Hoft" = SKIN_COLOR_WALNUT_STINE,
+		"Zybantine-Nevor" = SKIN_COLOR_ETRUSTCAN_DANDELION,
+		"Valorian-Born" = SKIN_COLOR_EBON_BORN,
 	)
 
 /datum/species/human/halfelf/get_hairc_list()

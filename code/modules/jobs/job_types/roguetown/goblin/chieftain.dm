@@ -26,13 +26,18 @@
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/bone/skullbelt
+	armor = /obj/item/clothing/suit/roguetown/armor/bone/chestplate
+	head = /obj/item/clothing/head/roguetown/tribalskull
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
-	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
-	cloak = /obj/item/clothing/cloak/heartfelt
+	shoes = /obj/item/clothing/shoes/roguetown/boots/bonegreaves
+	cloak = /obj/item/clothing/cloak/hidecloak
+	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+	backl = /obj/item/storage/backpack/rogue/satchel
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE) // Chieftess gets nearly same skills as guard.
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
@@ -48,6 +53,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)	
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 2)

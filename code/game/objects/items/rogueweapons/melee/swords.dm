@@ -81,13 +81,14 @@
 	item_d_type = "stab"
 
 /obj/item/rogueweapon/sword/short
-	name = "short sword"
-	desc = "An archaic steel sword made for stabbing."
-	force = 19
-	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
+	slot_flags = ITEM_SLOT_HIP
+	name = "arming sword"
+	desc = "A short arming sword, designed as a knightly sidearm. Best used with a shield or out of desperation."
 	icon_state = "swordshort"
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = null
-	minstr = 4
+	swingsound = BLADEWOOSH_SMALL
+	minstr = 6
 	wdefense = 4
 
 /obj/item/rogueweapon/sword/long
@@ -129,6 +130,16 @@
 			if("onback") return list("shrink" = 0.5,"sx" = -1,"sy" = 2,"nx" = 0,"ny" = 2,"wx" = 2,"wy" = 1,"ex" = 0,"ey" = 1,"nturn" = 0,"sturn" = 0,"wturn" = 70,"eturn" = 15,"nflip" = 1,"sflip" = 1,"wflip" = 1,"eflip" = 1,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 			if("wielded") return list("shrink" = 0.6,"sx" = 6,"sy" = -2,"nx" = -4,"ny" = 2,"wx" = -8,"wy" = -1,"ex" = 8,"ey" = 3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 15,"sturn" = -200,"wturn" = -160,"eturn" = -25,"nflip" = 8,"sflip" = 8,"wflip" = 0,"eflip" = 0)
 			if("onbelt") return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/sword/long/rider/messer
+	force = 20
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	icon_state = "Kmesser"
+	item_state = "Kmesser"
+	name = "langesmesser"
+	desc = "A lengthened messer, inspired by those from grenzelhoft. It chops and cuts with terrifying efficiency."
 
 
 /obj/item/rogueweapon/sword/long/heirloom
@@ -430,6 +441,13 @@
 	minstr = 4
 	wdefense = 2
 
+/obj/item/rogueweapon/sword/iron/messer/steel
+	name = "steel messer" //People often ask for messers when the smithy only has steel, now they can make it.
+	desc = "A single edged blade to slice and chop with. This one is made of sturdy steel."
+	icon_state = "smesser"
+	max_integrity = 175 //A stout blade that will last a long time before breakage
+
+
 /obj/item/rogueweapon/sword/falchion
 	force = 20
 	name = "falchion"
@@ -458,6 +476,22 @@
 /obj/item/rogueweapon/sword/sabre/dec
 	icon_state = "decsaber"
 	sellprice = 140
+
+/obj/item/rogueweapon/sword/estoc
+	name = "estoc"
+	desc = "An specialised steel longsword, tailor made for stabbing through armor."
+	force = 18
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/cut/rapier, /datum/intent/sword/thrust) //Better at stabbing than the longsword, worse at evrything else. It fits the time period because of our use of bervors and visored sallets.
+	icon_state = "estoc"
+	gripped_intents = list(/datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/estoc, /datum/intent/sword/strike)
+	minstr = 6
+	wdefense = 4
+
+/datum/intent/sword/thrust/estoc // Around 12 or so dmg gets through armor, making it weaker than spears, but more portable
+	clickcd = 10
+	penfactor = 60
+
 
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
@@ -616,6 +650,7 @@
 	desc = "This finely crafted saber is of elven smithcraft."
 	icon_state = "esaber"
 	item_state = "esaber"
+	smeltresult = /obj/item/ingot/silver
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 
@@ -667,3 +702,156 @@
 
 /datum/intent/sword/thrust/zwei
 	reach = 2
+
+/obj/item/rogueweapon/sword/cursedsword
+	force = 25
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	icon_state = "graggarsword"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "graggarsword"
+	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	name = "graggar's sword"
+	desc = "A twisted sword cursed by Graggar, the tendrils running along its blade squirm in anticipation of bloodshed."
+	parrysound = "bladedmedium"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_LONG
+	minstr = 8
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	dropshrink = 0.75
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/rogueweapon/sword/energy_katana
+	force = 25
+	force_wielded = 30
+	possible_item_intents = list(/datum/intent/sword/cut/god, /datum/intent/sword/thrust/god, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
+	icon_state = "graggarsword"
+	icon = 'icons/roguetown/weapons/64.dmi'
+	item_state = "graggarsword"
+	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	name = "god sword"
+	desc = "A twisted blade imbued with strange magicks."
+	parrysound = "bladedmedium"
+	swingsound = BLADEWOOSH_LARGE
+	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
+	bigboy = TRUE
+	wlength = WLENGTH_LONG
+	gripsprite = TRUE
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	associated_skill = /datum/skill/combat/swords
+	throwforce = 15
+	thrown_bclass = BCLASS_CUT
+	dropshrink = 0.75
+	smeltresult = /obj/item/ash
+	minstr = 6
+	wdefense = 10
+	wbalance = 1
+	var/datum/effect_system/spark_spread/spark_system
+	var/datum/action/innate/dash/ninja/jaunt
+	var/dash_toggled = TRUE
+
+/datum/intent/sword/cut/god
+	reach = 7
+
+/datum/intent/sword/thrust/god
+	reach = 7
+
+/obj/item/rogueweapon/sword/energy_katana/Initialize()
+	. = ..()
+	jaunt = new(src)
+	spark_system = new /datum/effect_system/spark_spread()
+	spark_system.set_up(5, 0, src)
+	spark_system.attach(src)
+
+/obj/item/rogueweapon/sword/energy_katana/attack_self(mob/user)
+	dash_toggled = !dash_toggled
+	to_chat(user, span_notice("I [dash_toggled ? "enable" : "disable"] the dash function on [src]."))
+
+/obj/item/rogueweapon/sword/energy_katana/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if(dash_toggled)
+		jaunt.Teleport(user, target)
+	if(proximity_flag && (isobj(target) || issilicon(target)))
+		spark_system.start()
+		playsound(user, "sparks", 50, TRUE)
+		playsound(user, 'sound/blank.ogg', 50, TRUE)
+		target.emag_act(user)
+
+/obj/item/rogueweapon/sword/energy_katana/pickup(mob/living/user)
+	. = ..()
+	jaunt.Grant(user, src)
+	user.update_icons()
+	playsound(src, 'sound/blank.ogg', 25, TRUE)
+
+/obj/item/rogueweapon/sword/energy_katana/dropped(mob/user)
+	. = ..()
+	jaunt.Remove(user)
+	user.update_icons()
+
+//If we hit the Ninja who owns this Katana, they catch it.
+//Works for if the Ninja throws it or it throws itself or someone tries
+//To throw it at the ninja
+/obj/item/rogueweapon/sword/energy_katana/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(ishuman(hit_atom))
+		var/mob/living/carbon/human/H = hit_atom
+		if(istype(H.wear_armor, /obj/item/clothing/suit/space/space_ninja))
+			var/obj/item/clothing/suit/space/space_ninja/SN = H.wear_armor
+			if(SN.energyKatana == src)
+				returnToOwner(H, 0, 1)
+				return
+
+	..()
+
+/obj/item/rogueweapon/sword/energy_katana/proc/returnToOwner(mob/living/carbon/human/user, doSpark = 1, caught = 0)
+	if(!istype(user))
+		return
+	forceMove(get_turf(user))
+
+	if(doSpark)
+		spark_system.start()
+		playsound(get_turf(src), "sparks", 50, TRUE)
+
+	var/msg = ""
+
+	if(user.put_in_hands(src))
+		msg = "Your Energy Katana teleports into your hand!"
+	else if(user.equip_to_slot_if_possible(src, SLOT_BELT, 0, 1, 1))
+		msg = "Your Energy Katana teleports back to you, sheathing itself as it does so!</span>"
+	else
+		msg = "Your Energy Katana teleports to your location!"
+
+	if(caught)
+		if(loc == user)
+			msg = "You catch your Energy Katana!"
+		else
+			msg = "Your Energy Katana lands at your feet!"
+
+	if(msg)
+		to_chat(user, span_notice("[msg]"))
+
+
+/obj/item/rogueweapon/sword/energy_katana/Destroy()
+	QDEL_NULL(spark_system)
+	return ..()
+
+/datum/action/innate/dash/ninja
+	current_charges = 5
+	max_charges = 5
+	charge_rate = 1
+	recharge_sound = null

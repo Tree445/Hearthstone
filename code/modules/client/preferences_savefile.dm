@@ -167,7 +167,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["triumphs"]			>> triumphs
 	S["musicvol"]			>> musicvol
 	S["anonymize"]			>> anonymize
-	S["crt"]			>> crt
+	S["crt"]				>> crt
+	S["sexable"]			>> sexable
+	S["shake"]				>> shake
 	S["mastervol"]			>> mastervol
 	S["lastclass"]			>> lastclass
 
@@ -197,7 +199,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	// Custom hotkeys
 	S["key_bindings"]		>> key_bindings
-	
+
 	S["defiant"]			>> defiant
 
 	//try to fix any outdated data if necessary
@@ -259,6 +261,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["musicvol"], musicvol)
 	WRITE_FILE(S["anonymize"], anonymize)
 	WRITE_FILE(S["crt"], crt)
+	WRITE_FILE(S["sexable"], sexable)
+	WRITE_FILE(S["shake"], shake)
 	WRITE_FILE(S["lastclass"], lastclass)
 	WRITE_FILE(S["mastervol"], mastervol)
 	WRITE_FILE(S["ooccolor"], ooccolor)
@@ -330,6 +334,22 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		charflaw = GLOB.character_flaws[charflaw]
 		charflaw = new charflaw()
 
+/datum/preferences/proc/_load_statpack(S)
+	var/statpack_type
+	S["statpack"] >> statpack_type
+	if (statpack_type)
+		statpack = new statpack_type()
+	else
+		statpack = pick(GLOB.statpacks)
+		statpack = GLOB.statpacks[statpack]
+		//statpack = new statpack
+
+/datum/preferences/proc/_load_loadout(S)
+	var/loadout_type
+	S["loadout"] >> loadout_type
+	if (loadout_type)
+		loadout = new loadout_type()
+
 /datum/preferences/proc/_load_appearence(S)
 	S["real_name"]			>> real_name
 	S["gender"]				>> gender
@@ -341,23 +361,22 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["facial_hair_color"]	>> facial_hair_color
 	S["eye_color"]			>> eye_color
 	S["voice_color"]		>> voice_color
+	S["voice_pitch"]		>> voice_pitch
 	S["skin_tone"]			>> skin_tone
-	S["hairstyle_name"]	>> hairstyle
+	S["hairstyle_name"]		>> hairstyle
 	S["facial_style_name"]	>> facial_hairstyle
-	S["underwear"]			>> underwear
-	S["underwear_color"]	>> underwear_color
-	S["undershirt"]			>> undershirt
 	S["accessory"]			>> accessory
-	S["detail"]			>> detail
-	S["socks"]				>> socks
+	S["detail"]				>> detail
 	S["backpack"]			>> backpack
 	S["jumpsuit_style"]		>> jumpsuit_style
 	S["uplink_loc"]			>> uplink_spawn_loc
-	S["randomise"]	>>  randomise
-	S["feature_mcolor"]					>> features["mcolor"]
-	S["feature_mcolor2"]					>> features["mcolor2"]
-	S["feature_mcolor3"]					>> features["mcolor3"]
-	S["feature_ethcolor"]					>> features["ethcolor"]
+	S["randomise"]			>> randomise
+	S["feature_mcolor"]		>> features["mcolor"]
+	S["feature_mcolor2"]	>> features["mcolor2"]
+	S["feature_mcolor3"]	>> features["mcolor3"]
+	S["feature_ethcolor"]	>> features["ethcolor"]
+	S["pronouns"]			>> pronouns
+	S["voice_type"]			>> voice_type
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)
@@ -384,6 +403,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	_load_species(S)
 
 	_load_flaw(S)
+
+	// LETHALSTONE edit: jank-ass load our statpack choice
+	_load_statpack(S)
+
+	_load_loadout(S)
 
 	if(!S["features["mcolor"]"] || S["features["mcolor"]"] == "#000")
 		WRITE_FILE(S["features["mcolor"]"]	, "#FFF")
@@ -428,6 +452,20 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
 
+	S["char_accent"]		>> char_accent
+	if (!char_accent)
+		char_accent = "No accent"
+
+	S["pronouns"] >> pronouns
+	S["voice_type"] >> voice_type
+	S["flavor_text"]			>> flavor_text
+	if(!valid_flavor_text(null, flavor_text, TRUE))
+		flavor_text = null
+		
+	S["ooc_notes"]			>> ooc_notes
+	if(!valid_ooc_notes(null, ooc_notes, TRUE))
+		ooc_notes = null
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
@@ -457,15 +495,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	randomise = SANITIZE_LIST(randomise)
 
-	socks			= sanitize_inlist(socks, GLOB.socks_list)
 	age				= sanitize_inlist(age, pref_species.possible_ages)
-	underwear_color			= sanitize_hexcolor(underwear_color, 3, 0)
 	eye_color		= sanitize_hexcolor(eye_color, 3, 0)
 	voice_color		= voice_color
+	voice_pitch		= voice_pitch
 	skin_tone		= skin_tone
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
+	pronouns = sanitize_text(pronouns, THEY_THEM)
+	voice_type = sanitize_text(voice_type, VOICE_TYPE_MASC)
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 6, 0)
 	features["mcolor2"]	= sanitize_hexcolor(features["mcolor2"], 6, 0)
 	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, 0)
@@ -521,15 +560,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["facial_hair_color"]	, facial_hair_color)
 	WRITE_FILE(S["eye_color"]			, eye_color)
 	WRITE_FILE(S["voice_color"]			, voice_color)
+	WRITE_FILE(S["voice_pitch"]			, voice_pitch)
 	WRITE_FILE(S["skin_tone"]			, skin_tone)
 	WRITE_FILE(S["hairstyle_name"]		, hairstyle)
 	WRITE_FILE(S["facial_style_name"]	, facial_hairstyle)
-	WRITE_FILE(S["underwear"]			, underwear)
-	WRITE_FILE(S["underwear_color"]		, underwear_color)
-	WRITE_FILE(S["undershirt"]			, undershirt)
 	WRITE_FILE(S["accessory"]			, accessory)
 	WRITE_FILE(S["detail"]				, detail)
-	WRITE_FILE(S["socks"]				, socks)
 	WRITE_FILE(S["backpack"]			, backpack)
 	WRITE_FILE(S["jumpsuit_style"]		, jumpsuit_style)
 	WRITE_FILE(S["uplink_loc"]			, uplink_spawn_loc)
@@ -566,9 +602,21 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["body_markings"] , body_markings)
 	// Descriptor entries
 	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
-	
+
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
+	WRITE_FILE(S["char_accent"] , char_accent)
+	WRITE_FILE(S["statpack"] , statpack.type)
+	WRITE_FILE(S["voice_type"] , voice_type)
+	WRITE_FILE(S["pronouns"] , pronouns)
+	if(loadout)
+		WRITE_FILE(S["loadout"] , loadout.type)
+	else
+		WRITE_FILE(S["loadout"] , null)
+
+	WRITE_FILE(S["flavor_text"] , flavor_text)
+
+	WRITE_FILE(S["ooc_notes"] , ooc_notes)
 
 	WRITE_FILE(S["is_updated_for_genitalia"], TRUE)
 

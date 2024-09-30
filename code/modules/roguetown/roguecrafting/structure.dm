@@ -95,6 +95,38 @@
 	verbage = "makes"
 	skillcraft = /datum/skill/craft/carpentry
 
+/datum/crafting_recipe/roguetown/armor/foresterarmor
+	name = "forester armor"
+	result = /obj/item/clothing/suit/roguetown/armor/plate/half/foresterarmor
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/armor/forestershoes
+	name = "forester shoes"
+	result = /obj/item/clothing/shoes/roguetown/boots/forestershoes
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry
+
+/datum/crafting_recipe/roguetown/armor/forestergauntlets
+	name = "forester gauntlets"
+	result = /obj/item/clothing/gloves/roguetown/forestergauntlets
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry	
+
+/datum/crafting_recipe/roguetown/armor/foresterhelmet
+	name = "forester helmet"
+	result = /obj/item/clothing/head/roguetown/helmet/foresterhelmet
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	verbage_simple = "make"
+	verbage = "makes"
+	skillcraft = /datum/skill/craft/carpentry		
+
 /datum/crafting_recipe/roguetown/roguebin
 	name = "wooden bin"
 	result = /obj/item/roguebin
@@ -145,6 +177,17 @@
 	skillcraft = /datum/skill/craft/blacksmithing
 	verbage_simple = "forge"
 	verbage = "forges"
+
+/datum/crafting_recipe/roguetown/structure/alch
+	name = "alchemy station"
+	result = /obj/structure/fluff/alch
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/stone = 4,
+				/obj/item/grown/log/tree/small = 1)
+	skillcraft = /datum/skill/misc/alchemy
+	craftdiff = 0
+	verbage_simple = "assemble"
+	verbage = "assembles"
 
 /datum/crafting_recipe/roguetown/structure/smelter
 	name = "ore furnace"
@@ -587,4 +630,15 @@
 	verbage_simple = "build"
 	verbage = "builds"
 	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/structure/dummy2
+	name = "sentient sparring dummy"
+	result = /obj/structure/fluff/statue/tdummy2
+	reqs = list(/obj/item/grown/log/tree/small = 1,
+				/obj/item/reagent_containers/lux = 1,
+				/obj/item/natural/fibers = 1)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/misc/alchemy
 	craftdiff = 3

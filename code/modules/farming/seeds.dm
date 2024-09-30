@@ -53,6 +53,18 @@
 	seed_identity = "wheat seeds"
 	plant_def_type = /datum/plant_def/wheat
 
+/obj/item/seeds/shroom
+	seed_identity = "elder shroom seeds"
+	plant_def_type = /datum/plant_def/shroom
+
+/obj/item/seeds/herbs
+	seed_identity = "herb seeds"
+	plant_def_type = /datum/plant_def/herbs
+
+/obj/item/seeds/poppy
+	seed_identity = "poppy seeds"
+	plant_def_type = /datum/plant_def/poppy
+
 /obj/item/seeds/wheat/oat
 	seed_identity = "oat seeds"
 	plant_def_type = /datum/plant_def/oat
@@ -77,3 +89,30 @@
 	seed_identity = "berry seeds"
 	plant_def_type = /datum/plant_def/berry_poison
 
+/obj/item/seeds/potato
+	seed_identity = "potato seeds"
+	plant_def_type = /datum/plant_def/potato
+
+/obj/item/seeds/sugarcane
+	seed_identity = "sugarcane seeds"
+	plant_def_type = /datum/plant_def/sugarcane
+
+/obj/item/seeds/pumpkin
+	seed_identity = "pumpkin seeds"
+	plant_def_type = /datum/plant_def/pumpkin
+
+/obj/item/seeds/carrot
+	seed_identity = "carrot seeds"
+	plant_def_type = /datum/plant_def/carrot
+
+/obj/item/seeds/garlic
+	seed_identity = "garlic seeds"
+	plant_def_type = /datum/plant_def/garlic
+
+/obj/item/seeds/onion
+	seed_identity = "onion seeds"
+	plant_def_type = /datum/plant_def/onion
+
+/obj/item/seeds/cabbage
+	seed_identity = "cabbage seeds"
+	plant_def_type = /datum/plant_def/cabbage

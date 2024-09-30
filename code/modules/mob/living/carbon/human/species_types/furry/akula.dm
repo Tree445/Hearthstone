@@ -4,16 +4,18 @@
 /datum/species/akula
 	name = "Axian"
 	id = "akula"
-	desc = "An empre, now a diaspora. \
-	In old times, the empire of Ei'doan was a mighty mercantile and colonial force that ruled the seas. A century of steady decline saw them cede, lose. or abandon most of our overseas colonies. \
-	Many Akula who had come to these colonies during the empire's height simply stayed, due to marrying into certain families, or to keep their livelihoods. It is not rare to find one of my kind in nobility, or townhood, or as a wanderer. \
-	Though a strong naval tradition has left us sharp-witted and strong, we are poorly-adapted to see well in such a boggy, rocky locale."
+	desc = "<b>Axian</b><br>\
+		A race of sharklike people, Axian settlements are dotted along the coastline of the continents. \
+		A society mainly consisting of fishermen, the Axians ply their trade, and are some of the best sailors in all of Grimoria. \
+		Some Axians go so far as to put down the rod and take up the cutlass, roaming the seas as pirates. \
+		Clever and strong, the Axians can make the most of bad situations, and rarely give up. Abyssor, Malum and Ravox are their preferred gods of worship."
+
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WATERBREATHING)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/mob/species/male.dmi'
-	limbs_icon_f = 'icons/mob/species/female.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
@@ -28,8 +30,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
+	specstats = list("strength" = 0, "perception" = 0, "intelligence" = -1, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = -1, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	race_bonus = list(STAT_ENDURANCE = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -57,6 +62,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/snout/akula,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/lizard,
@@ -73,6 +79,8 @@
 		/datum/body_marking/bellyslim,
 		/datum/body_marking/butt,
 		/datum/body_marking/tonage,
+		/datum/body_marking/splotches,
+		/datum/body_marking/splotcheswap,
 		/datum/body_marking/tiger/dark,
 	)
 	descriptor_choices = list(

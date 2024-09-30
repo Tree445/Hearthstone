@@ -18,7 +18,6 @@
 	verbage = "nock"
 	cartridge_wording = "arrow"
 	load_sound = 'sound/foley/nockarrow.ogg'
-	associated_skill = /datum/skill/combat/bows
 	var/damfactor = 1
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/getonmobprop(tag)
@@ -56,6 +55,7 @@
 	if(user.client)
 		if(user.client.chargedprog >= 100)
 			spread = 0
+			//adjust_experience(user, /datum/skill/combat/bows, user.STAINT * 4)
 		else
 			spread = 150 - (150 * (user.client.chargedprog / 100))
 	else
@@ -69,6 +69,8 @@
 			BB.damage = BB.damage
 			BB.embedchance = 100
 		BB.damage = BB.damage * (user.STAPER / 10) * damfactor
+		if(HAS_TRAIT(user, TRAIT_TINY))
+			BB.damage = (BB.damage * 0.3)
 	. = ..()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/update_icon()
@@ -180,3 +182,16 @@
 	chargetime = 0.75
 	chargedrain = 1.5
 	charging_slowdown = 2.5
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+	name = "reinforced longbow"
+	desc = "A bow that nearly looks to be as large as nearly double the user's torso! Sporting reinforced wood it appears capable of sporting some major draw strength."
+	icon_state = "longbow"
+	possible_item_intents = list(/datum/intent/shoot/bow/longbow, /datum/intent/arc/bow/longbow,INTENT_GENERIC)
+	damfactor = 1.25		//Larger draw strength than a normal bow, still less than a crossbow.
+
+/datum/intent/shoot/bow/longbow
+	chargetime = 1.25	//Higher charge time than regular bow, does more damage.
+
+/datum/intent/arc/bow/longbow
+	chargetime = 1.25	//Higher charge time than regular bow, does more damage.

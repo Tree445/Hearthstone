@@ -36,6 +36,9 @@
 	requires_bodypart_type = NONE
 	skill_min = SKILL_LEVEL_APPRENTICE
 	skill_median = SKILL_LEVEL_JOURNEYMAN
+	experience_multiplier = 3
+	preop_sound = 'sound/surgery/scalpel1.ogg'
+	success_sound = 'sound/surgery/organ2.ogg'
 
 /datum/surgery_step/amputate/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
 	display_results(user, target, span_notice("I begin to sever [target]'s [parse_zone(target_zone)]..."),

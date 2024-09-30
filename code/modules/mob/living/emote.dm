@@ -895,6 +895,12 @@
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 
+/datum/emote/living/conqrah
+	key = "conqrah"
+	message = "shouts triumphally!"
+	emote_type = EMOTE_AUDIBLE
+	only_forced_audio = TRUE 
+
 /datum/emote/living/rage
 	key = "rage"
 	message = "screams in rage!"
@@ -1240,6 +1246,24 @@
 		if(C.silent || !C.can_speak_vocal())
 			message = "makes a muffled yawn."
 
+/datum/emote/living/warcry
+	key = "warcry"
+	key_third_person = "warcrys"
+	message = "shouts an inspiring battle cry!"
+	emote_type = EMOTE_AUDIBLE
+
+/mob/living/carbon/human/verb/emote_warcry()
+	set name = "Warcry"
+	set category = "Noises"
+
+	emote("warcry", intentional = TRUE)
+
+/datum/emote/living/warcry/can_run_emote(mob/living/user, status_check = TRUE , intentional)
+	. = ..()
+	if(. && iscarbon(user))
+		var/mob/living/carbon/C = user
+		if(C.silent || !C.can_speak_vocal())
+			message = "makes a muffled shout!"
 
 /datum/emote/living/custom
 	key = "me"
@@ -1266,9 +1290,6 @@
 
 /datum/emote/living/custom/run_emote(mob/user, params, type_override = null, intentional = FALSE)
 	if(!can_run_emote(user, TRUE, intentional))
-		return FALSE
-	if(is_banned_from(user.ckey, "Emote"))
-		to_chat(user, span_boldwarning("I cannot send custom emotes (banned)."))
 		return FALSE
 	else if(QDELETED(user))
 		return FALSE

@@ -4,8 +4,12 @@
 /datum/species/anthromorphsmall
 	name = "Verminvolk"
 	id = "anthromorphsmall"
-	desc = "A race akin to wild-kin, except afflicted with significantly smaller stature. I'm a bit less respected than my kin due to their closer resemblance to vermin, like the dichotomy between Kobold and Sissean. \
-	We're far weaker of constitution and strength than other races, but make up for it in our agility...and oddly uncanny luck."
+	desc = "<b>Verminvolk</b><br>\
+		A squat, unusual people, they are greatly related to Wild-Kin, in the same way a Kobold might be related to a dragon. \
+		Like Wild-Kin their appearance can vary greatly, and they are largely looked down upon by their more pure brethren due in part to their height. \
+		But in spite of this Verminvolk make the most of their lot in life, a cheery folk, you'll find them working as artisans, bakers, cheesemakers, a few of them even working as watchmen. \
+		They, like Wild-Kin, worship Dendor primarily in the Divine Pantheon, but many also worship Eora, Malum, and Abyssor."
+
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -41,6 +45,7 @@
 		)
 	specstats = list("strength" = -2, "perception" = 1, "intelligence" = 0, "constitution" = -1, "endurance" = 0, "speed" = 2, "fortune" = 1)
 	specstats_f = list("strength" = -3, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = -1, "speed" = 2, "fortune" = 1)
+	race_bonus = list(STAT_ENDURANCE = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -63,6 +68,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/tail/anthro,
 		/datum/customizer/organ/tail_feature/anthro,
 		/datum/customizer/organ/snout/anthrosmall,

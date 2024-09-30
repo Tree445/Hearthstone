@@ -5,7 +5,12 @@
 	name = "Kobold"
 	id = "kobold"
 	desc = "<b>Kobold</b><br>\
-	In time you will learn the history of this race."
+		Thought by some scholars to be cousins to the Verminvolk, Kobolds are a small, lizardlike race which prefers to live underground. \
+		Like Dwarves their primary occupation is as miners, but some of them also dabble in smithing and crafting, a few still even entering into military service. \
+		The color of a Kobold's scales is largely determined by their parents, if a blue Kobold and a red Kobold were to have offspring then the resulting children would be purple for instance. \
+		Kobold mother's lay eggs, and guard them with their lives, although with few natural predators in their underground homes there isnt the fear of losing ones children as there once was. \
+		Kobold's worship the Divine Pantheon, mainly focused on Malum, but some Kobolds who feel an attraction to the sea prefer the worship of Abyssor instead."
+
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
@@ -33,6 +38,7 @@
 		)
 	specstats = list("strength" = -1, "perception" = 1, "intelligence" = -2, "constitution" = -1, "endurance" = 1, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = -2, "perception" = 0, "intelligence" = 1, "constitution" = -1, "endurance" = 1, "speed" = 2, "fortune" = 0)
+	race_bonus = list(STAT_INTELLIGENCE = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -58,6 +64,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid/shaved_default,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/snout/lizard,
 		/datum/customizer/organ/frills/lizard,
 		/datum/customizer/organ/horns/humanoid,

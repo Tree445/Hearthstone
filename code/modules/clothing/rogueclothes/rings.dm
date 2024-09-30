@@ -98,7 +98,7 @@
 /obj/item/clothing/ring/topaz
     name = "toper ring"
     icon_state = "g_ring_topaz"
-    sellprice = 180
+    sellprice = 120
 
 /obj/item/clothing/ring/quartz
     name = "blortz ring"
@@ -115,6 +115,11 @@
     icon_state = "g_ring_diamond"
     sellprice = 270
 
+/obj/item/clothing/ring/psydon
+    name = "psydon ring"
+    icon_state = "g_ring_psydon"
+    sellprice = 250
+
 //steel rings
 /obj/item/clothing/ring/emeralds
     name = "gemerald ring"
@@ -129,7 +134,7 @@
 /obj/item/clothing/ring/topazs
     name = "toper ring"
     icon_state = "s_ring_topaz"
-    sellprice = 65
+    sellprice = 45
 
 /obj/item/clothing/ring/quartzs
     name = "blortz ring"

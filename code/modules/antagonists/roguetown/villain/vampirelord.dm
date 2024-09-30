@@ -74,7 +74,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		QDEL_NULL(eyes)
 	eyes = new /obj/item/organ/eyes/night_vision/zombie
 	eyes.Insert(owner.current)
-	owner.current.AddSpell(new /obj/effect/proc_holder/spell/targeted/transfix)
 	owner.current.verbs |= /mob/living/carbon/human/proc/vamp_regenerate
 	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
 	vamp_look()
@@ -139,7 +138,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /mob/living/carbon/human/proc/spawn_pick_class()
 	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Cheesemaker", "Blacksmith", "Carpenter", "Rogue", "Treasure Hunter", "Mage")
-	var/list/visoptions = list()
+	var/list/visoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Cheesemaker", "Blacksmith", "Carpenter", "Rogue", "Treasure Hunter", "Mage") //enables all choices for vampire spawn
 
 	for(var/T in 1 to 5)
 		var/picked = pick(classoptions)
@@ -171,6 +170,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	cloak = /obj/item/clothing/cloak/cape/puritan
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel/black
+	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	H.ambushable = FALSE
 
 ////////Outfits////////
@@ -304,7 +304,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	..()
 
 /datum/antagonist/vampirelord/lesser/greet()
-	to_chat(owner.current, span_userdanger("We are awakened from our slumber, Spawn of the feared Vampire Lord."))
+	to_chat(owner.current, span_userdanger("My hunger awakens."))
 	owner.announce_objectives()
 
 /datum/antagonist/vampirelord/proc/finalize_vampire()
@@ -313,8 +313,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	
 
 /datum/antagonist/vampirelord/proc/finalize_vampire_lesser()
-	if(!sired)
-		owner.current.forceMove(pick(GLOB.vspawn_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 	
 
@@ -377,7 +375,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 	if(vitae > 0)
 		H.blood_volume = BLOOD_VOLUME_NORMAL
-		if(vitae < 200)
+		if(vitae < -100)
 			if(disguised)
 				to_chat(H, span_warning("My disguise fails!"))
 				H.vampire_undisguise(src)

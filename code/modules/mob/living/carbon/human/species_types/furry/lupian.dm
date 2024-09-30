@@ -5,12 +5,11 @@
 	name = "Lupian"
 	id = "lupian"
 	desc = "<b>Lupian</b><br>\
-	Lupians are the sons and daughters of Noc. They are a volf-like people hailing from the Northern Regions of the world. \
-	They are resilient, cunning and fight ready creachures capable of surviving the north thanks to their rugged pelts, \
-	sharp teeth and deep-rooted spirit of community. They are very dutiful individuals and make fantastic and fearsome \
-	warriors to those who earn their loyalty. Thanks to their pack minded nature they are slow to trust the other races \
-	but form deep connections with those they do. In recent years they have been driven from the forests by unrest and pressed \
-	into cohabitation with races they'd deem lesser."
+		Originating from the north, the Lupians are a race of wolflike peoples, living in tight knight packs. \
+		With thick pelts and sharp teeth, for centuries they have managed to survive in places other races would not. \
+		Due to their packlike mentality, they are slow to trust outsiders, but when they do a deep connection is formed which will last until death. \
+		The sons and daughters of Noc, they prefer her over the other gods in the Divine Pantheon, and howl at the moon whenever they see it as a form of prayer."
+
 	skin_tone_wording = "Pack"
 	species_traits = list(
 		MUTCOLORS,
@@ -25,8 +24,8 @@
 	liked_food = GROSS | MEAT | FRIED
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	possible_ages = ALL_AGES_LIST
-	limbs_icon_m = 'icons/mob/species/male.dmi'
-	limbs_icon_f = 'icons/mob/species/female.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
@@ -41,10 +40,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0) //0 total
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 0, "fortune" = 0) //0 total
+	race_bonus = list(STAT_INTELLIGENCE = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -69,6 +69,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/tail/lupian,
 		/datum/customizer/organ/snout/lupian,
 		/datum/customizer/organ/ears/lupian,
@@ -97,6 +98,8 @@
 		/datum/body_marking/backspots,
 		/datum/body_marking/front,
 		/datum/body_marking/tonage,
+		/datum/body_marking/splotches,
+		/datum/body_marking/splotcheswap,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/body,

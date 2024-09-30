@@ -41,12 +41,6 @@
 
 	var/age = "Adult"		//Player's age
 
-	var/underwear = "Nude"	//Which underwear the player wants
-	var/underwear_color
-	var/undershirt = "Nude" //Which undershirt the player wants
-
-	var/cached_underwear = "Nude"
-
 	var/accessory = "None"
 	var/detail = "None"
 	var/marking = "None"
@@ -97,7 +91,6 @@
 
 //	var/alignment = ALIGNMENT_TN
 
-	var/advjob = null
 	var/canseebandits = FALSE
 
 	var/marriedto
@@ -112,6 +105,10 @@
 	var/datum/devotion/devotion = null // Used for cleric_holder for priests
 
 	var/headshot_link = null
+	
+	var/flavor_text = null
+
+	var/ooc_notes = null
 
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\
@@ -121,3 +118,6 @@
 	/datum/rmb_intent/weak)
 
 	rot_type = /datum/component/rot/corpse
+
+	var/datum/statpack/statpack = null // Lethalstone Port - statpacks for greater customization
+	var/voice_type = null // LETHALSTONE EDIT: defines what sound pack we use. keep this null so mobs resort to their typical gender typing - preferences set this

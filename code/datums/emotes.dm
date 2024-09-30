@@ -83,7 +83,8 @@
 		var/mob/living/L = user
 		for(var/obj/item/implant/I in L.implants)
 			I.trigger(key, L)
-		pitch = L.get_emote_pitch()
+		if(L.voice_pitch)
+			pitch = L.voice_pitch
 
 	var/sound/tmp_sound = get_sound(user)
 	if(!istype(tmp_sound))
@@ -102,19 +103,6 @@
 			user.audible_message(msg)
 		else
 			user.visible_message(msg)
-
-/mob/living/proc/get_emote_pitch()
-	return clamp(voice_pitch, 0.7, 1.5)
-
-/mob/living/carbon/human/get_emote_pitch()
-	var/final_pitch = ..()
-	var/pitch_modifier = 0
-	if(!HAS_TRAIT(src, TRAIT_DECEIVING_MEEKNESS))
-		if(STASTR > 10)
-			pitch_modifier -= (STASTR - 10) * 0.03
-		else if(STASTR < 10)
-			pitch_modifier += (10 - STASTR) * 0.06
-	return clamp(final_pitch + pitch_modifier, 0.8, 1.35)
 
 /datum/emote/proc/get_env(mob/living/user)
 	return
@@ -148,6 +136,17 @@
 				possible_sounds = H.dna.species.soundpack_f.get_sound(key,modifier)
 			else if(H.dna.species.soundpack_m)
 				possible_sounds = H.dna.species.soundpack_m.get_sound(key,modifier)
+			 // LETHALSTONE ADDITION BEGIN: use preference-set voice types where possible
+			if(H.voice_type)
+				switch (H.voice_type)
+					if (VOICE_TYPE_MASC)
+						possible_sounds = H.dna.species.soundpack_m.get_sound(key, modifier)
+					if (VOICE_TYPE_FEM)
+						if (H.dna.species.soundpack_f)
+							possible_sounds = H.dna.species.soundpack_f.get_sound(key, modifier)
+						else
+							possible_sounds = H.dna.species.soundpack_m.get_sound(key, modifier)
+			// LETHALSTONE ADDITION END
 			if(possible_sounds)
 				if(islist(possible_sounds))
 					var/list/PS = possible_sounds

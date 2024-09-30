@@ -13,7 +13,7 @@
 	aggro_vision_range = 9
 	base_intents = list(/datum/intent/simple/bite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-					/obj/item/natural/silk = 2)
+					/obj/item/natural/silk = 2, /obj/item/hearthnatural/beespider_fang = 1)
 	faction = list("spiders")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
@@ -27,7 +27,7 @@
 	milkies = FALSE
 	food_type = list(/obj/item/bodypart, /obj/item/organ, /obj/item/reagent_containers/food/snacks/rogue/meat)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	pooptype = null
+	pooptype = /obj/item/natural/silk
 	STACON = 6
 	STASTR = 9
 	STASPD = 10
@@ -39,6 +39,8 @@
 	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
 	aggressive = 1
 	stat_attack = UNCONSCIOUS
+	tame_chance = 25
+	bonus_tame_chance = 15
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	icon = 'icons/roguetown/mob/monster/spider.dmi'
@@ -101,7 +103,7 @@
 	..()
 	if(stat == CONSCIOUS)
 		if(!target)
-			if(production >= 100)
+			if(production >= 50)
 				production = 0
 				visible_message(span_alertalien("[src] creates some honey."))
 				var/turf/T = get_turf(src)

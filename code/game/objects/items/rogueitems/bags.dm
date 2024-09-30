@@ -11,6 +11,11 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	max_integrity = 300
 
+/obj/item/storage/roguebag/examine(mob/user)
+	. = ..()
+	if(contents.len)
+		. += span_notice("[contents.len] thing[contents.len > 1 ? "s" : ""] in the sack.")
+
 /obj/item/storage/roguebag/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot == SLOT_HEAD)
@@ -68,6 +73,7 @@
 	STR.allow_quick_gather = TRUE
 	STR.allow_quick_empty = TRUE
 	STR.allow_look_inside = FALSE
+	STR.allow_dump_out = TRUE
 	STR.display_numerical_stacking = TRUE
 
 
@@ -99,3 +105,8 @@
 "eflip" = 8)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/storage/roguebag/lunch/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/rogue/pieslice(src)
+	new /obj/item/reagent_containers/food/snacks/rogue/pieslice(src)
+	new /obj/item/reagent_containers/glass/bottle/rogue/water(src)

@@ -4,10 +4,12 @@
 /datum/species/demihuman
 	name = "Half-Kin"
 	id = "demihuman"
-	desc = "Half-Kin, earth-borne, magyck-touched. Many names exist for my race, characterized by our varied appearance. \
-	Wild-Kin are by far the most numerous people due to the fact we are, usually, compatible with almost all other races. \
-	Due to the fact we are so numerous, we are welcome almost anywhere, along with our Wild-Kin sister race \
-	We are average of constitution, strength, and intellegence."
+	desc = "<b>Half-Kin</b><br>\
+		Half-Kin are the resulting offspring of a relation between Wild-Kin and Humens or Elves. \
+		The Half-Kin take on some features of both parents, a Half-Kin with an Elven parent may have sharp ears, as well as whatever features their Wild-Kin parent possessed. \
+		Half-Kin take to the cities much more easily than their purebred counterparts, and integrate rather easily into whatever society they find themselves in. \
+		Their relationship to Dendor, diluted somewhat, is not as strong as pure Wild-Kin, as such they worship any god of the divine pantheon, with many favoring no particular god among them."
+
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
@@ -19,8 +21,8 @@
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/mob/species/male.dmi'
-	limbs_icon_f = 'icons/mob/species/female.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
@@ -35,10 +37,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	race_bonus = list(STAT_PERCEPTION = 1)
 	enflamed_icon = "widefire"
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,
@@ -50,6 +53,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/ears/demihuman,
 		/datum/customizer/organ/horns/demihuman,
 		/datum/customizer/organ/tail/demihuman,
@@ -112,15 +116,15 @@
 
 /datum/species/demihuman/get_skin_list()
 	return list(
-		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
-		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
-		"Avar" = SKIN_COLOR_AVAR,
+		"Frostlander" = SKIN_COLOR_GRENZELHOFT,
+		"Umberite" = SKIN_COLOR_HAMMERHOLD,
+		"Grenzelhoft" = SKIN_COLOR_AVAR,
 		"Rockhill" = SKIN_COLOR_ROCKHILL,
-		"Otava" = SKIN_COLOR_OTAVA,
-		"Etrusca" = SKIN_COLOR_ETRUSCA,
-		"Gronn" = SKIN_COLOR_GRONN,
-		"Giza" = SKIN_COLOR_GIZA,
-		"Shalvistine" = SKIN_COLOR_SHALVISTINE,
-		"Lalvestine" = SKIN_COLOR_LALVESTINE,
-		"Ebon" = SKIN_COLOR_EBON,
+		"Forester" = SKIN_COLOR_OTAVA,
+		"Highlander" = SKIN_COLOR_ETRUSCA,
+		"Moravian" = SKIN_COLOR_GRONN,
+		"Gizan" = SKIN_COLOR_GIZA,
+		"Zybantine" = SKIN_COLOR_SHALVISTINE,
+		"Merkite" = SKIN_COLOR_LALVESTINE,
+		"Valorian" = SKIN_COLOR_EBON,
 	)

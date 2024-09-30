@@ -29,6 +29,9 @@
 	var/resting = FALSE
 	var/wallpressed = FALSE
 	var/pixelshifted = FALSE
+	var/pixelshift_x = 0
+	var/pixelshift_y = 0
+	var/pixelshift_layer = 0
 
 	var/lying = 0			//number of degrees. DO NOT USE THIS IN CHECKS. CHECK FOR MOBILITY FLAGS INSTEAD!!
 	var/lying_prev = 0		//last value of lying on update_mobility
@@ -174,5 +177,5 @@
 	var/rogue_sneaking_light_threshhold = 0.15
 
 
-	/// Default pitch for emotes, on humans this is modified by stats
-	var/voice_pitch = 1
+	/// Voice pitch for audible emotes
+	var/voice_pitch

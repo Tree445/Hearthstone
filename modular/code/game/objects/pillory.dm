@@ -91,8 +91,8 @@
 			to_chat(user, span_warning("Wrong key."))
 			playsound(src, 'sound/foley/doors/lockrattle.ogg', 100)
 			return
-	if(istype(P, /obj/item/keyring))
-		var/obj/item/keyring/K = P
+	if(istype(P, /obj/item/storage/keyring))
+		var/obj/item/storage/keyring/K = P
 		for(var/obj/item/roguekey/KE in K.keys)
 			if(KE.lockid in lockid)
 				togglelock(user)
@@ -134,7 +134,7 @@
 		to_chat(usr, span_warning("Unlock it first!"))
 		return FALSE
 
-	if (!istype(M, /mob/living/carbon/human))
+	if ((!istype(M, /mob/living/carbon/human)) || HAS_TRAIT(M, TRAIT_TINY))
 		to_chat(usr, span_warning("It doesn't look like [M.p_they()] can fit into this properly!"))
 		return FALSE // Can't hold non-humanoids
 
@@ -213,5 +213,3 @@
 /obj/structure/pillory/tribal/reinforced
 	icon_state = "pillory_reinforced"
 	base_icon = "pillory_reinforced"
-
-#undef PILLORY_HEAD_OFFSET

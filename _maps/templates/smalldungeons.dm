@@ -116,9 +116,9 @@
 
 
 		//food
-		/obj/item/reagent_containers/food/snacks/rogue/crackers = 3,
+		//obj/item/reagent_containers/food/snacks/rogue/crackers = 3,
 		/obj/item/reagent_containers/food/snacks/butterslice = 3,
-		/obj/item/reagent_containers/powder/flour/salt = 3,
+		/obj/item/reagent_containers/powder/salt = 3,
 		/obj/item/reagent_containers/food/snacks/egg = 3,
 
 	)
@@ -261,9 +261,9 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon/food
 	loot = list(
 		//food
-		/obj/item/reagent_containers/food/snacks/rogue/crackers = 3,
+		///obj/item/reagent_containers/food/snacks/rogue/crackers = 3,
 		/obj/item/reagent_containers/food/snacks/butterslice = 3,
-		/obj/item/reagent_containers/powder/flour/salt = 3,
+		/obj/item/reagent_containers/powder/salt = 3,
 		/obj/item/reagent_containers/food/snacks/egg = 3
 	)
 	lootcount = 2

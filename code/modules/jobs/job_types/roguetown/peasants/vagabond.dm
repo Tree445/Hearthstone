@@ -17,6 +17,8 @@
 	min_pq = -30
 	max_pq = null
 
+	banned_leprosy = FALSE
+
 	cmode_music = 'sound/music/combat_bum.ogg'
 
 /datum/job/roguetown/vagabond/New()
@@ -41,7 +43,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, round(rand(2,5)), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, round(rand(1,3)), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.STALUC = rand(1, 20)
+		backl = /obj/item/storage/backpack/rogue/satchel
 	if(prob(10))
 		r_hand = /obj/item/rogue/instrument/flute
 	H.change_stat("intelligence", round(rand(-4,4)))

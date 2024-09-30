@@ -27,6 +27,44 @@
 	/// The rate at which the plant drains water, if zero then it'll be able to live without water
 	var/water_drain_rate = 2 / (1 MINUTES)
 
+/datum/plant_def/shroom
+	name = "shroom spores"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "shroom"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/shroom
+	produce_amount = 3
+	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES
+
+/datum/plant_def/poppy
+	name = "poppy buds"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "poppy"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/poppy
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
+/datum/plant_def/herbs
+	name = "herb bush"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "herbs"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/herbs
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
 /datum/plant_def/wheat
 	name = "wheat stalks"
 	icon = 'icons/roguetown/misc/crops.dmi'
@@ -96,3 +134,85 @@
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
+
+/datum/plant_def/potato
+	name = "potato plant"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "potato"
+	produce_amount = 3
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 6 MINUTES
+	produce_time = 3 MINUTES
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/potato/rogue
+	
+/datum/plant_def/sugarcane
+	name = "sugarcane"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "sugarcane"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/sugarcane
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES
+
+/datum/plant_def/pumpkin
+	name = "pumpkin"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "pumpkin"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/pumpkin
+	produce_amount = 3
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 6 MINUTES
+	produce_time = 2 MINUTES
+	weed_immune = FALSE
+
+/datum/plant_def/carrot
+	name = "carrot"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "carrot"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/carrot
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 4 MINUTES
+	produce_time = 2 MINUTES
+	weed_immune = FALSE
+
+/datum/plant_def/garlic
+	name = "garlic"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "garlic"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/garlic
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES
+	weed_immune = FALSE
+
+/datum/plant_def/onion
+	name = "onion"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "onion"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/onion/rogue
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES
+	weed_immune = FALSE
+
+/datum/plant_def/cabbage
+	name = "cabbage"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "cabbage"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
+	produce_amount = 4
+	maturation_nutrition = 30
+	produce_nutrition = 20
+	maturation_time = 5 MINUTES
+	produce_time = 2 MINUTES
+	weed_immune = FALSE

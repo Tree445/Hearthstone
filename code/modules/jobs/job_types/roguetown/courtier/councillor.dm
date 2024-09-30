@@ -9,10 +9,10 @@
 	allowed_races = RACES_ALL_KINDS
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_COUNCILLOR
-	tutorial = "You may have inherited this role, bought your way into it, or were appointed by the bailiff; \
-			Whatever it was you now serve as a assistant, planner, and juror for the Bailiff. \
+	tutorial = "You may have inherited this role, bought your way into it, or were appointed by the King; \
+			Whatever it was you now serve as a assistant, planner, and juror for the Judge. \
 			You help him oversee the taxation, construction, and planning of new laws. \
-			You only answer to the Bailiff, Queen, King, Princes, or Princesses. However, your main focus is to assist the Bailiff."
+			You only answer to the Judge, Queen, King, Princes, or Princesses. However, your main focus is to assist the Judge."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/councillor
 	
@@ -30,10 +30,10 @@
 	head = /obj/item/clothing/head/roguetown/chaperon/councillor
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltl = /obj/item/keyring/guardcastle
+	beltl = /obj/item/storage/keyring/guardcastle
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/councillor
-	backpack_contents = list(/obj/item/keyring/councillor = 1)
+	backpack_contents = list(/obj/item/storage/keyring/councillor = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)

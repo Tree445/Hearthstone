@@ -5,17 +5,11 @@
 	name = "Elf"
 	id = "elfw"
 	desc = "<b>Elf</b><br>\
-	Elves, or Wood-Elf by the Elder races, are a generic term for tall, pointy-eared \
-	humanoids that trace their original heritage to the ancient mysterious Snow Elves. \
-	Considering their diverse history, it is extremely difficult for other mortals \
-	to even concept the various intricacies found in elven society, and the hundreds \
-	if not thousands of tribes that exist within their culture! \
-	Elves tend to be looked poorly upon by humans, as historically the two races have \
-	been rivals in various conflicts and territorial disputes. This however does not stop \
-	many humans and elves from forming relationships, which are capable of producing child.\
-	Elves are known for their intelligence and sharp eyes, but their graceful nature does \
-	not lend itself to the concepts of strength or durability... \
-	There are elves from a small smattering of tribes in these parts."
+		Elves are a lithe, graceful race, many of them spread out across the world not unlike Humens. \
+		They largely prefer to live in nature, and make for some of the best rangers in all of Grimoria. \
+		The most obvious feature of an elf is their sharp ears, and generally slim form. \
+		Like Humens and Dwarves, Elf skin tones are determined by the place of their birth. \
+		The elves worship the divine pantheon, though their preferred god is largely dictated by where they're born."
 
 	skin_tone_wording = "Tribal Identity"
 
@@ -46,10 +40,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	specstats = list("strength" = -2, "perception" = 1, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = -4, "perception" = 1, "intelligence" = 2, "constitution" = -2, "endurance" = 0, "speed" = 3, "fortune" = 0)
+	race_bonus = list(STAT_ENDURANCE = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -72,6 +67,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
@@ -92,14 +88,14 @@
 
 /datum/species/elf/wood/get_skin_list()
 	return list(
-		"Dandelion Creek" = SKIN_COLOR_DANDELION_CREEK,
-		"Roseveil" = SKIN_COLOR_ROSEVEIL,
-		"Azuregrove" = SKIN_COLOR_AZUREGROVE,
-		"Arborshome" = SKIN_COLOR_ARBORSHOME,
-		"Almondvalle" = SKIN_COLOR_ALMONDVALLE,
-		"Walnut Woods" = SKIN_COLOR_WALNUT_WOODS,
-		"Timberborn" = SKIN_COLOR_TIMBERBORN,
-		"Ashen" 	= SKIN_COLOR_ASHEN,
+		"Snow Scion" = SKIN_COLOR_DANDELION_CREEK,
+		"Shadewood" = SKIN_COLOR_ROSEVEIL,
+		"Emberfall" = SKIN_COLOR_AZUREGROVE,
+		"Vandendor" = SKIN_COLOR_ARBORSHOME,
+		"Fablefield" = SKIN_COLOR_ALMONDVALLE,
+		"Nevor" = SKIN_COLOR_WALNUT_WOODS,
+		"Merkite" = SKIN_COLOR_TIMBERBORN,
+		"Weso" 	= SKIN_COLOR_ASHEN,
 	)
 
 /datum/species/elf/wood/get_hairc_list()

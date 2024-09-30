@@ -64,7 +64,7 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Consort Candidate",
 	"Royal Heir",
 	"Guard Captain",
-	"Bailiff",
+	"Judge",
 	"Councillor",
 	"Steward",
 	"Knight",
@@ -104,6 +104,7 @@ GLOBAL_LIST_INIT(yeoman_positions, list(
 	"Archivist",
 	"Armorer",
 	"Weaponsmith",
+	"Blacksmith",
 	"Tailor",
 	"Alchemist",
 	"Mason",
@@ -127,6 +128,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Docker",
 	"Prisoner",
 	"Beggar",
+	"Town Seelie",
 	"Adventurer",
 	"Pilgrim",
 ))
@@ -173,6 +175,11 @@ GLOBAL_LIST_INIT(viking_positions, list(
 	"Northmen King",
 	"Northern Hostage",
 	"Northmen Berserkir"
+))
+
+GLOBAL_LIST_INIT(vampire_positions, list(
+	"Antediluvian Peasant",
+	"Vampire Smith"
 ))
 
 

@@ -12,6 +12,7 @@
 	var/lockhash = 0
 	var/lockid = null
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH|ITEM_SLOT_NECK
+	drop_sound = 'sound/items/gems (1).ogg'
 	anvilrepair = /datum/skill/craft/blacksmithing
 
 /obj/item/roguekey/Initialize()
@@ -25,6 +26,19 @@
 				lockhash = rand(100,999)
 			GLOB.lockhashes += lockhash
 			GLOB.lockids[lockid] = lockhash
+
+/obj/item/lockpick
+	name = "lockpick"
+	desc = "A small, sharp piece of metal to aid opening locks in the absence of a key."
+	icon_state = "lpick"
+	icon = 'icons/roguetown/items/keys.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	dropshrink = 0.75
+	throwforce = 0
+	max_integrity = 10
+	picklvl = 1
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH|ITEM_SLOT_NECK
+	destroy_sound = 'sound/items/pickbreak.ogg'
 
 /obj/item/roguekey/lord
 	name = "master key"
@@ -79,9 +93,9 @@
 	icon_state = "cheesekey"
 	lockid = "sheriff"
 
-/obj/item/roguekey/bailiff
-	name = "bailiff's key"
-	desc = "This key belongs to the bailiff."
+/obj/item/roguekey/judge
+	name = "judge's key"
+	desc = "This key belongs to the judge."
 	icon_state = "cheesekey"
 	lockid = "sheriff"
 
@@ -419,6 +433,7 @@
 		else
 			KE.keylock = TRUE
 			KE.lockhash = src.lockhash
+			KE.lock_strength = 100
 			if(src.holdname)
 				KE.name = (src.holdname + " " + KE.name)
 			to_chat(user, span_notice("You add [src] to [K]."))
@@ -430,6 +445,7 @@
 		else
 			KE.keylock = TRUE
 			KE.lockhash = src.lockhash
+			KE.lock_strength = 100
 			if(src.holdname)
 				KE.name = src.holdname
 			to_chat(user, span_notice("You add [src] to [K]."))

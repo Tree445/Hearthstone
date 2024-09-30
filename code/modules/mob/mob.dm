@@ -167,8 +167,12 @@ GLOBAL_VAR_INIT(mobids, 1)
 	// voice muffling
 	if(stat == UNCONSCIOUS)
 		if(type & MSG_AUDIBLE) //audio
-			to_chat(src, "<I>... You can almost hear something ...</I>")
-		return
+			if(findtext(msg, "snores.")) //No spamming people with their own snoring.
+				return
+			if(prob(20))
+				msg = "<span class='smallyell'>[msg]</span>"
+			else
+				return
 	to_chat(src, msg)
 
 /**
@@ -1364,3 +1368,11 @@ GLOBAL_VAR_INIT(mobids, 1)
 		input = capitalize(copytext_char(input, customsayverb+1))
 	return "[message_spans_start(spans)][input]</span>"
 
+/mob/proc/haswings(mob/living/carbon/human/Target)
+	if(!ishuman(Target))
+		return FALSE
+	var/obj/item/organ/wings/Wing = Target.getorganslot(ORGAN_SLOT_WINGS)
+	if(Wing == null)
+		return FALSE
+	else
+		return TRUE

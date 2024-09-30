@@ -150,7 +150,14 @@
 	landsound = 'sound/foley/jumpland/grassland.wav'
 	slowdown = 0
 	neighborlay = "grassedge"
-
+/turf/open/floor/rogue/grass/get_slowdown(mob/user)
+	var/returned = slowdown
+	var/negate_slowdown = FALSE
+	if(HAS_TRAIT(user, TRAIT_BOG_TREKKING))
+		negate_slowdown = TRUE
+	if(negate_slowdown)
+		returned = max(returned-0.5, -1)
+	return returned
 // /turf/open/floor/rogue/grass/Initialize()
 //	dir = pick(GLOB.cardinals)
 //	GLOB.dirt_list += src
@@ -174,6 +181,21 @@
 	bloodiness = 20
 	dirt_amt = 3
 
+/turf/open/floor/rogue/dirt/snow
+	name = "dirt-s"
+	desc = "The dirt is pocked with the scars of countless wars."
+	icon_state = "dirt-s"
+	layer = MID_TURF_LAYER
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/dirtland.wav'
+	slowdown = 2
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/turf/open/floor/rogue/grass)
+	neighborlay = "dirtedge"
+
 /turf/open/floor/rogue/dirt
 	name = "dirt"
 	desc = "The dirt is pocked with the scars of countless wars."
@@ -194,14 +216,26 @@
 	var/dirt_amt = 3
 
 /turf/open/floor/rogue/dirt/get_slowdown(mob/user)
+	//No tile slowdown for fairies
+	var/mob/living/carbon/human/FM = user
+	if(isseelie(FM) && !(FM.resting))	//Add wingcheck
+		return 0
+
 	var/returned = slowdown
+	var/negate_slowdown = FALSE
 	for(var/obj/item/I in user.held_items)
 		if(I.walking_stick)
 			if(!I.wielded)
 				var/mob/living/L = user
 				if(!L.cmode)
-					returned = max(returned-2, 0)
+					negate_slowdown = TRUE
+
+	if(HAS_TRAIT(user, TRAIT_BOG_TREKKING))
+		negate_slowdown = TRUE
+	if(negate_slowdown)
+		returned = max(returned-2.5, -1)
 	return returned
+
 
 
 /turf/open/floor/rogue/dirt/attack_right(mob/user)
@@ -229,7 +263,7 @@
 	..()
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
-		if(H.shoes && !HAS_TRAIT(H, TRAIT_LIGHT_STEP))
+		if((H.shoes && !HAS_TRAIT(H, TRAIT_LIGHT_STEP)) || !isseelie(H)) //Seelie hover, so they won't step on blood
 			var/obj/item/clothing/shoes/S = H.shoes
 			if(!S.can_be_bloody)
 				return
@@ -286,6 +320,7 @@
 			barefootstep = initial(barefootstep)
 			clawfootstep = initial(clawfootstep)
 			heavyfootstep = initial(heavyfootstep)
+			track_prob = initial(track_prob) //Hearthstone change.
 	return TRUE
 
 /turf/open/floor/rogue/dirt/proc/become_muddy()
@@ -298,6 +333,7 @@
 		footstep = FOOTSTEP_MUD
 		barefootstep = FOOTSTEP_MUD
 		heavyfootstep = FOOTSTEP_MUD
+		track_prob = 10 //Hearthstone change.
 		bloodiness = 20
 
 /turf/open/floor/rogue/dirt/road
@@ -314,7 +350,14 @@
 	canSmoothWith = list(/turf/open/floor/rogue, /turf/closed/mineral, /turf/closed/wall/mineral)
 	neighborlay = "dirtedge"
 	slowdown = 0
-
+/turf/open/floor/rogue/dirt/road/get_slowdown(mob/user)
+	var/returned = slowdown
+	var/negate_slowdown = FALSE
+	if(HAS_TRAIT(user, TRAIT_BOG_TREKKING))
+		negate_slowdown = TRUE
+	if(negate_slowdown)
+		returned = max(returned-0.5, -1)
+	return returned
 /turf/open/floor/rogue/dirt/road/attack_right(mob/user)
 	return
 
@@ -650,6 +693,242 @@
 	icon = 'icons/turf/roguefloor.dmi'
 	icon_state = "cobblestone_edges"
 	mouse_opacity = 0
+
+///Add my stuff here, remove note when done
+/// Decal section
+
+/obj/effect/decal/stone/blockedge
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "blocks_edges"
+	mouse_opacity = 0
+
+/obj/effect/decal/stone/blockedge/blockedgeinvert
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "blocks_edgesinv"
+	mouse_opacity = 0
+
+/obj/effect/decal/stone/mossy
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "mossyedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/stone/mossy/big
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "mossystone_edges"
+	mouse_opacity = 0
+
+/obj/effect/decal/stone/chess
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "chessedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/stone/chess/inv
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "chessedgeinv"
+	mouse_opacity = 0
+
+/obj/effect/decal/stone/hex
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "hexstoneedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/herringbone
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "herringedge"
+	mouse_opacity = 0
+
+
+/obj/effect/decal/dirt
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "dirtedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/dirt/road
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "roadedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/dirt/grass
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "grassedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/dirt/grass/hell
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "hellgrassedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/wood/herringbone
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "herringbonewoodedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/wood/herringbone2
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "herringbonewood2edge"
+	mouse_opacity = 0
+
+/obj/effect/decal/wood/
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "wooden_floor2edge"
+	mouse_opacity = 0
+
+/obj/effect/decal/wood/turnd
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "wooden_floor2tedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/wood/ruinedwood
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "wooden_flooredge"
+	mouse_opacity = 0
+
+/obj/effect/decal/wood/ruinedwood/turned
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "wooden_floortedge"
+	mouse_opacity = 0
+
+/obj/effect/decal/border
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "woodenborder"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/ruinedwood
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "woodenborder"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/ruinedwood/inverted
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "woodenborderinv"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/wood
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "woodenborder2"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/wood/inverted
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "woodenborder2inv"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/stone
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "stoneborder"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/stone/inverted
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "stoneborderinv"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/stone/stonepattern1
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "stone1edge"
+	mouse_opacity = 0
+
+/obj/effect/decal/border/stone/stonepattern2
+	name = ""
+	desc = ""
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "stone2edge"
+	mouse_opacity = 0
+
+//floors
+
+/turf/open/floor/rogue/ruinedwood/herringbone
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/woodland.wav'
+	icon_state = "herringbonewood"
+
+/turf/open/floor/rogue/wood/herringbone
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+	landsound = 'sound/foley/jumpland/woodland.wav'
+	icon_state = "herringbonewood2"
+
+/turf/open/floor/rogue/grass/hell
+	icon_state = "hellgrass"
+
+/turf/open/floor/rogue/blocks/stone
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "stone1"
+	footstep = FOOTSTEP_FLOOR
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/tileland.wav'
+	footstepstealth = TRUE
+
+/turf/open/floor/rogue/blocks/stone/stonepattern2
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "stone2"
+
+/turf/open/floor/rogue/blocks/stone/stonepattern3
+	icon = 'icons/turf/roguefloor.dmi'
+	icon_state = "stone3"
+
+/// End of my adds
 
 /turf/open/floor/rogue/tile
 	icon_state = "chess"

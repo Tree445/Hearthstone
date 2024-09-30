@@ -6,7 +6,7 @@
 	outfit = /datum/outfit/job/roguetown/mercenary/steppesman
 	category_tags = list(CTAG_MERCENARY)
 	maximum_possible_slots = 6
-	cmode_music = 'sound/music/combat_desertrider.ogg'	//Placeholder; maybe something Slavic/Tatar/Turkmen sounding?
+	cmode_music = 'sound/music/combat_steppe.ogg'
 
 /datum/outfit/job/roguetown/mercenary/steppesman/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -19,8 +19,8 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	beltr = /obj/item/rogueweapon/sword/sabre
 	beltl= /obj/item/quiver/arrows
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	pants = /obj/item/clothing/under/roguetown/tights/red
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	pants = /obj/item/clothing/under/roguetown/trou/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	backr = /obj/item/storage/backpack/rogue/satchel
@@ -36,7 +36,9 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE) //builders
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // builders
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE) //builders
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
@@ -44,8 +46,10 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
 	H.change_stat("perception", 2)
 	H.change_stat("constitution", 1)
-	H.change_stat("endurance", 1)
+	H.change_stat("endurance", 2)
 	H.change_stat("speed", 2)
-	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)			//No medium armor, use light armors.
+	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)	//Since Desert Rider gets medium armor and dodge expert, and you don't, here. Stronk now.

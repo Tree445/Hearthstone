@@ -101,7 +101,7 @@
 
 /mob/living/carbon/attackby(obj/item/I, mob/user, params)
 	if(!user.cmode)
-		var/try_to_fail = !istype(user.rmb_intent, /datum/rmb_intent/weak)
+		var/try_to_fail = istype(user.rmb_intent, /datum/rmb_intent/strong)
 		var/list/possible_steps = list()
 		for(var/datum/surgery_step/surgery_step as anything in GLOB.surgery_steps)
 			if(!surgery_step.name)
@@ -761,6 +761,10 @@
 	if(HAS_TRAIT(src, TRAIT_XRAY_VISION))
 		sight |= (SEE_TURFS|SEE_MOBS|SEE_OBJS)
 		see_in_dark = max(see_in_dark, 8)
+
+	if(HAS_TRAIT(src, TRAIT_NOCSIGHT))
+		E.lighting_alpha = LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT
+		E.see_in_dark = 7
 
 	if(see_override)
 		see_invisible = see_override

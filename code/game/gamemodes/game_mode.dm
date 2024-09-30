@@ -24,6 +24,7 @@
 	var/round_ends_with_antag_death = 0 //flags the "one verse the station" antags as such
 	var/list/datum/mind/antag_candidates = list()	// List of possible starting antags goes here
 	var/list/restricted_jobs = list()	// Jobs it doesn't make sense to be.  I.E chaplain or AI cultist
+	var/list/restricted_races = list()  // Races that are disallowed to be antags
 	var/list/protected_jobs = list()	// Jobs that can't be traitors because
 	var/list/required_jobs = list()		// alternative required job groups eg list(list(cap=1),list(hos=1,sec=2)) translates to one captain OR one hos and two secmans
 	var/required_players = 0
@@ -65,7 +66,7 @@
 	var/list/datum/mind/pre_rebels = list()
 	var/list/datum/mind/pre_aspirants = list()
 	var/list/datum/mind/aspirants = list()
-	
+
 /datum/game_mode/proc/announce() //Shows the gamemode's name and a fast description.
 	to_chat(world, "<b>The gamemode is: <span class='[announce_span]'>[name]</span>!</b>")
 	to_chat(world, "<b>[announce_text]</b>")
@@ -378,12 +379,21 @@
 /datum/game_mode/proc/get_players_for_role(role, pre_do, check_pq = TRUE)
 	var/list/players = list()
 	var/list/candidates = list()
+//	var/pass = TRUE
 //	var/list/drafted = list()
 //	var/datum/mind/applicant = null
 
 	// Ultimate randomizing code right here
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
+		if(is_misc_banned(player.ckey, BAN_MISC_LEPROSY))
+			continue
+		if(is_misc_banned(player.ckey, BAN_MISC_LUNATIC))
+			continue
+		if(is_antag_banned(player.ckey, role))
+			continue
+		if(is_total_antag_banned(player.ckey))
+			continue
 		if(player.ready == PLAYER_READY_TO_PLAY && player.check_preferences())
 //			if(player.client && player.client.whitelisted() && !player.client.blacklisted())
 			players += player
@@ -398,7 +408,6 @@
 				if(get_playerquality(player.ckey) <= -10)
 					continue
 			if(role in player.client.prefs.be_special)
-//				if(!is_banned_from(player.ckey, list(role, ROLE_SYNDICATE)) && !QDELETED(player))
 				candidates += player.mind				// Get a list of all the people who want to be the antagonist for this round
 				continue
 			if(role == ROLE_NBEAST)

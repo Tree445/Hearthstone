@@ -34,7 +34,7 @@
 	var/no_glasses
 	var/damaged	= FALSE	//damaged indicates that our eyes are undergoing some level of negative effect
 
-	var/eye_color = "#FFFFFF"
+	var/eye_color = "#ffffff00"
 	var/heterochromia = FALSE
 	var/second_color = "#FFFFFF"
 
@@ -464,3 +464,14 @@
 	eye_icon_state = "snail_eyes"
 	icon_state = "snail_eyeballs"
 
+/proc/set_eye_color(var/mob/living/carbon/mob, color_one, color_two)
+	var/obj/item/organ/eyes/eyes = mob.getorganslot(ORGAN_SLOT_EYES)
+	if(!eyes)
+		return
+	if(color_one)
+		eyes.eye_color = color_one
+	if(color_two)
+		eyes.second_color = color_two
+	eyes.update_accessory_colors()
+	if(eyes.owner)
+		eyes.owner.update_body_parts(TRUE)

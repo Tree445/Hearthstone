@@ -299,6 +299,9 @@
 	icon_state = "border"
 	passcrawl = FALSE
 
+/obj/structure/fluff/railing/border/inverted
+	icon_state = "borderinv"
+
 /obj/structure/fluff/railing/fence
 	name = "palisade"
 	desc = ""
@@ -568,8 +571,23 @@
 /obj/structure/fluff/clock/examine(mob/user)
 	. = ..()
 	if(!broke)
-		. += "Oh no, it's [station_time_timestamp("hh:mm")]."
-		. += span_info("(Round Time: [gameTimestamp("hh:mm:ss", REALTIMEOFDAY - SSticker.round_start_irl)].)")
+		var/day = "... actually, WHAT dae is it?"
+		switch(GLOB.dayspassed)
+			if(1)
+				day = "Moon's dae."
+			if(2)
+				day = "Tiw's dae."
+			if(3)
+				day = "Wedding's dae."
+			if(4)
+				day = "Thule's dae."
+			if(5)
+				day = "Freyja's dae."
+			if(6)
+				day = "Saturn's dae."
+			if(7)
+				day = "Sun's dae."
+		. += "Oh no, it's [station_time_timestamp("hh:mm")] on a [day]"
 //		if(SSshuttle.emergency.mode == SHUTTLE_DOCKED)
 //			if(SSshuttle.emergency.timeLeft() < 30 MINUTES)
 //				. += span_warning("The last boat will leave in [round(SSshuttle.emergency.timeLeft()/600)] minutes.")
@@ -610,8 +628,23 @@
 /obj/structure/fluff/wallclock/examine(mob/user)
 	. = ..()
 	if(!broke)
-		. += "Oh no, it's [station_time_timestamp("hh:mm")]."
-		. += "(Round Time: [gameTimestamp("hh:mm:ss", REALTIMEOFDAY - SSticker.round_start_irl)].)"
+		var/day = "... actually, WHAT dae is it?"
+		switch(GLOB.dayspassed)
+			if(1)
+				day = "Moon's dae."
+			if(2)
+				day = "Tiw's dae."
+			if(3)
+				day = "Wedding's dae."
+			if(4)
+				day = "Thule's dae."
+			if(5)
+				day = "Freyja's dae."
+			if(6)
+				day = "Saturn's dae."
+			if(7)
+				day = "Sun's dae."
+		. += "Oh no, it's [station_time_timestamp("hh:mm")] on a [day]"
 //		testing("mode is [SSshuttle.emergency.mode] should be [SHUTTLE_DOCKED]")
 //		if(SSshuttle.emergency.mode == SHUTTLE_DOCKED)
 //			if(SSshuttle.emergency.timeLeft() < 30 MINUTES)
@@ -750,6 +783,18 @@
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
 
+/obj/structure/fluff/alch
+	name = "alchemical lab"
+	desc = ""
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "alch"
+	density = TRUE
+	anchored = TRUE
+	layer = BELOW_OBJ_LAYER
+	blade_dulling = DULLING_BASHCHOP
+	max_integrity = 450
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
 /obj/structure/fluff/statue
 	name = "statue"
@@ -866,6 +911,52 @@
 /obj/structure/fluff/statue/scare
 	name = "scarecrow"
 	icon_state = "td"
+
+/obj/structure/fluff/statue/tdummy2
+	name = "Sentient Sparring Dummy"
+	icon_state = "p_dummy"
+	color = COLOR_LUX
+	icon = 'icons/roguetown/misc/structure.dmi'
+
+/obj/structure/fluff/statue/tdummy2/attackby(obj/item/W, mob/user, params)
+	if(!user.cmode)
+		if(W.associated_skill)
+			if(user.mind)
+				if(isliving(user))
+					var/mob/living/L = user
+					var/probby = (L.STALUC / 10) * 100
+					probby = min(probby, 99)
+					user.changeNext_move(CLICK_CD_MELEE)
+					if(W.max_blade_int)
+						W.remove_bintegrity(5)
+					if(!L.rogfat_add(rand(4,6)))
+						if(ishuman(L))
+							var/mob/living/carbon/human/H = L
+							if(H.tiredness >= 75)
+								H.apply_status_effect(/datum/status_effect/debuff/trainsleep)
+						probby = 0
+					if(!(L.mobility_flags & MOBILITY_STAND))
+						probby = 0
+					if(L.STAINT < 3)
+						probby = 0
+					if(prob(probby) && !L.has_status_effect(/datum/status_effect/debuff/trainsleep) && !user.buckled)
+						user.visible_message(span_info("[user] trains on [src]!"))
+						var/boon = user.mind.get_learning_boon(W.associated_skill)
+						var/amt2raise = L.STAINT/2
+						if(user.mind.get_skill_level(W.associated_skill) >= SKILL_LEVEL_JOURNEYMAN)
+							to_chat(user, span_warning("I've learned all I can from doing this, it's time for the real thing."))
+							amt2raise = 0
+						if(amt2raise > 0)
+							user.mind.adjust_experience(W.associated_skill, amt2raise * boon, FALSE)
+						playsound(loc,pick('sound/combat/hits/onwood/education1.ogg','sound/combat/hits/onwood/education2.ogg','sound/combat/hits/onwood/education3.ogg'), rand(50,100), FALSE)
+					else
+						user.visible_message(span_danger("[user] trains on [src], but [src] ripostes!"))
+						L.AdjustKnockdown(1)
+						L.throw_at(get_step(L, get_dir(src,L)), 2, 2, L, spin = FALSE)
+						playsound(loc, 'sound/combat/hits/kick/stomp.ogg', 100, TRUE, -1)
+					flick(pick("p_dummy_smashed","p_dummy_smashedalt"),src)
+					return
+	..()
 
 /obj/structure/fluff/statue/tdummy
 	name = "practice dummy"
@@ -1051,78 +1142,95 @@
 					return FALSE
 				var/marriage
 				var/obj/item/reagent_containers/food/snacks/grown/apple/A = W
+				//The MARRIAGE TEST BEGINS
 				if(A.bitten_names.len)
 					if(A.bitten_names.len == 2)
-						var/list/found_mobs = list()
+						//Groom provides the surname that the bride will take
+						var/mob/living/carbon/human/thegroom
+						var/mob/living/carbon/human/thebride
+						//Did anyone get cold feet on the wedding?
 						for(var/mob/M in viewers(src, 7))
 							testing("check [M]")
-							if(found_mobs.len >= 2)
+							if(thegroom && thebride)
 								break
 							if(!ishuman(M))
 								continue
 							var/mob/living/carbon/human/C = M
+							/*
+							* This is for making the first biters name
+							* always be applied to the groom.
+							* second. This seems to be the best way
+							* to use the least amount of variables.
+							*/
+							var/name_placement = 1
 							for(var/X in A.bitten_names)
-								if(C.real_name == X)
-									testing("foundbiter [C.real_name]")
-									found_mobs += C
-						testing("foundmobslen [found_mobs.len]")
-						if(found_mobs.len == 2)
-							var/mob/living/carbon/human/theman
-							var/mob/living/carbon/human/thewoman
-							for(var/mob/living/carbon/human/M in found_mobs) //first find man
-								if(M.marriedto)
+								//I think that guy is dead.
+								if(C.stat == DEAD)
 									continue
-								if(M.gender == MALE)
-									if(theman)
-										testing("fail64")
-										A.burn()
-										return
-									theman = M
-								else
-									if(thewoman)
-										A.burn()
-										testing("fai33")
-										return
-									thewoman = M
-							if(!theman || !thewoman)
-								testing("fail22")
-								return
-							var/surname2use
-							var/index = findtext(theman.real_name, " ")
-							var/womanfirst
-							theman.original_name = theman.real_name
-							thewoman.original_name = thewoman.real_name
-							if(!index)
-								surname2use = theman.dna.species.random_surname()
+								//That person is not a player or afk.
+								if(!C.client)
+									continue
+								//Gotta get a divorce first
+								if(C.marriedto)
+									continue
+								if(C.real_name == X)
+									//I know this is very sloppy but its alot less code.
+									switch(name_placement)
+										if(1)
+											if(thegroom)
+												continue
+											thegroom = C
+										if(2)
+											if(thebride)
+												continue
+											thebride = C
+									testing("foundbiter [C.real_name]")
+									name_placement++
+
+						//WE FOUND THEM LETS GET THIS SHOW ON THE ROAD!
+						if(!thegroom || !thebride)
+							testing("fail22")
+							return
+						//Alright now for the boring surname formatting.
+						var/surname2use
+						var/index = findtext(thegroom.real_name, " ")
+						var/bridefirst
+						thegroom.original_name = thegroom.real_name
+						thebride.original_name = thebride.real_name
+						if(!index)
+							surname2use = thegroom.dna.species.random_surname()
+						else
+							/*
+							* This code prevents inheriting the last name of
+							* " of wolves" or " the wolf"
+							* remove this if you want "Skibbins of wolves" to
+							* have his bride become "Sarah of wolves".
+							*/
+							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
+								surname2use = thegroom.dna.species.random_surname()
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
 							else
-								if(findtext(theman.real_name, " of ") || findtext(theman.real_name, " the "))
-									surname2use = theman.dna.species.random_surname()
-									theman.change_name(copytext(theman.real_name, 1,index))
-								else
-									surname2use = copytext(theman.real_name, index)
-									theman.change_name(copytext(theman.real_name, 1,index))
-							index = findtext(thewoman.real_name, " ")
-							if(index)
-								thewoman.change_name(copytext(thewoman.real_name, 1,index))
-							womanfirst = thewoman.real_name
-							theman.change_name(theman.real_name + surname2use)
-							thewoman.change_name(thewoman.real_name + surname2use)
-							theman.marriedto = thewoman.real_name
-							thewoman.marriedto = theman.real_name
-							theman.adjust_triumphs(1)
-							thewoman.adjust_triumphs(1)
-							priority_announce("[theman.real_name] has married [womanfirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
-							marriage = TRUE
-							qdel(A)
-//							if(theman.has_stress(/datum/stressevent/nobel))
-//								thewoman.add_stress(/datum/stressevent/nobel)
-//							if(thewoman.has_stress(/datum/stressevent/nobel))
-//								theman.add_stress(/datum/stressevent/nobel)
+								surname2use = copytext(thegroom.real_name, index)
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+						index = findtext(thebride.real_name, " ")
+						if(index)
+							thebride.change_name(copytext(thebride.real_name, 1,index))
+						bridefirst = thebride.real_name
+						thegroom.change_name(thegroom.real_name + surname2use)
+						thebride.change_name(thebride.real_name + surname2use)
+						thegroom.marriedto = thebride.real_name
+						thebride.marriedto = thegroom.real_name
+						thegroom.adjust_triumphs(1)
+						thebride.adjust_triumphs(1)
+						//Bite the apple first if you want to be the groom.
+						priority_announce("[thegroom.real_name] has married [bridefirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+						marriage = TRUE
+						qdel(A)
 
 				if(!marriage)
 					A.burn()
 					return
-	. = ..()
+	return ..()
 
 /obj/structure/fluff/psycross/proc/check_prayer(mob/living/L,message)
 	if(!L || !message)
@@ -1268,7 +1376,7 @@
 	icon = 'icons/roguetown/items/natural.dmi'
 	icon_state = "headstake"
 	density = FALSE
-	anchored = TRUE	
+	anchored = TRUE
 	dir = SOUTH
 	var/obj/item/grown/log/tree/stake/stake
 	var/obj/item/bodypart/head/victim
@@ -1282,7 +1390,7 @@
 	stake = locate(/obj/item/grown/log/tree/stake) in parts_list
 
 ///obj/structure/fluff/headstake/Initialize()
-//	. = ..()	
+//	. = ..()
 
 /obj/structure/fluff/headstake/OnCrafted(dirin, user)
 	dir = SOUTH

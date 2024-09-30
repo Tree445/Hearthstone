@@ -131,12 +131,14 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	desc = "A piece of rough ground stone."
 	gripped_intents = null
 	dropshrink = 0.75
+	mill_result = /obj/item/reagent_containers/powder/salt
 	possible_item_intents = list(INTENT_GENERIC)
 	force = 10
 	throwforce = 15
 	slot_flags = ITEM_SLOT_MOUTH
 	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY
+	destroy_sound = 'sound/foley/hit_rock.ogg'
 	grind_results = list(/datum/reagent/consumable/sodiumchloride = 15)
 
 /obj/item/natural/stone/Initialize()
@@ -254,6 +256,23 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	else
 		..()
 
+/obj/item/reagent_containers/food/snacks/stone
+	name = "temporary kobold snack item for stone"
+	desc = ""
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("salt" = 1)
+	foodtype = CLOTH
+
+/obj/item/natural/stone/attack(mob/living/M, mob/living/user, def_zone)
+	if(user.used_intent.type != INTENT_HARM && iskobold(M))
+		var/obj/item/reagent_containers/food/snacks/stone/R = new
+		var/obj/item/natural/stone/I = user.get_active_held_item()
+		if(istype(I, /obj/item/natural/stone))
+			R.name = name
+			if(R.attack(M, user, def_zone))
+				take_damage(100, sound_effect=FALSE)
+			qdel(R)
+
 /obj/item/natural/rock
 	name = "rock"
 	desc = "A rock protudes from the ground."
@@ -341,7 +360,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	mineralType = /obj/item/rogueore/coal
 
 /obj/item/natural/rock/salt
-	mineralType = /obj/item/reagent_containers/powder/flour/salt
+	mineralType = /obj/item/reagent_containers/powder/salt
 
 /obj/item/natural/rock/gem
 	mineralType = /obj/item/roguegem/random

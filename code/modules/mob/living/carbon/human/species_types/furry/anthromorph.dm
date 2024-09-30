@@ -4,10 +4,15 @@
 /datum/species/anthromorph
 	name = "Wild-Kin"
 	id = "anthromorph"
-	desc = "Wild-Kin; a name for a furred creacher that does not fall under any particular race. \
-	It is sometimes difficult to tell one of us from another race at a glance; one of Wild-Kin ancestry may look very similar to a Tabaxi or Vulpkanin. \
-	Due to the fact we are so numerous, we are welcome almost anywhere, along with our Half-Kin sister-race \
-	We are average of constitution, strength, and intellegence."
+	desc = "<b>Wild-Kin</b><br>\
+		The Wild-Kin, children of Dendor, they live in dense forests and prefer nature to the cities. \
+		But there are those Wild-Kin who have adapted to city life, living there as woodsmen and rangers. \
+		Where there is nature, there are Wild-Kin, and they largely live in peace wherever they are. \
+		The Wild-Kin can appear in many different forms, catlike Wild-Kin which inhabit the deserts of Valoria to the more foxlike Wild-Kin who live in the Great Forests of Dendor itself. \
+		Wild-Kin as a species are so vast and numerous that to catalogue every specific type of Wild-Kin would take ten lifetimes. \
+		Due to their relationship with nature, they favor Dendor of the divine pantheon, but that isn't to say that some Wild-Kin do not worship other gods, such as Abyssor, Malum or even Ravox."
+
+	skin_tone_wording = "Habitat"
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -17,11 +22,12 @@
 	)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	use_skintones = 1
 	attack_verb = "slash"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	possible_ages = ALL_AGES_LIST
-	limbs_icon_m = 'icons/mob/species/male.dmi'
-	limbs_icon_f = 'icons/mob/species/female.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
@@ -36,10 +42,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	race_bonus = list(STAT_PERCEPTION = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
@@ -62,6 +69,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/tail/anthro,
 		/datum/customizer/organ/tail_feature/anthro,
 		/datum/customizer/organ/snout/anthro,
@@ -82,6 +90,7 @@
 		/datum/body_marking_set/bellysocks,
 		/datum/body_marking_set/tiger,
 		/datum/body_marking_set/tiger_dark,
+		/datum/body_marking_set/splotches,
 	)
 	body_markings = list(
 		/datum/body_marking/plain,
@@ -104,6 +113,8 @@
 		/datum/body_marking/front,
 		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/splotches,
+		/datum/body_marking/splotcheswap,
 		/datum/body_marking/spotted,
 	)
 	descriptor_choices = list(
@@ -130,6 +141,19 @@
 
 /datum/species/anthromorph/qualifies_for_rank(rank, list/features)
 	return TRUE
+
+/datum/species/anthromorph/get_skin_list()
+	return list(
+		"the Grand Forests" = "271f1b",
+		"the Crimson Lands" = "271f1c",
+		"the Terrorbog" = "271f1d",
+		"the Highlands" = "271f1e",
+		"the Western Mountains" = "271f1f",
+		"the Frostlands" = "271f2a",
+		"the Unknown Lands" = "271f2b",
+		"the Valorian Deserts" = "271f2c",
+		"the Eastern Plains" = "271f2c",
+	)
 
 /datum/species/anthromorph/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST

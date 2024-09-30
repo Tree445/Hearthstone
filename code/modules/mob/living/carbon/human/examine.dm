@@ -3,16 +3,20 @@
 		return
 	if(user.mind)
 		user.mind.i_know_person(src)
-	if(!isdarkelf(user) && isdarkelf(src))
-		user.add_stress(/datum/stressevent/delf)
-	if(!istiefling(user) && istiefling(src))
-		user.add_stress(/datum/stressevent/tieb)
-	/*
-	if(!isargonian(user) && isargonian(src))
-		user.add_stress(/datum/stressevent/brazillian)
-	*/
+/*	var/datum/species/self_species = dna.species
+	var/datum/species/examiner_species = user.dna.species
+	if(self_species.stress_examine && self_species.type != examiner_species.type && !HAS_TRAIT(user, TRAIT_TOLERANT))
+		var/event_type = /datum/stressevent/shunned_race
+		if(HAS_TRAIT(user, TRAIT_XENOPHOBIC))
+			event_type = /datum/stressevent/shunned_race_xenophobic
+		var/datum/stressevent/event = user.add_stress(event_type)
+		event.desc = self_species.stress_desc /Editted out of 21 traits port, likely from sleep adv pr*/
 	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
 		user.add_stress(/datum/stressevent/parastr)
+	if(HAS_TRAIT(user, TRAIT_JESTERPHOBIA) && job == "Jester")
+		user.add_stress(/datum/stressevent/jesterphobia)
+	if(HAS_TRAIT(src, TRAIT_BEAUTIFUL))
+		user.add_stress(/datum/stressevent/beautiful)
 
 /mob/living/carbon/human/examine(mob/user)
 	var/observer_privilege = isobserver(user)
@@ -56,23 +60,27 @@
 	else
 		on_examine_face(user)
 		var/used_name = name
+		var/used_title = get_role_title()
+		var/display_as_wanderer = FALSE
+		var/is_returning = FALSE
 		if(observer_privilege)
-			used_name = name
-		if(job == "Goblin King")
-			var/used_title =  "King or Queen of the Tribe"
-		// Use the possibly modified title in the output
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [used_title].")
-		else
+			used_name = real_name
+		if(migrant_type)
+			var/datum/migrant_role/migrant = MIGRANT_ROLE(migrant_type)
+			if(migrant.show_wanderer_examine)
+				display_as_wanderer = TRUE
+		else if(job)
 			var/datum/job/J = SSjob.GetJob(job)
-			var/used_title = J.title
-			if(J.f_title && (t_He == "She"))
-				used_title = J.f_title
 			if(J.wanderer_examine)
-				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
-			else
-				if(J.advjob_examine)
-					used_title = advjob
-				. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [islatejoin ? "returning " : ""][race_name] [used_title].")
+				display_as_wanderer = TRUE
+			if(islatejoin)
+				is_returning = TRUE
+		if(display_as_wanderer)
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
+		else if(used_title)
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title].")
+		else
+			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
 			var/list/skin_tones = dna.species.get_skin_list()
@@ -125,6 +133,8 @@
 				. += span_userdanger("A MONSTER!")
 			if(mind.assigned_role == "Lunatic")
 				. += span_userdanger("LUNATIC!")
+			if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
+				. += span_userdanger("CURSED!")
 
 		if(HAS_TRAIT(src, TRAIT_MANIAC_AWOKEN))
 			. += span_userdanger("MANIAC!")
@@ -134,7 +144,7 @@
 		else if(HAS_TRAIT(src, TRAIT_COMMIE) && HAS_TRAIT(user, TRAIT_COMMIE))
 			. += span_notice("Fellow Giver!")
 
-	if(leprosy == 1)
+	if(HAS_TRAIT(src, TRAIT_LEPROSY))
 		. += span_necrosis("A LEPER...")
 
 	if(user != src)
@@ -314,7 +324,7 @@
 		)
 		for(var/bleed_zone in bleed_zones)
 			var/obj/item/bodypart/bleeder = get_bodypart(bleed_zone)
-			if(!bleeder?.get_bleed_rate() || (!observer_privilege && !get_location_accessible(src, bleeder.body_zone)))
+			if(!bleeder?.get_bleed_rate() || (!observer_privilege && !get_location_accessible(src, bleeder.body_zone, skipundies = TRUE)))
 				continue
 			bleeding_limbs += parse_zone(bleeder.body_zone)
 		if(length(bleeding_limbs))
@@ -499,15 +509,39 @@
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
 				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
 
+	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src) //vardefine for descriptors
+
 	if(!obscure_name && headshot_link)
-		. += "<a href='?src=[REF(src)];task=view_headshot;'>View headshot</a>"
-	
-	var/list/lines = build_cool_description(get_mob_descriptors(obscure_name, user), src)
-	for(var/line in lines)
-		. += span_info(line)
-
-	. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
-
+		. += "<a href='?src=[REF(src)];task=view_headshot;'>View Infocard</a>"
+		. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
+		for(var/line in lines)        //this line
+			. += span_info(line)	// and this line are responsible for placing descriptor position
+	if(!obscure_name && flavor_text)
+		if(!obscure_name && headshot_link)
+	 	return
+		. += "<a href='?src=[REF(src)];task=view_flavor;'>View Description</a>"
+		. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
+		for(var/line in lines)        //this line
+			. += span_info(line)	// and this line are responsible for placing descriptor position
+	if(!obscure_name && ooc_notes)
+		if(!obscure_name && headshot_link)
+			return
+		if(!obscure_name && flavor_text)
+			return
+		. += "<a href='?src=[REF(src)];task=view_ooc_notes;'>View OOC Notes</a>"
+		. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
+		for(var/line in lines)        //this line
+			. += span_info(line)	// and this line are responsible for placing descriptor position
+	if(!obscure_name)
+		if(!obscure_name && headshot_link)
+			return
+		if(!obscure_name && flavor_text)
+			return
+		if(!obscure_name && ooc_notes)
+			return
+		. += "<a href='?src=[REF(src)];task=view_erp_preferences;'>View ERP Preferences</a>"
+		for(var/line in lines)        //this line
+			. += span_info(line)	// and this line are responsible for placing descriptor position
 	var/trait_exam = common_trait_examine()
 	if(!isnull(trait_exam))
 		. += trait_exam

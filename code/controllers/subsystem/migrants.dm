@@ -7,9 +7,9 @@ SUBSYSTEM_DEF(migrants)
 	var/time_until_next_wave = 2 MINUTES
 	var/wave_timer = 0
 
-	var/time_between_waves = 3 MINUTES
-	var/time_between_fail_wave = 90 SECONDS
-	var/wave_wait_time = 30 SECONDS
+	var/time_between_waves = 1 MINUTES
+	var/time_between_fail_wave = 20 SECONDS
+	var/wave_wait_time = 10 SECONDS
 
 	var/list/spawned_waves = list()
 
@@ -182,6 +182,7 @@ SUBSYSTEM_DEF(migrants)
 	SSjob.EquipRank(character, rank, TRUE)
 
 	var/datum/migrant_role/role = MIGRANT_ROLE(assignment.role_type)
+	character.migrant_type = assignment.role_type
 
 
 	/// copy pasta from AttemptLateSpawn(rank) further on TODO put it in a proc and use in both places
@@ -237,6 +238,9 @@ SUBSYSTEM_DEF(migrants)
 	if(role.advclass_cat_rolls)
 		SSrole_class_handler.setup_class_handler(character, role.advclass_cat_rolls)
 		hugboxify_for_class_selection(character)
+	else
+		// Apply post equipment stuff
+		apply_character_post_equipment(character)
 
 /datum/controller/subsystem/migrants/proc/get_priority_players(list/players, role_type)
 	var/list/priority = list()
@@ -253,6 +257,14 @@ SUBSYSTEM_DEF(migrants)
 	if(!player.prefs)
 		return FALSE
 	var/datum/preferences/prefs = player.prefs
+	if(role.banned_leprosy && is_misc_banned(player.ckey, BAN_MISC_LEPROSY))
+		return FALSE
+	if(role.banned_lunatic && is_misc_banned(player.ckey, BAN_MISC_LUNATIC))
+		return FALSE
+	if(!player.prefs.allowed_respawn())
+		return FALSE
+	if(is_migrant_banned(player.ckey, role.name))
+		return FALSE
 	if(role.allowed_races && !(prefs.pref_species.type in role.allowed_races))
 		return FALSE
 	if(role.allowed_sexes && !(prefs.gender in role.allowed_sexes))
@@ -269,7 +281,7 @@ SUBSYSTEM_DEF(migrants)
 	if(wave_type)
 		log_game("Migrants: Rolled wave: [wave_type]")
 		set_current_wave(wave_type, wave_wait_time)
-	
+
 	time_until_next_wave = time_between_fail_wave
 
 /datum/controller/subsystem/migrants/proc/roll_wave()

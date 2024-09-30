@@ -4,10 +4,14 @@
 /datum/species/moth
 	name = "Fluvian"
 	id = "moth"
-	desc = "A race that hails from the far-away land of Deine-Coad, a grassy, forested land. We are an astute, proud people, albiet slightly weak of constitution. \
-	The creation myth of the Fluvian are that Eora, to emulate even a shred of her grace, plucked a palmful of moon-dust from Noc's mane and salted it upon Humens and other Creachers to create something which mimicked a fraction of her beauty. \
-	We are delicate of constiution and strength, but intellegent, and agile. Due to our unique biology, the males and females of our race are equal in strength."
-	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
+	desc = "<b>Fluvian</b><br>\
+		Natives to the Great Forests of Dendor, the Fluvians are a mothlike race, astute and proud, though not very strong. \
+		It is said that Eora, somewhat jealous of Noc's own accomplishment with the Aasimar, plucked a palmful of moon-dust from Noc's mane, and salted it upon Humens and other creatures to create something which mimicks a fraction of her beauty. \
+		Intelligent and agile, Fluvians are usually found in managerial positions such as archivists and stewards. \
+		The strength of Fluvian males and females are equal, a unique trait for this strange race. \
+		The Fluvians venerate Eora, though a few of them worship other gods such as Noc, Dendor, Xylix and Pestra."
+
+	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS,HAIR)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -27,10 +31,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,0), OFFSET_HEAD_F = list(0,0), \
 		OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,0), \
 		OFFSET_NECK_F = list(0,0), OFFSET_MOUTH_F = list(0,0), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0)
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1)
 		)
 	specstats = list("strength" = -1, "perception" = 1, "intelligence" = 1, "constitution" = -1, "endurance" = 1, "speed" = 0, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 2, "constitution" = -2, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	race_bonus = list(STAT_INTELLIGENCE = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -49,10 +54,17 @@
 		ORGAN_SLOT_NECK_FEATURE = /obj/item/organ/neck_feature/moth_fluff,
 		ORGAN_SLOT_WINGS = /obj/item/organ/wings/moth,
 		)
+	bodypart_features = list(
+		/datum/bodypart_feature/hair/head,
+		/datum/bodypart_feature/hair/facial,
+	)
 	customizers = list(
 		/datum/customizer/organ/eyes/moth,
+		/datum/customizer/bodypart_feature/hair/head/humanoid,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/wings/moth,
 		/datum/customizer/organ/antennas/moth,
 		/datum/customizer/organ/neck_feature/moth_fluff,

@@ -50,6 +50,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/secrets,
 	/client/proc/toggle_hear_radio,		/*allows admins to hide all radio output*/
 	/client/proc/reload_admins,
+	/client/proc/reload_whitelist,
 	/client/proc/reestablish_db_connection, /*reattempt a connection to the database*/
 	/client/proc/cmd_admin_pm_context,	/*right-click adminPM interface*/
 	/client/proc/cmd_admin_pm_panel,		/*admin-pm list*/
@@ -110,7 +111,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/discord_id_manipulation,
 	/datum/admins/proc/open_borgopanel
 	)
-GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel, /client/proc/check_pq, /client/proc/adjust_pq, /client/proc/getcurrentlogs, /client/proc/getserverlogs))
+GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel, /client/proc/role_ban_panel, /client/proc/check_pq, /client/proc/adjust_pq, /client/proc/getcurrentlogs, /client/proc/getserverlogs))
 GLOBAL_PROTECT(admin_verbs_ban)
 GLOBAL_LIST_INIT(admin_verbs_sounds, list(/client/proc/play_local_sound, /client/proc/play_sound, /client/proc/set_round_end_sound))
 GLOBAL_PROTECT(admin_verbs_sounds)
@@ -267,6 +268,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/proc/possess,
 	/proc/release,
 	/client/proc/reload_admins,
+	/client/proc/reload_whitelist,
 	/client/proc/panicbunker,
 	/client/proc/admin_change_sec_level,
 	/client/proc/toggle_nuke,
@@ -412,7 +414,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		log_admin("[key_name(usr)] admin ghosted.")
 		message_admins("[key_name_admin(usr)] admin ghosted.")
 		var/mob/body = mob
-		body.invisibility = INVISIBILITY_MAXIMUM
 		body.density = 0
 		body.ghostize(TRUE, admin = TRUE)
 		if(body && !body.key)
@@ -470,6 +471,15 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		return
 	holder.ban_panel()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Banning Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/role_ban_panel()
+	set name = "Role Ban Panel"
+	set category = "Admin"
+	if(!check_rights(R_BAN))
+		return
+	holder.role_ban_panel.show_ui(usr)
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Role Ban Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 
 /client/proc/unban_panel()
 	set name = "Unbanning Panel"
@@ -825,7 +835,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!holder)
 		return
 	var/player_book = input(src, "What is the book file you want to delete? (spaces and other characters are their url encode versions for the file name, so for example spaces are +)")
-	if(player_book)	
+	if(player_book)
 		SSlibrarian.del_player_book(player_book)
 		message_admins("[src] has deleted the player book: [player_book]")
 	else

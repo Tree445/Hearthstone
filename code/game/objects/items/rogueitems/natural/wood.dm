@@ -4,6 +4,7 @@
 	desc = "A big tree log. It's very heavy, and huge."
 	icon_state = "log"
 	blade_dulling = DULLING_CUT
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/small = 2)
 	obj_flags = CAN_BE_HIT
@@ -19,6 +20,7 @@
 	desc = "Smaller log that came from a larger log. Suitable for building."
 	icon_state = "logsmall"
 	max_integrity = 30
+	attacked_sound = 'sound/misc/woodhit.ogg'
 	static_debris = list(/obj/item/grown/log/tree/stick = 3)
 	firefuel = 20 MINUTES
 	twohands_required = FALSE
@@ -119,6 +121,7 @@
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
+	tool_behaviour = TOOL_RETRACTOR
 
 /obj/item/grown/log/tree/lumber
 	name = "lumber"

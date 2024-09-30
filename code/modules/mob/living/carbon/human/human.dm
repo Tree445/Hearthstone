@@ -35,19 +35,15 @@
 			return
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
-				if(underwear == "Nude")
+				if(!underwear)
 					return
+				visible_message(span_notice("[src] begins to take off [underwear]..."))
 				if(do_after(user, 30, needhand = 1, target = src))
-					cached_underwear = underwear
-					underwear = "Nude"
-					update_body()
-					var/obj/item/undies/U
-					if(gender == MALE)
-						U = new/obj/item/undies(get_turf(src))
-					else
-						U = new/obj/item/undies/f(get_turf(src))
-					U.color = underwear_color
-					user.put_in_hands(U)
+					var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
+					chest.remove_bodypart_feature(underwear.undies_feature)
+					underwear.forceMove(get_turf(src))
+					src.put_in_hands(underwear)
+					underwear = null
 #endif
 
 /mob/living/carbon/human/Initialize()
@@ -329,7 +325,7 @@
 
 #ifdef MATURESERVER
 	if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
-		dat += "<tr><td><BR><B>Underwear:</B> <A href='?src=[REF(src)];undiesthing=1'>[underwear == "Nude" ? "Nothing" : "Remove"]</A></td></tr>"
+		dat += "<tr><td><BR><B>Underwear:</B> <A href='?src=[REF(src)];undiesthing=1'>[!underwear ? "Nothing" : "Remove"]</A></td></tr>"
 #endif
 
 	dat += {"</table>"}
@@ -453,7 +449,6 @@
 	else
 		facial_hairstyle = "Shaved"
 	hairstyle = pick("Bedhead", "Bedhead 2", "Bedhead 3")
-	underwear = "Nude"
 	update_body()
 	update_hair()
 
@@ -758,6 +753,7 @@
 /mob/living/carbon/human/vv_get_dropdown()
 	. = ..()
 	VV_DROPDOWN_OPTION("", "---------")
+	VV_DROPDOWN_OPTION(VV_HK_APPLY_SPECIAL, "Apply Special Trait")
 	VV_DROPDOWN_OPTION(VV_HK_REAPPLY_PREFS, "Reapply Preferences")
 	VV_DROPDOWN_OPTION(VV_HK_COPY_OUTFIT, "Copy Outfit")
 	VV_DROPDOWN_OPTION(VV_HK_MOD_MUTATIONS, "Add/Remove Mutation")
@@ -777,6 +773,32 @@
 		if(!client || !client.prefs)
 			return
 		client.prefs.copy_to(src, TRUE, FALSE)
+	if(href_list[VV_HK_APPLY_SPECIAL])
+		if(!check_rights(R_SPAWN))
+			return
+		var/mob/admin_user = usr
+		message_admins("Admin [key_name_admin(admin_user)] is applying a special trait to [key_name(src)].")
+		var/first_result = input(admin_user, "Chosen or random?","Apply Special") as null|anything in list("Choose", "Random")
+		if(!first_result)
+			return
+		var/trait_type
+		if(first_result == "Choose")
+			var/trait_result = input(admin_user, "Choose special to apply","Apply Special") as null|anything in GLOB.special_traits
+			if(!trait_result)
+				return
+			trait_type = trait_result
+		else
+			trait_type = get_random_special_for_char(src, src.client)
+		if(!trait_type)
+			return
+		var/silent_result = input(admin_user, "Trait: [trait_type]\nGive player the trait greet text?","Apply Special") as null|anything in list("Yes", "No", "Cancel")
+		var/silent = FALSE
+		if(!silent_result || silent_result == "Cancel")
+			return
+		if(silent_result == "No")
+			silent = TRUE
+		message_admins("Admin [key_name_admin(admin_user)] applied special [trait_type] to [key_name(src)]. [first_result == "Chosen" ? "(Chosen)" : "(Random)"][silent_result == "No" ? "(Silent)" : ""]")
+		apply_special_trait(src, trait_type, silent)
 	if(href_list[VV_HK_COPY_OUTFIT])
 		if(!check_rights(R_SPAWN))
 			return
@@ -875,7 +897,13 @@
 			message_admins(msg)
 			admin_ticket_log(src, msg)
 
+//Target = what was clicked on, User = thing doing the clicking
 /mob/living/carbon/human/MouseDrop_T(mob/living/target, mob/living/user)
+	if(isseelie(target) && !(HAS_TRAIT(src, TRAIT_TINY)) && istype(user.rmb_intent, /datum/rmb_intent/weak))
+		if(can_piggyback(target))
+			shoulder_ride(target)
+			return TRUE
+
 	if(user == target)
 		return FALSE
 	if(pulling == target && stat == CONSCIOUS)
@@ -892,6 +920,11 @@
 					return TRUE
 	. = ..()
 
+/mob/living/carbon/human/proc/shoulder_ride(mob/living/carbon/target)
+	buckle_mob(target, TRUE, TRUE, FALSE, 0, 0)
+	visible_message(span_notice("[target] gently sits on [src]'s shoulder."))
+	//target.set_mob_offsets("shoulder_ride", _x = 5, _y = 10)
+
 //src is the user that will be carrying, target is the mob to be carried
 /mob/living/carbon/human/proc/can_piggyback(mob/living/carbon/target)
 	return (istype(target) && target.stat == CONSCIOUS)
@@ -901,6 +934,10 @@
 
 /mob/living/carbon/human/proc/fireman_carry(mob/living/carbon/target)
 	var/carrydelay = 50 //if you have latex you are faster at grabbing
+
+	if(HAS_TRAIT(src, TRAIT_TINY))
+		to_chat(src, span_warning("I'm too small to carry [target]."))
+		return
 
 	var/backnotshoulder = FALSE
 	if(r_grab && l_grab)

@@ -75,15 +75,26 @@
 	export_price = 3
 	importexport_amt = 10
 
+/datum/roguestock/stockpile/silk
+	name = "Silk"
+	desc = "Strands of high-quality silk to make luxury clothing."
+	item_type = /obj/item/natural/silk
+	held_items = list(0, 2)
+	payout_price = 2
+	withdraw_price = 4
+	transport_fee = 1
+	export_price = 4
+	importexport_amt = 10
+
 /datum/roguestock/stockpile/hide
 	name = "Hide"
 	desc = "Stripped hide from animals."
 	item_type = /obj/item/natural/hide
 	held_items = list(0, 0)
-	payout_price = 10
-	withdraw_price = 15
+	payout_price = 6
+	withdraw_price = 12
 	transport_fee = 3
-	export_price = 15
+	export_price = 12
 	importexport_amt = 5
 
 /datum/roguestock/stockpile/fur
@@ -91,17 +102,17 @@
 	desc = "Hide with a long winter coat from animals."
 	item_type = /obj/item/natural/fur
 	held_items = list(0, 0)
-	payout_price = 15
-	withdraw_price = 23
+	payout_price = 10
+	withdraw_price = 20
 	transport_fee = 5
-	export_price = 23
+	export_price = 20
 	importexport_amt = 5
 
 /datum/roguestock/stockpile/salt
 	name = "Salt"
 	desc = "Rock salt useful for curing and cooking."
-	item_type = /obj/item/reagent_containers/powder/flour/salt
-	held_items = list(2, 0)
+	item_type = /obj/item/reagent_containers/powder/salt
+	held_items = list(8, 10)
 	payout_price = 3
 	withdraw_price = 5
 	transport_fee = 2
@@ -112,7 +123,18 @@
 	name = "Grain"
 	desc = "Spelt grain."
 	item_type = /obj/item/reagent_containers/food/snacks/grown/wheat
-	held_items = list(0, 4)
+	held_items = list(8, 10)
+	payout_price = 2
+	withdraw_price = 3
+	transport_fee = 1
+	export_price = 3
+	importexport_amt = 10
+
+/datum/roguestock/stockpile/oats
+	name = "Oats"
+	desc = "Oat grain."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/oat
+	held_items = list(8, 10)
 	payout_price = 2
 	withdraw_price = 3
 	transport_fee = 1
@@ -123,19 +145,74 @@
 	name = "Apple"
 	desc = "Harvested produce."
 	item_type = /obj/item/reagent_containers/food/snacks/grown/apple
-	held_items = list(0, 0)
+	held_items = list(8, 10)
+	payout_price = 2
+	withdraw_price = 4
+	transport_fee = 1
+	export_price = 3
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/potato
+	name = "Potato"
+	desc = "A starchy tuber."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/potato/rogue
+	held_items = list(8, 10)
 	payout_price = 3
 	withdraw_price = 5
 	transport_fee = 1
 	export_price = 5
 	importexport_amt = 5
 
+/datum/roguestock/stockpile/sugarcane
+	name = "Sugarcane"
+	desc = "A sweet stalk."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/sugarcane
+	held_items = list(8, 10)
+	payout_price = 3
+	withdraw_price = 5
+	transport_fee = 1
+	export_price = 5
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/pumpkin
+	name = "Pumpkin"
+	desc = "A large gourd."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/pumpkin
+	held_items = list(8, 10)
+	payout_price = 3
+	withdraw_price = 5
+	transport_fee = 1
+	export_price = 5
+	importexport_amt = 5
+
+// /datum/roguestock/stockpile/carrot
+// 	name = "Carrot"
+// 	desc = "A root vegetable."
+// 	item_type = /obj/item/reagent_containers/food/snacks/grown/carrot
+// 	held_items = list(0, 0)
+// 	payout_price = 3
+// 	withdraw_price = 5
+// 	transport_fee = 1
+// 	export_price = 5
+// 	importexport_amt = 5
+
+// /datum/roguestock/stockpile/garlic
+// 	name = "Garlic"
+// 	desc = "A pungent bulb."
+// 	item_type = /obj/item/reagent_containers/food/snacks/grown/garlic
+// 	held_items = list(0, 0)
+// 	payout_price = 3
+// 	withdraw_price = 5
+// 	transport_fee = 1
+// 	export_price = 5
+// 	importexport_amt = 5
+
 /datum/roguestock/stockpile/meat
 	name = "Meat"
 	desc = "Edible flesh harvested from animals."
 	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak
-	held_items = list(0, 0)
-	payout_price = 5
+	held_items = list(8, 10)
+	payout_price = 4
 	withdraw_price = 8
 	transport_fee = 2
 	export_price = 8
@@ -145,18 +222,18 @@
 	name = "Bird Meat"
 	desc = "Edible flesh harvested from birds."
 	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
-	held_items = list(0, 0)
-	payout_price = 5
+	held_items = list(8, 10)
+	payout_price = 4
 	withdraw_price = 8
 	transport_fee = 2
 	export_price = 8
 	importexport_amt = 5
 
-/datum/roguestock/stockpile/poultry
+/datum/roguestock/stockpile/egg
 	name = "Egg"
 	desc = "Egg laid by a hen."
 	item_type = /obj/item/reagent_containers/food/snacks/egg
-	held_items = list(0, 0)
+	held_items = list(8, 10)
 	payout_price = 3
 	withdraw_price = 5
 	transport_fee = 2
@@ -167,7 +244,7 @@
 	name = "Butter"
 	desc = "The product of milk and salt."
 	item_type = /obj/item/reagent_containers/food/snacks/butter
-	held_items = list(0, 0)
+	held_items = list(1, 2)
 	payout_price = 9
 	withdraw_price = 13
 	transport_fee = 3
@@ -178,18 +255,18 @@
 	name = "Cheese"
 	desc = "The product of milk and salt."
 	item_type = /obj/item/reagent_containers/food/snacks/rogue/cheese
-	held_items = list(0, 0)
-	payout_price = 3
-	withdraw_price = 5
+	held_items = list(8, 10)
+	payout_price = 6
+	withdraw_price = 10
 	transport_fee = 3
-	export_price = 5
+	export_price = 10
 	importexport_amt = 5
 
 /datum/roguestock/stockpile/carp
 	name = "Carp"
 	desc = "A common freshwater fish."
 	item_type = /obj/item/reagent_containers/food/snacks/fish/carp
-	held_items = list(0, 0)
+	held_items = list(8, 10)
 	payout_price = 3
 	withdraw_price = 5
 	transport_fee = 1
@@ -200,7 +277,7 @@
 	name = "Eel"
 	desc = "A sinuous fish."
 	item_type = /obj/item/reagent_containers/food/snacks/fish/eel
-	held_items = list(0, 0)
+	held_items = list(0, 5)
 	payout_price = 3
 	withdraw_price = 5
 	transport_fee = 3
@@ -211,7 +288,7 @@
 	name = "Angler"
 	desc = "A sinuous fish."
 	item_type = /obj/item/reagent_containers/food/snacks/fish/angler
-	held_items = list(0, 0)
+	held_items = list(0, 5)
 	payout_price = 5
 	withdraw_price = 8
 	transport_fee = 3
@@ -222,7 +299,7 @@
 	name = "Clownfish"
 	desc = "A boring fish."
 	item_type = /obj/item/reagent_containers/food/snacks/fish/clownfish
-	held_items = list(0, 0)
+	held_items = list(4, 6)
 	payout_price = 8
 	withdraw_price = 11
 	transport_fee = 5

@@ -18,7 +18,7 @@
 	min_pq = -10
 	max_pq = null
 
-	cmode_music = 'sound/music/combat_giza.ogg'
+	cmode_music = 'sound/music/combat2.ogg'
 
 /datum/outfit/job/roguetown/shophand/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -29,7 +29,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltl = /obj/item/keyring/merchant
+		beltl = /obj/item/storage/keyring/merchant
 		backr = /obj/item/storage/backpack/rogue/satchel
 	if(H.gender == FEMALE)
 		pants = /obj/item/clothing/under/roguetown/tights
@@ -37,7 +37,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltl = /obj/item/keyring/merchant
+		beltl = /obj/item/storage/keyring/merchant
 		backr = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)

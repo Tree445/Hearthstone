@@ -38,13 +38,13 @@
 	heldz_items = 3
 	sewrepair = TRUE
 
-/obj/item/storage/belt/rogue/leather/dropped(mob/living/carbon/human/user)
+/*/obj/item/storage/belt/rogue/leather/dropped(mob/living/carbon/human/user)
 	..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
 		var/list/things = STR.contents()
 		for(var/obj/item/I in things)
-			STR.remove_from_storage(I, get_turf(src))
+			STR.remove_from_storage(I, get_turf(src)) */ //this should stop belts from dropping stuff but isnt
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
@@ -123,7 +123,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
 		STR.max_combined_w_class = 6
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_w_class = WEIGHT_CLASS_SMALL
 		STR.max_items = 3
 		STR.not_while_equipped = FALSE
 
@@ -186,9 +186,77 @@
 	alternate_worn_layer = UNDER_CLOAK_LAYER
 	sewrepair = TRUE
 
+/obj/item/storage/belt/rogue/pouch/skit
+	name = "surgical pouch"
+	desc = "Emergency surgical pouch."
+	icon_state = "pouch"
+	item_state = "pouch"
+	icon = 'icons/roguetown/clothing/storage.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("whips", "lashes")
+	max_integrity = 300
+	equip_sound = 'sound/blank.ogg'
+	content_overlays = FALSE
+	bloody_icon_state = "bodyblood"
+	sewrepair = TRUE
+
+/obj/item/storage/belt/rogue/pouch/skit/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		STR.max_combined_w_class = 42
+		STR.max_w_class = WEIGHT_CLASS_NORMAL
+		STR.max_items = 12
+		STR.set_holdable(list(
+			/obj/item/rogueweapon/surgery/scalpel,
+			/obj/item/rogueweapon/surgery/saw,
+			/obj/item/rogueweapon/surgery/hemostat,
+			/obj/item/rogueweapon/surgery/hemostat,
+			/obj/item/rogueweapon/surgery/retractor,
+			/obj/item/rogueweapon/surgery/bonesetter,
+			/obj/item/rogueweapon/surgery/cautery,
+			/obj/item/needle,
+			/obj/item/needle/thorn,
+			/obj/item/needle/pestra,
+			/obj/item/reagent_containers/glass/bottle/waterskin,
+			/obj/item/reagent_containers/glass/bottle,
+			/obj/item/natural/fibers,
+			/obj/item/natural/cloth,
+			/obj/item/natural/bundle/fibers,
+			/obj/item/natural/bundle/cloth,
+			/obj/item/natural/worms/leech,
+			/obj/item/natural/worms/leech/cheele,
+			/obj/item/reagent_containers/lux
+		))
+
+/obj/item/storage/belt/rogue/pouch/skit/PopulateContents()
+	new /obj/item/rogueweapon/surgery/scalpel(src)
+	new /obj/item/rogueweapon/surgery/saw(src)
+	new /obj/item/rogueweapon/surgery/hemostat(src)
+	new /obj/item/rogueweapon/surgery/hemostat(src)
+	new /obj/item/rogueweapon/surgery/retractor(src)
+	new /obj/item/rogueweapon/surgery/bonesetter(src)
+	new /obj/item/rogueweapon/surgery/cautery(src)
+	new /obj/item/needle/pestra(src)
+
 /obj/item/storage/backpack/rogue/satchel/heartfelt/PopulateContents()
 	new /obj/item/natural/feather(src)
 	new /obj/item/paper(src)
+
+/obj/item/storage/backpack/rogue/satchel/mule/PopulateContents()
+	for(var/i in 1 to 3)
+		switch(rand(1,4))
+			if(1)	
+				new /obj/item/reagent_containers/powder/moondust/purest(src)
+			if(2)
+				new /obj/item/reagent_containers/powder/moondust/purest(src)
+			if(3)
+				new /obj/item/reagent_containers/powder/ozium(src)
+			if(4)
+				new /obj/item/reagent_containers/powder(src)
 
 
 /obj/item/storage/backpack/rogue/satchel/black
@@ -201,6 +269,9 @@
 		STR.max_combined_w_class = 21
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 5
+		STR.click_gather = TRUE
+		STR.allow_quick_empty = TRUE
+		STR.allow_dump_out = TRUE
 
 /obj/item/storage/backpack/rogue/attack_right(mob/user)
 	var/datum/component/storage/CP = GetComponent(/datum/component/storage)
@@ -231,3 +302,32 @@
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 14
 		STR.not_while_equipped = TRUE
+		STR.allow_dump_out = TRUE
+
+/obj/item/storage/belt/rogue/leather/exoticsilkbelt
+	name = "Exotic Silk Belt"
+	desc = "A gold adorned belt with the softest of silks barely concealing one's bits."
+	icon_state = "exoticsilkbelt"
+	heldz_items = 1
+	sewrepair = TRUE
+
+/obj/item/storage/belt/rogue/bone/skullbelt
+	name = "skull belt"
+	desc = "Worn by barbarians, tribals and madmen. Not in that particular order."
+	icon_state = "skullcrotch"
+	item_state = "skullcrotch"
+	heldz_items = 3
+
+/obj/item/storage/belt/rogue/leather/ornate
+	name = "ornate belt"
+	desc = "An ornate belt decorated with gold."
+	icon_state = "ornate_belt"
+	sellprice = 50
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing	
+
+/obj/item/storage/belt/rogue/leather/blackleather
+	name = "black leather belt"
+	icon_state = "blackleatherbelt"
+	sewrepair = TRUE
+	sellprice = 10	

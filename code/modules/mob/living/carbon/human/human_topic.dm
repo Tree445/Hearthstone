@@ -7,8 +7,30 @@
 		if(!valid_headshot_link(null, headshot_link, TRUE))
 			return
 		var/mob/user = usr
-		var/list/dat = list("<img src='[headshot_link]' width='250px' height='250px'>")
-		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]'s Headshot</div>", 310, 320)
+		var/list/dat = list("<div align='center'><img src='[headshot_link]' width='500px' height='500px'></div><br><font size=3><u>Description:</u><br>[replacetext(flavor_text, "\n", "<BR>")]<br><br><u><b>OOC NOTES:<br><b></u>[replacetext(ooc_notes, "\n", "<BR>")]</font>")
+		var/datum/browser/popup = new(user, "headshot", "<div align='center'>[src]</div>", 560, 570)
+		popup.set_content(dat.Join())
+		popup.open(FALSE)
+		return
+	if(href_list["task"] == "view_flavor")
+		if(!ismob(usr))
+			return
+		if(!valid_flavor_text(null, flavor_text, TRUE))
+			return
+		var/mob/user = usr
+		var/list/dat = list("<font size=3><u>Description:</u><br>[replacetext(flavor_text, "\n", "<BR>")]<br><br><u><b>OOC NOTES:<br><b></u>[replacetext(ooc_notes, "\n", "<BR>")]</font>")
+		var/datum/browser/popup = new(user, "flavor", 200, 240)
+		popup.set_content(dat.Join())
+		popup.open(FALSE)
+		return
+	if(href_list["task"] == "view_ooc_notes")
+		if(!ismob(usr))
+			return
+		if(!valid_ooc_notes(null, ooc_notes, TRUE))
+			return
+		var/mob/user = usr
+		var/list/dat = list("<font size=3><u><b>OOC NOTES:<br><b></u>[replacetext(ooc_notes, "\n", "<BR>")]</font>")
+		var/datum/browser/popup = new(user, "oocnotes", 400, 100)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
@@ -81,21 +103,17 @@
 		if(!get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 			to_chat(usr, span_warning("I can't reach that! Something is covering it."))
 			return
-		if(underwear == "Nude")
+		if(!underwear)
 			return
+		usr.visible_message(span_warning("[usr] starts taking off [src]'s [underwear.name]."),span_warning("I start taking off [src]'s [underwear.name]..."))
 		if(do_after(usr, 50, needhand = 1, target = src))
-			cached_underwear = underwear
-			underwear = "Nude"
-			update_body()
-			var/obj/item/undies/U
-			if(gender == MALE)
-				U = new/obj/item/undies(get_turf(src))
-			else
-				U = new/obj/item/undies/f(get_turf(src))
-			U.color = underwear_color
+			var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
+			chest.remove_bodypart_feature(underwear.undies_feature)
+			underwear.forceMove(get_turf(src))
 			if(iscarbon(usr))
 				var/mob/living/carbon/C = usr
-				C.put_in_hands(U)
+				C.put_in_hands(underwear)
+			underwear = null
 
 	if(href_list["pockets"] && usr.canUseTopic(src, BE_CLOSE, NO_DEXTERITY)) //TODO: Make it match (or intergrate it into) strippanel so you get 'item cannot fit here' warnings if mob_can_equip fails
 		var/pocket_side = href_list["pockets"]

@@ -18,7 +18,6 @@
 	cartridge_wording = "bolt"
 	load_sound = 'sound/foley/nockarrow.ogg'
 	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
-	associated_skill = /datum/skill/combat/crossbows
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/steel
 	var/damfactor = 2
@@ -35,15 +34,25 @@
 /datum/intent/shoot/crossbow
 	chargedrain = 0 //no drain to aim a crossbow
 
+//Can no longer fire crossbows 1-handed. Boo-womp.
+/datum/intent/shoot/crossbow/can_charge()
+	if(mastermob)
+		if(mastermob.get_num_arms(FALSE) < 2)
+			return FALSE
+		if(mastermob.get_inactive_held_item())
+			return FALSE
+	return TRUE
+
+// On average, ~10 second aim if unskilled. 4-5 Journeyman. 1 for master. Etc.
 /datum/intent/shoot/crossbow/get_chargetime()
 	if(mastermob && chargetime)
 		var/newtime = chargetime
 		//skill block
-		newtime = newtime + 18
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * 3)
+		newtime = newtime + 80
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * 20)
 		//per block
 		newtime = newtime + 20
-		newtime = newtime - (mastermob.STAPER)
+		newtime = newtime - ((mastermob.STAPER)*1.5)
 		if(newtime > 0)
 			return newtime
 		else
@@ -54,15 +63,23 @@
 	chargetime = 1
 	chargedrain = 0 //no drain to aim a crossbow
 
+/datum/intent/arc/crossbow/can_charge()
+	if(mastermob)
+		if(mastermob.get_num_arms(FALSE) < 2)
+			return FALSE
+		if(mastermob.get_inactive_held_item())
+			return FALSE
+	return TRUE
+
 /datum/intent/arc/crossbow/get_chargetime()
 	if(mastermob && chargetime)
 		var/newtime = chargetime
 		//skill block
-		newtime = newtime + 18
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * 3)
+		newtime = newtime + 80
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * 20)
 		//per block
 		newtime = newtime + 20
-		newtime = newtime - (mastermob.STAPER)
+		newtime = newtime - ((mastermob.STAPER)*1.5)
 		if(newtime > 0)
 			return newtime
 		else
@@ -100,9 +117,14 @@
 
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	if(user.get_num_arms(FALSE) < 2)
+		return FALSE
+	if(user.get_inactive_held_item())
+		return FALSE
 	if(user.client)
 		if(user.client.chargedprog >= 100)
 			spread = 0
+			//adjust_experience(user, /datum/skill/combat/crossbows, user.STAINT * 4)
 		else
 			spread = 150 - (150 * (user.client.chargedprog / 100))
 	else
@@ -110,6 +132,8 @@
 	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
 		var/obj/projectile/BB = CB.BB
 		BB.damage = BB.damage * damfactor
+		if(HAS_TRAIT(user, TRAIT_TINY))
+			BB.damage = (BB.damage * 0.3)
 	cocked = FALSE
 	..()
 

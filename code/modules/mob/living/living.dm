@@ -52,7 +52,7 @@
 
 /mob/living/onZImpact(turf/T, levels)
 	if(HAS_TRAIT(src, TRAIT_NOFALLDAMAGE1))
-		if(levels <= 2)	
+		if(levels <= 2 || isseelie(src))	
 			return 
 	var/points
 	for(var/i in 2 to levels)
@@ -186,10 +186,13 @@
 			if(STACON > L.STACON)
 				if(STASTR > L.STASTR)
 					L.Knockdown(1)
+					Immobilize(30)
 				else
 					Knockdown(1)
+					Immobilize(30)
 			if(STACON < L.STACON)
 				Knockdown(30)
+				Immobilize(30)
 			if(STACON == L.STACON)
 				L.Knockdown(1)
 				Knockdown(30)
@@ -357,6 +360,9 @@
 		return FALSE
 	if(throwing || !(mobility_flags & MOBILITY_PULL))
 		return FALSE
+/*	if(!(isliving(AM)) && isseelie(src))	//Seelie grabbing non living object
+		to_chat(src, span_warning("My hands are too small to grab that."))
+		return FALSE */
 
 	AM.add_fingerprint(src)
 
@@ -656,9 +662,14 @@
 		to_chat(src, span_warning("I'm grabbed!"))
 		return
 	if(resting)
+		if(isseelie(src))
+			var/obj/item/organ/wings/Wing = src.getorganslot(ORGAN_SLOT_WINGS)
+			if(Wing == null)
+				to_chat(src, span_warning("I can't stand without my wings!"))
+				return
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
 			src.visible_message(span_notice("[src] stands up."))
-			if(move_after(src, 20, target = src))
+			if(move_after(src, 10, target = src))
 				set_resting(FALSE, FALSE)
 				return TRUE
 		else
@@ -674,9 +685,14 @@
 		to_chat(src, span_warning("I'm grabbed!"))
 		return
 	if(resting)
+		if(isseelie(src))
+			var/obj/item/organ/wings/Wing = src.getorganslot(ORGAN_SLOT_WINGS)
+			if(Wing == null)
+				to_chat(src, span_warning("I can't stand without my wings!"))
+				return
 		if(!IsKnockdown() && !IsStun() && !IsParalyzed())
 			src.visible_message(span_info("[src] begins to stand up."))
-			if(move_after(src, 20, target = src))
+			if(move_after(src, 10, target = src))
 				set_resting(FALSE, FALSE)
 		else
 			src.visible_message(span_warning("[src] struggles to stand up."))
@@ -693,10 +709,18 @@
 	if(!silent)
 		if(rest == resting)
 			if(resting)
-				playsound(src, 'sound/foley/toggledown.ogg', 100, FALSE)
+				if(isseelie(src))
+					//Quiet the falling and rising sound for fairies. Possibly replace the ogg outright
+					playsound(src, 'sound/foley/toggledown.ogg', 30, FALSE)
+				else
+					playsound(src, 'sound/foley/toggledown.ogg', 100, FALSE)
 				src.visible_message(span_info("[src] lays down."))
 			else
-				playsound(src, 'sound/foley/toggleup.ogg', 100, FALSE)
+				if(isseelie(src))
+					//Quiet the falling and rising sound for fairies. Possibly replace the ogg outright
+					playsound(src, 'sound/foley/toggleup.ogg', 30, FALSE)
+				else
+					playsound(src, 'sound/foley/toggleup.ogg', 100, FALSE)
 		else
 			to_chat(src, span_warning("I fail to get up!"))
 	update_cone_show()
@@ -866,6 +890,10 @@
 		reset_offsets("pixel_shift")
 		return FALSE
 	pixelshifted = FALSE
+	pixelshift_x = 0
+	pixelshift_y = 0
+	pixelshift_layer = 0
+	layer = 4
 	reset_offsets("pixel_shift")
 
 /mob/living/Move(atom/newloc, direct, glide_size_override)
@@ -912,6 +940,11 @@
 
 	if(!(mobility_flags & MOBILITY_STAND) && !buckled && prob(getBruteLoss()*200/maxHealth))
 		makeTrail(newloc, T, old_direction)
+
+	//Hearthstone change - track creation hook.
+	if(. && isturf(newloc))
+		check_track_creation(newloc)
+	//Hearthstone end.
 
 /mob/living/setDir(newdir)
 	var/olddir = dir
@@ -1554,6 +1587,8 @@
 
 	var/should_be_lying = !canstand
 	if(buckled)
+		if(isseelie(src))
+			src.reset_offsets("pixie_hover")
 		if(buckled.buckle_lying != -1)
 			should_be_lying = buckled.buckle_lying
 
@@ -1564,8 +1599,14 @@
 			if(buckled.buckle_lying != -1)
 				lying = buckled.buckle_lying
 		if(!lying) //force them on the ground
+			//If Seelie then they need to 'fall' to the ground by resetting position
+			if(isseelie(src))
+				src.reset_offsets("pixie_hover")
 			lying = 90
 	else
+		//Shift Seelie back 'up' from lying down on the ground
+		if(isseelie(src) && !buckled)
+			src.set_mob_offsets("pixie_hover", _x = 0, _y = 10)
 		mobility_flags |= MOBILITY_STAND
 		lying = 0
 
@@ -1602,6 +1643,8 @@
 		if(!lying_prev)
 			fall(!canstand_involuntary)
 		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
+		if (pixelshifted)
+			layer = 3.99 + pixelshift_layer //So mobs can pixelshift layers while lying down
 	else
 		if(layer == LYING_MOB_LAYER)
 			layer = initial(layer)
@@ -1854,6 +1897,15 @@
 					found_ping(get_turf(M), client, "trap")
 			if(istype(O, /obj/structure/flora/roguegrass/maneater/real))
 				found_ping(get_turf(O), client, "trap")
+		//Hearthstone change - Tracking
+		for(var/obj/effect/track/potential_track in orange(7, src)) //Can't use view because they're invisible by default.
+			if(!can_see(src, potential_track, 10))
+				continue
+			if(!potential_track.check_reveal(src))
+				continue
+			found_ping(get_turf(potential_track), client, "hidden")
+			potential_track.handle_revealing(src)
+		//Hearthstone end.
 
 /proc/found_ping(atom/A, client/C, state)
 	if(!A || !C || !state)

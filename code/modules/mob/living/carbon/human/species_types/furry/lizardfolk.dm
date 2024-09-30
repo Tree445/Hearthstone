@@ -5,17 +5,19 @@
 	name = "Sissean"
 	id = "lizardfolk"
 	desc = "<b>Sissean</b><br>\
-	Sisseans are semi-aquatic reptilian humanoids that have lived in the low bogs surrounding Rockhill for centuries. \
-	Though not as inclined to industry as the dwarves, and not as crafty as the other Humen and Wild-Kin natives, our strength is enormous, eclipsed only perhaps by the Draken.\
-	Though we are less perceptive and slower than other races, our constitution and strength are impressive. \
-	We also have sharp claws and teeth."
+		Similar to both the Drakians and Kobolds, Sisseans are a lizardlike people, with sharp claws and teeth. \
+		They prefer bogland to reside in, and many Sisseans live on the Island of Enigma, in some of its many bogs, a brave few even settling in the Terrorbog. \
+		Not as crafty or artistic as Humens, Elves or Dwarves, the Sisseans, like their Drakian cousins, much prefer martial roles to those of artisans or smiths. \
+		The Drakians look down on the Sisseans as being lesser, bog dwelling simpletons, but the Sisseans are largely content with their lot in life, and are a generally friendly people. \
+		They prefer to worship Abyssor in the Divine Pantheon, but others are known to worship Astrata, Ravox and Dendor."
+
 	skin_tone_wording = "Skin Colors"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/mob/species/male.dmi'
-	limbs_icon_f = 'icons/mob/species/female.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
 	soundpack_m = /datum/voicepack/male
@@ -30,10 +32,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	specstats = list("strength" = 2, "perception" = 0, "intelligence" = -1, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	specstats_f = list("strength" = 1, "perception" = -1, "intelligence" = 2, "constitution" = 0, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	race_bonus = list(STAT_CONSTITUTION = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -60,6 +63,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid/shaved_default,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/tail/lizard,
 		/datum/customizer/organ/tail_feature/lizard_spines,
 		/datum/customizer/organ/snout/lizard,
@@ -86,6 +90,8 @@
 		/datum/body_marking/tiger/dark,
 		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
+		/datum/body_marking/splotches,
+		/datum/body_marking/splotcheswap,
 	)
 	languages = list(
 		/datum/language/common,

@@ -5,7 +5,11 @@
 	name = "Goblin"
 	id = "goblinp"
 	desc = "<b>Goblin</b><br>\
-	A vile, cursed race of green skinned fiends with brains as small as their hearts. Be not fooled by their appearance - What they lack in stature, they possess in sheer malice."
+		Spawn of Graggar, these small, green creatures are usually found where Orcs are found. \
+		Cruel and unfriendly, most Goblins stick to their own tribes, and are rarely kind to outsiders. \
+		Runts of the Goblin litter are more often than not shunned and kicked out of their tribe, forced to roam the world alone. \
+		These Goblins can find themselves in the cities of Man, some of them finding work via crime, while others make use of their skills to assist the watchmen. \
+		Born of Graggar's will, Goblins worship him over any other god in the Inhumen Pantheon, but some Goblins will worship any god from the pantheon, especially Baotha or even Matthios, the King of Thieves."
 	species_traits = list(EYECOLOR,LIPS,STUBBLE)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	possible_ages = ALL_AGES_LIST
@@ -46,6 +50,7 @@
 		)
 	specstats = list("strength" = -1, "perception" = 1, "intelligence" = -2, "constitution" = -1, "endurance" = 1, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = -2, "perception" = 0, "intelligence" = 1, "constitution" = -1, "endurance" = 1, "speed" = 2, "fortune" = 0)
+	race_bonus = list(STAT_ENDURANCE = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -56,6 +61,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,

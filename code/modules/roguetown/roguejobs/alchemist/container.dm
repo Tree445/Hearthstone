@@ -1,7 +1,16 @@
 
+/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot
+	list_reagents = list(/datum/reagent/medicine/minorhealthpot = 45)
+
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
 	list_reagents = list(/datum/reagent/medicine/healthpot = 45)
 
+/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot
+	list_reagents = list(/datum/reagent/medicine/majorhealthpot = 45)
+
+/obj/item/reagent_containers/glass/bottle/rogue/sublimeambrosia
+	list_reagents = list(/datum/reagent/medicine/sublimeambrosia = 5)
+	
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	list_reagents = list(/datum/reagent/medicine/manapot = 45)
 
@@ -16,3 +25,6 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/water
 	list_reagents = list(/datum/reagent/water = 45)
+
+/obj/item/reagent_containers/glass/bottle/rogue/milk
+	list_reagents = list(/datum/reagent/consumable/milk = 45)

@@ -141,10 +141,28 @@
 	grind_results = list(/datum/reagent/floure = 10)
 	volume = 1
 	sellprice = 0
+
 /datum/reagent/floure
 	name = "flour"
 	description = ""
 	color = "#FFFFFF" // rgb: 96, 165, 132
+	
+
+// /obj/item/reagent_containers/powder/sugar
+// 	name = "sugar"
+// 	desc = ""
+// 	gender = PLURAL
+// 	icon_state = "sugar"
+// 	list_reagents = list(/datum/reagent/sugar = 1)
+// 	grind_results = list(/datum/reagent/sugar = 10)
+// 	volume = 1
+// 	sellprice = 0
+
+/datum/reagent/sugar
+	name = "sugar"
+	description = ""
+	color = "#FFFFFF" // rgb: 96, 165, 132
+
 
 /datum/reagent/floure/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
@@ -175,9 +193,9 @@
 /datum/chemical_reaction/salttopowder/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/powder/flour/salt(location)
+		new /obj/item/reagent_containers/powder/salt(location)
 
-/obj/item/reagent_containers/powder/flour/salt
+/obj/item/reagent_containers/powder/salt
 	name = "salt"
 	desc = ""
 	gender = PLURAL
@@ -187,7 +205,7 @@
 	volume = 1
 
 /obj/item/reagent_containers/powder/ozium
-	name = "powder"
+	name = "ozium"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
@@ -195,6 +213,18 @@
 	volume = 15
 	list_reagents = list(/datum/reagent/ozium = 15)
 	grind_results = list(/datum/reagent/ozium = 15)
+	sellprice = 5
+
+/obj/item/reagent_containers/powder/heal
+	name = "healing powder"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "ozium"
+	color = "#06402B"
+	possible_transfer_amounts = list()
+	volume = 30
+	list_reagents = list(/datum/reagent/medicine/minorhealthpot = 15, /datum/reagent/medicine/shroomt = 15)
+	grind_results = list(/datum/reagent/medicine/minorhealthpot = 15)
 	sellprice = 5
 
 /datum/reagent/ozium
@@ -263,7 +293,7 @@
 /datum/reagent/moondust/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
 
-/obj/item/reagent_containers/powder/moondust_purest
+/obj/item/reagent_containers/powder/moondust/purest
 	name = "moondust"
 	desc = ""
 	icon = 'icons/roguetown/items/produce.dmi'
@@ -313,3 +343,70 @@
 
 /datum/reagent/moondust_purest/overdose_process(mob/living/M)
 	M.adjustToxLoss(10, 0)
+
+
+//SEELIE DRUGS
+
+/datum/reagent/seelie_drugs
+	name = "Seelie Drugs"
+	description = ""
+	color = "#60A584" // rgb: 96, 165, 132
+	overdose_threshold = 100
+	metabolization_rate = 0.1
+
+/datum/reagent/seelie_drugs/overdose_process(mob/living/M)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*REM)
+	M.adjustToxLoss(0.25*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/seelie_drugs/on_mob_life(mob/living/carbon/M)
+	M.set_drugginess(30)
+	M.slurring += 3
+	if(prob(5))
+		if(M.gender == FEMALE)
+			M.emote(pick("twitch_s","giggle", "drool"))
+		else
+			M.emote(pick("twitch_s","chuckle", "drool"))
+	if(M.has_flaw(/datum/charflaw/addiction/junkie))
+		M.sate_addiction()
+	M.apply_status_effect(/datum/status_effect/buff/seelie_drugs)
+	..()
+
+/atom/movable/screen/fullscreen/seelie_drugs
+	icon_state = "spa"
+	plane = FLOOR_PLANE
+	layer = ABOVE_OPEN_TURF_LAYER
+	blend_mode = 0
+	show_when_dead = FALSE
+
+/datum/reagent/seelie_drugs/overdose_start(mob/living/M)
+	M.visible_message(span_warning("Blood runs from [M]'s nose."))
+
+/datum/reagent/seelie_drugs/overdose_process(mob/living/M)
+	M.adjustToxLoss(10, 0)
+
+/datum/reagent/seelie_drugs/on_mob_metabolize(mob/living/M)
+	M.overlay_fullscreen("druqk", /atom/movable/screen/fullscreen/druqks)
+	M.set_drugginess(30)
+	M.slurring += 3
+	M.update_body_parts_head_only()
+	if(M.client)
+		ADD_TRAIT(M, TRAIT_DRUQK, "based")
+		SSdroning.area_entered(get_area(M), M.client)
+//			if(M.client.screen && M.client.screen.len)
+//				var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in M.client.screen
+//				PM.backdrop(M.client.mob)
+
+/datum/reagent/seelie_drugs/on_mob_end_metabolize(mob/living/M)
+	M.clear_fullscreen("druqk")
+	M.slurring = 0
+	M.set_drugginess(0)
+	//M.remove_status_effect(/datum/status_effect/buff/seelie_drugs)
+	M.update_body_parts_head_only()
+	if(M.client)
+		REMOVE_TRAIT(M, TRAIT_DRUQK, "based")
+		SSdroning.play_area_sound(get_area(M), M.client)
+//		if(M.client.screen && M.client.screen.len)
+///			var/atom/movable/screen/plane_master/game_world/PM = locate(/atom/movable/screen/plane_master/game_world) in M.client.screen
+//			PM.backdrop(M.client.mob)

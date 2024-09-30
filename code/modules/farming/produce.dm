@@ -5,7 +5,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
 	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
-	var/distill_amt = 12
+	var/distill_amt = 24
 	var/list/pipe_reagents = list()
 	var/seed
 	var/bitesize_mod = 0
@@ -43,7 +43,7 @@
 /obj/item/reagent_containers/food/snacks/grown/wheat
 	seed = /obj/item/seeds/wheat
 	name = "wheat grain"
-	desc = ""
+	desc = "Grain from a wheat plant."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "wheat"
 	gender = PLURAL
@@ -53,8 +53,9 @@
 	tastes = list("wheat" = 1)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer
-	distill_amt = 24
+	distill_amt = 48
 	grind_results = list(/datum/reagent/floure = 10)
+	mill_result = /obj/item/reagent_containers/powder/flour
 
 /obj/item/reagent_containers/food/snacks/grown/oat
 	seed = /obj/item/seeds/wheat/oat
@@ -69,8 +70,9 @@
 	tastes = list("oat" = 1)
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/ale
-	distill_amt = 12
+	distill_amt = 24
 	grind_results = list(/datum/reagent/floure = 10)
+	mill_result = /obj/item/reagent_containers/powder/flour
 
 /obj/item/reagent_containers/food/snacks/grown/apple
 	seed = /obj/item/seeds/apple
@@ -85,13 +87,30 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
 	worn_x_dimension = 64
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)	//Low nutriment; snack, not a whole meal.
 	worn_y_dimension = 64
 	rotprocess = 20 MINUTES
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/cider
 	var/equippedloc = null
 	var/list/bitten_names = list()
+
+/obj/item/reagent_containers/food/snacks/grown/shroom
+	seed = /obj/item/seeds/shroom
+	name = "elder shroom"
+	desc = "a magic mushroom that makes a healing brew when fermented."
+	icon_state = "eldershroom"
+	filling_color = "#476e4d"
+	bitesize = 4
+	foodtype = VEGETABLES
+	tastes = list("mushroom" = 1)
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/druqks = 2)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/medicine/shroomt
+	mill_result = /obj/item/reagent_containers/powder/flour // mushroom flour. it exists. and its gross.
 
 /obj/item/reagent_containers/food/snacks/grown/apple/On_Consume(mob/living/eater)
 	..()
@@ -139,7 +158,7 @@
 	var/color_index = "good"
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/wine
-	rotprocess = 15 MINUTES
+	rotprocess = 10 MINUTES
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/Initialize()
 	if(GLOB.berrycolors[color_index])
@@ -208,6 +227,34 @@
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = 15 MINUTES
 
+/obj/item/reagent_containers/food/snacks/grown/poppy
+	seed = /obj/item/seeds/poppy
+	name = "poppy flower"
+	desc = "a flower known for its use in ozium creation"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	icon_state = "Poppy Flower"
+	filling_color = "#008000"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/ozium = 5)
+	tastes = list("sweet" = 1,"bitterness" = 1)
+	mill_result = /obj/item/reagent_containers/powder/ozium
+	rotprocess = 15 MINUTES
+
+/obj/item/reagent_containers/food/snacks/grown/herbs
+	seed = /obj/item/seeds/herbs
+	name = "wild herbs"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = "an assortment of herbs known to sooth pain"
+	icon_state = "Herbs"
+	filling_color = "#008000"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("sweet" = 1,"bitterness" = 1)
+	mill_result = /obj/item/reagent_containers/powder/heal
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/medicine/minorhealthpot = 5)
+	rotprocess = 15 MINUTES
+
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
 	seed = null
 	name = "westleach leaf"
@@ -230,3 +277,90 @@
 	grind_results = list(/datum/reagent/drug/space_drugs = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 
+/obj/item/reagent_containers/food/snacks/grown/potato/rogue
+	seed = /obj/item/seeds/potato
+	name = "potato"
+	desc = ""
+	icon_state = "potato"
+	tastes = list("starchy" = 1)
+	bitesize = 5
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)	//Better than apple, still not a whole meal.
+	dropshrink = 0.75
+	//var/color_index = "good"
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/vodka
+	rotprocess = 15 MINUTES
+	
+/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	seed = /obj/item/seeds/sugarcane
+	name = "sugarcane"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "sugarcane"
+	gender = PLURAL
+	dropshrink = 0.75
+	filling_color = "#f5f2d9"
+	bitesize_mod = 2
+	mill_result = /obj/item/reagent_containers/powder/sugar
+	foodtype = SUGAR
+	tastes = list("sugar" = 1)
+	grind_results = list(/datum/reagent/sugar = 10)
+
+/obj/item/reagent_containers/food/snacks/grown/pumpkin
+	seed = /obj/item/seeds/pumpkin
+	name = "pumpkin"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "pumpkin"
+	mill_result = /obj/item/reagent_containers/food/snacks/rogue/pumpkinspice
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	tastes = list("pumpkin" = 1)
+	dropshrink = 0.75
+	bitesize_mod = 3
+
+/obj/item/reagent_containers/food/snacks/grown/carrot
+	seed = /obj/item/seeds/carrot
+	name = "carrot"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "carrot"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("carrot" = 1)
+	dropshrink = 0.75
+	bitesize_mod = 2
+
+/obj/item/reagent_containers/food/snacks/grown/garlic
+	seed = /obj/item/seeds/garlic
+	name = "garlic"
+	desc = ""
+	icon = 'icons/roguetown/items/produce.dmi'
+	icon_state = "garlic"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("garlic" = 1)
+	dropshrink = 0.75
+	bitesize_mod = 1
+
+/obj/item/reagent_containers/food/snacks/grown/onion/rogue
+	name = "onion"
+	desc = ""
+	icon_state = "onion"
+	slices_num = 1
+	tastes = list("spicy sweetness" = 1)
+	bitesize = 2
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	//can_distill = TRUE
+	//distill_reagent = /datum/reagent/consumable/ethanol/beer/onion
+	rotprocess = null
+	seed = /obj/item/seeds/onion
+
+/obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
+	name = "cabbage"
+	desc = ""
+	icon_state = "cabbage"
+	tastes = list("blandness" = 1)
+	bitesize = 10
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	//can_distill = TRUE
+	//distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
+	rotprocess = SHELFLIFE_LONG
+	seed = /obj/item/seeds/cabbage

@@ -67,6 +67,9 @@
 	if(isliving(targets[1]))
 		testing("revived1")
 		var/mob/living/target = targets[1]
+		if(HAS_TRAIT(target, TRAIT_FAITHLESS))
+			to_chat(user, span_warning("Astrata's light has no effect! She denies aiding a non-believer!"))
+			return FALSE
 		if(target == user)
 			return FALSE
 		if(target.stat < DEAD)
@@ -80,6 +83,7 @@
 			target.visible_message(span_danger("[target] is unmade by holy light!"), span_userdanger("I'm unmade by holy light!"))
 			target.gib()
 			return TRUE
+		target.adjustOxyLoss(-target.getOxyLoss()) //Ye Olde CPR
 		if(!target.revive(full_heal = FALSE))
 			to_chat(user, span_warning("Nothing happens."))
 			return FALSE
@@ -93,6 +97,14 @@
 		target.grab_ghost(force = TRUE) // even suicides
 		target.emote("breathgasp")
 		target.Jitter(100)
+		if(isseelie(target))
+			var/mob/living/carbon/human/fairy_target = target
+			fairy_target.set_heartattack(FALSE)
+			var/obj/item/organ/wings/Wing = fairy_target.getorganslot(ORGAN_SLOT_WINGS)
+			if(Wing == null)
+				var/wing_type = fairy_target.dna.species.organs[ORGAN_SLOT_WINGS]
+				var/obj/item/organ/wings/seelie/new_wings = new wing_type()
+				new_wings.Insert(fairy_target)
 		target.update_body()
 		target.visible_message(span_notice("[target] is revived by holy light!"), span_green("I awake from the void."))
 		if(target.mind)

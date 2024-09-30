@@ -12,7 +12,6 @@
 	tutorial = "You are a slave in the tribe, likely for your crimes against it... Or something else, either way you live, mine and likely do other things as the tribals tell you to do."
 
 	outfit = /datum/outfit/job/roguetown/prisonerc
-	bypass_jobban = TRUE
 	display_order = JDO_PRISONERC
 	give_bank_account = 10
 	min_pq = -14
@@ -39,3 +38,5 @@
 		H.change_stat("fortune", 2)
 		H.change_stat("strength", 1)
 		H.change_stat("constitution", -1)
+		ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)

@@ -5,13 +5,11 @@
 	name = "Humen"
 	id = "humen"
 	desc = "<b>Humen</b><br>\
-	Humen (or Human) are the eldest of the weeping gods creation. Noted for their\
-	tenacity and overwhelming population, humans tend to outnumber the other races. \
-	at a rate of about ten to one in regions such as Grenzelhoft. Althrough to the west \
-	the opposite is true. Humen come from a vast swathe of cultures and ethnicity, most of which\
-	have historically been at odds with one another. Being the eldest of the weeping God, humen\
-	tend to find fortune easier than the other races, and are so diverse that no other racial trait\
-	are dominant in their species..."
+		Humens are one of the most predominant races in Grimoria, every continent, every island, and every city has at least some humens. \
+		It is largely recognized that they are the children of Psydon, formed in his image. Humens appear in all shapes and sizes, and no two humen is the same, so it is said. \
+		Those humens from Grenzelhoft are light in skintone, and predominantly have blue eyes, while a humen born in Zybantine may have a darker complexion. \
+		Despite any geographical difference between these humens, they are largely the same, the only difference being any potential accent they may have developed as they were raised in different cultures. \
+		Humens predominantly worship the divine pantheon, and some fanatical humens even go so far as to worship Psydon himself."
 
 	skin_tone_wording = "Ancestry"
 
@@ -25,7 +23,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
-	limbs_icon_m = 'icons/mob/species/male.dmi'
+	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
@@ -41,10 +39,11 @@
 		OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,-1), OFFSET_HEAD_F = list(0,-1), \
 		OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
-		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
+		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	specstats = list("strength" = 0, "perception" = 1, "intelligence" = -1, "constitution" = 0, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 2, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	race_bonus = list(STAT_INTELLIGENCE = 1)
 	enflamed_icon = "widefire"
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
@@ -52,6 +51,7 @@
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
+		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
@@ -67,17 +67,17 @@
 
 /datum/species/human/northern/get_skin_list()
 	return list(
-		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
-		"Hammerhold" = SKIN_COLOR_HAMMERHOLD,
-		"Avar" = SKIN_COLOR_AVAR,
+		"Frostlander" = SKIN_COLOR_GRENZELHOFT,
+		"Umberite" = SKIN_COLOR_HAMMERHOLD,
+		"Grenzelhoft" = SKIN_COLOR_AVAR,
 		"Rockhill" = SKIN_COLOR_ROCKHILL,
-		"Otava" = SKIN_COLOR_OTAVA,
-		"Etrusca" = SKIN_COLOR_ETRUSCA,
-		"Gronn" = SKIN_COLOR_GRONN,
-		"Giza" = SKIN_COLOR_GIZA,
-		"Shalvistine" = SKIN_COLOR_SHALVISTINE,
-		"Lalvestine" = SKIN_COLOR_LALVESTINE,
-		"Ebon" = SKIN_COLOR_EBON,
+		"Forester" = SKIN_COLOR_OTAVA,
+		"Highlander" = SKIN_COLOR_ETRUSCA,
+		"Moravian" = SKIN_COLOR_GRONN,
+		"Gizan" = SKIN_COLOR_GIZA,
+		"Zybantine" = SKIN_COLOR_SHALVISTINE,
+		"Merkite" = SKIN_COLOR_LALVESTINE,
+		"Valorian" = SKIN_COLOR_EBON,
 	)
 
 /datum/species/human/northern/get_hairc_list()

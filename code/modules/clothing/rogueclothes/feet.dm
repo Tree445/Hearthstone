@@ -134,7 +134,7 @@
 	blocksound = PLATEHIT
 	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	anvilrepair = /datum/skill/craft/armorsmithing
-	smeltresult = /obj/item/ingot/steel
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "steel plated boots"
@@ -142,6 +142,32 @@
 	body_parts_covered = FEET
 	icon_state = "armorboots"
 	item_state = "armorboots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/shoes/roguetown/boots/graggaritebootsleader
+	name = "graggarite leader boots"
+	desc = "Boots worn by those who lead northmen warbands."
+	body_parts_covered = FEET
+	icon_state = "graggaritebootsleader"
+	item_state = "graggaritebootsleader"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/shoes/roguetown/boots/dwarfboots
+	name = "dwarven boots"
+	desc = "Heavy boots in the Dwarven style."
+	body_parts_covered = FEET
+	icon_state = "dwarvenboots"
+	item_state = "dwarvenboots"
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	color = null
 	blocksound = PLATEHIT
@@ -174,6 +200,52 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	armor = list("blunt" = 15, "slash" = 15, "stab" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/shoes/roguetown/boots/footmangreaves
+	name = "footman greaves"
+	desc = "A pair of greaves worn by Grenzelhoftian soldiery."
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	body_parts_covered = FEET
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	blocksound = PLATEHIT
+	anvilrepair = /datum/skill/craft/armorsmithing
+	icon_state = "footmanboots"
+	item_state = "footmanboots"
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/shoes/roguetown/boots/bonegreaves
+	name = "bone greaves"
+	desc = "A pair of greaves made of bone."
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	body_parts_covered = FEET
+	armor = list("blunt" = 50, "slash" = 25, "stab" = 20, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "bone_greaves"
+	item_state = "bone_greaves"
+	smeltresult = /obj/item/ash
+
+/obj/item/clothing/shoes/roguetown/boots/graggariteboots
+	name = "graggarite boots"
+	desc = "A pair of heavy boots worn by Graggarite fanatics."
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	body_parts_covered = FEET
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	blocksound = PLATEHIT
+	anvilrepair = /datum/skill/craft/armorsmithing
+	icon_state = "graggariteboots"
+	item_state = "graggariteboots"
+	smeltresult = /obj/item/ingot/iron
+
+/obj/item/clothing/shoes/roguetown/boots/katefractoiigreaves
+	name = "katefractoii greaves"
+	desc = "A pair of greaves worn by Katefractoii cavalrymen."
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	body_parts_covered = FEET
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	blocksound = PLATEHIT
+	anvilrepair = /datum/skill/craft/armorsmithing
+	icon_state = "katefractoiiboots"
+	item_state = "katefractoiiboots"
+	smeltresult = /obj/item/ingot/iron
+
 /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 	name = "fur lined boots"
 	desc = "Leather boots lined with fur."
@@ -192,3 +264,96 @@
 	sewrepair = TRUE
 	armor = list("blunt" = 30, "slash" = 10, "stab" = 20, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	isbarefoot = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/darkelfboots
+	name = "raider boots"
+	desc = "A heavy pair of raider boots."
+	body_parts_covered = FEET
+	icon_state = "darkelfboots"
+	item_state = "darkelfboots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/clothing/shoes/roguetown/boots/forestershoes
+	name = "forester shoes"
+	desc = "Footwear worn by those who live in forests."
+	icon_state = "forestershoes"
+	item_state = "forestershoes"
+	smeltresult = /obj/item/ash
+
+/obj/item/clothing/shoes/roguetown/anklets
+	name = "Gold Anklets"
+	desc = "Delicate golden hoops worn around the ankle."
+	gender = PLURAL
+	icon_state = "anklets"
+	item_state = "anklets"
+	isbarefoot = TRUE
+	anvilrepair = /datum/skill/craft/armorsmithing
+
+/obj/item/clothing/shoes/roguetown/boots/spellslingerboots
+	name = "spellslinger boots"
+	desc = "Boots worn by spellslingers, surprisingly lightweight."
+	body_parts_covered = FEET
+	icon_state = "spellslingerboots"
+	item_state = "spellslingerboots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/shoes/roguetown/boots/psydonianknightboots
+	name = "psydonian knight greaves"
+	desc = "PSYDON walks."
+	body_parts_covered = FEET
+	icon_state = "psydonianknightgreaves"
+	item_state = "psydonianknightgreaves"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/shoes/roguetown/boots/zybantineboots
+	name = "zybantine boots"
+	desc = "Boots worn by Zybantine soldiers on long marches."
+	body_parts_covered = FEET
+	icon_state = "zybantineboots"
+	item_state = "zybantineboots"
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
+	color = null
+	blocksound = PLATEHIT
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel	
+
+/obj/item/clothing/shoes/roguetown/nephilimsandals
+	name = "nephilim sandals"
+	desc = "Sandals once worn by the descendents of giants."
+	gender = PLURAL
+	icon_state = "nephilimfeet"
+	item_state = "nephilimfeet"
+	sewrepair = TRUE
+	smeltresult = /obj/item/ash
+
+/obj/item/clothing/shoes/roguetown/bodyguardshoes
+	name = "bodyguard shoes"
+	desc = "Shoes worn by bodyguards in service to the royals."
+	gender = PLURAL
+	icon_state = "bodyguardshoes"
+	item_state = "bodyguardshoes"
+	sewrepair = TRUE
+
+/obj/item/clothing/shoes/roguetown/spellcasterboots
+	name = "spellcaster boots"
+	desc = "Boots worn by journeyman wizards."
+	gender = PLURAL
+	icon_state = "spellcaster_boots"
+	item_state = "spellcaster_boots"
+	sewrepair = TRUE

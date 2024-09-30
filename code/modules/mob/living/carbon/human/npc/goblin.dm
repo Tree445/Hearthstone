@@ -13,6 +13,12 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
 
+/mob/living/carbon/human/species/goblin/unarmed
+	gob_outfit = null
+
+/mob/living/carbon/human/species/goblin/cave/unarmed
+	gob_outfit = null
+
 /mob/living/carbon/human/species/goblin/npc
 	aggressive=1
 	mode = AI_IDLE
@@ -68,7 +74,7 @@
 	raceicon = "goblin_moon"
 
 /datum/species/goblin/moon/spec_death(gibbed, mob/living/carbon/human/H)
-	new /obj/item/reagent_containers/powder/moondust_purest(get_turf(H))
+	new /obj/item/reagent_containers/powder/moondust/purest(get_turf(H))
 	H.visible_message(span_blue("Moondust falls from [H]!"))
 //	qdel(H)
 
@@ -221,7 +227,6 @@
 		QDEL_NULL(eyes)
 	eyes = new /obj/item/organ/eyes/night_vision/nightmare
 	eyes.Insert(src)
-	src.underwear = "Nude"
 	if(src.charflaw)
 		QDEL_NULL(src.charflaw)
 	update_body()
