@@ -258,7 +258,6 @@
 	item_state = "halfplatekini"
 	allowed_sex = list(FEMALE)
 	anvilrepair = /datum/skill/craft/armorsmithing
-	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	name = "plate armor"
