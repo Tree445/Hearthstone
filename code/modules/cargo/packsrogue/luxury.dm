@@ -134,34 +134,34 @@
 	name = "Fragment of the Acrobat"
 	cost = 200
 	contains = list(/obj/item/book/granter/trait/acrobat)
-/datum/supply_pack/rogue/luxury/swamp
+/*/datum/supply_pack/rogue/luxury/swamp
 	name = "Fragment of the Swamp"
-	cost = 200
-	contains = list(/obj/item/book/granter/trait/mobility/bogtrek)
+	cost = 750
+	contains = list(/obj/item/book/granter/trait/mobility/bogtrek) */
 /datum/supply_pack/rogue/luxury/kneestinger
 	name = "Fragment of Dendor"
 	cost = 100
 	contains = list(/obj/item/book/granter/trait/mobility/kneestinger)
 /datum/supply_pack/rogue/luxury/mediumarmor
 	name = "Fragment of the Old Guard"
-	cost = 50
+	cost = 200
 	contains = list(/obj/item/book/granter/trait/defense/mediumarmor)
-/datum/supply_pack/rogue/luxury/heavyarmor
+/*/datum/supply_pack/rogue/luxury/heavyarmor
 	name = "Fragment of the Forgotten Knight"
 	cost = 200
-	contains = list(/obj/item/book/granter/trait/defense/heavyarmor)
+	contains = list(/obj/item/book/granter/trait/defense/heavyarmor) */
 /datum/supply_pack/rogue/luxury/succubus
 	name = "Fragment of the Succubus"
 	cost = 50
 	contains = list(/obj/item/book/granter/trait/succubus)
-/datum/supply_pack/rogue/luxury/undying
+/*/datum/supply_pack/rogue/luxury/undying
 	name = "Fragment of the Undying"
 	cost = 500
 	contains = list(/obj/item/book/granter/trait/war/undying)
 /datum/supply_pack/rogue/luxury/relentless
 	name = "Fragment of the Relentless"
-	cost = 800
-	contains = list(/obj/item/book/granter/trait/war/relentless)
+	cost = 1000
+	contains = list(/obj/item/book/granter/trait/war/relentless) */
 
 
 
