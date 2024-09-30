@@ -71,7 +71,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/untie_brownloincloth
-	name = "brown loincloth"
+	name = "untie brown loincloth"
 	result = list(/obj/item/natural/cloth = 1)
 	reqs = list(/obj/item/clothing/under/roguetown/loincloth/brown)
 	craftdiff = 0
