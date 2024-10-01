@@ -20,11 +20,11 @@
 	var/upgrade_flags
 	var/current_cat = "1"
 
-/obj/structure/roguemachine/merchantvend/Initialize()
+/obj/structure/roguemachine/wizardvend/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/structure/roguemachine/merchantvend/update_icon()
+/obj/structure/roguemachine/wizardvend/update_icon()
 	cut_overlays()
 	if(obj_broken)
 		set_light(0)
@@ -33,7 +33,7 @@
 	add_overlay(mutable_appearance(icon, "vendor-merch"))
 
 
-/obj/structure/roguemachine/merchantvend/attackby(obj/item/P, mob/user, params)
+/obj/structure/roguemachine/wizardvend/attackby(obj/item/P, mob/user, params)
 	if(istype(P, /obj/item/roguekey))
 		var/obj/item/roguekey/K = P
 		if(K.lockid == "mage")
@@ -60,7 +60,7 @@
 		return attack_hand(user)
 	..()
 
-/obj/structure/roguemachine/merchantvend/Topic(href, href_list)
+/obj/structure/roguemachine/wizardvend/Topic(href, href_list)
 	. = ..()
 	if(!ishuman(usr))
 		return
@@ -166,7 +166,7 @@
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)*/
 	return attack_hand(usr)
 
-/obj/structure/roguemachine/merchantvend/attack_hand(mob/living/user)
+/obj/structure/roguemachine/wizardvend/attack_hand(mob/living/user)
 	. = ..()
 	if(.)
 		return
@@ -227,18 +227,18 @@
 	popup.set_content(contents)
 	popup.open()
 
-/obj/structure/roguemachine/merchantvend/obj_break(damage_flag)
+/obj/structure/roguemachine/wizardvend/obj_break(damage_flag)
 	..()
 	budget2change(budget)
 	set_light(0)
 	update_icon()
 	icon_state = "goldvendor0"
 
-/obj/structure/roguemachine/merchantvend/Destroy()
+/obj/structure/roguemachine/wizardvend/Destroy()
 	set_light(0)
 	return ..()
 
-/obj/structure/roguemachine/merchantvend/Initialize()
+/obj/structure/roguemachine/wizardvend/Initialize()
 	. = ..()
 	update_icon()
 //	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = rand(23,33),"NAME" = "vino")
