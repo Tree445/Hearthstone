@@ -215,7 +215,7 @@
 	//	/obj/effect/proc_holder/spell/invoked/decompose5e,
 		/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,
 		/obj/effect/proc_holder/spell/targeted/encodethoughts5e,
-		/obj/effect/proc_holder/spell/invoked/mindsliver5e
+		/obj/effect/proc_holder/spell/invoked/mindsliver5e,
 		/obj/effect/proc_holder/spell/targeted/guidance5e,
 		/obj/effect/proc_holder/spell/targeted/lightninglure5e,
 		/obj/effect/proc_holder/spell/self/light5e,
