@@ -3172,6 +3172,10 @@
 	muddy = true
 	},
 /area/rogue/outdoors/rtfield)
+"bAf" = (
+/obj/effect/landmark/start/grandtemplar,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/church/chapel)
 "bAi" = (
 /obj/structure/fluff/traveltile{
 	aportalgoesto = "hell2";
@@ -329610,7 +329614,7 @@ oIv
 oIv
 oIv
 xgL
-oIv
+bAf
 oIv
 oIv
 oIv
