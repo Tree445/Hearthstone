@@ -23,17 +23,13 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/retaliate/rogue/megafauna/blood_drunk_miner
 	name = "blood-drunk miner"
 	desc = ""
-	health = 900
-	maxHealth = 900
 	icon_state = "miner"
 	icon_living = "miner"
 	icon = 'icons/mob/broadMobs.dmi'
-	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	light_color = "#E4C7C5"
 	movement_type = GROUND
 	speak_emote = list("roars")
 	speed = 3
-	move_to_delay = 3
 	projectiletype = /obj/projectile/kinetic/miner
 	projectilesound = 'sound/blank.ogg'
 	ranged = TRUE
@@ -56,7 +52,44 @@ Difficulty: Medium
 	var/transform_stop_attack = FALSE // stops the blood drunk miner from attacking after transforming his weapon until the next attack chain
 	deathmessage = "falls to the ground, decaying into glowing particles."
 	deathsound = "bodyfall"
+
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 2
+	see_in_dark = 10
+	move_to_delay = 3
+	base_intents = list(/datum/intent/simple/drake)
+	butcher_results = list(/obj/item/soul_fragment/essence = 1)
+	faction = list("caves")
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	health = 900
+	maxHealth = 900
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	vision_range = 13
+	aggro_vision_range = 8
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	obj_damage = 1
+	retreat_distance = 5
+	minimum_distance = 5
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 20
+	STASPD = 10
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 0
+	food = 0
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
+
+
 	attack_action_types = list(/datum/action/innate/megafauna_attack/dash,
 							   /datum/action/innate/megafauna_attack/kinetic_accelerator,
 							   /datum/action/innate/megafauna_attack/transform_weapon)

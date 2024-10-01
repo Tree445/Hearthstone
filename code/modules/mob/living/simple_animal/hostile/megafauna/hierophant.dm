@@ -37,8 +37,6 @@ Difficulty: Hard
 /mob/living/simple_animal/hostile/retaliate/rogue/megafauna/hierophant
 	name = "hierophant"
 	desc = ""
-	health = 2500
-	maxHealth = 2500
 	attack_verb_continuous = "clubs"
 	attack_verb_simple = "club"
 	attack_sound = 'sound/blank.ogg'
@@ -47,16 +45,11 @@ Difficulty: Hard
 	friendly_verb_continuous = "stares down"
 	friendly_verb_simple = "stare down"
 	icon = 'icons/mob/lavaland/hierophant_new.dmi'
-	faction = list("boss") //asteroid mobs? get that shit out of my beautiful square house
 	speak_emote = list("preaches")
 	armor_penetration = 50
-	melee_damage_lower = 15
-	melee_damage_upper = 15
 	speed = 10
-	move_to_delay = 10
 	ranged = TRUE
 	ranged_cooldown_time = 40
-	aggro_vision_range = 21 //so it can see to one side of the arena to the other
 	loot = list(/obj/item/hierophant_club)
 	crusher_loot = list(/obj/item/hierophant_club, /obj/item/crusher_trophy/vortex_talisman)
 	wander = FALSE
@@ -66,6 +59,43 @@ Difficulty: Hard
 	score_achievement_type = /datum/award/score/hierophant_score
 	del_on_death = TRUE
 	deathsound = 'sound/blank.ogg'
+
+
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 2
+	see_in_dark = 10
+	move_to_delay = 10
+	base_intents = list(/datum/intent/simple/drake)
+	butcher_results = list(/obj/item/soul_fragment/essence = 1)
+	faction = list("caves")
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	health = 2500
+	maxHealth = 2500
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+	vision_range = 21
+	aggro_vision_range = 8
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	obj_damage = 1
+	retreat_distance = 0
+	minimum_distance = 0
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 20
+	STASPD = 12
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 0
+	food = 0
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
 	attack_action_types = list(/datum/action/innate/megafauna_attack/blink,
 							   /datum/action/innate/megafauna_attack/chaser_swarm,
 							   /datum/action/innate/megafauna_attack/cross_blasts,
@@ -665,7 +695,7 @@ Difficulty: Hard
 						H.FindTarget(list(caster), 1)
 					else
 						H.Goto(get_turf(caster), H.move_to_delay, 3)
-		if(monster_damage_boost && (ismegafauna(L) || istype(L, /mob/living/simple_animal/hostile/asteroid)))
+		if(monster_damage_boost && (ismegafauna(L) || istype(L, /mob/living/simple_animal/hostile/retaliate/rogue/asteroid)))
 			L.adjustBruteLoss(damage)
 		if(caster)
 			log_combat(caster, L, "struck with a [name]")

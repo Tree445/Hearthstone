@@ -1,6 +1,6 @@
 //A speedy, annoying and scaredy demon
 /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/imp
-	name = "lava imp"
+	name = "fire imp"
 	desc = "Lowest on the hierarchy of slaughter demons, this one is still nothing to sneer at."
 	icon = 'modular_hearthstone/icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "imp"

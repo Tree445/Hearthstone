@@ -8,17 +8,10 @@
 	icon_aggro = "Goldgrub_alert"
 	icon_dead = "Goldgrub_dead"
 	icon_gib = "syndicate_gib"
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	vision_range = 2
 	aggro_vision_range = 9
-	move_to_delay = 5
 	friendly_verb_continuous = "harmlessly rolls into"
 	friendly_verb_simple = "harmlessly roll into"
-	maxHealth = 45
-	health = 45
 	harm_intent_damage = 5
-	melee_damage_lower = 0
-	melee_damage_upper = 0
 	attack_verb_continuous = "barrels into"
 	attack_verb_simple = "barrel into"
 	attack_sound = 'sound/blank.ogg'
@@ -30,6 +23,42 @@
 	search_objects = 1
 	wanted_objects = list(/obj/item/stack/ore/diamond, /obj/item/stack/ore/gold, /obj/item/stack/ore/silver,
 						  /obj/item/stack/ore/uranium)
+
+
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 4
+	see_in_dark = 10
+	move_to_delay = 5
+	base_intents = list(/datum/intent/simple/goldgrub)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
+	faction = list("caves")
+	maxHealth = 45
+	health = 45
+	melee_damage_lower = 0
+	melee_damage_upper = 0
+	vision_range = 2
+	aggro_vision_range = 9
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	obj_damage = 0
+	retreat_distance = 5
+	minimum_distance = 3
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 10
+	STASPD = 10
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 100
+	food = 0
+	dodgetime = 0
+	aggressive = 0
+//	stat_attack = UNCONSCIOUS
 
 	var/chase_time = 100
 	var/will_burrow = TRUE
@@ -81,3 +110,17 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/goldgrub/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	vision_range = 9
 	. = ..()
+
+/datum/intent/simple/goldgrub
+	name = "goldgrub"
+	icon_state = "instrike"
+	attack_verb = list("harmlessly rolls onto")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = "genchop"
+	chargetime = 20
+	penfactor = 0
+	swingdelay = 3
+	candodge = TRUE
+	canparry = TRUE
+	item_d_type = "stab"

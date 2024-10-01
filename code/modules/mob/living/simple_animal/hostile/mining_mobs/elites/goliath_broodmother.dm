@@ -74,6 +74,7 @@
 	dodgetime = 0
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
+	pixel_x = -16
 
 	attack_action_types = list(/datum/action/innate/elite_attack/tentacle_patch,
 								/datum/action/innate/elite_attack/spawn_children,
@@ -198,22 +199,52 @@
 	icon_aggro = "goliath_baby"
 	icon_dead = "goliath_baby_dead"
 	icon_gib = "syndicate_gib"
-	maxHealth = 30
-	health = 30
-	melee_damage_lower = 5
-	melee_damage_upper = 5
 	attack_verb_continuous = "bashes against"
 	attack_verb_simple = "bash against"
 	attack_sound = 'sound/blank.ogg'
 	throw_message = "does nothing to the rocky hide of the"
-	speed = 2
-	move_to_delay = 5
-	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speed = 3
 	mouse_opacity = MOUSE_OPACITY_ICON
-	butcher_results = list()
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	deathmessage = "falls to the ground."
 	status_flags = CANPUSH
+
+
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 2
+	see_in_dark = 10
+	move_to_delay = 5
+	base_intents = list(/datum/intent/simple/drake)
+	butcher_results = list()
+	faction = list("caves")
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	maxHealth = 30
+	health = 30
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	vision_range = 5
+	aggro_vision_range = 8
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	obj_damage = 100
+	retreat_distance = 0
+	minimum_distance = 0
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 20
+	STASTR = 12
+	STASPD = 10
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 0
+	food = 0
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
 	var/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/broodmother/mother = null
 
 /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/broodmother_child/OpenFire(target)

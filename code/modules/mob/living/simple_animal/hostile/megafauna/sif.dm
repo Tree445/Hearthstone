@@ -147,6 +147,7 @@ Difficulty: Medium
 	anchored = TRUE
 	icon = 'modular_hearthstone/icons/mob/lavaland/sif_sword.dmi'
 	icon_state = "Idle_Sword"
+	pixel_x = -16
 	layer = HIGH_OBJ_LAYER //Looks better when its over everything... cause its huge
 	var/obj/item/gps/internal/geepm
 	var/time_between_uses = 1200

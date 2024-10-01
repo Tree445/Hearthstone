@@ -1,6 +1,6 @@
 //A slow but strong beast that tries to stun using its tentacles
 /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/goliath
-	name = "eldritch horror"
+	name = "eldritch beast"
 	desc = ""
 	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "goliath"
@@ -24,7 +24,7 @@
 	move_resist = MOVE_FORCE_VERY_STRONG
 	pull_force = MOVE_FORCE_VERY_STRONG
 	var/pre_attack = 0
-	var/pre_attack_icon = "Goliath_preattack"
+	var/pre_attack_icon = "goliath_preattack"
 	loot = list(/obj/item/stack/sheet/animalhide/goliath_hide)
 
 
@@ -33,7 +33,7 @@
 	speak_chance = 1
 	turns_per_move = 2
 	see_in_dark = 10
-	move_to_delay = 40
+	move_to_delay = 5
 	base_intents = list(/datum/intent/simple/goliath)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2)
 	faction = list("caves")
@@ -53,8 +53,8 @@
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	pooptype = null
 	STACON = 19
-	STASTR = 16
-	STASPD = 5
+	STASTR = 10
+	STASPD = 8
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 10
@@ -135,8 +135,9 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/goliath/beast/ancient
 	name = "ancient goliath"
 	desc = ""
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "ancient_goliath"
-	icon_living = "goliath"
+	icon_living = "ancient_goliath"
 	icon_aggro = "ancient_goliath"
 	icon_dead = "ancient_goliath_dead"
 	maxHealth = 400
@@ -176,7 +177,7 @@
 
 //tentacles
 /obj/effect/temp_visual/goliath_tentacle
-	name = "goliath tentacle"
+	name = "tentacle"
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "Goliath_tentacle_spawn"
 	layer = BELOW_MOB_LAYER
@@ -215,7 +216,7 @@
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
 		visible_message(span_danger("[src] grabs hold of [L]!"))
-		L.Stun(100)
+		L.Immobilize(100)
 		L.adjustBruteLoss(rand(10,15))
 		latched = TRUE
 	if(!latched)

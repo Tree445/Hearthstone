@@ -5,24 +5,54 @@
 	icon_state = "curseblob"
 	icon_living = "curseblob"
 	icon_aggro = "curseblob"
-	mob_biotypes = MOB_SPIRIT
 	movement_type = FLYING
 	move_to_delay = 5
-	vision_range = 20
-	aggro_vision_range = 20
-	maxHealth = 40 //easy to kill, but oh, will you be seeing a lot of them.
 	health = 40
-	melee_damage_lower = 10
-	melee_damage_upper = 10
 	melee_damage_type = BURN
 	attack_verb_continuous = "slashes"
 	attack_verb_simple = "slash"
 	attack_sound = 'sound/blank.ogg'
 	throw_message = "passes through the smokey body of"
 	obj_damage = 0
-	environment_smash = ENVIRONMENT_SMASH_NONE
 	sentience_type = SENTIENCE_BOSS
 	layer = LARGE_MOB_LAYER
+
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 4
+	see_in_dark = 10
+	move_to_delay = 3
+	base_intents = list(/datum/intent/simple/imp)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
+	faction = list("caves")
+	mob_biotypes = MOB_SPIRIT
+	maxHealth = 40 //easy to kill, but oh, will you be seeing a lot of them.
+	health = 40
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	vision_range = 5
+	aggro_vision_range = 20
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	obj_damage = 0
+	retreat_distance = 5
+	minimum_distance = 3
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 10
+	STASPD = 8
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 100
+	food = 0
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
+
 	var/doing_move_loop = FALSE
 	var/mob/living/set_target
 	var/timerid

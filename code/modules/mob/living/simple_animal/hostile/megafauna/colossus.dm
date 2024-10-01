@@ -79,7 +79,7 @@ Difficulty: Very Hard
 	pooptype = null
 	STACON = 19
 	STASTR = 20
-	STASPD = 10
+	STASPD = 8
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 10

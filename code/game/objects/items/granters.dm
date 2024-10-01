@@ -179,6 +179,14 @@
 	traitname = "the succubus"
 	remarks = list("<font color='#b028fffb'>They like what they see.", "<font color='#b028fffb'>I can't wait to hear you scream.", "<font color='#b028fffb'>So many hearts to break, so little time.","<font color='#b028fffb'>Without pain, how would they know pleasure?</font>",)
 
+/obj/item/book/granter/trait/north
+	name = "Fragment of the North"
+	light_color = "#28d8fffb"
+	color = "#28d8fffb"
+	granted_trait = TRAIT_VIKINGCAMP
+	sellprice = 150
+	traitname = "the north"
+	remarks = list("<font color='#28d8fffb'>It is important to stay warm.", "<font color='#28d8fffb'>Sail em high.", "<font color='#28d8fffb'>Plug the holes of your ship with a finger.","<font color='#28d8fffb'>Just follow the North Star.</font>",)
 ///ACTION BUTTONS///
 
 /obj/item/book/granter/action

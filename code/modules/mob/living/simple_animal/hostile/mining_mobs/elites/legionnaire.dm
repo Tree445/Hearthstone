@@ -24,20 +24,53 @@
 	icon_aggro = "legionnaire"
 	icon_dead = "legionnaire_dead"
 	icon_gib = "syndicate_gib"
-	maxHealth = 800
-	health = 800
-	melee_damage_lower = 30
-	melee_damage_upper = 30
 	attack_verb_continuous = "slashes its arms at"
 	attack_verb_simple = "slash my arms at"
 	attack_sound = 'sound/blank.ogg'
 	throw_message = "doesn't affect the sturdiness of"
 	speed = 1
-	move_to_delay = 3
 	mouse_opacity = MOUSE_OPACITY_ICON
 	deathsound = 'sound/blank.ogg'
 	deathmessage = "'s arms reach out before it falls apart onto the floor, lifeless."
 	loot_drop = /obj/item/crusher_trophy/legionnaire_spine
+
+
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 4
+	see_in_dark = 10
+	move_to_delay = 3
+	base_intents = list(/datum/intent/simple/drake)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
+	faction = list("caves")
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	maxHealth = 800
+	health = 800
+	melee_damage_lower = 30
+	melee_damage_upper = 30
+	vision_range = 5
+	aggro_vision_range = 8
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	obj_damage = 100
+	retreat_distance = 0
+	minimum_distance = 0
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 12
+	STASPD = 9
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 100
+	food = 0
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
+
 
 	attack_action_types = list(/datum/action/innate/elite_attack/legionnaire_charge,
 								/datum/action/innate/elite_attack/head_detach,

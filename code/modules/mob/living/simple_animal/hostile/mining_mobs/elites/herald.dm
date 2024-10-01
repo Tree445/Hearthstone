@@ -24,10 +24,6 @@
 	icon_aggro = "herald"
 	icon_dead = "herald_dying"
 	icon_gib = "syndicate_gib"
-	maxHealth = 800
-	health = 800
-	melee_damage_lower = 20
-	melee_damage_upper = 20
 	attack_verb_continuous = "preaches to"
 	attack_verb_simple = "preach to"
 	attack_sound = 'sound/blank.ogg'
@@ -40,6 +36,41 @@
 	loot_drop = /obj/item/clothing/neck/cloak/herald_cloak
 
 	can_talk = 1
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 4
+	see_in_dark = 10
+	move_to_delay = 10
+	base_intents = list(/datum/intent/simple/drake)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
+	faction = list("caves")
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	maxHealth = 800
+	health = 800
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+	vision_range = 5
+	aggro_vision_range = 8
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	obj_damage = 100
+	retreat_distance = 0
+	minimum_distance = 0
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 15
+	STASPD = 8
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 100
+	food = 0
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
 
 	attack_action_types = list(/datum/action/innate/elite_attack/herald_trishot,
 								/datum/action/innate/elite_attack/herald_directionalshot,

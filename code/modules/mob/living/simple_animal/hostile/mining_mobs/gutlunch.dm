@@ -8,16 +8,9 @@
 	icon_dead = "gutlunch"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_emote = list("warbles", "quavers")
-	emote_hear = list("trills.")
-	emote_see = list("sniffs.", "burps.")
+
 	weather_immunities = list("lava","ash")
-	faction = list("mining", "ashwalker")
 	density = FALSE
-	speak_chance = 1
-	turns_per_move = 8
-	obj_damage = 0
-	environment_smash = ENVIRONMENT_SMASH_NONE
-	move_to_delay = 15
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "gently pushes aside"
@@ -45,6 +38,44 @@
 
 	wanted_objects = list(/obj/effect/decal/cleanable/xenoblood/xgibs, /obj/effect/decal/cleanable/blood/gibs/, /obj/item/organ)
 	// var/obj/item/udder/gutlunch/udder = null
+
+
+	emote_hear = list("trills.")
+	emote_see = list("sniffs.", "burps.")
+	speak_chance = 1
+	turns_per_move = 8
+	see_in_dark = 10
+	move_to_delay = 15
+	base_intents = list(/datum/intent/simple/goldengrub)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
+	faction = list("caves")
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	maxHealth = 1000
+	health = 1000
+	melee_damage_lower = 0
+	melee_damage_upper = 0
+	vision_range = 5
+	aggro_vision_range = 8
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	obj_damage = 0
+	retreat_distance = 4
+	minimum_distance = 4
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 14
+	STASPD = 8
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 100
+	food = 0
+	dodgetime = 0
+	aggressive = 0
+//	stat_attack = UNCONSCIOUS
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/gutlunch/Initialize()
 	udder = new()

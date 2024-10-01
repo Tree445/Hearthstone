@@ -18,8 +18,6 @@
   */
 /mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion
 	name = "Legion"
-	health = 700
-	maxHealth = 700
 	icon_state = "mega_legion"
 	icon_living = "mega_legion"
 	desc = ""
@@ -29,13 +27,9 @@
 	attack_sound = 'sound/blank.ogg'
 	speak_emote = list("echoes")
 	armor_penetration = 50
-	melee_damage_lower = 25
-	melee_damage_upper = 25
 	speed = 5
 	ranged = TRUE
 	del_on_death = TRUE
-	retreat_distance = 5
-	minimum_distance = 5
 	ranged_cooldown_time = 20
 	gps_name = "Echoing Signal"
 	achievement_type = /datum/award/achievement/boss/legion_kill
@@ -44,11 +38,48 @@
 	pixel_y = -16
 	pixel_x = -32
 	loot = list(/obj/item/stack/sheet/bone = 3)
-	vision_range = 13
 	wander = FALSE
 	elimination = TRUE
 	appearance_flags = 0
 	mouse_opacity = MOUSE_OPACITY_ICON
+
+	emote_hear = null
+	emote_see = null
+	speak_chance = 1
+	turns_per_move = 2
+	see_in_dark = 10
+	move_to_delay = 10
+	base_intents = list(/datum/intent/simple/drake)
+	butcher_results = list(/obj/item/soul_fragment/essence = 1)
+	faction = list("caves")
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	health = 700
+	maxHealth = 700
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	vision_range = 13
+	aggro_vision_range = 8
+	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
+	obj_damage = 1
+	retreat_distance = 5
+	minimum_distance = 5
+	milkies = FALSE
+	food_type = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	pooptype = null
+	STACON = 19
+	STASTR = 20
+	STASPD = 10
+	deaggroprob = 0
+	defprob = 40
+	defdrain = 10
+	retreat_health = 0
+	food = 0
+	dodgetime = 0
+	aggressive = 1
+//	stat_attack = UNCONSCIOUS
+
+
 	attack_action_types = list(/datum/action/innate/megafauna_attack/create_skull,
 							   /datum/action/innate/megafauna_attack/charge_target,
 							   /datum/action/innate/megafauna_attack/create_turrets)
