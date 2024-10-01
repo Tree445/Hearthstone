@@ -1,5 +1,5 @@
 //A beast that fire freezing blasts.
-/mob/living/simple_animal/hostile/asteroid/basilisk
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk
 	name = "basilisk"
 	desc = ""
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
@@ -44,12 +44,12 @@
 	flag = "energy"
 	temperature = 50
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/GiveTarget(new_target)
 	if(..()) //we have a target
 		if(isliving(target) && !target.Adjacent(targets_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
 			OpenFire(target)
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/ex_act(severity, target)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/ex_act(severity, target)
 	switch(severity)
 		if(1)
 			gib()
@@ -59,7 +59,7 @@
 			adjustBruteLoss(110)
 
 //Watcher
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher
 	name = "watcher"
 	desc = ""
 	icon = 'icons/mob/lavaland/watcher.dmi'
@@ -83,16 +83,16 @@
 	loot = list()
 	butcher_results = list(/obj/item/stack/ore/diamond = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 1)
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random/Initialize()
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher/random/Initialize()
 	. = ..()
 	if(prob(1))
 		if(prob(75))
-			new /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing(loc)
+			new /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher/magmawing(loc)
 		else
-			new /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing(loc)
+			new /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher/icewing(loc)
 		return INITIALIZE_HINT_QDEL
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher/magmawing
 	name = "magmawing watcher"
 	desc = ""
 	icon_state = "watcher_magmawing"
@@ -108,7 +108,7 @@
 	crusher_loot = /obj/item/crusher_trophy/blaster_tubes/magma_wing
 	crusher_drop_mod = 60
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher/icewing
 	name = "icewing watcher"
 	desc = ""
 	icon_state = "watcher_icewing"
@@ -150,5 +150,5 @@
 		if(istype(L))
 			L.apply_status_effect(/datum/status_effect/freon/watcher)
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/basilisk/watcher/tendril
 	fromtendril = TRUE

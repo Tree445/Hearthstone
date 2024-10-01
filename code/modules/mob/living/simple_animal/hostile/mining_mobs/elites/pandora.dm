@@ -16,7 +16,7 @@
   * Pandora's fight mirrors Hierophant's closely, but has stark differences in attack effects.  Instead of long-winded dodge times and long cooldowns, Pandora constantly attacks the opponent, but leaves itself open for attack.
   */
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora
 	name = "pandora"
 	desc = ""
 	icon_state = "pandora"
@@ -71,7 +71,7 @@
 	chosen_message = span_boldwarning("My attacks will spawn an AOE blast at my target location.")
 	chosen_attack_num = AOE_SQUARES
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/OpenFire()
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/OpenFire()
 	if(client)
 		switch(chosen_attack)
 			if(SINGULAR_SHOT)
@@ -94,7 +94,7 @@
 		if(AOE_SQUARES)
 			aoe_squares(target)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/Life()
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/Life()
 	. = ..()
 	if(health >= maxHealth * 0.5)
 		cooldown_time = 20
@@ -105,13 +105,13 @@
 	else
 		cooldown_time = 10
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/singular_shot(target)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/singular_shot(target)
 	ranged_cooldown = world.time + (cooldown_time * 0.5)
 	var/dir_to_target = get_dir(get_turf(src), get_turf(target))
 	var/turf/T = get_step(get_turf(src), dir_to_target)
 	singular_shot_line(sing_shot_length, dir_to_target, T)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/singular_shot_line(procsleft, angleused, turf/T)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/singular_shot_line(procsleft, angleused, turf/T)
 	if(procsleft <= 0)
 		return
 	new /obj/effect/temp_visual/hierophant/blast/pandora(T, src)
@@ -119,14 +119,14 @@
 	procsleft = procsleft - 1
 	addtimer(CALLBACK(src, PROC_REF(singular_shot_line), procsleft, angleused, T), 2)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/magic_box(target)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/magic_box(target)
 	ranged_cooldown = world.time + cooldown_time
 	var/turf/T = get_turf(target)
 	for(var/t in spiral_range_turfs(3, T))
 		if(get_dist(t, T) > 1)
 			new /obj/effect/temp_visual/hierophant/blast/pandora(t, src)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/pandora_teleport(target)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/pandora_teleport(target)
 	ranged_cooldown = world.time + cooldown_time
 	var/turf/T = get_turf(target)
 	var/turf/source = get_turf(src)
@@ -135,7 +135,7 @@
 	playsound(source,'sound/blank.ogg', 200, 1)
 	addtimer(CALLBACK(src, PROC_REF(pandora_teleport_2), T, source), 2)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/pandora_teleport_2(turf/T, turf/source)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/pandora_teleport_2(turf/T, turf/source)
 	new /obj/effect/temp_visual/hierophant/telegraph/teleport(T, src)
 	new /obj/effect/temp_visual/hierophant/telegraph/teleport(source, src)
 	for(var/t in RANGE_TURFS(1, T))
@@ -147,20 +147,20 @@
 	density = FALSE
 	addtimer(CALLBACK(src, PROC_REF(pandora_teleport_3), T), 2)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/pandora_teleport_3(turf/T)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/pandora_teleport_3(turf/T)
 	forceMove(T)
 	animate(src, alpha = 255, time = 2, easing = EASE_IN) //fade IN
 	density = TRUE
 	visible_message(span_hierophant_warning("[src] fades in!"))
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/aoe_squares(target)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/aoe_squares(target)
 	ranged_cooldown = world.time + cooldown_time
 	var/turf/T = get_turf(target)
 	new /obj/effect/temp_visual/hierophant/blast/pandora(T, src)
 	var/max_size = 2
 	addtimer(CALLBACK(src, PROC_REF(aoe_squares_2), T, 0, max_size), 2)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/aoe_squares_2(turf/T, ring, max_size)
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/elite/pandora/proc/aoe_squares_2(turf/T, ring, max_size)
 	if(ring > max_size)
 		return
 	for(var/t in spiral_range_turfs(ring, T))

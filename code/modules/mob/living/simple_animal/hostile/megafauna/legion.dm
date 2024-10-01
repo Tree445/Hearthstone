@@ -16,7 +16,7 @@
   *
   *SHITCODE AHEAD. BE ADVISED. Also comment extravaganza
   */
-/mob/living/simple_animal/hostile/megafauna/legion
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion
 	name = "Legion"
 	health = 700
 	maxHealth = 700
@@ -77,7 +77,7 @@
 	chosen_message = span_colossus("I are now creating legion sentinels.")
 	chosen_attack_num = 3
 
-/mob/living/simple_animal/hostile/megafauna/legion/OpenFire(the_target)
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/OpenFire(the_target)
 	if(charging)
 		return
 	ranged_cooldown = world.time + ranged_cooldown_time
@@ -103,8 +103,8 @@
 //SKULLS
 
 ///Attack proc. Spawns a singular legion skull.
-/mob/living/simple_animal/hostile/megafauna/legion/proc/create_legion_skull()
-	var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/A = new(loc)
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/proc/create_legion_skull()
+	var/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/hivelordbrood/legion/A = new(loc)
 	A.GiveTarget(target)
 	A.friends = friends
 	A.faction = faction
@@ -112,7 +112,7 @@
 //CHARGE
 
 ///Attack proc. Gives legion some movespeed buffs and switches the AI to melee. At lower sizes, this also throws the skull at the player.
-/mob/living/simple_animal/hostile/megafauna/legion/proc/charge_target()
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/proc/charge_target()
 	visible_message(span_warning("<b>[src] charges!</b>"))
 	SpinAnimation(speed = 20, loops = 3, parallel = FALSE)
 	ranged = FALSE
@@ -126,12 +126,12 @@
 		addtimer(CALLBACK(src, PROC_REF(throw_thyself)), 20)
 
 ///This is the proc that actually does the throwing. Charge only adds a timer for this.
-/mob/living/simple_animal/hostile/megafauna/legion/proc/throw_thyself()
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/proc/throw_thyself()
 	playsound(src, 'sound/blank.ogg', 50, TRUE)
 	throw_at(target, 7, 1.1, src, FALSE, FALSE, CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/blank.ogg', 50 * size, TRUE, 2), INFINITY)
 
 ///Deals some extra damage on throw impact.
-/mob/living/simple_animal/hostile/megafauna/legion/throw_impact(mob/living/hit_atom, datum/thrownthing/throwingdatum)
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/throw_impact(mob/living/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(istype(hit_atom))
 		playsound(src, attack_sound, 100, TRUE)
@@ -141,7 +141,7 @@
 //TURRETS
 
 ///Attack proc. Creates up to three legion turrets on suitable turfs nearby.
-/mob/living/simple_animal/hostile/megafauna/legion/proc/create_legion_turrets(minimum = 2, maximum = size * 2)
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/proc/create_legion_turrets(minimum = 2, maximum = size * 2)
 	playsound(src, 'sound/blank.ogg', 100, TRUE)
 	var/list/possiblelocations = list()
 	for(var/turf/T in oview(src, 4)) //Only place the turrets on open turfs
@@ -153,28 +153,28 @@
 		new /obj/structure/legionturret(chosen)
 		possiblelocations -= chosen
 
-/mob/living/simple_animal/hostile/megafauna/legion/GiveTarget(new_target)
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/GiveTarget(new_target)
 	. = ..()
 	if(target)
 		wander = TRUE
 
 ///This makes sure that the legion door opens on taking damage, so you can't cheese this boss.
-/mob/living/simple_animal/hostile/megafauna/legion/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	if(GLOB.necropolis_gate && true_spawn)
 		GLOB.necropolis_gate.toggle_the_gate(null, TRUE) //very clever.
 	return ..()
 
 ///In addition to parent functionality, this will also turn the target into a small legion if they are unconcious.
-/mob/living/simple_animal/hostile/megafauna/legion/AttackingTarget()
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/L = target
 		if(L.stat == UNCONSCIOUS)
-			var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/A = new(loc)
+			var/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/hivelordbrood/legion/A = new(loc)
 			A.infest(L)
 
 ///Resets the charge buffs.
-/mob/living/simple_animal/hostile/megafauna/legion/proc/reset_charge()
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/proc/reset_charge()
 	ranged = TRUE
 	retreat_distance = 5
 	minimum_distance = 5
@@ -182,7 +182,7 @@
 	charging = FALSE
 
 ///Special snowflake death() here. Can only die if size is 1 or lower and HP is 0 or below.
-/mob/living/simple_animal/hostile/megafauna/legion/death()
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/death()
 	//Make sure we didn't get cheesed
 	if(health > 0)
 		return
@@ -190,7 +190,7 @@
 		return
 	//We check what loot we should drop.
 	var/last_legion = TRUE
-	for(var/mob/living/simple_animal/hostile/megafauna/legion/other in GLOB.mob_living_list)
+	for(var/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/other in GLOB.mob_living_list)
 		if(other != src)
 			last_legion = FALSE
 			break
@@ -204,7 +204,7 @@
 	return ..()
 
 ///Splits legion into smaller skulls.
-/mob/living/simple_animal/hostile/megafauna/legion/proc/Split()
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/proc/Split()
 	size--
 	if(size < 1)
 		return FALSE
@@ -228,12 +228,12 @@
 	adjustHealth(0) //Make the health HUD look correct.
 	visible_message(span_boldannounce("This is getting out of hands. Now there are three of them!"))
 	for(var/i in 1 to 2) //Create three skulls in total
-		var/mob/living/simple_animal/hostile/megafauna/legion/L = new(loc)
+		var/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/L = new(loc)
 		L.setVarsAfterSplit(src)
 	return TRUE
 
 ///Sets the variables for new legion skulls. Usually called after splitting.
-/mob/living/simple_animal/hostile/megafauna/legion/proc/setVarsAfterSplit(mob/living/simple_animal/hostile/megafauna/legion/L)
+/mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/proc/setVarsAfterSplit(mob/living/simple_animal/hostile/retaliate/rogue/megafauna/legion/L)
 	maxHealth = L.maxHealth
 	updatehealth()
 	size = L.size
