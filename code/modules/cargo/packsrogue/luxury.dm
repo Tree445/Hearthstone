@@ -73,10 +73,10 @@
 	cost = 300
 	contains = list(/obj/item/clothing/ring/active/nomag)
 
-/* /datum/supply_pack/rogue/luxury/scrying
+/datum/supply_pack/rogue/luxury/scrying
 	name = "Scrying Orb"
 	cost = 250
-	contains = list(/obj/item/scrying) */ // I'm probably getting lynched for this one
+	contains = list(/obj/item/scrying)
 
 /datum/supply_pack/rogue/luxury/listenst
 	name = "Emerald Choker"
@@ -167,7 +167,7 @@
 	cost = 1000
 	contains = list(/obj/item/book/granter/trait/war/relentless) */
 
-/* - IN THE WIZARD VENDOR NOW
+
 
 /datum/supply_pack/rogue/luxury/acidsplash5e
 	name = "Acid Splash"
@@ -258,4 +258,3 @@
 	name = "Scroll of Ray of Frost"
 	cost = 50
 	contains = list(/obj/item/book/granter/spell/spells5e/rayoffrost5e)
-	*/
