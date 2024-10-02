@@ -103,7 +103,9 @@
 				choose_magic(utility_spells,H)
 					
 			if("End Spell Selection") // In case someone doesn't want to spend every point they have, for whatever reason
-				H.mind.used_spell_points = H.mind.spell_points 
+				H.mind.used_spell_points = H.mind.spell_points
+	
+	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 	
 
 	
