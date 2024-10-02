@@ -88,7 +88,7 @@
 	var/list/defense_spells = list(/obj/effect/proc_holder/spell/invoked/forcewall_weak,/obj/effect/proc_holder/spell/self/bladeward5e,)
 	var/list/utility_spells = list(/obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe,/obj/effect/proc_holder/spell/invoked/message,/obj/effect/proc_holder/spell/invoked/push_spell,/obj/effect/proc_holder/spell/invoked/longjump,/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,/obj/effect/proc_holder/spell/targeted/guidance5e,/obj/effect/proc_holder/spell/targeted/encodethoughts5e,/obj/effect/proc_holder/spell/invoked/magicstone5e,/obj/effect/proc_holder/spell/invoked/mending5e,/obj/effect/proc_holder/spell/self/light5e,/obj/effect/proc_holder/spell/aoe_turf/conjure/createbonfire5e,)
 	
-	var/categories = list("Combat", "Defense", "Utility", "End Spell Selection")
+	var/categories = list("Combat", "Defense", "Utility", "End Spell Selection (You will lose all points not spent)")
 	
 	while(H.mind.used_spell_points < H.mind.spell_points)
 		var/magichoice = input("Choose your spells", "Available categories") as anything in categories
@@ -102,8 +102,8 @@
 			if("Utility")
 				choose_magic(utility_spells,H)
 					
-			if("End Spell Selection") // In case someone doesn't want to spend every point they have, for whatever reason
-				H.mind.used_spell_points = H.mind.spell_points
+			if("End Spell Selection (You will lose all points not spent)") // In case someone doesn't want to spend every point they have and plays a gimped mage, for whatever reason
+				H.mind.spell_points = H.mind.used_spell_points
 	
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 	
