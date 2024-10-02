@@ -175,6 +175,7 @@
 	light_flags = NONE
 	light_color = "#3FBAFD"
 
+/*
 //A spell to choose new spells, upon spawning or gaining levels
 /obj/effect/proc_holder/spell/invoked/learnspell
 	name = "Attempt to learn a new spell"
@@ -227,7 +228,7 @@
 		
 	var/choice = input("Choose a spell, points left: [user.mind.spell_points - user.mind.used_spell_points]") as null|anything in choices
 	var/obj/effect/proc_holder/spell/item = choices[choice]
-	if(!item) 
+	if(!item)
 		return     // user canceled; 
 	for(var/obj/effect/proc_holder/spell/knownspell in user.mind.spell_list)
 		if(knownspell.type == item.type)
@@ -239,6 +240,7 @@
 	else
 		user.mind.used_spell_points += item.cost
 		user.mind.AddSpell(new item)
+*/
 
 //forcewall
 /obj/effect/proc_holder/spell/invoked/forcewall_weak
