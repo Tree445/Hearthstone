@@ -271,7 +271,7 @@
 	result = /obj/item/reagent_containers/glass/bucket/pot
 	reqs = list(/obj/item/natural/stone = 2)
 
-/datum/crafting_recipe/roguetown/pot
+/datum/crafting_recipe/roguetown/tbox
 	name = "tinder sticks box"
 	result = /obj/item/storage/box/matches
 	reqs = list(/obj/item/natural/stone = 2, /obj/item/grown/log/tree/stick = 3, /obj/item/natural/cloth = 1)
