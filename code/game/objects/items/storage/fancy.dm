@@ -305,20 +305,20 @@
 //CIGAR BOX//
 /////////////
 
-/obj/item/storage/fancy/cigarettes/cigars
-	name = "\improper premium cigar case"
+/obj/item/storage/fancy/cigarettes/zigscase
+	name = "zig case"
 	desc = ""
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cigarcase"
 	w_class = WEIGHT_CLASS_NORMAL
 	icon_type = "premium cigar"
-	spawn_type = /obj/item/clothing/mask/cigarette/cigar
+	spawn_type = null
 
-/obj/item/storage/fancy/cigarettes/cigars/ComponentInitialize()
+/obj/item/storage/fancy/cigarettes/zigscase/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
-	STR.set_holdable(list(/obj/item/clothing/mask/cigarette/cigar))
+	STR.set_holdable(list(/obj/item/clothing/mask/cigarette/rollie/nicotine, /obj/item/clothing/mask/cigarette/rollie/cannabis, /obj/item/clothing/mask/cigarette/rollie/shroom, /obj/item/clothing/mask/cigarette/rollie/dud))
 
 /obj/item/storage/fancy/cigarettes/cigars/update_icon()
 	cut_overlays()
@@ -334,11 +334,12 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-/obj/item/storage/fancy/cigarettes/cigars/cohiba
-	name = "\improper Cohiba Robusto cigar case"
-	desc = ""
+/obj/item/storage/fancy/cigarettes/zigscase/zigscasef
+	name = "regal zig case"
+	desc = "you spent too much for this, or stole it."
 	icon_state = "cohibacase"
-	spawn_type = /obj/item/clothing/mask/cigarette/cigar/cohiba
+	spawn_type = /obj/item/clothing/mask/cigarette/rollie/shroom
+	sellprice = 600
 
 /obj/item/storage/fancy/cigarettes/cigars/havana
 	name = "\improper premium Havanian cigar case"
