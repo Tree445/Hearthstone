@@ -18,7 +18,7 @@
 	name = "Zig Case (+1 Cloth)"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/natural/cloth = 1)
-	created_item = /obj/item/storage/fancy/cigarettes/zigscase
+	created_item = /obj/item/storage/fancy/cigarettes/cigars
 	i_type = "Valuables"
 
 /datum/anvil_recipe/valuables/lightr

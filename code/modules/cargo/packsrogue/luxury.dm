@@ -96,7 +96,7 @@
 /datum/supply_pack/rogue/luxury/zigcase
 	name = "Regal Zig Case"
 	cost = 600
-	contains = list(/obj/item/storage/fancy/cigarettes/zigscase/zigscasef)
+	contains = list(/obj/item/storage/fancy/cigarettes/cigars/cohiba)
 
 // Flavor Packages - For region specific gear; mostly for flavor, also to buy and LARP I guess.
 // Yeah, it's weapons and armor and clothes but sue me. It's overpriced for the LARP.
