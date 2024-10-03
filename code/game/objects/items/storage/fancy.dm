@@ -305,7 +305,7 @@
 //CIGAR BOX//
 /////////////
 
-/obj/item/storage/fancy/cigarettes/zigscase
+/obj/item/storage/fancy/cigarettes/cigars
 	name = "zig case"
 	desc = ""
 	icon = 'icons/obj/cigarettes.dmi'
@@ -314,7 +314,7 @@
 	icon_type = "premium cigar"
 	spawn_type = null
 
-/obj/item/storage/fancy/cigarettes/zigscase/ComponentInitialize()
+/obj/item/storage/fancy/cigarettes/cigars/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 5
@@ -334,7 +334,7 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-/obj/item/storage/fancy/cigarettes/zigscase/zigscasef
+/obj/item/storage/fancy/cigarettes/cigars/cohiba
 	name = "regal zig case"
 	desc = "you spent too much for this, or stole it."
 	icon_state = "cohibacase"

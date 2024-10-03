@@ -103,7 +103,7 @@
 /datum/crafting_recipe/roguetown/dryshroom
 	name = "dry elder shroom"
 	result = /obj/item/reagent_containers/food/snacks/grown/rogue/shroomdry
-	reqs = list(obj/item/reagent_containers/food/snacks/grown/shroom = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/shroom = 1)
 	structurecraft = /obj/structure/fluff/dryingrack
 	time = 2 SECONDS
 	verbage_simple = "dry"
