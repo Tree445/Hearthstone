@@ -326,7 +326,7 @@
 		icon_state = "[initial(icon_state)]_open"
 
 		var/cigar_position = 1 //generate sprites for cigars in the box
-		for(var/obj/item/clothing/mask/cigarette/cigar/smokes in contents)
+		for(var/obj/item/clothing/mask/cigarette/smokes in contents)
 			var/mutable_appearance/cigar_overlay = mutable_appearance(icon, "[smokes.icon_off]_[cigar_position]")
 			add_overlay(cigar_overlay)
 			cigar_position++

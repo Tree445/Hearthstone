@@ -382,7 +382,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	type_butt = /obj/item/cigbutt/roach
 	throw_speed = 0.5
 	item_state = "spliffoff"
-	smoketime = 10 MINUTES
+	smoketime = 120
 	chem_volume = 50
 	list_reagents = null
 	muteinmouth = FALSE
@@ -397,16 +397,17 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/rollie/shroom
 	list_reagents = list(/datum/reagent/medicine/shroomt = 30, /datum/reagent/water = 30)
-	color = "#ffdfdf"
+	color = COLOR_RED_LIGHT
 
 /obj/item/clothing/mask/cigarette/rollie/trippy
 	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/drug/mushroomhallucinogen = 35)
 
 /obj/item/clothing/mask/cigarette/rollie/cannabis
 	list_reagents = list(/datum/reagent/drug/space_drugs = 30)
-	color = "#e6ffe6"
+	color = COLOR_OLIVE
 
 /obj/item/clothing/mask/cigarette/rollie/dud
+	smoketime = 300
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/water = 30)
 
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
@@ -504,7 +505,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "pipeoff"
 	icon_on = "pipeon"  //Note - these are in masks.dmi
 	icon_off = "pipeoff"
-	smoketime = 12 MINUTES
+	smoketime = 300
 	chem_volume = 100
 	list_reagents = null
 	var/packeditem = 0
@@ -817,6 +818,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	name = "Port-A-Flame"
 	desc = "portable fire. in your hand. magic? not magic?"
 	icon_state = "slighter"
+	light_range = 4
+	light_power = 0.6
 	heat = 3000
 	light_color = LIGHT_COLOR_LAVENDER
 	overlay_state = "slime"

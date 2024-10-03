@@ -278,9 +278,10 @@
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/shroomdry
 	seed = null
-	name = "elder shroom"
+	name = "dryed elder shroom"
 	desc = ""
 	icon_state = "eldershroom"
+	color = COLOR_YELLOW
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/medicine/shroomt = 30, /datum/reagent/water = 30)
 	list_reagents = list(/datum/reagent/medicine/shroomt = 10, /datum/reagent/consumable/nutriment = 4)
@@ -290,7 +291,7 @@
 	seed = null
 	name = "pipe filler"
 	desc = ""
-	color = "#e6ffe6"
+	color = COLOR_GREEN_GRAY
 	icon_state = "oat"
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/water = 30)
