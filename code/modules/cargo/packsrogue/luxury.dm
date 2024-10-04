@@ -154,10 +154,6 @@
 	name = "Fragment of the Succubus"
 	cost = 50
 	contains = list(/obj/item/book/granter/trait/succubus)
-/datum/supply_pack/rogue/luxury/
-	name = "Fragment of the North"
-	cost = 200
-	contains = list(/obj/item/book/granter/trait/north)
 /*/datum/supply_pack/rogue/luxury/undying
 	name = "Fragment of the Undying"
 	cost = 500
