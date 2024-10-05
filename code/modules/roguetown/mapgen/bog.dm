@@ -28,7 +28,13 @@
 							/obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf = 4,
 							/obj/structure/flora/roguegrass/maneater/real=3,
 							/obj/structure/flora/wildplant/wild_poppy = 2,
-							/obj/structure/flora/wildplant/wild_herbs = 2)
+							/obj/structure/flora/wildplant/wild_herbs = 2,
+							/obj/structure/flora/wildplant/increase_plant = 2,
+							/obj/structure/flora/wildplant/reduce_plant = 2,
+							/obj/structure/flora/wildplant/male_plant = 2,
+							/obj/structure/flora/wildplant/female_plant = 2,
+							/obj/structure/flora/wildplant/upper_plant = 2,
+							/obj/structure/flora/wildplant/lower_plant = 2)
 	spawnableTurfs = list(/turf/open/floor/rogue/dirt/road=2,
 						/turf/open/water/swamp=1)
 	allowed_areas = list(/area/rogue/outdoors/bog, /area/rogue/outdoors/rtfield)

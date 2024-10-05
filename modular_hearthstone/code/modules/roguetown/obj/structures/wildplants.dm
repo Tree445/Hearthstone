@@ -61,3 +61,55 @@
 	desc = "an assortment of wild herbs with mild healing properties."
 	produce = /obj/item/reagent_containers/food/snacks/grown/herbs
 
+/*
+
+Ham-Hole's additions:
+These intend to add plants with words or tags so that alchemy is more like word crafting
+
+Exmaple:
+	increase + upper + male + bottle = grow penis potion
+	reduce + upper + male + bottle = shrink penis potion
+	increase + lower + male + bottle = grow testicles potion
+	reduce + lower + male + bottle = shrink testicles potion
+	increase + upper + female + bottle = grow breasts potion
+	reduce + upper + female + bottle = shrink breasts potion
+	increase + lower + female + bottle = grow vagina potion
+	reduce + lower + female + bottle = shrink vagina potion
+*/
+
+/obj/structure/flora/wildplant/increase_plant //increase plant //sun themed
+	name = "solar succulent"
+	icon_state = "wild_herbs"
+	desc = "a cacti with a large flared flower at the top."
+	produce = /obj/item/reagent_containers/food/snacks/grown/increase_plant
+
+/obj/structure/flora/wildplant/reduce_plant //reduce plant //moon themed
+	name = "lunar lily"
+	icon_state = "wild_herbs"
+	desc = "A lily known for it's glowing petals."
+	produce = /obj/item/reagent_containers/food/snacks/grown/reduce_plant
+
+/obj/structure/flora/wildplant/male_plant //male plant
+	name = "bellatorare" //to act like a warrior
+	icon_state = "wild_herbs"
+	desc = "a stock of thorny poisonous barbs said to be used by shamans to induce hallucinations in themselves."
+	produce = /obj/item/reagent_containers/food/snacks/grown/male_plant
+
+/obj/structure/flora/wildplant/female_plant //female plant
+	name = "puellicinus" //maiden-like
+	icon_state = "wild_herbs"
+	desc = "a tiny bush filled with bright flowers."
+	produce = /obj/item/reagent_containers/food/snacks/grown/female_plant
+
+/obj/structure/flora/wildplant/upper_plant //upper plant
+	name = "titan's club"
+	icon_state = "wild_herbs"
+	desc = "a stock of thorny poisonous barbs said to be used by shamans to induce hallucinations in themselves."
+	produce = /obj/item/reagent_containers/food/snacks/grown/upper_plant
+
+/obj/structure/flora/wildplant/lower_plant //lower plant
+	name = "gnomish grass"
+	icon_state = "wild_herbs"
+	desc = "redcaps are said to smoke this grass recreationally."
+	produce = /obj/item/reagent_containers/food/snacks/grown/lower_plant
+

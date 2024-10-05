@@ -244,3 +244,218 @@
 		holder.remove_reagent(/datum/reagent/medicine/virilitypot, 10)
 	.. ()
 	. = 1 
+
+/datum/reagent/medicine/increase_upper_male
+	name = "Grow Penis Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "penis"
+	overdose_threshold = 9
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/increase_upper_male/overdose_process(mob/living/L)
+	//do stuff
+	/*
+		if has penis
+			if penis max
+				pain
+			else
+				increase penis one category
+		else
+			give penis
+	*/
+	if(holder.has_reagent(/datum/reagent/medicine/increase_upper_male))
+		holder.remove_reagent(/datum/reagent/medicine/increase_upper_male, 10)
+	..()
+	. = 1
+
+/datum/reagent/medicine/reduce_upper_male
+	name = "Shrink Penis Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "sadness"
+	overdose_threshold = 4
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/reduce_upper_male/overdose_process(mob/living/L)
+	//do stuff
+	/*
+		if has penis
+			if penis small
+				remove penis
+			else
+				reduce penis one category
+		else
+			pain
+	*/
+	if(holder.has_reagent(/datum/reagent/medicine/reduce_upper_male))
+		holder.remove_reagent(/datum/reagent/medicine/reduce_upper_male, 5)
+	..()
+	. = 1
+
+/datum/reagent/medicine/increase_lower_male
+	name = "Grow Testicles Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "balls"
+	overdose_threshold = 4
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/increase_lower_male/overdose_process(mob/living/L)
+	//do stuff
+	/*
+		if has balls
+			if balls max
+				pain
+			else
+				increase balls one category
+		else
+			give balls
+	*/
+	if(holder.has_reagent(/datum/reagent/medicine/increase_lower_male))
+		holder.remove_reagent(/datum/reagent/medicine/increase_lower_male, 5)
+	..()
+	. = 1
+
+/datum/reagent/medicine/reduce_lower_male
+	name = "Shrink Testicles Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "impotent"
+	overdose_threshold = 4
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/reduce_lower_male/overdose_process(mob/living/L)
+	//do stuff
+	/*
+		if has balls
+			if balls small
+				remove balls
+			else
+				reduce balls one category
+		else
+			pain
+	*/
+	if(holder.has_reagent(/datum/reagent/medicine/reduce_lower_male))
+		holder.remove_reagent(/datum/reagent/medicine/reduce_lower_male, 5)
+	..()
+	. = 1
+
+/datum/reagent/medicine/increase_upper_female
+	name = "Grow Breasts Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "milk"
+	overdose_threshold = 4
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/increase_upper_female/overdose_process(mob/living/L)
+	//do stuff
+	/*
+		if has breasts
+			if max breast size
+				pain
+			else
+				increase breasts one category
+		else
+			grow flat breasts
+	*/
+	if(holder.has_reagent(/datum/reagent/medicine/increase_upper_female))
+		holder.remove_reagent(/datum/reagent/medicine/increase_upper_female, 5)
+	..()
+	. = 1
+
+/datum/reagent/medicine/reduce_upper_female
+	name = "Shrink Breasts Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "flat"
+	overdose_threshold = 4
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/reduce_upper_female/overdose_process(mob/living/L)
+	//do stuff
+	/*
+	if has breasts
+		if flat
+			remove breasts
+		else
+			reduce breasts one category
+	else
+		pain
+	*/
+	if(holder.has_reagent(/datum/reagent/medicine/reduce_upper_female))
+		holder.remove_reagent(/datum/reagent/medicine/reduce_upper_female, 5)
+	..()
+	. = 1
+
+/datum/reagent/medicine/increase_lower_female
+	name = "Grow Vagina Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "fish"
+	overdose_threshold = 4
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/increase_lower_female/overdose_process(mob/living/L)
+	//do stuff
+	/*
+	if has vagina
+		if human vagina
+			make gaping vagina
+		else
+			pain
+	else
+		grow vagina
+		make virgin
+	*/
+	if(holder.has_reagent(/datum/reagent/medicine/increase_lower_female))
+		holder.remove_reagent(/datum/reagent/medicine/increase_lower_female, 5)
+	..()
+	. = 1
+
+/datum/reagent/medicine/reduce_lower_female
+	name = "Shrink Vagina Potion"
+	description = ""
+	reagent_state = LIQUID
+	color = "#696969"
+	taste_description = "cherry"
+	overdose_threshold = 4
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	alpha = 225
+
+/datum/reagent/medicine/reduce_lower_female/overdose_process(mob/living/L)
+	//do stuff
+	/*
+	if has vagina
+		if gaping vagina
+			make human vagina
+			return
+			
+		else
+			if virgin
+				remove vagina
+			else
+				make virgin
+	else
+		pain
+	*/
+	
+	if(holder.has_reagent(/datum/reagent/medicine/reduce_lower_female))
+		holder.remove_reagent(/datum/reagent/medicine/reduce_lower_female, 5)
+	..()
+	. = 1

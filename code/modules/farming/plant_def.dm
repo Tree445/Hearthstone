@@ -65,6 +65,84 @@
 	maturation_time = 10 MINUTES
 	produce_time = 5 MINUTES
 
+/datum/plant_def/increase_plant
+	name = "solar succulent"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "herbs"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/increase_plant
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
+/datum/plant_def/reduce_plant
+	name = "lunar lily"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "herbs"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/reduce_plant
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
+/datum/plant_def/male_plant
+	name = "bellatorare"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "herbs"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/male_plant
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
+/datum/plant_def/female_plant
+	name = "puellicinus"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "herbs"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/female_plant
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
+/datum/plant_def/upper_plant
+	name = "titan's club"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "herbs"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/upper_plant
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
+/datum/plant_def/lower_plant
+	name = "gnomish grass"
+	icon = 'icons/roguetown/misc/crops.dmi'
+	icon_state = "herbs"
+	produce_type = /obj/item/reagent_containers/food/snacks/grown/lower_plant
+	uproot_loot = list(/obj/item/grown/log/tree/small)
+	perennial = TRUE
+	produce_amount = 2
+	maturation_nutrition = 60
+	produce_nutrition =  30
+	maturation_time = 10 MINUTES
+	produce_time = 5 MINUTES
+
 /datum/plant_def/wheat
 	name = "wheat stalks"
 	icon = 'icons/roguetown/misc/crops.dmi'

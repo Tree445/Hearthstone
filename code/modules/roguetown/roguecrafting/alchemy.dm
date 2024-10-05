@@ -346,3 +346,110 @@
 		/obj/item/reagent_containers/powder/mfire = 1, 
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/alchemy/minorhealthpot_increase
+	name = "Minor Health Potion x2"
+	result = list(
+		/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot,
+		/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 2,
+		/obj/item/reagent_containers/powder/heal = 1,
+		/obj/item/reagent_containers/powder/increase_powder = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/alchemy/healthpot_increase
+	name = "Health Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle/rogue/minorhealthpot = 1,
+		/obj/item/reagent_containers/powder/increase_powder = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/alchemy/majorhealthpot_increase
+	name = "Major Health Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/majorhealthpot)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
+		/obj/item/reagent_containers/powder/increase_powder = 1)
+	craftdiff = 5
+
+/datum/crafting_recipe/roguetown/alchemy/increase_upper_male
+	name = "Grow Penis Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/increase_upper_male)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/increase_powder = 1,
+		/obj/item/reagent_containers/powder/upper_powder = 1,
+		/obj/item/reagent_containers/powder/male_powder = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/reduce_upper_male
+	name = "Shrink Penis Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/reduce_upper_male)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/reduce_powder = 1,
+		/obj/item/reagent_containers/powder/upper_powder = 1,
+		/obj/item/reagent_containers/powder/male_powder = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/increase_lower_male
+	name = "Grow Testicles Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/increase_lower_male)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/increase_powder = 1,
+		/obj/item/reagent_containers/powder/lower_powder = 1,
+		/obj/item/reagent_containers/powder/male_powder = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/reduce_lower_male
+	name = "Shrink Testicles Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/reduce_lower_male)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/reduce_powder = 1,
+		/obj/item/reagent_containers/powder/lower_powder = 1,
+		/obj/item/reagent_containers/powder/male_powder = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/increase_upper_female
+	name = "Grow Breasts Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/increase_upper_female)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/increase_powder = 1,
+		/obj/item/reagent_containers/powder/upper_powder = 1,
+		/obj/item/reagent_containers/powder/female_powder = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/reduce_upper_female
+	name = "Shrink Breasts Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/reduce_upper_female)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/reduce_powder = 1,
+		/obj/item/reagent_containers/powder/upper_powder = 1,
+		/obj/item/reagent_containers/powder/female_powder = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/increase_lower_female
+	name = "Grow Vagina Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/increase_lower_female)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/increase_powder = 1,
+		/obj/item/reagent_containers/powder/lower_powder = 1,
+		/obj/item/reagent_containers/powder/female_powder = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/reduce_lower_female
+	name = "Shrink Vagina Potion"
+	result = list(/obj/item/reagent_containers/glass/bottle/rogue/reduce_lower_female)
+	reqs = list(
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/reduce_powder = 1,
+		/obj/item/reagent_containers/powder/lower_powder = 1,
+		/obj/item/reagent_containers/powder/female_powder = 1)
+	craftdiff = 4

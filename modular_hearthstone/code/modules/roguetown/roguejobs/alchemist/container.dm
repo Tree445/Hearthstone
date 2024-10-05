@@ -36,3 +36,27 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/virilitypot
 	list_reagents = list(/datum/reagent/medicine/virilitypot = 40)
+
+/obj/item/reagent_containers/glass/bottle/rogue/increase_upper_male
+	list_reagents = list(/datum/reagent/medicine/increase_upper_male = 15)
+
+/obj/item/reagent_containers/glass/bottle/rogue/reduce_upper_male
+	list_reagents = list(/datum/reagent/medicine/reduce_upper_male = 15)
+
+/obj/item/reagent_containers/glass/bottle/rogue/increase_lower_male
+	list_reagents = list(/datum/reagent/medicine/increase_lower_male = 15)
+
+/obj/item/reagent_containers/glass/bottle/rogue/reduce_lower_male
+	list_reagents = list(/datum/reagent/medicine/reduce_lower_male = 15)
+
+/obj/item/reagent_containers/glass/bottle/rogue/increase_upper_female
+	list_reagents = list(/datum/reagent/medicine/increase_upper_female = 15)
+
+/obj/item/reagent_containers/glass/bottle/rogue/reduce_upper_female
+	list_reagents = list(/datum/reagent/medicine/reduce_upper_female = 15)
+
+/obj/item/reagent_containers/glass/bottle/rogue/increase_lower_female
+	list_reagents = list(/datum/reagent/medicine/increase_lower_female = 15)
+
+/obj/item/reagent_containers/glass/bottle/rogue/reduce_lower_female
+	list_reagents = list(/datum/reagent/medicine/reduce_lower_female = 15)

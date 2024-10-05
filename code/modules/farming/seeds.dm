@@ -65,6 +65,30 @@
 	seed_identity = "poppy seeds"
 	plant_def_type = /datum/plant_def/poppy
 
+/obj/item/seeds/increase_plant
+	seed_identity = "solar succulent seeds"
+	plant_def_type = /datum/plant_def/increase_plant
+
+/obj/item/seeds/reduce_plant
+	seed_identity = "lunar lily seeds"
+	plant_def_type = /datum/plant_def/reduce_plant
+
+/obj/item/seeds/male_plant
+	seed_identity = "bellatorare seeds"
+	plant_def_type = /datum/plant_def/male_plant
+
+/obj/item/seeds/female_plant
+	seed_identity = "puellicinus seeds"
+	plant_def_type = /datum/plant_def/female_plant
+
+/obj/item/seeds/upper_plant
+	seed_identity = "titan's club seeds"
+	plant_def_type = /datum/plant_def/upper_plant
+
+/obj/item/seeds/lower_plant
+	seed_identity = "gnomish grass seeds"
+	plant_def_type = /datum/plant_def/lower_plant
+
 /obj/item/seeds/wheat/oat
 	seed_identity = "oat seeds"
 	plant_def_type = /datum/plant_def/oat

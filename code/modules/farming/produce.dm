@@ -386,3 +386,88 @@
 	//distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
 	rotprocess = SHELFLIFE_LONG
 	seed = /obj/item/seeds/cabbage
+
+
+/obj/item/reagent_containers/food/snacks/grown/increase_plant
+	seed = /obj/item/seeds/increase_plant
+	name = "solar succulent"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = ""
+	icon_state = "Herbs"
+	filling_color = "#fbff00"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("large" = 1)
+	mill_result = /obj/item/reagent_containers/powder/increase_plant
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	rotprocess = 15 MINUTES
+	
+/obj/item/reagent_containers/food/snacks/grown/reduce_plant
+	seed = /obj/item/seeds/reduce_plant
+	name = "lunar lily"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = ""
+	icon_state = "Herbs"
+	filling_color = "#1e2d55"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("small" = 1)
+	mill_result = /obj/item/reagent_containers/powder/reduce_plant
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	rotprocess = 15 MINUTES
+	
+/obj/item/reagent_containers/food/snacks/grown/male_plant
+	seed = /obj/item/seeds/male_plant
+	name = "bellatorare"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = ""
+	icon_state = "Herbs"
+	filling_color = "#00aeff"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("bitter" = 1,"strong" = 1)
+	mill_result = /obj/item/reagent_containers/powder/male_plant
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	rotprocess = 15 MINUTES
+	
+/obj/item/reagent_containers/food/snacks/grown/female_plant
+	seed = /obj/item/seeds/female_plant
+	name = "puellicinus"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = ""
+	icon_state = "Herbs"
+	filling_color = "#ff9bf7"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("sweet" = 1,"kind" = 1)
+	mill_result = /obj/item/reagent_containers/powder/female_plant
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	rotprocess = 15 MINUTES
+	
+/obj/item/reagent_containers/food/snacks/grown/upper_plant
+	seed = /obj/item/seeds/upper_plant
+	name = "titan's club"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = ""
+	icon_state = "Herbs"
+	filling_color = "#cbeaec"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("up" = 1,"high" = 1)
+	mill_result = /obj/item/reagent_containers/powder/upper_plant
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5, /datum/reagent/druqks = 5)
+	rotprocess = 15 MINUTES
+	
+/obj/item/reagent_containers/food/snacks/grown/lower_plant
+	seed = /obj/item/seeds/lower_plant
+	name = "gnomish grass"
+	icon = 'icons/obj/flora/wildflora.dmi'
+	desc = ""
+	icon_state = "Herbs"
+	filling_color = "#c07732"
+	bitesize_mod = 2
+	foodtype = VEGETABLES
+	tastes = list("down" = 1,"low" = 1)
+	mill_result = /obj/item/reagent_containers/powder/lower_powder
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5, /datum/reagent/druqks = 5)
+	rotprocess = 15 MINUTES
