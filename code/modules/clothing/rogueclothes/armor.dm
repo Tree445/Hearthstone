@@ -20,7 +20,7 @@
 	blocksound = PLATEHIT
 	sellprice = 1
 	blade_dulling = DULLING_BASHCHOP
-	max_integrity = 999   //Drayco84 - In case somebody forgot to add durability.
+	max_integrity = 100   //Drayco84 - In case somebody forgot to add durability.
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	experimental_onhip = TRUE
@@ -28,7 +28,7 @@
 	flags_inv = HIDEBOOB|HIDECROTCH
 
 //Drayco's max_integrity notes
-//+25 per cloth/2 fiber/difficulty, +50 per leather, +75 per carapace, +100 per iron, +150 per steel/dragonscale/uncraftable, and +250 for Unique
+//+25 per cloth/2 fiber/difficulty, +50 per leather, +75 per carapace/fur, +100 per iron, +150 per steel/dragonscale/uncraftable, and +250 for Unique
 //Just in case you were wondering why a padded dress has more durability than iron chainmail.
 
 //Handles debuff from wearing armor. This is slop, it just makes it so you can't put it on.
@@ -78,6 +78,7 @@
 													'sound/foley/footsteps/armor/chain (3).ogg'), 100)
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	slot_flags = ITEM_SLOT_ARMOR
 	name = "chainmaille"
 	desc = "A chain vest made of heavy iron rings."
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -88,6 +89,7 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	slot_flags = ITEM_SLOT_ARMOR
 	name = "hauberk"
 	desc = "A longer steel maille that protects the legs."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS|LEGS
@@ -101,12 +103,13 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
+	slot_flags = ITEM_SLOT_ARMOR
 	name = "chainmail bikini"
 	desc = "Not very comfortable against the skin."
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "chainkini"
 	item_state = "chainkini"
-	max_integrity = 200
+	max_integrity = 225
 	allowed_sex = list(FEMALE)
 	allowed_race = CLOTHED_RACES_TYPES
 
