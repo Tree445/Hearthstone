@@ -319,6 +319,12 @@
 	icon_state = "eyekey"
 	lockid = "porta"
 
+/obj/item/roguekey/blk
+	name = "Blackmarket Key"
+	desc = "Hm. Sinister."
+	icon_state = "toothkey"
+	lockid = "blk"
+
 //custom key
 /obj/item/roguekey/custom
 	name = "custom key"
