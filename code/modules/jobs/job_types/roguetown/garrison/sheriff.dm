@@ -6,13 +6,15 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_races = RACES_ALL_KINDS
+	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_SHERIFF
-	tutorial = "Crime has always been a constant of your life, and you always chose the side of justice. You rose up through the ranks as a watchman, and now rule over them - Ensure that they enforce the laws of this land properly."
+	tutorial = "Granted nobility from the ruling lord of the land, you manage the newly consolidated watch. With the brawn of the bogmen and skill of the watch proper you maintain an indomitable force of men that will slay any creature that gets past the walls of the bog gate."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/sheriff
-	give_bank_account = 26
+		allowed_patrons = ALL_DIVINE_PATRONS
+	give_bank_account = 100
 	min_pq = 2
 	max_pq = null
 
@@ -29,7 +31,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	cloak = /obj/item/clothing/cloak/stabard/guardhood
-	backpack_contents = list(/obj/item/storage/keyring/sheriff = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/storage/keyring/sheriff = 1, /obj/item/signal_horn = 1, /obj/item/scomstone =1,)
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/convertrole/guard)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)

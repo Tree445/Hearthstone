@@ -1,22 +1,23 @@
 /datum/job/roguetown/guardsman
-	title = "Watchman"
+	title = "Watchmen"
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 5
+	spawn_positions = 5 // recruit more IC!
 	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
+	allowed_patrons = ALL_DIVINE_PATRONS // they should not be antags.
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	tutorial = "Responsible for the safety of the town and the enforcement of the King's law, you are the vanguard of the city faced with punishing those who defy his Royal Majesty. Though you've many lords to obey, as both the Church and the Judge have great sway over your life."
-	display_order = JDO_TOWNGUARD
+	tutorial = tutorial = "You are a member of the now consolidated city watch after the merger with the Bogmen. As such, you have been granted more training and gone through basic purity exercises as well. You are the last stand against whatever is out there in the bog and the town itself. Good luck."
 	whitelist_req = TRUE
 
 	outfit = /datum/outfit/job/roguetown/guardsman
+		allowed_patrons = ALL_DIVINE_PATRONS
 	advclass_cat_rolls = list(CTAG_WATCH = 20)
 
-	give_bank_account = 16
+	give_bank_account = 100
 	min_pq = 0
 	max_pq = null
 
@@ -29,7 +30,7 @@
 		H.advsetup = 1
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
-		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/bog))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
@@ -44,7 +45,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	cloak = /obj/item/clothing/cloak/stabard/guard
+	cloak = /obj/item/clothing/cloak/stabard/bog
 	wrists = /obj/item/clothing/wrists/roguetown/bracers	//Would seperate to leather bracers for archer for dodge but - funnily, armor class doesn't exist on bracers.
 
 /*Design philosophy: Men and women from various areas of life, from hunters to street-brawlers and more 'veteran' levy-men. Know less skills overall than Bog, but far more specialized.
@@ -91,7 +92,7 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	beltl = /obj/item/storage/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/signal_horn = 1, /obj/item/listenstone = 1,) //listen stone might be too op, but not like the sheriff has both
 
 /datum/advclass/watchman/archer
 	name = "Watch Archer"
