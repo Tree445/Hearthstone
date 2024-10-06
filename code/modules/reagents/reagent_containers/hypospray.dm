@@ -246,9 +246,9 @@
 	list_reagents = list(/datum/reagent/magillitis = 5)
 
 /obj/item/reagent_containers/hypospray/medipen/pumpup
-	name = "maintenance pump-up"
-	desc = ""
-	volume = 15
-	amount_per_transfer_from_this = 15
-	list_reagents = list(/datum/reagent/drug/pumpup = 15)
+	name = "Wake Up"
+	desc = "Ask yourself this; Is it worth it?"
+	volume = 82
+	amount_per_transfer_from_this = 60
+	list_reagents = list(/datum/reagent/medicine/majorhealthpot = 19, /datum/reagent/medicine/manapot = 21, /datum/reagent/ozium = 15, /datum/reagent/moondust_purest = 15, /datum/reagent/drug/bath_salts = 12)
 	icon_state = "maintenance"
