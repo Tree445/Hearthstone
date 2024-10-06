@@ -204,7 +204,7 @@
 	name = "gambeson"
 	result = /obj/item/clothing/suit/roguetown/armor/gambeson
 	reqs = list(/obj/item/natural/cloth = 4,
-				/obj/item/natural/fibers = 1)
+				/obj/item/natural/fibers = 2)
 	tools = list(/obj/item/needle)
 	craftdiff = 3
 	sellprice = 20
@@ -213,7 +213,7 @@
 	name = "valorian armor"
 	result = /obj/item/clothing/suit/roguetown/armor/valorianarmor
 	reqs = list(/obj/item/natural/cloth = 4,
-				/obj/item/natural/fibers = 1)
+				/obj/item/natural/fibers = 2)
 	tools = list(/obj/item/needle)
 	craftdiff = 3
 	sellprice = 20
@@ -222,7 +222,7 @@
 	name = "armored dress"
 	result = list(/obj/item/clothing/suit/roguetown/armor/armordress)
 	reqs = list(/obj/item/natural/cloth = 2,
-				/obj/item/natural/fibers = 1,
+				/obj/item/natural/fibers = 2,
 				/obj/item/natural/hide = 1)
 	craftdiff = 3
 	sellprice = 30
@@ -230,7 +230,7 @@
 /datum/crafting_recipe/roguetown/sewing/armordress
 	name = "padded dress"
 	result = /obj/item/clothing/suit/roguetown/armor/armordress
-	reqs = list(/obj/item/natural/cloth = 5,
+	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 3
 
