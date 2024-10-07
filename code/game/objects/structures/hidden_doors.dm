@@ -182,10 +182,10 @@ proc/flavor_name()
 		"habibi", 
 		"companion", 
 		"mate", 
-		"you cunt", 
+		"you harlot", 
 		"comrade", 
 		"fellow", 
 		"chum", 
-		"dickhead"
+		"bafoon"
 		)
 	return pick(flavor_name)
