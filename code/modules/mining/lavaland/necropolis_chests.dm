@@ -1460,7 +1460,7 @@
 	to_chat(user, span_warning("You feel as if you have a second chance at something, but you're not sure what."))
 	if(do_after(user, 4 SECONDS, user))
 		to_chat(user, span_notice("The ember warms you..."))
-		ADD_TRAIT(user, TRAIT_NOHARDCRIT, "necklace_of_the_forsaken")//less chance of being gibbed
+		ADD_TRAIT(user, TRAIT_NODEATH, "necklace_of_the_forsaken")//less chance of being gibbed
 		active_owner = user
 
 //Revive the user and remove buffs
@@ -1514,16 +1514,27 @@
 	color = "#73e3ff"
 
 /obj/structure/closet/crate/necropolis/sif/PopulateContents()
-	var/list/loot = list(/obj/item/melee/sword_of_the_forsaken=30,
-		/obj/item/clothing/neck/roguetown/necklace_of_the_forsaken=12,
-		/obj/item/book/granter/trait/war/relentless=8,
+	var/list/loot = list(/obj/item/rogueweapon/sword/sword_of_the_forsaken=40,
+		/obj/item/clothing/neck/roguetown/necklace_of_the_forsaken=40,
+		/obj/item/book/granter/trait/war/relentless=10,
+		/obj/item/book/granter/spell/spells5e/frostbite5e = 40,
+		/obj/item/book/granter/spell/spells5e/createbonfire5e = 30,
+		/obj/item/book/granter/spell/spells5e/acidsplash5e = 40,)
+	var/list/loot2 = list(/obj/item/rogueweapon/sword/sword_of_the_forsaken=20,
+		/obj/item/clothing/neck/roguetown/necklace_of_the_forsaken=20,
+		/obj/item/book/granter/trait/war/relentless=5,
+		/obj/item/book/granter/spell/spells5e/frostbite5e = 20,
+		/obj/item/book/granter/spell/spells5e/createbonfire5e = 15,
+		/obj/item/book/granter/spell/spells5e/acidsplash5e = 20,
 		/obj/item/natural/volf_head = 50,
-		/obj/item/storage/belt/rogue/pouch/coins/mid = 20,
-		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 50,)
-	if(prob(100))
+		/obj/item/storage/belt/rogue/pouch/coins/mid = 30,
+		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 30,)
+	if(prob(75))
 		var/I = pickweight(loot)
 		new I(src)
-		new I(src)
+	if(prob(60))
+		var/II = pickweight(loot2)
+		new II(src)
 		
 
 /obj/structure/closet/crate/necropolis/sif/crusher

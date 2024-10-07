@@ -32,11 +32,11 @@
 	vip = list("Merchant", "Shop Hand")
 
 /obj/structure/mineral_door/secret/wizard //for wizard tower
-	vip = list("Court Magician", "Magicians Apprentice")
+	vip = list("Court Magician", "Magicians Apprentice", "Archivist")
 	//make me look like an arcane door
 
 /obj/structure/mineral_door/secret/rogue //for seedy sewer bar / black market?
-	vip = list("Vagabond", "Thug", "Rogue", "Nightmaster", "Nightmistress")
+	vip = list("Vagabond", "Thug", "Rogue", "Nightmaster", "Nightmistress", "Beggar")
 	//make me look like a wall
 
 /obj/structure/mineral_door/secret/Initialize()

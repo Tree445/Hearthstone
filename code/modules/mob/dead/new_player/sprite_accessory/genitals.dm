@@ -97,7 +97,7 @@
 	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/testicles/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
+	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_SHIRT, OFFSET_SHIRT_F)
 
 /datum/sprite_accessory/testicles/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/testicles/testes = organ

@@ -210,11 +210,11 @@
 	contains = list(/obj/item/book/granter/spell/spells5e/eldritchblast5e)
 /datum/supply_pack/rogue/luxury/encodethoughts5e
 	name = "Scroll of Encode Thoughts"
-	cost = 30
+	cost = 250
 	contains = list(/obj/item/book/granter/spell/spells5e/encodethoughts5e)
 /datum/supply_pack/rogue/luxury/firebolt5e
 	name = "Scroll of Fire Bolt"
-	cost = 30
+	cost = 60
 	contains = list(/obj/item/book/granter/spell/spells5e/firebolt5e)
 /datum/supply_pack/rogue/luxury/frostbite5e
 	name = "Scroll of Frostbite"
