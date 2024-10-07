@@ -116,6 +116,9 @@
 	melee_damage_upper = 40
 	maxHealth = 200
 	health = 200
+/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard/necro
+	name = "Necromancer Guard"
+	faction = "summoner"
 
 /mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard_spear
 	name = "Crypt Guard"
