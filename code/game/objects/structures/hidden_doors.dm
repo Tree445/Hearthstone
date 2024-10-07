@@ -28,6 +28,9 @@
 /obj/structure/mineral_door/secret/vault
 	vip = list("King", "Queen", "Steward", "Hand")
 
+/obj/structure/mineral_door/secret/keep
+	vip = list("King", "Queen", "Royal Heir", "Hand")
+
 /obj/structure/mineral_door/secret/merchant
 	vip = list("Merchant", "Shop Hand")
 
