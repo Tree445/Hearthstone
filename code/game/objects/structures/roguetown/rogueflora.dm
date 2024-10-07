@@ -664,3 +664,82 @@
 	if(get_dir(mover.loc, target) == dir)
 		return 0
 	return 1
+
+
+
+//wildplant tree
+
+/obj/structure/flora/wildapples
+	name = "wild apple tree"
+	icon = 'modular_hearthstone/icons/obj/flora/grove_trees.dmi'
+	icon_state = "grove_tree1"
+	desc = "a naturally occuring apple tree, found in the wild."
+	opacity = 0
+	density = 1
+	max_integrity = 200
+	blade_dulling = DULLING_CUT
+	pixel_x = -16
+	layer = 4.81
+	plane = GAME_PLANE_UPPER
+	attacked_sound = 'sound/misc/woodhit.ogg'
+	destroy_sound = 'sound/misc/woodhit.ogg'
+	debris = list(/obj/item/grown/log/tree/stick = 2)
+	static_debris = list(/obj/item/grown/log/tree = 1)
+	alpha = 200
+	var/stump_type = /obj/structure/flora/roguetree/stump
+
+/obj/structure/flora/wildapples/attack_right(mob/user)
+	if(user.mind && isliving(user))
+		if(user.mind.special_items && user.mind.special_items.len)
+			var/item = input(user, "What will I take?", "STASH") as null|anything in user.mind.special_items
+			if(item)
+				if(user.Adjacent(src))
+					if(user.mind.special_items[item])
+						var/path2item = user.mind.special_items[item]
+						user.mind.special_items -= item
+						var/obj/item/I = new path2item(user.loc)
+						user.put_in_hands(I)
+			return
+
+/obj/structure/flora/wildapples/fire_act(added, maxstacks)
+	if(added > 5)
+		return ..()
+
+/obj/structure/flora/wildapples/Initialize()
+	. = ..()
+
+/*
+	if(makevines)
+		var/turf/target = get_step_multiz(src, UP)
+		if(istype(target, /turf/open/transparent/openspace))
+			target.ChangeTurf(/turf/open/floor/rogue/shroud)
+			var/makecanopy = FALSE
+			for(var/D in GLOB.cardinals)
+				if(!makecanopy)
+					var/turf/NT = get_step(src, D)
+					for(var/obj/structure/flora/roguetree/R in NT)
+						if(R.makevines)
+							makecanopy = TRUE
+							break
+			if(makecanopy)
+				for(var/D in GLOB.cardinals)
+					var/turf/NT = get_step(target, D)
+					if(NT)
+						if(istype(NT, /turf/open/transparent/openspace) || istype(NT, /turf/open/floor/rogue/shroud))
+							NT.ChangeTurf(/turf/closed/wall/shroud)
+							for(var/X in GLOB.cardinals)
+								var/turf/NA = get_step(NT, X)
+								if(NA)
+									if(istype(NA, /turf/open/transparent/openspace))
+										NA.ChangeTurf(/turf/open/floor/rogue/shroud)
+*/
+
+	if(istype(loc, /turf/open/floor/rogue/grass))
+		var/turf/T = loc
+		T.ChangeTurf(/turf/open/floor/rogue/dirt)
+
+/obj/structure/flora/wildapples/obj_destruction(damage_flag)
+	if(stump_type)
+		new stump_type(loc)
+	playsound(src, 'sound/misc/treefall.ogg', 100, FALSE)
+	. = ..()

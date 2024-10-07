@@ -103,12 +103,10 @@
 			change_stat("intelligence", -5)
 			change_stat("fortune", -5)
 		if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
-			change_stat("strength", -3)
-			change_stat("speed", -3)
-			change_stat("endurance", -3)
+			change_stat("strength", -2)
+			change_stat("speed", -2)
 			change_stat("constitution", -3)
-			change_stat("intelligence", -3)
-			change_stat("fortune", -3)
+			change_stat("fortune", -5)
 			H.voice_color = "c71d76"
 			set_eye_color(H, "#c71d76", "#c71d76")
 

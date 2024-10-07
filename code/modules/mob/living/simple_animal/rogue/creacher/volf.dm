@@ -138,3 +138,8 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/familiar
+	name = "familiar volf"
+	faction = list("neutral")

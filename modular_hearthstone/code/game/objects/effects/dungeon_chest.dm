@@ -486,7 +486,7 @@
 		/obj/item/clothing/suit/roguetown/armor/plate/blkknight = 5,
 
 		/obj/item/rogueweapon/sword/long/judgement = 10,
-		/obj/item/rogueweapon/sword/long/vlord = 10,
+		// /obj/item/rogueweapon/sword/long/vlord = 10,
 		/obj/item/rogueweapon/sword/long/rider = 10,
 		/obj/item/rogueweapon/sword/long/marlin = 10,
 		/obj/item/rogueweapon/sword/long/exe = 10,

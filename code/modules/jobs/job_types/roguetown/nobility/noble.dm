@@ -20,7 +20,7 @@
 
 /datum/job/roguetown/noble/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
-	if(ishuman(L))
+/*	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
@@ -28,7 +28,7 @@
 		if(H.gender == FEMALE)
 			honorary = "Lady"
 		H.real_name = "[honorary] [prev_real_name]"
-		H.name = "[honorary] [prev_name]"
+		H.name = "[honorary] [prev_name]" */
 
 /datum/outfit/job/roguetown/noble/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -1238,7 +1238,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 /obj/effect/proc_holder/spell/invoked/mending5e/cast(list/targets, mob/living/user)
 	if(istype(targets[1], /obj/item))
 		var/obj/item/I = targets[1]
-		if(I.obj_integrity >= I.max_integrity)	
+		if(I.obj_integrity < I.max_integrity)	
 			var/repair_percent = 0.25
 			repair_percent *= I.max_integrity
 			I.obj_integrity = min(I.obj_integrity + repair_percent, I.max_integrity)

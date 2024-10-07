@@ -43,7 +43,8 @@
 	see_in_dark = 10
 	move_to_delay = 10
 	base_intents = list(/datum/intent/simple/drake)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
+	del_on_death = 1
+	loot = list(/obj/item/soul_fragment/essence)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	maxHealth = 800

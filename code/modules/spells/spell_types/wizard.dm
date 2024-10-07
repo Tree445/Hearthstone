@@ -209,7 +209,7 @@
 	cost = 1
 	xp_gain = TRUE
 
-	summon_type = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf )
+	summon_type = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf/familiar )
 	cast_sound = 'sound/blank.ogg'
 
 
@@ -239,10 +239,10 @@
 	clothes_req = FALSE
 	invocation = "Rise from the grave!"
 	invocation_type = "shout"
-	summon_amt = 10
+	summon_amt = 4
 	range = 6
 
-	summon_type = list(/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard)
+	summon_type = list(/mob/living/simple_animal/hostile/rogue/skeleton/guard/crypt_guard/necro) //mobs set to summoner faction
 	cast_sound = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/targeted/trigger/blind

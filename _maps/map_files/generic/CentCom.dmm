@@ -1421,6 +1421,7 @@
 /area/rogue/indoors)
 "eV" = (
 /obj/structure/fluff/traveltile{
+	aportalgoesto = "woods2";
 	aportalid = "woods1";
 	name = "woods"
 	},
