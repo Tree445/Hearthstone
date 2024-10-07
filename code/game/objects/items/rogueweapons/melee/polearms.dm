@@ -68,7 +68,7 @@
 
 /obj/item/rogueweapon/woodstaff/wise
 	name = "wise staff"
-	desc = "A staff for keeping the volfs at bay..."
+	desc = "A staff for keeping the volfs at bay."
 
 /obj/item/rogueweapon/woodstaff/aries
 	name = "staff of the shepherd"
@@ -139,7 +139,7 @@
 	force = 18
 	force_wielded = 22
 	name = "bone spear"
-	desc = "A spear made of bones..."
+	desc = "A spear made of bones and topped with a sharpened rock."
 	icon_state = "bonespear"
 	pixel_y = -16
 	pixel_x = -16
@@ -210,7 +210,7 @@
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, /datum/intent/spear/cut/halberd, /datum/intent/sword/chop, SPEAR_BASH)
 	name = "halberd"
-	desc = "A steel halberd, mostly used by town guards."
+	desc = "A heavy steel halberd, mostly used by town guards."
 	icon_state = "halberd"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -246,7 +246,7 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/spear/thrust/eaglebeak, /datum/intent/spear/cut/halberd, /datum/intent/axe/chop, SPEAR_BASH)
 	name = "bardiche"
-	desc = "A beautiful, iron variant of the halberd."
+	desc = "An iron axe on a pole, for when you want to chop something farther away than a normal axe would reach."
 	icon_state = "bardiche"
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/iron
@@ -263,7 +263,7 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/spear/thrust/eaglebeak, /datum/intent/mace/smash/eaglebeak, SPEAR_BASH)
 	name = "eagle's beak"
-	desc = "A heavy polearm with a hammer on its end, topped with a spike."
+	desc = "Also known as a Bec De Corbin, this reinforced pick on a stick is made to punch holes in platemail."
 	icon_state = "eaglebeak"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -295,7 +295,7 @@
 
 /obj/item/rogueweapon/eaglebeak/lucerne
 	name = "lucerne"
-	desc = "A polehammer with a sharp pointy end."
+	desc = "A polehammer with a sharp pointy end. Made for those that can't decide if they prefer to stab, bash, or spike."
 	icon_state = "polehammer"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
