@@ -32,6 +32,7 @@
 	item_d_type = "slash"
 
 /obj/item/rogueweapon/woodstaff
+	slot_flags = ITEM_SLOT_BACK
 	force = 10
 	force_wielded = 15
 	possible_item_intents = list(SPEAR_BASH)
@@ -95,6 +96,7 @@
 
 
 /obj/item/rogueweapon/spear
+	slot_flags = ITEM_SLOT_BACK
 	force = 18
 	force_wielded = 30
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
@@ -202,12 +204,13 @@
 	throwforce = 20
 
 /obj/item/rogueweapon/halberd
+	slot_flags = ITEM_SLOT_BACK
 	force = 15
 	force_wielded = 30
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, /datum/intent/spear/cut/halberd, /datum/intent/sword/chop, SPEAR_BASH)
 	name = "halberd"
-	desc = "An iron halberd, mostly used by town guards."
+	desc = "A steel halberd, mostly used by town guards."
 	icon_state = "halberd"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -243,7 +246,7 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/spear/thrust/eaglebeak, /datum/intent/spear/cut/halberd, /datum/intent/axe/chop, SPEAR_BASH)
 	name = "bardiche"
-	desc = "A beautiful variant of the halberd."
+	desc = "A beautiful, iron variant of the halberd."
 	icon_state = "bardiche"
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/iron
@@ -254,6 +257,7 @@
 	swingdelay = 10
 
 /obj/item/rogueweapon/eaglebeak
+	slot_flags = ITEM_SLOT_BACK
 	force = 15
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
