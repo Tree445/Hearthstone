@@ -18,6 +18,7 @@
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/maces
 	max_blade_int = 50
+	improvised = TRUE
 
 /obj/item/rogueweapon/shovel/Destroy()
 	if(heldclod)

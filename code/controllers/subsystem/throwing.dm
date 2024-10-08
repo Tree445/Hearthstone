@@ -80,6 +80,10 @@ SUBSYSTEM_DEF(throwing)
 	src.target_zone = target_zone
 	src.extra = extra
 
+	if(HAS_TRAIT(src.target, TRAIT_STRONGTHROW))
+		src.maxrange *= 1.5
+		src.force *= 1.5
+		
 /datum/thrownthing/Destroy()
 	SSthrowing.processing -= thrownthing
 	thrownthing.throwing = null

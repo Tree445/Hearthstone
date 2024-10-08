@@ -43,5 +43,6 @@
 		H.change_stat("speed", 2)
 		H.change_stat("perception", -1)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MARTIALARTIST, TRAIT_GENERIC)
 		//ADD_TRAIT(H, TRAIT_NOFALLDAMAGE1, TRAIT_GENERIC) //slow fall from 5e
 		

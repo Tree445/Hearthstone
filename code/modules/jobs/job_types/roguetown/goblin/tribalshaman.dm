@@ -40,6 +40,7 @@
 	head = /obj/item/clothing/head/roguetown/tribalskull
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	r_hand = /obj/item/rogueweapon/woodstaff
+	backpack_contents = list(/obj/item/roguekey/tribe = 1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)

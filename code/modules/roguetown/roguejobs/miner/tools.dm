@@ -13,6 +13,7 @@
 	toolspeed = 1
 	associated_skill = /datum/skill/labor/mining
 	smeltresult = /obj/item/ingot/iron
+	improvised = TRUE
 
 /obj/item/rogueweapon/pick/getonmobprop(tag)
 	. = ..()

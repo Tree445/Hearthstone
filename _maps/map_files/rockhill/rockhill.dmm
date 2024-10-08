@@ -2511,12 +2511,6 @@
 /obj/item/reagent_containers/glass/bucket/pot,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/tavern)
-"beW" = (
-/obj/structure/mineral_door/wood/deadbolt,
-/turf/open/floor/rogue/dirt/road{
-	muddy = true
-	},
-/area/rogue/outdoors/tribalfort)
 "bfc" = (
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/under/cavewet/bogcaves/tomb)
@@ -6764,32 +6758,15 @@
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/tavern)
 "dQp" = (
-/obj/item/roguekey/dungeon{
-	lockid = "nobleguest";
-	name = "Noble Manor"
-	},
-/obj/item/roguekey/dungeon{
-	lockid = "nobleguest";
-	name = "Noble Manor"
-	},
-/obj/item/roguekey/dungeon{
-	lockid = "nobleguest";
-	name = "Noble Manor"
-	},
-/obj/item/roguekey/dungeon{
-	lockid = "nobleguest";
-	name = "Noble Manor"
-	},
-/obj/item/roguekey/dungeon{
-	lockid = "nobleguest";
-	name = "Noble Manor"
-	},
-/obj/item/roguekey/dungeon{
-	lockid = "nobleguest";
-	name = "Noble Manor"
-	},
-/turf/open/floor/rogue/carpet/lord/right,
-/area/rogue/indoors/town)
+/obj/structure/table/wood,
+/obj/item/roguekey/clinic,
+/obj/item/roguekey/clinic,
+/obj/item/roguekey/clinic,
+/obj/item/roguekey/clinic,
+/obj/item/roguekey/clinic,
+/obj/item/roguekey/clinic,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors)
 "dQq" = (
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
@@ -7617,10 +7594,11 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "epQ" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4;
+/obj/structure/mineral_door/wood{
+	desc = "I shouldn't go in here...";
 	locked = 1;
-	lockid = "farm"
+	lockid = "vamp";
+	name = "Old Clinic"
 	},
 /turf/open/floor/rogue/dirt/road{
 	muddy = true
@@ -7932,15 +7910,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
-"ezu" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 4;
-	lockid = "farm"
-	},
-/turf/open/floor/rogue/dirt/road{
-	muddy = true
-	},
-/area/rogue/outdoors/tribalfort)
 "ezv" = (
 /obj/machinery/light/rogue/wallfire,
 /turf/closed/wall/mineral/rogue/decowood,
@@ -14949,16 +14918,6 @@
 	muddy = true
 	},
 /area/rogue/outdoors/town)
-"jeY" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 1;
-	keylock = 1;
-	lockid = "farm"
-	},
-/turf/open/floor/rogue/dirt/road{
-	muddy = true
-	},
-/area/rogue/outdoors/tribalfort)
 "jfe" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 8
@@ -23249,8 +23208,9 @@
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town)
 "oVs" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 8
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "tribe"
 	},
 /turf/open/floor/rogue/dirt/road{
 	muddy = true
@@ -293118,7 +293078,7 @@ elm
 elm
 elm
 elm
-ezu
+oVs
 elm
 elm
 elm
@@ -299134,7 +299094,7 @@ lPu
 lqR
 lPu
 kXN
-beW
+oVs
 fPm
 fPm
 fPm
@@ -299561,7 +299521,7 @@ fPm
 fPm
 fPm
 fPm
-jeY
+oVs
 fPm
 fPm
 fPm
@@ -320956,7 +320916,7 @@ xMr
 ggk
 oXn
 oXn
-dQp
+oXn
 xMr
 asE
 wbg
@@ -329586,7 +329546,7 @@ cju
 fdc
 xou
 lRJ
-nBe
+dQp
 xou
 nqU
 xou

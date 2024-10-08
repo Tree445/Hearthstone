@@ -34,6 +34,7 @@
 	cloak = /obj/item/clothing/cloak/hidecloak
 	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
 	backl = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(/obj/item/roguekey/tribe = 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)

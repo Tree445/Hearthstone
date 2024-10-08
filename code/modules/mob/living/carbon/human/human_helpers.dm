@@ -203,6 +203,9 @@
 	if(used_str <= 9)
 		damage = max(damage - (damage * ((10 - used_str) * 0.1)), 1)
 
+	if(HAS_TRAIT(src, TRAIT_PUGILIST))
+		damage *= 1.25
+
 	if(mind)
 		if(mind.has_antag_datum(/datum/antagonist/werewolf))
 			return 30
