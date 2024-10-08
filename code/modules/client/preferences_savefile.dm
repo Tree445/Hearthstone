@@ -456,6 +456,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
 
+	S["background_image"]		>> background_image
+	if(!valid_background_image(null, background_image, TRUE))
+		background_image = null
+
 	S["nsfw_headshot_link"]		>> nsfw_headshot_link
 	if(!valid_nsfw_headshot_link(null, nsfw_headshot_link, TRUE))
 		nsfw_headshot_link = null
@@ -474,10 +478,31 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["flavor_text"]			>> flavor_text
 	if(!valid_flavor_text(null, flavor_text, TRUE))
 		flavor_text = null
-		
+
 	S["ooc_notes"]			>> ooc_notes
 	if(!valid_ooc_notes(null, ooc_notes, TRUE))
 		ooc_notes = null
+	S["alias"]			>> alias
+	if(!valid_alias(null, alias, TRUE))
+		alias = null
+	S["height"]			>> height
+	if(!valid_height(null, height, TRUE))
+		height = null
+	S["interest"]			>> interest
+	if(!valid_interest(null, interest, TRUE))
+		interest = null
+	S["personality"]			>> personality
+	if(!valid_personality(null, personality, TRUE))
+		personality = null
+	S["strengths"]			>> strengths
+	if(!valid_strengths(null, strengths, TRUE))
+		strengths = null
+	S["weakness"]			>> weakness
+	if(!valid_weakness(null, weakness, TRUE))
+		weakness = null
+	S["theme"]			>> theme
+	if(!valid_theme(null, theme, TRUE))
+		theme = null
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -618,6 +643,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
+	WRITE_FILE(S["background_image"] , background_image)
+	WRITE_FILE(S["alias"] , alias)
+	WRITE_FILE(S["height"] , height)
+	WRITE_FILE(S["interest"] , interest)
+	WRITE_FILE(S["personality"] , personality)
+	WRITE_FILE(S["strengths"] , strengths)
+	WRITE_FILE(S["weakness"] , weakness)
+	WRITE_FILE(S["theme"] , theme)
 	WRITE_FILE(S["nsfw_headshot_link"] , nsfw_headshot_link)
 	WRITE_FILE(S["char_accent"] , char_accent)
 	WRITE_FILE(S["statpack"] , statpack.type)
