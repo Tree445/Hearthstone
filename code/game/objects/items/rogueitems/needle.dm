@@ -94,6 +94,8 @@
 				if(I.obj_broken == TRUE)
 					I.obj_broken = FALSE
 				I.obj_integrity = I.max_integrity
+				if(!damaged_clothes)
+					update_clothes_damaged_state(FALSE)
 				user.mind?.adjust_experience(/datum/skill/misc/sewing, user.STAINT, TRUE)
 
 				//Vrell - Part of storage item repair fix
