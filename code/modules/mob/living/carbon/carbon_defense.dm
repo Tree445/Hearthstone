@@ -195,6 +195,10 @@
 	I.funny_attack_effects(src, user)
 	var/statforce = get_complex_damage(I, user)
 	if(statforce)
+	
+		if(HAS_TRAIT(user, TRAIT_CIVILIZEDBARBARIAN) && I.improvised)
+			statforce *= 1.5
+
 		next_attack_msg.Cut()
 		affecting.bodypart_attacked_by(user.used_intent.blade_class, statforce, crit_message = TRUE)
 		apply_damage(statforce, I.damtype, affecting)

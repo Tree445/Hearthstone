@@ -289,6 +289,7 @@
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/railing/stonehedge
+	name= "stonehedge"
 	icon_state = "stonehedge"
 	blade_dulling = DULLING_BASHCHOP
 	layer = ABOVE_MOB_LAYER

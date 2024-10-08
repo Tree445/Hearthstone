@@ -18,6 +18,7 @@
 	associated_skill = /datum/skill/combat/maces
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
+	improvised = TRUE
 
 /datum/intent/flailthresh
 	name = "thresh"
@@ -112,6 +113,7 @@
 	max_blade_int = 50
 	associated_skill = /datum/skill/combat/knives
 	smeltresult = /obj/item/ingot/iron
+	improvised = TRUE
 
 /obj/item/rogueweapon/sickle/getonmobprop(tag)
 	. = ..()
@@ -162,6 +164,7 @@
 	associated_skill = /datum/skill/combat/polearms
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
+	improvised = TRUE
 
 /obj/item/rogueweapon/hoe/getonmobprop(tag)
 	. = ..()
@@ -286,6 +289,7 @@
 	associated_skill = /datum/skill/combat/polearms
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
+	improvised = TRUE
 /obj/item/rogueweapon/pitchfork/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -396,7 +400,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
-
+	improvised = TRUE
 
 /obj/item/rogueweapon/sickle/scythe/getonmobprop(tag)
 	. = ..()

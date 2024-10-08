@@ -16,6 +16,7 @@
 	reagent_flags = OPENCONTAINER
 	throwforce = 10
 	volume = 99
+	improvised = TRUE
 	
 /obj/item/reagent_containers/glass/bucket/pot/update_icon()
 	cut_overlays()

@@ -16,6 +16,7 @@
 	drop_sound = 'sound/foley/dropsound/shovel_drop.ogg'
 	wdefense = 5
 	ingsize = 3
+	improvised = TRUE
 
 /obj/item/cooking/pan/examine(mob/user)
 	. = ..()

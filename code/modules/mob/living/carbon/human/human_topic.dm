@@ -1,6 +1,20 @@
 /mob/living/carbon/human/Topic(href, href_list)
 	var/observer_privilege = isobserver(usr)
+	var/race_name = dna.species.name
 
+
+
+	if(href_list["task"] == "view_headshotnew")
+		if(!ismob(usr))
+			return
+		if(!valid_headshot_link(null, headshot_link, TRUE))
+			return
+		var/mob/user = usr
+		var/list/dat = list("<html><head><center><title>[src]</title></center></head><body><body bgcolor=black text=black><center><table border=2 bordercolor='purple' STYLE='Border Style:Squared' bgcolor='black'><tr><td><img style='max-width: 500px; max-height: 500px' src='[headshot_link]'/></center></div></tr></td></table><br><h1 style='font-family:verdana;'></center></center><div style='background-color:black; color:white; padding:10px;width=450'><font size=4><b>[src]<br></h1></b></b></b><font size=2><b><font color=white>[alias]<br></b><br><u>Age</u>:???<br><u>Race</u>: [race_name]<br><u>Height</u>: [height]<br><u>Interests</u>: [interest]<br><u>Personality</u>: [personality]<br><u>Social Credit</u>: [get_playerquality(user.ckey, text = TRUE)]<br><u>Description</u>:<br>[replacetext(flavor_text, "\n", "<BR>")]<br><u>OOC Notes</u>:<br>[replacetext(ooc_notes, "\n", "<BR>")]<br><center></body><br><br></div><br><br><br><embed src='[theme]' autoplay=1 loop=1 hidden=1></center><style type='text/css'>html, body {scrollbar-face-color: #dddddd;scrollbar-track-color:#000;scrollbar-shadow-color: #000;scrollbar-darkshadow-color: #DF0101;scrollbar-3dlight-color: #FFFFFF;scrollbar-highlight-color: #666666;scrollbar-arrow-color: #dddddd;background: #000000 url('[background_image]');background-repeat: repeat-yes;background-position: left;background-attachment: fixed;}")
+		var/datum/browser/popup = new(user, "headshot", "<div align='center'></div>", 560, 570)
+		popup.set_content(dat.Join())
+		popup.open(FALSE)
+		return
 	if(href_list["task"] == "view_headshot")
 		if(!ismob(usr))
 			return
@@ -31,6 +45,15 @@
 		var/mob/user = usr
 		var/list/dat = list("<font size=3><u><b>OOC NOTES:<br><b></u>[replacetext(ooc_notes, "\n", "<BR>")]</font>")
 		var/datum/browser/popup = new(user, "oocnotes", 400, 100)
+		popup.set_content(dat.Join())
+		popup.open(FALSE)
+		return
+	if(href_list["task"] == "view_nsfw_headshot")
+		if(!ismob(usr))
+			return
+		var/mob/user = usr
+		var/list/dat = list("<div align='center'><img src='[nsfw_headshot_link]' width='500px' height='500px'></div><br><font size=3><u>NSFW Info:</u><br>[replacetext(nsfw_info, "\n", "<BR>")]<br><br>")
+		var/datum/browser/popup = new(user, "nsfw_headshot", "<div align='center'>[src]'s NSFW Information</div>", 560, 570)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return

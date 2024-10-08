@@ -20,7 +20,7 @@
 
 /datum/job/roguetown/noble/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
-	if(ishuman(L))
+/*	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
@@ -28,7 +28,7 @@
 		if(H.gender == FEMALE)
 			honorary = "Lady"
 		H.real_name = "[honorary] [prev_real_name]"
-		H.name = "[honorary] [prev_name]"
+		H.name = "[honorary] [prev_name]" */
 
 /datum/outfit/job/roguetown/noble/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -38,7 +38,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 		shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/roguekey/manor
+		beltl = /obj/item/storage/keyring/nobleguest
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 		backr = /obj/item/storage/backpack/rogue/satchel
 		if(prob(50))
@@ -52,8 +52,7 @@
 		cloak = /obj/item/clothing/cloak/cape/knight
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/roguekey/dungeon
-		r_hand = /obj/item/roguekey/manor
+		beltl = /obj/item/storage/keyring/nobleguest
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 		backr = /obj/item/storage/backpack/rogue/satchel
 		if(prob(50))
