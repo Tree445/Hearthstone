@@ -24,6 +24,7 @@
 	cloak = /obj/item/clothing/cloak/apron/cook
 	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
 	backl = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(/obj/item/roguekey/tribe = 1)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 	if(H.mind)
