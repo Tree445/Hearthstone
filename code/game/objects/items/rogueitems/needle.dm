@@ -75,7 +75,7 @@
 			return
 		if(I.sewrepair && I.max_integrity)
 			if(I.obj_integrity == I.max_integrity)
-				to_chat(user, span_warning("This is not broken."))
+				user.visible_message(span_info("This doesn't need to be repaired."))
 				return
 			if(user.mind.get_skill_level(/datum/skill/misc/sewing) < I.required_repair_skill)
 				to_chat(user, span_warning("I don't know how to repair this..."))
