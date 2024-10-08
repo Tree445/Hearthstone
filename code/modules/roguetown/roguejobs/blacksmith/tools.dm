@@ -45,8 +45,8 @@
 				update_clothes_damaged_state(TRUE)
 				to_chat(user, span_warning("You fumble your way into slightly repairing [attacked_item]."))
 			else	
-					if(!damaged_clothes)
-						update_clothes_damaged_state(FALSE)
+				if(!damaged_clothes)
+					update_clothes_damaged_state(FALSE)
 				user.visible_message(span_info("[user] repairs [attacked_item]!"))
 				if(attacked_item.obj_broken == TRUE)
 					attacked_item.obj_broken = FALSE
