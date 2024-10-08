@@ -40,8 +40,43 @@
 	backpack_contents = list(
 		/obj/item/needle/pestra = 1,
 		/obj/item/natural/worms/leech/cheele = 1, //little buddy
-		/obj/item/storage/keyring/priest = 1,
-	)
+		/obj/item/storage/keyring/priest = 1,)
+	switch(H.patron?.type)
+		if(/datum/patron/divine/astrata)
+			neck = /obj/item/clothing/neck/roguetown/psicross/astrata
+		if(/datum/patron/divine/noc) 
+			neck = /obj/item/clothing/neck/roguetown/psicross/noc
+			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // shouldn't be that bad.
+			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+		if(/datum/patron/divine/dendor)  
+			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
+			H.mind.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/taming, 3, TRUE)
+		if(/datum/patron/divine/necra) 
+			neck = /obj/item/clothing/neck/roguetown/psicross/necra
+		if(/datum/patron/divine/pestra)  
+			neck = /obj/item/clothing/neck/roguetown/psicross/pestra
+			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
+		if(/datum/patron/divine/eora) //Eora content from Stonekeep
+			neck = /obj/item/clothing/neck/roguetown/psicross/eora
+			ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
+		if(/datum/patron/divine/xylix)
+			neck = /obj/item/clothing/neck/roguetown/psicross/xylix
+			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE) // the eyes and ears of the Church
+		if(/datum/patron/divine/malum)
+			neck = /obj/item/clothing/neck/roguetown/psicross/malum
+			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/labor/mining, 5, TRUE)
+		if(/datum/patron/divine/abyssor)
+			neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
+			H.mind.adjust_skillrank(/datum/skill/labor/fishing, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
+		if(/datum/patron/divine/ravox)
+			neck = /obj/item/clothing/neck/roguetown/psicross/ravox
 	ADD_TRAIT(H, TRAIT_CHOSEN, TRAIT_GENERIC)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
