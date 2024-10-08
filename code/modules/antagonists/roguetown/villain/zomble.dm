@@ -25,7 +25,7 @@
 	/// Whether or not we have been turned
 	var/has_turned = FALSE
 	/// Last time we bit someone - Zombies will try to bite after 10 seconds of not biting
-	var/last_bite
+	/* var/last_bite */
 	/// Traits applied to the owner mob when we turn into a zombie
 	var/static/list/traits_zombie = list(
 		TRAIT_CRITICAL_RESISTANCE,
@@ -199,7 +199,7 @@
 	zombie.STASPD = rand(5,7)
 
 	zombie.STAINT = 1
-*/
+
 	last_bite = world.time
 	has_turned = TRUE
 	// Drop your helm and gorgies boy you won't need it anymore!!!
@@ -214,7 +214,7 @@
 
 	// Ghosts you because this shit was just not working whatsoever, let the AI handle the rest
 	//zombie.ghostize(FALSE)
-
+*/
 /datum/antagonist/zombie/greet()
 	to_chat(owner.current, span_userdanger("Death is not the end..."))
 	return ..()
@@ -230,7 +230,7 @@
 	if(zombie.client)
 		zombie.mode = AI_OFF
 	else zombie.mode = AI_ON
-
+/*
 //Infected wake param is just a transition from living to zombie, via zombie_infect()
 //Previously you just died without warning in 3 minutes, now you just become an antag
 /datum/antagonist/zombie/proc/wake_zombie(infected_wake = FALSE)
@@ -250,7 +250,7 @@
 	if(istype(zombie.loc, /obj/structure/closet/dirthole) || istype(zombie.loc, /obj/structure/closet/crate/coffin))
 		qdel(src)
 		return
-
+*/
 	zombie.can_do_sex = TRUE //lewd
 
 	zombie.blood_volume = BLOOD_VOLUME_NORMAL
@@ -318,10 +318,10 @@
 		return
 	return mind.add_antag_datum(/datum/antagonist/zombie)
 
-/**
+/*
  * This occurs when one zombie infects a living human, going into instadeath from here is kind of shit and confusing
  * We instead just transform at the end
- */
+ 
 /mob/living/carbon/human/proc/zombie_infect_attempt()
 	var/datum/antagonist/zombie/zombie_antag = zombie_check()
 	if(!zombie_antag)
@@ -344,3 +344,4 @@
 	Knockdown(1)
 	zombie_antag.wake_zombie(TRUE)
 	return TRUE
+goodbye grief code */
