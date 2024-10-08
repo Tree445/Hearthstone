@@ -87,17 +87,6 @@
 	name = "Riddle of Steel"
 	cost = 400
 	contains = list(/obj/item/riddleofsteel)
-
-/datum/supply_pack/rogue/luxury/lightr
-	name = "Port-A-Flame"
-	cost = 100
-	contains = list(/obj/item/lighter/paf)
-
-/datum/supply_pack/rogue/luxury/zigcase
-	name = "Regal Zig Case"
-	cost = 600
-	contains = list(/obj/item/storage/fancy/cigarettes/cigars/cohiba)
-
 // Flavor Packages - For region specific gear; mostly for flavor, also to buy and LARP I guess.
 // Yeah, it's weapons and armor and clothes but sue me. It's overpriced for the LARP.
 
@@ -140,7 +129,7 @@
 					/obj/item/ammopouch/bullets
 					)
 
-/*                                                                                             /// strikeout for now till wizard tower is up. there are too damn many people with magic running around.
+
 /datum/supply_pack/rogue/luxury/acrobat
 	name = "Fragment of the Acrobat"
 	cost = 200
@@ -169,14 +158,14 @@
 	name = "Fragment of the North"
 	cost = 200
 	contains = list(/obj/item/book/granter/trait/north)
-/datum/supply_pack/rogue/luxury/undying
+/*/datum/supply_pack/rogue/luxury/undying
 	name = "Fragment of the Undying"
 	cost = 500
 	contains = list(/obj/item/book/granter/trait/war/undying)
 /datum/supply_pack/rogue/luxury/relentless
 	name = "Fragment of the Relentless"
 	cost = 1000
-	contains = list(/obj/item/book/granter/trait/war/relentless) 
+	contains = list(/obj/item/book/granter/trait/war/relentless) */
 
 
 
@@ -210,11 +199,11 @@
 	contains = list(/obj/item/book/granter/spell/spells5e/eldritchblast5e)
 /datum/supply_pack/rogue/luxury/encodethoughts5e
 	name = "Scroll of Encode Thoughts"
-	cost = 30
+	cost = 250
 	contains = list(/obj/item/book/granter/spell/spells5e/encodethoughts5e)
 /datum/supply_pack/rogue/luxury/firebolt5e
 	name = "Scroll of Fire Bolt"
-	cost = 30
+	cost = 60
 	contains = list(/obj/item/book/granter/spell/spells5e/firebolt5e)
 /datum/supply_pack/rogue/luxury/frostbite5e
 	name = "Scroll of Frostbite"
@@ -269,4 +258,3 @@
 	name = "Scroll of Ray of Frost"
 	cost = 50
 	contains = list(/obj/item/book/granter/spell/spells5e/rayoffrost5e)
-*/

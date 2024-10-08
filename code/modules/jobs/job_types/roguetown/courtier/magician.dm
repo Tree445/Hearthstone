@@ -57,6 +57,7 @@
 		H.change_stat("constitution", -1)
 		H.change_stat("intelligence", 4)
 		H.mind.adjust_spellpoints(3)
+//		H.faction += "summoner" //can use this to enable summons to attack players. Probably better to keep the mobs for pve purposes for now.
 	if(H.age == AGE_OLD)
 		if(H.mind)
 			H.change_stat("speed", -1)

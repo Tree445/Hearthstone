@@ -47,7 +47,7 @@
 					conditional_buff = TRUE
 			if(/datum/patron/divine/dendor)
 				target.visible_message(span_info("A rush of primal energy spirals about [target]!"), span_notice("I'm infused with primal energies!"))
-				var/list/natural_stuff = list(/obj/structure/flora/roguegrass, /obj/structure/flora/roguetree, /obj/structure/flora/rogueshroom, /obj/structure/soil)
+				var/list/natural_stuff = list(/turf/open/floor/rogue/grass, /turf/open/floor/rogue/dirt)
 				situational_bonus = 0
 				// the more natural stuff around US, the more we heal
 				for (var/obj/O in oview(5, user))

@@ -24,6 +24,7 @@
 	backr = /obj/item/storage/backpack/rogue/backpack
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/clothing/neck/roguetown/psicross/talisman
+	backpack_contents = list(/obj/item/roguekey/tribe = 1)
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 	if(H.mind)

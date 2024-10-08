@@ -35,7 +35,6 @@
 	var/initial_sl
 	var/list/possible_enhancements
 	var/renamed_name
-
 /obj/item/rogueweapon/Initialize()
 	. = ..()
 	if(!destroy_message)

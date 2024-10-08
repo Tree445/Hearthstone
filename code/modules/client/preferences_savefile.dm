@@ -202,6 +202,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["defiant"]			>> defiant
 
+	S["nsfw"]			>> nsfw
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_preferences(needs_update, S)		//needs_update = savefile_version if we need an update (positive integer)
@@ -236,7 +238,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_islist(key_bindings, list())
-	defiant	= sanitize_integer(defiant, FALSE, TRUE, TRUE)
+	defiant			= sanitize_integer(defiant, FALSE, TRUE, TRUE)
+	nsfw			= sanitize_integer(nsfw, FALSE, TRUE, TRUE)
 
 	//ROGUETOWN
 	parallax = PARALLAX_INSANE
@@ -302,6 +305,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pda_color"], pda_color)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["defiant"], defiant)
+	WRITE_FILE(S["nsfw"], nsfw)
 	return TRUE
 
 
@@ -452,6 +456,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
 
+	S["background_image"]		>> background_image
+	if(!valid_background_image(null, background_image, TRUE))
+		background_image = null
+
+	S["nsfw_headshot_link"]		>> nsfw_headshot_link
+	if(!valid_nsfw_headshot_link(null, nsfw_headshot_link, TRUE))
+		nsfw_headshot_link = null
+
+	S["nsfw_info"]		>> nsfw_info
+	if(!valid_nsfw_info(null, nsfw_info, TRUE))
+		nsfw_info = null
+
+
 	S["char_accent"]		>> char_accent
 	if (!char_accent)
 		char_accent = "No accent"
@@ -461,10 +478,31 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["flavor_text"]			>> flavor_text
 	if(!valid_flavor_text(null, flavor_text, TRUE))
 		flavor_text = null
-		
+
 	S["ooc_notes"]			>> ooc_notes
 	if(!valid_ooc_notes(null, ooc_notes, TRUE))
 		ooc_notes = null
+	S["alias"]			>> alias
+	if(!valid_alias(null, alias, TRUE))
+		alias = null
+	S["height"]			>> height
+	if(!valid_height(null, height, TRUE))
+		height = null
+	S["interest"]			>> interest
+	if(!valid_interest(null, interest, TRUE))
+		interest = null
+	S["personality"]			>> personality
+	if(!valid_personality(null, personality, TRUE))
+		personality = null
+	S["strengths"]			>> strengths
+	if(!valid_strengths(null, strengths, TRUE))
+		strengths = null
+	S["weakness"]			>> weakness
+	if(!valid_weakness(null, weakness, TRUE))
+		weakness = null
+	S["theme"]			>> theme
+	if(!valid_theme(null, theme, TRUE))
+		theme = null
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -605,6 +643,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
+	WRITE_FILE(S["background_image"] , background_image)
+	WRITE_FILE(S["alias"] , alias)
+	WRITE_FILE(S["height"] , height)
+	WRITE_FILE(S["interest"] , interest)
+	WRITE_FILE(S["personality"] , personality)
+	WRITE_FILE(S["strengths"] , strengths)
+	WRITE_FILE(S["weakness"] , weakness)
+	WRITE_FILE(S["theme"] , theme)
+	WRITE_FILE(S["nsfw_headshot_link"] , nsfw_headshot_link)
 	WRITE_FILE(S["char_accent"] , char_accent)
 	WRITE_FILE(S["statpack"] , statpack.type)
 	WRITE_FILE(S["voice_type"] , voice_type)
@@ -617,6 +664,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["flavor_text"] , flavor_text)
 
 	WRITE_FILE(S["ooc_notes"] , ooc_notes)
+
+	WRITE_FILE(S["nsfw_info"] , nsfw_info)
 
 	WRITE_FILE(S["is_updated_for_genitalia"], TRUE)
 
