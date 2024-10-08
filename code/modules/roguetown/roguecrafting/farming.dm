@@ -7,5 +7,5 @@
 /datum/crafting_recipe/roguetown/farming/fertilizer
 	name = "Fertilizer"
 	result = list(/obj/item/fertilizer/)
-	reqs = list(/obj/item/compost = 1, /obj/item/natural/bone = 1, /obj/item/natural/poo = 1)
+	reqs = list(/obj/item/compost = 1, /obj/item/ash/bonemeal = 1, /obj/item/natural/poo = 1)
 	craftdiff = 3

@@ -15,3 +15,8 @@
 			prob2break = 100
 		if(prob(prob2break))
 			qdel(src)
+
+/obj/item/ash/bonemeal
+	name = "bonemeal"
+	desc = "Good for fertilizing plants. It is high in calcium and phosphorus!"
+	icon_state = "bonemeal"
