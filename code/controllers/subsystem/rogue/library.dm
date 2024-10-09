@@ -17,8 +17,6 @@ SUBSYSTEM_DEF(library)
 		next_library_check = world.time + rand(5 MINUTES, 8 MINUTES)
 		var/list/stockpile_items = list()
 
-		if(SSticker.current_state == GAME_STATE_PLAYING)
-
 		var/area/A = GLOB.areas_by_type[/area/rogue/indoors/town/library]
 		var/amt_to_generate = 0
 
