@@ -158,9 +158,9 @@
 	zombie.remove_client_colour(/datum/client_colour/monochrome)
 	for(var/trait_applied in traits_zombie)
 		ADD_TRAIT(zombie, trait_applied, "[type]")
-	if(zombie.mind)
+	/*if(zombie.mind)
 		special_role = zombie.mind.special_role
-		zombie.mind.special_role = name
+		zombie.mind.special_role = name*/
 	if(zombie.dna?.species)
 		soundpack_m = zombie.dna.species.soundpack_m
 		soundpack_f = zombie.dna.species.soundpack_f
