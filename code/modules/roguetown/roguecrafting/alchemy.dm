@@ -169,17 +169,24 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2)
 	craftdiff = 3
 
-/datum/crafting_recipe/roguetown/alchemy/w2coa
-	name = "transmute small log to coal"
+//	Including this allows bundled sticks to make infinite coal. Due to the odd nature of this bug, I am just commenting it out with documentation.
+// /datum/crafting_recipe/roguetown/alchemy/l2coa
+//	name = "transmute log to coals"
+//	result = list(/obj/item/rogueore/coal, /obj/item/rogueore/coal, /obj/item/rogueore/coal)
+//	reqs = list(/obj/item/grown/log/tree = 1)
+//	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/alchemy/st2coa
+	name = "transmute sticks to coal"
 	result = list(/obj/item/rogueore/coal = 1)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/grown/log/tree/stick = 3)
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/alchemy/l2coa
-	name = "transmute log to coal"
-	result = list(/obj/item/rogueore/coal = 4)
-	reqs = list(/obj/item/grown/log/tree = 1)
-	craftdiff = 1
+/datum/crafting_recipe/roguetown/alchemy/sl2coa
+	name = "transmute small log to coal"
+	result = list(/obj/item/rogueore/coal, /obj/item/rogueore/coal)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/alchemy/s2coa
 	name = "transmute stone to coal"
