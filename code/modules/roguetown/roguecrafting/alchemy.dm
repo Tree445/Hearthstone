@@ -183,7 +183,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/alchemy/sl2coa
-	name = "transmute small log to coal"
+	name = "transmute small log to coals"
 	result = list(/obj/item/rogueore/coal, /obj/item/rogueore/coal)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	craftdiff = 0
