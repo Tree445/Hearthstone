@@ -1,0 +1,74 @@
+"a" = (/turf/closed/wall/mineral/rogue/stonebrick,/area/rogue/outdoors/exposed/under/sewer)
+"b" = (/turf/closed/mineral/rogue,/area/rogue/outdoors/exposed/under/sewer)
+"c" = (/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"d" = (/obj/structure/spider/stickyweb,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"e" = (/obj/structure/mineral_door/wood/red,/turf/open/floor/rogue/blocks/newstone,/area/rogue/outdoors/exposed/under/sewer)
+"f" = (/obj/structure/mineral_door/secret/rogue,/turf/open/floor/rogue/blocks/newstone,/area/rogue/outdoors/exposed/under/sewer)
+"g" = (/obj/machinery/light/rogue/torchholder,/turf/closed/wall/mineral/rogue/stonebrick,/area/rogue/outdoors/exposed/under/sewer)
+"h" = (/obj/structure/rack/rogue/shelf/big,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"i" = (/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"j" = (/turf/open/water/sewer,/area/rogue/outdoors/exposed/under/sewer)
+"k" = (/obj/structure/glowshroom,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"l" = (/obj/structure/mineral_door/wood/red,/obj/structure/spider/stickyweb,/turf/open/floor/rogue/blocks/newstone,/area/rogue/outdoors/exposed/under/sewer)
+"m" = (/obj/item/roguemachine/merchant,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"n" = (/obj/structure/glowshroom,/turf/open/water/sewer,/area/rogue/outdoors/exposed/under/sewer)
+"o" = (/mob/living/carbon/human/species/skeleton/npc,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"p" = (/obj/structure/chair/wood/rogue{dir = 4},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"q" = (/obj/structure/table/wood/crafted,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"r" = (/obj/structure/chair/wood/rogue{dir = 8},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"s" = (/obj/effect/decal/remains/human,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"t" = (/obj/structure/chair/wood/rogue,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"u" = (/obj/structure/fluff/railing/border,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"v" = (/obj/structure/fluff/railing/border,/turf/open/water/sewer,/area/rogue/outdoors/exposed/under/sewer)
+"w" = (/obj/structure/closet/crate/chest/lootbox,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"x" = (/turf/open/floor/rogue/woodturned,/area/rogue/outdoors/exposed/under/sewer)
+"y" = (/obj/item/chair/stool/bar/rogue,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"z" = (/obj/structure/rack/rogue/shelf/big,/obj/item/rogue/instrument/lute,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"A" = (/obj/structure/chair/wood/rogue{dir = 1},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"B" = (/obj/structure/rack/rogue/shelf/big,/obj/item/rogue/instrument/accord,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"C" = (/obj/structure/fermenting_barrel/beer,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"D" = (/obj/structure/table/wood/crafted,/obj/item/reagent_containers/glass/cup/wooden,/obj/item/dice/d6,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"E" = (/obj/structure/fluff/railing/border,/obj/structure/fermenting_barrel/beer,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"F" = (/obj/structure/fluff/railing/border,/turf/open/floor/rogue/woodturned,/area/rogue/outdoors/exposed/under/sewer)
+"G" = (/obj/machinery/light/rogue/lanternpost,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"H" = (/obj/structure/table/wood/crafted,/obj/item/reagent_containers/glass/cup/wooden,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"I" = (/obj/item/reagent_containers/glass/cup/steel,/obj/structure/table/wood/crafted,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"J" = (/obj/structure/spider/stickyweb,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"K" = (/obj/item/reagent_containers/glass/cup/skull,/obj/structure/table/wood/crafted,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"L" = (/obj/structure/table/wood/crafted,/obj/item/reagent_containers/glass/cup/golden,/obj/item/toy/cards/deck,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"M" = (/obj/machinery/light/rogue/oven/west,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"N" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"O" = (/obj/structure/bars/tough,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"P" = (/obj/structure/bars/tough,/turf/open/water/sewer,/area/rogue/outdoors/exposed/under/sewer)
+"Q" = (/obj/structure/table/wood/crafted,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/obj/item/reagent_containers/glass/bottle/rogue/wine,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"R" = (/obj/structure/table/wood/crafted,/obj/item/reagent_containers/glass/cup/wooden,/obj/item/reagent_containers/glass/cup/silver,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"S" = (/obj/structure/fermenting_barrel/water,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"T" = (/obj/structure/spider/stickyweb,/turf/open/water/sewer,/area/rogue/outdoors/exposed/under/sewer)
+"U" = (/obj/structure/table/wood/crafted,/obj/item/reagent_containers/glass/cup/skull,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"V" = (/obj/effect/decal/remains/human,/turf/open/floor/rogue/greenstone,/area/rogue/outdoors/exposed/under/sewer)
+"W" = (/obj/structure/closet/crate/chest{opened = 1},/obj/item/reagent_containers/powder/flour,/obj/item/reagent_containers/powder/flour,/obj/item/reagent_containers/powder/flour,/obj/item/reagent_containers/powder/flour,/obj/item/reagent_containers/powder/flour,/obj/item/reagent_containers/powder/flour,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+"X" = (/obj/machinery/light/rogue/hearth,/obj/item/cooking/pan,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/exposed/under/sewer)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaa
+abbbbacddccaba
+abbbbacaaacaba
+aaaaaadabacaba
+acddccsabadaaa
+ecaaafaaaacdde
+aagzBijnCaalaa
+amcccijjCahdha
+accAcijjiaccoa
+acpDcinjiaowoa
+accccijnigaaaa
+atcccEvvucccca
+aHcccxxxxcyqca
+aAcccFFFFcyqca
+accccGjjicyIca
+actccijjkcyKca
+apHrafaaaaagea
+apLraJTjkaScca
+apUraJjjVaWcMa
+acANaOPPOaQRXa
+aaaaakjTJaaaaa
+"}
