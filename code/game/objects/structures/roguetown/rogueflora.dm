@@ -64,11 +64,12 @@
 								if(NA)
 									if(istype(NA, /turf/open/transparent/openspace))
 										NA.ChangeTurf(/turf/open/floor/rogue/shroud)
-*/
+
 
 	if(istype(loc, /turf/open/floor/rogue/grass))
 		var/turf/T = loc
 		T.ChangeTurf(/turf/open/floor/rogue/dirt)
+		*/
 
 /obj/structure/flora/roguetree/obj_destruction(damage_flag)
 	if(stump_type)

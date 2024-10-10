@@ -3618,6 +3618,7 @@
 #include "modular_hearthstone\code\game\objects\structures\canopy.dm"
 #include "modular_hearthstone\code\game\objects\structures\fluff.dm"
 #include "modular_hearthstone\code\game\objects\structures\gis_statues.dm"
+#include "modular_hearthstone\code\game\objects\structures\gisela_trees.dm"
 #include "modular_hearthstone\code\game\objects\structures\hangingbanners.dm"
 #include "modular_hearthstone\code\game\objects\structures\longsleep.dm"
 #include "modular_hearthstone\code\game\objects\structures\sarcophagus.dm"
