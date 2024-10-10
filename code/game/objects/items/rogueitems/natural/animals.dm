@@ -91,10 +91,12 @@
 	obj_flags = null
 	firefuel = null
 	w_class = WEIGHT_CLASS_NORMAL
+	resistance_flags = FLAMMABLE
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP
 	bundletype = /obj/item/natural/bundle/bone
+	mill_result = /obj/item/ash/bonemeal
 
 /obj/item/natural/volf_head
 	name = "volf head"

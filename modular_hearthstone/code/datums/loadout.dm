@@ -111,6 +111,38 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Strapless Dress"
 	path = /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless
 
+/datum/loadout_item/belldresblue
+	name = "Blue bell dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress
+
+/datum/loadout_item/belldressred
+	name = "Red bell dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress/red
+
+/datum/loadout_item/belldressyellow
+	name = "Yellow bell dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress/yellow
+
+/datum/loadout_item/belldresscyan
+	name = "Cyan bell dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress/cyan
+
+/datum/loadout_item/belldresspurple
+	name = "Purple bell dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress/purple
+
+/datum/loadout_item/belldressblack
+	name = "Black bell dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress/black
+
+/datum/loadout_item/belldresswhite
+	name = "Fancy white dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress/white
+
+/datum/loadout_item/belldressbaroness
+	name = "Baroness dress"
+	path = /obj/item/clothing/suit/roguetown/shirt/belldress/baroness
+
 //ACCESSORIES
 /datum/loadout_item/stockings
 	name = "Stockings"

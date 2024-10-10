@@ -459,14 +459,17 @@
 			qdel(src)
 	if(istype(K, /obj/structure/mineral_door))
 		var/obj/structure/mineral_door/KE = K
-		if(KE.keylock == TRUE)
-			to_chat(user, span_warning("[K] already has a lock."))
+		if(KE.can_add_lock)
+			if(KE.keylock == TRUE)
+				to_chat(user, span_warning("[K] already has a lock."))
+			else
+				KE.keylock = TRUE
+				KE.lockhash = src.lockhash
+				KE.lock_strength = 100
+				if(src.holdname)
+					KE.name = src.holdname
+				to_chat(user, span_notice("You add [src] to [K]."))
+				qdel(src)
 		else
-			KE.keylock = TRUE
-			KE.lockhash = src.lockhash
-			KE.lock_strength = 100
-			if(src.holdname)
-				KE.name = src.holdname
-			to_chat(user, span_notice("You add [src] to [K]."))
-			qdel(src)
+			to_chat(user, span_warning("A lock can't be added to [K]."))
 			

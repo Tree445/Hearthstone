@@ -93,6 +93,10 @@ GLOBAL_LIST_INIT(freqtospan, list(
 			if(istype(speaker, /mob/living))
 				var/mob/living/L = speaker
 				namepart = "Unknown [(L.gender == FEMALE) ? "Woman" : "Man"]"
+				if(message_language.flags & SIGNLANG)
+					//do emote from list
+					var/emote = pick(message_language.signlang_verb)
+					L.emote(emote)
 			else
 				namepart = "Unknown"
 			spanpart1 = "<span class='smallyell'>"

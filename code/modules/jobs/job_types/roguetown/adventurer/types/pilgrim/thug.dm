@@ -36,4 +36,4 @@
 	H.change_stat("intelligence", -2)
 	H.change_stat("speed", -1)
 	ADD_TRAIT(H, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC) //tavern brawler
-
+	H.grant_language(/datum/language/thievescant)

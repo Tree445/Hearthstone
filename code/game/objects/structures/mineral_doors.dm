@@ -46,6 +46,7 @@
 	var/kickthresh = 15
 	var/swing_closed = TRUE
 	var/lock_strength = 100
+	var/can_add_lock = TRUE
 
 	damage_deflection = 10
 
