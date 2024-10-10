@@ -1,6 +1,6 @@
 /obj/item/roguemachine/merchant
-	name = "navigator"
-	desc = "A machine that attracts the attention of trading balloons."
+	name = "SPRING"
+	desc = "A machine that deposits goods into a secure vault"
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "ballooner"
 	density = TRUE
@@ -29,7 +29,7 @@
 	contents += "<center>MERCHANT'S GUILD<BR>"
 	contents += "--------------<BR>"
 	contents += "Guild's Tax: [SStreasury.queens_tax*100]%<BR>"
-	contents += "Next Balloon: [time2text((next_airlift - world.time), "mm:ss")]</center><BR>"
+	contents += "Next Deposit: [time2text((next_airlift - world.time), "mm:ss")]</center><BR>"
 
 	if(!user.can_read(src, TRUE))
 		contents = stars(contents)
@@ -65,7 +65,7 @@
 	if(!anchored)
 		return TRUE
 	if(world.time > next_airlift)
-		next_airlift = world.time + rand(2 MINUTES, 3 MINUTES)
+		next_airlift = world.time + rand(15 SECONDS, 20 SECONDS)
 #ifdef TESTSERVER
 		next_airlift = world.time + 5 SECONDS
 #endif
@@ -85,7 +85,7 @@
 				if(prize >= 1)
 					play_sound=TRUE
 					budgie += prize
-					I.visible_message(span_warning("[I] is sucked into the air!"))
+					I.visible_message(span_warning("[I] is dropped into the lower secure vault!"))
 					qdel(I)
 			budgie = round(budgie)
 			if(budgie > 0)
