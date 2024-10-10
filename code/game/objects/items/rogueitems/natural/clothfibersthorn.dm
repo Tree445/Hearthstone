@@ -238,7 +238,7 @@
 	desc = "Fibers, bundled together."
 	force = 0
 	throwforce = 0
-	maxamount = 6
+	maxamount = 10
 	obj_flags = null
 	color = "#454032"
 	firefuel = 5 MINUTES
@@ -249,13 +249,13 @@
 	w_class = WEIGHT_CLASS_TINY
 	spitoutmouth = FALSE
 	stacktype = /obj/item/natural/fibers
-	icon1step = 3
-	icon2step = 6
+	icon1step = 5
+	icon2step = 9
 
 /obj/item/natural/bundle/fibers/full
 	icon_state = "fibersroll2"
-	amount = 6
-	firefuel = 30 MINUTES
+	amount = 10
+	firefuel = 60 MINUTES
 
 /obj/item/natural/bundle/silk
 	name = "silken weave"
@@ -264,7 +264,7 @@
 	desc = "Silk neatly woven together."
 	force = 0
 	throwforce = 0
-	maxamount = 6
+	maxamount = 10
 	obj_flags = null
 	color = "#e6e3db"
 	firefuel = 5 MINUTES
@@ -275,8 +275,8 @@
 	w_class = WEIGHT_CLASS_TINY
 	spitoutmouth = FALSE
 	stacktype = /obj/item/natural/silk
-	icon1step = 3
-	icon2step = 6
+	icon1step = 5
+	icon2step = 9
 
 /obj/item/natural/bundle/cloth
 	name = "bundle of cloth"
@@ -296,7 +296,7 @@
 	icon1 = "clothroll1"
 	icon1step = 5
 	icon2 = "clothroll2"
-	icon2step = 10
+	icon2step = 9
 
 /obj/item/natural/bundle/stick
 	name = "bundle of sticks"
@@ -326,7 +326,7 @@
 	desc = "bones, stacked together."
 	force = 0
 	throwforce = 0
-	maxamount = 6
+	maxamount = 10
 	obj_flags = null
 	color = null
 	firefuel = null
@@ -339,12 +339,12 @@
 	stacktype = /obj/item/natural/bone
 	stackname = "bones"
 	icon1 = "bonestack1"
-	icon1step = 2
+	icon1step = 5
 	icon2 = "bonestack2"
-	icon2step = 4
+	icon2step = 9
 
 /obj/item/natural/bundle/bone/full
-	amount = 6
+	amount = 10
 
 /*/obj/item/natural/bone/attackby(obj/item/I, mob/living/user, params)
 	var/mob/living/carbon/human/H = user
