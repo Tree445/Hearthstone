@@ -116,6 +116,7 @@
 			H.change_stat("perception", 2)
 			H.change_stat("endurance", 1)
 			H.change_stat("speed", 2)		
+			H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 
 	var/colleges = list(
 		"College of Lore",

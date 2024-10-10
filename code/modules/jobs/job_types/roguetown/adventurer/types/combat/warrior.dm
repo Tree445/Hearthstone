@@ -160,6 +160,7 @@
 			backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/parrying)
 			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			H.change_stat("strength", 1)
 			H.change_stat("speed", 2)
 			H.change_stat("intelligence", 1)

@@ -9,6 +9,7 @@
 	space_chance = 66
 	default_priority = 80
 	icon_state = "asse"
+	signlang = TRUE
 	signlang_verb = list(
 		"scrunches their nose",
 		"smiles",
