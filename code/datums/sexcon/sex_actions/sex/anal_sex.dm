@@ -53,6 +53,9 @@
 		target.apply_damage(10, BRUTE, target.get_bodypart(BODY_ZONE_CHEST))
 		target.apply_damage(3, BRUTE, target.get_bodypart(BODY_ZONE_PRECISE_GROIN))
 
+	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
+		user.sexcon.try_pelvis_crush(target)
+
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 	if(user.sexcon.check_active_ejaculation())
 		user.visible_message(span_love("[user] cums into [target]'s butt!"))

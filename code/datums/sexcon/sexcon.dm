@@ -309,7 +309,7 @@
 			to_chat(action_target, span_love(lovermessage))
 	if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-			pain_amt *= 2
+			pain_amt *= 2.5
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
@@ -766,3 +766,11 @@
 			return "<span class='love_high'>[string]</span>"
 		if(SEX_FORCE_EXTREME)
 			return "<span class='love_extreme'>[string]</span>"
+
+/datum/sex_controller/proc/try_pelvis_crush(mob/living/carbon/human/target)
+	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
+		if(!target.has_wound(/datum/wound/fracture/groin))
+			if(prob(10)){
+				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
+				groin.add_wound(/datum/wound/fracture)
+			}
