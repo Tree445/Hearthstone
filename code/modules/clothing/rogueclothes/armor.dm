@@ -55,7 +55,7 @@
 		return
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
-	slot_flags = ITEM_SLOT_ARMOR
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "haubergeon"
 	desc = "A steel maille shirt."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
@@ -78,8 +78,8 @@
 													'sound/foley/footsteps/armor/chain (3).ogg'), 100)
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	slot_flags = ITEM_SLOT_ARMOR
-	name = "chainmaille"
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	name = "iron chainmail"
 	desc = "A chain vest made of heavy iron rings."
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "ichainmail"
@@ -89,7 +89,7 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	slot_flags = ITEM_SLOT_ARMOR
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "hauberk"
 	desc = "A longer steel maille that protects the legs."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS|LEGS
@@ -100,10 +100,10 @@
 	smeltresult = /obj/item/ingot/steel
 	do_sound = TRUE
 	max_integrity = 350
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
-	slot_flags = ITEM_SLOT_ARMOR
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "chainmail bikini"
 	desc = "Not very comfortable against the skin."
 	body_parts_covered = CHEST|GROIN|VITALS
