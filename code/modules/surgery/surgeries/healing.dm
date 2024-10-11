@@ -11,6 +11,7 @@
 
 /datum/surgery_step/heal
 	name = "Repair body"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_SUTURE = 80,
 		TOOL_HEMOSTAT = 60,

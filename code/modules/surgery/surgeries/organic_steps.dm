@@ -3,6 +3,7 @@
 /// Incision
 /datum/surgery_step/incise
 	name = "Incise"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_SCALPEL = 80,
 		TOOL_SHARP = 60,
@@ -38,6 +39,7 @@
 		TOOL_WIRECUTTER = 60,
 	)
 	time = 2.4 SECONDS
+	ignore_clothes = TRUE
 	surgery_flags_blocked = SURGERY_CLAMPED
 	skill_min = SKILL_LEVEL_APPRENTICE
 	skill_median = SKILL_LEVEL_JOURNEYMAN
@@ -60,6 +62,7 @@
 /// Retracting
 /datum/surgery_step/retract
 	name = "Retract incision"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_RETRACTOR = 75,
 		TOOL_SCREWDRIVER = 50,
@@ -88,6 +91,7 @@
 /// Cauterize
 /datum/surgery_step/cauterize
 	name = "Cauterize wounds"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_CAUTERY = 100,
 		TOOL_WELDER = 70,
@@ -127,6 +131,7 @@
 /// Saw bone
 /datum/surgery_step/saw
 	name = "Saw bone"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_SAW = 80,
 		TOOL_SHOVEL = 50,
@@ -185,6 +190,7 @@
 /// Drill bone
 /datum/surgery_step/drill
 	name = "Drill bone"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_DRILL = 80, 
 		TOOL_SCREWDRIVER = 25,

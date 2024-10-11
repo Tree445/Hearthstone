@@ -17,6 +17,7 @@
 
 /datum/surgery_step/add_prosthetic
 	name = "Implant limb"
+	ignore_clothes = TRUE
 	implements = list(
 		/obj/item/bodypart = 80,
 		/obj/item/organ_storage = 80,

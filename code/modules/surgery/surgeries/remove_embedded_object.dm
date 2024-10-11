@@ -8,6 +8,7 @@
 
 /datum/surgery_step/remove_object
 	name = "Remove embedded objects"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_HEMOSTAT = 80,
 		TOOL_HAND = 50,

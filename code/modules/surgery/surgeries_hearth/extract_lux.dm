@@ -12,6 +12,7 @@
 
 /datum/surgery_step/extract_lux
 	name = "extract lux"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_SCALPEL = 80,
 		TOOL_SHARP = 60,
