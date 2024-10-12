@@ -40,9 +40,10 @@
 		H.change_stat("strength", 2)
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)
-		H.change_stat("speed", 2)
+		H.change_stat("speed", 4)
 		H.change_stat("perception", -1)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_MARTIALARTIST, TRAIT_GENERIC)
-		//ADD_TRAIT(H, TRAIT_NOFALLDAMAGE1, TRAIT_GENERIC) //slow fall from 5e
+		H.mind.martial_art.projectile_deflect = TRUE
+		ADD_TRAIT(H, TRAIT_LEAPER, TRAIT_GENERIC) //crouching tiger hidden dragon
 		

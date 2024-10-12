@@ -148,12 +148,19 @@
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(10,check_armor = TRUE)
-			take_bodypart_damage(10,check_armor = TRUE)
-			if(victim.IsOffBalanced())
-				victim.Knockdown(30)
-			visible_message("<span class='danger'>[src] crashes into [victim]!",\
-				span_danger("I violently crash into [victim]!"))
+			if(HAS_TRAIT(src, TRAIT_MARTIALARTIST))
+				victim.take_bodypart_damage(25,check_armor = TRUE)
+				if(victim.IsOffBalanced())
+					victim.Knockdown(30)
+				visible_message("<span class='danger'>[src] jump kick's [victim]!",\
+					span_danger("I jump kick [victim]!"))
+			else
+				victim.take_bodypart_damage(10,check_armor = TRUE)
+				take_bodypart_damage(10,check_armor = TRUE)
+				if(victim.IsOffBalanced())
+					victim.Knockdown(30)
+				visible_message("<span class='danger'>[src] crashes into [victim]!",\
+					span_danger("I violently crash into [victim]!"))
 		playsound(src,"genblunt",100,TRUE)
 
 

@@ -44,6 +44,7 @@
 	target.visible_message("<span class='info'>[owner]'s rage subsides.</span>", "<span class='notice'>My rage subsides.</span>")
 	target.apply_status_effect(/datum/status_effect/debuff/trainsleep)
 	REMOVE_TRAIT(target, TRAIT_NOPAIN, TRAIT_GENERIC)
+	M.updatehealth()
 	. = ..()
 
 /datum/stressevent/barbarian_rage
