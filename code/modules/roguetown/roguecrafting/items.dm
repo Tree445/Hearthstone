@@ -86,6 +86,7 @@
 	name = "unstrung bow"
 	result = /obj/item/grown/log/tree/bowpartial
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	skillcraft = /datum/skill/combat/bows
 	tools = /obj/item/rogueweapon/huntingknife
 	verbage_simple = "carve"
 	verbage = "carves"
