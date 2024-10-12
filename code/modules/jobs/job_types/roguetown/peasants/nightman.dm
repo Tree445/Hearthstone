@@ -40,6 +40,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("intelligence", -1)
+		H.grant_language(/datum/language/thievescant)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman

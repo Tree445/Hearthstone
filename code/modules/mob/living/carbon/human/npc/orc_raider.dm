@@ -57,7 +57,8 @@ GLOBAL_LIST_INIT(orcraider_aggro, world.file2list("strings/rt/orcraideraggroline
 	job = "Orc Raider"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/halforc/orc_raider)
 
 /mob/living/carbon/human/species/halforc/orc_raider/npc_idle()

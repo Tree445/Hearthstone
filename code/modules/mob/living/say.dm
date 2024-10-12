@@ -168,6 +168,11 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!language)
 		language = get_default_language()
 
+	// if(language.signlang)
+	// 	var/mob/M = src
+	// 	var/emote = pick(language.signlang_verb)
+	// 	M.emote(emote)
+
 	// Detection of language needs to be before inherent channels, because
 	// AIs use inherent channels for the holopad. Most inherent channels
 	// ignore the language argument however.

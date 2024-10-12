@@ -320,7 +320,14 @@
 		if(prob(50))
 			shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
 			if(prob(50))
-				shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/bell/random
+				shirt = /obj/item/clothing/suit/roguetown/shirt/belldress
+				if(prob(50))
+					shirt = /obj/item/clothing/suit/roguetown/shirt/belldress/yellow
+					if(prob(50))
+						shirt = /obj/item/clothing/suit/roguetown/shirt/belldress/white
+						if(prob(50))
+							shirt = /obj/item/clothing/suit/roguetown/shirt/belldress/black
+
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		belt = /obj/item/storage/belt/rogue/leather
 		beltr = /obj/item/storage/belt/rogue/pouch/coins/rich

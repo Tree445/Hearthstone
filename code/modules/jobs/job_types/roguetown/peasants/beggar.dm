@@ -125,6 +125,7 @@
 	backpack_contents = list(/obj/item/lockpickring/mundane)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
+	H.grant_language(/datum/language/thievescant)
 
 /datum/outfit/job/roguetown/vagrant
 	name = "Beggar"

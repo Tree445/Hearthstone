@@ -1,6 +1,7 @@
 /obj/structure/statue/saints
 	icon = 'modular_hearthstone/icons/obj/gis_statues.dmi'
 	layer = ABOVE_MOB_LAYER
+	anchored = TRUE
 
 /obj/structure/statue/saints/father
 	name = "The Father"

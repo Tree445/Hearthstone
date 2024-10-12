@@ -27,10 +27,6 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	if(!language)
 		language = get_default_language()
 	send_speech(message, 7, src, , spans, message_language=language)
-	if(language.flags && language.SIGNLANG)
-		//do emote from list
-		var/emote = pick(language.signlang_verb)
-		src.emote(emote)
 
 /atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, original_message)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
@@ -97,6 +93,10 @@ GLOBAL_LIST_INIT(freqtospan, list(
 			if(istype(speaker, /mob/living))
 				var/mob/living/L = speaker
 				namepart = "Unknown [(L.gender == FEMALE) ? "Woman" : "Man"]"
+				if(message_language.flags & SIGNLANG)
+					//do emote from list
+					var/emote = pick(message_language.signlang_verb)
+					L.emote(emote)
 			else
 				namepart = "Unknown"
 			spanpart1 = "<span class='smallyell'>"
