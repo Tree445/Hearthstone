@@ -14,7 +14,6 @@
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
@@ -38,9 +37,11 @@
 		r_hand = /obj/item/rogueweapon/spear
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	H.change_stat("strength", 2)
-	H.change_stat("intelligence", -1)
-	H.change_stat("constitution", 2)
+	H.change_stat("intelligence", -2)
+	H.change_stat("constitution", 3)
+	H.change_stat("perception", 2)
 	H.change_stat("endurance", 2)
+	H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_DEATHBYSNOOSNOO, TRAIT_GENERIC) //doubles sex damage
 	ADD_TRAIT(H, TRAIT_STRONGTHROW, TRAIT_GENERIC) //mighty throws, javelins etc
 	if(H.wear_mask) //for stupid idiots with bad eyes
