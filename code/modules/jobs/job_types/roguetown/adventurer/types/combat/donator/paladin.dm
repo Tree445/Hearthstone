@@ -47,6 +47,7 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
@@ -57,6 +58,7 @@
 			H.change_stat("intelligence", 2)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+			neck = /obj/item/clothing/neck/roguetown/psicross/silver
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half
 			pants = /obj/item/clothing/under/roguetown/chainlegs
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
@@ -83,17 +85,18 @@
 			to_chat(H, span_warning("You are a battle-master."))
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 			H.change_stat("perception", 1)
@@ -102,6 +105,7 @@
 			H.change_stat("endurance", 2)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+			neck = /obj/item/clothing/neck/roguetown/psicross/silver
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/half
 			pants = /obj/item/clothing/under/roguetown/chainlegs
 			shoes = /obj/item/clothing/shoes/roguetown/boots/leather
@@ -136,6 +140,6 @@
 	if(H.dna.species.type == /datum/species/tieberian)
 		cloak = /obj/item/clothing/cloak/tabard/crusader/tief
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	//Max devotion limit - Paladins are stronger but cannot pray to gain all abilities beyond t1
+	//Max devotion limit - Paladins are stronger but cannot pray to gain all abilities beyond t2
 	C.grant_spells_templar(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
