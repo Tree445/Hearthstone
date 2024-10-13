@@ -101,19 +101,6 @@
 	verbage = "sews"
 	craftdiff = 0
 
-/datum/crafting_recipe/roguetown/bagx5
-	name = "bag x5"
-	result = list(/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,
-		/obj/item/storage/roguebag/crafted,)
-	reqs = list(/obj/item/natural/fibers = 5,
-		/obj/item/natural/cloth = 5)
-	tools = list(/obj/item/needle)
-	skillcraft = /datum/skill/misc/sewing
-	req_table = FALSE
-
 /datum/crafting_recipe/roguetown/bait
 	name = "bait"
 	result = /obj/item/bait
@@ -145,6 +132,19 @@
 		/obj/item/reagent_containers/food/snacks/rogue/meat = 2)
 	req_table = FALSE
 	subtype_reqs = TRUE
+
+/datum/crafting_recipe/roguetown/bagx5
+	name = "bag x5"
+	result = list(/obj/item/storage/roguebag/crafted,
+		/obj/item/storage/roguebag/crafted,
+		/obj/item/storage/roguebag/crafted,
+		/obj/item/storage/roguebag/crafted,
+		/obj/item/storage/roguebag/crafted,)
+	reqs = list(/obj/item/natural/fibers = 5,
+		/obj/item/natural/cloth = 5)
+	tools = list(/obj/item/needle)
+	skillcraft = /datum/skill/misc/sewing
+	req_table = FALSE
 
 /datum/crafting_recipe/roguetown/bag
 	name = "bag"
@@ -188,10 +188,11 @@
 	result = /obj/item/reagent_containers/glass/bucket/wooden
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/pot
-	name = "stone pot"
-	result = /obj/item/reagent_containers/glass/bucket/pot
-	reqs = list(/obj/item/natural/stone = 2)
+/datum/crafting_recipe/roguetown/pestle
+	name = "stone pestle"
+	result = /obj/item/pestle
+	reqs = list(/obj/item/natural/stone = 1)
+	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/mortar
 	name = "stone mortar"
@@ -199,11 +200,10 @@
 	reqs = list(/obj/item/natural/stone = 1)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/pestle
-	name = "stone pestle"
-	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 1)
-	craftdiff = 1
+/datum/crafting_recipe/roguetown/pot
+	name = "stone pot"
+	result = /obj/item/reagent_containers/glass/bucket/pot
+	reqs = list(/obj/item/natural/stone = 2)
 
 /datum/crafting_recipe/roguetown/boneaxe
 	name = "bone axe"
@@ -439,6 +439,14 @@
 	result = /obj/item/kitchen/rollingpin
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
+/datum/crafting_recipe/roguetown/woodmealset
+	name = "wooden meal set (tray, mug, bowl, and spoon.)"
+	result = list(,/obj/item/storage/bag/tray,
+		/obj/item/reagent_containers/glass/cup/wooden/crafted,
+		/obj/item/reagent_containers/glass/bowl,
+		/obj/item/kitchen/spoon)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
 /datum/crafting_recipe/roguetown/woodcup
 	name = "wooden cups (x3)"
 	result = list(/obj/item/reagent_containers/glass/cup/wooden/crafted,
@@ -449,12 +457,6 @@
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	sellprice = 3
 
-/datum/crafting_recipe/roguetown/woodtray
-	name = "wooden trays (x2)"
-	result = list(/obj/item/storage/bag/tray,
-		/obj/item/storage/bag/tray)
-	reqs = list(/obj/item/grown/log/tree/small = 1)
-
 /datum/crafting_recipe/roguetown/woodbowl
 	name = "wooden bowls (x3)"
 	result = list(/obj/item/reagent_containers/glass/bowl,
@@ -463,10 +465,17 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/spoon
-	name = "spoon"
+	name = "wooden spoons (x3)"
 	result = list(/obj/item/kitchen/spoon,
 		/obj/item/kitchen/spoon,
 		/obj/item/kitchen/spoon)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+
+/datum/crafting_recipe/roguetown/woodtray
+	name = "wooden trays (x3)"
+	result = list(/obj/item/storage/bag/tray,
+		/obj/item/storage/bag/tray,
+		/obj/item/storage/bag/tray)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
 /datum/crafting_recipe/roguetown/poisonarrow_five //Arrows and bolts can be smithed in batches of five. Makes sense for them to be dipped in batches of five, too
