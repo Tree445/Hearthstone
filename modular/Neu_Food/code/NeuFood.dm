@@ -361,6 +361,17 @@
 	taste_mult = 3
 	hydration = 2
 
+/datum/reagent/consumable/soup/oatmeal/nourish
+	name = "NOURISH"
+	description = "nutrient suppliment"
+	reagent_state = LIQUID
+	color = "#c38553"
+	nutriment_factor = 15
+	metabolization_rate = 0.5 // half as fast as normal, last twice as long
+	taste_description = "sweet oats flavored water"
+	taste_mult = 5
+	hydration = 8
+
 /datum/reagent/consumable/soup/veggie
 	name = "vegetable soup"
 	description = ""
