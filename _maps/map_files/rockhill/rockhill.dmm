@@ -3305,7 +3305,8 @@
 /obj/structure/mineral_door/wood{
 	icon_state = "wcv";
 	locked = 1;
-	lockid = "shop"
+	lockid = "shop";
+	max_integrity = 1000000
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -3670,7 +3671,8 @@
 	dir = 5;
 	icon_state = "largetable"
 	},
-/obj/item/roguekey/roomhunt,
+/obj/item/reagent_containers/food/snacks/rogue/pumpkincandy,
+/obj/item/reagent_containers/food/snacks/rogue/pumpkincandy,
 /turf/open/floor/rogue/tile/checkeralt,
 /area/rogue/indoors/town/tavern)
 "bLf" = (
@@ -3886,6 +3888,8 @@
 	},
 /obj/item/reagent_containers/glass/cup/wooden,
 /obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/food/snacks/rogue/ratonastick,
+/obj/item/reagent_containers/glass/bottle/rogue/luckpot,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "bSW" = (
@@ -5910,6 +5914,7 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
+/obj/item/reagent_containers/food/snacks/rogue/cheesebun,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "ddL" = (
@@ -6099,11 +6104,7 @@
 "dkf" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/tongs,
-/obj/item/rogueweapon/hammer{
-	color = gold;
-	desc = "A mastercrafted smith's hammer carrying the blessing of Malum.";
-	name = "Hammer of Malum"
-	},
+/obj/item/rogueweapon/hammer,
 /turf/open/floor/rogue/dirt/road{
 	muddy = true
 	},
@@ -11133,6 +11134,20 @@
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
+/obj/structure/closet/crate/chest,
+/obj/item/reagent_containers/food/snacks/rogue/frybirdtato,
+/obj/item/reagent_containers/food/snacks/rogue/frybirdtato,
+/obj/item/reagent_containers/food/snacks/rogue/friedegg/two,
+/obj/item/reagent_containers/food/snacks/rogue/friedegg/two,
+/obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated,
+/obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated,
+/obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated,
+/obj/item/reagent_containers/food/snacks/rogue/ccake,
+/obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried,
+/obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried,
+/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/plated,
+/obj/item/reagent_containers/food/snacks/rogue/handpie,
+/obj/item/reagent_containers/food/snacks/rogue/handpie,
 /turf/open/floor/rogue/tile/checkeralt,
 /area/rogue/indoors/town/tavern)
 "gAk" = (
@@ -12447,6 +12462,12 @@
 	max_integrity = 50000;
 	name = "RPW North"
 	},
+/obj/item/rogueore/iron,
+/obj/item/rogueore/iron,
+/obj/item/rogueore/iron,
+/obj/item/ingot/iron,
+/obj/item/ingot/iron,
+/obj/item/ingot/iron,
 /turf/open/floor/rogue/dirt/road{
 	muddy = true
 	},
@@ -14759,6 +14780,9 @@
 	},
 /obj/item/reagent_containers/powder/salt,
 /obj/item/reagent_containers/powder/salt,
+/obj/item/roguekey/roomhunt,
+/obj/item/reagent_containers/food/snacks/rogue/pumpkinspice,
+/obj/item/reagent_containers/food/snacks/rogue/pumpkinspice,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/tavern)
 "iMA" = (
@@ -15065,6 +15089,7 @@
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
+/obj/item/reagent_containers/food/snacks/rogue/cheesebun,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "iVM" = (
@@ -15625,6 +15650,14 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors)
+"jnv" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable_mid"
+	},
+/obj/item/reagent_containers/food/snacks/rogue/breadslice/toast/buttered,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/tavern)
 "jod" = (
 /obj/structure/rack/rogue,
 /obj/item/natural/feather,
@@ -16210,6 +16243,14 @@
 /obj/item/storage/foodbag/hardtack,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
+"jJM" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "largetable"
+	},
+/obj/item/reagent_containers/food/snacks/rogue/cheesebun,
+/turf/open/floor/rogue/carpet,
+/area/rogue/indoors/town/manor)
 "jKw" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/tile,
@@ -17990,6 +18031,16 @@
 	icon_state = "wooden_floort"
 	},
 /area/rogue/indoors/town/church/chapel)
+"kQC" = (
+/obj/structure/flora/roguegrass,
+/obj/item/rogueore/coal,
+/obj/item/rogueore/coal,
+/obj/item/rogueore/coal,
+/obj/item/rogueore/coal,
+/turf/open/floor/rogue/dirt/road{
+	muddy = true
+	},
+/area/rogue/indoors/town/dwarfin)
 "kQN" = (
 /obj/item/grown/log/tree,
 /obj/item/grown/log/tree,
@@ -22328,6 +22379,7 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+/obj/item/reagent_containers/food/snacks/rogue/ratonastick,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "nRs" = (
@@ -26237,6 +26289,7 @@
 /area/rogue/under/cavewet/bogcaves)
 "qls" = (
 /obj/structure/bed/rogue/shit,
+/obj/item/reagent_containers/food/snacks/rogue/ratonastick,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "qlt" = (
@@ -26359,6 +26412,9 @@
 /obj/item/storage/bag/tray,
 /obj/item/storage/bag/tray,
 /obj/item/storage/bag/tray,
+/obj/item/reagent_containers/food/snacks/rogue/meat/salami,
+/obj/item/reagent_containers/food/snacks/rogue/meat/salami,
+/obj/item/reagent_containers/food/snacks/rogue/meat/salami,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "qoZ" = (
@@ -29127,6 +29183,14 @@
 /mob/living/carbon/human/species/human/northern/searaider/brute,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
+"scF" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable_mid"
+	},
+/obj/item/reagent_containers/food/snacks/rogue/sandwich/cheese,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/tavern)
 "scN" = (
 /turf/closed/wall/mineral/rogue/pipe{
 	dir = 4;
@@ -38466,6 +38530,7 @@
 /obj/item/kitchen/fork,
 /obj/item/kitchen/fork,
 /obj/item/kitchen/fork,
+/obj/item/reagent_containers/food/snacks/rogue/pumpkinpie,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "xZD" = (
@@ -38770,6 +38835,7 @@
 /area/rogue/indoors/town/garrison)
 "yjP" = (
 /obj/structure/bed/rogue/shit,
+/obj/item/reagent_containers/food/snacks/rogue/ratonastick,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "yjW" = (
@@ -304615,7 +304681,7 @@ kmV
 kuS
 kBK
 ohf
-qAk
+jJM
 lJX
 tqq
 tqq
@@ -310688,7 +310754,7 @@ wbg
 wbg
 wVI
 heo
-rJX
+kQC
 pUl
 pUl
 gFQ
@@ -415192,7 +415258,7 @@ gPy
 gPy
 fZJ
 fZJ
-gHt
+nxQ
 vka
 kbk
 wan
@@ -418410,7 +418476,7 @@ wan
 liY
 xYz
 xYz
-oCL
+jnv
 yfr
 ygF
 scU
@@ -418812,7 +418878,7 @@ wan
 yfo
 xYz
 xFE
-oCL
+scF
 yfr
 ygF
 vkY
