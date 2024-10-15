@@ -94,7 +94,6 @@
 	name = "wooden bow"
 	result = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	reqs = list(/obj/item/natural/bowstring = 1, /obj/item/grown/log/tree/bowpartial = 1)
-	skillcraft = /datum/skill/combat/bows
 	verbage_simple = "string together"
 	verbage = "strings together"
 	craftdiff = 2
