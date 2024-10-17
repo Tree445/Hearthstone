@@ -691,6 +691,9 @@
 /obj/item/clothing/cloak/raincloak/purple
 	color = CLOTHING_PURPLE
 
+/obj/item/clothing/cloak/raincloak/yellow
+	color = CLOTHING_YELLOW
+
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "This one will shelter you from the weather and hide your identity too."

@@ -141,3 +141,4 @@
 	desc = ""
 	embedding = list("embedded_pain_multiplier" = 0, "embed_chance" = 0, "embedded_fall_chance" = 0)
 	item_flags = DROPDEL
+	slot_flags = null
