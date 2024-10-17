@@ -133,6 +133,9 @@
 			zombie.faction -= "undead"
 			zombie.faction += "station"
 			zombie.faction += "neutral"
+			special_role -= zombie.mind.special_role
+			zombie.mind.special_role -= name
+			zombie.mind.remove_antag_datum(/datum/antagonist/zombie)
 			zombie.regenerate_organs()
 			if(has_turned)
 				to_chat(zombie, span_green("I no longer crave for flesh..."))

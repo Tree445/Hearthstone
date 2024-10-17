@@ -79,6 +79,7 @@
 		H.change_stat("constitution", 3)
 		H.change_stat("perception", 3)
 		H.change_stat("intelligence", 3)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)

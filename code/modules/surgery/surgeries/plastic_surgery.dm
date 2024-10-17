@@ -12,6 +12,7 @@
 /// Reshape face
 /datum/surgery_step/reshape_face
 	name = "Reshape face"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_SCALPEL = 70,
 		TOOL_WIRECUTTER = 50,
