@@ -3607,6 +3607,7 @@
 #include "modular_hearthstone\code\game\objects\effects\dungeon_mob_spawn.dm"
 #include "modular_hearthstone\code\game\objects\effects\track.dm"
 #include "modular_hearthstone\code\game\objects\items\signal_horn.dm"
+#include "modular_hearthstone\code\game\objects\items\viking_horn.dm"
 #include "modular_hearthstone\code\game\objects\items\clothes\bell_dress.dm"
 #include "modular_hearthstone\code\game\objects\items\clothes\leia.dm"
 #include "modular_hearthstone\code\game\objects\items\clothes\ribbonsash.dm"

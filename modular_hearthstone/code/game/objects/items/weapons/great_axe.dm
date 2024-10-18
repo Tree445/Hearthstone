@@ -1,8 +1,8 @@
 /obj/item/rogueweapon/greataxe
 	force = 13
 	force_wielded = 30
-	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop,  SPEAR_BASH)
+	possible_item_intents = list(/datum/intent/axe/chop/battle, /datum/intent/axe/cut/battle, /datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(/datum/intent/axe/cut/great, /datum/intent/axe/chop/great,  SPEAR_BASH)
 	name = "greataxe"
 	desc = "Might be able to chop anything in half!"
 	icon_state = "greataxe"
@@ -35,7 +35,16 @@
 /obj/item/rogueweapon/greataxe/bearded
 	force = 15
 	force_wielded = 30
-	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop,  SPEAR_BASH)
+	possible_item_intents = list(/datum/intent/axe/chop/battle, /datum/intent/axe/cut/battle, /datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(/datum/intent/axe/cut/great, /datum/intent/axe/chop/great,  SPEAR_BASH)
 	name = "bearded axe"
 	icon_state = "beardedaxe"
+
+
+
+/datum/intent/axe/chop/great
+	penfactor = 60
+	damfactor = 2.2
+
+/datum/intent/axe/cut/great
+	penfactor = 60

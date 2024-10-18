@@ -478,13 +478,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vikingfarmer
-	name = "Northern Hostage"
+	name = "Northern Serf"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/vikingfarmerlate
 	name = "northernhostagelate"
 	icon_state = "arrow"
-	jobspawn_override = list("Northern Hostage")
+	jobspawn_override = list("Northern Serf")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/NorthmenBerserkir
