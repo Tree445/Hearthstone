@@ -12,6 +12,7 @@
 
 /datum/surgery_step/infuse_lux
 	name = "infuse lux"
+	ignore_clothes = TRUE
 	implements = list(
 		/obj/item/reagent_containers/lux = 80,
 	)

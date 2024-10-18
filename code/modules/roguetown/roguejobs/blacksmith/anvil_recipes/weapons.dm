@@ -74,6 +74,13 @@
 	created_item = /obj/item/rogueweapon/spear
 	i_type = "Weapons"
 
+/datum/anvil_recipe/weapons/javelin
+	name = "Javelin (+1 Small Log)"
+	req_bar = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/small)
+	created_item = /obj/item/rogueweapon/spear/javelin
+	i_type = "Weapons"
+
 /datum/anvil_recipe/weapons/polemace
 	name = "Warclub (+1 Small Log)"
 	req_bar = /obj/item/ingot/iron

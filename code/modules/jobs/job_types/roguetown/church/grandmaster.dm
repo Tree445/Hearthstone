@@ -96,6 +96,7 @@
 		H.change_stat("constitution", 2)
 		H.change_stat("endurance", 2)  // Guard Captain stats with no fortune, making them weaker due to a lack of crits.
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)

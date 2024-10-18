@@ -184,7 +184,13 @@
 
 /obj/effect/landmark/map_load_mark/sewers_centre
 	name = "Sewers Centre Section"
-	templates = list("sewers_centre_1", "sewers_centre_2")
+	templates = list("thieves_den_center", "sewers_centre_2")
+
+/// Thieves' Den
+/datum/map_template/thieves_den_center //spawn only one thieves den
+	name = "Thieves' Den"
+	id = "thieves_den_center"
+	mappath = "_maps/map_files/templates/sewers/thieves_den_center.dmm"
 
 /// More sewer tunnels
 /datum/map_template/sewers_centre_1

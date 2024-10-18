@@ -10,6 +10,7 @@
 
 /datum/surgery_step/burn_rot
 	name = "burn rot"
+	ignore_clothes = TRUE
 	implements = list(
 		TOOL_CAUTERY = 85,
 		/obj/item/clothing/neck/roguetown/psicross = 85,

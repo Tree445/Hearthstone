@@ -11,6 +11,7 @@
 
 /datum/surgery_step/replace_limb
 	name = "Replace limb"
+	ignore_clothes = TRUE
 	implements = list(
 		/obj/item/bodypart = 80,
 		/obj/item/organ_storage = 80,
