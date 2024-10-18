@@ -1,12 +1,12 @@
 
 /datum/job/roguetown/vikingfarmer
-	title = "Northern Hostage"
-	f_title = "Northern Hostage"
+	title = "Northern Serf"
+	f_title = "Northern Serf"
 	flag = VIKINGFARMER
 	department_flag = VIKING
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDSPLUS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
@@ -14,7 +14,7 @@
 	tutorial = "You have likely seen the brutality of the Northmen firsthand. Put aside any notion of rescue, and serve the warband well. Taken so far away from home, it is better to keep your head down and do your part, for you will likely never see your loved ones ever again."
 	whitelist_req = FALSE
 
-	
+
 	outfit = /datum/outfit/job/roguetown/farmer
 	display_order = JDO_VIKINGFARMER
 	min_pq = -10
@@ -41,7 +41,7 @@
 		H.change_stat("strength", 1)
 		H.change_stat("constitution", 1)
 		H.change_stat("speed", 1)
-
+		H.faction = list("viking")
 	if(H.gender == MALE)
 		head = /obj/item/clothing/head/roguetown/roguehood/random
 		if(prob(50))

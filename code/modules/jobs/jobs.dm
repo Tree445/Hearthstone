@@ -174,7 +174,7 @@ GLOBAL_LIST_INIT(goblin_positions, list(
 
 GLOBAL_LIST_INIT(viking_positions, list(
 	"Northmen King",
-	"Northern Hostage",
+	"Northern Serf",
 	"Northmen Berserkir"
 ))
 
