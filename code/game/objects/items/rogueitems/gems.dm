@@ -93,7 +93,7 @@
 /obj/item/roguegem/yellow
 	name = "toper"
 	icon_state = "topaz_cut"
-	sellprice = 30 //Matter conservation -- Recipe now uses an ingot instead of an ore.
+	sellprice = 20
 	desc = "Its amber hues remind you of the sunset."
 	mill_result = /obj/item/reagent_containers/powder/toper
 
