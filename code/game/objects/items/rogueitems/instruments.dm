@@ -16,6 +16,7 @@
 
 /obj/item/rogue/instrument/equipped(mob/living/user, slot)
 	. = ..()
+	STOP_PROCESSING(SSobj, src)
 	if(playing && user.get_active_held_item() != src)
 		playing = FALSE
 		soundloop.stop()
@@ -36,11 +37,13 @@
 
 /obj/item/rogue/instrument/dropped()
 	..()
+	STOP_PROCESSING(SSobj, src)
 	if(soundloop)
 		soundloop.stop()
 
 /obj/item/rogue/instrument/attack_self(mob/living/user)
 	var/stressevent = /datum/stressevent/music
+	STOP_PROCESSING(SSobj, src)
 	. = ..()
 	if(.)
 		return
@@ -64,9 +67,12 @@
 					stressevent = /datum/stressevent/music/five
 				if(6)
 					stressevent = /datum/stressevent/music/six
+			START_PROCESSING(SSobj, src)
+
 		if(playing)
 			playing = FALSE
 			soundloop.stop()
+			STOP_PROCESSING(SSobj, src)
 			return
 		if(!(src in user.held_items))
 			return
@@ -85,6 +91,47 @@
 	else
 		playing = FALSE
 		soundloop.stop()
+
+/obj/item/rogue/instrument/process()
+	var/datum/component/infusions/infused_instrument = src.GetComponent(/datum/component/infusions)
+	if(!infused_instrument)
+		STOP_PROCESSING(SSobj, src)
+		return
+	var/infusion_type = infused_instrument.infusion_name
+	switch(infusion_type)
+		if("haunting")
+			if(prob(5)) //haunt
+				playsound(loc, pick('sound/vo/mobs/ghost/laugh (1).ogg','sound/vo/mobs/ghost/laugh (2).ogg','sound/vo/mobs/ghost/laugh (3).ogg'), 300, TRUE)
+			if(prob(10)) //flickers
+				var/obj/machinery/light/L = locate(/obj/machinery/light) in view(30, src.loc)
+				if(L)
+					L.flicker()
+			if(prob(15)) //poltergeist
+				var/list/items = list()
+				for(var/turf/T in range(12, src.loc))
+					for(var/obj/item/i in T.contents)
+						items.Add(i)
+				if(items.len)
+					var/obj/item/I = pick(items)
+					if(I)
+						var/direction = pick(NORTH,SOUTH,EAST,WEST,NORTHEAST,NORTHWEST,SOUTHEAST,SOUTHWEST)
+						//I.throw_at(src, range = 1, speed = 200)
+						step(I,direction)
+		if("the sewers")
+			//if(prob(50))//follow
+			if(prob(20))//follow
+				for(var/L in view(12, src.loc))
+					if(istype(L, /obj/item/reagent_containers/food/snacks/smallrat) || istype(L, /mob/living/simple_animal/hostile/retaliate/rogue/bigrat) || istype(L, /mob/living/simple_animal/mouse) || istype(L, /mob/living/simple_animal/hostile/retaliate/poison/snake))
+						walk_to(L, src, 1, 1.5 SECONDS)
+			if(prob(10))//dance
+				var/list/nearby_mobs = list()
+				for(var/mob/living/L in view(12, src.loc))
+					if(istype(L, /obj/item/reagent_containers/food/snacks/smallrat) || istype(L, /mob/living/simple_animal/hostile/retaliate/rogue/bigrat) || istype(L, /mob/living/simple_animal/mouse) || istype(L, /mob/living/simple_animal/hostile/retaliate/poison/snake))
+						nearby_mobs.Add(L)
+				if(nearby_mobs.len)
+					var/mob/living/T = pick(nearby_mobs)
+					var/list/emotes = list("smile", "flip")
+					T.emote(pick(emotes))
 
 /obj/item/rogue/instrument/lute
 	name = "lute"

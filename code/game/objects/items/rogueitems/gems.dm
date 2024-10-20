@@ -14,6 +14,18 @@
 	static_price = FALSE
 	mill_result = /obj/item/reagent_containers/powder/rontz
 
+/obj/item/roguegem/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item))
+		var/obj/item/I = W
+		if(HAS_TRAIT(user, TRAIT_ARTIFICER))
+			if(W.infusable)
+				W.AddComponent(/datum/component/infusions, user, src, FALSE)
+			else
+				to_chat(user, span_warning("[I] is already infused!"))
+		else
+			to_chat(user, span_warning("I'm no artificer!"))
+	..()
+
 /obj/item/reagent_containers/powder/rontz
 	name = "rontz dust"
 	desc = ""

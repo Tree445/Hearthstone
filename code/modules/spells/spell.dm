@@ -182,6 +182,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/miracle = FALSE
 	var/devotion_cost = 0
 	var/ignore_cockblock = FALSE //whether or not to ignore TRAIT_SPELLCOCKBLOCK
+	var/ignore_fiendkiss = TRUE //whether or not to ignore TRAIT_FIENDKISS
 
 	action_icon_state = "spell0"
 	action_icon = 'icons/mob/actions/roguespells.dmi'
@@ -475,6 +476,11 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	//Add xp based on the fatigue used
 	if(xp_gain)
 		adjust_experience(usr, associated_skill, round(get_fatigue_drain() * MAGIC_XP_MULTIPLIER))
+
+	if(!ignore_fiendkiss && HAS_TRAIT(user, TRAIT_FIENDKISS))
+		sleep(0.5 SECONDS)
+		var/obj/effect/proc_holder/spell/invoked/projectile/firebolt5e/kiss = new /obj/effect/proc_holder/spell/invoked/projectile/firebolt5e
+		kiss.perform(targets, FALSE, user)
 
 /obj/effect/proc_holder/spell/proc/view_or_range(distance = world.view, center=usr, type="view")
 	switch(type)

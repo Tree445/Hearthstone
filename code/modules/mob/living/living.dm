@@ -183,17 +183,20 @@
 	if(m_intent == MOVE_INTENT_RUN && dir == get_dir(src, M))
 		if(isliving(M))
 			var/mob/living/L = M
-			if(STACON > L.STACON)
-				if(STASTR > L.STASTR)
+			var/charge_add = 0
+			if(HAS_TRAIT(src, TRAIT_CHARGER))
+				charge_add = 3
+			if(STACON + charge_add > L.STACON)
+				if(STASTR + charge_add > L.STASTR)
 					L.Knockdown(1)
 					Immobilize(30)
 				else
 					Knockdown(1)
 					Immobilize(30)
-			if(STACON < L.STACON)
+			if(STACON + charge_add < L.STACON)
 				Knockdown(30)
 				Immobilize(30)
-			if(STACON == L.STACON)
+			if(STACON + charge_add == L.STACON)
 				L.Knockdown(1)
 				Knockdown(30)
 			Immobilize(30)

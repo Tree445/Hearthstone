@@ -51,7 +51,13 @@
 #define TRAIT_POISONBITE "Venomous Bite" // Adds tox damage on bites
 #define TRAIT_STRONGTHROW "Strong Throw" // 1.5x throw distance and force
 #define TRAIT_MARTIALARTIST "Martial Artist" //more unarmed combat options
+#define TRAIT_MISSILESNARING "Deflect Missiles" //can deflect missiles
 #define TRAIT_PUGILIST "Pugilist" //more punch damage
+#define TRAIT_WILDMAGIC "Wild Magic" //low chance for insane stuff to happen when casting
+#define TRAIT_FIENDKISS "Kiss of the Fiend" //after casting some spells, hurl a firebolt at the same location
+#define TRAIT_CHARGER "Charger" //after casting some spells, hurl a firebolt at the same location
+#define TRAIT_ARTIFICER "Artificer" //after casting some spells, hurl a firebolt at the same location
+#define TRAIT_NODETECT "Nondetection" //You can not be scryed on
 //Hearthstone end.
 
 // PATRON GOD TRAITS
@@ -145,11 +151,18 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_PERFECT_TRACKER = span_info("I am the perfect tracker. No tracks will deceive my eyes, nor will they hide their secrets from me."),//Hearthstone change.
 	TRAIT_NOCSIGHT = "Noc blesses my eyes to be unburdened by the night.", //Hearthstone change.
 	TRAIT_MALUMSGRACE = "Malum is my muse.", // Hearthstone change
-	TRAIT_DEATHBYSNOOSNOO = "It's an unlucky thing to share my bed.", // Hearthstone change
+
+	TRAIT_DEATHBYSNOOSNOO = "With strong intent, I can shatter pelvises.", // Hearthstone change
 	TRAIT_POISONBITE = "My bites inject venom into my target.", // Hearthstone change
 	TRAIT_STRONGTHROW = "My throws are mighty!", // Hearthstone change
 	TRAIT_MARTIALARTIST = "I have better kicks.", // Hearthstone change
+	TRAIT_MISSILESNARING = "I can dodge projectiles.", // Hearthstone change
 	TRAIT_PUGILIST = "I have stronger punches.", // Hearthstone change
+	TRAIT_WILDMAGIC = "My magic sometimes has unexpected consequences.", // Hearthstone change
+	TRAIT_FIENDKISS = "When I cast projectile magic, the fiend also hurls a fire bolt at the same location.", // Hearthstone change
+	TRAIT_CHARGER = "I can charge into people like a ram.", // Hearthstone change
+	TRAIT_ARTIFICER = "I can use gems to improve items.", // Hearthstone change
+
 	TRAIT_BOG_TREKKING = "Expert in navigating these lands.", // Hearthstone change
 	TRAIT_TINY = span_info("I am tiny in size and quite fragile!"),
 ))
@@ -355,6 +368,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 // common trait sources
 #define TRAIT_GENERIC "generic"
+#define INFUSION_TRAIT "infusion"
 #define UNCONSCIOUS_BLIND "unconscious_blind"
 #define EYE_DAMAGE "eye_damage"
 #define GENETIC_MUTATION "genetic"

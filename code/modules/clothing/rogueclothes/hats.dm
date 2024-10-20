@@ -340,7 +340,7 @@
 	icon_state = "papakha"
 	item_state = "papakha"
 	sewrepair = TRUE
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 
 /obj/item/clothing/head/roguetown/hatblu
 	name = "fur hat"
@@ -369,7 +369,7 @@
 	desc = "A fancy hat worn by nobles."
 	icon_state = "chaperon"
 	item_state = "chaperon"
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 	sewrepair = TRUE
 	//dropshrink = 0.75
 
@@ -378,7 +378,7 @@
 	desc = "A hat which signifies one as well versed in the arts of cooking."
 	icon_state = "chef"
 	item_state = "chef"
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 	sewrepair = TRUE
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale
@@ -386,7 +386,7 @@
 	desc = "A fancy hat worn by nobles."
 	icon_state = "chap_alt"
 	item_state = "chap_alt"
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 	color = "#cf99e3"
 
 /obj/item/clothing/head/roguetown/chaperon/old
@@ -394,7 +394,7 @@
 	desc = "A fancy hat worn by nobles."
 	icon_state = "chap_alt"
 	item_state = "chap_alt"
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 	color = "#C0392B"
 
 /obj/item/clothing/head/roguetown/chaperon/councillor
@@ -402,7 +402,7 @@
 	desc = "A fancy hat worn by nobles."
 	icon_state = "chap_alt"
 	item_state = "chap_alt"
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 	color = "#7dcea0"
 
 /obj/item/clothing/head/roguetown/chef
@@ -417,7 +417,7 @@
 	desc = "A light cap made of leather, usually worn under a helmet."
 	icon_state = "armingcap"
 	item_state = "armingcap"
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 	sewrepair = TRUE
 	//dropshrink = 0.75
 
@@ -499,7 +499,7 @@
 	name = "serpent crown"
 	desc = ""
 	icon_state = "reqhat"
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 	sellprice = 100
 	anvilrepair = /datum/skill/craft/armorsmithing
 
@@ -593,7 +593,7 @@
 	icon_state = "kettle"
 	body_parts_covered = HEAD|HAIR|EARS
 	armor = list("blunt" = 80, "slash" = 90, "stab" = 70, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
@@ -601,7 +601,7 @@
 	desc = "A steel helmet which protects the ears."
 	smeltresult = /obj/item/ingot/steel
 	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEEARS
+	//flags_inv = HIDEEARS - Edited to show ears
 
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
 	name = "visored sallet"
@@ -621,7 +621,7 @@
 			adjustable = CADJUSTED
 			icon_state = "[initial(icon_state)]_raised"
 			body_parts_covered = HEAD|EARS|HAIR
-			flags_inv = HIDEEARS
+			//flags_inv = HIDEEARS - Edited to show ears
 			flags_cover = null
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
@@ -682,7 +682,7 @@
 	desc = "A helmet with a menacing visage."
 	icon_state = "guardhelm"
 	emote_environment = 3
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	flags_inv = HIDEFACE|HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 
@@ -716,7 +716,7 @@
 			adjustable = CADJUSTED
 			icon_state = "knightum"
 			body_parts_covered = HEAD|HAIR|EARS
-			flags_inv = HIDEEARS|HIDEHAIR
+			flags_inv = HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
@@ -796,7 +796,7 @@
 			adjustable = CADJUSTED
 			icon_state = "royalhum"
 			body_parts_covered = HEAD|HAIR|EARS
-			flags_inv = HIDEEARS|HIDEHAIR
+			flags_inv = HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
@@ -836,7 +836,7 @@
 			adjustable = CADJUSTED
 			icon_state = "armetum"
 			body_parts_covered = HEAD|HAIR|EARS
-			flags_inv = HIDEEARS|HIDEHAIR
+			flags_inv = HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
@@ -1007,7 +1007,7 @@
 			icon_state = "hounskull_um"
 			item_state = "hounskull_um"
 			body_parts_covered = HEAD|EARS|HAIR
-			flags_inv = HIDEEARS|HIDEHAIR
+			flags_inv = HIDEHAIR
 			flags_cover = null
 			emote_environment = 0
 			update_icon()
@@ -1168,7 +1168,7 @@
 	name = "volf helmet"
 	desc = "A helmet made using the remains of a volf, surprisingly comfortable."
 	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEHAIR|HIDEEARS
+	flags_inv = HIDEHAIR
 	icon_state = "volfhelm"
 	item_state = "volfhelm"
 	armor = list("blunt" = 47, "slash" = 27, "stab" = 37, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -1182,7 +1182,7 @@
 	name = "volf head"
 	desc = "A helmet made using the head of a volf."
 	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEHAIR|HIDEEARS
+	flags_inv = HIDEHAIR
 	icon_state = "volfhead"
 	item_state = "volfhead"
 	armor = list("blunt" = 45, "slash" = 25, "stab" = 35, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -1325,7 +1325,7 @@
 	name = "footman helmet"
 	desc = "A helmet worn in Grenzelhoft by rank and file soldiery. The color of the plume is often used to specify a soldier's batallion, making it easier to coordinate in battle."
 	block2add = FOV_BEHIND
-	flags_inv = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEHAIR
 	icon_state = "footmanhelmet"
 	item_state = "footmanhelmet"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
@@ -1471,7 +1471,7 @@
 	worn_y_dimension = 64
 	emote_environment = 3
 	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 
@@ -1619,7 +1619,7 @@
 	worn_y_dimension = 64
 	emote_environment = 3
 	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEHAIR|HIDEEARS
+	flags_inv = HIDEHAIR
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel	
 
@@ -1748,7 +1748,7 @@
 	desc = "A hat worn by judges. Practical while also providing a level of warmth thanks to the attached coif."
 	icon_state = "judgehat"
 	item_state = "judgehat"
-	flags_inv = HIDEEARS|HIDEHAIR
+	flags_inv = HIDEHAIR
 	sewrepair = TRUE
 
 /obj/item/clothing/head/roguetown/flophat

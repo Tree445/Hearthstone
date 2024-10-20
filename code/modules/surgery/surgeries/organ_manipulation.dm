@@ -35,6 +35,7 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 
 /datum/surgery_step/manipulate_organs
 	name = "Manipulate organs"
+	ignore_clothes = TRUE
 	time = 6.4 SECONDS
 	accept_hand = TRUE
 	implements = list(

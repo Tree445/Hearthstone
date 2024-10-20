@@ -8,7 +8,7 @@
 	equip_delay_self = 10
 	bloody_icon_state = "bodyblood"
 	sewrepair = TRUE //Vrell - AFAIK, all cloaks are cloth ATM. Technically semi-less future-proof, but it removes a line of code from every subtype, which is worth it IMO.
-	flags_inv = HIDETAIL
+	//flags_inv = HIDETAIL - Edited to instead be hidden by the Hood being lifted up instead of the cloak hiding it by default, that way it can still allow for obscuring
 
 
 //////////////////////////
@@ -691,6 +691,9 @@
 /obj/item/clothing/cloak/raincloak/purple
 	color = CLOTHING_PURPLE
 
+/obj/item/clothing/cloak/raincloak/yellow
+	color = CLOTHING_YELLOW
+
 /obj/item/clothing/head/hooded/rainhood
 	name = "hood"
 	desc = "This one will shelter you from the weather and hide your identity too."
@@ -700,7 +703,7 @@
 	dynamic_hair_suffix = ""
 	edelay_type = 1
 	body_parts_covered = HEAD
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDETAIL //Edited to include Hide Tail so cloaks can keep their obscuring feature
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/head/hooded/equipped(mob/user, slot)

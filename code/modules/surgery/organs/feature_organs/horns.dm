@@ -8,9 +8,9 @@
 
 /obj/item/organ/horns/humanoid
 
-/obj/item/organ/horns/tiefling
-	name = "tiefling horns"
-	accessory_type =  /datum/sprite_accessory/horns/tiefling
+// /obj/item/organ/horns/tiefling
+//	name = "tiefling horns"
+//	accessory_type =  /datum/sprite_accessory/horns/tiefling
 
 /obj/item/organ/horns/halforc
 	name = "halforc horns"

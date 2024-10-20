@@ -38,6 +38,10 @@
 /datum/armor/proc/modifyRating(blunt = 0, slash = 0, stab = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0)
 	return getArmor(src.blunt+blunt, src.slash+slash, src.stab+stab, src.bullet+bullet, src.laser+laser, src.energy+energy, src.bomb+bomb, src.bio+bio, src.rad+rad, src.fire+fire, src.acid+acid, src.magic+magic)
 
+//replace rating if new rating is higher
+/datum/armor/proc/modifyRatingMax(blunt = 0, slash = 0, stab = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0, magic = 0)
+	return getArmor(max(src.blunt,blunt), max(src.slash,slash), max(src.stab,stab), max(src.bullet,bullet), max(src.laser,laser), max(src.energy,energy), max(src.bomb,bomb), max(src.bio,bio), max(src.rad,rad), max(src.fire,fire), max(src.acid,acid), max(src.magic,magic))
+
 /datum/armor/proc/modifyAllRatings(modifier = 0)
 	return getArmor(blunt+modifier, slash+modifier, stab+modifier, bullet+modifier, laser+modifier, energy+modifier, bomb+modifier, bio+modifier, rad+modifier, fire+modifier, acid+modifier, magic+modifier)
 

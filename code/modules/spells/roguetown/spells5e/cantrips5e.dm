@@ -55,7 +55,8 @@
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
+	ignore_fiendkiss = FALSE
+	
 /obj/effect/proc_holder/spell/self/acidsplash5e/cast(mob/user = usr)
 	var/mob/living/target = user
 	target.visible_message(span_warning("[target] hurls a caustic bubble!"), span_notice("You hurl a caustic bubble!"))
@@ -288,7 +289,8 @@
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
+	ignore_fiendkiss = FALSE
+	
 // Notes: sorcerer, warlock, wizard
 /obj/effect/proc_holder/spell/invoked/chilltouch5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -558,7 +560,8 @@
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
+	ignore_fiendkiss = FALSE
+	
 
 /obj/projectile/magic/eldritchblast5e
 	name = "eldritch blast"
@@ -574,6 +577,28 @@
 	. = ..()
 	playsound(src, 'sound/magic/swap.ogg', 100)
 
+/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast5e/empowered
+	name = "empowered eldritch blast"
+	charge_max = 8 SECONDS //cooldown
+	releasedrain = 40
+	projectile_type = /obj/projectile/magic/eldritchblast5e/empowered
+
+/obj/projectile/magic/eldritchblast5e/empowered
+	damage = 30
+	range = 25
+
+/obj/projectile/magic/eldritchblast5e/empowered/on_hit(atom/target, blocked = FALSE)
+	var/atom/throw_target = get_step(target, get_dir(firer, target))
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.anti_magic_check())
+			return BULLET_ACT_BLOCK
+		L.throw_at(throw_target, 200, 4)
+	else
+		if(isitem(target))
+			var/obj/item/I = target
+			I.throw_at(throw_target, 200, 4)
+	playsound(src, 'sound/magic/swap.ogg', 100)
 //==============================================
 //	ENCODE THOUGHTS
 //==============================================
@@ -691,6 +716,7 @@
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
+	ignore_fiendkiss = FALSE
 	
 /obj/effect/proc_holder/spell/invoked/frostbite5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
@@ -880,7 +906,8 @@
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-	
+	ignore_fiendkiss = FALSE
+		
 /obj/effect/proc_holder/spell/invoked/infestation5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
 		var/mob/living/carbon/target = targets[1]
@@ -1135,7 +1162,8 @@
 	var/delay = 3 SECONDS
 	var/sprite_changes = 10
 	var/datum/beam/current_beam = null
-
+	ignore_fiendkiss = FALSE
+	
 obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/user = usr)
 	for(var/mob/living/carbon/C in targets)
 		user.visible_message(span_warning("[C] is connected to [user] with a lightning lure!"), span_warning("You create a static link with [C]."))
@@ -1283,7 +1311,8 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	var/delay = 7
-
+	ignore_fiendkiss = FALSE
+	
 /obj/effect/proc_holder/spell/invoked/mindsliver5e/cast(list/targets, mob/user)
 	var/turf/T = get_turf(targets[1])
 	new /obj/effect/temp_visual/mindsliver5e_p1(T)
@@ -1384,8 +1413,6 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 		to_chat(user, "<span class='warning'>I couldn't find a good place for this!</span>")
 		revert_cast()
 
-
-
 //==============================================
 //	Primal Savagery
 //==============================================
@@ -1440,7 +1467,6 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	REMOVE_TRAIT(target, TRAIT_POISONBITE, TRAIT_GENERIC)
 	. = ..()
 
-
 //==============================================
 //	RAY OF FROST
 //==============================================
@@ -1474,8 +1500,8 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
-
+	ignore_fiendkiss = FALSE
+	
 /obj/projectile/magic/rayoffrost5e
 	name = "ray of frost"
 	icon = 'icons/obj/projectiles.dmi'

@@ -33,7 +33,7 @@
 	/// How much progression is gained per process call
 	var/passive_progression_gain = 0
 	/// How much devotion is gained per prayer cycle
-	var/prayer_effectiveness = 2
+	var/prayer_effectiveness = 5
 	/// Spells we have granted thus far
 	var/list/granted_spells
 
@@ -125,8 +125,8 @@
 		H.mind.AddSpell(newspell)
 		LAZYADD(granted_spells, newspell)
 	level = CLERIC_T0
-	max_devotion = CLERIC_REQ_1 //Max devotion limit - Paladin/Templars are stronger than others but cannot pray to gain all abilities beyond t1
-	max_progression = CLERIC_REQ_1
+	max_devotion = CLERIC_REQ_2 //Max devotion limit - Paladin/Templars are stronger than others but cannot pray to gain all abilities beyond t2
+	max_progression = CLERIC_REQ_2
 
 /datum/devotion/proc/grant_spells_cleric(mob/living/carbon/human/H)
 	if(!H || !H.mind || !patron)
@@ -140,8 +140,8 @@
 		H.mind.AddSpell(newspell)
 		LAZYADD(granted_spells, newspell)
 	level = CLERIC_T0
-	max_devotion = CLERIC_REQ_2 //Max devotion limit - Clerics are stronger than some others but cannot pray to gain all abilities beyond t2
-	max_progression = CLERIC_REQ_2
+	max_devotion = CLERIC_REQ_3 //Max devotion limit - Clerics are stronger than some others but cannot pray to gain all abilities beyond t3
+	max_progression = CLERIC_REQ_3
 
 /datum/devotion/proc/grant_spells_churchling(mob/living/carbon/human/H)
 	if(!H || !H.mind || !patron)
@@ -188,7 +188,26 @@
 		H.mind.AddSpell(newspell)
 		LAZYADD(granted_spells, newspell)
 	level = CLERIC_T1
-	max_progression = CLERIC_REQ_3
+	max_progression = CLERIC_REQ_4
+	passive_devotion_gain = 1
+	passive_progression_gain = 1
+	update_devotion(100, CLERIC_REQ_4, silent = TRUE)
+	START_PROCESSING(SSobj, src)
+
+/datum/devotion/proc/grant_spells_devout_noc(mob/living/carbon/human/H)
+	if(!H || !H.mind || !patron)
+		return
+
+	granted_spells = list()
+	var/list/spelllist = list(patron.t0)
+	for(var/spell_type in spelllist)
+		if(!spell_type || H.mind.has_spell(spell_type))
+			continue
+		var/newspell = new spell_type
+		H.mind.AddSpell(newspell)
+		LAZYADD(granted_spells, newspell)
+	level = CLERIC_T0
+	max_progression = CLERIC_REQ_2
 	passive_devotion_gain = 1
 	passive_progression_gain = 1
 	update_devotion(100, CLERIC_REQ_4, silent = TRUE)
