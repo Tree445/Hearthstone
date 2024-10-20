@@ -1,9 +1,35 @@
 
 /obj/item/roguegem
+	name = "alchemical glass"
+	icon_state = "ruby_cut"
+	icon = 'icons/roguetown/items/gems.dmi'
+	desc = "Its facets shine so brightly, but it's nothing more than mineral glass, produced by suffusing mere stone with arcyne sublimate. Its ability to shift hues when exposed to manna makes it perfect for stained glass!"
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	slot_flags = ITEM_SLOT_MOUTH
+	dropshrink = 0.4
+	drop_sound = 'sound/items/gem.ogg'
+	sellprice = 10
+	static_price = FALSE
+	mill_result = null
+
+/obj/item/reagent_containers/powder/crystalglass
+	name = "crystal dust"
+	desc = ""
+	gender = PLURAL
+	icon = 'icons/roguetown/items/gems.dmi'
+	icon_state = "rontz_dust"
+	volume = 5
+	list_reagents = list(/datum/reagent/gemdust = 5)
+	grind_results = list(/datum/reagent/gemdust = 5)
+	sellprice = 5
+
+/obj/item/roguegem/red
 	name = "rontz"
 	icon_state = "ruby_cut"
 	icon = 'icons/roguetown/items/gems.dmi'
-	desc = "Its facets shine so brightly.."
+	desc = "Its facets shine so brightly... What a gorgeous gem!"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -12,7 +38,7 @@
 	drop_sound = 'sound/items/gem.ogg'
 	sellprice = 100
 	static_price = FALSE
-	mill_result = /obj/item/reagent_containers/powder/rontz
+	mill_result = null
 
 /obj/item/reagent_containers/powder/rontz
 	name = "rontz dust"
@@ -150,7 +176,7 @@
 	icon_state = null
 
 /obj/item/roguegem/random/Initialize()
-	var/newgem = list(/obj/item/roguegem = 5, /obj/item/roguegem/green = 15, /obj/item/roguegem/blue = 10, /obj/item/roguegem/yellow = 20, /obj/item/roguegem/violet = 10, /obj/item/roguegem/diamond = 5, /obj/item/riddleofsteel = 1)
+	var/newgem = list(/obj/item/roguegem/red = 5, /obj/item/roguegem/green = 15, /obj/item/roguegem/blue = 10, /obj/item/roguegem/yellow = 20, /obj/item/roguegem/violet = 10, /obj/item/roguegem/diamond = 5, /obj/item/riddleofsteel = 1)
 	var/pickgem = pickweight(newgem)
 	new pickgem(get_turf(src))
 	qdel(src)

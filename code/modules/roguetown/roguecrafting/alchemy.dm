@@ -183,17 +183,25 @@
 
 /datum/crafting_recipe/roguetown/alchemy/i2gol
 	name = "transmute iron to gold"
-	result = list(/obj/item/rogueore/gold = 1)//Gold ore is only worth 10 mammon. Iron ore is worth 5 mammon. 2 Iron ore per 1 gold is fair.
-	reqs = list(/obj/item/rogueore/iron = 2)
+	result = list(/obj/item/rogueore/gold = 1)
+	reqs = list(/obj/item/rogueore/iron = 4)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/i2top // Keep topers and their trinkets cheap to prevent wealth creep. Cheap means of getting gem dust, for potions.
 	name = "transmute iron to toper"
 	result = list(/obj/item/roguegem/yellow = 1)
 	reqs = list(
-		/obj/item/ingot/iron = 1, //Toper will be worth 30 mammon. Iron ingot is worth 25.
+		/obj/item/rogueore/iron = 1, //Toper will be worth 30 mammon. Iron ingot is worth 25.
 		/obj/item/natural/stone = 1)
 	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/alchemy/alglass // TO-DO: add construction recipe for church windows using this
+	name = "transmute stone to alchemical glass"
+	result = list(/obj/item/roguegem = 1)
+	reqs = list(
+		/obj/item/reagent_containers/powder/sublimate = 1,
+		/obj/item/natural/stone = 1)
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/alchemy/t2gem
 	name = "transmute toper to gemerald"
@@ -218,11 +226,19 @@
 		/obj/item/roguegem/yellow = 1)
 	craftdiff = 4
 
-/datum/crafting_recipe/roguetown/alchemy/r2dia
-	name = "transmute blortz to dorpel"
-	result = list(/obj/item/roguegem/diamond = 1)
+/datum/crafting_recipe/roguetown/alchemy/b2ron
+	name = "transmute blortz to rontz"
+	result = list(/obj/item/roguegem/red = 1)
 	reqs = list(
 		/obj/item/roguegem/blue = 1,
+		/obj/item/roguegem/yellow = 1)
+	craftdiff = 5
+
+/datum/crafting_recipe/roguetown/alchemy/r2dia
+	name = "transmute rontz to dorpel"
+	result = list(/obj/item/roguegem/diamond = 1)
+	reqs = list(
+		/obj/item/roguegem/red = 1,
 		/obj/item/roguegem/yellow = 1)
 	craftdiff = 5
 
