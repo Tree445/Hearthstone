@@ -495,7 +495,6 @@
 		/obj/item/rogueweapon/mace/steel/morningstar = 15,
 		/obj/item/rogueweapon/mace/goden = 15,
 		/obj/item/rogueweapon/mace/goden/steel = 15,
-		/obj/item/rogueweapon/mace/stunmace = 10,
 
 		/obj/item/clothing/ring/dragon_ring = 5,
 		/obj/item/clothing/ring/diamonds = 15,
