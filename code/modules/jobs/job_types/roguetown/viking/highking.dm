@@ -25,18 +25,22 @@
 	head = /obj/item/clothing/head/roguetown/helmet/vikinghelmet
 	backr = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
-	r_hand = /obj/item/rogueweapon/stoneaxe/battle
+	r_hand = /obj/item/rogueweapon/greataxe/bearded
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	pants = /obj/item/clothing/under/roguetown/platelegs
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	belt = /obj/item/storage/belt/rogue/leather
+	beltr = /obj/item/viking_horn
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	armor = /obj/item/clothing/suit/roguetown/armor/plate
 	shoes = /obj/item/storage/belt/rogue/leather
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_VIKINGCAMP, TRAIT_GENERIC)
+	H.faction = list("viking")
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE) // Chieftess gets nearly same skills as guard.
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
@@ -64,7 +68,7 @@
 		H.change_stat("intelligence", -2)
 		H.change_stat("constitution", 5)	//They will likely have the entire town fighting them.
 		H.change_stat("endurance", 5)
-	
+
 /obj/effect/proc_holder/spell/self/convertrole/viking
 	name = "Recruit Clanshield"
 	new_role = "Viking Clanshield"
