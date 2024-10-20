@@ -28,7 +28,7 @@
 /datum/reagent/gemdust
 	name = "Gemstone Dust"
 	description = "Glassy."
-	color = "#d7d0be" 
+	color = "#d7d0be"
 	overdose_threshold = 0
 	metabolization_rate = 1
 
@@ -93,7 +93,7 @@
 /obj/item/roguegem/yellow
 	name = "toper"
 	icon_state = "topaz_cut"
-	sellprice = 20
+	sellprice = 30 //Matter conservation -- Recipe now uses an ingot instead of an ore.
 	desc = "Its amber hues remind you of the sunset."
 	mill_result = /obj/item/reagent_containers/powder/toper
 
@@ -187,12 +187,12 @@
 /datum/reagent/mfire
 	name = "Malum's Fire"
 	description = "Divine Burning."
-	color = "#ffc229" 
+	color = "#ffc229"
 	overdose_threshold = 0
 	metabolization_rate = 0.5
 
 /datum/reagent/mfire/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_MALUMSGRACE)) 
+	if(HAS_TRAIT(M, TRAIT_MALUMSGRACE))
 		M.apply_status_effect(/datum/status_effect/buff/mfire)
 		if(holder.has_reagent(/datum/reagent/mfire))
 			holder.remove_reagent(/datum/reagent/mfire, 15)

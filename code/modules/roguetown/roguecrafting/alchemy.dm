@@ -17,7 +17,7 @@
 	name = "Manna Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/manapot)
 	reqs = list(
-		/obj/item/reagent_containers/glass/bottle = 1, 
+		/obj/item/reagent_containers/glass/bottle = 1,
 		/obj/item/reagent_containers/powder/sublimate = 1)
 	craftdiff = 2
 
@@ -91,8 +91,8 @@
 	name = "Anti Poison Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot)
 	reqs = list(
-		/obj/item/reagent_containers/glass/bottle = 1, 
-		/obj/item/reagent_containers/powder/sublimate = 1, 
+		/obj/item/reagent_containers/glass/bottle = 1,
+		/obj/item/reagent_containers/powder/sublimate = 1,
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 1)
 	craftdiff = 1
 
@@ -100,8 +100,8 @@
 	name = "3x Anti Poison Potion"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot,/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot,/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot)
 	reqs = list(
-		/obj/item/reagent_containers/glass/bottle = 3, 
-		/obj/item/reagent_containers/powder/sublimate = 3, 
+		/obj/item/reagent_containers/glass/bottle = 3,
+		/obj/item/reagent_containers/powder/sublimate = 3,
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison = 2)
 	craftdiff = 1
 
@@ -114,7 +114,7 @@
 	name = "2x glass bottles"
 	result = list(/obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/bottle)
 	reqs = list(
-		/obj/item/natural/stone = 1, 
+		/obj/item/natural/stone = 1,
 		/obj/item/natural/dirtclod = 1)
 	craftdiff = 1
 	verbage_simple = "forge"
@@ -125,7 +125,7 @@
 	name = "distill water"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/water = 1)
 	reqs = list(
-		/obj/item/reagent_containers/glass/bottle = 1, 
+		/obj/item/reagent_containers/glass/bottle = 1,
 		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
 	craftdiff = 1
 
@@ -133,7 +133,7 @@
 	name = "transmute water to milk"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/milk = 1)
 	reqs = list(
-		/obj/item/reagent_containers/glass/bottle = 1, 
+		/obj/item/reagent_containers/glass/bottle = 1,
 		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
 	craftdiff = 3
 
@@ -141,7 +141,7 @@
 	name = "transmute water to wine" /// eat your heart out god.
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1)
 	reqs = list(
-		/obj/item/reagent_containers/glass/bottle = 1, 
+		/obj/item/reagent_containers/glass/bottle = 1,
 		/datum/reagent/water = 99) // 45 and 90 u allows for bottle duping. This requires 33oz containers, preventing the dupe.
 	craftdiff = 3
 
@@ -172,8 +172,8 @@
 /datum/crafting_recipe/roguetown/alchemy/s2coa
 	name = "transmute stone to coal"
 	result = list(/obj/item/rogueore/coal = 1)
-	reqs = list(/obj/item/natural/stone = 4)
-	craftdiff = 2
+	reqs = list(/obj/item/natural/stone = 2)//I was told once when I wrote the recipe for the winding sheet that 3 of any material is a lot.
+	craftdiff = 2							//After having spent 3 HOURS in a round trying to create a Riddle with alchemy without skipping any steps and WITH three furnaces churning out coal and only getting HALFWAY, I tend to agree.
 
 /datum/crafting_recipe/roguetown/alchemy/c2irn
 	name = "transmute coal to iron"
@@ -183,15 +183,15 @@
 
 /datum/crafting_recipe/roguetown/alchemy/i2gol
 	name = "transmute iron to gold"
-	result = list(/obj/item/rogueore/gold = 1)
-	reqs = list(/obj/item/rogueore/iron = 4)
+	result = list(/obj/item/rogueore/gold = 1)//Gold ore is only worth 10 mammon. Iron ore is worth 5 mammon. 2 Iron ore per 1 gold is fair.
+	reqs = list(/obj/item/rogueore/iron = 2)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/i2top // Keep topers and their trinkets cheap to prevent wealth creep. Cheap means of getting gem dust, for potions.
 	name = "transmute iron to toper"
 	result = list(/obj/item/roguegem/yellow = 1)
 	reqs = list(
-		/obj/item/rogueore/iron = 1, 
+		/obj/item/ingot/iron = 1, //Toper will be worth 30 mammon. Iron ingot is worth 25.
 		/obj/item/natural/stone = 1)
 	craftdiff = 4
 
@@ -199,54 +199,53 @@
 	name = "transmute toper to gemerald"
 	result = list(/obj/item/roguegem/green = 1)
 	reqs = list(
-		/obj/item/roguegem/yellow = 1, 
-		/obj/item/rogueore/gold = 2)
+		/obj/item/roguegem/yellow = 2)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/g2saf
 	name = "transmute gemerald to saffira"
 	result = list(/obj/item/roguegem/violet = 1)
 	reqs = list(
-		/obj/item/roguegem/green = 1, 
-		/obj/item/rogueore/gold = 2)
+		/obj/item/roguegem/green = 1,
+		/obj/item/roguegem/yellow = 1)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/s2blo
 	name = "transmute saffira to blortz"
 	result = list(/obj/item/roguegem/blue = 1)
 	reqs = list(
-		/obj/item/roguegem/violet = 1, 
-		/obj/item/rogueore/gold = 2)
+		/obj/item/roguegem/violet = 1,
+		/obj/item/roguegem/yellow = 1)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/alchemy/r2dia
 	name = "transmute blortz to dorpel"
 	result = list(/obj/item/roguegem/diamond = 1)
 	reqs = list(
-		/obj/item/roguegem/blue = 2, 
-		/obj/item/rogueore/gold = 2)
+		/obj/item/roguegem/blue = 1,
+		/obj/item/roguegem/yellow = 1)
 	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/d2ros
 	name = "transmute dorpels to riddle of steel" /// holy grail requires legendary. (sell price on average is 350. rontz and diamond worth 100 each. you get to legndary you deserve 150-200 profit)
 	result = list(/obj/item/riddleofsteel = 1)
 	reqs = list(
-		/obj/item/roguegem/diamond = 2, 
-		/obj/item/rogueore/iron = 1, 
+		/obj/item/roguegem/diamond = 1,
+		/obj/item/rogueore/iron = 3, //3 iron and 1 coal, same as the ratio of materials in a greatforge.
 		/obj/item/rogueore/coal = 1)
 	craftdiff = 6
 
 /datum/crafting_recipe/roguetown/alchemy/e2s
-	name = "transmute steel to silver" // This is gonna be ass to make. Have fun. (2 gold ORE, and 4 steel INGOTs, and 2 seffira)
-	result = list(/obj/item/ingot/silver = 1)
-	reqs = list(/obj/item/rogueore/gold = 2, /obj/item/ingot/steel = 4, /obj/item/roguegem/violet = 2)
+	name = "transmute steel to silver" // Making it is still pretty involved, but at least now you aren't wasting 3 entire ingots of steel plus almost 300 mammon worth of potential profit for a single silver ingot.
+	result = list(/obj/item/ingot/silver = 4)
+	reqs = list(/obj/item/rogueore/gold = 1, /obj/item/ingot/steel = 4, /obj/item/roguegem/violet = 2)
 	craftdiff = 6
 
 /datum/crafting_recipe/roguetown/alchemy/moon
 	name = "Moondust"
 	result = list(/obj/item/reagent_containers/powder/moondust)
 	reqs = list(
-		/obj/item/ash = 1, 
+		/obj/item/ash = 1,
 		/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 2) // Probably better to just buy from the merchant.
 	craftdiff = 1
 
@@ -256,18 +255,19 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
-		/obj/item/reagent_containers/powder/toper = 1, 
+		/obj/item/reagent_containers/powder/toper = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/g2sub
 	name = "Sublimate Gemerald Dust"
 	result = list(
+		/obj/item/reagent_containers/powder/sublimate,//Because each tier of gem now just uses 1 toper in its recipe to tier up, each tier except for Riddle will add 2 sublimate to its alchemical value -- the same as 1 toper.
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
-		/obj/item/reagent_containers/powder/gemerald = 1, 
+		/obj/item/reagent_containers/powder/gemerald = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
 
@@ -277,9 +277,11 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
-		/obj/item/reagent_containers/powder/saffira = 1, 
+		/obj/item/reagent_containers/powder/saffira = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
 
@@ -290,9 +292,12 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
-		/obj/item/reagent_containers/powder/blortz = 1, 
+		/obj/item/reagent_containers/powder/blortz = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
 
@@ -305,9 +310,12 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
-		/obj/item/reagent_containers/powder/rontz = 1, 
+		/obj/item/reagent_containers/powder/rontz = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
 
@@ -321,15 +329,27 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
-		/obj/item/reagent_containers/powder/dorpel = 1, 
+		/obj/item/reagent_containers/powder/dorpel = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/alchemy/m2sub
 	name = "Sublimate Malum's Fire"
 	result = list(
+		/obj/item/reagent_containers/powder/sublimate,//If you're using the raw stuff of creation to do alchemy, you deserve to get a greater return on your investment.
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
+		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate,
@@ -343,6 +363,6 @@
 		/obj/item/reagent_containers/powder/sublimate,
 		/obj/item/reagent_containers/powder/sublimate)
 	reqs = list(
-		/obj/item/reagent_containers/powder/mfire = 1, 
+		/obj/item/reagent_containers/powder/mfire = 1,
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
