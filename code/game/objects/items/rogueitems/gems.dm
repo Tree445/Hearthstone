@@ -83,7 +83,7 @@
 /obj/item/roguegem/green
 	name = "gemerald"
 	icon_state = "emerald_cut"
-	sellprice = 42
+	sellprice = 40
 	desc = "Glints with verdant brilliance."
 	mill_result = /obj/item/reagent_containers/powder/gemerald
 
@@ -101,7 +101,7 @@
 /obj/item/roguegem/blue
 	name = "blortz"
 	icon_state = "quartz_cut"
-	sellprice = 88
+	sellprice = 80
 	desc = "Pale blue, like a frozen tear." // i am not sure if this is really quartz.
 	mill_result = /obj/item/reagent_containers/powder/blortz
 
@@ -137,7 +137,7 @@
 /obj/item/roguegem/violet
 	name = "saffira"
 	icon_state = "sapphire_cut"
-	sellprice = 56
+	sellprice = 60
 	desc = "This gem is admired by many wizards."
 	mill_result = /obj/item/reagent_containers/powder/saffira
 
@@ -155,7 +155,7 @@
 /obj/item/roguegem/diamond
 	name = "dorpel"
 	icon_state = "diamond_cut"
-	sellprice = 121
+	sellprice = 120
 	desc = "Beautifully clear, it demands respect."
 	mill_result = /obj/item/reagent_containers/powder/dorpel
 
