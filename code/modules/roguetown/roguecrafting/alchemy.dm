@@ -169,6 +169,20 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 2)
 	craftdiff = 3
 
+//	Having a regular log to coal craft broke things by allowing an unintended exploit using bundled sticks to craft infinite coal, most likely because regular (large) logs are considered a containter item.
+
+/datum/crafting_recipe/roguetown/alchemy/st2sl
+	name = "transmute sticks to small log"
+	result = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/grown/log/tree/stick = 3)
+	craftdiff = 3
+
+/datum/crafting_recipe/roguetown/alchemy/sl2coa
+	name = "transmute small log to coal"
+	result = list(/obj/item/rogueore/coal)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/alchemy/s2coa
 	name = "transmute stone to coal"
 	result = list(/obj/item/rogueore/coal = 1)
