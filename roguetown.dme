@@ -3597,6 +3597,7 @@
 #include "modular\Neu_Food\code\raw\NeuFood_meat.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_processed.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_veggies.dm"
+#include "modular\Smoker\code\Smoker.dm"
 #include "modular_hearthstone\_statpacks.dm"
 #include "modular_hearthstone\code\datums\accents.dm"
 #include "modular_hearthstone\code\datums\loadout.dm"
