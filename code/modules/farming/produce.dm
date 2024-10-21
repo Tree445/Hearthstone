@@ -305,6 +305,7 @@
 	foodtype = SUGAR
 	tastes = list("sugar" = 1)
 	grind_results = list(/datum/reagent/sugar = 10)
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/rum
 
 /obj/item/reagent_containers/food/snacks/grown/pumpkin
 	seed = /obj/item/seeds/pumpkin
@@ -364,3 +365,59 @@
 	//distill_reagent = /datum/reagent/consumable/ethanol/beer/fireleaf
 	rotprocess = SHELFLIFE_LONG
 	seed = /obj/item/seeds/cabbage
+
+
+/obj/item/reagent_containers/food/snacks/grown/banana
+	// seed = /obj/item/seeds/apple
+	name = "banana"
+	desc = ""
+	icon_state = "banana"
+	filling_color = "#fbff00"
+	bitesize = 3
+	foodtype = FRUIT
+	tastes = list("banana" = 1)
+	trash = /obj/item/trash/bananapeel
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/banana
+
+
+/obj/item/reagent_containers/food/snacks/grown/cactus
+	// seed = /obj/item/seeds/apple
+	name = "cactus"
+	desc = ""
+	icon_state = "cactus"
+	color = "#00c000"
+	filling_color = "#039111"
+	bitesize = 3
+	foodtype = FRUIT
+	tastes = list("cactus" = 1)
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/water = 5)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES
+
+
+/obj/item/reagent_containers/food/snacks/grown/coconut
+	// seed = /obj/item/seeds/apple
+	name = "coconut"
+	desc = ""
+	icon_state = "coconut"
+	filling_color = "#fbff00"
+	bitesize = 3
+	foodtype = FRUIT
+	tastes = list("coconut" = 1,"coconut meat" = 1)
+	trash = /obj/item/trash/coconutshell
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	worn_x_dimension = 64
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/water = 10)
+	worn_y_dimension = 64
+	rotprocess = 20 MINUTES

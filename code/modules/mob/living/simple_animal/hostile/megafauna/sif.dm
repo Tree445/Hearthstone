@@ -150,7 +150,7 @@ Difficulty: Medium
 	pixel_x = -16
 	layer = HIGH_OBJ_LAYER //Looks better when its over everything... cause its huge
 	var/obj/item/gps/internal/geepm
-	var/time_between_uses = 1200
+	var/time_between_uses = 2000
 	var/last_process = 0
 
 /*/obj/structure/sword/sif/Initialize()
