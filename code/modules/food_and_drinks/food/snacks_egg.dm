@@ -180,3 +180,32 @@
 	tastes = list("egg" = 1, "bacon" = 1, "bun" = 1)
 
 	foodtype = MEAT | BREAKFAST | GRAIN
+
+
+/obj/item/reagent_containers/food/snacks/egg/turkey
+	icon = 'modular/Neu_Food/icons/food.dmi'
+	name = "turkey cackleberry"
+	desc = ""
+	icon_state = "egg"
+	list_reagents = list(/datum/reagent/consumable/eggyolk = 5)
+	cooked_type = null
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedegg
+	filling_color = "#F0E68C"
+	foodtype = MEAT
+	grind_results = list()
+	var/static/turk_count = 0 //I copied this from the chicken_count (note the "en" in there) variable from chicken code.
+	rotprocess = 15 MINUTES
+	fertile = FALSE
+
+/obj/item/reagent_containers/food/snacks/egg/turkey/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(!..()) //was it caught by a mob?
+		var/turf/T = get_turf(hit_atom)
+		var/obj/O = new /obj/effect/decal/cleanable/food/egg_smudge(T)
+		O.pixel_x = rand(-8,8)
+		O.pixel_y = rand(-8,8)
+		if(prob(13)) //Roughly a 1/8 (12.5%) chance to make a chick, as in Minecraft. I decided not to include the chances for the creation of multiple chicks from the impact of one egg, since that'd probably require nested prob()s or something (and people might think that it was a bug, anyway).
+			if(turk_count < MAX_TURKEYS) //Chicken code uses this MAX_CHICKENS variable, so I figured that I'd use it again here. Even this check and the check in chicken code both use the MAX_CHICKENS variable, they use independent counter variables and thus are independent of each other.
+				new /mob/living/simple_animal/chick/turkey(T)
+				turk_count++
+		reagents.reaction(hit_atom, TOUCH)
+		qdel(src)

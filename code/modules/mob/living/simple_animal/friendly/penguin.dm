@@ -16,8 +16,12 @@
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10
-	icon = 'icons/mob/penguins.dmi'
-	butcher_results = list(/obj/item/organ/ears/penguin = 1, /obj/item/reagent_containers/food/snacks/meat/slab/penguin = 3)
+	icon = 'modular_hearthstone/icons/mob/bird.dmi'
+	icon_state = "penguin"
+	icon_living = "penguin"
+	icon_dead = "penguin-dead"
+	butcher_results = list(/obj/item/natural/hide = 2, /obj/item/natural/fur = 1,
+						/obj/item/natural/bone = 4, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1)
 
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 

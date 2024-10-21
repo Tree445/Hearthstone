@@ -399,3 +399,50 @@
 	for(var/atom/movable/A in contents)
 		if((A.loc == src) && A.has_gravity())
 			A.ConveyorMove(dir)
+
+
+/turf/open/water/ocean
+	name = "water"
+	desc = "Clear ocean water!"
+	icon = 'modular_hearthstone/icons/turfs/celianna_TileA1.dmi'
+	icon_state = "Sandy_Water2"
+	water_level = 2
+	slowdown = 3
+	wash_in = TRUE
+	water_reagent = /datum/reagent/water
+	canSmoothWith = list(/turf/open/floor/rogue)
+	neighborlay_override = null
+	water_color = null
+	
+/turf/open/water/ocean/Initialize()
+	icon_state = "Sandy_Water2"
+	dir = pick(GLOB.cardinals)
+	.  = ..()
+
+/turf/open/water/ocean/update_icon()
+	if(water_overlay)
+		water_overlay.color = water_color
+		water_overlay.icon_state = "oceanbottom"
+		water_overlay.dir = dir
+		water_overlay.alpha = 140
+	if(water_top_overlay)
+		water_top_overlay.color = water_color
+		water_top_overlay.icon_state = "oceantop"
+		water_top_overlay.dir = dir
+		water_top_overlay.alpha = 140
+
+/turf/open/water/ocean/corner
+	icon_state = "Sandy_Water_All"
+
+/turf/open/water/ocean/corner/Initialize()
+	icon_state = "Sandy_Water_All"
+	dir = dir
+/turf/open/water/ocean/corner/update_icon()
+	if(water_overlay)
+		water_overlay.color = null
+		water_overlay.icon_state = null
+		water_overlay.dir = null
+	if(water_top_overlay)
+		water_top_overlay.color = null
+		water_top_overlay.icon_state = null
+		water_top_overlay.dir = null

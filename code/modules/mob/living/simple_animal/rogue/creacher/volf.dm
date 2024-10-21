@@ -143,3 +143,15 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/familiar
 	name = "familiar volf"
 	faction = list("neutral")
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator
+	icon = 'modular_hearthstone/icons/mob/alligator.dmi'
+	name = "gator"
+	pixel_x = -16
+	icon_state = "alligator"
+	icon_living = "alligator"
+	icon_dead = "alligator_dead"
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
+						/obj/item/natural/hide = 2,
+						/obj/item/natural/bone = 4)

@@ -129,8 +129,74 @@
 					/obj/item/ammopouch/bullets
 					)
 
-
 /datum/supply_pack/rogue/luxury/acrobat
+	name = "Fragment of the Acrobat"
+	cost = 200
+	contains = list(/obj/item/book/granter/trait/acrobat)
+/datum/supply_pack/rogue/luxury/kneestinger
+	name = "Fragment of Dendor"
+	cost = 100
+	contains = list(/obj/item/book/granter/trait/mobility/kneestinger)
+/datum/supply_pack/rogue/luxury/mediumarmor
+	name = "Fragment of the Old Guard"
+	cost = 200
+	contains = list(/obj/item/book/granter/trait/defense/mediumarmor)
+/datum/supply_pack/rogue/luxury/succubus
+	name = "Fragment of the Succubus"
+	cost = 50
+	contains = list(/obj/item/book/granter/trait/succubus)
+/datum/supply_pack/rogue/luxury/north
+	name = "Fragment of the North"
+	cost = 200
+	contains = list(/obj/item/book/granter/trait/north)
+
+/datum/supply_pack/rogue/luxury/createbonfire5e
+ 	name = "Scroll of Create Bonfire"
+ 	cost = 30
+ 	contains = list(/obj/item/book/granter/spell/spells5e/createbonfire5e)
+/datum/supply_pack/rogue/luxury/chilltouch5e
+ 	name = "Scroll of Chill Touch"
+ 	cost = 60
+ 	contains = list(/obj/item/book/granter/spell/spells5e/chilltouch5e)
+/datum/supply_pack/rogue/luxury/decompose5e
+ 	name = "Scroll of Decompose"
+ 	cost = 30
+ 	contains = list(/obj/item/book/granter/spell/spells5e/decompose5e)
+/datum/supply_pack/rogue/luxury/encodethoughts5e
+ 	name = "Scroll of Encode Thoughts"
+ 	cost = 250
+ 	contains = list(/obj/item/book/granter/spell/spells5e/encodethoughts5e)
+
+/datum/supply_pack/rogue/luxury/light5e
+ 	name = "Scroll of Light"
+ 	cost = 30
+ 	contains = list(/obj/item/book/granter/spell/spells5e/light5e)
+/datum/supply_pack/rogue/luxury/mending5e
+ 	name = "Scroll of Mending"
+ 	cost = 50
+ 	contains = list(/obj/item/book/granter/spell/spells5e/mending5e)
+
+
+
+//p2
+/datum/supply_pack/rogue/luxury/mindsliver5e
+	name = "Scroll of Mind Sliver"
+	cost = 50
+	contains = list(/obj/item/book/granter/spell/spells5e/mindsliver5e)
+/datum/supply_pack/rogue/luxury/poisonspray5e
+	name = "Scroll of Poison Spray"
+	cost = 50
+	contains = list(/obj/item/book/granter/spell/spells5e/poisonspray5e)
+/datum/supply_pack/rogue/luxury/primalsavagery5e
+	name = "Scroll of Primal Savagery"
+	cost = 50
+	contains = list(/obj/item/book/granter/spell/spells5e/primalsavagery5e)
+/datum/supply_pack/rogue/luxury/mending5e
+	name = "Scroll of Ray of Frost"
+	cost = 50
+	contains = list(/obj/item/book/granter/spell/spells5e/rayoffrost5e)
+
+/*/datum/supply_pack/rogue/luxury/acrobat
 	name = "Fragment of the Acrobat"
 	cost = 200
 	contains = list(/obj/item/book/granter/trait/acrobat)
@@ -257,4 +323,4 @@
 /datum/supply_pack/rogue/luxury/mending5e
 	name = "Scroll of Ray of Frost"
 	cost = 50
-	contains = list(/obj/item/book/granter/spell/spells5e/rayoffrost5e)
+	contains = list(/obj/item/book/granter/spell/spells5e/rayoffrost5e) */

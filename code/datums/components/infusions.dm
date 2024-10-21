@@ -481,6 +481,9 @@
 		if("the bat")
 			user.mind.RemoveSpell(/obj/effect/proc_holder/spell/targeted/shapeshift/bat)
 
+/obj/item
+	var/tier_level = 0
+
 /datum/component/infusions/proc/add_infusion(obj/item/source, mob/infuser, obj/item/roguegem/gem_used, random)
 	var/obj/item/I = source
 	var/tier = 5
@@ -497,7 +500,8 @@
 			tier = 4
 		else if (istype(gem_used, /obj/item/roguegem/diamond))
 			tier = 5
-	
+		I.tier_level = tier
+
 	var/list/options = list()
 	if(istype(I, /obj/item/clothing/head)) //head
 		options.Add(helm_infusions)

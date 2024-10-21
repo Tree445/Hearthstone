@@ -135,3 +135,98 @@
 	candodge = TRUE
 	canparry = TRUE
 	item_d_type = "stab"
+
+
+
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/imp/acid
+	name = "acid beast"
+	desc = "A creature from the abyss, it spits acid violently."
+	icon = 'modular_hearthstone/icons/mob/scorpion.dmi'
+	icon_state = "bombard_close"
+	icon_living = "bombard_close"
+	icon_aggro = "bombard_close"
+	icon_dead = "Scorpion Dead"
+	icon_gib = "syndicate_gib"
+	maxHealth = 500
+	health = 500
+	pixel_x = -16
+	projectiletype = /obj/projectile/magic/acidsplash5e
+
+
+
+
+
+
+/obj/structure/imp_portal
+	name = "Imp Portal"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	icon_state = "shitportal"
+	color = "#d40303fb"
+	max_integrity = 200
+	anchored = TRUE
+	density = FALSE
+	layer = BELOW_OBJ_LAYER
+	var/imps = 0
+	var/maximps = 3
+	var/datum/looping_sound/boneloop/soundloop
+	var/spawning = FALSE
+	var/moon_goblins = 0  // ???
+	attacked_sound = 'sound/vo/mobs/ghost/skullpile_hit.ogg'
+
+/obj/structure/imp_portal/Initialize()
+	. = ..()
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
+	spawn_imp()
+
+/obj/structure/imp_portal/attack_ghost(mob/dead/observer/user)
+	if(QDELETED(user))
+		return
+	if(!in_range(src, user))
+		return
+	if(imps >= (maximps+1))
+		to_chat(user, span_danger("Too many Imps."))
+		return
+	imps++
+	var/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/imp/N = new (get_turf(src))
+	N.key = user.key
+	qdel(user)
+
+
+/obj/structure/imp_portal/proc/createimp()
+	if(QDELETED(src))
+		return
+	if(!spawning)
+		return
+	spawning = FALSE
+	if(moon_goblins == 0) // ???
+		if(GLOB.tod == "night")
+			if(prob(30))
+				moon_goblins = 1
+			else
+				moon_goblins = 2
+	if(moon_goblins == 1)
+		new /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/imp(get_turf(src))
+	else
+		new /mob/living/simple_animal/hostile/retaliate/rogue/asteroid/imp(get_turf(src))
+	imps++
+	update_icon()
+	if(imps < maximps)
+		spawn_imp()
+
+/obj/structure/imp_portal/proc/spawn_imp()
+	if(QDELETED(src))
+		return
+	if(spawning)
+		return
+	spawning = TRUE
+	update_icon()
+	spawn(2 SECONDS)
+		createimp()
+	//addtimer(CALLBACK(src, PROC_REF(createimp)), 4 SECONDS)
+
+/obj/structure/imp_portal/Destroy()
+	soundloop.stop()
+	. = ..()
