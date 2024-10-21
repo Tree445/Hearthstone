@@ -65,7 +65,7 @@
 
 
 
-/obj/structure/flora/wildapples/wildplant
+/obj/structure/flora/wildtree/wildplant
 	name = "wild plant"
 	desc = "It's a wild plant."
 	icon = 'icons/obj/flora/wildflora.dmi'
@@ -75,7 +75,7 @@
 	var/produce
 	var/timer = 5000 
 
-/obj/structure/flora/wildapples/wildplant/Destroy()
+/obj/structure/flora/wildtree/wildplant/Destroy()
 	if(LAZYLEN(contents))
 		var/turf/our_turf = get_turf(src)
 		if(isturf(our_turf))
@@ -83,7 +83,7 @@
 				inside_thing.forceMove(our_turf)
 	. = ..()
 
-/obj/structure/flora/wildapples/wildplant/attack_hand(mob/user)
+/obj/structure/flora/wildtree/wildplant/attack_hand(mob/user)
 	if(!ispath(produce))
 		return ..()
 
@@ -99,36 +99,36 @@
 		addtimer(CALLBACK(src, .proc/regrow),timer) 
 	update_icon()
 
-/obj/structure/flora/wildapples/wildplant/proc/regrow()
+/obj/structure/flora/wildtree/wildplant/proc/regrow()
 	if(!QDELETED(src))
 		has_plod = TRUE
 		update_icon()
 
-/obj/structure/flora/wildapples/wildplant/update_icon()
+/obj/structure/flora/wildtree/wildplant/update_icon()
 	if(has_plod)
 		icon_state = "[initial(icon_state)]"
 	else
 		icon_state = "[initial(icon_state)]_no"
 
-/obj/structure/flora/wildapples/wildplant/Initialize()
+/obj/structure/flora/wildtree/wildplant/Initialize()
 	. = ..()
 	if(ispath(produce))
 		new produce(src) 
 
-/obj/structure/flora/wildapples/wildplant/wild_apples
+/obj/structure/flora/wildtree/wildplant/wild_apples
 	name = "wild apple tree"
 	icon = 'modular_hearthstone/icons/obj/flora/grove_trees.dmi'
 	icon_state = "grove_tree1"
 	desc = "a naturally occuring apple tree, found in the wild."
 	produce = /obj/item/reagent_containers/food/snacks/grown/apple
 
-/obj/structure/flora/wildapples/wildplant/wild_apples2
+/obj/structure/flora/wildtree/wildplant/wild_apples2
 	name = "wild apple tree"
 	icon = 'modular_hearthstone/icons/obj/flora/grove_trees.dmi'
 	icon_state = "grove_tree2"
 	desc = "a naturally occuring apple tree, found in the wild."
 	produce = /obj/item/reagent_containers/food/snacks/grown/apple
-/obj/structure/flora/wildapples/wildplant/wild_apples3
+/obj/structure/flora/wildtree/wildplant/wild_apples3
 	name = "wild apple tree"
 	icon = 'modular_hearthstone/icons/obj/flora/grove_trees.dmi'
 	icon_state = "grove_tree3"
@@ -136,3 +136,53 @@
 	produce = /obj/item/reagent_containers/food/snacks/grown/apple
 
 
+/obj/structure/flora/wildtree/wildplant/wild_coconut
+	name = "wild coconut tree"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "spalmtree4"
+	desc = "a naturally occuring palm tree, found in the wild."
+	produce = /obj/item/reagent_containers/food/snacks/grown/coconut
+	stump_type = /obj/structure/flora/roguetree/stump/palm
+
+/obj/structure/flora/wildtree/wildplant/wild_coconut2
+	name = "wild coconut tree"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "spalmtree3"
+	desc = "a naturally occuring palm tree, found in the wild."
+	produce = /obj/item/reagent_containers/food/snacks/grown/coconut
+	stump_type = /obj/structure/flora/roguetree/stump/palm
+	pixel_x = -54
+
+/obj/structure/flora/wildtree/wildplant/wild_cactus
+	name = "wild cactus plant"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "lcactus1"
+	desc = "a naturally occuring cactus plant, found in the wild."
+	produce = /obj/item/reagent_containers/food/snacks/grown/cactus
+	pixel_x = -10
+	pixel_y = -10
+
+/obj/structure/flora/wildtree/wildplant/wild_cactus2
+	name = "wild cactus plant"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "lcactus3"
+	desc = "a naturally occuring cactus plant, found in the wild."
+	produce = /obj/item/reagent_containers/food/snacks/grown/cactus
+	pixel_x = -10
+	pixel_y = -10
+
+
+/obj/structure/flora/wildtree/wildplant/wild_banana
+	name = "wild banana palm tree"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "mpalmtreeb"
+	desc = "a naturally occuring palm tree, which grows bananas."
+	produce = /obj/item/reagent_containers/food/snacks/grown/banana
+
+/obj/structure/flora/wildtree/wildplant/wild_banana2
+	name = "wild banana palm tree"
+	icon = 'modular_hearthstone/icons/obj/flora/desert_planet_160x160.dmi'
+	icon_state = "mpalmtreeb1"
+	desc = "a naturally occuring palm tree, which grows bananas."
+	produce = /obj/item/reagent_containers/food/snacks/grown/banana
+	pixel_x = -44

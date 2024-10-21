@@ -192,6 +192,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
+				max_save_slots = 20
+			if(check_contributor(C.ckey))
 				max_save_slots = 30
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
@@ -2580,8 +2582,8 @@ Slots: [job.spawn_positions]</span>
 
 
 /proc/valid_theme(mob/user, value, silent = FALSE)
-	var/static/link_regex = regex("cdn.discordapp.com") //gyazo, discord, lensdump, imgbox, catbox
-	var/static/list/valid_extensions = list("mp3") // Regex works fine, if you know how it works
+	// var/static/link_regex = regex("cdn.discordapp.com") //gyazo, discord, lensdump, imgbox, catbox
+	// var/static/list/valid_extensions = list("mp3") // Regex works fine, if you know how it works
 
 	if(!length(value))
 		return FALSE
@@ -2596,21 +2598,21 @@ Slots: [job.spawn_positions]</span>
 		if(!silent)
 			to_chat(user, "<span class='warning'>Invalid link!</span>")
 		return FALSE
-	var/list/value_split = splittext(value, ".")
+	// var/list/value_split = splittext(value, ".")
 
-	// extension will always be the last entry
-	var/extension = value_split[length(value_split)]
-	if(!(extension in valid_extensions))
-		if(!silent)
-			to_chat(usr, "<span class='warning'>The theme must be one of the following extensions: '[english_list(valid_extensions)]'</span>")
-		return FALSE
+	// // extension will always be the last entry
+	// var/extension = value_split[length(value_split)]
+	// if(!(extension in valid_extensions))
+	// 	if(!silent)
+	// 		to_chat(usr, "<span class='warning'>The theme must be one of the following extensions: '[english_list(valid_extensions)]'</span>")
+	// 	return FALSE
 
-	find_index = findtext(value, link_regex)
-	if(find_index != 9)
-		if(!silent)
-			to_chat(usr, "<span class='warning'>The theme must be hosted on one of the following sites: 'Discord'</span>")
-		return FALSE
-	return TRUE
+	// find_index = findtext(value, link_regex)
+	// if(find_index != 9)
+	// 	if(!silent)
+	// 		to_chat(usr, "<span class='warning'>The theme must be hosted on one of the following sites: 'Discord'</span>")
+	// 	return FALSE
+	// return TRUE
 
 /proc/valid_background_image(mob/user, value, silent = FALSE)
 	var/static/link_regex = regex("i.gyazo.com|a.l3n.co|b.l3n.co|c.l3n.co|images2.imgbox.com|thumbs2.imgbox.com|files.catbox.moe") //gyazo, discord, lensdump, imgbox, catbox

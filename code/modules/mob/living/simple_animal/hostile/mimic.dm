@@ -10,11 +10,13 @@
 	response_disarm_continuous = "pushes"
 	response_disarm_simple = "push"
 	speed = 0
-	maxHealth = 250
-	health = 250
+	maxHealth = 1000
+	health = 1000
 	gender = NEUTER
 	mob_biotypes = NONE
-
+	STACON = 19
+	STASTR = 15
+	STASPD = 9
 	harm_intent_damage = 5
 	melee_damage_lower = 8
 	melee_damage_upper = 12

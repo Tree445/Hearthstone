@@ -242,6 +242,66 @@
 	..()
 	amount_grown = 0
 
+//turkey
+
+/mob/living/simple_animal/chick/turkey
+	name = "\improper turkey chick"
+	desc = ""
+	icon = 'modular_hearthstone/icons/mob/birds.dmi'
+	icon_state = "turkey-chick"
+	icon_living = "turkey-chick"
+	icon_dead = "turkey-chick-dead"
+	icon_gib = "chick_gib"
+	gender = FEMALE
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	speak = list("Cherp.","Cherp?","Chirrup.","Cheep!")
+	speak_emote = list("cheeps")
+	emote_hear = list("cheeps.")
+	emote_see = list("pecks at the ground.","flaps its tiny wings.")
+	density = FALSE
+	speak_chance = 2
+	turns_per_move = 2
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	attack_verb_continuous = "kicks"
+	attack_verb_simple = "kick"
+	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	health = 3
+	maxHealth = 3
+	ventcrawler = VENTCRAWLER_ALWAYS
+	amount_grown = 0
+	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
+	mob_size = MOB_SIZE_TINY
+	gold_core_spawnable = FRIENDLY_SPAWN
+
+	footstep_type = FOOTSTEP_MOB_CLAW
+
+/mob/living/simple_animal/chick/turkey/Initialize()
+	. = ..()
+	pixel_x = rand(-6, 6)
+	pixel_y = rand(0, 10)
+
+/mob/living/simple_animal/chick/turkey/Life()
+	. =..()
+	if(!.)
+		return
+	if(!stat && !ckey)
+		amount_grown += rand(1,2)
+		if(amount_grown >= 100)
+			new /mob/living/simple_animal/hostile/retaliate/rogue/turkey(src.loc)
+			qdel(src)
+
+/mob/living/simple_animal/chick/turkey/holo/Life()
+	..()
+	amount_grown = 0
+
+
+
 /mob/living/simple_animal/chicken
 	name = "\improper chicken"
 	desc = ""

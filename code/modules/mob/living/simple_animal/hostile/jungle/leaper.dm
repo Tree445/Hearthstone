@@ -4,20 +4,20 @@
 //It has no melee attack, and its damage comes from the toxin in its bubbles and its crushing leap.
 //Its eyes will turn red to signal an imminent attack!
 /mob/living/simple_animal/hostile/jungle/leaper
-	name = "Rabid Drake"
+	name = "Slime"
 	desc = ""
-	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
-	icon_state = "dragon"
-	icon_living = "dragon"
-	icon_dead = "dragon_dead"
+	icon = 'modular_hearthstone/icons/mob/slime.dmi'
+	icon_state = "gelatinous"
+	icon_living = "gelatinous"
+	icon_dead = "gelatinous_dead"
+	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	maxHealth = 300
-	health = 300
+	maxHealth = 500
+	health = 500
 	ranged = TRUE
 	projectiletype = /obj/projectile/rock
 	projectilesound = 'sound/blank.ogg'
-	ranged_cooldown_time = 30
-	pixel_x = -16
+	ranged_cooldown_time = 60
 	layer = LARGE_MOB_LAYER
 	speed = 10
 	stat_attack = UNCONSCIOUS
@@ -29,7 +29,7 @@
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /obj/projectile/rock
-	name = "leaper bubble"
+	name = "poison glob"
 	icon_state = "rock"
 	paralyze = 30
 	damage = 0
@@ -54,7 +54,7 @@
 	new /obj/structure/leaper_bubble(T)
 
 /obj/effect/temp_visual/leaper_projectile_impact
-	name = "leaper bubble"
+	name = "bubble"
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "leaper_bubble_pop"
 	layer = ABOVE_ALL_MOB_LAYER
@@ -65,13 +65,14 @@
 	new /obj/effect/decal/cleanable/leaper_sludge(get_turf(src))
 
 /obj/effect/decal/cleanable/leaper_sludge
-	name = "dragon blood"
+	name = "slime goo"
 	desc = ""
 	icon = 'icons/effects/tomatodecal.dmi'
-	icon_state = "tomato_floor1"
+	icon_state = "smashed_plant"
+	color = "#80ff80"
 
 /obj/structure/leaper_bubble
-	name = "leaper bubble"
+	name = "blob"
 	desc = ""
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "leaper"
@@ -254,12 +255,12 @@
 /mob/living/simple_animal/hostile/jungle/leaper/update_icons()
 	. = ..()
 	if(stat)
-		icon_state = "dragon_dead"
+		icon_state = "gelatinous_dead"
 		return
 	if(ranged_cooldown <= world.time)
 		if(AIStatus == AI_ON && projectile_ready || ckey)
-			icon_state = "dragon"
+			icon_state = "gelatinous"
 			return
-	icon_state = "dragon"
+	icon_state = "gelatinous"
 
 #undef PLAYER_HOP_DELAY
