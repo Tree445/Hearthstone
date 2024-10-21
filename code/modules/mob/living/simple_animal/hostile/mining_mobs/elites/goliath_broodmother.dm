@@ -49,8 +49,8 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	maxHealth = 800
-	health = 800
+	maxHealth = 4500
+	health = 4500
 	melee_damage_lower = 30
 	melee_damage_upper = 30
 	vision_range = 5

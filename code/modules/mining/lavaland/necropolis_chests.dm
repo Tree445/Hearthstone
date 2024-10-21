@@ -999,11 +999,18 @@
 	var/loot = rand(1,3)
 	switch(loot)
 		if(1)
+			new /obj/item/clothing/neck/roguetown/necklace_of_the_forsaken(src)
+		if(2)
+			new /obj/item/rogueweapon/sword/long/exe(src)
+		if(3)
+			new /obj/item/book/granter/trait/acrobat(src)
+/*	switch(loot)
+		if(1)
 			new /obj/item/mayhem(src)
 		if(2)
 			new /obj/item/blood_contract(src)
 		if(3)
-			new /obj/item/gun/magic/staff/spellblade(src)
+			new /obj/item/gun/magic/staff/spellblade(src) */
 
 /obj/structure/closet/crate/necropolis/bubblegum/crusher
 	name = "bloody bubblegum chest"

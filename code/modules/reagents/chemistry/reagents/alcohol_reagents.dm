@@ -89,6 +89,20 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of cider"
 	color = "#d3c905"
 
+/datum/reagent/consumable/ethanol/beer/rum
+	name = "Rum"
+	boozepwr = 40
+	taste_description = "rum"
+	glass_name = "glass of rum"
+	color = "#ef7f16"
+
+// /datum/reagent/consumable/ethanol/beer/banana
+// 	name = "Banana Brew"
+// 	boozepwr = 40
+// 	taste_description = "banana brew"
+// 	glass_name = "glass of banana brew"
+// 	color = "#d9dc89"
+
 /datum/reagent/consumable/ethanol/beer/wine
 	name = "Wine"
 	boozepwr = 30

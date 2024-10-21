@@ -306,6 +306,28 @@
 	tastes = list("crab" = 1)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/meat/rawturtle
+	name = "raw turtle meat"
+	desc = ""
+	icon_state = "crabmeatraw"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/turtle
+	bitesize = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/cooking_oil = 3)
+	filling_color = "#EAD079"
+	tastes = list("raw turtle" = 1)
+	foodtype = RAW | MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/turtle
+	name = "turtle meat"
+	desc = ""
+	icon_state = "crabmeat"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/cooking_oil = 2)
+	filling_color = "#DFB73A"
+	tastes = list("turtle" = 1)
+	foodtype = MEAT
+
+
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
 
 

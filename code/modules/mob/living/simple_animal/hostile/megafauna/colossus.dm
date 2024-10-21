@@ -63,8 +63,8 @@ Difficulty: Very Hard
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence = 1)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 2500
-	maxHealth = 2500
+	health = 25000
+	maxHealth = 25000
 	melee_damage_lower = 55
 	melee_damage_upper = 80
 	vision_range = 3

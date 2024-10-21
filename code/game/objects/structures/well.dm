@@ -34,3 +34,36 @@
 			playsound(user, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 80, FALSE)
 			return
 	else ..()
+
+/obj/structure/well/fountain2
+	name = "water fountain"
+	desc = ""
+	icon = 'icons/roguetown/misc/64x64.dmi'
+	icon_state = "fountain2"
+	layer = BELOW_MOB_LAYER
+	layer = -0.1
+
+/obj/structure/well/fountain3
+	name = "water fountain"
+	desc = ""
+	icon = 'icons/roguetown/misc/64x64.dmi'
+	icon_state = "fountain3"
+	layer = BELOW_MOB_LAYER
+	layer = -0.1
+
+
+/obj/structure/well/marble
+	name = "marble well"
+	desc = ""
+	icon = 'modular_hearthstone/icons/obj/watercloset.dmi'
+	icon_state = "marble_well1"
+	layer = BELOW_MOB_LAYER
+	layer = -0.1
+
+/obj/structure/well/well2
+	name = "well"
+	desc = ""
+	icon = 'modular_hearthstone/icons/obj/watercloset.dmi'
+	icon_state = "well1"
+	layer = BELOW_MOB_LAYER
+	layer = -0.1

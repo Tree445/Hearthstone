@@ -140,3 +140,12 @@
 	base_icon_state = "drawer5"
 	dir = SOUTH
 	pixel_y = 16
+
+
+/obj/structure/closet/crate/roguecloset/outhouse
+	name = "outhouse"
+	desc = "A wooden outhouse."
+	icon = 'modular_hearthstone/icons/obj/watercloset.dmi'
+	base_icon_state = "outhouse_female"
+	icon_state = "outhouse_female"
+	anchored = TRUE

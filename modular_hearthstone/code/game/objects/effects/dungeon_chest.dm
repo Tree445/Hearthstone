@@ -7,7 +7,7 @@
 	/obj/structure/closet/crate/chest/dungeon/armor = 3,
 	/obj/structure/closet/crate/chest/dungeon/weapon = 4,
 	/obj/structure/closet/crate/chest/dungeon/treasure = 2,
-	/obj/structure/closet/crate/chest/dungeon/medicine = 3,
+	/obj/structure/closet/crate/chest/dungeon/medicine = 5,
 	/obj/structure/closet/crate/chest/dungeon/mimic = 2
 	)
 	lootcount = 1
@@ -308,7 +308,7 @@
 
 /obj/structure/closet/crate/chest/dungeon/materials/PopulateContents()
 	..()
-	var/list/loot = list(//ingot
+	var/list/loot = list(
 		/obj/item/ingot/copper = 50,
 		/obj/item/ingot/iron = 30,
 		/obj/item/ingot/steel = 20,
@@ -349,11 +349,11 @@
 
 /obj/structure/closet/crate/chest/dungeon/medicine/PopulateContents()
 	..()
-	var/list/loot = list(//ingot
-		/obj/item/needle = 30,
-		/obj/item/natural/bundle/cloth = 10,
+	var/list/loot = list(
+		/obj/item/needle = 40,
+		/obj/item/natural/bundle/cloth = 20,
 
-		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 50,
+		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 70,
 		/obj/item/reagent_containers/glass/bottle/rogue/manapot = 30,
 		/obj/item/reagent_containers/glass/bottle/rogue/antipoisonpot = 20,
 		/obj/item/reagent_containers/glass/bottle/rogue/poison = 10,
@@ -365,21 +365,23 @@
 	var/O = pickweight(loot)
 	var/E = pickweight(loot)
 	new I(src)
-	if(prob(50))
+	if(prob(80))
 		new I(src)
-		if(prob(20))
+		if(prob(50))
 			new I(src)
+			if(prob(30))
+				new I(src) 
 	if(prob(80))
 		new O(src)
 		if(prob(50))
 			new O(src)
-			if(prob(20))
+			if(prob(30))
 				new O(src)
-	if(prob(30))
+	if(prob(80))
 		new E(src)
 		if(prob(50))
 			new E(src)
-			if(prob(20))
+			if(prob(30))
 				new E(src)
 
 
@@ -388,7 +390,7 @@
 
 /obj/structure/closet/crate/chest/dungeon/treasure/PopulateContents()
 	..()
-	var/list/loot = list(//ingot
+	var/list/loot = list(
 		/obj/item/roguegem/random = 50,
 		/obj/item/ingot/gold = 10,
 
@@ -426,27 +428,27 @@
 	var/A = pickweight(loot)
 
 	new I(src)
-	if(prob(80))
+	if(prob(75))
 		new I(src)
 		if(prob(60))
 			new I(src)
-	if(prob(80))
+	if(prob(75))
 		new O(src)
-		if(prob(70))
+		if(prob(50))
 			new O(src)
-			if(prob(60))
+			if(prob(25))
 				new O(src)
-	if(prob(80))
+	if(prob(75))
 		new E(src)
-		if(prob(70))
+		if(prob(50))
 			new E(src)
-			if(prob(60))
+			if(prob(25))
 				new E(src)
-	if(prob(80))
+	if(prob(75))
 		new A(src)
-		if(prob(70))
+		if(prob(50))
 			new A(src)
-			if(prob(60))
+			if(prob(25))
 				new A(src)
 
 
@@ -483,7 +485,7 @@
 		/obj/item/clothing/gloves/roguetown/plate/blk = 5,
 		/obj/item/clothing/neck/roguetown/blkknight = 5,
 		/obj/item/clothing/shoes/roguetown/boots/armor/blkknight = 5,
-		/obj/item/clothing/suit/roguetown/armor/plate/blkknight = 5,
+		/obj/item/clothing/suit/roguetown/armor/plate/blkknight = 2,
 
 		/obj/item/rogueweapon/sword/long/judgement = 10,
 		// /obj/item/rogueweapon/sword/long/vlord = 10,
@@ -495,7 +497,7 @@
 		/obj/item/rogueweapon/mace/steel/morningstar = 15,
 		/obj/item/rogueweapon/mace/goden = 15,
 		/obj/item/rogueweapon/mace/goden/steel = 15,
-		/obj/item/rogueweapon/mace/stunmace = 10,
+		/obj/item/rogueweapon/mace/stunmace = 5,
 
 		/obj/item/clothing/ring/dragon_ring = 5,
 		/obj/item/clothing/ring/diamonds = 15,
@@ -520,9 +522,9 @@
 		/obj/item/book/granter/spell/blackstone/lightning = 15,
 		/obj/item/book/granter/spell/blackstone/fetch = 15,
 		/obj/item/book/granter/spell/blackstone/blindness = 15,
-		/obj/item/book/granter/spell/blackstone/invisibility = 15,
-		/obj/item/book/granter/spell/blackstone/sicknessray = 15,
-		/obj/item/book/granter/spell/blackstone/bonechill = 15
+		// /obj/item/book/granter/spell/blackstone/invisibility = 15,
+		// /obj/item/book/granter/spell/blackstone/sicknessray = 15,
+		/obj/item/book/granter/spell/blackstone/bonechill = 10
 
 		)
 
@@ -531,7 +533,7 @@
 	var/E = pickweight(loot)
 	var/A = pickweight(loot)
 	new I(src)
-	if(prob(80))
+	if(prob(75))
 		new O(src)
 	if(prob(60))
 		new E(src)

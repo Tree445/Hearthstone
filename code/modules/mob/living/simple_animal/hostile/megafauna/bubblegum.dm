@@ -62,8 +62,8 @@ Difficulty: Hard
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 10, /obj/item/soul_fragment/essence = 1)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 2500
-	maxHealth = 2500
+	health = 15000
+	maxHealth = 15000
 	melee_damage_lower = 55
 	melee_damage_upper = 80
 	vision_range = 3
@@ -534,7 +534,7 @@ Difficulty: Hard
 	icon_state = "leftsmack"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/megafauna/bubblegum/hallucination
-	name = "bubblegum's hallucination"
+	name = "abomination's reflection"
 	desc = ""
 	health = 1
 	maxHealth = 1
