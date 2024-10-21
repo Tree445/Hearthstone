@@ -24,3 +24,4 @@ manorgarri.ogg: Exanima - Arena Hub
 combat_steppe: Tatar Theme(Hellish Quart OST)
 combat_pirate.ogg: Alestorm - Alestorm (instrumental edit)
 combat_clergy.ogg: Pathologic (Classic) - Main Theme
+roundend-vote-sound.ogg: https://www.youtube.com/watch?v=uV0UG0cwGGs

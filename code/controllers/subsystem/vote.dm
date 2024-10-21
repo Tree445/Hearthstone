@@ -251,7 +251,7 @@ SUBSYSTEM_DEF(vote)
 			if("endround")
 				initiator_key = pick("Zlod", "Sun King", "Gaia", "Aeon", "Gemini", "Aries")
 				choices.Add("Continue Playing","End Round")
-				//vote_alert.file = ''
+				vote_alert.file = 'sound/roundend/roundend-vote-sound.ogg'
 			else
 				return 0
 		mode = vote_type
