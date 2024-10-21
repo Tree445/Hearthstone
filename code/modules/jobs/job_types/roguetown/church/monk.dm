@@ -35,7 +35,7 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if(/datum/patron/divine/noc) //Nocalytes aren't real. Play Cleric.
+		if(/datum/patron/divine/noc) //Nocalytes are real, don't let them tell you otherwise, we love casting spells. (Hearthstone edit: simply gives Noc Acolytes the love that the Noc Clerics got, access to pick spells)
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
@@ -44,6 +44,9 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // shouldn't be that bad.
 			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+			H.mind.adjust_spellpoints(1)
+					H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
+					H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 		if(/datum/patron/divine/dendor) //Dendorites all busted. Play Druid.
 			head = /obj/item/clothing/head/roguetown/helmet/dendorculthelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
