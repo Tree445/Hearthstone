@@ -116,7 +116,22 @@
 				. += span_love("It's my spouse.")
 
 		if(name in GLOB.excommunicated_players)
-			. += span_userdanger("HERETIC! SHAME!")
+			. += span_userdanger("EXCOMMUNICATED!")
+
+		if(name in GLOB.heretical_players)
+			. += span_userdanger("HERETIC'S BRAND! SHAME!")
+		if(iszizocultist(user) || iszizolackey(user))
+			if(virginity)
+				. += "<span class='userdanger'>VIRGIN!</span>"
+
+		if(real_name in GLOB.outlawed_players)
+			. += "<span class='userdanger'>OUTLAW!</span>"
+		if(mind && mind.special_role)
+		else
+			if(mind && mind.special_role == "Bandit")
+				. += "<span class='userdanger'>BANDIT!</span>"
+			if(mind && mind.special_role == "Vampire Lord")
+				. += "<span class='userdanger'>A MONSTER!</span>"
 
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")

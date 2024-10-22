@@ -3,6 +3,16 @@
 	stressadd = -3
 	desc = list(span_red("I have my vice satisfied."),span_red("I got my vice fulfilled."))
 
+/datum/stressevent/cumok
+	timer = 5 MINUTES
+	stressadd = -1
+	desc = "<span class='green'>I came.</span>"
+
+/datum/stressevent/lovezizo
+	timer = 99999 MINUTES
+	stressadd = -666 // :)
+	desc = "<span class='green'>ZIZOZIZOZIZO</span>"
+
 /datum/stressevent/viewsinpunish
 	timer = 5 MINUTES
 	stressadd = -2
