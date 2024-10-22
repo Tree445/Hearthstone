@@ -39,8 +39,6 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	var/check_for_lord = TRUE
 	var/next_check_lord = 0
 	var/missing_lord_time = FALSE
-	var/roundvoteend = FALSE
-	var/ttime
 
 	var/kingsubmit = FALSE
 	var/deathknightspawn = FALSE
@@ -51,7 +49,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	skeletons = FALSE
 
 /datum/game_mode/chaosmode/check_finished()
-	ttime = world.time - SSticker.round_start_time
+	var/ttime = world.time - SSticker.round_start_time
 	if(roguefight)
 		if(ttime >= 30 MINUTES)
 			return TRUE
@@ -64,7 +62,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 	if(ttime >= GLOB.round_timer)
 		if(roundvoteend)
-			if(ttime >= (GLOB.round_timer + 15 MINUTES) )
+			if(ttime >= round_ends_at)
 				for(var/mob/living/carbon/human/H in GLOB.human_list)
 					if(H.stat != DEAD)
 						if(H.allmig_reward)
@@ -73,7 +71,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 				return TRUE
 		else
 			if(!SSvote.mode && SSticker.autovote)
-				SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
+				SSvote.initiate_vote("endround", "the Gods")
 
 	if(headrebdecree)
 		if(reb_end_time == 0)
