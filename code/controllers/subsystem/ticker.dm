@@ -40,7 +40,7 @@ SUBSYSTEM_DEF(ticker)
 	//376000 day
 	var/gametime_offset = 288001		//Deciseconds to add to world.time for station time.
 	var/station_time_rate_multiplier = 50		//factor of station time progressal vs real time.
-	var/time_until_vote = 150 MINUTES
+	var/time_until_vote = 150 MINUTES //This doesnt do anything. Old unused var, I believe. Handled with INITIAL_ROUND_TIMER in compile options
 	var/last_vote_time = null
 	var/autovote = TRUE
 	var/firstvote = TRUE
@@ -242,16 +242,7 @@ SUBSYSTEM_DEF(ticker)
 				toggle_dooc(TRUE)
 				declare_completion(force_ending)
 				Master.SetRunLevel(RUNLEVEL_POSTGAME)
-			if(firstvote)
-				if(world.time > round_start_time + time_until_vote && autovote)
-					SSvote.initiate_vote("restart", "The Gods")
-					//nah keep the old time bruv
-					//time_until_vote = 30 MINUTES
-					last_vote_time = world.time
-					firstvote = FALSE
-			else
-				if(world.time > last_vote_time + time_until_vote && autovote)
-					SSvote.initiate_vote("restart", "The Gods")
+
 
 /datum/controller/subsystem/ticker
 	var/last_bot_update = 0
