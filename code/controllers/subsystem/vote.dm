@@ -150,11 +150,12 @@ SUBSYSTEM_DEF(vote)
 					GLOB.round_timer = GLOB.round_timer + ROUND_EXTENSION_TIME
 				else
 					log_game("LOG VOTE: ELSE  [REALTIMEOFDAY]")
-					var/datum/game_mode/chaosmode/C = SSticker.mode
+					var/datum/game_mode/C = SSticker.mode
 					if(istype(C))
 						log_game("LOG VOTE: ROUNDVOTEEND [REALTIMEOFDAY]")
-						to_chat(world, "\n<font color='purple'>15 minutes remain.</font>")
+						to_chat(world, "\n<font color='purple'>[ROUND_END_TIME_VERBAL] remain.</font>")
 						C.roundvoteend = TRUE
+						C.round_ends_at = GLOB.round_timer + ROUND_END_TIME
 	if(restart)
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)
@@ -249,7 +250,7 @@ SUBSYSTEM_DEF(vote)
 						break
 					choices.Add(option)
 			if("endround")
-				initiator_key = pick("Zlod", "Sun King", "Gaia", "Aeon", "Gemini", "Aries")
+				initiator_key = pick("the Gods", "the Heavens")
 				choices.Add("Continue Playing","End Round")
 				//vote_alert.file = ''
 			else

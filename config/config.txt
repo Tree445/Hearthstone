@@ -30,7 +30,7 @@ STATIONNAME | The Dreamhold | Adventurer State |
 HUB
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
-LOBBY_COUNTDOWN 600
+LOBBY_COUNTDOWN 780
 
 ## Round End Time: This is the amount of time after the round ends that players have to murder death kill each other.
 ROUND_END_COUNTDOWN 60
@@ -177,11 +177,11 @@ ALLOW_VOTE_RESTART
 ## allow players to initiate a map-change vote
 #ALLOW_VOTE_MAP
 
-## min delay (deciseconds) between voting sessions (default 10 minutes)
+## min delay (deciseconds) between voting sessions (default 10 minutes) (Outdated? Handled in compile options. ROUND_EXTENSION_TIME)
 VOTE_DELAY 6000
 
 ## time period (deciseconds) which voting session will last (default 1 minute)
-VOTE_PERIOD 1200
+VOTE_PERIOD 1800
 
 ## prevents dead players from voting or starting votes
 # NO_DEAD_VOTE
