@@ -52,6 +52,9 @@
 	var/gamemode_ready = FALSE //Is the gamemode all set up and ready to start checking for ending conditions.
 	var/setup_error		//What stopepd setting up the mode.
 
+	var/roundvoteend = FALSE
+	var/round_ends_at
+
 	var/list/datum/mind/villains = list() //Murders Runtimes via shoving this into parent
 	var/list/datum/mind/vampires = list()
 	var/list/datum/mind/deathknights = list() //Vrell - moving this here to maybe fix runtime bugs.
