@@ -22356,6 +22356,10 @@
 "nvd" = (
 /turf/closed/mineral/random/rogue,
 /area/rogue/indoors/town/shop)
+"nvu" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator,
+/turf/open/water/sewer,
+/area/rogue/under/town/sewer)
 "nvx" = (
 /obj/structure/fluff/railing/border{
 	dir = 8;
@@ -196181,7 +196185,7 @@ vRu
 vRu
 vRu
 rSC
-rSC
+nvu
 lrs
 lrs
 lrs
@@ -196985,7 +196989,7 @@ vRu
 vRu
 pOf
 rSC
-rSC
+nvu
 lrs
 lrs
 lrs
@@ -199798,7 +199802,7 @@ iTw
 iTw
 ndY
 jyI
-rSC
+nvu
 rSC
 lrs
 lrs
@@ -201809,7 +201813,7 @@ iTw
 txa
 vRu
 rSC
-rSC
+nvu
 lrs
 lrs
 lrs
@@ -205428,7 +205432,7 @@ vRu
 vRu
 rSC
 rSC
-rSC
+nvu
 rSC
 lrs
 lrs
@@ -206233,7 +206237,7 @@ vRu
 vRu
 rSC
 rSC
-rSC
+nvu
 lrs
 lrs
 lrs
@@ -207035,8 +207039,8 @@ vRu
 vRu
 rSC
 rSC
-rSC
-rSC
+nvu
+nvu
 rSC
 rSC
 gLf
@@ -207839,7 +207843,7 @@ rSC
 rSC
 rSC
 rSC
-rSC
+nvu
 rSC
 rSC
 rSC
@@ -208643,9 +208647,9 @@ vRu
 vRu
 vRu
 rSC
+nvu
 rSC
-rSC
-rSC
+nvu
 rSC
 gLf
 uAL
@@ -209448,7 +209452,7 @@ vRu
 vRu
 vRu
 rSC
-rSC
+nvu
 rSC
 lrs
 lrs
@@ -211859,7 +211863,7 @@ vRu
 vRu
 vRu
 rSC
-rSC
+nvu
 lrs
 lrs
 lrs
@@ -213868,7 +213872,7 @@ jwi
 jyI
 jyI
 vRu
-rSC
+nvu
 rSC
 lrs
 lrs
@@ -216682,7 +216686,7 @@ jwi
 jyI
 jyI
 vRu
-rSC
+nvu
 rSC
 ylC
 ftF
@@ -218290,7 +218294,7 @@ pOf
 pOf
 pOf
 pOf
-rSC
+nvu
 rSC
 qKq
 qKq
