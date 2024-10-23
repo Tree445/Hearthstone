@@ -50,7 +50,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -141,7 +141,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -200,7 +200,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -284,7 +284,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -423,7 +423,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -555,7 +555,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -623,7 +623,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -711,7 +711,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -775,7 +775,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -831,7 +831,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -901,7 +901,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -990,7 +990,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1152,7 +1152,7 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1208,7 +1208,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1257,7 +1257,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1305,7 +1305,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1378,7 +1378,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1439,7 +1439,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
@@ -1495,7 +1495,7 @@ obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/use
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	xp_gain = FALSE
+	xp_gain = TRUE
 	miracle = FALSE
 
 	invocation = ""
