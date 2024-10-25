@@ -53,11 +53,10 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 5, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		H.change_stat("strength", -1)
-		H.change_stat("intelligence", 3)
-		H.change_stat("constitution", -1)
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", -1)
+		H.change_stat("endurance", 4)
+		H.change_stat("speed", 3)
+		H.change_stat("intelligence", 3) // 13 stat spread
+		H.change_stat("constitution", -2) // you should not frontline
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells

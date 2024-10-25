@@ -32,27 +32,27 @@
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife = 1, /obj/item/reagent_containers/glass/bottle/rogue/trekkersdelight = 1)
 			beltl = /obj/item/quiver/arrows
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(4,5,5,6), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE) //Hearthstone change.
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/riding, rand(1,2), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE) //Hearthstone change.
-			H.change_stat("perception", 4)
-			H.change_stat("endurance", 2)
-			H.change_stat("speed", 2)
+			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+			H.change_stat("perception", 3) // better perception
+			H.change_stat("endurance", 1)
+			H.change_stat("speed", 1)
+			H.change_stat("intelligence", -2)
+
 		if("Gloom Stalker")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Rangers are masters of nature, often hired as pathfinders, bodyguards and mercenaries in areas of wilderness untraversable to common soldiery."))
@@ -69,30 +69,24 @@
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/reagent_containers/glass/bottle/rogue/trekkersdelight = 1)
 			beltl = /obj/item/quiver/arrows
+			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/riding, rand(1,2), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE) //Hearthstone change.
 			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/riding, rand(1,2), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE) //Hearthstone change.
 			H.change_stat("perception", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("speed", 3)
-		
+			H.change_stat("strength", 2)
+			H.change_stat("endurance", 1) // trades speed for better fighting
+			H.change_stat("intelligence", -2)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt

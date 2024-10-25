@@ -5,7 +5,7 @@
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/grenzelhoft
 	category_tags = list(CTAG_MERCENARY)
-	maximum_possible_slots = 6
+	maximum_possible_slots = 5
 	cmode_music = 'sound/music/combat_grenzelhoft.ogg'
 
 /datum/outfit/job/roguetown/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
@@ -20,51 +20,37 @@
 		if("Doppelsoldner")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a Doppelsoldner of Grenzelhoft, a swordsman experienced with long-length blades."))
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE) // mercs are force equalizers. Fear them.
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)	//Won't be using normally with Zwiehander but useful.
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE) //builders
-			H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // builders
-			H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE) //builders
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)		//Trust me, they'll need it due to stamina drain on their base-sword.
 			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
 			H.change_stat("strength", 3)	//Should give minimum required stats to use Zweihander
-			H.change_stat("endurance", 2)
-			H.change_stat("constitution", 2)
-			H.change_stat("perception", 1)
+			H.change_stat("endurance", 3)
+			H.change_stat("constitution", 3)
 			H.change_stat("speed", -1)		//They get heavy armor now + sword option; so lower speed.
 			r_hand = /obj/item/rogueweapon/greatsword/zwei
 		if("Halberdier")
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a Halberdier from Grenzelhoft, a skilled user of poleamrs and axes. Though you prefer them combined.."))
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
-			H.change_stat("strength", 2)	//Less strength then sword-role but more speed; trade-off.
-			H.change_stat("endurance", 2)
-			H.change_stat("constitution", 2)
-			H.change_stat("perception", 1)
+			H.change_stat("strength", 3)	// stabby stabby stabby
+			H.change_stat("endurance", 3)
+			H.change_stat("constitution", 3)
 			r_hand = /obj/item/rogueweapon/halberd
 	
 	//General gear regardless of class.

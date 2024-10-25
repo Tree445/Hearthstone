@@ -5,7 +5,7 @@
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/steppesman
 	category_tags = list(CTAG_MERCENARY)
-	maximum_possible_slots = 6
+	maximum_possible_slots = 5
 	cmode_music = 'sound/music/combat_steppe.ogg'
 
 /datum/outfit/job/roguetown/mercenary/steppesman/pre_equip(mob/living/carbon/human/H)
@@ -27,29 +27,22 @@
 	l_hand = /obj/item/rogueweapon/shield/buckler
 	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor)
 	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 5, TRUE) //Hearthstone change.
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE) //builders
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE) // builders
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE) //builders
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 1, TRUE) //Hearthstone change.
-	H.change_stat("perception", 2)
-	H.change_stat("constitution", 1)
-	H.change_stat("endurance", 2)
-	H.change_stat("speed", 2)
-	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)			//No medium armor, use light armors.
-	ADD_TRAIT(H, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)	//Since Desert Rider gets medium armor and dodge expert, and you don't, here. Stronk now.
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE) // they can probably keep their crafting, idk
+	H.change_stat("perception", 3)
+	H.change_stat("constitution", 2)
+	H.change_stat("endurance", 3)
+	H.change_stat("speed", 1)

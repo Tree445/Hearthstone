@@ -80,27 +80,27 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE) // dont give them flails, inquisition coded weapon
+		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE) // why did adv get better holy then templars?!
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE) // templars are the only ones who get very good skill training
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.change_stat("strength", 3)
-		H.change_stat("perception", 2)
-		H.change_stat("intelligence", 2)
-		H.change_stat("constitution", 2)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.change_stat("strength", 4)
+		H.change_stat("constitution", 4)
 		H.change_stat("endurance", 3)
-		H.change_stat("speed", -1)
+		H.change_stat("intelligence", 2)
+		H.change_stat("speed", -1) // generally we should see people with 8-9 speed. Good luck.
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC) // undead killers / deadites shouldnt scare you
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells_templar(H)

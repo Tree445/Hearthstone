@@ -21,7 +21,7 @@
 		//"Eldritch Knight", //give eldritch blast, that's it
 		//"Champion", //higher crit rate
 		//"Battle Master", //give three combat manuevers
-		) // To Do - knight errant unique archetype(5 percent chance)
+		) // DO NOT GIVE ANYONE OVER 5 IN SKILLS, EVERYONE MUST HAVE -2 INT TO PREVENT POWER CREEP
 	var/classchoice = input("Choose your archetypes", "Available archetypes") as anything in classes
 
 	switch(classchoice)
@@ -29,20 +29,18 @@
 		if("Warrior")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Warriors are well rounded fighters, experienced often in many theaters of warfare and battle they are capable of rising to any challenge that might greet them on the path."))
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, rand(2,3), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, rand(2,3), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)	//Bit strong but Cleric and Barb get 1 so, let him have something nice.
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, rand(2,3), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)	//Shields are cracked.
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 2) // 7 stat points total as a low-skill martial role without magic. Compared to Pally with 5 points.
+			H.change_stat("strength", 1)
+			H.change_stat("endurance", 2) // 5 skill point increases as God intended
 			H.change_stat("constitution", 2)
-			H.change_stat("speed", 1)
+			H.change_stat("intelligence", -2)
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			belt = /obj/item/storage/belt/rogue/leather
@@ -86,24 +84,21 @@
 		if("Monster Hunter")
 			H.set_blindness(0)
 			to_chat(H, span_warning("Monsters Hunters are typically contracted champions of the common folk dedicated to the slaying of both lesser vermin and greater beasts of the wilds."))
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE) //Hearthstone change.
+			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, rand(2,3), TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/bows, rand(2,3), TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE) //Hearthstone change.
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 1) // Weaker endurance compared to a traditional warrior/soldier. Smarter due to study of rare magical beasts.
-			H.change_stat("constitution", 2)
-			H.change_stat("intelligence", 1)
-			H.change_stat("speed", 1)
+			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+			H.change_stat("speed", 2)
+			H.change_stat("strength", 1)
+			H.change_stat("endurance", 2) // might swap out the str for per
+			H.change_stat("intelligence", -2)
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			gloves = /obj/item/clothing/gloves/roguetown/leather
 			belt = /obj/item/storage/belt/rogue/leather
@@ -130,21 +125,16 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/rogueweapon/huntingknife
 			ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if("Duelist")
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE) // might be too much.
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			shoes = /obj/item/clothing/shoes/roguetown/shortboots
 			neck = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -163,8 +153,9 @@
 			ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			H.change_stat("strength", 1)
-			H.change_stat("speed", 2)
-			H.change_stat("intelligence", 1)
+			H.change_stat("endurance", 1) // less stats, more skills.
+			H.change_stat("speed", 1)
+			H.change_stat("intelligence", -2)
 			H.visible_message(span_info("I trained as a duelist, flair and precision is my weapon... I can fool people into underestimating me, their last mistake."))
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	H.give_fightingstyle(TRUE)

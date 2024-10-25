@@ -1,4 +1,5 @@
-/datum/advclass/sorceress
+//bloat job, go play mage
+/* /datum/advclass/sorceress
 	name = "Sorceress"
 	tutorial = "In some places in Grimmoria, women are banned from the study of magic. Those that do even then are afforded the title Sorceress in honor of their resolve."
 	allowed_sexes = list(FEMALE)
@@ -37,3 +38,4 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
+*/

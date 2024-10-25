@@ -1,4 +1,4 @@
-//elf ranger
+/* bloat class, go play ranger
 
 /datum/advclass/sentinel
 	name = "Sentinel"
@@ -50,3 +50,4 @@
 	H.change_stat("perception", 5)
 	H.change_stat("endurance", 2)
 	H.ambushable = FALSE
+*/

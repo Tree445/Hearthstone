@@ -79,27 +79,27 @@
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE) // actual ass, but worse. Good luck.
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/holy, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE) // actual ass, but worse. Good luck.
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE) // dont give them any ranged stuff. thats what churchlings/inquis/confessor do.
-		H.change_stat("strength", 3)
-		H.change_stat("perception", 2)
-		H.change_stat("intelligence", 3)
-		H.change_stat("constitution", 2)
-		H.change_stat("endurance", 2)  // Guard Captain stats with no fortune, making them weaker due to a lack of crits.
+		H.change_stat("strength", 4)
+		H.change_stat("constitution", 4)
+		H.change_stat("endurance", 4)
+		H.change_stat("intelligence", 2) // scary, enjoy the feints.
+		H.change_stat("speed", -1) // generally we should see people with 8-9 speed. Good luck.
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)

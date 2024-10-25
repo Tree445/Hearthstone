@@ -1,3 +1,4 @@
+/* bloat class, go play knight errant 
 /datum/advclass/cavalry
 	name = "Cavalry" // Medium armor fighter, melee-focused, expert at 1 weapon + some wrestling proefficiency, mediocre at rest. 
 	tutorial = "You wandered off from your home seeking adventure, roaming to greener pastures for honor and chilvalry. You became an instrument of war, sitting atop a saiga, weapon and shield in hand! What will await here?"
@@ -148,3 +149,4 @@
 	set name = "RAH!"
 	set category = "Noises"
 	emote("conqrah")
+*/

@@ -18,7 +18,7 @@
 	..()
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
@@ -26,8 +26,6 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/music, rand(1,2), TRUE)
 	head = /obj/item/clothing/head/roguetown/bardhat
@@ -45,6 +43,8 @@
 	beltl = /obj/item/rogueweapon/sword/rapier
 	backr = /obj/item/rogue/instrument/guitar
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/rogueweapon/huntingknife/idagger/steel = 1)
-	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 2)
+	H.change_stat("strength", 1) // Might be a bit much.
+	H.change_stat("intelligence", -2)
+

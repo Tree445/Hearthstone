@@ -23,25 +23,24 @@
 	r_hand = /obj/item/rogueweapon/woodstaff
 	if(H.mind)
 		to_chat(H, span_warning("Magic is often times refered to as an art. At times it is treated as a primordial beast, chaos incarnate. To more learned men it is a precise science, to be studied and examined. In the end, magic is all three of the above. It is Art, Chaos, and Science: a blessing, a curse, and progress. It all depends on who calls upon it, and for what purpose."))
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE) // we love casting spells.
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, pick(0,1), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 		if(H.age == AGE_OLD)
 			head = /obj/item/clothing/head/roguetown/wizhat/gen
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe
 			H.change_stat("intelligence", 4)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE) // this might be a bad idea
 			H.change_stat("strength", -2)
 			H.mind.adjust_spellpoints(1)
-		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 3)
-		H.change_stat("constitution", 1)
-		H.change_stat("endurance", -1)
+		H.change_stat("endurance", 2)
+		H.change_stat("strength", -2)
 		H.mind.adjust_spellpoints(1)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
