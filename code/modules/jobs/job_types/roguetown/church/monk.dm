@@ -35,7 +35,7 @@
 			wrists = /obj/item/clothing/wrists/roguetown/wrappings
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
-		if(/datum/patron/divine/noc) //Nocalytes aren't real. Play Cleric.
+		if(/datum/patron/divine/noc) //Nocalytes are real, don't let them tell you otherwise, we love casting spells. (Hearthstone edit: simply gives Noc Acolytes the love that the Noc Clerics got, access to pick spells)
 			head = /obj/item/clothing/head/roguetown/roguehood/nochood
 			neck = /obj/item/clothing/neck/roguetown/psicross/noc
 			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings

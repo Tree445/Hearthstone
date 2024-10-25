@@ -73,6 +73,8 @@
 	plane = GAME_PLANE_UPPER
 	anchored = TRUE
 	density = TRUE
+	pixel_x = -64
+	pixel_y = -16
 
 /obj/structure/underworld/carriage_normal/Initialize()
 	..()

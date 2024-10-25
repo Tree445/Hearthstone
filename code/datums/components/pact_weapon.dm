@@ -8,7 +8,7 @@
 		/obj/item/rogueweapon/mace, //blunt
 		/obj/item/rogueweapon/stoneaxe/woodcut/steel, /obj/item/rogueweapon/stoneaxe/battle, //axes
 		/obj/item/rogueweapon/whip, /obj/item/rogueweapon/flail, //flails
-		/obj/item/rogueweapon/spear, /obj/item/rogueweapon/halberd //polearms
+		/obj/item/rogueweapon/spear, /obj/item/rogueweapon/halberd, /obj/item/rogueweapon/sickle/scythe //polearms
 		)
 
 /datum/component/pact_weapon/Initialize(mob/living/L, pc)
