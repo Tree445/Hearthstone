@@ -80,6 +80,7 @@
 		A humble God, it is said that Ravox, although the strongest of Psydon's children, does not gloat about this fact, and merely lets his swordsmanship speak for him. \
 		Ravox is depicted as a man with the head of a bull, wearing nothing on his body and wielding a sword."
 	worshippers = "Warriors, Sellswords & those who seek Justice"
+	t1 = /obj/effect/proc_holder/spell/invoked/burden
 	confess_lines = list(
 		"RAVOX IS JUSTICE!",
 		"THROUGH STRIFE, GRACE!",
