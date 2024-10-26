@@ -25,10 +25,10 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/axes, pick(1,2), TRUE)
 		else
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(1,2), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/smelting, pick(3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/smelting, pick(3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	if(H.gender == MALE)
@@ -50,6 +50,7 @@
 		cloak = /obj/item/clothing/cloak/apron/brown
 		backr = /obj/item/storage/backpack/rogue/satchel
 		backpack_contents = list(/obj/item/rogueweapon/hammer = 1, /obj/item/rogueweapon/tongs = 1)
+	H.change_stat("intelligence", 2)
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)

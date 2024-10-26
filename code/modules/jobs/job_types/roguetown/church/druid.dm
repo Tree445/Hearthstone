@@ -42,11 +42,11 @@
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/magic/druidic, 5, TRUE) //This does nothing, but maybe one day it will.
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
@@ -67,7 +67,10 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/splash)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/roustame)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/animate_object)
-
+	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC) // so you can operate on deadites
+	ADD_TRAIT(H, TRAIT_MARTIALARTIST, TRAIT_GENERIC) // dang they got hands
+	ADD_TRAIT(H, TRAIT_MISSILESNARING, TRAIT_GENERIC) 
+	H.mind.martial_art.projectile_deflect = TRUE
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_spells(H)

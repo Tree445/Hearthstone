@@ -78,7 +78,7 @@
 		H.change_stat("perception", 2)
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 2)
-		H.change_stat("speed", 2) // an 13 stat spread for dodge expert, this might be scary
+		H.change_stat("speed", 2) // an 13 stat spread for dodge expert, this might be scary and need nerfs
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim

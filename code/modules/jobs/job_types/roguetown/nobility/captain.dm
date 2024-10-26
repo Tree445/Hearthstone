@@ -73,6 +73,7 @@
 		H.change_stat("constitution", 4)
 		H.change_stat("endurance", 4)
 		H.change_stat("intelligence", 2) // scary, enjoy the feints.
+		H.change_stat("fortune", 2) // only give fortune to "Boss" jobs (GM/RGC/Sheriff/BogMaster), people should be able to successfully 1v1 these jobs and win alone.
 		H.change_stat("speed", -1) // generally we should see people with 8-9 speed. Good luck.
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

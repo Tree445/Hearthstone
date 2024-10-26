@@ -43,10 +43,12 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.change_stat("strength", 3)
-		H.change_stat("perception", 2)
-		H.change_stat("constitution", 2)
-		H.change_stat("endurance", 2)
+		H.change_stat("strength", 4)
+		H.change_stat("constitution", 4)
+		H.change_stat("endurance", 4)
+		H.change_stat("intelligence", 2) // scary, enjoy the feints.
+		H.change_stat("fortune", 2) // only give fortune to "Boss" jobs (GM/RGC/Sheriff/BogMaster), people should be able to successfully 1v1 these jobs and win alone.
+		H.change_stat("speed", -1) // generally we should see people with 8-9 speed. Good luck.
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
