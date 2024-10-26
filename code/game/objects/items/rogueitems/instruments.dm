@@ -122,7 +122,7 @@
 			if(prob(20))//follow
 				for(var/L in view(12, src.loc))
 					if(istype(L, /obj/item/reagent_containers/food/snacks/smallrat) || istype(L, /mob/living/simple_animal/hostile/retaliate/rogue/bigrat) || istype(L, /mob/living/simple_animal/mouse) || istype(L, /mob/living/simple_animal/hostile/retaliate/poison/snake))
-						walk_to(L, src, 1, 1.5 SECONDS)
+						walk_to(L, src, 1, 0.75 SECONDS)
 			if(prob(10))//dance
 				var/list/nearby_mobs = list()
 				for(var/mob/living/L in view(12, src.loc))
