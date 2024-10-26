@@ -197,8 +197,9 @@
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	H.verbs |= /mob/proc/haltyell
 
-	H.change_stat("perception", 4)
-	H.change_stat("endurance", 4) 
+	H.change_stat("perception", 3)
+	H.change_stat("endurance", 3) 
+	H.change_star("strength", 3) // draw speed
 	H.change_stat("speed", 2) 
 	H.change_stat("constitution", 2) // seven stat spread, watch get 9, royal guard get 12-13
 	H.change_stat("strength", -2) // If you get grappled, you are doomed. Learn to position yourself

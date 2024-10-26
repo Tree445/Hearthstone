@@ -115,9 +115,10 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-	H.change_stat("perception", 3)
-	H.change_stat("endurance", 3) 
-	H.change_stat("speed", 2) 
+	H.change_stat("perception", 2)
+	H.change_stat("endurance", 2) 
+	H.change_stat("speed", 2)
+	H.change_stat("strength", 2) // draw strength
 	H.change_stat("constitution", 1) // seven stat spread, watch get 9, royal guard get 12-13
 	H.change_stat("intelligence", -2) // we dont want you being crafters so go give the blacksmith work
 

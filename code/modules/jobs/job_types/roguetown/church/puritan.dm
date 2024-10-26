@@ -74,10 +74,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.change_stat("constitution", 3)
+		H.change_stat("strength", 2) // draw speed
 		H.change_stat("perception", 2)
 		H.change_stat("intelligence", 2)
 		H.change_stat("endurance", 2)
-		H.change_stat("speed", 2) // an 11 stat spread for dodge expert, no str, learn to position
+		H.change_stat("speed", 2) // an 13 stat spread for dodge expert, this might be scary
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim

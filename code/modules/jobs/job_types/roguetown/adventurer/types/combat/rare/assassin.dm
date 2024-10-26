@@ -15,6 +15,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, pick(5,6), TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE) // you are an assassin, not a thief
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 4, TRUE) // so they can make poisons and crap
+	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE) // assassins creed
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)

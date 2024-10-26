@@ -152,9 +152,9 @@
 			ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_DECEIVING_MEEKNESS, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-			H.change_stat("strength", 1)
-			H.change_stat("endurance", 1) // less stats, more skills.
-			H.change_stat("speed", 1)
+			H.change_stat("strength", 2)
+			H.change_stat("endurance", 2) // egh, going to break the rule a bit feints are scary though
+			H.change_stat("speed", 2)
 			H.change_stat("intelligence", -2)
 			H.visible_message(span_info("I trained as a duelist, flair and precision is my weapon... I can fool people into underestimating me, their last mistake."))
 	pants = /obj/item/clothing/under/roguetown/tights/black

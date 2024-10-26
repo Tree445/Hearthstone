@@ -35,7 +35,7 @@
 			head = /obj/item/clothing/head/roguetown/wizhat/gen
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe
 			H.change_stat("intelligence", 4)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE) // this might be a bad idea
+			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE) // Master skill arcane is scary
 			H.change_stat("strength", -2)
 			H.mind.adjust_spellpoints(1)
 		H.change_stat("intelligence", 3)
