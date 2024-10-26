@@ -14,8 +14,8 @@
 	base_intents = list(/datum/intent/simple/mimic)
 	faction = list("undead")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 200
-	maxHealth = 200
+	health = 1000
+	maxHealth = 1000
 	melee_damage_lower = 35
 	melee_damage_upper = 45
 	vision_range = 3
@@ -25,8 +25,8 @@
 	retreat_distance = 0
 	minimum_distance = 0
 	footstep_type = FOOTSTEP_HARD_CLAW
-	STACON = 12
-	STASTR = 5
+	STACON = 19
+	STASTR = 15
 	STASPD = 15
 	defprob = 40
 	defdrain = 10

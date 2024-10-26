@@ -19,6 +19,7 @@
 		var/obj/item/I = W
 		if(HAS_TRAIT(user, TRAIT_ARTIFICER))
 			if(W.infusable)
+				user.dropItemToGround(W, TRUE)
 				W.AddComponent(/datum/component/infusions, user, src, FALSE)
 			else
 				to_chat(user, span_warning("[I] is already infused!"))
