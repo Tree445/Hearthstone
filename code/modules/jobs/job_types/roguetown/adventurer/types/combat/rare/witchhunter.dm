@@ -1,4 +1,4 @@
-// Go play Gloom Ranger, bloat class
+// Go play Gloom or Monster Hunter
 
 /* /datum/advclass/puritan
 	name = "Witch Hunter"
