@@ -77,7 +77,6 @@
 /datum/customizer/organ/wings/dracon
 	customizer_choices = list(/datum/customizer_choice/organ/wings/dracon)
 	allows_disabling = TRUE
-	default_disabled = TRUE
 
 /datum/customizer_choice/organ/wings/dracon
 	name = "Fluvian Wings"
