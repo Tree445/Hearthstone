@@ -76,4 +76,4 @@
 	H.verbs |= /mob/living/carbon/human/proc/faith_test
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC) // they have probably seen some things
+	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC) // they have probably seen some things

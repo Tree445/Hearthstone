@@ -67,7 +67,7 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/splash)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/roustame)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/animate_object)
-	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC) // so you can operate on deadites
+	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC) // so you can operate on deadites
 	ADD_TRAIT(H, TRAIT_MARTIALARTIST, TRAIT_GENERIC) // dang they got hands
 	ADD_TRAIT(H, TRAIT_MISSILESNARING, TRAIT_GENERIC) 
 	H.mind.martial_art.projectile_deflect = TRUE
