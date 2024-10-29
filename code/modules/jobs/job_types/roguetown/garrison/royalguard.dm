@@ -87,10 +87,10 @@
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()		//For knightly voices; even though I despise them.
 	H.verbs |= /mob/proc/haltyell
 
-	H.change_stat("strength", 3)
+	H.change_stat("strength", 4)
 	H.change_stat("constitution", 4)
-	H.change_stat("endurance", 4)
-	H.change_stat("intelligence", 2)
+	H.change_stat("endurance", 3)
+	H.change_stat("intelligence", 2) // same stats as Templar
 	H.change_stat("speed", -1)		//At "Elite" tiers, we see a trade off for speed, not intelligence
 	// Decorative helberd, 2-handed
 	if(prob(33))
@@ -143,11 +143,11 @@
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()		//For knightly voices; even though I despise them.
 	H.verbs |= /mob/proc/haltyell
 
-	H.change_stat("strength", 4)
-	H.change_stat("constitution", 3)
+	H.change_stat("strength", 4)	
+	H.change_stat("constitution", 4)
 	H.change_stat("endurance", 3)
-	H.change_stat("intelligence", 3)
-	H.change_stat("speed", -1)		//At "Elite" tiers, we see a trade off for speed, not intelligence
+	H.change_stat("intelligence", 2)
+	H.change_stat("speed", -1) // generally we should see people with 8-9 speed. Good luck.
 	// Flail + tower shield
 	if(prob (33))
 		beltr = /obj/item/rogueweapon/flail
