@@ -254,7 +254,7 @@
 /datum/crafting_recipe/roguetown/alchemy/e2s
 	name = "transmute steel to silver" // Making it is still pretty involved, but at least now you aren't wasting 3 entire ingots of steel plus almost 300 mammon worth of potential profit for a single silver ingot.
 	result = list(/obj/item/ingot/silver = 4)
-	reqs = list(/obj/item/rogueore/gold = 1, /obj/item/ingot/steel = 4, /obj/item/roguegem/violet = 2)
+	reqs = list(/obj/item/rogueore/gold = 2, /obj/item/ingot/steel = 4, /obj/item/roguegem/violet = 2)
 	craftdiff = 6
 
 /datum/crafting_recipe/roguetown/alchemy/moon
