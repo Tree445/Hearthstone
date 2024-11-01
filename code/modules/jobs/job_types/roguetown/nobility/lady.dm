@@ -31,7 +31,7 @@
 		
 /datum/advclass/lady/war  //Warrior-esque, for people who want to play a queen that's a bit more heavy-handed
 	name = "War"
-	tutorial = "You came from a land filled with war. Where other potential rulers, lords, and ladies saw to hoan their skills in the art of court, you focused on tactics and swordplay. Only a fierce and strong ruler can rule properly."
+	tutorial = "You came from a land filled with war. Where other potential rulers, lords, and ladies saw to hone their skills in the art of court, you focused on tactics and swordplay. Only a fierce and strong ruler can rule properly."
 	outfit = /datum/outfit/job/roguetown/lady/war
 	category_tags = list(CTAG_LADY)
 	
@@ -108,7 +108,7 @@
 
 /datum/advclass/lady/courtliness  //Steward-esque, fame, fortune, money, events, if money can buy it, they love it.
 	name = "Courtliness"
-	tutorial = "Apperances are everything, a fact that you know vehemently. No good lord or lady should have anything but the upmost decorum, and you will be there to ensure that that standard is held to its highest. Only a proper and courtly ruler can properly rule"
+	tutorial = "Appearances are everything, a fact that you know vehemently. No good lord or lady should have anything but the upmost decorum, and you will be there to ensure that that standard is held to its highest. Only a proper and courtly ruler can properly rule"
 	outfit = /datum/outfit/job/roguetown/lady/courtliness
 	category_tags = list(CTAG_LADY)
 	
