@@ -12,74 +12,143 @@
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant,
 	/obj/effect/proc_holder/spell/self/grant_nobility)
-	outfit = /datum/outfit/job/roguetown/noble
 	
 
 	display_order = JDO_LADY
 	give_bank_account = TRUE
 	min_pq = 1
 	max_pq = null
-
-/datum/job/roguetown/exlady //just used to change the ladys title
-	title = "Queen Dowager"
-	flag = LADY
-	department_flag = NOBLEMEN
-	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
-	display_order = JDO_LADY
-	give_bank_account = TRUE
-
+	advclass_cat_rolls = list(CTAG_LADY = 20)
+	
+	
 /datum/job/roguetown/lady/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
-	if(GLOB.lordsurname && H)
-		give_lord_surname(H, preserve_original = TRUE)
-
-/datum/outfit/job/roguetown/lady/pre_equip(mob/living/carbon/human/H)
-	. = ..()
-	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
-	beltl = /obj/item/storage/keyring/royal
-	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
-	if(isdwarf(H))
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress
-	else
-		if(prob(66))
-			armor = /obj/item/clothing/suit/roguetown/armor/armordress/alt
-		else
-			armor = /obj/item/clothing/suit/roguetown/armor/armordress
-	head = /obj/item/clothing/head/roguetown/hennin
-	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female nobles
-//		SSticker.rulermob = H
-
+	if(ishuman(H))
+		var/mob/living/carbon/human/Q = H
+		Q.advsetup = 1
+		Q.invisibility = INVISIBILITY_MAXIMUM
+		Q.become_blind("advsetup")
+		
+/datum/advclass/lady/war  //Warrior-esque, for people who want to play a queen that's a bit more heavy-handed
+	name = "War"
+	tutorial = "You came from a land filled with war. Where other potential rulers, lords, and ladies saw to hoan their skills in the art of court, you focused on tactics and swordplay. Only a fierce and strong ruler can rule properly."
+	outfit = /datum/outfit/job/roguetown/lady/war
+	category_tags = list(CTAG_LADY)
+	
+/datum/outfit/job/roguetown/lady/war/pre_equip(mob/living/carbon/human/H)
+	..()
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	armor = /obj/item/clothing/suit/roguetown/armor/armordress
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
+	beltl = /obj/item/rogueweapon/sword
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
+	backr = /obj/item/storage/backpack/rogue/satchel
 	id = /obj/item/clothing/ring/silver
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	backpack_contents = list(/obj/item/storage/keyring/royal)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.change_stat("constitution", 3)
+		H.change_stat("endurance", 3)
+		H.change_stat("strength", 1)
+		H.change_stat("perception", 3)
+		H.change_stat("fortune", 5)
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)  //THOUGHT about giving them heavy but.. medium should be fine, keep them from front-lining too bad, but also allowing them to participate in fights.
+		
+/datum/advclass/lady/intrigue
+	name = "Intrigue"
+	tutorial = "Since you were young, you were gifted with a silver tongue and a ear that is always listening. You spent your life learning the trade that is secrets, any loose lip and overheard conversation can be put to good use in a court. Only a wise and observant ruler can rule properly."
+	outfit = /datum/outfit/job/roguetown/lady/intrigue
+	category_tags = list(CTAG_LADY)
+	
+/datum/outfit/job/roguetown/lady/intrigue/pre_equip(mob/living/carbon/human/H)  //Hand-esque, spymaster archetype for those who prefer being a sneaky candidate whispering into their king/queens ear
+	..()
+	pants = /obj/item/clothing/under/roguetown/tights/black
+	shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	belt = /obj/item/storage/belt/rogue/leather/hand
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
+	backl = /obj/item/storage/backpack/rogue/satchel
+	id = /obj/item/clothing/ring/silver
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/storage/keyring/royal = 1)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 		H.change_stat("intelligence", 3)
 		H.change_stat("endurance", 3)
 		H.change_stat("speed", 2)
 		H.change_stat("perception", 2)
-		H.change_stat("fortune", 5)
+		H.change_stat("fortune", 3) //Slightly less fortune because they have Dodge Expert
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC) //good at reading people? Doesn't do TOO much really, just for flavor
 
+/datum/advclass/lady/courtliness  //Steward-esque, fame, fortune, money, events, if money can buy it, they love it.
+	name = "Courtliness"
+	tutorial = "Apperances are everything, a fact that you know vehemently. No good lord or lady should have anything but the upmost decorum, and you will be there to ensure that that standard is held to its highest. Only a proper and courtly ruler can properly rule"
+	outfit = /datum/outfit/job/roguetown/lady/courtliness
+	category_tags = list(CTAG_LADY)
+	
+/datum/outfit/job/roguetown/lady/courtliness/pre_equip(mob/living/carbon/human/H)
+	..()
+	beltl = /obj/item/storage/belt/rogue/pouch/coins/rich
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
+	neck = /obj/item/clothing/neck/roguetown/psicross/ornate
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
+	shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
+	head = /obj/item/clothing/head/roguetown/nyle
+	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random	//Added Silk Stockings for the female nobles
+	id = /obj/item/clothing/ring/gold
+	cloak = /obj/item/clothing/cloak/lordcloak
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	backl = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogue/instrument/lute
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/storage/keyring/royal = 1)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/music, rand(3,5), TRUE)
+		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
+		
 /obj/effect/proc_holder/spell/self/convertrole/servant
 	name = "Recruit Servant"
 	new_role = "Servant"
