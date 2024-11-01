@@ -48,8 +48,8 @@
 		QDEL_NULL(src.charflaw)
 	mob_biotypes |= MOB_UNDEAD
 	faction = list("undead")
-	name = "skelelon"
-	real_name = "skelelon"
+	name = "Skeleton"
+	real_name = "Skeleton"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
@@ -85,8 +85,10 @@
 			pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
 	if(prob(10))
 		head = /obj/item/clothing/head/roguetown/helmet/leather
-	if(prob(10))
-		head = /obj/item/clothing/head/roguetown/roguehood
+	if(prob(70))
+		gloves = /obj/item/clothing/gloves/roguetown/chain
+	if(prob(70))
+		neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.gender == FEMALE)
 		H.STASTR = rand(9,12)
 	else
@@ -96,9 +98,9 @@
 	H.STAEND = 15
 	H.STAINT = 1
 	if(prob(50))
-		r_hand = /obj/item/rogueweapon/sword/iron
+		r_hand = /obj/item/rogueweapon/sword
 	else
-		r_hand = /obj/item/rogueweapon/stoneaxe/woodcut
+		r_hand = /obj/item/rogueweapon/mace
 
 /datum/outfit/job/roguetown/npc/skeleton/dungeon/pre_equip(mob/living/carbon/human/H)
 	..()

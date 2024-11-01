@@ -31,6 +31,8 @@
 /mob/living/rogstam_add(added as num)
 	if(HAS_TRAIT(src, TRAIT_NOROGSTAM) || HAS_TRAIT(src, TRAIT_ZOMBIE_SPEECH))
 		return TRUE
+	if(HAS_TRAIT(src, TRAIT_NOSLEEP))
+		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
 		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.02))
 	rogstam += added
