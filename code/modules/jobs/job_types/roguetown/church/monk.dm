@@ -42,11 +42,11 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE) // shouldn't be that bad.
 			H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE) // shouldn't be that bad.
 			H.mind.adjust_spellpoints(1)
-			H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+					H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
+					H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 		if(/datum/patron/divine/dendor) //Dendorites all busted. Play Druid.
 			head = /obj/item/clothing/head/roguetown/helmet/dendorculthelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/dendor
@@ -79,19 +79,19 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			pants = /obj/item/clothing/under/roguetown/loincloth
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
+			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE) // the eyes and ears of the Church
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE) // the eyes and ears of the Church
 		if(/datum/patron/divine/malum)
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
 			neck = /obj/item/clothing/neck/roguetown/psicross/malum
 			pants = /obj/item/clothing/under/roguetown/trou/leather
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor =	/obj/item/clothing/suit/roguetown/armor/leathervest
+			H.mind.adjust_skillrank(/datum/skill/labor/mining, 5, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/labor/mining, 5, TRUE)
 		if(/datum/patron/divine/abyssor)
 			head = /obj/item/clothing/head/roguetown/helmet/abyssorhat
 			neck = /obj/item/clothing/neck/roguetown/psicross/abyssor
@@ -108,16 +108,20 @@
 			shirt =	/obj/item/clothing/suit/roguetown/shirt/undershirt/ravoxrobe			
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, rand(3, 4), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		H.change_stat("intelligence", 4) // dedicated crafters
-		H.change_stat("endurance", 3)
+		H.change_stat("intelligence", 4) // dedicated support
+		H.change_stat("endurance", 4)
 		H.change_stat("perception", 2)
+		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC) // so you can operate on deadites
+		ADD_TRAIT(H, TRAIT_MARTIALARTIST, TRAIT_GENERIC) // dang they got hands
+		ADD_TRAIT(H, TRAIT_MISSILESNARING, TRAIT_GENERIC) 
+		H.mind.martial_art.projectile_deflect = TRUE
 		H.cmode_music = 'sound/music/combat_clergy.ogg'
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 

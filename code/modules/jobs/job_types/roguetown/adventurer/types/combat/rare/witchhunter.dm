@@ -1,5 +1,6 @@
+// Go play Gloom or Monster Hunter
 
-/datum/advclass/puritan
+/* /datum/advclass/puritan
 	name = "Witch Hunter"
 	tutorial = "Witch Hunters belong to a special sect of the One-God Church that believe all magyk \
 	use is inherently sinful. They are extremely devoted to hunting necromancers and often preach \
@@ -55,3 +56,4 @@
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+*/

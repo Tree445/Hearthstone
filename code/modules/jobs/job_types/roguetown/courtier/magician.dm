@@ -41,8 +41,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
@@ -50,12 +51,14 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,2), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.change_stat("strength", -1)
-		H.change_stat("constitution", -1)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 		H.change_stat("intelligence", 4)
+		H.change_stat("endurance", 4)
+		H.change_stat("speed", 2)
+		H.change_stat("constitution", 1) // "Boss" stat spread for Mages
+		H.change_stat("perception", 1)
+		H.change_stat("strength", -2)
 		H.mind.adjust_spellpoints(3)
 //		H.faction += "summoner" //can use this to enable summons to attack players. Probably better to keep the mobs for pve purposes for now.
 	if(H.age == AGE_OLD)
@@ -83,6 +86,3 @@
 				H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 	
 	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
-		
-	
-	

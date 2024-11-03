@@ -23,10 +23,10 @@
 /datum/outfit/job/roguetown/wapprentice/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
 		H.mind.adjust_spellpoints(1)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
@@ -44,9 +44,12 @@
 		beltr = /obj/item/roguekey/tower
 		armor = /obj/item/clothing/suit/roguetown/armor/workervest
 		backr = /obj/item/storage/backpack/rogue/satchel
-
-	H.change_stat("intelligence", 2)
-	H.change_stat("speed", -1)
+		H.change_stat("intelligence", 3)
+		H.change_stat("endurance", 3)
+		H.change_stat("speed", 1)
+		H.change_stat("constitution", 1) // "Elite" stat spread for Mage Apprentices so 9 stat points
+		H.change_stat("perception", 1)
+		H.change_stat("strength", -2)
 	if(isseelie(H))
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/summon_rat)

@@ -1,5 +1,5 @@
-//dagger and huntknife
-/datum/advclass/gravedigger
+// bloat class.
+/* /datum/advclass/gravedigger
 	name = "Treasure Hunter"
 	tutorial = "A treasure hunter trained for years in artifact finding and crawling through the darkest of dungeons, your fortune could be hidden anywhere."
 	allowed_sexes = list(MALE, FEMALE)
@@ -41,3 +41,4 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("speed", 2) 
 		H.change_stat("endurance", 2)
+		*/
