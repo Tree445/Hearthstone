@@ -2,13 +2,13 @@ GLOBAL_VAR(lordsurname)
 GLOBAL_LIST_EMPTY(lord_titles)
 
 /datum/job/roguetown/lord
-	title = "Monarch"
-	f_title = "Duchess"
+	title = "Duke of House Rose"
+	f_title = "Duchess of House Rose"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	selection_color = JCOLOR_NOBLE
 	allowed_races = list(
 		/datum/species/elf/dark,
@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	required = TRUE
 
 /datum/job/roguetown/exlord //just used to change the lords title
-	title = "Monarch Emeritus"
+	title = "Duke Emeritus"
 	f_title = "Duchess Emeritus"
 	flag = LORD
 	department_flag = NOBLEMEN
@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			GLOB.lordsurname = "of [L.real_name]"
 		SSticker.select_ruler()
 		if(L.gender != FEMALE)
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Monarch of the Realm.</span></span></b>")
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duke of the Realm.</span></span></b>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 		else
 			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duchess of the Realm.</span></span></b>")

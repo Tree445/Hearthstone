@@ -22,6 +22,25 @@
 	droning_sound_dusk = null
 	droning_sound_night = null
 
+// Viking Land
+/area/rogue/outdoors/vikingarea
+	name = "vikingarea"
+	icon_state = "viking"
+	ambientsounds = AMB_BOGDAY
+	ambientnight = AMB_BOGNIGHT
+	spookysounds = SPOOKY_FROG
+	spookynight = SPOOKY_GEN
+	droning_sound = 'sound/music/area/viking.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	ambush_times = list("night","dawn","dusk","day")
+	ambush_types = list(
+				/turf/open/floor/rogue/dirt,
+				/turf/open/floor/rogue/grass,
+				/turf/open/water)
+	first_time_text = "The Deep North"
+	converted_type = /area/rogue/indoors/shelter/bog
+
 
 ///Unnamed Tomb
 /area/rogue/under/cavewet/bogcaves/tomb

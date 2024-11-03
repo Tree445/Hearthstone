@@ -4,8 +4,8 @@
 	department_flag = COURTIERS
 	selection_color = JCOLOR_COURTIER
 	faction = "Station"
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 2
+	spawn_positions = 2
 
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)

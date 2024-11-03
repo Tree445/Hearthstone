@@ -4,8 +4,8 @@
 	flag = PRINCE
 	department_flag = APPRENTICES
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 3
+	spawn_positions = 3
 	allowed_races = RACES_ALL_KINDSPLUS //Maybe a system to force-pick lineage based on king and queen should be implemented.
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
