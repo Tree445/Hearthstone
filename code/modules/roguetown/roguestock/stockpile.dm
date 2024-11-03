@@ -305,3 +305,36 @@
 	transport_fee = 5
 	export_price = 11
 	importexport_amt = 3
+
+/datum/roguestock/stockpile/onion
+	name = "Onion"
+	desc = "A spicy orb."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/onion/rogue
+	held_items = list(8, 10)
+	payout_price = 2
+	withdraw_price = 4
+	transport_fee = 1
+	export_price = 4
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/jackberry
+	name = "Jackberry"
+	desc = "A sweet berry."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/berries/rogue
+	held_items = list(0, 0)
+	payout_price = 2
+	withdraw_price = 4
+	transport_fee = 1
+	export_price = 4
+	importexport_amt = 5
+
+/datum/roguestock/stockpile/cabbage
+	name = "Cabbage"
+	desc = "Grenzelhoftian classic"
+	item_type = /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
+	held_items = list(4, 8)
+	payout_price = 3
+	withdraw_price = 5
+	transport_fee = 1
+	export_price = 5
+	importexport_amt = 5
