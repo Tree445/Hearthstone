@@ -221,6 +221,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_ROYALGUARD		"CAT_ROYALGUARD"	// Royal Guard classes; sloppy class selection system.
 #define CTAG_HEIR			"CAT_HEIR"			// Royal heir classes, as above.
 #define CTAG_LADY			"CAT_LADY"			// Consort Classes, as above.
+#define CTAG_SQUIRE			"CAT_SQUIRE"		// Squire Love, Classes, as above.
 
 /*
 	Defines for the triumph buy datum categories
