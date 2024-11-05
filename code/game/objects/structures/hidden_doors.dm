@@ -42,6 +42,13 @@
 	vip = list("Merchant", "Shop Hand")
 	vipmessage = "Merchant and Shop Hand"
 
+/obj/structure/mineral_door/secret/mercenary
+	vip = list("Merchant", "Shop Hand", "Mercenary", "Innkeep")
+	vipmessage = "Guildmaster and Apprentice, Innkeeper, and Mercenaries"
+	icon = 'icons/turf/walls/craftstone.dmi'
+	icon_state = "box"
+	locksound = null
+
 /obj/structure/mineral_door/secret/wizard //for wizard tower
 	vip = list("Court Magician", "Magicians Apprentice", "Archivist")
 	vipmessage = "Court Magician, Magicians Apprentice and Archivist"
@@ -55,6 +62,7 @@
 	lang = /datum/language/thievescant
 	icon = 'icons/turf/walls/stonebrick.dmi'
 	icon_state = "stonebrick"
+	locksound = null
 
 /obj/structure/mineral_door/secret/Initialize()
 	//set password

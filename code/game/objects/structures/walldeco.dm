@@ -218,3 +218,16 @@
 
 /obj/structure/fluff/walldeco/rpainting/crown
 	icon_state = "painting_3"
+
+/obj/structure/fluff/walldeco/medposter1
+	icon_state = "medposter"
+/obj/structure/fluff/walldeco/medposter2
+	icon_state = "medposter2"
+/obj/structure/fluff/walldeco/medposter3
+	icon_state = "medposter3"
+/obj/structure/fluff/walldeco/medposter4
+	icon_state = "medposter4"
+/obj/structure/fluff/walldeco/medposter5
+	icon_state = "medposter5"
+/obj/structure/fluff/walldeco/medposter6
+	icon_state = "medposter6"

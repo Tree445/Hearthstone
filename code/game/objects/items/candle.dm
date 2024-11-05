@@ -110,4 +110,32 @@
 	start_lit = TRUE
 	icon_state = "skullcandle_lit"
 
+
+/obj/item/candle/magic
+	name = "arcyne candle"
+	icon = 'icons/roguetown/items/lighting.dmi'
+	icon_state = "candle_teal"
+	infinite = TRUE
+
+/obj/item/candle/magic/update_icon()
+	icon_state = "candle_teal[lit ? "_lit" : ""]"
+
+/obj/item/candle/magic/lit
+	start_lit = TRUE
+	icon_state = "candle_teal_lit"
+
+/obj/item/candle/magicpink
+	name = "arcyne candle"
+	icon = 'icons/roguetown/items/lighting.dmi'
+	icon_state = "candle_pink"
+	infinite = TRUE
+
+/obj/item/candle/magicpink/update_icon()
+	icon_state = "candle_pink[lit ? "_lit" : ""]"
+
+/obj/item/candle/magicpink/lit
+	start_lit = TRUE
+	icon_state = "candle_pink_lit"
+
+
 #undef CANDLE_LUMINOSITY

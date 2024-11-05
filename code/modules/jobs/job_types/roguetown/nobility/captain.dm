@@ -1,5 +1,5 @@
 /datum/job/roguetown/captain
-	title = "Guard Captain"
+	title = "Knight Captain"
 	flag = GUARD_CAPTAIN
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -161,11 +161,11 @@
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard
-	name = "Recruit Guardsmen"
+	name = "Recruit Neighborhood Watch"
 	new_role = "Watchman"
 	recruitment_faction = "Watchman"
-	recruitment_message = "Serve the town guard, %RECRUIT!"
-	accept_message = "FOR THE KING!"
+	recruitment_message = "Serve the town watch, %RECRUIT!"
+	accept_message = "I STAND GUARD!"
 	refuse_message = "I refuse."
 
 /obj/effect/proc_holder/spell/self/convertrole/guard/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)

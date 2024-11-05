@@ -16,6 +16,7 @@
 	var/list/traits_applied
 	var/cmode_music
 	var/f_title
+	var/list/spells
 
 	/// This class is immune to species-based swapped gender locks
 	var/immune_to_genderswap = FALSE
@@ -41,7 +42,18 @@
 	var/obj/item/flashlight/flare/torch/T = new()
 	T.spark_act()
 	H.put_in_hands(T, forced = TRUE)
+	//framework for being able to list spells instead of individually input them
+	var/list/skills
+	var/list/roundstart_experience
+	roundstart_experience = skills
+	if(roundstart_experience)
+		var/mob/living/carbon/human/experiencer = H
+		for(var/i in roundstart_experience)
+			experiencer.mind.adjust_experience(i, roundstart_experience[i], TRUE)
 
+
+	add_spells(H)
+	//framework end
 	var/turf/TU = get_turf(H)
 	if(TU)
 		if(horse)
@@ -108,3 +120,19 @@
 //Final proc in the set for really retarded shit
 ///datum/advclass/proc/extra_slop_proc_ending(mob/living/carbon/human/H)
 
+
+//framework for being able to list spells instead of putting them individually
+/datum/advclass/proc/add_spells(mob/living/H)
+	if(spells && H.mind)	
+		for(var/S in spells)
+			if(H.mind.has_spell(S))
+				continue
+			H.mind.AddSpell(new S)
+
+/datum/advclass/proc/remove_spells(mob/living/H)
+	if(spells && H.mind)	
+		for(var/S in spells)
+			if(!H.mind.has_spell(S))
+				continue
+			H.mind.RemoveSpell(S)
+//framework end

@@ -147,6 +147,12 @@
 	color = "#FFB3DA"
 	floor_tile = /obj/item/stack/tile/fairygrass/pink
 
+/turf/open/floor/grass/fairy/earthy
+	name = "earthy fairygrass patch"
+	light_color = "#247d2d"
+	color = "#247d2d"
+	floor_tile = /obj/item/stack/tile/fairygrass/earthy
+
 
 /turf/open/floor/grass/snow
 	gender = PLURAL

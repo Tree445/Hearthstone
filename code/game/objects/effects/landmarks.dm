@@ -99,7 +99,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/vagrantlate
 	name = "Beggarlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Beggar")
+	jobspawn_override = list("Low-life")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagabondlate
@@ -141,7 +141,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/lord
-	name = "King"
+	name = "Duke"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/knight
@@ -149,11 +149,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/sheriff
-	name = "Town Sheriff"
+	name = "Sheriff"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/guard_captain
-	name = "Guard Captain"
+	name = "Knight Captain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/noble
@@ -177,27 +177,27 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/magician
-	name = "Court Magician"
+	name = "Arch-Mage"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/physician
 	name = "Court Physician"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/guardsman
+/*/obj/effect/landmark/start/guardsman
 	name = "Watchman"
-	icon_state = "arrow"
+	icon_state = "arrow" */
 
 /obj/effect/landmark/start/royalguard
-	name = "Royal Guard"
+	name = "Pegasian Knight"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/bogmaster
-	name = "Bog Master"
-	icon_state = "arrow"
+// /obj/effect/landmark/start/bogmaster
+// 	name = "Bog Master"
+// 	icon_state = "arrow"
 
 /obj/effect/landmark/start/bogguardsman
-	name = "Bog Guard"
+	name = "Royal Ranger"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/judge
@@ -205,7 +205,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/councillor
-	name = "Councillor"
+	name = "Royal Advisor"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/veteran
@@ -245,7 +245,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/templar
-	name = "Templar"
+	name = "Grand Templar"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/grandtemplar
@@ -269,11 +269,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/merchant
-	name = "Merchant"
+	name = "Guildmaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/shophand
-	name = "Shophand"
+	name = "Guildmaster Apprentice"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/grabber
@@ -334,11 +334,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/vagrant
-	name = "Beggar"
+	name = "Low-life"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/lady
-	name = "Consort Candidate"
+	name = "Duke Courtier"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prince
@@ -400,7 +400,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/wapprentice
-	name = "Magicians Apprentice"
+	name = "Arch-Mage Aspirant"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/servant
@@ -456,7 +456,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/ladylate
 	name = "ladylate"
 	icon_state = "arrow"
-	jobspawn_override = list("Consort Candidate")
+	jobspawn_override = list("Duke Courtier")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/noblelate

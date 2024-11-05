@@ -1,5 +1,6 @@
 /datum/job/roguetown/magician
-	title = "Court Magician"
+	title = "Arch-Mage"
+	f_title = "Arch-Sorceress"
 	flag = WIZARD
 	department_flag = COURTIERS
 	selection_color = JCOLOR_COURTIER
@@ -12,8 +13,9 @@
 	spells = list(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation, /obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt, /obj/effect/proc_holder/spell/invoked/projectile/fireball, /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
 	display_order = JDO_MAGICIAN
 	tutorial = "Your creed is one dedicated to the conquering of the arcane arts and the constant thrill of knowledge. \
-		You owe your life to the Lord, for it was his coin that allowed you to continue your studies in these dark times. \
-		In return, you have proven time and time again as justicar and trusted advisor to their reign."
+		For decades you have run an academy, dedicated to the pursuit of arcane advancements. \
+		You have taught hundreds, and have proven to the people that you are a master of your work. \
+		In times of darkness, the universe shall test you, and you will be ready to answer the call."
 	outfit = /datum/outfit/job/roguetown/magician
 	whitelist_req = TRUE
 	give_bank_account = 47
@@ -39,7 +41,7 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, "[type]")
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)

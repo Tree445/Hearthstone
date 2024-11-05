@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bogtroll
 	icon = 'icons/roguetown/mob/monster/Trolls.dmi'
-	name = "bog troll"
+	name = "forest troll"
 	icon_state = "bogtroll"
 	icon_living = "bogtroll"
 	icon_dead = "bogtroll_dead"
@@ -16,7 +16,7 @@
 						/obj/item/natural/hide = 15, /obj/item/natural/bundle/bone/full = 3, /obj/item/natural/bogtroll_head = 1)
 	faction = list("trolls")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 150
+	health = 200
 	maxHealth = 200
 	melee_damage_lower = 45
 	melee_damage_upper = 70
@@ -31,7 +31,7 @@
 	pooptype = null
 	STACON = 18
 	STASTR = 15
-	STASPD = 3
+	STASPD = 6
 	deaggroprob = 0
 	defprob = 40
 	defdrain = 10
@@ -123,3 +123,17 @@
 	resistance_flags = FLAMMABLE
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	sellprice = 80
+
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/bogtrollbig
+	icon = 'modular_hearthstone/icons/mob/CaveTroll.dmi'
+	name = "giant forest troll"
+	icon_state = "Troll2"
+	icon_living = "Troll2"
+	icon_dead = "Troll2d"
+	health = 600
+	maxHealth = 600
+	STACON = 18
+	STASTR = 15
+	STASPD = 10

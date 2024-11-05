@@ -382,3 +382,15 @@
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 100		
+
+
+
+/obj/item/clothing/neck/roguetown/slavecollar
+	name = "slave collar"
+	desc = ""
+	icon_state = "bervor"
+	color = "#ff8400ff"
+	//dropshrink = 0.75
+	resistance_flags = FIRE_PROOF
+	slot_flags = ITEM_SLOT_NECK
+	sellprice = 10

@@ -4,7 +4,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/glass/bottle = 1, 
 		/obj/item/reagent_containers/powder/sublimate = 3, 
-		/obj/item/hearthnatural/beespider_fang = 1 )
+		/obj/item/reagent_containers/food/snacks/fishfresh/pufferfish = 1 )
 	craftdiff = 5
 
 /datum/crafting_recipe/roguetown/alchemy/soporpot
@@ -132,3 +132,14 @@
 		/obj/item/reagent_containers/powder/sublimate = 1, 
 		/obj/item/clothing/head/peaceflower = 1)
 	craftdiff = 2
+
+
+
+/datum/crafting_recipe/roguetown/alchemy/bloodworms
+	name = "x5 Blood Worms"
+	result = list(/obj/item/natural/worms/bloodworms, /obj/item/natural/worms/bloodworms, /obj/item/natural/worms/bloodworms, /obj/item/natural/worms/bloodworms, /obj/item/natural/worms/bloodworms)
+	reqs = list(
+		/obj/item/natural/worms = 5,
+		/obj/item/reagent_containers/food/snacks/rogue/meat = 1)
+	craftdiff = 1
+

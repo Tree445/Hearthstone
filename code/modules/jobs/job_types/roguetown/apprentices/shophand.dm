@@ -1,5 +1,5 @@
 /datum/job/roguetown/shophand
-	title = "Shophand"
+	title = "Guildmaster Apprentice"
 	flag = SHOPHAND
 	department_flag = APPRENTICES
 	faction = "Station"

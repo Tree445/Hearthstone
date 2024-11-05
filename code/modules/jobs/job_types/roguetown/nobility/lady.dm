@@ -1,5 +1,6 @@
 /datum/job/roguetown/lady
-	title = "Consort Candidate"
+	title = "Duke Courtier"
+	f_title = "Duchess Courtier"
 	flag = LADY
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -11,7 +12,9 @@
 	tutorial = "With the help of foreign matchmakers, you have been paired with the Ruler of Rockhill as a potential candidate to take the side of the Ruler. It is your duty to gain the favor of the King/Queen to unite your kingdoms."
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant,
-	/obj/effect/proc_holder/spell/self/grant_nobility)
+	/obj/effect/proc_holder/spell/self/grant_nobility,
+	/obj/effect/proc_holder/spell/self/convertrole/mercenary)
+	outfit = /datum/outfit/job/roguetown/noble
 	
 
 	display_order = JDO_LADY

@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/outdoors/rtfield
-	name = "rockhill basin"
+	name = "the basin"
 	icon_state = "rtfield"
 	soundenv = 19
 	ambush_times = list("night")
@@ -123,7 +123,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
-	first_time_text = "ROCKHILL BASIN"
+	first_time_text = "GRASSLANDS"
 	droning_sound = 'sound/music/area/newtownambience.ogg'
 	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
 	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
@@ -197,12 +197,12 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/skeleton/npc/dungeon/ambush = 20,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 40,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50,
-				/mob/living/simple_animal/hostile/retaliate/rogue/bogtroll = 30,
+				/mob/living/simple_animal/hostile/retaliate/rogue/bogtrollbig = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 30,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wendigo = 25,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator = 50)
-	first_time_text = "THE TERRORBOG"
+	first_time_text = "THE FOREST"
 	converted_type = /area/rogue/indoors/shelter/bog
 
 /area/rogue/outdoors/goblinfort
@@ -272,12 +272,21 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/outdoors/bog/dense
 	name = "dense bog"
 
-/area/rogue/outdoors/beach
-	name = "sophia's cry"
+/area/rogue/outdoors/beachreal
+	name = "coast"
 	icon_state = "beach"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
-	droning_sound = 'sound/music/area/townstreets.ogg'
+	droning_sound = 'sound/music/area/beach.ogg'
+	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
+	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
+
+/area/rogue/outdoors/beach
+	name = "shipyard"
+	icon_state = "beach"
+	ambientsounds = AMB_BEACH
+	ambientnight = AMB_BEACH
+	droning_sound = 'sound/music/area/beach.ogg'
 	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
 	droning_sound_night = 'sound/music/area/JS_secunda.ogg'
 
@@ -329,7 +338,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under/cavewet
 	name = "cavewet"
 	icon_state = "cavewet"
-	first_time_text = "The Undersea"
+	first_time_text = "MOUNTAIN CAVES"
 	ambientsounds = AMB_CAVEWATER
 	ambientnight = AMB_CAVEWATER
 	spookysounds = SPOOKY_CAVE
@@ -473,7 +482,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
-	first_time_text = "THE KEEP OF ROCKHILL"
+	first_time_text = "MANOR IN THE WOODS"
 /area/rogue/outdoors/exposed/manorgarri
 	icon_state = "manorgarri"
 	droning_sound = 'sound/music/area/manorgarri.ogg'
@@ -631,7 +640,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
 	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
-	first_time_text = "THE TOWN OF ROCKHILL"
+	first_time_text = "TOWN IN THE WOODS"
 /area/rogue/indoors/shelter/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'

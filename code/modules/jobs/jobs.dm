@@ -60,32 +60,32 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	ROLE_PAI))
 
 GLOBAL_LIST_INIT(noble_positions, list(
-	"King",
-	"Consort Candidate",
+	"Duke",
+	"Duke Courtier",
 	"Royal Heir",
-	"Guard Captain",
+	"Knight Captain",
 	"Judge",
-	"Councillor",
+	"Royal Advisor",
 	"Steward",
 	"Knight",
 	"Noble Guest",
 ))
 
 GLOBAL_LIST_INIT(courtier_positions, list(
-	"Court Magician",
+	"Arch-Mage",
 	"Court Physician",
 	"Jester",
 	"Butler",
 ))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
-	"Watchman",
-	"Bog Guard",
-	"Bog Master",
-	"Royal Guard",
+	//"Watchman",
+	"Royal Ranger",
+	// "Bog Master",
+	"Pegasian Knight",
 	"Dungeoneer",
 	"Gatemaster",
-	"Town Sheriff",
+	"Sheriff",
 ))
 
 GLOBAL_LIST_INIT(church_positions, list(
@@ -94,13 +94,13 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Confessor",
 	"Acolyte",
 	"Mortician",
-	"Templar",
+	"Grand Templar",
 	"Grandmaster",
 	"Druid",
 ))
 
 GLOBAL_LIST_INIT(yeoman_positions, list(
-	"Merchant",
+	"Guildmaster",
 	"Innkeep",
 	"Archivist",
 	"Armorer",
@@ -128,7 +128,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Nightswain",
 	"Docker",
 	"Prisoner",
-	"Beggar",
+	"Low-life",
 	"Town Seelie",
 	"Adventurer",
 	"Pilgrim",
@@ -145,10 +145,10 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Clerk",
 	"Smithy Apprentice",
-	"Magicians Apprentice",
+	"Arch-Mage Aspirant",
 	"Churchling",
 	"Servant",
-	"Shophand",
+	"Guildmaster Apprentice",
 	"Vagabond",
 ))
 

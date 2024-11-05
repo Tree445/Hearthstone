@@ -144,6 +144,14 @@
 	color = "#FFB3DA"
 	merge_type = /obj/item/stack/tile/fairygrass/pink
 
+/obj/item/stack/tile/fairygrass/earthy
+	name = "earthy fairygrass tile"
+	singular_name = "earthy fairygrass floor tile"
+	desc = "A patch of odd, glowing earthy grass."
+	turf_type = /turf/open/floor/grass/fairy/earthy
+	color = "#247d2d"
+	merge_type = /obj/item/stack/tile/fairygrass/earthy
+
 //Wood
 /obj/item/stack/tile/wood
 	name = "wood floor tile"

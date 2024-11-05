@@ -51,6 +51,16 @@
 	layer = BELOW_MOB_LAYER
 	layer = -0.1
 
+/obj/structure/well/fountain4
+	name = "water fountain"
+	desc = ""
+	icon = 'modular_hearthstone/icons/obj/fountains.dmi'
+	icon_state = "3"
+	layer = BELOW_MOB_LAYER
+	layer = -0.1
+	pixel_x = -16
+	pixel_y = -7
+
 
 /obj/structure/well/marble
 	name = "marble well"

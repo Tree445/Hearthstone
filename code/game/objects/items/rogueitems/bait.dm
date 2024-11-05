@@ -9,10 +9,12 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 0
 	var/check_counter = 0
-	var/list/attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
+	var/list/attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 8,
 										/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 									/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
-									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 55)
+									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 33,
+									/mob/living/simple_animal/hostile/retaliate/rogue/turkey = 55,
+									/mob/living/simple_animal/hostile/retaliate/rogue/rabbit = 33)
 	var/attraction_chance = 100
 	var/deployed = 0
 	resistance_flags = FLAMMABLE
@@ -96,7 +98,8 @@
 							/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
 							/mob/living/simple_animal/hostile/retaliate/rogue/saiga = 20,
 							/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck = 20,
-							/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20)
+							/mob/living/simple_animal/hostile/retaliate/rogue/turkey = 20,
+							/mob/living/simple_animal/hostile/retaliate/rogue/rabbit = 10)
 
 
 /obj/item/bait/bloody
@@ -105,4 +108,5 @@
 	icon_state = "baitb"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
 						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
-						/mob/living/simple_animal/hostile/retaliate/rogue/spider = 10)
+						/mob/living/simple_animal/hostile/retaliate/rogue/spider = 10,
+						/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator = 20)

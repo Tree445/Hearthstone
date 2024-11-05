@@ -402,7 +402,7 @@
 
 
 /turf/open/water/ocean
-	name = "water"
+	name = "ocean water"
 	desc = "Clear ocean water!"
 	icon = 'modular_hearthstone/icons/turfs/celianna_TileA1.dmi'
 	icon_state = "Sandy_Water2"

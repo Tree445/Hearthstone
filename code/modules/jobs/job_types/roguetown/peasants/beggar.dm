@@ -1,5 +1,5 @@
 /datum/job/roguetown/beggar
-	title = "Beggar"
+	title = "Low-life"
 	flag = BEGGAR
 	department_flag = PEASANTS
 	faction = "Station"

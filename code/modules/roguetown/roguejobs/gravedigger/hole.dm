@@ -280,7 +280,7 @@
 						if(prob(50))
 							new /obj/item/natural/worms/grubs(T)
 						else
-							new /obj/item/natural/worms/leech(T)
+							new /obj/item/natural/worms/bloodworms(T)
 					else
 						new /obj/item/natural/worms(T)
 		else

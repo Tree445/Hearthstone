@@ -108,13 +108,13 @@
 
 #define GARRISON		(1<<1)
 
-#define GUARDSMAN	(1<<0)
-#define ROYALGUARD	(1<<1)
-#define DUNGEONEER	(1<<2)
-#define GATEMASTER	(1<<3)
-#define BOGGUARD	(1<<4)
-#define BOGMASTER	(1<<5)
-#define SHERIFF		(1<<6)
+//#define GUARDSMAN	(1<<0)
+#define ROYALGUARD	(1<<0)
+#define DUNGEONEER	(1<<1)
+#define GATEMASTER	(1<<2)
+#define BOGGUARD	(1<<3)
+//#define BOGMASTER	(1<<5)
+#define SHERIFF		(1<<4)
 
 #define CHURCHMEN		(1<<2)
 
@@ -250,7 +250,7 @@
 #define JDO_SHERIFF 8.5
 #define JDO_TOWNGUARD 8.6
 #define JDO_DUNGEONEER 8.7
-#define JDO_BOGMASTER 9
+// #define JDO_BOGMASTER 9
 #define JDO_BOGGUARD 9.1
 
 #define JDO_PRIEST 10
@@ -390,7 +390,6 @@
 
 #define GARRISON_ROLES \
 	/datum/job/roguetown/bogguardsman,\
-	/datum/job/roguetown/bogmaster,\
 	/datum/job/roguetown/dungeoneer,\
 	/datum/job/roguetown/gatemaster,\
 	/datum/job/roguetown/manorguard,\

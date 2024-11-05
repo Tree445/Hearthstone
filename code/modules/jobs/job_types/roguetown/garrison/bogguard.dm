@@ -1,5 +1,5 @@
 /datum/job/roguetown/bogguardsman
-	title = "Bog Guard"
+	title = "Royal Ranger"
 	flag = BOGGUARD
 	department_flag = GARRISON
 	faction = "Station"
@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "You've handed your resume, which mostly consisted of showing up, and in exchange you have a spot among the Bog Guards. You have a roof over your head, coin in your pocket, and a thankless job protecting the outskirts of town against bandits and volfs."
+	tutorial = "An elite Ranger of the crown, you are the poster-child of a hardened forest dweller, capable of spending days at a time away from civilization to get the mission done. You serve your lord by protecting the outskirts of town from bandits, ensuring that they never make it into town, and that the people of the land are kept safe."
 	display_order = JDO_TOWNGUARD
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/bogguardsman
@@ -52,6 +52,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/spear/billhook
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	id = /obj/item/scomstone
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		assign_skills(H)
@@ -82,9 +83,23 @@ Also given some non-combat skills that a peasent would have, just to support the
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)	//Peasent levy, so some skill
 	H.mind.adjust_skillrank(/datum/skill/labor/farming, pick(1,2,2), TRUE)		//Peasent levy, so some skill
-	H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE) //Hearthstone change.
-	H.change_stat("strength", 2)
+	H.mind.adjust_skillrank(/datum/skill/misc/tracking, 4, TRUE) //Hearthstone change.
+	H.change_stat("strength", 3)
 	H.change_stat("perception", 2)
-	H.change_stat("constitution", 1)
+	H.change_stat("constitution", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", 1)
+
+
+/obj/effect/proc_holder/spell/self/convertrole/bog
+	name = "Recruit Forest Patrolman"
+	new_role = "Forest Patrolman"
+	recruitment_faction = "Bog Guard"
+	recruitment_message = "Serve the Patrol, %RECRUIT!"
+	accept_message = "FOR THE Patrol!"
+	refuse_message = "I refuse."
+/obj/effect/proc_holder/spell/self/convertrole/bog/convert(mob/living/carbon/human/recruit, mob/living/carbon/human/recruiter)
+	. = ..()
+	if(!.)
+		return
+	recruit.verbs |= /mob/proc/haltyell

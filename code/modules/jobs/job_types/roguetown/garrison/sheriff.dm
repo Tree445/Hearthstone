@@ -1,5 +1,5 @@
 /datum/job/roguetown/sheriff
-	title = "Town Sheriff"
+	title = "Sheriff"
 	flag = SHERIFF
 	department_flag = GARRISON
 	faction = "Station"
@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_SHERIFF
-	tutorial = "Crime has always been a constant of your life, and you always chose the side of justice. You rose up through the ranks as a watchman, and now rule over them - Ensure that they enforce the laws of this land properly."
+	tutorial = "Trusted to uphold the law and look over the people of the town, you have been awarded the title of sheriff. You will work alongside the church templars, pegasian knights, and royal rangers to ensure that the town is kept safe."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/sheriff
 	give_bank_account = 26
@@ -50,3 +50,8 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
+
+/mob/proc/haltyell()
+	set name = "HALT!"
+	set category = "Noises"
+	emote("haltyell")

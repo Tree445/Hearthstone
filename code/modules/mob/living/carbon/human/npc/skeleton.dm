@@ -10,7 +10,6 @@
 	ambushable = FALSE
 	rot_type = null
 	possible_rmb_intents = list()
-
 /mob/living/carbon/human/species/skeleton/npc
 	aggressive = 1
 	mode = AI_IDLE
@@ -61,6 +60,7 @@
 	ADD_TRAIT(src, TRAIT_LIMBATTACHMENT, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC)
 	for(var/obj/item/bodypart/B in src.bodyparts)
 		B.skeletonize(FALSE)
 	update_body()

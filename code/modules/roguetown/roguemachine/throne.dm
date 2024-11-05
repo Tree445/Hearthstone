@@ -1,8 +1,8 @@
 GLOBAL_VAR(king_throne)
 
 /obj/structure/roguethrone
-	name = "throne of rockhill"
-	desc = "A big throne, to hold the Lord's giant personality. Say 'help' with the crown on your head if you are confused."
+	name = "throne of the Duke"
+	desc = "A big throne, to hold the Duke's giant personality. Say 'help' with the crown on your head if you are confused."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "throne"
 	density = FALSE

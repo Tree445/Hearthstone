@@ -45,7 +45,6 @@
 						/obj/item/natural/hide = 2, /obj/item/natural/bundle/bone/full = 1)
 	aggressive = 1
 	patron = /datum/patron/inhumen/graggar		//Flavor + recognized as hostile if preformed miracles on instead of as faithless.
-
 /mob/living/simple_animal/hostile/retaliate/rogue/orc/orc2
 	icon_state = "savageorc2"
 	icon_living = "savageorc2"
