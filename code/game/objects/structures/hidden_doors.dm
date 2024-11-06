@@ -31,16 +31,23 @@
 	var/defenses = FALSE
 
 /obj/structure/mineral_door/secret/vault
-	vip = list("King", "Queen", "Steward", "Hand")
-	vipmessage = "King, Queen, Steward and Hand"
+	vip = list("Duke", "Duke Courtier", "Steward", "Hand")
+	vipmessage = "Duke, Duke Courtier, Steward and Hand"
 
 /obj/structure/mineral_door/secret/keep
-	vip = list("King", "Queen", "Royal Heir", "Hand")
-	vipmessage = "King, Queen, Royal Heir and Hand"
+	vip = list("Duke", "Duke Courtier", "Royal Heir", "Hand")
+	vipmessage = "Duke, Duke Courtier, Royal Heir and Hand"
 
 /obj/structure/mineral_door/secret/merchant
-	vip = list("Merchant", "Shop Hand")
-	vipmessage = "Merchant and Shop Hand"
+	vip = list("Guildmaster", "Guildmaster Apprentice")
+	vipmessage = "Guildmaster and Guildmaster Apprentice"
+
+/obj/structure/mineral_door/secret/mercenary
+	vip = list("Guildmaster", "Guildmaster Apprentice", "Mercenary", "Innkeep")
+	vipmessage = "Guildmaster and Apprentice, Innkeeper, and Mercenaries"
+	icon = 'icons/turf/walls/craftstone.dmi'
+	icon_state = "box"
+	locksound = null
 
 /obj/structure/mineral_door/secret/mercenary
 	vip = list("Merchant", "Shop Hand", "Mercenary", "Innkeep")
@@ -50,15 +57,15 @@
 	locksound = null
 
 /obj/structure/mineral_door/secret/wizard //for wizard tower
-	vip = list("Court Magician", "Magicians Apprentice", "Archivist")
-	vipmessage = "Court Magician, Magicians Apprentice and Archivist"
+	vip = list("Arch-Mage", "Arch-Mage Aspirant", "Archivist")
+	vipmessage = "Arch-Mage, Arch-Mage Aspirant and Archivist"
 	//make me look like an arcane door
 	//icon = 'icons/turf/walls/stonebrick.dmi'
 	//icon_state = "stonebrick" //change me
 
 /obj/structure/mineral_door/secret/rogue //for seedy sewer bar / black market?
-	vip = list("Vagabond", "Thug", "Rogue", "Nightmaster", "Nightmistress", "Beggar")
-	vipmessage = "Vagabond, Thug, Rogue, Nightmaster, Nightmistress and Beggar"
+	vip = list("Vagabond", "Thug", "Rogue", "Nightmaster", "Nightmistress", "Low-life")
+	vipmessage = "Vagabond, Thug, Rogue, Nightmaster, Nightmistress and Low-life"
 	lang = /datum/language/thievescant
 	icon = 'icons/turf/walls/stonebrick.dmi'
 	icon_state = "stonebrick"

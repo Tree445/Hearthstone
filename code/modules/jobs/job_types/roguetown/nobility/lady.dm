@@ -14,7 +14,6 @@
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant,
 	/obj/effect/proc_holder/spell/self/grant_nobility,
 	/obj/effect/proc_holder/spell/self/convertrole/mercenary)
-	outfit = /datum/outfit/job/roguetown/noble
 	
 
 	display_order = JDO_LADY
