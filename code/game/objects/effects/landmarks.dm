@@ -189,7 +189,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow" */
 
 /obj/effect/landmark/start/royalguard
-	name = "Pegasian Knight"
+	name = "Royal Knight"
 	icon_state = "arrow"
 
 // /obj/effect/landmark/start/bogmaster
@@ -273,7 +273,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/shophand
-	name = "Guildmaster Apprentice"
+	name = "Guild Merchant"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/grabber
@@ -400,7 +400,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/wapprentice
-	name = "Arch-Mage Aspirant"
+	name = "Mage Apprentice"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/servant
