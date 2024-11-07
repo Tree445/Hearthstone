@@ -52,7 +52,7 @@
 		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/crossbows) * 20)
 		//per block
 		newtime = newtime + 20
-		newtime = newtime - ((mastermob.STAPER)*3.5)
+		newtime = newtime - ((mastermob.STAPER)*1.5)
 		if(newtime > 0)
 			return newtime
 		else
