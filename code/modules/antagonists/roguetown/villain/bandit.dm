@@ -82,7 +82,7 @@
 
 /datum/antagonist/bandit/after_name_change()
 	if(owner && owner.current)
-		add_bounty(owner.current.real_name, 80, TRUE, "bandit activity", "The King")
+		add_bounty(owner.current.real_name, 80, TRUE, "bandit activity", "The [SSticker.rulertype]")
 
 /datum/outfit/job/roguetown/bandit/pre_equip(mob/living/carbon/human/H)
 	..()

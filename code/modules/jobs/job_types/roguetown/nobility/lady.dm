@@ -154,6 +154,7 @@
 /obj/effect/proc_holder/spell/self/convertrole/servant
 	name = "Recruit Servant"
 	new_role = "Servant"
+	overlay_state = "recruit_servant"
 	recruitment_faction = "Servants"
 	recruitment_message = "Serve the crown, %RECRUIT!"
 	accept_message = "FOR THE CROWN!"
@@ -163,6 +164,7 @@
 /obj/effect/proc_holder/spell/self/convertrole/mercenary
 	name = "Recruit Mercenary"
 	new_role = "Mercenary"
+	overlay_state = "recruit_guard"
 	recruitment_faction = "MERCENARIES"
 	recruitment_message = "Serve the Guild, %RECRUIT!"
 	accept_message = "FOR THE GUILD!"

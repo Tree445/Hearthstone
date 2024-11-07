@@ -92,8 +92,9 @@ Also given some non-combat skills that a peasent would have, just to support the
 
 
 /obj/effect/proc_holder/spell/self/convertrole/bog
-	name = "Recruit Forest Patrolman"
-	new_role = "Forest Patrolman"
+	name = "Recruit Royal Ranger"
+	new_role = "Royal Ranger"
+	overlay_state = "recruit_bog"
 	recruitment_faction = "Bog Guard"
 	recruitment_message = "Serve the Patrol, %RECRUIT!"
 	accept_message = "FOR THE Patrol!"

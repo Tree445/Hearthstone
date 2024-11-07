@@ -42,7 +42,7 @@
 
 /obj/item/roguekey/lord
 	name = "master key"
-	desc = "The Lord's key."
+	desc = "The Duke's key."
 	icon_state = "bosskey"
 	lockid = "lord"
 
@@ -315,7 +315,7 @@
 
 /obj/item/roguekey/hand
 	name = "hand's key"
-	desc = "This regal key belongs to the King's Right Hand."
+	desc = "This regal key belongs to the Duke's Right Hand."
 	icon_state = "cheesekey"
 	lockid = "hand"
 

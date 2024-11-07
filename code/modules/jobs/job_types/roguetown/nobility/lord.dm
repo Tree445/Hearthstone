@@ -7,7 +7,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 0
+	total_positions = 1
 	spawn_positions = 1
 	selection_color = JCOLOR_NOBLE
 	allowed_races = RACES_SHUNNED_UP
@@ -34,8 +34,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	required = TRUE
 
 /datum/job/roguetown/exlord //just used to change the lords title
-	title = "King Emeritus"
-	f_title = "Queen Emeritus"
+	title = "Duke Emeritus"
+	f_title = "Duchess Emeritus"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -55,13 +55,14 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		else
 			GLOB.lordsurname = "of [L.real_name]"
 		SSticker.select_ruler()
-		if(L.gender != FEMALE)
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duke of Rockhill.</span></span></b>")
-			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
-		else
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duchess of Rockhill.</span></span></b>")
-			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
-
+		switch(L.pronouns)
+			if(SHE_HER)
+				SSticker.rulertype = "Duchess"
+			if(THEY_THEM_F)
+				SSticker.rulertype = "Duchess"
+			else
+				SSticker.rulertype = "Duke"
+		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is [SSticker.rulertype] of the realm.</span></span></b>")
 /datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/crown/serpcrown
@@ -152,6 +153,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /obj/effect/proc_holder/spell/self/grant_title
 	name = "Grant Title"
 	desc = "Grant someone a title of honor... Or shame."
+	overlay_state = "recruit_titlegrant"
 	antimagic_allowed = TRUE
 	charge_max = 100
 	/// Maximum range for title granting

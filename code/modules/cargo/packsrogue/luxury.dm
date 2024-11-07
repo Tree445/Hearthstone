@@ -324,3 +324,8 @@
 	name = "Scroll of Ray of Frost"
 	cost = 50
 	contains = list(/obj/item/book/granter/spell/spells5e/rayoffrost5e) */
+
+/datum/supply_pack/rogue/luxury/tarot_deck
+	name = "Tarot Deck"
+	cost = 5
+	contains = list(/obj/item/toy/cards/deck/tarot)
