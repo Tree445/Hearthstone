@@ -361,7 +361,6 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	slot_flags = ITEM_SLOT_MOUTH
 	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY
-	mill_result = /obj/item/reagent_containers/powder/alch/stone
 
 /obj/item/attackby(obj/item/I, mob/user, params)
 	user.changeNext_move(user.used_intent.clickcd)
