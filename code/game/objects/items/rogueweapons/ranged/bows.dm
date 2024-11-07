@@ -120,7 +120,7 @@
 		newtime = newtime - (mastermob.STASTR * (10/20))
 		//per block
 		newtime = newtime + 20
-		newtime = newtime - (mastermob.STAPER * 3.5) //20/20 is 1
+		newtime = newtime - (mastermob.STAPER * 1) //20/20 is 1
 		if(newtime > 0)
 			return newtime
 		else
