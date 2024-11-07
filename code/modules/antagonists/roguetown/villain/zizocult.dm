@@ -35,7 +35,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
 	var/mob/living/carbon/human/H = owner.current
 	C.cultists |= owner
-	H.patron = GLOB.patronlist[/datum/patron/zizo]
+	H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
 
 	owner.special_role = "Cultist"
 	H.cmode_music = 'sound/music/combatcult.ogg'
@@ -530,7 +530,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/claw)
 		H.update_a_intents()
 		H.cmode_music = 'sound/music/combatcult.ogg'
-		H.patron = GLOB.patronlist[/datum/patron/zizo]
+		H.patron = GLOB.patronlist[/datum/patron/inhumen/zizo]
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		if(eyes)
 			eyes.Remove(H,1)

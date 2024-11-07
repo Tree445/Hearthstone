@@ -23,7 +23,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/full
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
-	shoes = /obj/item/clothing/shoes/roguetown/armor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	belt = /obj/item/storage/belt/rogue/leather
 	r_hand = /obj/item/rogueweapon/greatsword/zwei
 	backr = /obj/item/storage/backpack/rogue/satchel/black
