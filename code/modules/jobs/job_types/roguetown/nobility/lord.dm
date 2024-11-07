@@ -55,14 +55,12 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		else
 			GLOB.lordsurname = "of [L.real_name]"
 		SSticker.select_ruler()
-		switch(L.pronouns)
-			if(SHE_HER)
-				SSticker.rulertype = "Duchess"
-			if(THEY_THEM_F)
-				SSticker.rulertype = "Duchess"
-			else
-				SSticker.rulertype = "Duke"
-		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is [SSticker.rulertype] of the realm.</span></span></b>")
+		if(L.gender != FEMALE)
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duke of the Realm.</span></span></b>")
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
+		else
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Duchess of the Realm.</span></span></b>")
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 /datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/crown/serpcrown

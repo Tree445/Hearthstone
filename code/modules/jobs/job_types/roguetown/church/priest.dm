@@ -104,13 +104,11 @@
 		HU.mind.assigned_role = "Duke"
 		HU.job = "Duke"
 		SSjob.type_occupations[/datum/job/roguetown/lord].add_spells(HU)
-		switch(HU.pronouns)
-			if(SHE_HER)
-				SSticker.rulertype = "Duchess"
-			if(THEY_THEM_F)
-				SSticker.rulertype = "Duchess"
-			else
-				SSticker.rulertype = "Duke"
+		switch(HU.gender)
+			if("male")
+				SSticker.rulertype = "King"
+			if("female")
+				SSticker.rulertype = "Queen"
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		removeomen(OMEN_NOLORD)

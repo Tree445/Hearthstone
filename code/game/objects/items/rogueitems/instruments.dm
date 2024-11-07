@@ -165,7 +165,7 @@
 	"Regrets Unpaid" = 'sound/music/instruments/guitar (3).ogg',
 	"'Took the Mammon and Ran'" = 'sound/music/instruments/guitar (4).ogg',
 	"Poor Man's Tithe" = 'sound/music/instruments/guitar (5).ogg',
-	"In His Arms Ye'll Find Me" = 'sound/music/instruments/guitar (6).ogg',
+	"In His Arms Ye'll Find Me" = 'sound/music/instruments/guitar (6).ogg',)
 /*	"El Odio" = 'sound/music/instruments/guitar (7).ogg',
 	"Danza De Las Lanzas" = 'sound/music/instruments/guitar (8).ogg',
 	"The Feline, Forever Returning" = 'sound/music/instruments/guitar (9).ogg',
@@ -188,7 +188,7 @@
 	"Rous in the Cellar" = 'sound/music/instruments/flute (3).ogg',
 	"Her Boots, So Incandescent" = 'sound/music/instruments/flute (4).ogg',
 	"Moondust Minx" = 'sound/music/instruments/flute (5).ogg',
-	"Quest to the Ends" = 'sound/music/instruments/flute (6).ogg',
+	"Quest to the Ends" = 'sound/music/instruments/flute (6).ogg',)
 //	"Spit Shine" = 'sound/music/instruments/flute (7).ogg')  Doesnt exist on HS
 
 /obj/item/rogue/instrument/drum
