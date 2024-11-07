@@ -3976,6 +3976,10 @@
 "bQB" = (
 /turf/closed/mineral/rogue,
 /area/rogue/outdoors/mountains)
+"bQI" = (
+/mob/living/simple_animal/pet/cat,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "bQK" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -418061,7 +418065,7 @@ hZV
 wan
 vka
 vYQ
-ygF
+bQI
 ygF
 eVH
 ygF
