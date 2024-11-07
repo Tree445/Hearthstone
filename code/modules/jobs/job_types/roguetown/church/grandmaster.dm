@@ -1,5 +1,5 @@
 /datum/job/roguetown/grandmaster
-	title = "Grandmaster"
+	title = "Grand Templar"
 	department_flag = CHURCHMEN
 	faction = "Station"
 	tutorial = "The Strongest. You have vowed and sworn your life to the Priest or Priestess on the Isle of Enigma. Interfaith politics or lordly politics have never interested you ever and todae marks your solem vigil over the land."
