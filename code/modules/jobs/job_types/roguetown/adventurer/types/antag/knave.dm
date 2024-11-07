@@ -32,7 +32,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-	shoes = /obj/item/clothing/shoes/roguetown/armor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	neck = /obj/item/clothing/neck/roguetown/coif
 	H.change_stat("strength", 1)

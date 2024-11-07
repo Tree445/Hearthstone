@@ -29,7 +29,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-	shoes = /obj/item/clothing/shoes/roguetown/armor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1)
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
