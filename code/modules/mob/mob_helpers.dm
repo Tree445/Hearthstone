@@ -549,6 +549,7 @@
 			hud_used.def_intent.update_icon()
 	update_inv_hands()
 
+GLOBAL_DATUM_INIT(combat_indicator, /mutable_appearance, mutable_appearance('modular_hearthstone/icons/mob/indicator.dmi', "combat", FLY_LAYER))
 
 /mob/verb/toggle_cmode()
 	set name = "cmode-change"
@@ -569,6 +570,8 @@
 		return
 	if(cmode)
 		playsound_local(src, 'sound/misc/comboff.ogg', 100)
+		cut_overlay(GLOB.combat_indicator)
+
 		SSdroning.play_area_sound(get_area(src), client)
 		cmode = FALSE
 		if(client && HAS_TRAIT(src, TRAIT_SCREENSHAKE))
@@ -576,6 +579,8 @@
 	else
 		cmode = TRUE
 		playsound_local(src, 'sound/misc/combon.ogg', 100)
+		add_overlay(GLOB.combat_indicator)
+
 		if(L.cmode_music)
 			SSdroning.play_combat_music(L.cmode_music, client)
 		if(client && HAS_TRAIT(src, TRAIT_SCHIZO_AMBIENCE))

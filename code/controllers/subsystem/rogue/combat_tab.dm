@@ -1,4 +1,6 @@
 
+GLOBAL_DATUM_INIT(hunted_indicator, /mutable_appearance, mutable_appearance('modular_hearthstone/icons/mob/indicator.dmi', "hunted", FLY_LAYER))
+
 /mob/living/carbon/human
 	var/list/hunting = list() //list of enemies, can kos? once?
 	var/list/hunters = list() //hunted by player, can kos? once?
@@ -27,16 +29,23 @@
 			if(!already_enemy)
 				H.hunting.Add(enemy)
 				enemy.hunters.Add(H)		
-				to_chat(enemy, span_warning("You sense malicious intent."))
+				H.visible_message(span_danger("[H] has a malicious look!"), span_danger("I get ready to attack."))
+				to_chat(enemy, span_danger("You sense malicious intent."))
+				enemy.add_overlay(GLOB.hunted_indicator)
 				sleep(3 SECONDS)
 				to_chat(enemy, span_danger("FIGHT, FLEA OR YIELD!."))
-				H.visible_message(span_warning("[H] looks prepared to strike!"), span_info("I am ready to attack."))
-
+				H.visible_message(span_danger("[H] is ready to fight!"), span_danger("The fight is on!"))
+				H.emote("warcry", intentional = TRUE)
+				sleep(6 SECONDS)
+				enemy.cut_overlay(GLOB.hunted_indicator)
 			else //if you target the same person again, remove them from your enemies list
 				H.hunting.Remove(enemy)
 				enemy.hunters.Remove(H)
-				to_chat(enemy, span_info("An air of mercy puts you at ease."))
-				H.visible_message(span_info("[H] has a forgiving look."), span_info("I forgive [enemy]."))
+				to_chat(enemy, span_danger("An air of mercy puts you at ease."))
+				enemy.emote("sigh", intentional = TRUE)
+				H.visible_message(span_danger("[H] has a forgiving look."), span_info("I forgive [enemy]."))
+				H.emote("sigh", intentional = TRUE)
+
 		else
 			to_chat(H, span_info("[enemy_name] escapes my memoryy."))
 	else
