@@ -177,7 +177,7 @@
 	contents += "MANA INK: [SSlibrary.library_value]<BR>"
 
 	var/mob/living/carbon/human/H = user
-	if(H.job == "Arch-Mage" || "Arch-Mage Aspirant" || "Archivist")
+	if(H.job == "Arch-Mage" || "Mage Apprentice" || "Archivist")
 		if(canread)
 			contents += "<a href='?src=[REF(src)];secrets=1'>Secrets</a>"
 		else

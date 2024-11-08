@@ -39,26 +39,26 @@
 	vipmessage = "Duke, Duke Courtier, Royal Heir and Hand"
 
 /obj/structure/mineral_door/secret/merchant
-	vip = list("Guildmaster", "Guildmaster Apprentice")
-	vipmessage = "Guildmaster and Guildmaster Apprentice"
+	vip = list("Guildmaster", "Guild Merchant")
+	vipmessage = "Guildmaster and Guild Merchant"
 
 /obj/structure/mineral_door/secret/mercenary
-	vip = list("Guildmaster", "Guildmaster Apprentice", "Mercenary", "Innkeep")
-	vipmessage = "Guildmaster and Apprentice, Innkeeper, and Mercenaries"
+	vip = list("Guildmaster", "Guild Merchant", "Mercenary", "Innkeep")
+	vipmessage = "Guildmaster and Guild Merchant, Innkeeper, and Mercenaries"
 	icon = 'icons/turf/walls/craftstone.dmi'
 	icon_state = "box"
 	locksound = null
 
 /obj/structure/mineral_door/secret/mercenary
-	vip = list("Merchant", "Shop Hand", "Mercenary", "Innkeep")
-	vipmessage = "Guildmaster and Apprentice, Innkeeper, and Mercenaries"
+	vip = list("Guildmaster", "Guild Merchant", "Mercenary", "Innkeep")
+	vipmessage = "Guildmaster and Guild Merchant, Innkeeper, and Mercenaries"
 	icon = 'icons/turf/walls/craftstone.dmi'
 	icon_state = "box"
 	locksound = null
 
 /obj/structure/mineral_door/secret/wizard //for wizard tower
-	vip = list("Arch-Mage", "Arch-Mage Aspirant", "Archivist")
-	vipmessage = "Arch-Mage, Arch-Mage Aspirant and Archivist"
+	vip = list("Arch-Mage", "Mage Apprentice", "Archivist")
+	vipmessage = "Arch-Mage, Mage Apprentice and Archivist"
 	//make me look like an arcane door
 	//icon = 'icons/turf/walls/stonebrick.dmi'
 	//icon_state = "stonebrick" //change me

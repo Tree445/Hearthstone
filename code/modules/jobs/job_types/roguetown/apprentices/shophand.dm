@@ -1,5 +1,5 @@
 /datum/job/roguetown/shophand
-	title = "Guildmaster Apprentice"
+	title = "Guild Merchant"
 	flag = SHOPHAND
 	department_flag = APPRENTICES
 	faction = "Station"
@@ -10,7 +10,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
 
-	tutorial = "The Merchant has taken you under his wing to learn the arcane arts of mercantilism, numeracy, literacy, and the joy of organizing the shelves. It is mind numbing and repetitive, but at least you have a roof over your head and comfortable surroundings. Given time, perhaps you will run the town's barter."
+	tutorial = "The Guildmaster has taken you under his wing to learn the arcane arts of mercantilism, numeracy, literacy, and the joy of organizing the shelves. It is mind numbing and repetitive, but at least you have a roof over your head and comfortable surroundings. Given time, perhaps you will run the town's barter."
 
 	outfit = /datum/outfit/job/roguetown/shophand
 	display_order = JDO_SHOPHAND

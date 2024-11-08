@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_SHERIFF
-	tutorial = "Trusted to uphold the law and look over the people of the town, you have been awarded the title of sheriff. You will work alongside the church templars, pegasian knights, and royal rangers to ensure that the town is kept safe."
+	tutorial = "Trusted to uphold the law and look over the people of the town, you have been awarded the title of sheriff. You will work alongside the church templars, royal knights, and royal rangers to ensure that the town is kept safe."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/sheriff
 	give_bank_account = 26
