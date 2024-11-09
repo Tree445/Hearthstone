@@ -14,8 +14,8 @@
 	base_intents = list(/datum/intent/simple/mimic)
 	faction = list("undead")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	health = 1000
-	maxHealth = 1000
+	health = 500
+	maxHealth = 500
 	melee_damage_lower = 35
 	melee_damage_upper = 45
 	vision_range = 3
