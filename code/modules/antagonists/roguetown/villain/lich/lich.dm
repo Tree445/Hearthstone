@@ -74,7 +74,7 @@
 	for(var/obj/item/bodypart/B in L.bodyparts)
 		B.skeletonize(FALSE)
 	L.equipOutfit(/datum/outfit/job/roguetown/lich)
-	L.set_patron(/datum/patron/zizo)
+	L.set_patron(/datum/patron/inhumen/zizo)
 
 /datum/outfit/job/roguetown/lich/pre_equip(mob/living/carbon/human/H)
 	..()

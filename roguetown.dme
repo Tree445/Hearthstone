@@ -604,6 +604,8 @@
 #include "code\datums\gods\faiths\atheism.dm"
 #include "code\datums\gods\faiths\divine_pantheon.dm"
 #include "code\datums\gods\faiths\inhumen_pantheon.dm"
+#include "code\datums\gods\faiths\norse_pantheon.dm"
+#include "code\datums\gods\patrons\norse.dm"
 #include "code\datums\gods\faiths\old_god.dm"
 #include "code\datums\gods\patrons\atheism.dm"
 #include "code\datums\gods\patrons\divine_pantheon.dm"

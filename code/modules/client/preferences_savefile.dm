@@ -482,6 +482,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["ooc_notes"]			>> ooc_notes
 	if(!valid_ooc_notes(null, ooc_notes, TRUE))
 		ooc_notes = null
+
+		S["custom_race_name"]			>> custom_race_name
+	if(!valid_custom_race_name(null, custom_race_name, TRUE))
+		custom_race_name = null
+	
 	S["alias"]			>> alias
 	if(!valid_alias(null, alias, TRUE))
 		alias = null
@@ -651,6 +656,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["strengths"] , strengths)
 	WRITE_FILE(S["weakness"] , weakness)
 	WRITE_FILE(S["theme"] , theme)
+	WRITE_FILE(S["custom_race_name"] , custom_race_name)
 	WRITE_FILE(S["nsfw_headshot_link"] , nsfw_headshot_link)
 	WRITE_FILE(S["char_accent"] , char_accent)
 	WRITE_FILE(S["statpack"] , statpack.type)
