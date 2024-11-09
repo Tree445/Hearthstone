@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wendigo = 25,
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf/gator = 50)
-	first_time_text = "THE FOREST"
+	first_time_text = "THE TERRROBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
 
 /area/rogue/outdoors/goblinfort
@@ -482,7 +482,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
-	first_time_text = "MANOR IN THE WOODS"
+	first_time_text = "THE KEEP OF ROCKHILL"
 /area/rogue/outdoors/exposed/manorgarri
 	icon_state = "manorgarri"
 	droning_sound = 'sound/music/area/manorgarri.ogg'
@@ -640,7 +640,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/DS2_majula.ogg'
 	droning_sound_night = 'sound/music/area/HK_reflection.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
-	first_time_text = "TOWN IN THE WOODS"
+	first_time_text = "THE TOWN OF ROCKHILL"
 /area/rogue/indoors/shelter/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'
