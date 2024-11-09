@@ -82,7 +82,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 	//"Watchman",
 	"Royal Ranger",
 	// "Bog Master",
-	"Pegasian Knight",
+	"Royal Knight",
 	"Dungeoneer",
 	"Gatemaster",
 	"Sheriff",
@@ -94,8 +94,8 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Confessor",
 	"Acolyte",
 	"Mortician",
-	"Grand Templar",
-	"Grandmaster",
+	"Templar Knight",
+	"Grandmaster Templar",
 	"Druid",
 ))
 
@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Clerk",
 	"Smithy Apprentice",
-	"Arch-Mage Aspirant",
+	"Mage Apprentice",
 	"Churchling",
 	"Servant",
 	"Guildmaster Apprentice",

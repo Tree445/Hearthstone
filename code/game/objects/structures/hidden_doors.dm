@@ -57,8 +57,8 @@
 	locksound = null
 
 /obj/structure/mineral_door/secret/wizard //for wizard tower
-	vip = list("Arch-Mage", "Arch-Mage Aspirant", "Archivist")
-	vipmessage = "Arch-Mage, Arch-Mage Aspirant and Archivist"
+	vip = list("Arch-Mage", "Mage Apprentice", "Archivist")
+	vipmessage = "Arch-Mage, Mage Apprentice and Archivist"
 	//make me look like an arcane door
 	//icon = 'icons/turf/walls/stonebrick.dmi'
 	//icon_state = "stonebrick" //change me
