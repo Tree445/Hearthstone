@@ -160,11 +160,11 @@
 			else
 				if(painpercent >= 100)
 					if(prob(probby) && !HAS_TRAIT(src, TRAIT_NOPAINSTUN))
-						Immobilize(10)
+						Immobilize(50)
 						emote("painscream")
 						stuttering += 5
-						addtimer(CALLBACK(src, PROC_REF(Stun), 110), 10)
-						addtimer(CALLBACK(src, PROC_REF(Knockdown), 110), 10)
+//						addtimer(CALLBACK(src, PROC_REF(Stun), 110), 10)
+//						addtimer(CALLBACK(src, PROC_REF(Knockdown), 110), 10)
 						mob_timers["painstun"] = world.time + 160
 					else
 						emote("painmoan")
