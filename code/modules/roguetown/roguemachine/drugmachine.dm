@@ -224,7 +224,7 @@
 	STOP_PROCESSING(SSroguemachine, src)
 	return ..()
 
-/obj/structure/roguemachine/drugmachine/Initialize()
+/obj/structure/roguemachine/drugmachine/standard/Initialize()
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
@@ -237,6 +237,7 @@
 	held_items[/obj/item/storage/fancy/shhig] = list("PRICE" = rand(15,25),"NAME" = "box of ssssigs")
 	held_items[/obj/item/storage/box/matches] = list("PRICE" = rand(10,15),"NAME" = "tinderbox")
 
+/obj/structure/roguemachine/drugmachine/standard
 #undef DRUGRADE_MONEYA
 #undef DRUGRADE_MONEYB
 #undef DRUGRADE_WINE

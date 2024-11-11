@@ -271,11 +271,11 @@
 		held_items[P]["PRICE"] = 10
 	update_icon()
 
-/obj/structure/roguemachine/vendor/blk
+/obj/structure/roguemachine/drugmachine/blk
 	name = "SNAKPAK"
-	keycontrol = "blk"
+	// keycontrol = "blk"
 
-/obj/structure/roguemachine/vendor/blk/Initialize()
+/obj/structure/roguemachine/drugmachine/blk/Initialize()
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
@@ -304,11 +304,11 @@
 	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = 10,"NAME" = "Cheap Wine")
 	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = 10,"NAME" = "Cheap Wine")
 
-/obj/structure/roguemachine/vendor/blk2
+/obj/structure/roguemachine/drugmachine/blk2
 	name = "SAWBONES"
-	keycontrol = "blk"
+	// keycontrol = "blk"
 
-/obj/structure/roguemachine/vendor/blk2/Initialize()
+/obj/structure/roguemachine/drugmachine/blk2/Initialize()
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
@@ -337,11 +337,11 @@
 	held_items[/obj/item/reagent_containers/glass/bottle/rogue/sublimeambrosia] = list("PRICE" = 66,"NAME" = "Shot-o-life")
 	held_items[/obj/item/reagent_containers/glass/bottle/rogue/sublimeambrosia] = list("PRICE" = 66,"NAME" = "Shot-o-life")
 
-/obj/structure/roguemachine/vendor/blk3
+/obj/structure/roguemachine/drugmachine/blk3
 	name = "TWOARMS"
-	keycontrol = "blk"
+	// keycontrol = "blk"
 
-/obj/structure/roguemachine/vendor/blk3/Initialize()
+/obj/structure/roguemachine/drugmachine/blk3/Initialize()
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()
@@ -370,11 +370,11 @@
 	held_items[/obj/item/rogueweapon/mace/stunmace] = list("PRICE" = 1200,"NAME" = "Shock Mace")
 	held_items[/obj/item/rogueweapon/mace/stunmace] = list("PRICE" = 1200,"NAME" = "Shock Mace")
 
-/obj/structure/roguemachine/vendor/blk4
+/obj/structure/roguemachine/drugmachine/blk4
 	name = "INDEFENCE"
-	keycontrol = "blk"
+	// keycontrol = "blk"
 
-/obj/structure/roguemachine/vendor/blk4/Initialize()
+/obj/structure/roguemachine/drugmachine/blk4/Initialize()
 	. = ..()
 	START_PROCESSING(SSroguemachine, src)
 	update_icon()

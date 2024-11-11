@@ -135,7 +135,7 @@
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "aaP" = (
-/obj/structure/roguemachine/drugmachine,
+/obj/structure/roguemachine/drugmachine/standard,
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/bath)
 "aaV" = (
@@ -10024,7 +10024,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet/bogcaves)
 "fHk" = (
-/obj/structure/roguemachine/drugmachine,
+/obj/structure/roguemachine/drugmachine/standard,
 /turf/closed/wall/mineral/rogue/decostone/mossy/red/long{
 	dir = 1
 	},
@@ -10211,21 +10211,21 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "fQm" = (
-/obj/structure/roguemachine/vendor/blk,
+/obj/structure/roguemachine/drugmachine/blk,
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue/long{
 	dir = 1;
 	max_integrity = 99999
 	},
 /area/rogue/indoors/town/shop)
 "fQp" = (
-/obj/structure/roguemachine/vendor/blk2,
+/obj/structure/roguemachine/drugmachine/blk2,
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue/long{
 	dir = 1;
 	max_integrity = 99999
 	},
 /area/rogue/indoors/town/shop)
 "fQq" = (
-/obj/structure/roguemachine/vendor/blk3,
+/obj/structure/roguemachine/drugmachine/blk3,
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue/long{
 	dir = 1;
 	max_integrity = 99999
@@ -10236,7 +10236,7 @@
 /turf/open/floor/rogue/tile/masonic/single,
 /area/rogue/indoors/town/manor)
 "fQP" = (
-/obj/structure/roguemachine/vendor/blk4,
+/obj/structure/roguemachine/drugmachine/blk4,
 /turf/closed/wall/mineral/rogue/decostone/mossy/blue/long{
 	dir = 1;
 	max_integrity = 99999
@@ -30665,6 +30665,11 @@
 	icon_state = "bfloorz"
 	},
 /area/rogue/indoors/town/manor)
+"sOA" = (
+/obj/effect/decal/cleanable/cobweb,
+/mob/living/simple_animal/hostile/retaliate/rogue/asteroid/goliath/beast/ancient,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
 "sOF" = (
 /obj/structure/rack/rogue/shelf/big,
 /obj/item/natural/bundle/cloth,
@@ -243525,7 +243530,7 @@ wGD
 uEG
 uEG
 crG
-pOf
+sOA
 qhH
 qhH
 pAV

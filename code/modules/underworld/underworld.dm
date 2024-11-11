@@ -78,7 +78,7 @@
 
 /obj/structure/underworld/carriage_normal/Initialize()
 	..()
-	set_light(5, 30, LIGHT_COLOR_BLUE)
+	set_light(5, 30, LIGHT_COLOR_FIRE)
 
 /obj/structure/underworld/carriage_normal/attack_hand(mob/living/carbon/user)
 	if(user)
