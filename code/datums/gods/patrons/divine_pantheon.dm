@@ -80,6 +80,7 @@
 		A humble God, it is said that Ravox, although the strongest of Psydon's children, does not gloat about this fact, and merely lets his swordsmanship speak for him. \
 		Ravox is depicted as a man with the head of a bull, wearing nothing on his body and wielding a sword."
 	worshippers = "Warriors, Sellswords & those who seek Justice"
+	t1 = /obj/effect/proc_holder/spell/invoked/burden
 	confess_lines = list(
 		"RAVOX IS JUSTICE!",
 		"THROUGH STRIFE, GRACE!",
@@ -161,7 +162,10 @@
 		Malum is depicted as a hunchbacked man, shackles around his ankles, wearing singed rags and sporting a large beard and long, unkempt hair. In his right hand is a hammer, in the left hand a chisel."
 	worshippers = "Smiths, Miners, Artists"
 	mob_traits = list(TRAIT_MALUMSGRACE)
-	t1 = /obj/effect/proc_holder/spell/invoked/sacred_flame_rogue
+	t1 = /obj/effect/proc_holder/spell/invoked/vigorousexchange
+	t2 = /obj/effect/proc_holder/spell/invoked/heatmetal
+	t3 = /obj/effect/proc_holder/spell/invoked/hammerfall
+	t4 = /obj/effect/proc_holder/spell/invoked/craftercovenant
 	confess_lines = list(
 		"MALUM IS MY MUSE!",
 		"TRUE VALUE IS IN THE TOIL!",

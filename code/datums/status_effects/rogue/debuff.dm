@@ -232,3 +232,16 @@
 	name = "Curse of the Seelie"
 	desc = "I've been cursed for my horrific deed..."
 	icon_state = "stressb"
+
+/// Ravox Curses, ratwood port by carl
+/datum/status_effect/debuff/ravox_burden
+	id = "ravox_burden"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/ravox_burden
+	effectedstats = list("speed" = -2, "endurance" = -3)
+	duration = 15 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/ravox_burden
+	name = "Ravox's Burden"
+	desc = "Some divine power is straining my mind!"
+	icon_state = "muscles" 
+
