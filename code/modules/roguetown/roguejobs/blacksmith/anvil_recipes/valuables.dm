@@ -89,7 +89,7 @@
 /datum/anvil_recipe/valuables/rubyg
 	name = "Rontz Ring (+1 Rontz)"
 	req_bar = /obj/item/ingot/gold
-	additional_items = list(/obj/item/roguegem)
+	additional_items = list(/obj/item/roguegem/red)
 	created_item = /obj/item/clothing/ring/ruby
 	i_type = "Valuables"
 
@@ -134,7 +134,7 @@
 /datum/anvil_recipe/valuables/rubys
 	name = "Rontz Ring (+1 Rontz)"
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/roguegem)
+	additional_items = list(/obj/item/roguegem/red)
 	created_item = /obj/item/clothing/ring/rubys
 	i_type = "Valuables"
 
@@ -169,7 +169,7 @@
 /datum/anvil_recipe/valuables/terminus
 	name = "Terminus Est (+1 Gold Bar, +1 Steel, +1 Rontz)"
 	req_bar = /obj/item/ingot/gold
-	additional_items = list(/obj/item/ingot/gold, /obj/item/ingot/steel, /obj/item/roguegem)
+	additional_items = list(/obj/item/ingot/gold, /obj/item/ingot/steel, /obj/item/roguegem/rontz)
 	created_item = /obj/item/rogueweapon/sword/long/exe/cloth
 	craftdiff = 3
 	i_type = "Weapons"
@@ -203,4 +203,4 @@
 	name = "Golden Skull Necklace"
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/clothing/neck/roguetown/psicross/gskull
-	i_type = "Valuables"		
+	i_type = "Valuables"

@@ -1,9 +1,35 @@
 
 /obj/item/roguegem
+	name = "alchemical glass"
+	icon_state = "ruby_cut"
+	icon = 'icons/roguetown/items/gems.dmi'
+	desc = "Its facets shine so brightly, but it's nothing more than mineral glass, produced by suffusing mere stone with arcyne sublimate. Its ability to shift hues when exposed to manna makes it perfect for stained glass!"
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	slot_flags = ITEM_SLOT_MOUTH
+	dropshrink = 0.4
+	drop_sound = 'sound/items/gem.ogg'
+	sellprice = 10
+	static_price = FALSE
+	mill_result = null
+
+/obj/item/reagent_containers/powder/crystalglass
+	name = "crystal dust"
+	desc = ""
+	gender = PLURAL
+	icon = 'icons/roguetown/items/gems.dmi'
+	icon_state = "rontz_dust"
+	volume = 5
+	list_reagents = list(/datum/reagent/gemdust = 5)
+	grind_results = list(/datum/reagent/gemdust = 5)
+	sellprice = 5
+
+/obj/item/roguegem/red
 	name = "rontz"
 	icon_state = "ruby_cut"
 	icon = 'icons/roguetown/items/gems.dmi'
-	desc = "Its facets shine so brightly.."
+	desc = "Its facets shine so brightly... What a gorgeous gem!"
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
@@ -12,7 +38,7 @@
 	drop_sound = 'sound/items/gem.ogg'
 	sellprice = 100
 	static_price = FALSE
-	mill_result = /obj/item/reagent_containers/powder/rontz
+	mill_result = null
 
 /obj/item/roguegem/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item))
@@ -41,7 +67,7 @@
 /datum/reagent/gemdust
 	name = "Gemstone Dust"
 	description = "Glassy."
-	color = "#d7d0be" 
+	color = "#d7d0be"
 	overdose_threshold = 0
 	metabolization_rate = 1
 
@@ -70,7 +96,7 @@
 /obj/item/roguegem/green
 	name = "gemerald"
 	icon_state = "emerald_cut"
-	sellprice = 42
+	sellprice = 40
 	desc = "Glints with verdant brilliance."
 	mill_result = /obj/item/reagent_containers/powder/gemerald
 
@@ -88,7 +114,7 @@
 /obj/item/roguegem/blue
 	name = "blortz"
 	icon_state = "quartz_cut"
-	sellprice = 88
+	sellprice = 80
 	desc = "Pale blue, like a frozen tear." // i am not sure if this is really quartz.
 	mill_result = /obj/item/reagent_containers/powder/blortz
 
@@ -124,7 +150,7 @@
 /obj/item/roguegem/violet
 	name = "saffira"
 	icon_state = "sapphire_cut"
-	sellprice = 56
+	sellprice = 60
 	desc = "This gem is admired by many wizards."
 	mill_result = /obj/item/reagent_containers/powder/saffira
 
@@ -142,7 +168,7 @@
 /obj/item/roguegem/diamond
 	name = "dorpel"
 	icon_state = "diamond_cut"
-	sellprice = 121
+	sellprice = 120
 	desc = "Beautifully clear, it demands respect."
 	mill_result = /obj/item/reagent_containers/powder/dorpel
 
@@ -163,7 +189,7 @@
 	icon_state = null
 
 /obj/item/roguegem/random/Initialize()
-	var/newgem = list(/obj/item/roguegem = 5, /obj/item/roguegem/green = 15, /obj/item/roguegem/blue = 10, /obj/item/roguegem/yellow = 20, /obj/item/roguegem/violet = 10, /obj/item/roguegem/diamond = 5, /obj/item/riddleofsteel = 1)
+	var/newgem = list(/obj/item/roguegem/red = 5, /obj/item/roguegem/green = 15, /obj/item/roguegem/blue = 10, /obj/item/roguegem/yellow = 20, /obj/item/roguegem/violet = 10, /obj/item/roguegem/diamond = 5, /obj/item/riddleofsteel = 1)
 	var/pickgem = pickweight(newgem)
 	new pickgem(get_turf(src))
 	qdel(src)
@@ -200,12 +226,12 @@
 /datum/reagent/mfire
 	name = "Malum's Fire"
 	description = "Divine Burning."
-	color = "#ffc229" 
+	color = "#ffc229"
 	overdose_threshold = 0
 	metabolization_rate = 0.5
 
 /datum/reagent/mfire/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_MALUMSGRACE)) 
+	if(HAS_TRAIT(M, TRAIT_MALUMSGRACE))
 		M.apply_status_effect(/datum/status_effect/buff/mfire)
 		if(holder.has_reagent(/datum/reagent/mfire))
 			holder.remove_reagent(/datum/reagent/mfire, 15)
