@@ -1,7 +1,7 @@
 /obj/item/rogueweapon/lordscepter
 	force = 20
 	force_wielded = 20
-	possible_item_intents = list(/datum/intent/lordbash, /datum/intent/lord_electrocute, /datum/intent/lord_silence)
+	possible_item_intents = list(/datum/intent/lordbash, /datum/intent/lordpoint)
 	gripped_intents = list(/datum/intent/lordbash)
 	name = "master's rod"
 	desc = "Bend the knee."
@@ -17,26 +17,17 @@
 	swingsound = BLUNTWOOSH_MED
 	minstr = 5
 	blade_dulling = DULLING_BASHCHOP
-	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
-	sheathe_sound = 'sound/items/wood_sharpen.ogg'
 
 /datum/intent/lordbash
 	name = "bash"
 	blade_class = BCLASS_BLUNT
 	icon_state = "inbash"
-	attack_verb = list("bashes", "clubs", "strikes")
+	attack_verb = list("bashes", "strikes")
 	penfactor = 10
 	item_d_type = "blunt"
 
-/datum/intent/lord_electrocute
-	name = "electrocute"
-	blade_class = null
-	icon_state = "inuse"
-	tranged = TRUE
-	noaa = TRUE
-
-/datum/intent/lord_silence
-	name = "silence"
+/datum/intent/lordpoint
+	name = "point"
 	blade_class = null
 	icon_state = "inuse"
 	tranged = TRUE
@@ -63,25 +54,15 @@
 			var/mob/living/carbon/human/HU = user
 			if((HU.job != "Duke") && (HU.job != "Duke Courtier"))
 				return
-
-			if(H.anti_magic_check())
-				return
-
-			if(!(H in SStreasury.bank_accounts))
-				return
-
-			if(istype(user.used_intent, /datum/intent/lord_electrocute))
-				HU.visible_message(span_warning("[HU] electrocutes [H] with the [src]."))
+			if(ishuman(target))
+				var/mob/living/carbon/human/H = target
+				if(H.anti_magic_check())
+					to_chat(H, span_warning("I'm protected from the scepter."))
+					return
+				if(!(H in SStreasury.bank_accounts))
+					to_chat(H, span_warning("I'm protected from the scepter."))
+					return
 				H.electrocute_act(5, src)
-				to_chat(H, span_danger("I'm electrocuted by the scepter!"))
-				return
-
-			if(istype(user.used_intent, /datum/intent/lord_silence))
-				HU.visible_message(span_warning("[HU] silences [H] with the [src]."))
-				H.dna.add_mutation(/datum/mutation/human/mute)
-				addtimer(CALLBACK(H.dna, TYPE_PROC_REF(/datum/dna/, remove_mutation), /datum/mutation/human/mute), 20 SECONDS)
-				to_chat(H, span_danger("I'm silenced by the scepter!"))
-				return
 
 /obj/item/rogueweapon/mace/stunmace
 	force = 15
@@ -189,97 +170,3 @@
 		charge = 0
 		update_icon()
 		playsound(src, pick('sound/items/stunmace_toggle (1).ogg','sound/items/stunmace_toggle (2).ogg','sound/items/stunmace_toggle (3).ogg'), 100, TRUE)
-
-/obj/item/rogueweapon/katar
-	slot_flags = ITEM_SLOT_HIP
-	force = 16
-	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
-	name = "katar"
-	desc = "A blade that sits above the users fist. Commonly used by those proficient at unarmed fighting"
-	icon_state = "katar"
-	icon = 'icons/roguetown/weapons/32.dmi'
-	gripsprite = FALSE
-	wlength = WLENGTH_SHORT
-	w_class = WEIGHT_CLASS_SMALL
-	parrysound = list('sound/combat/parry/bladed/bladedsmall (1).ogg','sound/combat/parry/bladed/bladedsmall (2).ogg','sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 150
-	max_integrity = 300
-	swingsound = list('sound/combat/wooshes/bladed/wooshsmall (1).ogg','sound/combat/wooshes/bladed/wooshsmall (2).ogg','sound/combat/wooshes/bladed/wooshsmall (3).ogg')
-	associated_skill = /datum/skill/combat/unarmed
-	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
-	throwforce = 12
-	wdefense = 4
-	wbalance = 1
-	thrown_bclass = BCLASS_CUT
-	anvilrepair = /datum/skill/craft/weaponsmithing
-	smeltresult = /obj/item/ingot/steel
-
-/datum/intent/katar
-	clickcd = 8
-
-/datum/intent/katar/cut
-	name = "cut"
-	icon_state = "incut"
-	attack_verb = list("cuts", "slashes")
-	animname = "cut"
-	blade_class = BCLASS_CUT
-	hitsound = list('sound/combat/hits/bladed/smallslash (1).ogg', 'sound/combat/hits/bladed/smallslash (2).ogg', 'sound/combat/hits/bladed/smallslash (3).ogg')
-	penfactor = 0
-	chargetime = 0
-	swingdelay = 0
-	clickcd = 8
-	item_d_type = "slash"
-
-/datum/intent/katar/thrust
-	name = "thrust"
-	icon_state = "instab"
-	attack_verb = list("thrusts", "stabs")
-	animname = "stab"
-	blade_class = BCLASS_STAB
-	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
-	penfactor = 40
-	chargetime = 0
-	clickcd = 8
-	item_d_type = "stab"
-
-/obj/item/rogueweapon/katar/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list("shrink" = 0.4,"sx" = -7,"sy" = -4,"nx" = 7,"ny" = -4,"wx" = -3,"wy" = -4,"ex" = 1,"ey" = -4,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 110,"sturn" = -110,"wturn" = -110,"eturn" = 110,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
-			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
-
-/obj/item/rogueweapon/mace/pipe        ////////////// reskin of iron mace but bigger
-	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
-	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
-	name = "pipe"
-	desc = "Beloved problem solver."
-	icon_state = "leadpipe"
-	icon = 'icons/roguetown/weapons/64.dmi'
-	pixel_y = -16
-	pixel_x = -16
-	bigboy = TRUE
-	gripsprite = TRUE
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	parrysound = list('sound/combat/parry/parrygen.ogg')
-	swingsound = BLUNTWOOSH_MED
-
-/obj/item/rogueweapon/mace/pipe/getonmobprop(tag)
-	. = ..()
-	if(tag)
-		switch(tag)
-			if("gen")
-				return list("shrink" = 0.6,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
-			if("wielded")
-				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
-			if("onbelt")
-				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
-/obj/item/rogueweapon/huntingknife/skin                                    ///////////// reSKINNED hunting knife
-	name = "skinning knife"
-	desc = "More than one way to skin a seelie."
-	icon_state = "skinningknife"
