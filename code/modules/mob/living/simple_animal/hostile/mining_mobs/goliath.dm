@@ -25,7 +25,6 @@
 	pull_force = MOVE_FORCE_VERY_STRONG
 	var/pre_attack = 0
 	var/pre_attack_icon = "goliath_preattack"
-	loot = list(/obj/item/stack/sheet/animalhide/goliath_hide)
 
 
 	emote_hear = null

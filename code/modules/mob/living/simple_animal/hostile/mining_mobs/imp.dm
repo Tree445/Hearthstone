@@ -23,8 +23,8 @@
 	attack_sound = 'modular_hearthstone/sound/misc/impattacks.wav'
 	gold_core_spawnable = HOSTILE_SPAWN
 	//crusher_loot = /obj/item/crusher_trophy/blaster_tubes/impskull
-	loot = list()
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/bone = 4, /obj/item/stack/sheet/leather = 2, /obj/item/stack/ore/plasma = 2)
+	del_on_death = 1
+	loot = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
 	robust_searching = FALSE
 	deathsound = 'modular_hearthstone/sound/misc/impdies.wav'
 
@@ -35,7 +35,6 @@
 	see_in_dark = 10
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/imp)
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	maxHealth = 150
