@@ -8,7 +8,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/tribal)
 	tutorial = "Chieftain of the Woodland Clan; you guide the wildlings through the dangers of this Enchanted Forest. You have seen it's shadows and taken it's beasts wisdom."
 	whitelist_req = FALSE
@@ -40,30 +40,30 @@
 	ADD_TRAIT(H, TRAIT_BOG_TREKKING, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE) // Chieftess gets nearly same skills as guard.
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4 , TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4 , TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 6, TRUE) //Hearthstone change.
-		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE) // Chieftess gets nearly same skills as guard.
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 6, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4 , TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4 , TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/tracking, 6, TRUE) //Hearthstone change.
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/tanning, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
 		H.change_stat("strength", 2)
 		H.change_stat("intelligence", 2)
-		H.change_stat("constitution", 6)
+		H.change_stat("constitution", 3)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", 2)
 

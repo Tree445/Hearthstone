@@ -120,7 +120,7 @@
 		"The eye socket is pierced!",
 	)
 	embed_chance = 100
-	paralysis = TRUE
+	paralysis = FALSE
 	mortal = TRUE
 	dents_brain = FALSE
 
@@ -133,7 +133,7 @@
 		"The ear canal is pierced!",
 	)
 	embed_chance = 100
-	paralysis = TRUE
+	paralysis = FALSE
 	mortal = TRUE
 	dents_brain = FALSE
 
@@ -208,6 +208,7 @@
 		"The ribcage caves in!",
 	)
 	whp = 50
+	sleep_healing = 1
 
 /datum/wound/fracture/chest/on_mob_gain(mob/living/affected)
 	. = ..()
@@ -219,7 +220,7 @@
 		return
 	var/mob/living/carbon/carbon_owner = owner
 	if(!carbon_owner.stat && prob(5))
-		carbon_owner.vomit(1, blood = TRUE, stun = TRUE)
+		carbon_owner.vomit(1, blood = TRUE, stun = FALSE)
 
 /datum/wound/fracture/groin
 	name = "pelvic fracture"

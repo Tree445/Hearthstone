@@ -368,7 +368,13 @@
 
 	var/cached_intent = M.used_intent
 
-	sleep(M.used_intent.swingdelay)
+	// Check if M.used_intent is not null before accessing swingdelay
+	if(M.used_intent)
+		sleep(M.used_intent.swingdelay)
+	else
+		M.swinging = FALSE
+		return FALSE
+
 	M.swinging = FALSE
 	if(M.a_intent != cached_intent)
 		return FALSE
@@ -391,7 +397,6 @@
 	log_combat(M, src, "attacked")
 
 	return TRUE
-
 
 /mob/living/attack_paw(mob/living/carbon/monkey/M)
 	if(isturf(loc) && istype(loc.loc, /area/start))

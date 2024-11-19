@@ -75,11 +75,11 @@
 			if(islatejoin)
 				is_returning = TRUE
 		if(display_as_wanderer)
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name].")
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [custom_race_name ? "[custom_race_name] ([race_name])" : "[race_name]"].")
 		else if(used_title)
-			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title].")
+			. = list("<span class='info'>ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][custom_race_name ? "[custom_race_name] ([race_name])" : "[race_name]"] [used_title].")
 		else
-			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name].")
+			. = list("<span class='info'>ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [custom_race_name ? "[custom_race_name] ([race_name])" : "[race_name]"].")
 		if(dna.species.use_skintones)
 			var/skin_tone_wording = dna.species.skin_tone_wording ? lowertext(dna.species.skin_tone_wording) : "skin tone"
 			var/list/skin_tones = dna.species.get_skin_list()
@@ -119,13 +119,23 @@
 
 		if(name in GLOB.heretical_players)
 			. += span_userdanger("HERETIC'S BRAND! SHAME!")
+		if(iszizocultist(user) || iszizolackey(user))
+			if(virginity)
+				. += "<span class='userdanger'>VIRGIN!</span>"
 
 		if(name in GLOB.outlawed_players)
 			. += span_userdanger("OUTLAW!")
 
 		if(istype(get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/roguetown/slavecollar)||istype(get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/roguetown/gorget/prisoner/servant))
 			. += span_notice("It's a slave.")
+		if(mind)
+			var/mob/living/carbon/human/H = mind.current
+			if(H.enemies.Find(name))
+				. += span_userdanger("My target!")
 
+			if(H.hunters.Find(name))
+				. += span_userdanger("I'm a dead man!")
+					
 		var/commie_text
 		if(mind)
 			if(mind.special_role == "Bandit")
@@ -137,7 +147,8 @@
 				. += span_userdanger("A MONSTER!")
 			if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
 				. += span_userdanger("CURSED!")
-
+		if(HAS_TRAIT(src, TRAIT_NORTHMAN) && HAS_TRAIT(user, TRAIT_NORTHMAN))
+			. += span_userdanger("Hollvinr!")
 		if(HAS_TRAIT(src, TRAIT_MANIAC_AWOKEN))
 			. += span_userdanger("MANIAC!")
 
@@ -466,6 +477,12 @@
 
 	if(length(msg))
 		. += span_warning("[msg.Join("\n")]")
+	// Show especially large embedded objects at a glance
+	for(var/obj/item/bodypart/part in bodyparts)
+		if (LAZYLEN(part.embedded_objects))
+			for(var/obj/item/stuck_thing in part.embedded_objects)
+				if (stuck_thing.w_class >= WEIGHT_CLASS_SMALL)
+					. += span_bloody("<b>[m3] \a [stuck_thing] stuck in [m2] [part.name]!</b>")
 
 	if((user != src) && isliving(user))
 		var/mob/living/L = user

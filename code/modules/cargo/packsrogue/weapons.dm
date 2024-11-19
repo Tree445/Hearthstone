@@ -238,20 +238,21 @@
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison,
 					/obj/item/ammo_casing/caseless/rogue/bolt/poison)
 
-/datum/supply_pack/rogue/weapons/matchlock
-	name = "Matchlock Musket"
-	cost = 400	//Pricey as shit, money-sink due to ammo cost along with musket cost. (Probably too much money, maybe reduce if too hard to get.)
-	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock,
-					/obj/item/ammo_casing/caseless/rogue/bullet,
-					/obj/item/ammo_casing/caseless/rogue/bullet,
-					/obj/item/ammo_casing/caseless/rogue/bullet,
-					/obj/item/ammo_casing/caseless/rogue/bullet,
-					/obj/item/ammo_casing/caseless/rogue/bullet,
+/datum/supply_pack/rogue/weapons/arquebuspistol
+	name = "Arquebus Pistol"
+	cost = 150
+	contains = list(/obj/item/gun/ballistic/arquebus_pistol,
+					)
+
+/datum/supply_pack/rogue/weapons/arquebus
+	name = "Arquebus"
+	cost = 200
+	contains = list(/obj/item/gun/ballistic/arquebus,
 					)
 
 /datum/supply_pack/rogue/weapons/bullets
 	name = "Bullets"
-	cost = 150
+	cost = 60 //a raw iron is 10 to buy approx, smelt and work id say 60 is fine.
 	contains = list(
 					/obj/item/ammo_casing/caseless/rogue/bullet,
 					/obj/item/ammo_casing/caseless/rogue/bullet,
@@ -262,9 +263,18 @@
 
 /datum/supply_pack/rogue/weapons/ammopouch/bullets
 	name = "Ammo Pouch"
-	cost = 300
+	cost = 200 //they are empty.
 	contains = list(
-					/obj/item/ammopouch/bullets,
-					/obj/item/ammopouch/bullets,
-					/obj/item/ammopouch/bullets,
+					/obj/item/ammopouch,
+					/obj/item/ammopouch,
+					/obj/item/ammopouch,
+				)
+
+/datum/supply_pack/rogue/weapons/ammopouch/bullets
+	name = "Firepowder flasks"
+	cost = 150
+	contains = list(
+					/obj/item/powderflask,
+					/obj/item/powderflask,
+					/obj/item/powderflask,
 				)

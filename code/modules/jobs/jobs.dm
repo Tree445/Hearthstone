@@ -90,9 +90,8 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 
 GLOBAL_LIST_INIT(church_positions, list(
 	"Prophet",
-	"Witcher",
+	"Wytcher Captain",
 	"Confessor",
-	"Priest",
 	"Gravesinger",
 	"Paladin",
 	"Grandmaster",
@@ -126,14 +125,15 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Lumberjack",
 	"Towner",
 	"Grabber",
-	"Spymaster",
-	"Courtesan",
+	"Nightmaster",
+	"Nightswain",
 	"Docker",
 	"Prisoner",
 	"Low Life",
 	"Forest Seelie",
 	"Adventurer",
 	"Pilgrim",
+	"Bandit",
 ))
 
 GLOBAL_LIST_INIT(mercenary_positions, list(

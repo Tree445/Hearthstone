@@ -2,7 +2,7 @@
 	name = "Witch"
 	tutorial = "In some places, women are banned from the study of magic. Those that do even then are afforded the title Sorceress in honor of their resolve."
 	allowed_sexes = list(FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/sorceress
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	category_tags = list(CTAG_DISABLED)
@@ -19,18 +19,20 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	beltr = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	beltl = /obj/item/rogueweapon/huntingknife
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	neck = /obj/item/clothing/neck/roguetown/psicross/eora
 	r_hand = /obj/item/rogueweapon/woodstaff
+	backpack_contents = list(/obj/item/scrying =1, /obj/item/rogueweapon/huntingknife/idagger/steel =1, /obj/item/toy/cards/deck/tarot =1, /obj/item/slimepotion/lovepotion =1,)
+
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 1, TRUE)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, pick(2,3,3), TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, pick(2,3,3), TRUE)
 		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 4)
 		H.change_stat("speed", 1)

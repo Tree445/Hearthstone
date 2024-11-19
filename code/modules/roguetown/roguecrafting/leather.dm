@@ -452,7 +452,7 @@
 	reqs = list(/obj/item/natural/hide = 1)
 
 //firearm slop
-/datum/crafting_recipe/roguetown/leather/blackleatherbelt
+/datum/crafting_recipe/roguetown/leather/firepowderflask
 	name = "firepowder flask"
 	result = /obj/item/powderflask
 	reqs = list(/obj/item/natural/hide = 1,
@@ -461,9 +461,9 @@
 				)
 	craftdiff = 1
 
-/datum/crafting_recipe/roguetown/leather/blackleatherbelt
+/datum/crafting_recipe/roguetown/leather/bulletpouch
 	name = "bullet pouch"
-	result = /obj/item/ammopouch/bullets
+	result = /obj/item/ammopouch
 	reqs = list(/obj/item/natural/hide = 1,
 				/obj/item/natural/fibers = 1,
 				)

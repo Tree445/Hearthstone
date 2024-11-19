@@ -1,15 +1,15 @@
 /datum/job/roguetown/steward
-	title = "Steward"
+	title = "Guild Appraiser"
 	flag = STEWARD
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_STEWARD
-	tutorial = "Coin, Coin, Coin! Oh beautiful coin: The Magi's Trading Union put you here as an appraiser so you might -actually- fund this operation. You're the closest thing this place has to a banker, and it's up to you to fund public projects from the hordes of wealth these ludicrous murder-hobos seem to pull in from literally thin air. You work for the Guild captain, but most of the time youre batting off adventurers from raiding your vault. Don't forget the magic password you enchanted.."
+	tutorial = "Coin, Coin, Coin! Oh beautiful coin: The Magi's Trading Union put you here as an appraiser so you might -actually- fund this operation. You're the closest thing this place has to a banker that works with the Guild Captain and these adventurers-- and it's up to you to fund public projects from the hordes of wealth these ludicrous murder-hobos seem to pull in from literally thin air. You work for the Guild captain, but most of the time youre batting off adventurers from raiding your vault which contains the Neuromancer and some fascinating treasure. Don't forget the magic password you enchanted the wall with, either.."
 	outfit = /datum/outfit/job/roguetown/steward
 	give_bank_account = 17
 	min_pq = 0
@@ -32,22 +32,23 @@
 	head = /obj/item/clothing/head/roguetown/chaperon/greyscale
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/storage/keyring/steward
+	beltl = /obj/item/storage/keyring/merchant
 	backl = /obj/item/storage/backpack/rogue/satchel
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 6, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 2, TRUE)
 		H.change_stat("intelligence", 2)
 		H.change_stat("perception", 2)
 		H.change_stat("speed", -1)

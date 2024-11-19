@@ -3,15 +3,15 @@
 	flag = JESTER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 5
+	spawn_positions = 5
 
 	allowed_races = RACES_ALL_KINDSPLUS
 
 	tutorial = "The Wood Elves were known for their Blade dancing Harlequins, wisemen with a tongue just as sharp and quick as their blades.. \
 		You command a position of a fool, Hierophant and wild voice. \
 		Your tricks and illusions are innately magickal, too. \
-		Keep your with and heritage of the woods intact, and you shall surely prosper."
+		Keep your wit and heritage of the woods intact, and you shall surely prosper."
 
 	allowed_ages = ALL_AGES_LIST
 	spells = list(/obj/effect/proc_holder/spell/self/telljoke,/obj/effect/proc_holder/spell/self/telltragedy, /obj/effect/proc_holder/spell/targeted/ethereal_jaunt, /obj/effect/proc_holder/spell/invoked/invisibility, /obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
@@ -28,17 +28,21 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/jester
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/storage/keyring/servant
+	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
 	beltl = /obj/item/storage/belt/rogue/pouch
 	head = /obj/item/clothing/head/roguetown/jester
 	neck = /obj/item/clothing/neck/roguetown/coif
+	mask = /obj/item/clothing/mask/rogue/facemask/gold
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/silver/elvish, /obj/item/book/granter/spell/blackstone/invisibility)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, 2, TRUE)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/featherfall)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/invisibility)
 		if(!isseelie(H))
 			H.STASTR = rand(1, 20)
 			H.STAINT = rand(1, 20)

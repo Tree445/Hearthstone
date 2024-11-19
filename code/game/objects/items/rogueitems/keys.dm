@@ -42,7 +42,7 @@
 
 /obj/item/roguekey/lord
 	name = "master key"
-	desc = "The Lord's key."
+	desc = "The Monarch's key."
 	icon_state = "bosskey"
 	lockid = "lord"
 
@@ -327,7 +327,7 @@
 
 /obj/item/roguekey/hand
 	name = "hand's key"
-	desc = "This regal key belongs to the King's Right Hand."
+	desc = "This regal key belongs to the Monarch's Right Hand."
 	icon_state = "cheesekey"
 	lockid = "hand"
 
@@ -482,6 +482,7 @@
 	else if(istype(user.get_active_held_item(), /obj/item/rogueweapon/hammer) && src.lockhash != 0)
 		var/obj/item/roguekey/custom/F = new (get_turf(src))
 		F.lockhash = src.lockhash
+		F.lockid = lockhash
 		to_chat(user, span_notice("You finish [F]."))
 		qdel(src)
 

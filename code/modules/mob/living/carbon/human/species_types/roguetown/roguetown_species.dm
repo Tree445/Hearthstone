@@ -1,34 +1,28 @@
-/datum/species
-	var/amtfail = 0
-
+//stolen from azure cause fuck it why not, it was not working.
 /datum/species/proc/get_accent_list(mob/living/carbon/human/H, type)
 	switch(H.char_accent)
 		if("No accent")
 			return
-		if("Stonespirit accent")
-			return strings("dwarfcleaner_replacement.json", "dwarf")
+		if("Dwarf accent")
+			return strings("dwarfcleaner_replacement.json", type)
 		if("Dwarf Gibberish accent")
-			return strings("dwarf_replacement.json", "dwarf_gibberish")
-		if("Roseveilian accent")
-			return strings("french_replacement.json", "french")
-		if("Timberwolf accent")
-			return strings("russian_replacement.json", "russian")
-		if("Greenlyre accent")
-			return strings("german_replacement.json", "german")
-		if("Northerner accent")
-			return strings("Anglish.json", "Anglish")
-		if("Celestian accent")
-			return strings("proper_replacement.json", "proper")
+			return strings("dwarf_replacement.json", type)
+		if("Dark Elf accent")
+			return strings("french_replacement.json", type)
+		if("Elf accent")
+			return strings("russian_replacement.json", type)
+		if("Grenzelhoft accent")
+			return strings("german_replacement.json", type)
+		if("Hammerhold accent")
+			return strings("Anglish.json", type)
+		if("Assimar accent")
+			return strings("proper_replacement.json", type)
 		if("Lizard accent")
-			return strings("brazillian_replacement.json", "brazillian")
-		if("Infernal accent")
-			return strings("spanish_replacement.json", "spanish")
-		if("Greenskin accent")
-			return strings("middlespeak.json", "middle")
-		if("Pirate Accent")
-			return strings("pirate_replacement.json", "full")
-		if("Valley Girl accent")
-			return strings("valley_replacement.json", type)
+			return strings("brazillian_replacement.json", type)
+		if("Tiefling accent")
+			return strings("spanish_replacement.json", type)
+		if("Half Orc accent")
+			return strings("middlespeak.json", type)
 		if("Urban Orc accent")
 			return strings("norf_replacement.json", type)
 		if("Hissy accent")
@@ -57,7 +51,7 @@
 #define REGEX_ENDWORD 3
 #define REGEX_ANY 4
 
-/datum/species/proc/handle_speech(datum/source, list/speech_args)
+/datum/species/proc/handle_speech(datum/source, mob/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
 
 	message = treat_message_accent(message, strings("accent_universal.json", "universal"), REGEX_FULLWORD)

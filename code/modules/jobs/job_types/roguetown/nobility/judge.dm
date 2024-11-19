@@ -1,20 +1,20 @@
 /datum/job/roguetown/judge
-	title = "Judge"
+	title = "Law Mage"
 	flag = JUDGE
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	display_order = JDO_JUDGE
-	tutorial = "You are both judge and executioner, this is a career you honed over many years of study and practice. You help plan with the Councillors and maybe the King on any new issues, laws, and judgement on any problems that may arise. You have two assistant Councillors that may serve as jurors to assist you in your job. You are required to enforce taxes for the King, judge people for breaking the law, make sure the town and manor are not in decay, and to help plan or construct new buildings. You are allowed some limited control over Guards, however it is not the focus of your job unless special circumstances are to change this. In matters of heresy, work alongside the church as best as possible."
+	tutorial = "This place is utterly lawless at times and in the past if not for those who uphold and distribute it; But you come from Crux; city of laws and supernatural contracts. You've traveled here to help enforce some semblance with the various parties; such as the Guilds, Druids temples, Ranger sentinels and Hedge Knights. You have studied chronomancy and gravity spheres of magick to cause what many perceive as 'universal lag' to the fray of otherwise lawless places; as well as creating decrees that set into the leylines when so chosen. Your magic has forged rulers and even dynasties; and many will try to defy them if you are not a truly just lawmancer."
 	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/judge
 
-	give_bank_account = 40
-	min_pq = 2
+	give_bank_account = 1500
+	min_pq = 15
 	max_pq = null
 
 	cmode_music = 'sound/music/combat_judge.ogg'
@@ -34,15 +34,15 @@
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/book/rogue/law = 1)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 6, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 2, TRUE)
 		H.change_stat("strength", 3)
 		H.change_stat("perception", 2)
 		H.change_stat("intelligence", 3)
@@ -50,6 +50,8 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", 1)
 		H.change_stat("fortune", 1)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/repulse)
+		H.mind.AddSpell(new /obj/effect/timestop/proc/timestop)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 	H.verbs |= list(/mob/living/carbon/human/proc/request_outlaw, /mob/living/carbon/human/proc/request_law, /mob/living/carbon/human/proc/request_law_removal, /mob/living/carbon/human/proc/request_purge, /mob/living/carbon/human/proc/torture_victim)
@@ -159,3 +161,5 @@
 			to_chat(span_warning("The lord has denied the request for declaring an outlaw!"))
 		return
 	make_outlaw(requested_outlaw)
+
+	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)

@@ -6,10 +6,10 @@
 #define CLERIC_T4 4
 
 #define CLERIC_REQ_0 0
-#define CLERIC_REQ_1 100
-#define CLERIC_REQ_2 250
-#define CLERIC_REQ_3 500
-#define CLERIC_REQ_4 750
+#define CLERIC_REQ_1 75
+#define CLERIC_REQ_2 150
+#define CLERIC_REQ_3 350
+#define CLERIC_REQ_4 500
 
 // Cleric Holder Datums
 
@@ -33,7 +33,7 @@
 	/// How much progression is gained per process call
 	var/passive_progression_gain = 0
 	/// How much devotion is gained per prayer cycle
-	var/prayer_effectiveness = 5
+	var/prayer_effectiveness = 8
 	/// Spells we have granted thus far
 	var/list/granted_spells
 
@@ -139,9 +139,9 @@
 		var/newspell = new spell_type
 		H.mind.AddSpell(newspell)
 		LAZYADD(granted_spells, newspell)
-	level = CLERIC_T0
-	max_devotion = CLERIC_REQ_3 //Max devotion limit - Clerics are stronger than some others but cannot pray to gain all abilities beyond t3
-	max_progression = CLERIC_REQ_3
+	level = CLERIC_T1
+	max_devotion = CLERIC_REQ_4 //Max devotion limit - Clerics are stronger than some others but cannot pray to gain all abilities beyond t3
+	max_progression = CLERIC_REQ_4
 
 /datum/devotion/proc/grant_spells_churchling(mob/living/carbon/human/H)
 	if(!H || !H.mind || !patron)
@@ -156,7 +156,7 @@
 		LAZYADD(granted_spells, newspell)
 	level = CLERIC_T0
 	max_devotion = CLERIC_REQ_1 //Max devotion limit - Churchlings only get diagnose and lesser miracle.
-	max_progression = CLERIC_REQ_0
+	max_progression = CLERIC_REQ_2
 
 /datum/devotion/proc/grant_spells_priest(mob/living/carbon/human/H)
 	if(!H || !H.mind || !patron)
@@ -193,6 +193,7 @@
 	passive_progression_gain = 1
 	update_devotion(100, CLERIC_REQ_4, silent = TRUE)
 	START_PROCESSING(SSobj, src)
+
 /datum/devotion/proc/excommunicate(mob/living/carbon/human/H)
 	if(!devotion)
 		return

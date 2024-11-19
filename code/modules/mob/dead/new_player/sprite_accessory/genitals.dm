@@ -229,7 +229,7 @@
 	relevant_layers = list(BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/butt/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	if(!isdwarf(owner) && !isgoblinp(owner))
+	if(!isdwarf(owner) && !isgoblinp(owner) && !iskobold(owner) && !ishedgebeast(owner))
 		generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_PANTS, OFFSET_PANTS_F)
 	else
 		generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BUTT, OFFSET_BUTT)

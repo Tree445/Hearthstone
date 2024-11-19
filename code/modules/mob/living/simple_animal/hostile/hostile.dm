@@ -51,7 +51,7 @@
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
-	var/del_on_deaggro = 0 //seconds to delete after losing aggro
+//	var/del_on_deaggro = 0 //seconds to delete after losing aggro /*Gisela moved it to living_defines */
 	var/last_aggro_loss = null
 
 	var/retreat_health
@@ -210,7 +210,7 @@
 /mob/living/simple_animal/hostile/proc/Found(atom/A)//This is here as a potential override to pick a specific target if available
 	if (isliving(A))
 		var/mob/living/living_target = A
-		if(living_target.alpha > 100) // is our target hidden? if they are, attempt to detect them once
+		if(living_target.alpha <= 0) // is our target hidden? if they are, attempt to detect them once
 			return npc_detect_sneak(living_target, simple_detect_bonus)
 	return
 

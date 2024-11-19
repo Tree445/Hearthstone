@@ -120,10 +120,10 @@
 		var/newtime = 0
 		//skill block
 		newtime = newtime + 10
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/bows) * (10/6))
-		//str block //rtd replace 10 with drawdiff on bows that are hard and scale str more (10/20 = 0.5)
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/bows) * 2)
+		//str block //rtd replace 10 with drawdiff on bows that are hard and scale str more
 		newtime = newtime + 10
-		newtime = newtime - (mastermob.STASTR * (10/20))
+		newtime = newtime - (mastermob.STASTR * 0.5)
 		//per block
 		newtime = newtime + 20
 		newtime = newtime - (mastermob.STAPER * 1) //20/20 is 1

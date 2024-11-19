@@ -47,6 +47,7 @@
 	var/check_other_side = FALSE
 	var/invis_without_trait = FALSE
 	var/list/revealed_to = list()
+	var/time2go = 0
 
 /obj/structure/fluff/traveltile/Initialize()
 	GLOB.traveltiles += src
@@ -94,7 +95,7 @@
 	if(AM.pulledby)
 		return FALSE
 	if(AM.recent_travel)
-		if(world.time < AM.recent_travel + 15 SECONDS)
+		if(world.time < AM.recent_travel + 2 SECONDS)
 			. = FALSE
 	if(. && required_trait && isliving(AM))
 		var/mob/living/L = AM
@@ -126,15 +127,15 @@
 		return
 	if(!can_go(user))
 		return
-	var/time2go = 5 SECONDS
-	if(check_other_side && the_tile.required_trait)
-		for(var/mob/living/M in hearers(7, get_turf(the_tile)))
-			if(!HAS_TRAIT(M, the_tile.required_trait))
-				to_chat(user, span_warning("I sense something off at the end of the trail."))
-				time2go = 7 SECONDS
-				break
-	if(!do_after(user, time2go, FALSE, target = src))
-		return
+	if(time2go) //more than 0
+		if(check_other_side && the_tile.required_trait)
+			for(var/mob/living/M in hearers(7, get_turf(the_tile)))
+				if(!HAS_TRAIT(M, the_tile.required_trait))
+					to_chat(user, span_warning("I sense something off at the end of the trail."))
+					time2go *= 1.2
+					break
+		if(!do_after(user, time2go, FALSE, target = src))
+			return
 	if(!can_go(user))
 		return
 	if(user.pulling)
@@ -216,3 +217,9 @@
 		else
 			to_chat(user, "<b>It's too dangerous to sail this way.</b>")
 			return FALSE
+
+/obj/structure/fluff/traveltile/forest
+
+/obj/structure/fluff/traveltile/lavaplace
+
+/obj/structure/fluff/traveltile/underdark

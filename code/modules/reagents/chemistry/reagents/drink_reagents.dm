@@ -215,7 +215,7 @@
 	if(istype(A, /obj/item/organ/filling_organ) && virile)
 		var/obj/item/organ/filling_organ/forgan = A
 		if(forgan.fertility && !forgan.pregnant)
-			if(prob(trans_volume/3)) //i was gonna make it have a chance each tick but couldnt, this works somewhat same ig
+			if(prob(20))
 				forgan.be_impregnated() //boom
 
 /datum/reagent/consumable/cum/on_mob_life(mob/living/carbon/M)

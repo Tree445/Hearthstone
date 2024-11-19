@@ -88,7 +88,7 @@
 		if(target.anti_magic_check(TRUE, TRUE))
 			return FALSE
 		target.visible_message(span_warning("[target] vanishes in a puff of smoke!"), span_notice("You vanish in a puff of smoke!"))
-		animate(target, alpha = 0, time = 1 SECONDS, easing = EASE_IN)
+		animate(target, alpha = 80, time = 1 SECONDS, easing = EASE_IN)
 		target.mob_timers[MT_INVISIBILITY] = world.time + 20 SECONDS
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, update_sneak_invis), TRUE), 20 SECONDS)
 		addtimer(CALLBACK(target, TYPE_PROC_REF(/atom/movable, visible_message), span_warning("[target] fades back into view."), span_notice("You become visible again.")), 20 SECONDS)

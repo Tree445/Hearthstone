@@ -13,10 +13,15 @@
 	domain = "God of Chaos and Lies; the great manipulator. He who covets power for the sake of power and nothing else."
 	desc = "Discovered long ago, Levisth gives power to the weak who do his bidding,elevating them in time. There are many tales of those who serve the greatsnake, all which eventuate with tales of how it yearns to gain power over all things, jealous of it's 'rivals' the other gods."
 	worshippers = "Power-Hungry, Powerful, Charismatic, Liers."
-	mob_traits = list(TRAIT_WILD_EATER)
+	mob_traits = list(TRAIT_NASTY_EATER, TRAIT_SNEK, TRAIT_ZOMBIE_IMMUNE) //had to add zombie immune so as not to double dip when making the infection immune
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal_inhumen
+	t1 = /obj/effect/proc_holder/spell/invoked/invisibility
+	t2 = /obj/effect/proc_holder/spell/targeted/soulspeak
+	t3 = /obj/effect/proc_holder/spell/invoked/projectile/sickness
+	t4 = /obj/effect/proc_holder/spell/invoked/revive_inhumen
 	confess_lines = list(
-		"Praisseethe Greatssnake!!",
-		"LONG LIVE HISSSS FORME!!",
+		"Praisssse the Greatssssnake!!",
+		"LONG LIVE HISSSS FORM!!",
 		"HISSSSSSS!!!",
 	)
 
@@ -25,7 +30,8 @@
 	domain = "God of Twilight and Change. Magic. Transformation. Dusk/Dawn. Crisis/Resolution."
 	desc = "Jayx is known as the Herald of change, often depicted as a two-tailed comet or Phoenix. The Divine Phoenix represents the immortal cycle of growth and advancement, often a god of both magic and art; they are known more than anything as the passage of time itself and bright blue magical fire. (Mana)"
 	worshippers = "Mages, Alchemists, Soul-Searchers, Fateweavers, Supernatural Creatures, Soothsayers."
-	mob_traits = list(TRAIT_ZJUMP)
+	mob_traits = list(TRAIT_ANTISCRYING)
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal_inhumen
 	confess_lines = list(
 		"THE PHOENIX BURNS BRIGHT AND PURE!",
 		"IN HIS FLAMES I AM REBORN!",
@@ -37,7 +43,8 @@
 	domain = "Thievery. Cunning. "
 	desc = "Man turned God, the 'Giver' 'The Thief' stole fire from 'Elysius' and gave it to primitive Mortal Kin huddled in darkness and demands the riches flame creates in sacrifice."
 	worshippers = "Free-Men, Outlaws and Frontiersmen"
-	mob_traits = list(TRAIT_COMMIE, TRAIT_ZJUMP)
+	mob_traits = list(TRAIT_COMMIE, TRAIT_GOODRUNNER)
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal_inhumen
 	t1 = /obj/effect/proc_holder/spell/invoked/Joy_takes_flight
 	t2 = /obj/effect/proc_holder/spell/invoked/Laughing_god
 	t3 = /obj/effect/proc_holder/spell/invoked/Smokebomb
@@ -53,6 +60,7 @@
     desc = "The Sacrifice wishes to take from you, and for you to give it willingly. You will never get it back if you go too far. But you will always have the sacrifice."
     worshippers = "Nihilists, Gamblers, Warlocks, and Villains."
     mob_traits = list(TRAIT_CRACKHEAD)
+    t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal_inhumen
     confess_lines = list(
         "I do not yearn for anything!!",
         "I CANNOT LOSE WHAT I COULD NEVER HOPE TO HOLD!",

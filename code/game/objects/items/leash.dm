@@ -71,8 +71,8 @@ Icons, maybe?
 	name = "leash"
 	desc = "A simple rope, with a knot at the end for easy attachment onto bindings."
 	icon = 'modular_hearthstone/icons/obj/ropeleash.dmi'
-	icon_state = "rope"
-	item_state = "rope"
+	icon_state = "leash"
+	item_state = "leash"
 	throw_range = 4
 	slot_flags = ITEM_SLOT_HIP
 	force = 1

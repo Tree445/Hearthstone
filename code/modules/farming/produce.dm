@@ -174,6 +174,7 @@
 	can_distill = TRUE
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/wine
 	rotprocess = 10 MINUTES
+	mill_result = /obj/item/reagent_containers/powder/alch/berry
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/Initialize()
 	if(GLOB.berrycolors[color_index])
@@ -212,8 +213,9 @@
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	list_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3)
-	grind_results = list(/datum/reagent/berrypoison = 5)
 	color_index = "bad"
+	mill_result = /obj/item/reagent_containers/powder/alch/berryp
+	
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleaf
 	seed = /obj/item/seeds/sweetleaf
@@ -279,7 +281,7 @@
 	pipe_reagents = list(/datum/reagent/drug/nicotine = 30)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	list_reagents = list(/datum/reagent/drug/nicotine = 5, /datum/reagent/consumable/nutriment = 1)
-	grind_results = list(/datum/reagent/drug/nicotine = 10)
+	mill_result = /obj/item/reagent_containers/powder/alch/pipe
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry
 	seed = null
@@ -289,7 +291,7 @@
 	dry = TRUE
 	pipe_reagents = list(/datum/reagent/drug/space_drugs = 30)
 	list_reagents = list(/datum/reagent/drug/space_drugs = 2,/datum/reagent/consumable/nutriment = 1)
-	grind_results = list(/datum/reagent/drug/space_drugs = 5)
+	mill_result = /obj/item/reagent_containers/powder/alch/swamp
 	eat_effect = /datum/status_effect/debuff/badmeal
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/nettle //TO-DO - Implement the remaining medicinal herbs, their farmable versions, and the recipes tied to them.

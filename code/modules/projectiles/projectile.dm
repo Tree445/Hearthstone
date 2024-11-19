@@ -119,6 +119,8 @@
 	var/poisonamount
 	var/poisonfeel
 
+	var/mob/living/carbon/human/sender
+
 /obj/projectile/proc/handle_drop()
 	return
 

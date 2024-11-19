@@ -1,4 +1,5 @@
 
+//deprecated sorta, replaced by arquebuses which are better detailed.
 /obj/item/gun/ballistic/revolver/grenadelauncher/matchlock
 	name = "matchlock pistol"
 	desc = "A deadly weapon that shoots a ball with terrific power."
@@ -23,7 +24,7 @@
 	var/damfactor = 2.5
 	var/cocktime = 50
 
-/* no sprite for it and not necessary as we got helmsguard goods now.
+/* no sprite for it
 /obj/item/gun/ballistic/revolver/grenadelauncher/matchlock/rifle
 	name = "matchlock rifle"
 	damfactor = 5

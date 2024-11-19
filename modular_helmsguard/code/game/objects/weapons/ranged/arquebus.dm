@@ -235,9 +235,9 @@
 			BB.damage = (BB.damage * 0.3)
 	gunpowder = FALSE
 	reloaded = FALSE
-	spark_act()
-
+	user.mind.adjust_experience(/datum/skill/combat/firearms, (user.STAINT*5))
 	..()
+	new /obj/effect/particle_effect/sparks/muzzle(get_ranged_target_turf(user, user.dir, 1))
 	spawn (5)
 		new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(user, user.dir, 1))
 	spawn (10)
@@ -321,6 +321,9 @@
 	var/gunpowder = FALSE
 	var/obj/item/ramrod/myrod = null
 	var/spread_num = 10
+	var/can_spin = TRUE
+	var/last_spunned
+	var/spin_cooldown = 3 SECONDS
 
 /obj/item/gun/ballistic/arquebus_pistol/getonmobprop(tag)
 	. = ..()
@@ -427,6 +430,7 @@
 			return
 
 
+
 /obj/item/gun/ballistic/arquebus_pistol/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 
 	var/accident_chance = 0
@@ -435,10 +439,9 @@
 	spread = (spread_num - firearm_skill)
 	if(firearm_skill < 1)
 		accident_chance =80
-
 	if(firearm_skill < 2)
 		accident_chance =50
-	if(firearm_skill >= 2 && firearm_skill <= 5)
+	if((firearm_skill >= 2) && (firearm_skill <= 5))
 		accident_chance =10
 	if(firearm_skill >= 5)
 		accident_chance =0
@@ -457,9 +460,10 @@
 			BB.damage = (BB.damage * 0.3)
 	gunpowder = FALSE
 	reloaded = FALSE
-	spark_act()
-
+	flick("flintstrike", src)
+	user.mind.adjust_experience(/datum/skill/combat/firearms, (user.STAINT*5))
 	..()
+	new /obj/effect/particle_effect/sparks/muzzle(get_ranged_target_turf(user, user.dir, 1))
 	spawn (5)
 		new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(user, user.dir, 1))
 	spawn (10)
@@ -487,6 +491,41 @@
 			user.dropItemToGround(src)
 			user.Knockdown(rand(15,30))
 			user.Immobilize(30)
+
+/obj/item/gun/ballistic/arquebus_pistol/attack_self(mob/living/user)
+	var/string = "smoothly"
+	var/list/strings_noob = list("unsurely", "nervously", "anxiously", "timidly", "shakily", "clumsily", "fumblingly", "awkwardly")
+	var/list/strings_moderate = list("smoothly", "confidently", "determinately", "calmly", "skillfully", "decisively")
+	var/list/strings_pro = list("masterfully", "expertly", "flawlessly", "elegantly", "artfully", "impeccably")
+	var/firearm_skill = (user?.mind ? user.mind.get_skill_level(/datum/skill/combat/firearms) : 1)
+	var/noob_spin_sound = 'sound/combat/weaponr1.ogg'
+	var/pro_spin_sound = 'modular_helmsguard/sound/arquebus/gunspin.ogg'
+	var/spin_sound
+	if(firearm_skill <= 2)
+		string = pick(strings_noob)
+		spin_sound = noob_spin_sound
+	if((firearm_skill > 2) && (firearm_skill <= 4))
+		string = pick(strings_moderate)
+		spin_sound = pro_spin_sound
+	if((firearm_skill > 4) && (firearm_skill <= 6))
+		string = pick(strings_pro)
+		spin_sound = pro_spin_sound
+	if(world.time > last_spunned + spin_cooldown)
+		can_spin = TRUE
+	if(can_spin)
+		user.play_overhead_indicator('icons/effects/effects.dmi', "emote", 10, OBJ_LAYER)
+		user.visible_message("<span class='emote'>[user] spins the [src] around their fingers [string]!</span>")
+		playsound(src, spin_sound, 100, FALSE, ignore_walls = FALSE)
+		last_spunned = world.time
+		if(firearm_skill <= 2)
+			if(prob(35))
+				shoot_live_shot(message = 0)
+				user.visible_message("<span class='danger'>[user] accidentally discharged the [src]!</span>")
+		if(firearm_skill <= 3)
+			if(prob(50))
+				user.visible_message("<span class='danger'>[user] accidentally dropped the [src]!</span>")
+				user.dropItemToGround(src)
+		can_spin = FALSE
 
 /obj/item/gun/ballistic/arquebus_pistol/afterattack(atom/target, mob/living/user, flag, params)
 	. = ..()
@@ -528,3 +567,20 @@
 	item_state = "powderflask"
 	slot_flags = SLOT_BELT_L | SLOT_BELT_R | ITEM_SLOT_NECK | ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_SMALL
+
+
+/// MUZZLE
+
+/obj/effect/particle_effect/sparks/muzzle
+	name = "sparks"
+	icon = 'icons/effects/64x64.dmi'
+	icon_state = "sparks"
+	anchored = TRUE
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 1.5
+	light_color = LIGHT_COLOR_FIRE
+	pixel_x = -16
+	pixel_y = -16
+	layer = ABOVE_LIGHTING_LAYER
+	plane = ABOVE_LIGHTING_PLANE

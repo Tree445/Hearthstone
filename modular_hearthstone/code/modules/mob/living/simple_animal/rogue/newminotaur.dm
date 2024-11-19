@@ -10,7 +10,6 @@
 	speak_chance = 1
 	turns_per_move = 2
 	see_in_dark = 10
-	pixel_x = -32 //fucking 64x64 sprite.
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/minotaur_unarmed)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 10,
@@ -45,10 +44,11 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/item/rogueweapon/stoneaxe/battle
 	erpable = TRUE
-	hornychance = 50 //since they arent as numerous usually.
+	hornychance = 50
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur/Initialize()
 	. = ..()
+	pixel_x = -18
 	give_genitals()
 
 /obj/item/natural/mino_head

@@ -144,7 +144,7 @@
 	var/defprob = 50 //base chance to defend against this mob's attacks, for simple mob combat
 	var/defdrain = 5
 	var/encumbrance = 0
-
+	var/del_on_deaggro = 0 //seconds to delete after losing aggro
 	var/eyesclosed = 0
 	var/fallingas = 0
 

@@ -1,13 +1,13 @@
 /datum/job/roguetown/archivist
 	title = "Archivist"
-	tutorial = " The Archivist meticulously preserves and organizes ancient scrolls and tomes, safeguarding the collective knowledge of the realm for generations to come. Nobles and Peasants alike often seek the Archivists expertise on matters of history and fact."
+	tutorial = " The Archivist meticulously preserves and organizes ancient scrolls and tomes, safeguarding the collective knowledge of the realm for generations to come. Nobles and Peasants alike often seek the Archivists of the Academy for Magical Scrolls and Expertise.."
 	flag = ARCHIVIST
 	department_flag = YEOMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 3
+	spawn_positions = 3
 	spells = list(/obj/effect/proc_holder/spell/invoked/projectile/fetch, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = ALL_AGES_LIST
 
 	outfit = /datum/outfit/job/roguetown/archivist
@@ -37,17 +37,17 @@
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	H.virginity = TRUE
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltl = /obj/item/storage/keyring/archivist
+	beltl = /obj/item/storage/keyring/mage
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	mask = /obj/item/clothing/mask/rogue/spectacles
 
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/arcane, rand(1,2), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 6, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 6, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, rand(2,3), TRUE)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 8)
 		H.change_stat("constitution", -2)

@@ -117,6 +117,11 @@
 	stressadd = 1
 	desc = span_red("I fell. I'm a fool.")
 
+/datum/stressevent/hatezizo
+	timer = 99999 MINUTES
+	stressadd = 666 // :)
+	desc = "<span class='red'>ZIZOZIZOZIZO</span>"
+
 /datum/stressevent/burntmeal
 	timer = 2 MINUTES
 	stressadd = 2
@@ -128,9 +133,9 @@
 	desc = span_red("YUCK!")
 
 /datum/stressevent/psycurse
-	timer = 60 MINUTES
-	stressadd = 10
-	desc = span_boldred("Oh no! I've received divine punishment!")
+	timer = 999 MINUTES
+	stressadd = 5
+	desc = span_red("Oh no! I've received divine punishment!")
 
 /datum/stressevent/virginchurch
 	timer = 999 MINUTES
@@ -171,10 +176,30 @@
 	stressadd = 2
 	desc = list(span_red("My loins took a bad beating!"),span_red("My loins got slammed badly!"),span_red("My loins got beaten badly!"))
 
-/datum/stressevent/shunned_race_xenophobic
-	timer = 2 MINUTES
-	stressadd = 5
+/datum/stressevent/leechcult
+	timer = 1 MINUTES
+	stressadd = 3
+	desc = list("<span class='red'>There's a little goblin in my head telling me to do things and I don't like it!</span>","<span class='red'>\"Kill your friends.\"</span>","<span class='red'>\"Make them bleed.\"</span>","<span class='red'>\"Give them no time to squeal.\"</span>","<span class='red'>\"Praise Zizo.\"</span>","<span class='red'>\"Death to the Ten.\"</span>","<span class='red'>\"The Weeper weeps his last.\"</span>")
+
+/datum/stressevent/delf
+	timer = 1 MINUTES
+	stressadd = 1
 	desc = span_red("Better stay away.")
+
+/datum/stressevent/shunned_race
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = span_red("A loathesome dark elf.")
+
+/datum/stressevent/tieb
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = span_red("Helldweller... better stay away.")
+
+/datum/stressevent/brazillian
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = span_red("A vile lizard.")
 
 /datum/stressevent/shunned_race_xenophobic
 	timer = 2 MINUTES

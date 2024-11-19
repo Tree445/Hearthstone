@@ -6,7 +6,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/vampire,
 	/obj/effect/proc_holder/spell/targeted/shapeshift/bat)
@@ -24,15 +24,15 @@
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/hatblu
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou

@@ -723,6 +723,91 @@
 		return
 	to_chat(user, "I can't grind this!")
 
+/obj/item/reagent_containers/glass/alembic
+	name = "metal alembic"
+	possible_item_intents = list(INTENT_POUR, INTENT_SPLASH)
+	desc = "so you're an alchemist then?"
+	icon = 'icons/roguetown/items/surgery.dmi'
+	icon_state = "alembic_empty"
+	volume = 120
+	reagent_flags = OPENCONTAINER|REFILLABLE|DRAINABLE|AMOUNT_VISIBLE
+	var/speed_multiplier = 1 // How fast it brews. Defaults to 100% (1.0). Lower is better.
+	var/list/active_brews = list()
+	var/brewing_started = FALSE // Track if brewing has started
+	var/datum/looping_sound/boilloop/boilloop
+
+/obj/item
+	var/can_brew = FALSE // If FALSE, this object cannot be brewed
+	var/brew_reagent // If NULL and this object can be brewed, it uses a generic fruit_wine reagent and adjusts its variables
+	var/brew_amt = 24
+	var/brewing_time
+	var/start_time
+
+/obj/item/reagent_containers/glass/alembic/Initialize()
+	create_reagents(100, REFILLABLE | DRAINABLE | AMOUNT_VISIBLE) // 2 Bottles capacity
+	icon_state = "alembic_empty"
+	..()
+
+/obj/item/reagent_containers/glass/alembic/examine(mob/user)
+	..()
+	if (active_brews.len == 0)
+		. += span_notice("The alembic is not brewing.")
+	else
+		. += span_notice("The alembic is brewing.")
+		for (var/obj/item/I in active_brews)
+			var/time_left = (I.brewing_time - (world.time - I.start_time)) / 10
+			. += span_notice("[I]: [time_left] seconds left until completion.")
+
+/obj/item/reagent_containers/glass/alembic/proc/makebrew(obj/item/I)
+	if(I.reagents)
+		I.reagents.remove_all_type(/datum/reagent, I.reagents.total_volume)
+		I.reagents.trans_to(src, I.reagents.total_volume)
+	if(I.brew_reagent)
+		reagents.add_reagent(I.brew_reagent, I.brew_amt)
+	qdel(I)
+	active_brews -= I
+	if(active_brews.len >= 2)
+		icon_state = "alembic_full"
+	else
+		icon_state = "alembic_empty"
+	playsound(src, "bubbles", 60, TRUE)
+	if(boilloop) boilloop.stop() // Stop the looping sound once brewing is done
+	brewing_started = FALSE // Reset brewing status after brewing completes
+
+/obj/item/reagent_containers/glass/alembic/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item))
+		if(user.mind.get_skill_level(/datum/skill/misc/alchemy) <= 2)
+			to_chat(user, span_warning("I don't know how this works."))
+			return TRUE
+		if(!I.can_brew)
+			to_chat(user, span_warning("I can't brew this into anything."))
+			return TRUE
+		else if(active_brews.len >= 2 || reagents.total_volume >= 99)
+			to_chat(user, span_warning("I can only brew two items at a time or it is too full."))
+			return TRUE
+		else if(!user.transferItemToLoc(I, src))
+			to_chat(user, span_warning("[I] is stuck to my hand!"))
+			return TRUE
+		to_chat(user, span_info("I place [I] into [src]."))
+		I.start_time = world.time
+		I.brewing_time = 600
+		active_brews += I
+		icon_state = "alembic_brew"
+		boilloop = playsound(src, "sound/misc/boiling.ogg", 50, TRUE)
+		addtimer(CALLBACK(src, /obj/item/reagent_containers/glass/alembic/proc/makebrew, I), I.brewing_time)
+		return TRUE
+	return ..()
+
+/obj/item/reagent_containers/glass/alembic/attack_self(mob/user)
+	if(brewing_started)
+		to_chat(user, span_warning("Brewing has started, you cannot remove items now."))
+		return TRUE
+	for(var/obj/item/I in active_brews)
+		I.forceMove(drop_location())
+	active_brews.Cut()
+	icon_state = "alembic_empty"
+	to_chat(user, span_notice("I remove the items inside."))
+
 /obj/item/reagent_containers/glass/saline
 	name = "saline canister"
 	volume = 5000

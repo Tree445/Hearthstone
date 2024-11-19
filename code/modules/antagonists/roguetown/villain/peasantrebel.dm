@@ -10,7 +10,7 @@
 	antag_hud_name = "rev"
 	show_in_roundend = FALSE
 	confess_lines = list(
-		"VIVA!", 
+		"VIVA!",
 		"DEATH TO THE NOBLES!",
 		"STICK IT TO THE MAN!",
 		"NO GODS, NO MASTERS!",

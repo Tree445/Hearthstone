@@ -124,8 +124,9 @@
 	var/personality = null
 	var/strengths = null
 	var/weakness = null
-*/
 	var/theme = null
+*/
+	var/custom_race_name = null
 
 	var/ooc_notes = null
 

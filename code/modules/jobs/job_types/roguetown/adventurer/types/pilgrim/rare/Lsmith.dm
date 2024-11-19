@@ -5,7 +5,7 @@
 	tutorial = "A master blacksmith, able to forge steel like dough, and gold like clay. \
 	create masterful weapons and armor, be a legend among those who interest in your mighty forge"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/masterblacksmith
 
 	maximum_possible_slots = 1
@@ -29,22 +29,22 @@
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueore/coal=2, /obj/item/rogueore/iron=2, /obj/item/rogueore/silver=1)
 
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/masonry, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/smelting, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 	if(H.age == AGE_OLD)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)		//Legendary
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 1, TRUE)		//Legendary
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)		//Legendary
-		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 1, TRUE)			//Legendary 
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 1, TRUE)		//Legendary
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 1, TRUE)		//Legendary
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 1, TRUE)		//Legendary
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 1, TRUE)			//Legendary 
 	H.change_stat("strength", 2)
 	H.change_stat("speed", -1)
 	H.change_stat("fortune", 2)

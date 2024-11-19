@@ -50,7 +50,7 @@
 	check_anti_magic = TRUE
 
 /datum/proximity_monitor/advanced/timestop
-	name = "chronofield"
+	name = "Timestop"
 	setup_field_turfs = TRUE
 	field_shape = FIELD_SHAPE_RADIUS_SQUARE
 	requires_processing = TRUE
@@ -59,7 +59,7 @@
 	var/list/frozen_mobs = list() //cached separately for processing
 	var/list/frozen_structures = list() //Also machinery, and only frozen aestethically
 	var/list/frozen_turfs = list() //Only aesthetically
-	var/check_anti_magic = FALSE
+	var/check_anti_magic = TRUE
 	var/check_holy = FALSE
 
 	var/static/list/global_frozen_atoms = list()

@@ -1,0 +1,271 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/table/wood{
+	icon_state = "longtable_mid";
+	dir = 1
+	},
+/obj/structure/bars{
+	icon_state = "barsbent"
+	},
+/obj/structure/bars/passage/shutter/open,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"c" = (
+/obj/structure/sink/copper/crafted{
+	pixel_y = 22
+	},
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"d" = (
+/turf/closed/wall/mineral/rogue/decowood,
+/area/rogue/indoors)
+"e" = (
+/obj/item/roguebin/water,
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"f" = (
+/obj/machinery/anvil/crafted,
+/obj/item/rogueweapon/tongs,
+/obj/item/rogueweapon/hammer/claw,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"g" = (
+/obj/machinery/light/rogue/forge,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"i" = (
+/obj/structure/fluff/grindwheel,
+/obj/machinery/light/rogue/wallfire/candle/r,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"l" = (
+/obj/machinery/light/rogue/smelter/improved,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"m" = (
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"o" = (
+/obj/structure/lever/wall{
+	dir = 4;
+	pixel_x = 9
+	},
+/obj/item/roguegear,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"p" = (
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/indoors)
+"q" = (
+/turf/closed/wall/mineral/rogue/wooddark{
+	icon_state = "wooddark-k"
+	},
+/area/rogue/indoors)
+"r" = (
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"s" = (
+/obj/structure/closet/crate/roguecloset/dark,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"t" = (
+/obj/structure/chair/stool/rogue,
+/obj/structure/roguemachine/atm,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"u" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"v" = (
+/obj/structure/roguemachine/stockpile,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"w" = (
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"x" = (
+/obj/structure/bed/rogue/inn/wool,
+/obj/item/bedsheet/rogue/wool,
+/obj/item/rogue/instrument/guitar,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"y" = (
+/obj/structure/table/wood{
+	icon_state = "longtable_mid";
+	dir = 1
+	},
+/obj/item/customlock,
+/obj/item/customblank,
+/obj/structure/table/wood{
+	icon_state = "longtable"
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"z" = (
+/obj/structure/table/wood{
+	icon_state = "longtable";
+	dir = 1
+	},
+/obj/item/flint,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"B" = (
+/obj/machinery/light/rogue/wallfire/candle/r,
+/obj/structure/closet/crate/roguecloset/inn/chest,
+/turf/open/floor/rogue/hexstone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"D" = (
+/obj/structure/mineral_door/wood{
+	keylock = 0
+	},
+/obj/structure/bars/passage/shutter/open,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"W" = (
+/turf/open/floor/rogue/wood,
+/area/rogue)
+
+(1,1,1) = {"
+d
+d
+d
+d
+d
+d
+d
+"}
+(2,1,1) = {"
+d
+e
+w
+p
+t
+y
+d
+"}
+(3,1,1) = {"
+d
+f
+r
+l
+u
+z
+q
+"}
+(4,1,1) = {"
+d
+g
+m
+p
+v
+r
+D
+"}
+(5,1,1) = {"
+d
+c
+r
+r
+w
+r
+a
+"}
+(6,1,1) = {"
+d
+i
+o
+s
+x
+B
+d
+"}
+(7,1,1) = {"
+d
+d
+d
+d
+d
+d
+d
+"}
+
+(1,1,2) = {"
+W
+W
+W
+W
+W
+W
+W
+"}
+(2,1,2) = {"
+W
+W
+W
+W
+W
+W
+W
+"}
+(3,1,2) = {"
+W
+W
+W
+W
+W
+W
+W
+"}
+(4,1,2) = {"
+W
+W
+W
+W
+W
+W
+W
+"}
+(5,1,2) = {"
+W
+W
+W
+W
+W
+W
+W
+"}
+(6,1,2) = {"
+W
+W
+W
+W
+W
+W
+W
+"}
+(7,1,2) = {"
+W
+W
+W
+W
+W
+W
+W
+"}

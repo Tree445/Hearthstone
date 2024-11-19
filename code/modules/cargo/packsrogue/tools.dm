@@ -15,7 +15,7 @@
 
 /datum/supply_pack/rogue/tools/scomst
 	name = "Scomstones"
-	cost = 70
+	cost = 300
 	contains = list(/obj/item/scomstone,
 					/obj/item/scomstone,
 					/obj/item/scomstone/bad,

@@ -76,7 +76,7 @@
 	hitscan = TRUE
 	movement_type = UNSTOPPABLE
 	light_color = LIGHT_COLOR_WHITE
-	damage = 10
+	damage = 25
 	damage_type = BURN
 	nodamage = FALSE
 	speed = 0.3
@@ -179,7 +179,6 @@
 	flag = "magic"
 	light_color = "#e74141"
 	light_range = 7
-	var/mob/living/carbon/human/sender
 
 /obj/projectile/magic/bloodsteal/on_hit(target)
 	. = ..()

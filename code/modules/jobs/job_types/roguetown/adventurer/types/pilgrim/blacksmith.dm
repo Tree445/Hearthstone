@@ -3,7 +3,7 @@
 	tutorial = "A skilled blacksmith, able to forge capable weapons for warriors; \
 	only after building a forge for themselves of course."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
 
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
@@ -33,18 +33,18 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE) // okish fists now(used to be four when the last note was written lmao)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 3, TRUE) //removes a lot of the combat skills for 3 in all smithing, would not be opposed to making it maces 1 instead of 2 if you really wanna disarm towners
-		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE) //intended to make smiths be able to make mantraps (they are made of metal)
-		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 3, TRUE)//Foxen was here. UwU
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE) // okish fists now(used to be four when the last note was written lmao)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/weaponsmithing, 3, TRUE) //removes a lot of the combat skills for 3 in all smithing, would not be opposed to making it maces 1 instead of 2 if you really wanna disarm towners
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 1, TRUE) //intended to make smiths be able to make mantraps (they are made of metal)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/smelting, 3, TRUE)//Foxen was here. UwU
 		H.change_stat("strength", 2) //takes a point from end and con to give to str and int(smiths are meant to be smart and strong not tough as nails ??? and as fit as an olympic athelete ????)
 		H.change_stat("endurance", 1)
 		H.change_stat("intelligence", 1)

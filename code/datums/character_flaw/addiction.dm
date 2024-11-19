@@ -34,7 +34,7 @@
 		return
 	if(user.mind.antag_datums)
 		for(var/datum/antagonist/D in user.mind.antag_datums)
-			if(istype(D, /datum/antagonist/vampirelord) || istype(D, /datum/antagonist/werewolf) || istype(D, /datum/antagonist/skeleton) || istype(D, /datum/antagonist/zombie))
+			if(istype(D, /datum/antagonist/vampirelord) || istype(D, /datum/antagonist/werewolf) || istype(D, /datum/antagonist/skeleton) || istype(D, /datum/antagonist/zombie) || istype(D, /datum/antagonist/lich))
 				return
 	var/mob/living/carbon/human/H = user
 	var/oldsated = sated
@@ -128,7 +128,7 @@
 /datum/charflaw/addiction/godfearing
 	name = "Devout Follower"
 	desc = "I need to pray to my Patron, their blessings are stronger."
-	time = 35 MINUTES
+	time = 40 MINUTES
 	needsate_text = "Time to pray."
 
 /datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE) // added since the previous way it was implemented caused a bunch of runtimes
@@ -156,3 +156,11 @@
 				else
 					crosstype = /obj/item/clothing/neck/roguetown/psicross
 		H.equip_to_slot_or_del(new crosstype(H), SLOT_NECK)
+
+/// ALCOHOLIC
+
+/datum/charflaw/addiction/lovefiend
+	name = "Love-Fiend"
+	desc = "I must make love!"
+	time = 50 MINUTES
+	needsate_text = "Time to get happy."

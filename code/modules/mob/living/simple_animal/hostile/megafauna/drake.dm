@@ -50,7 +50,6 @@ Difficulty: Medium
 	pixel_x = -16
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
 	var/swooping = NONE
 	var/player_cooldown = 0
 	gps_name = "Fiery Signal"
@@ -73,7 +72,7 @@ Difficulty: Medium
 	see_in_dark = 10
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/drake)
-	butcher_results = list(/obj/item/natural/carapace/dragon = 2,/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence = 1)
+	butcher_results = list(/obj/item/natural/carapace/dragon = 4,/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2, /obj/item/soul_fragment/essence = 1, /obj/item/natural/dragon_head = 1)
 	faction = list("caves")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	health = 2500

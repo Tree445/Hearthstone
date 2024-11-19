@@ -143,10 +143,11 @@
 	qdel(src)
 */
 /obj/item/reagent_containers/powder/flour
-	name = "powder"
-	desc = ""
+	name = "mound of flour"
+	desc = "Add water and knead it"
 	gender = PLURAL
 	icon_state = "flour"
+	can_brew = TRUE
 	list_reagents = list(/datum/reagent/floure = 1)
 	grind_results = list(/datum/reagent/floure = 10)
 	volume = 1
@@ -210,6 +211,7 @@
 	desc = ""
 	gender = PLURAL
 	icon_state = "salt"
+	brew_reagent = /datum/reagent/alch/syrums
 	list_reagents = list(/datum/reagent/consumable/sodiumchloride = 15)
 	grind_results = list(/datum/reagent/consumable/sodiumchloride = 15)
 	volume = 1
@@ -220,8 +222,8 @@
 	qdel(src)
 
 /obj/item/reagent_containers/powder/ozium
-	name = "ozium"
-	desc = ""
+	name = "ozium powder"
+	desc = "painkiller"
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "ozium"
 	possible_transfer_amounts = list()
@@ -280,7 +282,7 @@
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
-	desc = ""
+	desc = "Give it a sniff, see if it smells like moondust to you."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust"
 	possible_transfer_amounts = list()
@@ -324,8 +326,8 @@
 	M.adjustToxLoss(10, 0)
 
 /obj/item/reagent_containers/powder/moondust/purest
-	name = "moondust"
-	desc = ""
+	name = "pure uncut moondust"
+	desc = "Give it a sniff, see if it smells like moondust to you."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "moondust_purest"
 	possible_transfer_amounts = list()

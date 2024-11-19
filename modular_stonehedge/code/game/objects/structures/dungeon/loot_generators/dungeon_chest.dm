@@ -3,12 +3,17 @@
 
 //stole the loot lists from dungeon_chest
 
-/obj/effect/spawner/lootdrop/roguetown/dungeon/refilling_chest
+/obj/effect/spawner/lootdrop/roguetown/refilling_chest/randomspawner
 	name = "refilling_chest"
 	loot = list(
 	/obj/structure/closet/crate/chest/refilling/generic = 6,
 	/obj/structure/closet/crate/chest/refilling/materials = 5,
 	/obj/structure/closet/crate/chest/refilling/armor = 3,
+	/obj/structure/closet/crate/chest/refilling/food = 3,
+	/obj/structure/closet/crate/chest/refilling/tools = 3,
+	/obj/structure/closet/crate/chest/refilling/misc = 5,
+	/obj/structure/closet/crate/chest/refilling/spells = 1,
+	/obj/structure/closet/crate/chest/refilling/trait = 1,
 	/obj/structure/closet/crate/chest/refilling/weapon = 4,
 	/obj/structure/closet/crate/chest/refilling/treasure = 2,
 	/obj/structure/closet/crate/chest/refilling/medicine = 5,
@@ -26,7 +31,7 @@
 	base_icon_state = "dungeon_chest_1"
 	anchored = TRUE //bet some dude would try to take this home.
 	var/found = FALSE
-	var/time_to_reset = 30 MINUTES
+	var/time_to_reset = 10 MINUTES
 	var/reset_timer
 	var/max_loot_num_to_spawn = 3
 	var/loot_type = "generic"
@@ -46,6 +51,23 @@
 
 /obj/structure/closet/crate/chest/refilling/weapon
 	loot_type = "weapon"
+
+/obj/structure/closet/crate/chest/refilling/food
+	loot_type = "food"
+
+/obj/structure/closet/crate/chest/refilling/tools
+	loot_type = "tools"
+
+/obj/structure/closet/crate/chest/refilling/spells
+	loot_type = "spells"
+	max_loot_num_to_spawn = 1
+
+/obj/structure/closet/crate/chest/refilling/misc
+	loot_type = "misc"
+
+/obj/structure/closet/crate/chest/refilling/trait
+	loot_type = "trait"
+	max_loot_num_to_spawn = 1
 
 /obj/structure/closet/crate/chest/refilling/armor
 	loot_type = "armor"
@@ -276,6 +298,74 @@
 				/obj/item/clothing/shoes/roguetown/boots/leather = 55,
 				/obj/item/clothing/shoes/roguetown/boots/footmangreaves = 30
 				)
+		if("food")
+			loot = list(
+				/obj/item/reagent_containers/food/snacks/rogue/crackerscooked = 3,
+				/obj/item/reagent_containers/food/snacks/butterslice = 3,
+				/obj/item/reagent_containers/powder/salt = 3,
+				/obj/item/reagent_containers/food/snacks/egg = 3
+				)
+		if("spells")
+			loot = list(
+				//spells
+				/obj/item/book/granter/spell/blackstone/fireball = 3,
+				/obj/item/book/granter/spell/blackstone/greaterfireball = 2,
+				/obj/item/book/granter/spell/blackstone/lightning = 3,
+				/obj/item/book/granter/spell/blackstone/fetch = 4,
+				/obj/item/book/granter/spell/blackstone/blindness = 1,
+				/obj/item/book/granter/spell/blackstone/invisibility = 3,
+				/obj/item/book/granter/spell/blackstone/sicknessray = 2,
+				/obj/item/book/granter/spell/blackstone/strengthen_undead = 2
+			)
+		if("tools")
+			loot = list(
+				// tools
+				/obj/item/rogueweapon/shovel = 3,
+				/obj/item/rogueweapon/thresher = 3,
+				/obj/item/flint = 4,
+				/obj/item/rogueweapon/stoneaxe/woodcut = 3,
+				/obj/item/rogueweapon/stoneaxe = 3,
+				/obj/item/rogueweapon/hammer = 3,
+				/obj/item/rogueweapon/tongs = 3,
+				/obj/item/rogueweapon/pick = 3
+			)
+		if("misc")
+			loot = list(
+				/obj/item/rogue/instrument/flute = 3,
+				/obj/item/ash = 5,
+				/obj/item/shard = 5,
+				/obj/item/candle/yellow = 3,
+				/obj/item/flashlight/flare/torch = 3,
+				/obj/item/reagent_containers/glass/bowl = 4,
+				/obj/item/reagent_containers/glass/cup = 4,
+				/obj/item/reagent_containers/glass/cup/wooden = 4,
+				/obj/item/reagent_containers/glass/cup/steel = 3,
+				/obj/item/reagent_containers/glass/cup/golden = 1,
+				/obj/item/reagent_containers/glass/cup/skull = 1,
+				/obj/item/reagent_containers/glass/bucket/wooden = 3,
+				/obj/item/natural/feather = 4,
+				/obj/item/paper/scroll = 3,
+				/obj/item/rope = 3,
+				/obj/item/rope/chain = 3,
+				/obj/item/storage/roguebag/crafted = 3,
+				/obj/item/clothing/mask/cigarette/pipe = 3,
+				/obj/item/paper = 3,
+				/obj/item/reagent_containers/glass/bowl = 3,
+				/obj/item/storage/bag/tray = 3
+			)
+		if("trait")
+			loot = list(
+				/obj/item/rogueweapon/huntingknife/idagger/silver=33,
+				/obj/item/book/granter/trait/war/undying=13,
+				/obj/item/book/granter/trait/war/relentless=13,
+				/obj/item/book/granter/trait/mobility/bogtrek=33,
+				/obj/item/book/granter/trait/defense/mediumarmor=40,
+				/obj/item/book/granter/trait/defense/heavyarmor=40,
+				/obj/item/book/granter/trait/acrobat=40,
+				/obj/item/book/granter/trait/succubus=13,
+				/obj/item/riddleofsteel=13,
+				/obj/item/clothing/neck/roguetown/talkstone=13
+			)
 	if(loot == null)
 		log_runtime("Some stupid RETARD put the loot_type of [src] wrong at [get_area(src)], x[src.x], y[src.y], z[src.z]") //must keep the roguetown tradition.
 		return

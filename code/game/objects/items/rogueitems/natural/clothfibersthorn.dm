@@ -229,7 +229,7 @@
 		if(prob(prob2break))
 			playsound(src,'sound/items/seedextract.ogg', 100, FALSE)
 			qdel(src)
-			if (L.alpha > 100) // not anymore you're not
+			if (L.alpha <= 100) // not anymore you're not
 				L.update_sneak_invis(TRUE)
 			L.consider_ambush()
 

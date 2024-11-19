@@ -99,6 +99,7 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define ishalforc(A) (is_species(A, /datum/species/halforc))
 #define isgoblinp(A) (is_species(A, /datum/species/goblinp))
 #define iskobold(A) (is_species(A, /datum/species/kobold))
+#define ishedgebeast(A) (is_species(A, /datum/species/anthromorphsmall))
 #define isseelie(A) (is_species(A, /datum/species/seelie))
 
 //more carbon mobs

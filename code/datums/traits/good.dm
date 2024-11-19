@@ -225,12 +225,14 @@ datum/quirk/fan_mime
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
+/*
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "I can leap into things to hide."
 	value = 2
 	mob_trait = TRAIT_SKITTISH
 	medical_record_text = "Patient demonstrates a high aversion to danger and has described hiding in containers out of fear."
+*/
 
 /datum/quirk/spiritual
 	name = "Spiritual"

@@ -73,8 +73,8 @@
 					S.forceMove(get_turf(user))
 
 /turf/closed/mineral/turf_destruction(damage_flag)
-	if(lastminer.goodluck(2) && mineralType)
-//		to_chat(lastminer, span_notice("Bonus ducks!"))
+	if(lastminer && lastminer.goodluck(2) && mineralType) // Check if lastminer is not null
+//        to_chat(lastminer, span_notice("Bonus ducks!"))
 		new mineralType(src)
 	gets_drilled(lastminer, give_exp = FALSE)
 	queue_smooth_neighbors(src)
@@ -92,17 +92,18 @@
 			if(prob(23))
 				new rockType(src)
 		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
-	else if(user.goodluck(2))
+	else if(user && user.goodluck(2)) // Check if user is not null
 		var/newthing = pickweight(list(/obj/item/natural/rock/salt = 2, /obj/item/natural/rock/iron = 1, /obj/item/natural/rock/coal = 2))
-//		to_chat(user, span_notice("Bonus ducks!"))
+//        to_chat(user, span_notice("Bonus ducks!"))
 		new newthing(src)
-//	if(ishuman(user))
-//		var/mob/living/carbon/human/H = user
-//		if(give_exp)
-//			if (mineralType && (mineralAmt > 0))
-//				H.mind.adjust_experience(/datum/skill/labor/mining, initial(mineralType.mine_experience) * mineralAmt)
-//			else
-//				H.mind.adjust_experience(/datum/skill/labor/mining, 4)
+//    if(ishuman(user))
+//        var/mob/living/carbon/human/H = user
+//        if(give_exp)
+//            if (mineralType && (mineralAmt > 0))
+//                H.mind.adjust_experience(/datum/skill/labor/mining, initial(mineralType.mine_experience) * mineralAmt)
+//            else
+//                H.mind.adjust_experience(/datum/skill/labor/mining, 4)
+
 
 	for(var/obj/effect/temp_visual/mining_overlay/M in src)
 		qdel(M)

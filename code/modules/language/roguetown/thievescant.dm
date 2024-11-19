@@ -1,9 +1,9 @@
 /datum/language/thievescant
 	name = "Thieves' Cant"
 	desc = ""
-	speech_verb = "says"
-	ask_verb = "asks"
-	exclaim_verb = "yells"
+	speech_verb = "gestures"
+	ask_verb = "questioningly gestures"
+	exclaim_verb = "angrily gestures"
 	key = "t"
 	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | SIGNLANG | NO_STUTTER
 	space_chance = 66

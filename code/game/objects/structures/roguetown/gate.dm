@@ -16,7 +16,6 @@ GLOBAL_LIST_EMPTY(biggates)
 	var/isSwitchingStates = FALSE
 	var/list/turfsy = list()
 	var/list/blockers = list()
-	var/gid
 	attacked_sound = list('sound/combat/hits/onmetal/sheet (1).ogg', 'sound/combat/hits/onmetal/sheet (2).ogg')
 	var/obj/structure/attached_to
 
@@ -142,7 +141,6 @@ GLOBAL_LIST_EMPTY(biggates)
 	density = TRUE
 	anchored = TRUE
 	max_integrity = 0
-	var/gid
 	var/obj/structure/gate/attached_gate
 
 /obj/structure/winch/Initialize()

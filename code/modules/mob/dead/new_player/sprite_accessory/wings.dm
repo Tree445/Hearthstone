@@ -6,6 +6,9 @@
 	/// Whether the sprite accessory has states for open wings (With an "_open" suffix).
 	var/can_open = FALSE
 
+/datum/sprite_accessory/wings/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	return is_human_part_visible(owner, HIDETAIL|HIDEWINGS)
+
 /datum/sprite_accessory/wings/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BACK, OFFSET_BACK_F)
 

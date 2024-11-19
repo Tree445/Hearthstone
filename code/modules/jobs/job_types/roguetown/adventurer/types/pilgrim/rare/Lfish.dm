@@ -4,7 +4,7 @@
 	name = "Master Fisher"
 	tutorial = "You are a Master Fisher, you cast your rod with might, and are able to pull fish larger than Eoras Bosom."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/fishermaster
 
 	maximum_possible_slots = 1
@@ -14,11 +14,11 @@
 
 /datum/outfit/job/roguetown/adventurer/fishermaster/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/fishing, 6, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 6, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
@@ -33,6 +33,6 @@
 	beltl = /obj/item/flint
 	backpack_contents = list(/obj/item/natural/worms = 2,/obj/item/rogueweapon/shovel/small=1)
 	if(H.age == AGE_OLD)
-		H.mind.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 1, TRUE)
 		H.change_stat("constitution", 2)

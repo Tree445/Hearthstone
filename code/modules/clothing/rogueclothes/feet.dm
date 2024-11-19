@@ -133,10 +133,10 @@
 	smeltresult = /obj/item/ash
 	sewrepair = TRUE
 /obj/item/clothing/shoes/roguetown/boots/carapace/dragon
-	name = "dragon boots"
-	desc = "Boots made from dragonbone for added protection."
-	color = "red"
-	armor = list("blunt" = 80, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	name = "dragonscale boots"
+	desc = "Boots made from dragonscale for added protection."
+	color = "#9e5761"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 
 
 /obj/item/clothing/shoes/roguetown/boots/armoriron

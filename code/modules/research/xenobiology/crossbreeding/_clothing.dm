@@ -97,7 +97,7 @@ Slimecrossing Armor
 //Eora content from Stonekeep
 
 /obj/item/clothing/head/peaceflower
-	name = "eoran bud"
+	name = "Viriitran bud"
 	desc = "A flower of gentle petals, associated with Eora or Necra. Usually adorned as a headress or laid at graves as a symbol of love or peace."
 	icon = 'icons/roguetown/items/produce.dmi'
 	icon_state = "peaceflower"

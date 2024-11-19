@@ -757,7 +757,7 @@
 	var/list/loot = list(/obj/item/book/granter/trait/defense/heavyarmor=35,
 		/obj/item/book/granter/trait/defense/mediumarmor=12,
 		/obj/item/book/granter/trait/war/undying=8,
-		/obj/item/natural/dragon_head = 45)
+		/obj/item/riddleofsteel = 45)
 	if(prob(50))
 		var/I = pickweight(loot)
 		new I(src)

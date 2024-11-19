@@ -524,7 +524,7 @@
 		/obj/item/book/granter/spell/blackstone/blindness = 15,
 		// /obj/item/book/granter/spell/blackstone/invisibility = 15,
 		// /obj/item/book/granter/spell/blackstone/sicknessray = 15,
-		/obj/item/book/granter/spell/blackstone/bonechill = 10
+		/obj/item/book/granter/spell/blackstone/strengthen_undead = 10
 
 		)
 

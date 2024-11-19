@@ -225,7 +225,7 @@
 				resolveAdjacentClick(A,W,params)
 				return
 
-	if(!loc.AllowClick()) // This is going to stop you from telekinesing from inside a closet, but I don't shed many tears for that
+	if(loc && !loc.AllowClick())
 		return
 /*
 	//This block handles attempting to attack a mob in the direction you clicked

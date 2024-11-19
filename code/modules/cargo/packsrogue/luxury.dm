@@ -134,7 +134,8 @@
 					/obj/item/clothing/head/roguetown/grenzelhofthat,
 					/obj/item/clothing/under/roguetown/grenzelpants,
 					/obj/item/clothing/suit/roguetown/shirt/grenzelhoft,
-					/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock,
+					/obj/item/gun/ballistic/arquebus_pistol,
+					/obj/item/powderflask,
 					/obj/item/ammopouch/bullets
 					)
 
@@ -159,3 +160,7 @@
 	cost = 100
 	contains = list(/obj/item/book/granter/spell/spells5e/mending5e)
 
+/datum/supply_pack/rogue/luxury/tarot_deck
+	name = "Tarot Deck"
+	cost = 5
+	contains = list(/obj/item/toy/cards/deck/tarot)

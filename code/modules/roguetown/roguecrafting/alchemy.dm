@@ -16,7 +16,7 @@
 /datum/crafting_recipe/roguetown/alchemy/bbomb
 	name = "Bottle bomb"
 	result = list(/obj/item/bomb)
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/ash = 2, /obj/item/rogueore/coal = 1, /obj/item/natural/cloth = 1)
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1,/obj/item/reagent_containers/powder/gunpowder = 1, /obj/item/natural/cloth = 1)
 	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/alchemy/ozium
@@ -192,7 +192,7 @@
 /datum/crafting_recipe/roguetown/alchemy/gunpowder
 	name = "firepowder"
 	result = list(/obj/item/reagent_containers/powder/gunpowder)
-	reqs = list(/obj/item/ash = 2, /obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/ash = 2, /obj/item/rogueore/coal = 1)
 	craftdiff = 2
 
 /// bottle craft
@@ -514,6 +514,8 @@
 		/obj/item/reagent_containers/powder/moondust = 1)
 	craftdiff = 1
 
+/////// I gotta put this somewhere so. here./////////////////////
+
 
 /obj/item/reagent_containers/hypospray/medipen/sealbottle
 	name = "sealed bottle item"
@@ -651,6 +653,12 @@
 	amount_per_transfer_from_this = 30
 	list_reagents = list(/datum/reagent/medicine/purify = 20, /datum/reagent/ozium = 5, /datum/reagent/consumable/ethanol/hooch = 5) // lil laudanum for your troubles
 
+/obj/item/reagent_containers/hypospray/medipen/sealbottle/mori
+	name = "MORIBUND"
+	desc = "Dr. V's elixer of life, because sometimes even necra needs a second opinion. WARNING: absolutely do not drink more than a bottle. mend corpse prior to imbide."
+	volume = 5
+	amount_per_transfer_from_this = 5
+	list_reagents = list(/datum/reagent/medicine/mori = 5,)
 
 /obj/item/natural/cloth/bandage
 	name = "bandage"
@@ -737,3 +745,17 @@
 	icon_state = "bandageroll2"
 	amount = 3
 	firefuel = 60 MINUTES
+
+/datum/crafting_recipe/roguetown/bandage
+	name = "essence of purity"
+	result = /obj/item/reagent_containers/powder/alch/pur
+	reqs = list(/obj/item/reagent_containers/powder/salt = 1, /obj/item/reagent_containers/powder/alch/pipe = 1,)
+	craftdiff = 5
+	skillcraft = /datum/skill/misc/alchemy
+
+/datum/crafting_recipe/roguetown/bandage
+	name = "essence of life"
+	result = /obj/item/reagent_containers/powder/alch/life
+	reqs = list(/obj/item/reagent_containers/powder/salt = 1, /datum/reagent/medicine/healthpot = 45, /obj/item/reagent_containers/powder/alch/mincem = 1,)
+	craftdiff = 6
+	skillcraft = /datum/skill/misc/alchemy

@@ -54,6 +54,7 @@ GLOBAL_LIST_INIT(moldable_organs, list(BODY_ZONE_PRECISE_GROIN=list(ORGAN_SLOT_P
 	var/list/implements_extract = list(
 		TOOL_HEMOSTAT = 80,
 		TOOL_CROWBAR = 65,
+		TOOL_IMPROVISED_HEMOSTAT = 40,
 		TOOL_HAND = 60,
 	)
 

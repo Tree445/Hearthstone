@@ -172,6 +172,7 @@
 #define MIGRANT (1<<19)
 #define SEELIE		(1<<20)
 #define PRISONERD	(1<<21)
+#define BANDIT		(1<<22)
 
 #define APPRENTICES	(1<<6)
 
@@ -294,6 +295,7 @@
 #define JDO_VET 31.3
 #define JDO_SEELIE 31.4
 #define JDO_SELLSWORD 31.5
+#define JDO_BANDIT 31.6
 
 #define JDO_VAGRANT 33
 #define JDO_VAGABOND 34
@@ -384,7 +386,8 @@
 #define WANDERER_ROLES \
 	/datum/job/roguetown/pilgrim,\
 	/datum/job/roguetown/adventurer,\
-	/datum/job/roguetown/mercenary
+	/datum/job/roguetown/mercenary,\
+	/datum/job/roguetown/bandit
 
 #define GARRISON_ROLES \
 	/datum/job/roguetown/bogguardsman,\

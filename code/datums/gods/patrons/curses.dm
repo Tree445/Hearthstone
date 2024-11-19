@@ -150,6 +150,11 @@
 	description = "I'm in a constant state of arousal, and I cannot control my urges."
 	trait = TRAIT_BAOTHA_CURSE
 
+/datum/curse/nympho
+	name = "Nympho Curse"
+	description = "I'm in a constant state of arousal, and I cannot control my urges, even clothes get me off..."
+	trait = TRAIT_NYMPHO_CURSE
+
 //////////////////////
 /// ON GAIN / LOSS ///
 //////////////////////
@@ -219,16 +224,22 @@
 	owner.mob_timers["baotha_curse"] = world.time
 	owner.sexcon.arousal += rand(-20,50)
 
-	var/effect = rand(1, 3)
-	if(owner.gender == "female")
-		switch(effect)
-			if(1)
-				owner.emote("sexmoanhvy")
-			if(2)
-				owner.emote("sexmoanlight")
-			if(3)
-				owner.emote("sexmoanlight")
-	//else //we dont have male moans yet
+/datum/curse/nympho/on_life(mob/living/carbon/human/owner)
+	. = ..()
+	if(owner.mob_timers["nympho_curse_passive"])
+		if(world.time < owner.mob_timers["nympho_curse"] + rand(2,10)SECONDS)
+			return
+	owner.mob_timers["nympho_curse_passive"] = world.time
+	owner.sexcon.arousal += 1
+	if(owner.mob_timers["nympho_curse"])
+		if(world.time < owner.mob_timers["nympho_curse"] + rand(15,90)SECONDS)
+			return
+	owner.mob_timers["nympho_curse"] = world.time
+	if(owner.wear_pants)
+		if(owner.wear_pants.flags_inv & HIDECROTCH && !owner.wear_pants.genitalaccess)
+			if(rand(5))
+				to_chat(owner, span_love("I feel my [owner.wear_pants] rub against me..."))
+			owner.sexcon.arousal += rand(1,30)
 
 /datum/curse/graggar/on_life(mob/living/carbon/human/owner)
 	. = ..()		

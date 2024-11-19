@@ -153,7 +153,7 @@
 	item_state = "carapace"
 	blocksound = PLATEHIT
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
-	armor = list("blunt" = 60, "slash" = 100, "stab" = 0, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = list("blunt" = 60, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	max_integrity = 175
 	allowed_sex = list(MALE, FEMALE)
@@ -175,7 +175,7 @@
 /obj/item/clothing/suit/roguetown/armor/carapace/cuirass
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "carapace cuirass"
-	desc = "vest styled watery shell chest armor sewn in layers."
+	desc = "Vest styled watery shell chest armor sewn in layers."
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "carapacecuirass"
 	item_state = "carapacecuirass"
@@ -185,21 +185,21 @@
 /obj/item/clothing/suit/roguetown/armor/carapace/dragon
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dragonscale armor"
-	desc = "armor crafted from the hardened bones of a dragon."
+	desc = "Armor crafted from the hardened scales of a dragon."
 	body_parts_covered = CHEST|GROIN|VITALS
-	color = "red"
-	icon_state = "carapacecuirass"
-	item_state = "carapacecuirass"
-	armor = list("blunt" = 80, "slash" = 100, "stab" = 0, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	color = "#9e5761"
+	icon_state = "carapace"
+	item_state = "carapace"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 	max_integrity = 700	//4 dragonscales, 6 fibers, and 2 difficulty.
 	sellprice = 50
 
 /obj/item/clothing/suit/roguetown/armor/carapace/dragon/cuirass
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "dragonscale cuirass"
-	desc = "vest styled dragonbone chest armor sewn in layers."
+	desc = "Vest styled dragonscale chest armor sewn in layers."
 	body_parts_covered = CHEST|GROIN|VITALS
-	color = "red"
+	color = "#9e5761"
 	icon_state = "carapacecuirass"
 	item_state = "carapacecuirass"
 	max_integrity = 450

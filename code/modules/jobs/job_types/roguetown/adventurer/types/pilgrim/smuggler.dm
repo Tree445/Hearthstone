@@ -3,7 +3,7 @@
 	tutorial = "Your past as a smuggler gave you experience in moving goods discreetly, avoiding other ships and authorities alike, \
 	now, land-bound, you continue to trade in goods that others can't get their hands on, using your extensive knowledge to do so."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/smuggler
 	category_tags = list(CTAG_PILGRIM)
 	maximum_possible_slots = 2
@@ -31,17 +31,17 @@
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_GOODRUNNER, TRAIT_GENERIC)
 
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE) 
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE) 
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/fishing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE) 
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE) 
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/fishing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
 	H.change_stat("strength", -2)
 	H.change_stat("perception", 1)
 	H.change_stat("intelligence", 2)

@@ -70,12 +70,12 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(lastfilechange)
-		if(world.time < lastfilechange + 3 MINUTES)
+		if(world.time < lastfilechange + 1 MINUTES)
 			say("NOT YET!")
 			return
-//	if(!loaded)
-//		say("FEED ME SPIDER MILK!")
-//		return
+	if(!loaded)	
+		say("ONE COIN, A COPPER COIN FOR AN AFTERNOON OF JOY!")
+		return
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/infile = input(user, "CHOOSE A NEW SONG", src) as null|file
 

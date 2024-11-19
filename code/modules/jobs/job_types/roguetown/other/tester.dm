@@ -12,7 +12,7 @@
 #endif
 	min_pq = null //no pq
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = ""
 	outfit = /datum/outfit/job/roguetown/tester
 	plevel_req = 0
@@ -38,18 +38,18 @@
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		beltr = /obj/item/rogueweapon/sword/sabre
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axes, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, rand(1,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, rand(1,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, rand(1,5), TRUE)
 		H.change_stat("strength", 1)

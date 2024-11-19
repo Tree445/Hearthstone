@@ -98,9 +98,9 @@
 	if(prob(40))
 		head = /obj/item/clothing/head/roguetown/helmet/leather
 	if(prob(70))
-		gloves = /obj/item/clothing/gloves/roguetown/chain/iron
+		gloves = /obj/item/clothing/gloves/roguetown/chain
 	if(prob(70))
-		neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+		neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.gender == FEMALE)
 		H.STASTR = rand(9,12)
 	else
@@ -112,7 +112,7 @@
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword
 	else
-		r_hand = /obj/item/rogueweapon/stoneaxe/woodcut
+		r_hand = /obj/item/rogueweapon/mace
 
 /datum/outfit/job/roguetown/npc/skeleton/dungeon/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -166,21 +166,21 @@
 
 	//light labor skills for skeleton manual labor and some warrior-adventurer skills, equipment is still bad probably
 	if(H.mind) //npcs dont have a mind.
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
 
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
 
 	H.set_patron(/datum/patron/inhumen/zizo)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

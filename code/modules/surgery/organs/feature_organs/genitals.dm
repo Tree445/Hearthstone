@@ -15,6 +15,8 @@
 	var/strapon = FALSE
 
 /obj/item/organ/penis/proc/update_erect_state()
+	if(istype(src, /obj/item/organ/penis/internal))
+		return
 	var/oldstate = erect_state
 	var/new_state = ERECT_STATE_NONE
 	if(owner)

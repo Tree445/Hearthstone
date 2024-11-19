@@ -243,6 +243,8 @@
 /obj/item/clothing/head/roguetown/necromhood
 	name = "necromancers hood"
 	color = null
+	icon = 'modular_stonehedge/icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/roguetown/clothing/onmob/head.dmi'
 	icon_state = "necromhood"
 	item_state = "necromhood"
 	body_parts_covered = NECK
@@ -1192,9 +1194,9 @@
 	smeltresult = /obj/item/ash
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 /obj/item/clothing/head/roguetown/helmet/carapacecap/dragon
-	name = "dragon cap"
+	name = "dragonscale cap"
 	desc = "Fiery armored plates sown together to protect your head."
-	color = "red"
+	color = "#9e5761"
 	armor = list("blunt" = 60, "slash" = 60, "stab" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/roguetown/helmet/carapacehelm
@@ -1208,7 +1210,7 @@
 	icon_state = "carapacehelm"
 	item_state = "carapacehelm"
 	armor = list("blunt" = 60, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_SMASH, BCLASS_TWIST)
 	max_integrity = 150
 	anvilrepair = null
 	sewrepair = TRUE
@@ -1218,10 +1220,13 @@
 /obj/item/clothing/head/roguetown/helmet/carapacehelm/dragon
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
 	name = "dragonslayer full helm"
-	desc = "Helmet crafted from the bones of a dragon."
-	color = "red"
-	armor = list("blunt" = 80, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
-	max_integrity = 200
+	desc = "Helmet crafted from the head of a dragon."
+	body_parts_covered = HEAD|HAIR|EARS|NOSE|NECK
+	icon_state = "dragonscalehelm"
+	item_state = "dragonscalehelm"
+	color = "#693a41"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	max_integrity = 300
 	sellprice = 50
 
 /obj/item/clothing/head/roguetown/helmet/leather

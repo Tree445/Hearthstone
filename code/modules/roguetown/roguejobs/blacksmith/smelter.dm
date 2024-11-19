@@ -19,7 +19,7 @@
 	var/maxore = 1
 	var/cooking = 0
 	var/actively_smelting = FALSE // Are we currently smelting?
-	fueluse = 5 MINUTES
+	fueluse = 20 MINUTES
 	crossfire = FALSE
 
 /obj/machinery/light/rogue/smelter/attackby(obj/item/W, mob/living/user, params)
@@ -125,7 +125,7 @@
 	anchored = TRUE
 	density = TRUE
 	maxore = 4
-	fueluse = 10 MINUTES
+	fueluse = 30 MINUTES
 	climbable = FALSE
 
 /obj/machinery/light/rogue/smelter/great/process()
@@ -172,3 +172,15 @@
 					visible_message("<span class='notice'>\The [src] finished smelting.</span>")
 					cooking = 31
 					actively_smelting = FALSE
+
+/obj/machinery/light/rogue/smelter/improved
+	icon = 'icons/roguetown/misc/forge.dmi'
+	name = "modified furnace"
+	desc = "A slightly more thoughtfully made smelter, still basic in design but able to hold more ores."
+	icon_state = "cavesmelter0"
+	base_state = "cavesmelter"
+	anchored = TRUE
+	density = TRUE
+	maxore = 3
+	fueluse = 30 MINUTES
+	climbable = TRUE

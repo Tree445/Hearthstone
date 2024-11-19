@@ -5,7 +5,7 @@
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0		//Disables round-start spawn of pilgrims but allows migrant waves via total positions. Pilgrim = Towners now.
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "Fleeing misfortune you head your way towards StoneHedge, you're not a soldier or an explorer, but a humble migrant trying to look for a better life, if you get to survive the trip that is."
 
 	outfit = null

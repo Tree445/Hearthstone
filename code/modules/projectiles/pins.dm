@@ -1,5 +1,5 @@
 /obj/item/firing_pin
-	name = "electronic firing pin"
+	name = "firing pin"
 	desc = ""
 	icon = 'icons/obj/device.dmi'
 	icon_state = "firing_pin"

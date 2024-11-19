@@ -4,7 +4,7 @@
 	name = "Master Miner"
 	tutorial = "A master miner, you are capable of cutting stone like butter, and forging rocks into anything you can think of"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/minermaster
 
 	maximum_possible_slots = 1
@@ -24,14 +24,14 @@
 	beltl = /obj/item/rogueweapon/pick
 	backl = /obj/item/storage/backpack/rogue/backpack
 	
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/mining, 6, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/mining, 6, TRUE)
 	H.change_stat("strength", 2)
 	H.change_stat("intelligence", 2)
 	H.change_stat("endurance", 2)

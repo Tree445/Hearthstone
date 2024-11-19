@@ -176,3 +176,11 @@
 	smeltresult = /obj/item/ingot/glass
 	grind_results = list(/datum/reagent/glass = 15)
 	sellprice = 15
+
+/obj/item/rogueore/psteel
+	name = "pig iron mix"
+	desc = "a crude mix of carbon and iron, wasteful but smeltable into steel."
+	icon_state = "oreada"
+	smeltresult = /obj/item/ingot/steel
+	grind_results = list(/datum/reagent/iron = 15)
+	sellprice = 15

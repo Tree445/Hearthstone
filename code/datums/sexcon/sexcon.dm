@@ -312,7 +312,7 @@
 	user.emote("sexmoanhvy", forced = TRUE)
 	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
 	last_ejaculation_time = world.time
-	if(HAS_TRAIT(user, TRAIT_BAOTHA_CURSE))
+	if(HAS_TRAIT(user, TRAIT_BAOTHA_CURSE)||HAS_TRAIT(user, TRAIT_NYMPHO_CURSE))
 		user.apply_status_effect(/datum/status_effect/debuff/cumbrained)
 	SSticker.cums++
 

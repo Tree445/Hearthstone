@@ -45,6 +45,12 @@
 	GiveTarget(user)
 	return
 
+
+/mob/living/simple_animal/hostile/rogue/gravelord/Initialize()
+	. = ..()
+	resize = 1.5
+	update_transform()
+
 /mob/living/simple_animal/hostile/rogue/gravelord/Life()
 	..()
 	if(pulledby)

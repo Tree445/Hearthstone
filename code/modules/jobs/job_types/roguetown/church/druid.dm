@@ -8,7 +8,7 @@
 	spawn_positions = 10
 
 	allowed_sexes = list(MALE, FEMALE)
-	spells = list (/obj/effect/proc_holder/spell/targeted/shapeshift,/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,/obj/effect/proc_holder/spell/invoked/decompose5e,/obj/effect/proc_holder/spell/invoked/infestation5e,/obj/effect/proc_holder/spell/self/primalsavagery5e,)
+	spells = list (/obj/effect/proc_holder/spell/targeted/shapeshift,/obj/effect/proc_holder/spell/aoe_turf/conjure/Wolf,/obj/effect/proc_holder/spell/invoked/infestation5e,/obj/effect/proc_holder/spell/self/primalsavagery5e,)
 	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_DIVINE_PATRONS //gets set to dendor on the outfit anyways lol
 	outfit = /datum/outfit/job/roguetown/druid
@@ -59,12 +59,15 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/druidic, 4, TRUE) //Allows you to craft briarmasks. Otherwise this does nothing, but maybe one day it will.
+		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)//wildman can ungah bungah better now
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 1, TRUE)
-		H.change_stat("intelligence", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("perception", -1)
+			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/magic/druidic, 2, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/misc/tracking, 2, TRUE)
+		H.change_stat("intelligence", 4)
+		H.change_stat("endurance", 2)
+		H.change_stat("perception", 2)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)
 	if(isseelie(H))
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/seelie_dust)

@@ -262,7 +262,7 @@
 
 /obj/item/clothing/under/roguetown/carapacelegs
 	name = "carapace chausses"
-	desc = "aquatic plated armor to protect the legs."
+	desc = "Aquatic plated armor to protect the legs."
 	gender = PLURAL
 	icon_state = "carapace_legs"
 	item_state = "carapace_legs"
@@ -301,9 +301,9 @@
 
 /obj/item/clothing/under/roguetown/carapacelegs/dragon
 	name = "dragonscale platelegs"
-	desc = "dragonscale armor to protect the legs."
-	armor = list("blunt" = 80, "slash" = 100, "stab" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
-	color = "red"
+	desc = "Dragonscale armor to protect the legs."
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	color = "#9e5761"
 	sellprice = 50
 
 /obj/item/clothing/under/roguetown/carapacelegs/dragon/skirt

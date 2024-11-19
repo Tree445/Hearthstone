@@ -36,6 +36,13 @@
 	verbage = "sews"
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/whet
+	name = "whet stone"
+	result = /obj/item/natural/whet
+	reqs = list(/obj/item/natural/stone = 2)
+	craftdiff = 1
+
+
 /datum/crafting_recipe/roguetown/clothbelt
 	name = "cloth belt"
 	result = /obj/item/storage/belt/rogue/leather/cloth
@@ -458,6 +465,13 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/crafting
 
+/datum/crafting_recipe/roguetown/psteel
+	name = "pig iron mix"
+	result = /obj/item/rogueore/psteel
+	reqs = list(/obj/item/rogueore/coal = 1, /obj/item/ingot/iron = 2,)
+	craftdiff = 3
+	skillcraft = /datum/skill/craft/blacksmithing
+
 /datum/crafting_recipe/roguetown/whet
 	name = "whet stone"
 	result = /obj/item/natural/whet
@@ -811,6 +825,7 @@
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue,/obj/item/reagent_containers/glass/bottle/rogue)
 	skillcraft = /datum/skill/craft/smelting
 	structurecraft = /obj/machinery/light/rogue/smelter
+	always_availible = FALSE
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/glasssyringe
@@ -819,6 +834,7 @@
 	result = list(/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/syringe)
 	skillcraft = /datum/skill/craft/smelting
 	structurecraft = /obj/machinery/light/rogue/smelter
+	always_availible = FALSE
 	craftdiff = 2 //small and more detailed in workings i guess.
 
 //gunmaking slop
@@ -884,4 +900,15 @@
 	reqs = list(/obj/item/ingot/iron)
 	result = list(/obj/item/ammo_casing/caseless/rogue/bullet, /obj/item/ammo_casing/caseless/rogue/bullet, /obj/item/ammo_casing/caseless/rogue/bullet, /obj/item/ammo_casing/caseless/rogue/bullet, /obj/item/ammo_casing/caseless/rogue/bullet)
 	skillcraft = /datum/skill/craft/engineering
+
+
+/datum/crafting_recipe/roguetown/tarot_deck
+	name = "tarot deck"
+	result = list(/obj/item/toy/cards/deck/tarot)
+	reqs = list(/obj/item/paper/scroll = 3,
+				/obj/item/grown/log/tree/small = 1,
+				/obj/item/ash = 1)
+	skillcraft = /datum/skill/misc/reading
+	tools = list(/obj/item/natural/feather)
+	req_table = TRUE
 	craftdiff = 2

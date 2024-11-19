@@ -236,7 +236,7 @@
 		icon_state = "tea_empty"
 
 /obj/item/reagent_containers/food/drinks/mug/tea
-	name = "Duke Purple tea"
+	name = "Monarch Purple tea"
 	desc = ""
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 

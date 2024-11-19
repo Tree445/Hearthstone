@@ -73,3 +73,45 @@
 	. = ..()
 	whitelisted_turfs = typecacheof(/turf/closed/mineral)
 	banned_objects = typecacheof(/obj/structure/stone_tile)
+
+/datum/map_template/shelter/frugal
+	name = "Crystal Frugal"
+	shelter_id = "shelter_tent"
+	description = "A simple tent for you to sleep in comfort \
+		a hearth to keep warm and a bedroll to sleep\
+		buy now and we will throw in a guitar for free!, \
+		-brought to you by V"
+	mappath = "_maps/templates/shelter_1.dmm"
+
+/datum/map_template/shelter/frugal/New()
+	. = ..()
+	blacklisted_turfs -= typesof(/turf/closed/mineral)
+	banned_objects = typecacheof(/obj/structure/stone_tile)
+
+/datum/map_template/shelter/smith
+	name = "Crystal Modest"
+	shelter_id = "shelter_smith"
+	description = "A cozy wooden cottage at the flick of a wrist has\
+		the amenities of home, a bed and table, cooking station \
+		and a nice lil smithy area for you to begin your buisness and noy break the SHY!. \
+		-brought to you by V"
+	mappath = "_maps/templates/shelter_2.dmm"
+
+/datum/map_template/shelter/smith/New()
+	. = ..()
+	blacklisted_turfs -= typesof(/turf/closed/mineral)
+	banned_objects = typecacheof(/obj/structure/stone_tile)
+
+/datum/map_template/shelter/elite
+	name = "Crystal Elite"
+	shelter_id = "shelter_wiztower"
+	description = "A luxury elite stone home\
+		all the luxuries of a town in arms reach\
+		premium quality living conditions at a not affordable price\
+		-brought to you by V"
+	mappath = "_maps/templates/shelter_3.dmm"
+
+/datum/map_template/shelter/elite/New()
+	. = ..()
+	blacklisted_turfs -= typesof(/turf/closed/mineral)
+	banned_objects = typecacheof(/obj/structure/stone_tile)

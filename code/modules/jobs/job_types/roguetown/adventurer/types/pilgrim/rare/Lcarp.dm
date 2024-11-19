@@ -7,7 +7,7 @@
 	but you swore to chop down trees only when it is necessary."
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/mastercarpenter
 	category_tags = list(CTAG_DISABLED)
 	maximum_possible_slots = 1
@@ -16,22 +16,22 @@
 /datum/outfit/job/roguetown/adventurer/mastercarpenter/pre_equip(mob/living/carbon/human/H)
 	..()
 
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 4, TRUE) // They use hammers, sawes and axes all day.
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE) // They work at great heights.
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 6, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/masonry, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/lumberjacking, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 4, TRUE) // They use hammers, sawes and axes all day.
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 5, TRUE) // They work at great heights.
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 6, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/lumberjacking, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/hatblu
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor

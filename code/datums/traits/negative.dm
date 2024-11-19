@@ -72,6 +72,7 @@
 		if(!initial(species.disliked_food) & MEAT)
 			species.disliked_food &= ~MEAT
 
+/*
 /datum/quirk/snob
 	name = "Snob"
 	desc = "I like to be in decorated spaces."
@@ -80,6 +81,7 @@
 	lose_text = span_notice("Well who cares about deco anyways?")
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
+*/
 
 /datum/quirk/blooddeficiency
 	name = "Blood Deficiency"

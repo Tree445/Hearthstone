@@ -13,7 +13,7 @@
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	possible_rmb_intents = list()
 	erpable = TRUE
-	hornychance = 25
+	hornychance = 50
 	//If someone ends up writing custom messages for goblins, lewd talk could be used ig -vide
 	//lewd_talk = TRUE
 	//skin color is "e8b59b"
@@ -521,48 +521,48 @@
 		if(!user.getorganslot(ORGAN_SLOT_ANUS))
 			var/obj/item/organ/filling_organ/anus/ass = user.getorganslot(ORGAN_SLOT_ANUS)
 			ass = new /obj/item/organ/filling_organ/anus
-			ass.Insert(user)
+			ass.Insert(user, TRUE)
 		if(gender == MALE)
 			var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
 			if(!show_genitals)
 				testicles = new /obj/item/organ/filling_organ/testicles/internal
 			else
 				testicles = new /obj/item/organ/filling_organ/testicles/goblin
-			testicles.Insert(user)
+			testicles.Insert(user, TRUE)
 			var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
 			if(!show_genitals)
 				penis = new /obj/item/organ/penis/internal
 			else
 				penis = new /obj/item/organ/penis/goblin
-			penis.Insert(user)
+			penis.Insert(user, TRUE)
 		if(gender == FEMALE)
 			var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
 			if(buttie)
-				buttie.Insert(user)
+				buttie.Insert(user, TRUE)
 			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
 			if(!show_genitals)
 				breasts = new /obj/item/organ/filling_organ/breasts/internal
 			else
 				breasts = new /obj/item/organ/filling_organ/breasts/goblin
 			breasts.organ_size = rand(3,4)
-			breasts.Insert(user)
+			breasts.Insert(user, TRUE)
 			var/obj/item/organ/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
 			if(!show_genitals)
 				vagina = new /obj/item/organ/filling_organ/vagina/internal
 			else
 				vagina = new /obj/item/organ/filling_organ/vagina/goblin
-			vagina.Insert(user)
+			vagina.Insert(user, TRUE)
 			if(prob(3)) //3 chance to be dickgirl.
 				var/obj/item/organ/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
 				if(!show_genitals)
 					testicles = new /obj/item/organ/filling_organ/testicles/internal
 				else
 					testicles = new /obj/item/organ/filling_organ/testicles/goblin
-				testicles.Insert(user)
+				testicles.Insert(user, TRUE)
 				var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
 				if(!show_genitals)
 					penis = new /obj/item/organ/penis/internal
 				else
 					penis = new /obj/item/organ/penis/goblin
-				penis.Insert(user)
+				penis.Insert(user, TRUE)
 //	src.sexcon.manual_arousal = SEX_MANUAL_AROUSAL_MAX

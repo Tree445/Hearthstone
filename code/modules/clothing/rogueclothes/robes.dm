@@ -63,8 +63,8 @@
 	desc = "Often worn by those who practice in the field of necromancy."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "necromrobe"
-	icon = 'icons/roguetown/clothing/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	icon = 'modular_stonehedge/icons/roguetown/clothing/armor.dmi'
+	mob_overlay_icon = 'modular_stonehedge/icons/roguetown/clothing/onmob/armor.dmi'
 	sleeved = null
 	boobed = TRUE
 	color = null

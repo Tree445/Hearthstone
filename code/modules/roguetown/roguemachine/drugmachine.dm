@@ -232,10 +232,16 @@
 	held_items[/obj/item/storage/fancy/shhig] = list("PRICE" = rand(15,25),"NAME" = "box of ssssigs")
 	held_items[/obj/item/storage/box/matches] = list("PRICE" = rand(10,15),"NAME" = "tinderbox")
 	held_items[/obj/item/reagent_containers/hypospray/medipen/sty/detox] = list("PRICE" = rand(15,20),"NAME" = "DETOX")
+	held_items[/obj/item/reagent_containers/hypospray/medipen/sty/snekbt] = list("PRICE" = rand(35),"NAME" = "SNAKEBITE")
+	held_items[/obj/item/reagent_containers/hypospray/medipen/sty/nourish] = list("PRICE" = rand(20),"NAME" = "NOURISH")
 	held_items[/obj/item/storage/fancy/pilltinwake] = list("PRICE" = rand(25,30),"NAME" = "pep pills tin")
 	held_items[/obj/item/reagent_containers/hypospray/medipen/sealbottle/purify] = list("PRICE" = rand(25,30),"NAME" = "PURIFY")
 	held_items[/obj/item/storage/fancy/pilltinpink] = list("PRICE" = rand(25,35),"NAME" = "pink pill tin")
 	held_items[/obj/item/natural/bundle/cloth/bandage/full] = list("PRICE" = rand(10,15),"NAME" = "roll of bandages")
+	held_items[/obj/item/survivalcapsule/tent] = list("PRICE" = rand(15,20),"NAME" = "Tent crystal")
+	held_items[/obj/item/survivalcapsule/smith] = list("PRICE" = rand(90,100),"NAME" = "Modest home crystal")
+	held_items[/obj/item/survivalcapsule/wiz] = list("PRICE" = rand(600,800),"NAME" = "Luxury home crystal")
+	held_items[/obj/item/reagent_containers/glass/alembic] = list("PRICE" = rand(30,40),"NAME" = "alembic")
 
 #undef DRUGRADE_MONEYA
 #undef DRUGRADE_MONEYB

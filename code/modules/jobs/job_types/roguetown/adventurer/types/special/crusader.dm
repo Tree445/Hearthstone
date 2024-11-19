@@ -1,7 +1,7 @@
 /datum/advclass/crusader
 	name = "Crusader"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_TOLERATED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/crusader
 	traits_applied = list(TRAIT_HEAVYARMOR, TRAIT_MEDIUMARMOR)
 
@@ -19,14 +19,14 @@
 
 /datum/outfit/job/roguetown/adventurer/crusader/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 2, TRUE)
 
 	belt = /obj/item/storage/belt/rogue/leather/plaquegold
 	pants = /obj/item/clothing/under/roguetown/chainlegs

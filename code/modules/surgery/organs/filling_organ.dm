@@ -96,7 +96,7 @@
 
 	// modify nutrition to generate reagents
 	if(!HAS_TRAIT(src, TRAIT_NOHUNGER)) //if not nohunger
-		if(owner.nutrition < (NUTRITION_LEVEL_FED + 25) && hungerhelp) //consumes if hungry and uses nutrient, putting just above the limit so person dont get stress message spam.
+		if(owner.nutrition < (NUTRITION_LEVEL_HUNGRY - 25) && hungerhelp) //consumes if hungry and uses nutrient, putting below the limit so person dont get stress message spam.
 			var/remove_amount = min(reagent_generate_rate, reagents.total_volume)
 			if(uses_nutrient) //add nutrient
 				owner.adjust_nutrition(remove_amount*20) //since hunger factor is so tiny compared to the nutrition levels it has to fill

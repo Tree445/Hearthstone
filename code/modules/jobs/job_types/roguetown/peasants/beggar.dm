@@ -6,7 +6,7 @@
 	total_positions = -1
 	spawn_positions = -1
 
-	allowed_races = RACES_VERY_SHUNNED_UP
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = ALL_AGES_LIST
 	outfit = /datum/outfit/job/roguetown/vagrant
 	bypass_lastclass = TRUE
@@ -61,11 +61,11 @@
 		r_hand = /obj/item/rogueweapon/woodstaff/wise // dog beating staff
 		l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/special // dog butchering knife
 		if(H.mind)
-			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, rand(4,5), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, rand(4,5), TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE) //very good reading he is wise
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, rand(4,5), TRUE) // dog beating staff
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, rand(4,5), TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 5, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, rand(4,5), TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 4, TRUE) //very good reading he is wise
+			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, rand(4,5), TRUE) // dog beating staff
 			H.STASTR = rand(9, 20)
 			H.STAINT = rand(9, 20)
 			H.STALUC = rand(9, 20)
@@ -106,9 +106,9 @@
 		if(prob(50))
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, rand(3,5), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, rand(3,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, rand(3,5), TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, rand(3,5), TRUE)
 		H.STALUC = rand(9, 20)
 	if(prob(5))
 		r_hand = /obj/item/rogueweapon/mace/woodclub

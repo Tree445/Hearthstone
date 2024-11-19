@@ -6,7 +6,7 @@
 	total_positions = 4
 	spawn_positions = 4
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	tutorial = "Having proven yourself loyal and capable, you have been knighted to serve the realm as the monarch's personal guard. You listen to your Lord and the Captain of the Guard, defending your Lord and realm."
 	display_order = JDO_ROYALGUARD
@@ -63,24 +63,24 @@
 
 /datum/outfit/job/roguetown/royalguard/heavy/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 1, TRUE)
 
 	//Normal shared skill section.
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(2,3,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(2,2,3), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, pick(1,2,2), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, pick(2,3,3), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, pick(2,2,3), TRUE)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)		//Knights are /technically/ nobles? But they are of the lower-tiers; mainly that a non-blue-blood could become a knight
@@ -119,24 +119,24 @@
 
 /datum/outfit/job/roguetown/royalguard/knight/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)		//Mildly better shield skill due to less weapon options.
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)			//Mounted knight due to 1-handed weapons specialty.
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/axes, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 3, TRUE)		//Mildly better shield skill due to less weapon options.
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 3, TRUE)			//Mounted knight due to 1-handed weapons specialty.
 
 	//Normal shared skill section.
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(2,3,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(2,2,3), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, pick(1,2,2), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, pick(2,3,3), TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, pick(2,2,3), TRUE)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)		//Knights are /technically/ nobles? But they are of the lower-tiers; mainly that a non-blue-blood could become a knight.
@@ -178,19 +178,19 @@
 /datum/outfit/job/roguetown/royalguard/archer/pre_equip(mob/living/carbon/human/H)
 	..()
 	//This class doesn't use the normal shared skill section; totally different!!
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)	//Good as hell knife skill; makes them standout more compared to other guards.
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)	//Decent sword skill, mostly for short-swords n' all.
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)		//Not good training; gave some because non-lethals.
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)	//Some training, not great at all though. Equal to an adventurer, L.
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)	//Good as hell knife skill; makes them standout more compared to other guards.
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)	//Decent sword skill, mostly for short-swords n' all.
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 2, TRUE)		//Not good training; gave some because non-lethals.
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 1, TRUE)	//Some training, not great at all though. Equal to an adventurer, L.
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 1, TRUE)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)	//Archer, so dodge expert. Lower speed than Watch crossbowman though, so not as strong.
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)		//Royal Longbowman; kinda rare realistically, though they did exist irl. But hey - royal guard + fantasy.

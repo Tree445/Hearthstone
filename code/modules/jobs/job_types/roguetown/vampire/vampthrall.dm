@@ -6,7 +6,7 @@
 	total_positions = 10
 	spawn_positions = 10
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
 	spells = list(/obj/effect/proc_holder/spell/invoked/diagnose/secular, /obj/effect/proc_holder/spell/self/convertrole/vampire,
 	/obj/effect/proc_holder/spell/targeted/shapeshift/bat)
@@ -23,18 +23,18 @@
 
 /datum/outfit/job/roguetown/vampthrall/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/farming, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3 , TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/masonry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/carpentry, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sewing, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 4, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	cloak = /obj/item/clothing/cloak/raincloak/brown

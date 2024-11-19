@@ -322,7 +322,7 @@
 	max_integrity = 10
 
 	var/oxy_drain = 2
-	var/pleasure = 1
+	var/pleasure = 5 //pleasurable quicker since they bleed inevitably due embed
 	var/curprocs = 0
 	var/procsmax = 180
 	var/pleasureaccepted = FALSE
@@ -1160,7 +1160,7 @@
 	var/datum/beam/current_beam = null
 	ignore_fiendkiss = FALSE
 	
-obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/user = usr)
+/obj/effect/proc_holder/spell/targeted/lightninglure5e/cast(list/targets, mob/user = usr)
 	for(var/mob/living/carbon/C in targets)
 		user.visible_message(span_warning("[C] is connected to [user] with a lightning lure!"), span_warning("You create a static link with [C]."))
 		playsound(user, 'sound/items/stunmace_gen (2).ogg', 100)

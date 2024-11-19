@@ -11,9 +11,8 @@
 	climbable = TRUE
 	can_buckle = FALSE
 	attacked_sound = 'sound/misc/woodhit.ogg'
-	destroy_sound = 'sound/misc/treefall.ogg'
-	debris = list(/obj/item/grown/log/tree/small = 2)
-	static_debris = list(/obj/item/grown/log/tree/small = 2)
+	destroy_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
+	debris = list(/obj/item/grown/log/tree/stake = 3)
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/barricade/wood_spike, /turf/closed/wall)
 	resistance_flags = FLAMMABLE
@@ -149,8 +148,30 @@
 	M.reset_offsets("bed_buckle")
 	can_buckle = FALSE
 
+/obj/structure/barricade/wood_spike/deconstruct(disassembled = TRUE)
+	SEND_SIGNAL(src, COMSIG_OBJ_DECONSTRUCT, disassembled)
+	if(islist(debris))
+		for(var/I in debris)
+			var/count = debris[I] + rand(-1,1)
+			if(count > 0)
+				for(var/i in 1 to count)
+					new I (get_turf(src))
+	if(islist(static_debris))
+		for(var/I in static_debris)
+			for(var/i in 1 to static_debris[I])
+				new I (get_turf(src))
+	qdel(src)
 
 /obj/structure/barricade/wood_spike/obj_destruction(damage_flag)
-	new /obj/item/grown/log/tree/stake(src.loc)
-	new /obj/item/grown/log/tree/stake(src.loc)
-	..()
+	obj_destroyed = TRUE
+	if(damage_flag == "acid")
+		acid_melt()
+	else if(damage_flag == "fire")
+		burn()
+	else
+		if(destroy_sound)
+			playsound(get_turf(src), destroy_sound, 100, TRUE)
+		if(destroy_message)
+			visible_message(destroy_message)
+		deconstruct(FALSE)
+	return TRUE

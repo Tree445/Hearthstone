@@ -19,9 +19,6 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
-			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
-			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(10)
@@ -113,37 +110,6 @@
 				if (HAS_TRAIT(user, TRAIT_PACIFISM))
 					conditional_buff = TRUE
 					situational_bonus += 1.5
-			if(/datum/patron/inhumen/zizo)
-				target.visible_message(span_info("shadow-like interwoven snakes lunge and dispere into [target]!"), span_notice("The shadows leave a chill, blood in my mouth -- yet I feel healed."))
-				// set up a ritual pile of bones (or just cast near a stack of bones whatever) around us for massive bonuses, cap at 50 for 75 healing total (wowie)
-				situational_bonus = 0
-				for (var/obj/item/stack/sheet/bone/O in oview(5, user))
-					situational_bonus += (O.amount * 0.5)
-				if (situational_bonus > 0)
-					conditional_buff = TRUE
-					situational_bonus = min(situational_bonus, 5)
-			if(/datum/patron/inhumen/graggar)
-				target.visible_message(span_info("Blue Phoenix-Fires Envelop [target]!"), span_notice("The life around me pales as manna and the phoenix roar fills me. I am restored!"))
-				// if you've got lingering toxin damage, you get healed more, but your bonus healing doesn't affect toxin
-				var/toxloss = target.getToxLoss()
-				if (toxloss >= 10)
-					conditional_buff = TRUE
-					situational_bonus = 2.5
-					target.adjustToxLoss(situational_bonus) // remember we do a global toxloss adjust down below so this is okay
-			if(/datum/patron/inhumen/matthios)
-				target.visible_message(span_info("Shadows unfurl outward and across [target] as their form is restored!"), span_notice("I'm bathed in a... strange holy light?"))
-				// COMRADES! WE MUST BAND TOGETHER!
-				if (HAS_TRAIT(target, TRAIT_COMMIE))
-					conditional_buff = TRUE
-					situational_bonus = 2.5
-			if(/datum/patron/inhumen/baotha)
-				target.visible_message(span_info("A wreath of... strange light passes over [target]?"), span_notice("Something feels taken.. but the pain subsides. I am whole again."))
-				// i wanted to do something with pain here but it doesn't seem like pain is actually parameterized anywhere so... better necra it is - if they're below 50% health, they get 25 extra healing
-				if (iscarbon(target))
-					var/mob/living/carbon/C = target
-					if (C.health <= (C.maxHealth * 0.5))
-						conditional_buff = TRUE
-						situational_bonus = 2.5
 			if(/datum/patron/godless)
 				target.visible_message(span_info("Raw energy in white and dark interwoven hews flow toward [target]."), span_notice("My wounds close without cause."))
 			else
@@ -189,9 +155,6 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(HAS_TRAIT(target, TRAIT_FAITHLESS)) //being faithless means god doesnt really want to help you now, does it
-			to_chat(user, span_warning("My prayers reach deaf ears - the Gods refuse to aid a non-believer!"))
-			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD)) //positive energy harms the undead
 			target.visible_message(span_danger("[target] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
 			target.adjustFireLoss(25)
@@ -212,5 +175,99 @@
 		else
 			target.adjustBruteLoss(-50)
 			target.adjustFireLoss(-50)
+		return TRUE
+	return FALSE
+
+
+
+/////////////////////////////doctor "spells"////////////////////////
+
+/obj/effect/proc_holder/spell/targeted/docheal  /////// miricle on 3x cooldown from normal
+	action_icon = 'icons/mob/actions/roguespells.dmi'
+	name = "Rapid Treatment"
+	overlay_state = "doc"
+	range = 1
+	include_user = TRUE
+	sound = 'sound/gore/flesh_eat_03.ogg'
+	associated_skill = /datum/skill/misc/medicine
+	antimagic_allowed = TRUE
+	charge_max = 60 SECONDS
+	miracle = FALSE
+	devotion_cost = 0
+
+/obj/effect/proc_holder/spell/targeted/stable // sets ox lose to 0 knocks out some toxin, brings blood levels to safe. epi stabalizes ox lose, antihol purges booze, water and iron slowly restores blood.
+	action_icon = 'icons/mob/actions/roguespells.dmi'
+	name = "Stabalizing Syringe"
+	overlay_state = "stable"
+	range = 1
+	sound = 'modular/Smoker/sound/inject.ogg'
+	associated_skill = /datum/skill/misc/medicine
+	antimagic_allowed = TRUE
+	include_user = TRUE
+	charge_max = 5 MINUTES
+	miracle = FALSE
+	devotion_cost = 0
+
+/obj/effect/proc_holder/spell/targeted/purge // Purges all reagents and clears all toxin damage while lowering blood levels and hitting with brute
+	action_icon = 'icons/mob/actions/roguespells.dmi'
+	name = "Purifying Blood Draw"
+	overlay_state = "snek"
+	range = 1
+	include_user = TRUE
+	sound = 'sound/combat/newstuck.ogg'
+	associated_skill = /datum/skill/misc/medicine
+	antimagic_allowed = TRUE
+	charge_max = 5 MINUTES
+	miracle = FALSE
+	devotion_cost = 0
+
+/obj/effect/proc_holder/spell/targeted/docheal/cast(list/targets, mob/living/user)
+	. = ..()
+	if(iscarbon(targets[1]))
+		var/mob/living/carbon/target = targets[1]
+		target.visible_message(span_green("[user] tends to [target]'s wounds with the focus and purpose."), span_notice("I feel better already."))
+		if(iscarbon(target))
+			var/mob/living/carbon/C = target
+			var/obj/item/bodypart/affecting = C.get_bodypart(check_zone(user.zone_selected))
+			if(affecting)
+				if(affecting.heal_damage(50, 50))
+					C.update_damage_overlays()
+				if(affecting.heal_wounds(50))
+					C.update_damage_overlays()
+		else
+			target.adjustBruteLoss(-50)
+			target.adjustFireLoss(-50)
+		target.adjustToxLoss(-50)
+		target.adjustOxyLoss(-50)
+		target.blood_volume += BLOOD_VOLUME_SURVIVE
+		return TRUE
+	return FALSE
+
+/obj/effect/proc_holder/spell/targeted/stable/cast(list/targets, mob/user) 
+	. = ..()
+	if(iscarbon(targets[1]))
+		var/mob/living/carbon/target = targets[1]
+		var/ramount = 10
+		var/rid = /datum/reagent/medicine/stimu
+		target.reagents.add_reagent(rid, ramount)
+		target.visible_message(span_green("[user] stabs [target]'s chest with a syringe, causing there breathing to return to normal."), span_notice("I feel my breathing steady and grip on life tighten."))
+		target.setOxyLoss(-100)
+		target.adjustToxLoss(-50)
+		target.emote("rage")
+		target.blood_volume += BLOOD_VOLUME_SURVIVE
+		return TRUE
+	return FALSE
+
+/obj/effect/proc_holder/spell/targeted/purge/cast(list/targets, mob/user) 
+	. = ..()
+	if(iscarbon(targets[1]))
+		var/mob/living/carbon/target = targets[1]
+		var/obj/item/bodypart/BPA = target.get_bodypart(BODY_ZONE_R_ARM)
+		BPA.add_wound(/datum/wound/artery/)
+		target.visible_message(span_danger("[user] slashes [target]'s artery open letting the toxins and other impurities bleed and drain from them. they might want to stitch that soon."), span_notice("I've been cut by [user] I feel the toxins leaving my body with each heart beat. im getting light headed...."))
+		target.adjustToxLoss(-999)
+		target.adjustBruteLoss(30, BRUTE, BPA)
+		target.reagents.remove_all_type(/datum/reagent, 9999)
+		target.emote("scream")
 		return TRUE
 	return FALSE

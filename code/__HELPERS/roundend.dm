@@ -305,15 +305,16 @@
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
-		if(C.check_for_lord)
-			if(!C.check_for_lord(forced = TRUE))
-				end_reason = pick("Without a Monarch, they were doomed to become slaves of Zizo.",
-								"Without a Monarch, they were doomed to be eaten by nite creachers.",
-								"Without a Monarch, they were doomed to become victims of Gehenna.",
-								"Without a Monarch, they were doomed to enjoy a mass-suicide.",
-								"Without a Monarch, the Lich made them his playthings.",
-								"Without a Monarch, some jealous rival reigned in tyranny.",
-								"Without a Monarch, the town was abandoned.")
+		if(C.needlord)
+			if(C.check_for_lord)
+				if(!C.check_for_lord(forced = TRUE))
+					end_reason = pick("Without a Monarch, they were doomed to become slaves of Zizo.",
+									"Without a Monarch, they were doomed to be eaten by nite creachers.",
+									"Without a Monarch, they were doomed to become victims of Gehenna.",
+									"Without a Monarch, they were doomed to enjoy a mass-suicide.",
+									"Without a Monarch, the Lich made them his playthings.",
+									"Without a Monarch, some jealous rival reigned in tyranny.",
+									"Without a Monarch, the town was abandoned.")
 //		if(C.not_enough_players)
 //			end_reason = "The town was abandoned."
 
@@ -321,6 +322,9 @@
 			end_reason = "When the Vampires finished sucking the town dry, they moved on to the next one."
 		if(C.vampire_werewolf() == "werewolf")
 			end_reason = "The Werevolves formed an unholy clan, marauding StoneHedge until the end of its daes."
+
+		if(C.cultascended)
+			end_reason = "ZIZOZIZOZIZOZIZO"
 
 		if(C.headrebdecree)
 			end_reason = "The peasant rebels took control of the throne, hail the new community!"

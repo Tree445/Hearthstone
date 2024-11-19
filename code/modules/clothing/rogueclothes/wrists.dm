@@ -56,10 +56,10 @@
 	smeltresult = /obj/item/ash
 	sewrepair = TRUE
 /obj/item/clothing/wrists/roguetown/bracers/carapace/dragon
-	name = "dragon bracers"
-	desc = "Fiber bracers lined with dragonbone to protect your wrists"
-	color = "red"
-	armor = list("blunt" = 80, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	name = "dragonscale bracers"
+	desc = "Fiber bracers lined with dragonscale to protect your wrists"
+	color = "#9e5761"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"
@@ -114,7 +114,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	max_integrity = 150
-	anvilrepair = /datum/skill/craft/armorsmithing
+	sewrepair = TRUE
 	smeltresult = /obj/item/ingot/steel
 	var/extended = FALSE
 	var/obj/item/rogueweapon/huntingknife/idagger/steel/parrying/hidden/hid

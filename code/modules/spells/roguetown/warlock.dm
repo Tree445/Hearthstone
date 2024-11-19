@@ -27,11 +27,6 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(!ignore_faithless)
-			if(!HAS_TRAIT(target, TRAIT_FAITHLESS)) //how do you like it?
-				to_chat(user, span_warning("The [patronname] refuses to aid a believer in the divine or inhumen - They should ask their own |GOD| for help."))
-				return FALSE
-
 		target.visible_message(span_info("[target] "+othernotification), span_notice(targetnotification))
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target

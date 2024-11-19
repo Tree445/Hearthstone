@@ -317,3 +317,9 @@
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/bodypart/r_leg/rprosthetic/clock
 	additional_items = list(/obj/item/roguegear,/obj/item/roguegear,/obj/item/roguegear)
+
+/datum/anvil_recipe/tools/alembic        ////////// yes I know the sprites copper. chill.
+	name = "Alembic"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/reagent_containers/glass/alembic
+	i_type = "Tools"

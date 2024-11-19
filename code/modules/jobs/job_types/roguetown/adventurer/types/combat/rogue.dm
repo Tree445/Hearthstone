@@ -4,7 +4,7 @@
 	and those who aren't are usually treated as such anyway, \
 	they are most commonly associated with the god Xylix due to their skills in thievery"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	outfit = /datum/outfit/job/roguetown/adventurer/rogue
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/combat_rogue.ogg'
@@ -48,28 +48,28 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3 , TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 6, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3 , TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 4, TRUE)
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
@@ -93,71 +93,72 @@
 	H.change_stat("speed", 4)
 	H.change_stat("intelligence", 2)
 
-//Assassin, nearly same as rogue but not versatile in weapon skills yet specialized in knives and crossbows, can still use swords well as anyone else can.
+//Assassin, nearly same as rogue but not versatile in weapon skills yet specialized in knives.
 /datum/outfit/job/roguetown/adventurer/rogue/proc/assassinarch(mob/living/carbon/human/H)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/rogue_vanish)
 	shoes = /obj/item/clothing/shoes/roguetown/boots/hidden/berrypoison
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE) //anatomy training for lethality id assume.
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 2, TRUE) //they fuck with poisons somewhat.
-	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 6, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/traps, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE) //anatomy training for lethality id assume.
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 2, TRUE) //they fuck with poisons somewhat.
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 4, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather
+	wrists = /obj/item/clothing/wrists/roguetown/hiddenblade
 	if(H.gender == FEMALE) //funny
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/bikini
 	else
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	cloak = /obj/item/clothing/cloak/raincloak/rogue
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
+	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	beltr = /obj/item/quiver/Pbolts
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) //they are killers
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("perception", 1)
 	H.change_stat("speed", 4)
 	H.change_stat("intelligence", 2)
-	H.visible_message(span_info("I honed my skills as an assassin through the years."))
+	H.visible_message(span_info("I honed my skills as an assassin through the years. My bracers have a hidden blade, and my boots have a bottle of berry poison."))
 	backpack_contents = list(/obj/item/lockpickring/mundane, /obj/item/rogueweapon/huntingknife/idagger/steel)
 
 //Swashbuckler, Less thief-ish skills, but you have good sword skills plus shield skill and a parry dagger. And an actual str bonus wow.
 //although it looks like bucklers take your main hand weapon skill for defense wtf.
 /datum/outfit/job/roguetown/adventurer/rogue/proc/swashbucklerarch(mob/living/carbon/human/H)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/swords, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/shields, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/crossbows, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/bows, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 5, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/engineering, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 1, TRUE)
 	head = /obj/item/clothing/head/roguetown/helmet/tricorn
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/trou/leather
@@ -188,20 +189,20 @@
 
 // Arcane Trickster - A charlatan, magic using rogue (based on arcane trickster archetype from 5e)
 /datum/outfit/job/roguetown/adventurer/rogue/proc/tricksterarch(mob/living/carbon/human/H)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/magic/arcane, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 2, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather
@@ -223,27 +224,27 @@
 	H.change_stat("speed", 2)
 	H.change_stat("intelligence", 3)
 	H.visible_message(span_info("I’m not just a thief. I'm a master of illusion and deception. One moment, I'm a harmless vagabond. The next, I'm a blur of motion, leaving my pursuers bewildered and outwitted."))
-	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/learnspell)
+	H.verbs += list(/mob/living/carbon/human/proc/magicreport, /mob/living/carbon/human/proc/magiclearn)
 	if(H.mind)
-		H.mind.adjust_spellpoints(1)
+		H.mind.adjust_spellpoints(3)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/rogue_knock)
 
 //Phantom, A death based rogue that can speak with the dead. (based on phantom archetype from 5e)
 /datum/outfit/job/roguetown/adventurer/rogue/proc/phantomarch(mob/living/carbon/human/H)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 4, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/labor/butchering, 3, TRUE)
+	H.mind.adjust_skillrank_up_to(/datum/skill/misc/lockpicking, 3, TRUE)
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather

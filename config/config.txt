@@ -24,7 +24,7 @@ SERVERTAGLINE M-RP / H-RP Medieval Fantasy: DnD Inspired Setting! (18+)
 # SERVERSQLNAME tgstation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME | The Dreamhold | Ancient Wood Elf City | Adventurer State |
+STATIONNAME | The Dreamhold | Adventurer State |
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB

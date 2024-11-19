@@ -37,3 +37,7 @@ GLOBAL_DATUM_INIT(_preloader, /datum/map_preloader, new)
 	name = "Turf Passthrough"
 	icon_state = "noop"
 	bullet_bounce_sound = null
+
+/obj/structure
+	var/gid
+

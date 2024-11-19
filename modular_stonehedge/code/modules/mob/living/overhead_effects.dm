@@ -1,5 +1,4 @@
 //by vide noir
-
 /mob/living/proc/play_overhead_indicator(icon_path, overlay_name, clear_time, overlay_layer)
 	if(!ishuman(src))
 		return
@@ -25,6 +24,7 @@
 	remove_overlay(OBJ_LAYER)
 	cut_overlay(appearance, TRUE)
 	qdel(appearance)
+	update_icon()
 	return
 
 /mob/living/proc/play_stress_indicator()
@@ -34,3 +34,7 @@
 /mob/living/proc/play_relief_indicator()
 	play_overhead_indicator('modular_stonehedge/icons/mob/overhead_effects.dmi', "relief", 10, OBJ_LAYER)
 	playsound(src, 'modular_stonehedge/sound/ddrelief.ogg', 100, FALSE, ignore_walls = FALSE)
+
+/mob/living/proc/play_mental_break_indicator()
+	play_overhead_indicator('modular_stonehedge/icons/mob/overhead_effects.dmi', "mentalbreak", 20, OBJ_LAYER)
+	playsound(src, 'modular_stonehedge/sound/stressaffliction.ogg', 100, FALSE, ignore_walls = FALSE)

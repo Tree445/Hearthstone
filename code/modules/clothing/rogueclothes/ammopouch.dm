@@ -29,6 +29,7 @@
 		else
 			to_chat(loc, span_warning("Full!"))
 		return
+/*
 	if(istype(A, /obj/item/gun/ballistic/revolver/grenadelauncher/matchlock))
 		var/obj/item/gun/ballistic/revolver/grenadelauncher/matchlock/B = A
 		if(bullets.len && !B.chambered)
@@ -38,6 +39,7 @@
 					B.attackby(AR, loc, params)
 					break
 		return
+*/
 	..()
 
 /obj/item/ammopouch/attack_right(mob/user)

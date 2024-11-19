@@ -7,7 +7,7 @@
 	spawn_positions = 15
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	tutorial = "Though the title 'public servant' may sound like you are not a slave, matter of fact you are. Stripped of your rights to even your own body, you must work to try to pay off your debt you made previously so you may reclaim your freedom."
 
 	outfit = /datum/outfit/job/roguetown/prisonerd
@@ -28,19 +28,19 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/rags
 		pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/mining, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/mining, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/craft/cooking, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/labor/farming, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/sneaking, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/stealing, 3, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/music, 1, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/riding, 2, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 1, TRUE)
 		H.change_stat("intelligence", 1)
 		H.change_stat("fortune", 2)
 		H.change_stat("strength", 1)

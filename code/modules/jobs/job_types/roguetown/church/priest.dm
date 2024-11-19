@@ -7,7 +7,7 @@
 	spawn_positions = 5
 	selection_color = JCOLOR_CHURCH
 	f_title = "Prophetess"
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_ALL_KINDSPLUS
 	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	tutorial = "The Divine is all that matters in a world made in their many images. You are a Prophet of the divinity you have chosen. Maintaining the temple is your primary duty - so that they may find their own divine in time."
@@ -18,7 +18,7 @@
 
 	display_order = JDO_PRIEST
 	give_bank_account = 115
-	min_pq = 15
+	min_pq = 5
 	max_pq = null
 
 /datum/outfit/job/roguetown/priest
@@ -44,18 +44,18 @@
 	)
 	ADD_TRAIT(H, TRAIT_CHOSEN, TRAIT_GENERIC)
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/wrestling, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/unarmed, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/reading, 6, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/alchemy, 4, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/misc/medicine, 5, TRUE)
+		H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 5, TRUE)
 		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
+			H.mind.adjust_skillrank_up_to(/datum/skill/magic/holy, 1, TRUE)
 		H.change_stat("strength", -1)
-		H.change_stat("intelligence", 3)
-		H.change_stat("constitution", -1)
+		H.change_stat("intelligence", 4)
+		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 1)
 		H.change_stat("speed", -1)
 		H.cmode_music = 'sound/music/combat_clergy.ogg'

@@ -454,10 +454,9 @@
 
 	for(var/mob/dead/observer/G in GLOB.player_list)
 		candidates += G
-	
+
 	for(var/mob/living/carbon/spirit/bigchungus in GLOB.player_list)
 		candidates += bigchungus
-
 
 	for(var/mob/dead/new_player/lobby_nerd in GLOB.player_list)
 		candidates += lobby_nerd

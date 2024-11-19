@@ -166,6 +166,7 @@
 #define HIDECROTCH		(1<<13)
 #define HIDETAIL		(1<<14)
 #define HIDEBUTT		(1<<15)
+#define HIDEWINGS		(1<<16)
 
 //blocking_behavior var on clothing items
 #define BLOCKBOOTS		(1<<0)

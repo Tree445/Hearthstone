@@ -206,7 +206,7 @@
 		return
 	var/contents = "<center>People that [name] knows:</center><BR>"
 	for(var/P in known_people)
-		if(known_people.Find(P)) //Vrell - safety check in case someone gets deleted durring this process since apparently that's an issue we're having.
+		if(known_people.Find(P)) // Safety check in case someone gets deleted during this process
 			var/fcolor = known_people[P]["VCOLOR"]
 			if(!fcolor)
 				continue
@@ -220,7 +220,6 @@
 	var/datum/browser/popup = new(user, "PEOPLEIKNOW", "", 260, 400)
 	popup.set_content(contents)
 	popup.open()
-
 
 /datum/mind/proc/get_language_holder()
 	if(!language_holder)

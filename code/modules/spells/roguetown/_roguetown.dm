@@ -68,6 +68,7 @@
 	var/projectiles_per_fire = 1		//Projectiles per fire. Probably not a good thing to use unless you override ready_projectile().
 
 /obj/effect/proc_holder/spell/invoked/projectile/proc/ready_projectile(obj/projectile/P, atom/target, mob/user, iteration)
+	P.sender = user
 	return
 
 /obj/effect/proc_holder/spell/invoked/projectile/cast(list/targets, mob/living/user)

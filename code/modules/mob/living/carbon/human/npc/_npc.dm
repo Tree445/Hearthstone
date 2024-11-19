@@ -14,13 +14,12 @@
 	var/maxStepsTick = 6
 	var/resisting = FALSE
 	var/pickpocketing = FALSE
-	var/del_on_deaggro = null
+//	var/del_on_deaggro = null
 	var/last_aggro_loss = null
 	var/wander = TRUE
 	var/ai_when_client = FALSE
 	var/next_idle = 0
 	var/next_seek = 0
-	var/next_stand = 0
 	var/next_passive_detect = 0
 	var/flee_in_pain = FALSE
 	var/stand_attempts = 0
@@ -291,7 +290,7 @@
 		if(AI_HUNT)		// hunting for attacker
 			if(target != null)
 				if(!should_target(target))
-					if (target.alpha <= 100 && target.rogue_sneaking) // attempt one detect since we were just fighting them and have lost them
+					if (target.alpha <= 100) // attempt one detect since we were just fighting them and have lost them
 						if (npc_detect_sneak(target))
 							retaliate(target)
 					else

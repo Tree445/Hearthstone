@@ -171,7 +171,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/steward
-	name = "Steward"
+	name = "Guild Appraiser"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/clerk
@@ -203,7 +203,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/judge
-	name = "Judge"
+	name = "Law Mage"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/councillor
@@ -255,7 +255,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/grandtemplar
-	name = "Grandmaster"
+	name = "Grandmaster Templar"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/puritan
@@ -267,11 +267,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightman
-	name = "Spymaster"
+	name = "Nightmaster"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/nightmaiden
-	name = "Courtesan"
+	name = "Nightswain"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/merchant
@@ -384,7 +384,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/jester
-	name = "Jester"
+	name = "Harlequin"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/hand

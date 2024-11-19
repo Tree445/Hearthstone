@@ -279,6 +279,23 @@
 		desc = pick("Prevents royal accidents.","Royal hole preserver.","Shuts the wrong hole of royalty.","Best investment ever.")
 	can_custom = FALSE
 
+/obj/item/dildo/plug/update_strapon()
+	var/obj/item/organ/penis/temp = new /obj/item/organ/penis
+	temp.name = name
+	icon_state = "plug_[dildo_size]"
+	switch(dildo_size)
+		if("small")
+			temp.organ_size = DEFAULT_PENIS_SIZE-1
+		if("medium")
+			temp.organ_size = DEFAULT_PENIS_SIZE
+		if("big")
+			temp.organ_size = DEFAULT_PENIS_SIZE+1
+		if("huge")
+			temp.organ_size = DEFAULT_PENIS_SIZE+1 //huge doesnt exist in mobs
+	temp.always_hard = TRUE
+	temp.strapon = TRUE
+	strapon = temp
+
 /obj/item/dildo/plug/wood
 	color = "#7D4033"
 	resistance_flags = FLAMMABLE

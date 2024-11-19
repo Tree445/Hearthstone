@@ -114,13 +114,15 @@
 					to_chat(src, span_boldred("I'm not freaking out that badly anymore..."))
 			if(STRESS_THRESHOLD_FREAKING_OUT)
 				to_chat(src, span_boldred("I'M FREAKING OUT!!!"))
+				play_mental_break_indicator()
+				freak_out(FALSE)
 
-	if(new_stress >= 15)
+	if(new_stress >= 8)
 		change_stat("fortune", -1, "stress")
 	else
 		change_stat("fortune", 0, "stress")
 
-	if(new_stress >= 20)
+	if(new_stress >= 12)
 		roll_streak_freakout()
 
 	oldstress = new_stress
@@ -249,11 +251,11 @@
 	switch(stress_amt)
 		if(-INFINITY to -4)
 			return STRESS_THRESHOLD_NICE
-		if(-4 to 4)
+		if(-4 to 2)
 			return STRESS_THRESHOLD_NEUTRAL
-		if(4 to 11)
+		if(2 to 4)
 			return STRESS_THRESHOLD_STRESSED
-		if(11 to 19)
+		if(4 to 8)
 			return STRESS_THRESHOLD_STRESSED_BAD
-		if(19 to INFINITY)
+		if(8 to INFINITY)
 			return STRESS_THRESHOLD_FREAKING_OUT

@@ -3,7 +3,7 @@
 	/// Name of the role
 	var/name = "MIGRANT ROLE"
 	/// Restricts species if the list is not null
-	var/list/allowed_races = RACES_VERY_SHUNNED_UP	//QUICK FIX TO EXCLUDE SEELIE
+	var/list/allowed_races = RACES_ALL_KINDSPLUS	//QUICK FIX TO EXCLUDE SEELIE
 	/// Restricts sexes if list is not null
 	var/list/allowed_sexes
 	/// Restricts ages if list is not null
@@ -39,4 +39,5 @@
 /datum/migrant_role/bandit
 	name = "Bandit"
 	antag_datum = /datum/antagonist/bandit
+	advclass_cat_rolls = list(CTAG_BANDIT = 20)
 	grant_lit_torch = TRUE

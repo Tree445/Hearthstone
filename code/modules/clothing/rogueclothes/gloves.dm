@@ -8,6 +8,7 @@
 	bloody_icon_state = "bloodyhands"
 	sleevetype = "shirt"
 	max_heat_protection_temperature = 361
+	siemens_coefficient = 1
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/gloves/roguetown/carapace
@@ -25,10 +26,10 @@
 	anvilrepair = null
 	sewrepair = TRUE
 /obj/item/clothing/gloves/roguetown/carapace/dragon
-	name = "dragon gauntlets"
-	desc = "Strong dragonbone plated gauntlets."
-	color = "red"
-	armor = list("blunt" = 80, "slash" = 100, "stab" = 60, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
+	name = "dragonscale gauntlets"
+	desc = "Strong dragonscale plated gauntlets."
+	color = "#9e5761"
+	armor = list("blunt" = 80, "slash" = 100, "stab" = 80, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/gloves/roguetown/leather
 	name = "leather gloves"

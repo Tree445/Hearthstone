@@ -83,7 +83,7 @@
 				if(H.dna.species.name in list("Elf", "Half-Elf"))
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE) */
 	H.update_body()
-
+	H.verbs += list(/mob/living/carbon/human/proc/mark_target)
 /datum/outfit/job/roguetown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	if(H.mind)
