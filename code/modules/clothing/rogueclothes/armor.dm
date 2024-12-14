@@ -865,7 +865,7 @@
 	item_state = "foresterchestplate"
 	max_integrity = 100
 	smeltresult = /obj/item/ash
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/plate/fancycuirass
 	slot_flags = ITEM_SLOT_ARMOR
